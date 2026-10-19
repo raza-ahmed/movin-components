@@ -1,0 +1,202 @@
+"use client";
+
+const css = `
+  .toggle-faucet {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #ededed;
+    font-size: 15px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .toggle-faucet__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+  }
+
+  .toggle-faucet__tap {
+    position: relative;
+    display: block;
+    width: 84px;
+    height: 100px;
+    border-radius: 8px;
+  }
+
+  .toggle-faucet__input:focus-visible + .toggle-faucet__tap {
+    outline: 2px solid #a7a7a7;
+    outline-offset: 2px;
+  }
+
+  .toggle-faucet__wall {
+    position: absolute;
+    top: 18px;
+    left: 4px;
+    width: 9px;
+    height: 30px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #4d4d4d, #7c7c7c);
+  }
+
+  .toggle-faucet__body {
+    position: absolute;
+    top: 26px;
+    left: 10px;
+    width: 50px;
+    height: 13px;
+    border-radius: 3px 7px 7px 3px;
+    background: linear-gradient(#ededed, #7c7c7c);
+  }
+
+  .toggle-faucet__spout {
+    position: absolute;
+    top: 34px;
+    left: 47px;
+    width: 13px;
+    height: 14px;
+    border-radius: 0 0 4px 4px;
+    background: linear-gradient(90deg, #7c7c7c, #ededed 55%, #a7a7a7);
+  }
+
+  /* The lever pivots on its left end, on top of the body. */
+  .toggle-faucet__lever {
+    position: absolute;
+    top: 19px;
+    left: 22px;
+    width: 34px;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(#f6f6f6, #a7a7a7);
+    transform-origin: 3px 50%;
+    transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+  }
+
+  .toggle-faucet__lever::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #c9c9c9;
+  }
+
+  /* The stream grows down from the spout when on, and when off its top end
+     falls away from the spout, because the origin swaps with the state. */
+  .toggle-faucet__stream {
+    position: absolute;
+    top: 46px;
+    left: 50px;
+    width: 7px;
+    height: 42px;
+    overflow: hidden;
+    border-radius: 3px;
+    background: rgba(201, 201, 201, 0.55);
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition: transform 0.35s cubic-bezier(0.5, 0, 0.75, 0);
+  }
+
+  .toggle-faucet__flow {
+    position: absolute;
+    top: -24px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 24px);
+    background: repeating-linear-gradient(rgba(246, 246, 246, 0.85) 0 5px, rgba(246, 246, 246, 0) 5px 12px);
+    animation: toggle-faucet-flow 0.3s linear infinite;
+  }
+
+  @keyframes toggle-faucet-flow {
+    to {
+      transform: translateY(12px);
+    }
+  }
+
+  .toggle-faucet__pool {
+    position: absolute;
+    top: 82px;
+    left: 29px;
+    width: 50px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(167, 167, 167, 0.18);
+    box-shadow: inset 0 0 0 1px rgba(167, 167, 167, 0.3);
+  }
+
+  .toggle-faucet__ring {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(237, 237, 237, 0.8);
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  .toggle-faucet__input:checked + .toggle-faucet__tap .toggle-faucet__lever {
+    transform: rotate(-32deg);
+  }
+
+  .toggle-faucet__input:checked + .toggle-faucet__tap .toggle-faucet__stream {
+    transform: scaleY(1);
+    transform-origin: 50% 0;
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    transition-delay: 0.1s;
+  }
+
+  .toggle-faucet__input:checked + .toggle-faucet__tap .toggle-faucet__ring {
+    animation: toggle-faucet-ripple 1.1s ease-out 0.4s infinite;
+  }
+
+  .toggle-faucet__input:checked + .toggle-faucet__tap .toggle-faucet__ring + .toggle-faucet__ring {
+    animation-delay: 0.95s;
+  }
+
+  @keyframes toggle-faucet-ripple {
+    0% {
+      opacity: 1;
+      transform: scale(0.15);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .toggle-faucet__lever,
+    .toggle-faucet__stream {
+      transition: none !important;
+    }
+    .toggle-faucet__flow,
+    .toggle-faucet__input:checked + .toggle-faucet__tap .toggle-faucet__ring {
+      animation: none;
+    }
+  }
+`;
+export function FaucetToggle() {
+  return (
+    <>
+      <style>{css}</style>
+      <label className="toggle-faucet">
+        <input className="toggle-faucet__input" type="checkbox" role="switch" />
+        <span className="toggle-faucet__tap" aria-hidden="true">
+          <span className="toggle-faucet__stream"><span className="toggle-faucet__flow" /></span>
+          <span className="toggle-faucet__pool">
+            <span className="toggle-faucet__ring" />
+            <span className="toggle-faucet__ring" />
+          </span>
+          <span className="toggle-faucet__wall" />
+          <span className="toggle-faucet__body" />
+          <span className="toggle-faucet__spout" />
+          <span className="toggle-faucet__lever" />
+        </span>
+        <span className="toggle-faucet__label">Water</span>
+      </label>
+    </>
+  );
+}

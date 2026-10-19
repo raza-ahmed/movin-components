@@ -1,0 +1,93 @@
+/* Real radios stay in the page (arrow keys + screen readers), just invisible. */
+.radio-targeting__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.radio-targeting__option { cursor: pointer; }
+.radio-targeting__option:has(.radio-targeting__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.radio-targeting {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.radio-targeting__option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  transition: background 200ms;
+}
+/* Four corner brackets sit loose round each row and snap tight onto the target. */
+.radio-targeting__bracket {
+  --radio-targeting-ease: 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  border: 0 solid #a7a7a7;
+  opacity: 0.2;
+  transition: top var(--radio-targeting-ease), bottom var(--radio-targeting-ease), left var(--radio-targeting-ease), right var(--radio-targeting-ease), opacity 200ms ease;
+}
+.radio-targeting__bracket--tl { top: 6px; left: 6px; border-top-width: 2px; border-left-width: 2px; }
+.radio-targeting__bracket--tr { top: 6px; right: 6px; border-top-width: 2px; border-right-width: 2px; }
+.radio-targeting__bracket--bl { bottom: 6px; left: 6px; border-bottom-width: 2px; border-left-width: 2px; }
+.radio-targeting__bracket--br { right: 6px; bottom: 6px; border-right-width: 2px; border-bottom-width: 2px; }
+
+.radio-targeting__ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border: 2px solid rgba(246, 246, 246, 0.2);
+  border-radius: 50%;
+  transition: all 200ms;
+}
+.radio-targeting__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a7a7a7;
+  transform: scale(0);
+  transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.radio-targeting__option:has(.radio-targeting__input:checked) .radio-targeting__ring { border-color: #a7a7a7; box-shadow: 0 0 8px rgba(167, 167, 167, 0.5); }
+.radio-targeting__option:has(.radio-targeting__input:checked) .radio-targeting__dot { transform: scale(1); transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+.radio-targeting__label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(246, 246, 246, 0.55);
+  user-select: none;
+  transition: color 200ms;
+}
+.radio-targeting__option:has(.radio-targeting__input:checked) { background: rgba(167, 167, 167, 0.06); }
+.radio-targeting__option:has(.radio-targeting__input:checked) .radio-targeting__bracket { opacity: 1; }
+.radio-targeting__option:has(.radio-targeting__input:checked) .radio-targeting__bracket--tl,
+.radio-targeting__option:has(.radio-targeting__input:checked) .radio-targeting__bracket--tr { top: 0; }
+.radio-targeting__option:has(.radio-targeting__input:checked) .radio-targeting__bracket--bl,
+.radio-targeting__option:has(.radio-targeting__input:checked) .radio-targeting__bracket--br { bottom: 0; }
+.radio-targeting__option:has(.radio-targeting__input:checked) .radio-targeting__bracket--tl,
+.radio-targeting__option:has(.radio-targeting__input:checked) .radio-targeting__bracket--bl { left: 0; }
+.radio-targeting__option:has(.radio-targeting__input:checked) .radio-targeting__bracket--tr,
+.radio-targeting__option:has(.radio-targeting__input:checked) .radio-targeting__bracket--br { right: 0; }
+.radio-targeting__option:has(.radio-targeting__input:checked) .radio-targeting__label { color: #a7a7a7; }
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-targeting,
+  .radio-targeting * { animation: none !important; transition: none !important; }
+}

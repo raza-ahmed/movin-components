@@ -1,0 +1,154 @@
+@property --btn-swipe-confirm-p {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+.btn-swipe-confirm {
+  --btn-swipe-confirm-p: 0;
+  --btn-swipe-confirm-travel: 200px;
+  position: relative;
+  box-sizing: border-box;
+  width: 260px;
+  height: 60px;
+  overflow: hidden;
+  border: 1px solid #3a3a3a;
+  border-radius: 999px;
+  background: #202020;
+  font-size: 15px;
+  font-weight: 600;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: --btn-swipe-confirm-p 0.55s cubic-bezier(0.3, 1.45, 0.5, 1);
+}
+
+/* While dragging, the knob follows the finger exactly. */
+.btn-swipe-confirm--drag {
+  transition: none;
+}
+
+.btn-swipe-confirm__fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: calc(56px + var(--btn-swipe-confirm-p) * var(--btn-swipe-confirm-travel));
+  border-radius: 999px;
+  background: #3a3a3a;
+  transition: background-color 0.35s;
+}
+
+.btn-swipe-confirm__hint,
+.btn-swipe-confirm__done {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding-left: 44px;
+}
+
+.btn-swipe-confirm__hint {
+  background: linear-gradient(90deg, #7c7c7c 40%, #f6f6f6 50%, #7c7c7c 60%) 0 0 / 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: calc(1 - var(--btn-swipe-confirm-p) * 1.8);
+  animation: btn-swipe-confirm-shine 2.4s linear infinite;
+}
+
+.btn-swipe-confirm__done {
+  padding-left: 0;
+  color: #111111;
+  opacity: 0;
+  transition: opacity 0.3s 0.15s;
+}
+
+.btn-swipe-confirm__knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ededed;
+  color: #111111;
+  cursor: grab;
+  touch-action: none;
+  translate: calc(var(--btn-swipe-confirm-p) * var(--btn-swipe-confirm-travel)) 0;
+  transition: background-color 0.35s, color 0.35s, scale 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-swipe-confirm__knob:active {
+  cursor: grabbing;
+  scale: 0.94;
+}
+
+.btn-swipe-confirm__knob:focus-visible {
+  outline: 2px solid #ededed;
+  outline-offset: 3px;
+}
+
+.btn-swipe-confirm__knob svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.btn-swipe-confirm__arrow {
+  transition: opacity 0.2s;
+}
+
+.btn-swipe-confirm__check {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  transition: stroke-dashoffset 0.4s 0.25s cubic-bezier(0.6, 0, 0.3, 1);
+}
+
+.btn-swipe-confirm--done .btn-swipe-confirm__fill {
+  background: #ededed;
+}
+
+.btn-swipe-confirm--done .btn-swipe-confirm__done {
+  opacity: 1;
+}
+
+.btn-swipe-confirm--done .btn-swipe-confirm__knob {
+  background: #111111;
+  color: #ededed;
+}
+
+.btn-swipe-confirm--done .btn-swipe-confirm__arrow {
+  opacity: 0;
+}
+
+.btn-swipe-confirm--done .btn-swipe-confirm__check {
+  stroke-dashoffset: 0;
+}
+
+@keyframes btn-swipe-confirm-shine {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -150% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-swipe-confirm,
+  .btn-swipe-confirm *,
+  .btn-swipe-confirm *::before,
+  .btn-swipe-confirm *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

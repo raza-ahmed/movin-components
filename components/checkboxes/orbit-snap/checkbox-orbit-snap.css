@@ -1,0 +1,75 @@
+.cb-orbit-snap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-orbit-snap__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-orbit-snap__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-orbit-snap__input:focus-visible + .cb-orbit-snap__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* Checking sends a dot round the box twice; then the box fills and the tick snaps in. */
+.cb-orbit-snap__box { transition: background 200ms ease, border-color 200ms ease; }
+.cb-orbit-snap__dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: #a7a7a7;
+  box-shadow: 0 0 6px rgba(167, 167, 167, 0.8);
+  opacity: 0;
+}
+.cb-orbit-snap__check {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 180ms ease, transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.cb-orbit-snap__input:checked + .cb-orbit-snap__box {
+  border-color: #a7a7a7;
+  background: #7c7c7c;
+  transition: background 200ms ease 700ms, border-color 200ms ease;
+}
+.cb-orbit-snap__input:checked + .cb-orbit-snap__box .cb-orbit-snap__dot { animation: cb-orbit-snap 600ms linear infinite, cb-orbit-snap-show 700ms steps(1) forwards; }
+.cb-orbit-snap__input:checked + .cb-orbit-snap__box .cb-orbit-snap__check {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 700ms;
+}
+@keyframes cb-orbit-snap {
+  from { transform: rotate(0deg) translateX(17px); }
+  to { transform: rotate(360deg) translateX(17px); }
+}
+@keyframes cb-orbit-snap-show {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-orbit-snap__box,
+  .cb-orbit-snap__box * { animation: none !important; transition: none !important; }
+}

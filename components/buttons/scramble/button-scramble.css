@@ -1,0 +1,18 @@
+.btn-scramble {
+  min-width: 148px;
+  padding: 12px 32px;
+  border: 1px solid #7c7c7c;
+  border-radius: 6px;
+  background: #111111;
+  box-shadow: 0 0 12px rgba(167, 167, 167, 0.15);
+  color: #c9c9c9;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 8px rgba(201, 201, 201, 0.5);
+  cursor: pointer;
+}
+.btn-scramble:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}

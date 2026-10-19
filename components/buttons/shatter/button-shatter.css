@@ -1,0 +1,54 @@
+.btn-shatter {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  perspective: 520px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-shatter:focus-visible {
+  outline: 2px solid #ededed;
+  outline-offset: 4px;
+}
+
+.btn-shatter__face {
+  display: grid;
+  place-items: center;
+  width: 168px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #f6f6f6, #c9c9c9);
+  box-shadow: inset 0 -2px 0 rgba(17, 17, 17, 0.14);
+  color: #111111;
+  font-size: 15px;
+  font-weight: 600;
+  transition: scale 0.2s;
+}
+
+.btn-shatter:hover .btn-shatter__face {
+  scale: 1.02;
+}
+
+/* Clones of the face, each clipped to one triangle. */
+.btn-shatter__shard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.btn-shatter--broken > .btn-shatter__face:not(.btn-shatter__shard) {
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-shatter__face {
+    transition: none;
+  }
+}

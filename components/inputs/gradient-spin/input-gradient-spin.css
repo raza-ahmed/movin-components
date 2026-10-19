@@ -1,0 +1,68 @@
+.field-gradient-spin {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.field-gradient-spin {
+  height: 44px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid rgba(246, 246, 246, 0.12);
+  border-radius: 8px;
+  background: rgba(246, 246, 246, 0.04);
+}
+.field-gradient-spin:focus-within {
+  border-color: transparent;
+  background: transparent;
+}
+/* A large conic square spins under the field; on focus the field insets to
+   leave a 2px band of it showing as a moving border. */
+.field-gradient-spin__spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  background: conic-gradient(from 0deg, #7c7c7c, #a7a7a7, #7c7c7c, #a7a7a7, #7c7c7c);
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 300ms ease;
+  animation: field-gradient-spin 2s linear infinite paused;
+}
+.field-gradient-spin:focus-within .field-gradient-spin__spin {
+  opacity: 1;
+  animation-play-state: running;
+}
+.field-gradient-spin__inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  background: #111111;
+  transition: inset 300ms ease;
+}
+.field-gradient-spin:focus-within .field-gradient-spin__inner { inset: 1px; }
+
+.field-gradient-spin__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background: transparent;
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  border: none;
+}
+.field-gradient-spin__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+@keyframes field-gradient-spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .field-gradient-spin:focus-within .field-gradient-spin__spin { animation-play-state: paused; }
+}

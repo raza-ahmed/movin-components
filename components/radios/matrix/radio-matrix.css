@@ -1,0 +1,65 @@
+/* Real radios stay in the page (arrow keys + screen readers), just invisible. */
+.radio-matrix__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.radio-matrix__option { cursor: pointer; }
+.radio-matrix__option:has(.radio-matrix__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.radio-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(201, 201, 201, 0.15);
+  border-radius: 4px;
+  background: #111111;
+}
+.radio-matrix__option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(201, 201, 201, 0.08);
+  border-radius: 4px;
+  transition: background 200ms, border-color 200ms;
+}
+.radio-matrix__cursor {
+  width: 8px;
+  height: 14px;
+  flex-shrink: 0;
+  background: rgba(201, 201, 201, 0.2);
+  transition: background 200ms ease, box-shadow 200ms ease;
+}
+.radio-matrix__label {
+  min-width: 60px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: rgba(201, 201, 201, 0.65);
+  user-select: none;
+  transition: all 200ms;
+}
+.radio-matrix__option:has(.radio-matrix__input:checked) {
+  border-bottom-color: rgba(201, 201, 201, 0.3);
+  background: rgba(201, 201, 201, 0.05);
+}
+.radio-matrix__option:has(.radio-matrix__input:checked) .radio-matrix__cursor {
+  background: #c9c9c9;
+  box-shadow: 0 0 6px rgba(201, 201, 201, 0.8);
+}
+.radio-matrix__option:has(.radio-matrix__input:checked) .radio-matrix__label {
+  color: #c9c9c9;
+  text-shadow: 0 0 8px rgba(201, 201, 201, 0.7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-matrix,
+  .radio-matrix * { animation: none !important; transition: none !important; }
+}

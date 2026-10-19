@@ -1,0 +1,39 @@
+.btn-ripple {
+  position: relative;
+  padding: 12px 32px;
+  overflow: hidden;
+  border: 1px solid rgba(246, 246, 246, 0.1);
+  border-radius: 8px;
+  background: #202020;
+  color: #f6f6f6;
+  font: inherit;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+}
+.btn-ripple:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+.btn-ripple__label {
+  position: relative;
+  z-index: 1;
+}
+/* A 10px dot from the click point, scaled up 30x as it fades. */
+.btn-ripple__wave {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: rgba(124, 124, 124, 0.55);
+  pointer-events: none;
+  transform: scale(0);
+  animation: btn-ripple 600ms ease-out forwards;
+}
+@keyframes btn-ripple {
+  to { opacity: 0; transform: scale(30); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-ripple__wave { display: none; }
+}

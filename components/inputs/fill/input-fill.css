@@ -1,0 +1,52 @@
+.field-fill {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.field-fill {
+  overflow: hidden;
+  border: 1px solid rgba(246, 246, 246, 0.15);
+  border-radius: 8px;
+  transition: border-color 200ms;
+}
+.field-fill:focus-within { border-color: #a7a7a7; }
+/* A tint sweeps in from the left across the field on focus. */
+.field-fill__fill {
+  position: absolute;
+  inset: 0;
+  background: rgba(167, 167, 167, 0.1);
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 380ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.field-fill:focus-within .field-fill__fill { transform: scaleX(1); }
+
+.field-fill__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background: rgba(246, 246, 246, 0.05);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  position: relative;
+  border: none;
+  border-radius: 0;
+  transition: background 380ms ease;
+}
+.field-fill__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+.field-fill__input:focus { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  .field-fill,
+  .field-fill *,
+  .field-fill *::before,
+  .field-fill *::after { animation: none !important; transition: none !important; }
+}

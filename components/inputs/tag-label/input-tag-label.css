@@ -1,0 +1,67 @@
+.field-tag-label {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* The label turns into a small uppercase tag (its pill wipes in) on focus or once filled. */
+.field-tag-label__tag {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.field-tag-label__tag::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background: rgba(167, 167, 167, 0.15);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.field-tag-label__text {
+  position: relative;
+  padding: 1px 2px;
+  font-size: 13px;
+  color: rgba(246, 246, 246, 0.55);
+  transition: all 200ms;
+}
+.field-tag-label:focus-within .field-tag-label__tag::before,
+.field-tag-label:has(.field-tag-label__input:not(:placeholder-shown)) .field-tag-label__tag::before { transform: scaleX(1); }
+.field-tag-label:focus-within .field-tag-label__text,
+.field-tag-label:has(.field-tag-label__input:not(:placeholder-shown)) .field-tag-label__text {
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #a7a7a7;
+}
+
+.field-tag-label__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(246, 246, 246, 0.12);
+  border-radius: 8px;
+  outline: none;
+  background: rgba(246, 246, 246, 0.04);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  display: block;
+  transition: border-color 200ms;
+}
+.field-tag-label__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+.field-tag-label__input:focus,
+.field-tag-label__input:not(:placeholder-shown) { border-color: rgba(167, 167, 167, 0.4); }
+
+@media (prefers-reduced-motion: reduce) {
+  .field-tag-label,
+  .field-tag-label *,
+  .field-tag-label *::before,
+  .field-tag-label *::after { animation: none !important; transition: none !important; }
+}

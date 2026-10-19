@@ -1,0 +1,15 @@
+.loader-spinning-ring {
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-top-color: currentColor;
+  animation: loader-spinning-ring 1s linear infinite;
+}
+@keyframes loader-spinning-ring {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader-spinning-ring { animation: none; opacity: 0.5; }
+}

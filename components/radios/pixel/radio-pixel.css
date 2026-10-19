@@ -1,0 +1,57 @@
+/* Real radios stay in the page (arrow keys + screen readers), just invisible. */
+.radio-pixel__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.radio-pixel__option { cursor: pointer; }
+.radio-pixel__option:has(.radio-pixel__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.radio-pixel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.radio-pixel__option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+/* A 4x4 pixel sprite builds up block by block (--radio-pixel-i is each block's turn). */
+.radio-pixel__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 4px);
+  gap: 1px;
+  flex-shrink: 0;
+}
+.radio-pixel__grid > span {
+  width: 4px;
+  height: 4px;
+  background: rgba(246, 246, 246, 0.12);
+  transform: scale(0);
+  transition: transform 80ms ease-in, background 80ms ease;
+}
+.radio-pixel__label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: rgba(246, 246, 246, 0.55);
+  user-select: none;
+  transition: color 200ms;
+}
+.radio-pixel__option:has(.radio-pixel__input:checked) .radio-pixel__grid > span {
+  background: #a7a7a7;
+  transform: scale(1);
+  transition: transform 120ms cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--radio-pixel-i) * 18ms), background 120ms ease;
+}
+.radio-pixel__option:has(.radio-pixel__input:checked) .radio-pixel__label { font-weight: 600; color: #a7a7a7; }
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-pixel,
+  .radio-pixel * { animation: none !important; transition: none !important; }
+}

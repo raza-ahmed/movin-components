@@ -1,0 +1,43 @@
+.card-shimmer {
+  position: relative;
+  width: 160px;
+  overflow: hidden;
+  border: 1px solid rgba(246, 246, 246, 0.1);
+  border-radius: 12px;
+  background: rgba(246, 246, 246, 0.06);
+  cursor: pointer;
+  transition: border-color 300ms ease;
+}
+.card-shimmer:hover { border-color: rgba(246, 246, 246, 0.24); }
+/* The shine waits off the left edge and sweeps across once per hover. */
+.card-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(246, 246, 246, 0.35) 50%, transparent 70%);
+  pointer-events: none;
+  transform: translateX(-100%) skewX(-10deg);
+}
+.card-shimmer:hover::after {
+  transform: translateX(200%) skewX(-10deg);
+  transition: transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-shimmer__media {
+  height: 64px;
+  background: linear-gradient(135deg, #3a3a3a, #4d4d4d);
+}
+.card-shimmer__body { padding: 10px 12px 12px; }
+.card-shimmer__title {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f6f6f6;
+}
+.card-shimmer__text {
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(246, 246, 246, 0.55);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-shimmer::after { display: none; }
+}

@@ -1,0 +1,51 @@
+/* Drawn at 1:1, so each gear can turn about its centre in SVG units. */
+.loader-gears {
+  --loader-gears-t: 4s;
+  display: inline-block;
+  width: 64px;
+  height: 44px;
+}
+
+.loader-gears svg {
+  display: block;
+  width: 64px;
+  height: 44px;
+  overflow: visible;
+}
+
+.loader-gears__big,
+.loader-gears__small {
+  transform-box: view-box;
+}
+
+.loader-gears__big {
+  fill: #7c7c7c;
+  transform-origin: 22px 22px;
+  animation: loader-gears-cw var(--loader-gears-t) linear infinite;
+}
+
+/* Seven teeth to ten: a full turn takes 7/10 as long, the other way. */
+.loader-gears__small {
+  fill: #ededed;
+  transform-origin: 47.5px 22px;
+  animation: loader-gears-ccw calc(var(--loader-gears-t) * 0.7) linear infinite;
+}
+
+@keyframes loader-gears-cw {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-gears-ccw {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-gears__big,
+  .loader-gears__small {
+    animation: none;
+  }
+}

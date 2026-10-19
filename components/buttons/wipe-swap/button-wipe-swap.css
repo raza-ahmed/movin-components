@@ -1,0 +1,36 @@
+.btn-wipe-swap {
+  position: relative;
+  min-width: 9.5rem;
+  padding: 12px 32px;
+  overflow: hidden;
+  border: 1px solid rgba(246, 246, 246, 0.1);
+  border-radius: 8px;
+  background: #202020;
+  color: #f6f6f6;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-wipe-swap:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+/* The label slides out left as the second one slides in from the right. */
+.btn-wipe-swap__label,
+.btn-wipe-swap__swap { transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+.btn-wipe-swap__label { display: block; }
+.btn-wipe-swap__swap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a7a7a7;
+  transform: translateX(115%);
+}
+.btn-wipe-swap:hover .btn-wipe-swap__label { transform: translateX(-115%); }
+.btn-wipe-swap:hover .btn-wipe-swap__swap { transform: translateX(0); }
+@media (prefers-reduced-motion: reduce) {
+  .btn-wipe-swap__label,
+  .btn-wipe-swap__swap { transition: none; }
+}

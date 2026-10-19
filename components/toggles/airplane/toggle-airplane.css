@@ -1,0 +1,95 @@
+.toggle-airplane {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #ededed;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-airplane__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.toggle-airplane__track {
+  position: relative;
+  width: 64px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: #282828;
+  transition: background-color 0.4s;
+}
+
+.toggle-airplane__input:focus-visible + .toggle-airplane__track {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* The contrail draws out from the start of the track behind the plane. */
+.toggle-airplane__trail {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 26px;
+  height: 2px;
+  margin-top: -1px;
+  background: repeating-linear-gradient(90deg, #111111 0 4px, transparent 4px 7px);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.3s ease-in, opacity 0.3s;
+}
+
+.toggle-airplane__thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ededed;
+  transition: transform 0.55s cubic-bezier(0.55, 0, 0.3, 1), background-color 0.3s;
+}
+
+.toggle-airplane__thumb svg {
+  width: 15px;
+  height: 15px;
+  fill: #111111;
+  transform: rotate(90deg);
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.3, 1);
+}
+
+/* On: it runs to the end and noses up into a climb. */
+.toggle-airplane__input:checked + .toggle-airplane__track {
+  background: #c9c9c9;
+}
+
+.toggle-airplane__input:checked + .toggle-airplane__track .toggle-airplane__thumb {
+  background: #f6f6f6;
+  transform: translate(32px, -1px);
+}
+
+.toggle-airplane__input:checked + .toggle-airplane__track .toggle-airplane__thumb svg {
+  transform: rotate(68deg);
+  transition-delay: 0.2s;
+}
+
+.toggle-airplane__input:checked + .toggle-airplane__track .toggle-airplane__trail {
+  transform: scaleX(1);
+  transition: transform 0.45s cubic-bezier(0.55, 0, 0.3, 1) 0.1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle-airplane__track *,
+  .toggle-airplane__input:checked + .toggle-airplane__track * {
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}

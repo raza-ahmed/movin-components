@@ -1,0 +1,90 @@
+.cb-glitch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-glitch__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-glitch__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-glitch__input:focus-visible + .cb-glitch__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.cb-glitch__box {
+  overflow: hidden;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+.cb-glitch__check {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 100ms ease;
+}
+/* On every toggle: two offset colour layers jitter and a scanline drops through. */
+.cb-glitch__split {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.cb-glitch__split--light { background: rgba(246, 246, 246, 0.25); }
+.cb-glitch__split--dark { background: rgba(17, 17, 17, 0.4); }
+.cb-glitch__scan {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: rgba(246, 246, 246, 0.6);
+  opacity: 0;
+}
+.cb-glitch__input:checked + .cb-glitch__box {
+  border-color: #a7a7a7;
+  background: #202020;
+}
+.cb-glitch__input:checked + .cb-glitch__box .cb-glitch__check {
+  opacity: 1;
+  transition: opacity 180ms ease 160ms;
+}
+.cb-glitch--glitching .cb-glitch__split--light { animation: cb-glitch-light 300ms ease forwards; }
+.cb-glitch--glitching .cb-glitch__split--dark { animation: cb-glitch-dark 300ms ease forwards; }
+.cb-glitch--glitching .cb-glitch__scan { animation: cb-glitch-scan 280ms ease forwards; }
+@keyframes cb-glitch-light {
+  0% { opacity: 0.7; transform: translateX(3px); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(4px); }
+  100% { opacity: 0; transform: translateX(0); }
+}
+@keyframes cb-glitch-dark {
+  0% { opacity: 0.7; transform: translateX(-3px); }
+  25% { transform: translateX(2px); }
+  50% { transform: translateX(-4px); }
+  100% { opacity: 0; transform: translateX(0); }
+}
+@keyframes cb-glitch-scan {
+  0% { opacity: 0.6; transform: translateY(-100%); }
+  100% { opacity: 0; transform: translateY(1400%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-glitch__box,
+  .cb-glitch__box * { animation: none !important; transition: none !important; }
+}

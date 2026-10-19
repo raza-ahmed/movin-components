@@ -1,0 +1,105 @@
+.radio-tab-bar {
+  display: inline-flex;
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid #3a3a3a;
+  border-radius: 9999px;
+  background: #202020;
+}
+
+.radio-tab-bar__option {
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-tab-bar__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+/* Icon plus a label column that grows from 0fr to 1fr when chosen. */
+.radio-tab-bar__tab {
+  display: grid;
+  grid-template-columns: auto 0fr;
+  align-items: center;
+  height: 40px;
+  padding: 0 11px;
+  border-radius: 9999px;
+  color: #7c7c7c;
+  transition: grid-template-columns 0.4s cubic-bezier(0.3, 1.2, 0.5, 1), background-color 0.3s, color 0.3s;
+}
+
+.radio-tab-bar__option:hover .radio-tab-bar__tab {
+  color: #c9c9c9;
+}
+
+.radio-tab-bar__icon {
+  width: 20px;
+  height: 20px;
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: fill 0.25s;
+}
+
+.radio-tab-bar__label {
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.radio-tab-bar__label span {
+  display: block;
+  padding-left: 8px;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s, transform 0.3s;
+}
+
+.radio-tab-bar__input:checked + .radio-tab-bar__tab {
+  grid-template-columns: auto 1fr;
+  background: #ededed;
+  color: #111111;
+}
+
+.radio-tab-bar__input:checked + .radio-tab-bar__tab .radio-tab-bar__icon {
+  fill: currentColor;
+  animation: radio-tab-bar-bounce 0.45s cubic-bezier(0.3, 1.8, 0.5, 1);
+}
+
+.radio-tab-bar__input:checked + .radio-tab-bar__tab .radio-tab-bar__label span {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.25s 0.1s, transform 0.35s 0.1s;
+}
+
+@keyframes radio-tab-bar-bounce {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.radio-tab-bar__input:focus-visible + .radio-tab-bar__tab {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-tab-bar__tab,
+  .radio-tab-bar__label span,
+  .radio-tab-bar__icon {
+    transition: none !important;
+  }
+  .radio-tab-bar__input:checked + .radio-tab-bar__tab .radio-tab-bar__icon {
+    animation: none;
+  }
+}

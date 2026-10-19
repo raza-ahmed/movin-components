@@ -1,0 +1,45 @@
+.btn-morph-shape {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 56px;
+  overflow: hidden;
+  border: none;
+  border-radius: 28px;
+  background: linear-gradient(to bottom right, #4d4d4d, #7c7c7c);
+  color: #f6f6f6;
+  font: inherit;
+  cursor: pointer;
+  transition: width 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-morph-shape:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+.btn-morph-shape__label,
+.btn-morph-shape__icon { position: absolute; }
+.btn-morph-shape__label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+.btn-morph-shape__icon {
+  font-size: 24px;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0.4) rotate(-90deg);
+  transition: opacity 250ms ease 150ms, transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1) 150ms;
+}
+/* The pill shrinks into a circle and swaps its label for an icon. */
+.btn-morph-shape:hover { width: 56px; }
+.btn-morph-shape:hover .btn-morph-shape__label { opacity: 0; transform: scale(0.7); }
+.btn-morph-shape:hover .btn-morph-shape__icon { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .btn-morph-shape,
+  .btn-morph-shape__label,
+  .btn-morph-shape__icon { transition: none; }
+}

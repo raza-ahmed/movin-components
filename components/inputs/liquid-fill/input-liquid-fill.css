@@ -1,0 +1,37 @@
+.field-liquid-fill {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Focus pours liquid into the field: it rises to a third full and keeps
+   rippling (the script draws the wave as a clip-path). */
+.field-liquid-fill__liquid {
+  position: absolute;
+  inset: 1px;
+  border-radius: 7px;
+  background: linear-gradient(to top, rgba(167, 167, 167, 0.3), rgba(167, 167, 167, 0.1));
+  pointer-events: none;
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+.field-liquid-fill__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(246, 246, 246, 0.15);
+  border-radius: 8px;
+  outline: none;
+  background: transparent;
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  position: relative;
+  transition: border-color 200ms;
+}
+.field-liquid-fill__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+.field-liquid-fill__input:focus { border-color: rgba(167, 167, 167, 0.5); }
+@media (prefers-reduced-motion: reduce) {
+  .field-liquid-fill__input { transition: none; }
+}

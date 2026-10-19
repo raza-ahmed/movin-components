@@ -1,0 +1,42 @@
+.field-spotlight {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* While focused, a soft light follows the pointer along the field. */
+.field-spotlight { --field-spotlight-x: 50%; }
+.field-spotlight__light {
+  position: absolute;
+  inset: 1px;
+  border-radius: 7px;
+  background: radial-gradient(ellipse 60px 100% at var(--field-spotlight-x) 50%, rgba(167, 167, 167, 0.15) 0%, transparent 80%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms;
+}
+.field-spotlight:focus-within .field-spotlight__light { opacity: 1; }
+
+.field-spotlight__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(246, 246, 246, 0.12);
+  border-radius: 8px;
+  outline: none;
+  background: rgba(246, 246, 246, 0.04);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  transition: border-color 200ms;
+}
+.field-spotlight__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+.field-spotlight__input:focus { border-color: rgba(167, 167, 167, 0.4); }
+
+@media (prefers-reduced-motion: reduce) {
+  .field-spotlight,
+  .field-spotlight *,
+  .field-spotlight *::before,
+  .field-spotlight *::after { animation: none !important; transition: none !important; }
+}

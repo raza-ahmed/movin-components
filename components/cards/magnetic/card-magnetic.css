@@ -1,0 +1,76 @@
+/* The script writes the cursor offset into --card-magnetic-x / -y; each layer
+   moves by its own share of it, so the card reads as depth. */
+.card-magnetic {
+  --card-magnetic-x: 0px;
+  --card-magnetic-y: 0px;
+  --card-magnetic-spring: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  width: 160px;
+  overflow: hidden;
+  border: 1px solid rgba(246, 246, 246, 0.1);
+  border-radius: 12px;
+  background: rgba(246, 246, 246, 0.05);
+  cursor: pointer;
+  transition: border-color 300ms ease;
+}
+.card-magnetic:hover { border-color: rgba(246, 246, 246, 0.2); }
+.card-magnetic__media {
+  position: relative;
+  height: 64px;
+  overflow: hidden;
+}
+/* Backdrop drifts at 30%, scaled up so its edges never show. */
+.card-magnetic__backdrop {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #282828, #3a3a3a);
+  transform: translate(calc(var(--card-magnetic-x) * 0.3), calc(var(--card-magnetic-y) * 0.3));
+  transition: var(--card-magnetic-spring);
+}
+/* The orb follows the cursor the most. */
+.card-magnetic__orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ededed, #7c7c7c);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  transform: translate(var(--card-magnetic-x), var(--card-magnetic-y));
+  transition: var(--card-magnetic-spring);
+}
+/* Text moves at 15%. */
+.card-magnetic__body {
+  padding: 10px 12px 12px;
+  transform: translate(calc(var(--card-magnetic-x) * 0.15), calc(var(--card-magnetic-y) * 0.15));
+  transition: var(--card-magnetic-spring);
+}
+/* While the cursor is over it, layers track it tightly; on leave they spring home. */
+.card-magnetic:hover .card-magnetic__backdrop {
+  transform: translate(calc(var(--card-magnetic-x) * 0.3), calc(var(--card-magnetic-y) * 0.3)) scale(1.12);
+  transition: transform 80ms linear;
+}
+.card-magnetic:hover .card-magnetic__orb {
+  transform: translate(var(--card-magnetic-x), var(--card-magnetic-y)) scale(1.15);
+  transition: transform 60ms linear;
+}
+.card-magnetic:hover .card-magnetic__body { transition: transform 100ms linear; }
+.card-magnetic__title {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f6f6f6;
+}
+.card-magnetic__text {
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(246, 246, 246, 0.55);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-magnetic__backdrop,
+  .card-magnetic__orb,
+  .card-magnetic__body,
+  .card-magnetic:hover .card-magnetic__backdrop,
+  .card-magnetic:hover .card-magnetic__orb { transform: none; transition: none; }
+}

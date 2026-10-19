@@ -1,0 +1,53 @@
+.field-split {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.field-split {
+  overflow: hidden;
+  border: 1px solid rgba(246, 246, 246, 0.15);
+  border-radius: 8px;
+  background: #282828;
+  transition: border-color 300ms;
+}
+.field-split:focus-within { border-color: #a7a7a7; }
+/* Two doors cover the field and slide apart when it takes focus. */
+.field-split__door {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 50%;
+  background: #202020;
+  pointer-events: none;
+  transition: transform 380ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+.field-split__door--left { left: 0; }
+.field-split__door--right { right: 0; }
+.field-split:focus-within .field-split__door--left { transform: translateX(-100%); }
+.field-split:focus-within .field-split__door--right { transform: translateX(100%); }
+
+.field-split__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background: transparent;
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  position: relative;
+  z-index: 2;
+  border: none;
+}
+.field-split__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+@media (prefers-reduced-motion: reduce) {
+  .field-split,
+  .field-split *,
+  .field-split *::before,
+  .field-split *::after { animation: none !important; transition: none !important; }
+}

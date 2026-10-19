@@ -1,0 +1,136 @@
+.field-odometer {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #ededed;
+  font-size: 13px;
+}
+
+.field-odometer__label {
+  color: #a7a7a7;
+}
+
+.field-odometer__control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid #3a3a3a;
+  border-radius: 999px;
+  background: #202020;
+}
+
+.field-odometer__step {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #282828;
+  color: #ededed;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, scale 0.15s;
+}
+
+.field-odometer__step:hover {
+  background: #3a3a3a;
+}
+
+.field-odometer__step:active {
+  scale: 0.9;
+}
+
+.field-odometer__step[aria-disabled='true'] {
+  background: #202020;
+  color: #4d4d4d;
+  cursor: default;
+}
+
+.field-odometer__step:focus-visible,
+.field-odometer__value:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.field-odometer__step svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+/* Each wheel is a one-figure window over a strip of 0-9. */
+.field-odometer__value {
+  display: flex;
+  justify-content: center;
+  min-width: 64px;
+  border-radius: 8px;
+  font-size: 34px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: ew-resize;
+  touch-action: none;
+  user-select: none;
+}
+
+.field-odometer__digit {
+  --field-odometer-d: 0;
+  display: block;
+  width: 0.62em;
+  height: 1.2em;
+  overflow: hidden;
+  mask-image: linear-gradient(transparent, rgba(0, 0, 0, 1) 22%, rgba(0, 0, 0, 1) 78%, transparent);
+  transition: width 0.35s cubic-bezier(0.5, 0, 0.2, 1), opacity 0.25s;
+}
+
+.field-odometer__strip {
+  display: block;
+  text-align: center;
+  transform: translateY(calc(var(--field-odometer-d) * -1.2em));
+  transition: transform 0.55s cubic-bezier(0.3, 1.25, 0.5, 1);
+}
+
+.field-odometer__strip > span {
+  display: block;
+  height: 1.2em;
+}
+
+.field-odometer__digit--tens .field-odometer__strip {
+  transition-delay: 0.06s;
+}
+
+/* Below ten the tens wheel folds away. */
+.field-odometer--single .field-odometer__digit--tens {
+  width: 0;
+  opacity: 0;
+}
+
+.field-odometer--limit .field-odometer__value {
+  animation: field-odometer-bump 0.3s ease-out;
+}
+
+@keyframes field-odometer-bump {
+  30% {
+    transform: translateX(var(--field-odometer-dir, 4px));
+  }
+}
+
+.field-odometer__hint {
+  color: #7c7c7c;
+  font-size: 11px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-odometer *,
+  .field-odometer--limit .field-odometer__value {
+    transition-duration: 0s !important;
+    animation: none !important;
+  }
+}

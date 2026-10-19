@@ -1,0 +1,35 @@
+.toggle-glow {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 52px;
+  height: 30px;
+  padding: 4px;
+  border: none;
+  border-radius: 9999px;
+  background: rgba(246, 246, 246, 0.15);
+  box-shadow: 0 0 0 0 transparent;
+  cursor: pointer;
+  transition: background 300ms ease-in-out, box-shadow 300ms ease-in-out;
+}
+.toggle-glow:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+.toggle-glow__knob {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f6f6f6;
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.toggle-glow[aria-checked="true"] {
+  background: #a7a7a7;
+  box-shadow: 0 0 0 4px rgba(167, 167, 167, 0.25), 0 0 16px rgba(167, 167, 167, 0.4);
+}
+.toggle-glow[aria-checked="true"] .toggle-glow__knob { transform: translateX(22px); }
+@media (prefers-reduced-motion: reduce) {
+  .toggle-glow,
+  .toggle-glow__knob { transition: none; }
+}

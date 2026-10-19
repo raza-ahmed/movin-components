@@ -1,0 +1,62 @@
+.cb-retro-led {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-retro-led__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-retro-led__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-retro-led__input:focus-visible + .cb-retro-led__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* A 5x5 LED matrix. Checking lights the dots in the order of a tick being
+   drawn (--cb-retro-led-i is each dot's place in it); unchecking reverses it. */
+.cb-retro-led__box {
+  display: grid;
+  align-items: stretch;
+  justify-content: stretch;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5px;
+  padding: 3px;
+  border-color: rgba(246, 246, 246, 0.2);
+  border-radius: 5px;
+  background: #111111;
+  transition: border-color 200ms ease;
+}
+.cb-retro-led__box > span {
+  border-radius: 50%;
+  background: rgba(246, 246, 246, 0.08);
+  transition: background 60ms ease calc((24 - var(--cb-retro-led-i)) * 16ms);
+}
+.cb-retro-led__input:checked + .cb-retro-led__box { border-color: #a7a7a7; }
+.cb-retro-led__input:checked + .cb-retro-led__box > span {
+  background: #c9c9c9;
+  box-shadow: 0 0 3px rgba(201, 201, 201, 0.6);
+  transition: background 80ms ease calc(var(--cb-retro-led-i) * 22ms), box-shadow 80ms ease calc(var(--cb-retro-led-i) * 22ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-retro-led__box,
+  .cb-retro-led__box * { animation: none !important; transition: none !important; }
+}

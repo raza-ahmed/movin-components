@@ -1,0 +1,182 @@
+"use client";
+
+import { useEffect, useRef } from 'react';
+
+const css = `
+  .toggle-cord {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #ededed;
+    font-size: 15px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .toggle-cord__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+  }
+
+  .toggle-cord__lamp {
+    position: relative;
+    display: block;
+    width: 76px;
+    height: 108px;
+    border-radius: 8px;
+  }
+
+  .toggle-cord__input:focus-visible + .toggle-cord__lamp {
+    outline: 2px solid #a7a7a7;
+    outline-offset: 2px;
+  }
+
+  .toggle-cord__wire {
+    position: absolute;
+    top: 0;
+    left: 31px;
+    width: 2px;
+    height: 18px;
+    background: #4d4d4d;
+  }
+
+  .toggle-cord__shade {
+    position: absolute;
+    top: 16px;
+    left: 8px;
+    width: 48px;
+    height: 22px;
+    background: linear-gradient(90deg, #3a3a3a, #7c7c7c 45%, #4d4d4d);
+    clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);
+  }
+
+  .toggle-cord__bulb {
+    position: absolute;
+    top: 30px;
+    left: 23px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #3a3a3a;
+    transition: background-color 0.15s 0.12s, box-shadow 0.3s 0.12s;
+  }
+
+  .toggle-cord__cone {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    width: 64px;
+    height: 66px;
+    background: linear-gradient(rgba(237, 237, 237, 0.3), rgba(237, 237, 237, 0));
+    clip-path: polygon(38% 0, 62% 0, 100% 100%, 0 100%);
+    opacity: 0;
+    transition: opacity 0.25s 0.12s;
+  }
+
+  /* The chain starts up under the shade, so pulling it shows more of it. */
+  .toggle-cord__chain {
+    position: absolute;
+    top: 28px;
+    left: 40px;
+    width: 8px;
+    height: 54px;
+    background: linear-gradient(#7c7c7c, #7c7c7c) 50% 0 / 2px 48px no-repeat;
+  }
+
+  .toggle-cord__chain::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 8px;
+    height: 10px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #a7a7a7, #f6f6f6 50%, #a7a7a7);
+  }
+
+  .toggle-cord--pulled .toggle-cord__chain {
+    animation: toggle-cord-pull 0.7s cubic-bezier(0.3, 0, 0.3, 1);
+  }
+
+  @keyframes toggle-cord-pull {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(14px);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+    72% {
+      transform: translateY(2px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .toggle-cord__input:checked + .toggle-cord__lamp .toggle-cord__bulb {
+    background: #f6f6f6;
+    box-shadow: 0 0 14px 4px rgba(246, 246, 246, 0.55);
+  }
+
+  .toggle-cord__input:checked + .toggle-cord__lamp .toggle-cord__cone {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .toggle-cord__bulb,
+    .toggle-cord__cone {
+      transition: none;
+    }
+    .toggle-cord--pulled .toggle-cord__chain {
+      animation: none;
+    }
+  }
+`;
+
+export function CordToggle() {
+  const ref = useRef<HTMLLabelElement>(null);
+  useEffect(() => (ref.current ? initCord(ref.current) : undefined), []);
+  return (
+    <>
+      <style>{css}</style>
+      <label className="toggle-cord" ref={ref}>
+        <input className="toggle-cord__input" type="checkbox" role="switch" />
+        <span className="toggle-cord__lamp" aria-hidden="true">
+          <span className="toggle-cord__cone" />
+          <span className="toggle-cord__chain" />
+          <span className="toggle-cord__wire" />
+          <span className="toggle-cord__bulb" />
+          <span className="toggle-cord__shade" />
+        </span>
+        <span className="toggle-cord__label">Lamp</span>
+      </label>
+    </>
+  );
+}
+
+// The tug plays on every switch, on or off, and never on page load.
+function initCord(root: HTMLElement): (() => void) | undefined {
+  const input = root.querySelector<HTMLInputElement>('.toggle-cord__input');
+  if (!input) return;
+  let timer = 0;
+
+  const change = () => {
+    clearTimeout(timer);
+    root.classList.remove('toggle-cord--pulled');
+    void root.offsetWidth;
+    root.classList.add('toggle-cord--pulled');
+    timer = window.setTimeout(() => root.classList.remove('toggle-cord--pulled'), 750);
+  };
+
+  input.addEventListener('change', change);
+  return () => {
+    clearTimeout(timer);
+    input.removeEventListener('change', change);
+  };
+}

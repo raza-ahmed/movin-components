@@ -1,0 +1,159 @@
+"use client";
+
+import { useEffect, useRef } from 'react';
+
+const css = `
+  .btn-loupe {
+    --btn-loupe-x: 0px;
+    --btn-loupe-y: 0px;
+    position: relative;
+    display: inline-block;
+    width: 224px;
+    height: 64px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 14px;
+    background: #ededed;
+    color: #111111;
+    font: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-loupe:focus-visible {
+    outline: 2px solid #ededed;
+    outline-offset: 4px;
+  }
+
+  .btn-loupe__content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    white-space: nowrap;
+  }
+
+  .btn-loupe__label {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .btn-loupe__fine {
+    color: #4d4d4d;
+    font-size: 5px;
+    letter-spacing: 0.02em;
+  }
+
+  /* The glass: centred on the cursor, holding a 2.5x copy of the content
+     shifted so the point under the cursor sits in its middle. */
+  .btn-loupe__lens {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 76px;
+    height: 76px;
+    margin: -38px 0 0 -38px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #f6f6f6;
+    box-shadow: inset 0 0 0 1.5px rgba(17, 17, 17, 0.55), 0 8px 18px rgba(17, 17, 17, 0.35);
+    pointer-events: none;
+    translate: var(--btn-loupe-x) var(--btn-loupe-y);
+    scale: 0;
+    transition: scale 0.35s cubic-bezier(0.3, 1.5, 0.5, 1);
+  }
+
+  .btn-loupe__lens::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 32% 26%, rgba(246, 246, 246, 0.7), transparent 38%);
+    box-shadow: inset 0 -6px 12px rgba(17, 17, 17, 0.12);
+  }
+
+  .btn-loupe__zoom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--btn-loupe-w, 224px);
+    height: var(--btn-loupe-h, 64px);
+    transform-origin: 0 0;
+    transform: translate(calc(38px - 2.5 * var(--btn-loupe-x)), calc(38px - 2.5 * var(--btn-loupe-y))) scale(2.5);
+  }
+
+  .btn-loupe--live:hover .btn-loupe__lens {
+    scale: 1;
+  }
+
+  @media (hover: hover) {
+    .btn-loupe--live:hover {
+      cursor: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-loupe__lens {
+      transition: none;
+    }
+  }
+`;
+
+export function LoupeButton() {
+  const ref = useRef<HTMLButtonElement>(null);
+  useEffect(() => (ref.current ? initLoupe(ref.current) : undefined), []);
+  return (
+    <>
+      <style>{css}</style>
+      <button ref={ref} className="btn-loupe" type="button">
+        <span className="btn-loupe__content">
+          <span className="btn-loupe__label">Read the fine print</span>
+          <span className="btn-loupe__fine">No catch. Free forever. Cancel any time. Really, we checked.</span>
+        </span>
+        <span className="btn-loupe__lens" aria-hidden="true">
+          <span className="btn-loupe__zoom" />
+        </span>
+      </button>
+    </>
+  );
+}
+
+// The lens holds a 2.5x copy of the content, shifted by CSS so the point
+// under the cursor sits in its middle; the script only feeds it the position.
+function initLoupe(root: HTMLElement): (() => void) | undefined {
+  const content = root.querySelector<HTMLElement>('.btn-loupe__content');
+  const zoom = root.querySelector<HTMLElement>('.btn-loupe__zoom');
+  if (!content || !zoom) return;
+  const copy = content.cloneNode(true) as HTMLElement;
+  zoom.appendChild(copy);
+
+  const measure = () => {
+    root.style.setProperty('--btn-loupe-w', `${root.clientWidth}px`);
+    root.style.setProperty('--btn-loupe-h', `${root.clientHeight}px`);
+  };
+
+  const move = (e: PointerEvent) => {
+    const box = root.getBoundingClientRect();
+    root.style.setProperty('--btn-loupe-x', `${(e.clientX - box.left - root.clientLeft).toFixed(1)}px`);
+    root.style.setProperty('--btn-loupe-y', `${(e.clientY - box.top - root.clientTop).toFixed(1)}px`);
+  };
+
+  const ro = new ResizeObserver(measure);
+  ro.observe(root);
+  measure();
+  root.addEventListener('pointermove', move);
+  root.addEventListener('pointerenter', move);
+  root.classList.add('btn-loupe--live');
+
+  return () => {
+    ro.disconnect();
+    root.removeEventListener('pointermove', move);
+    root.removeEventListener('pointerenter', move);
+    root.classList.remove('btn-loupe--live');
+    copy.remove();
+  };
+}

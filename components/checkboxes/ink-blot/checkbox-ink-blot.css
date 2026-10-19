@@ -1,0 +1,66 @@
+.cb-ink-blot {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-ink-blot__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-ink-blot__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-ink-blot__input:focus-visible + .cb-ink-blot__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* The fill spreads like a blot of ink, wobbling before it settles square. */
+.cb-ink-blot__box { transition: border-color 200ms ease; }
+.cb-ink-blot__check {
+  opacity: 0;
+  transition: opacity 100ms ease;
+}
+.cb-ink-blot__input:checked + .cb-ink-blot__box {
+  border-color: #4d4d4d;
+  background: #4d4d4d;
+  animation: cb-ink-blot-in 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.cb-ink-blot__input:checked + .cb-ink-blot__box .cb-ink-blot__check {
+  opacity: 1;
+  transition: opacity 160ms ease 340ms;
+}
+.cb-ink-blot--touched .cb-ink-blot__input:not(:checked) + .cb-ink-blot__box { animation: cb-ink-blot-out 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@keyframes cb-ink-blot-in {
+  0% { border-radius: 7px; background: transparent; }
+  20% { border-radius: 40% 60% 60% 40% / 30% 70% 70% 30%; background: #4d4d4d; }
+  45% { border-radius: 55% 45% 45% 55% / 60% 40% 40% 60%; }
+  65% { border-radius: 48% 52% 50% 50% / 50% 50% 50% 50%; }
+  100% { border-radius: 7px; background: #4d4d4d; }
+}
+@keyframes cb-ink-blot-out {
+  0% { border-radius: 7px; background: #4d4d4d; }
+  25% { border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%; background: #4d4d4d; }
+  55% { border-radius: 30% 60% 40% 70% / 40% 70% 30% 60%; }
+  100% { border-radius: 7px; background: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-ink-blot__box,
+  .cb-ink-blot__box * { animation: none !important; transition: none !important; }
+}

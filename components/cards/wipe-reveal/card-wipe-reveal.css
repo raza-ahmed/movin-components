@@ -1,0 +1,77 @@
+.card-wipe-reveal {
+  position: relative;
+  width: 160px;
+  overflow: hidden;
+  border: 1px solid rgba(246, 246, 246, 0.09);
+  border-radius: 12px;
+  background: #111111;
+  cursor: pointer;
+}
+.card-wipe-reveal__media {
+  position: relative;
+  height: 64px;
+  background: linear-gradient(135deg, #3a3a3a, #7c7c7c);
+}
+.card-wipe-reveal__icon,
+.card-wipe-reveal__dots {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-wipe-reveal__icon {
+  font-size: 22px;
+  color: rgba(246, 246, 246, 0.9);
+  transition: opacity 250ms ease;
+}
+.card-wipe-reveal__dots {
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 300ms ease 100ms;
+}
+.card-wipe-reveal__dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7c7c7c;
+  transform: scale(0);
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.card-wipe-reveal__dots i:nth-child(2) { background: #c9c9c9; transition-delay: 60ms; }
+.card-wipe-reveal__dots i:nth-child(3) { transition-delay: 120ms; }
+/* The real content wipes in from the top; the placeholder fades out over it. */
+.card-wipe-reveal__revealed {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 380ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+.card-wipe-reveal__placeholder {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+.card-wipe-reveal__placeholder .card-wipe-reveal__title { color: rgba(246, 246, 246, 0.55); }
+.card-wipe-reveal:hover .card-wipe-reveal__icon,
+.card-wipe-reveal:hover .card-wipe-reveal__placeholder { opacity: 0; }
+.card-wipe-reveal:hover .card-wipe-reveal__dots { opacity: 1; }
+.card-wipe-reveal:hover .card-wipe-reveal__dots i { transform: scale(1); }
+.card-wipe-reveal:hover .card-wipe-reveal__revealed { clip-path: inset(0 0 0 0); }
+.card-wipe-reveal__body { padding: 10px 12px 12px; }
+.card-wipe-reveal__title {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f6f6f6;
+}
+.card-wipe-reveal__text {
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(246, 246, 246, 0.55);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-wipe-reveal *,
+  .card-wipe-reveal__dots i { transition: none; }
+}

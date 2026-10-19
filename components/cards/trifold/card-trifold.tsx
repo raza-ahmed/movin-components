@@ -1,0 +1,186 @@
+"use client";
+
+const css = `
+  .card-trifold {
+    position: relative;
+    display: flex;
+    width: 276px;
+    height: 140px;
+    outline: none;
+    perspective: 900px;
+    transform-style: preserve-3d;
+  }
+
+  .card-trifold__panel {
+    position: relative;
+    width: 92px;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.45, 0, 0.2, 1);
+  }
+
+  /* Folded: the left panel lies on the middle, the right panel on top of both. */
+  .card-trifold__panel--left {
+    transform: translateZ(1px) rotateY(180deg);
+    transform-origin: 100% 50%;
+    transition-delay: 0s;
+  }
+
+  .card-trifold__panel--right {
+    transform: translateZ(2px) rotateY(-180deg);
+    transform-origin: 0 50%;
+    transition-delay: 0.25s;
+  }
+
+  .card-trifold:hover .card-trifold__panel--left,
+  .card-trifold:focus-visible .card-trifold__panel--left {
+    transform: translateZ(0) rotateY(0deg);
+    transition-delay: 0.3s;
+  }
+
+  .card-trifold:hover .card-trifold__panel--right,
+  .card-trifold:focus-visible .card-trifold__panel--right {
+    transform: translateZ(0) rotateY(0deg);
+    transition-delay: 0s;
+  }
+
+  .card-trifold__face {
+    position: absolute;
+    inset: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    background: linear-gradient(180deg, #ededed, #c9c9c9);
+    backface-visibility: hidden;
+    transition-delay: inherit; /* so the shading below keeps time with its panel */
+  }
+
+  /* A shadow that deepens as a panel turns away, from the panel's own state. */
+  .card-trifold__face::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #111111;
+    opacity: 0;
+    transition: opacity 0.7s cubic-bezier(0.45, 0, 0.2, 1);
+    transition-delay: inherit;
+    pointer-events: none;
+  }
+
+  .card-trifold__panel--left .card-trifold__face:not(.card-trifold__face--back)::after,
+  .card-trifold__panel--right .card-trifold__face:not(.card-trifold__face--back)::after {
+    opacity: 0.5;
+  }
+
+  .card-trifold:hover .card-trifold__face::after,
+  .card-trifold:focus-visible .card-trifold__face::after {
+    opacity: 0;
+  }
+
+  .card-trifold__panel--left .card-trifold__face {
+    border-radius: 10px 0 0 10px;
+  }
+
+  .card-trifold__panel--middle .card-trifold__face {
+    box-shadow: inset 1px 0 0 rgba(17, 17, 17, 0.12), inset -1px 0 0 rgba(17, 17, 17, 0.12);
+  }
+
+  .card-trifold__panel--right .card-trifold__face {
+    border-radius: 0 10px 10px 0;
+  }
+
+  .card-trifold__face--back {
+    background: linear-gradient(180deg, #c9c9c9, #a7a7a7);
+    transform: rotateY(180deg);
+  }
+
+  /* Backs are mirrored: their outer corners are on the other side. */
+  .card-trifold__panel--left .card-trifold__face--back {
+    border-radius: 0 10px 10px 0;
+  }
+
+  .card-trifold__panel--right .card-trifold__face--cover {
+    justify-content: flex-end;
+    border-radius: 10px 0 0 10px;
+    background: linear-gradient(160deg, #3a3a3a, #111111);
+  }
+
+  .card-trifold__num {
+    color: #7c7c7c;
+    font: 600 10px ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  }
+
+  .card-trifold__title {
+    margin-top: auto;
+    color: #111111;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .card-trifold__text {
+    margin-top: 2px;
+    color: #4d4d4d;
+    font-size: 10px;
+  }
+
+  .card-trifold__cover-title {
+    color: #ededed;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .card-trifold__face--cover .card-trifold__text {
+    color: #a7a7a7;
+  }
+
+  .card-trifold:focus-visible .card-trifold__panel--middle {
+    outline: 2px solid #ededed;
+    outline-offset: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card-trifold__panel,
+    .card-trifold__face::after {
+      transition: none !important;
+    }
+  }
+`;
+// Pure CSS: folded, the left panel lies on the middle and the right panel on
+// top, showing the cover on its back. Hover opens right then left, each panel
+// shading as it turns; leaving folds left then right.
+export function TrifoldCard() {
+  return (
+    <>
+      <style>{css}</style>
+      <div className="card-trifold" tabIndex={0}>
+        <div className="card-trifold__panel card-trifold__panel--left">
+          <div className="card-trifold__face">
+            <span className="card-trifold__num">01</span>
+            <span className="card-trifold__title">Plan</span>
+            <span className="card-trifold__text">Sketch the flow</span>
+          </div>
+          <div className="card-trifold__face card-trifold__face--back" aria-hidden="true" />
+        </div>
+        <div className="card-trifold__panel card-trifold__panel--middle">
+          <div className="card-trifold__face">
+            <span className="card-trifold__num">02</span>
+            <span className="card-trifold__title">Build</span>
+            <span className="card-trifold__text">Make it move</span>
+          </div>
+        </div>
+        <div className="card-trifold__panel card-trifold__panel--right">
+          <div className="card-trifold__face">
+            <span className="card-trifold__num">03</span>
+            <span className="card-trifold__title">Ship</span>
+            <span className="card-trifold__text">Watch it land</span>
+          </div>
+          <div className="card-trifold__face card-trifold__face--back card-trifold__face--cover">
+            <span className="card-trifold__cover-title">Field Guide</span>
+            <span className="card-trifold__text">Hover to open</span>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}

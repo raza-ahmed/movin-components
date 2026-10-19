@@ -1,0 +1,63 @@
+.cb-raised {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-raised__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-raised__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-raised__input:focus-visible + .cb-raised__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* Unchecked it sits pressed into the page; checked it rises as a lit, domed key. */
+.cb-raised__box {
+  border-color: rgba(246, 246, 246, 0.18);
+  border-radius: 8px;
+  background: #111111;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: background 200ms ease, box-shadow 250ms ease, border-color 150ms ease, transform 200ms ease;
+}
+.cb-raised__check {
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 150ms ease-in, opacity 120ms ease;
+}
+.cb-raised__input:checked + .cb-raised__box {
+  border-color: transparent;
+  background: radial-gradient(circle at 42% 32%, #a7a7a7 0%, #7c7c7c 45%, #3a3a3a 100%);
+  box-shadow: 0 -1px 0 1px rgba(167, 167, 167, 0.5), 0 0 0 3px rgba(124, 124, 124, 0.3), 0 8px 20px rgba(58, 58, 58, 0.65), 0 3px 6px rgba(0, 0, 0, 0.4), inset 0 1px 3px rgba(246, 246, 246, 0.35), inset 0 -2px 4px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+  transition: background 220ms ease, box-shadow 280ms ease, border-color 180ms ease, transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.cb-raised__input:checked + .cb-raised__box .cb-raised__check {
+  opacity: 1;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+  transform: scale(1);
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1) 80ms, opacity 200ms ease 80ms, filter 200ms ease 80ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-raised__box,
+  .cb-raised__box * { animation: none !important; transition: none !important; }
+}

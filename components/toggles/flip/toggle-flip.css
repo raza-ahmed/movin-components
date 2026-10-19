@@ -1,0 +1,48 @@
+.toggle-flip {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 52px;
+  height: 30px;
+  padding: 4px;
+  border: none;
+  border-radius: 9999px;
+  background: rgba(246, 246, 246, 0.12);
+  cursor: pointer;
+  transition: background 250ms ease;
+}
+.toggle-flip:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+.toggle-flip__thumb {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(246, 246, 246, 0.7);
+  transform-origin: center;
+}
+.toggle-flip[aria-checked="true"] { background: #c9c9c9; }
+.toggle-flip[aria-checked="true"] .toggle-flip__thumb {
+  background: #f6f6f6;
+  transform: translateX(22px);
+}
+/* After the first click: the thumb folds edge-on, jumps, and unfolds. */
+.toggle-flip--touched .toggle-flip__thumb { animation: toggle-flip-left 320ms ease-in-out forwards; }
+.toggle-flip--touched[aria-checked="true"] .toggle-flip__thumb { animation: toggle-flip-right 320ms ease-in-out forwards; }
+@keyframes toggle-flip-right {
+  0%   { transform: translateX(0) scaleX(1); }
+  35%  { transform: translateX(11px) scaleX(0.05); }
+  36%  { transform: translateX(22px) scaleX(0.05); }
+  100% { transform: translateX(22px) scaleX(1); }
+}
+@keyframes toggle-flip-left {
+  0%   { transform: translateX(22px) scaleX(1); }
+  35%  { transform: translateX(11px) scaleX(0.05); }
+  36%  { transform: translateX(0) scaleX(0.05); }
+  100% { transform: translateX(0) scaleX(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .toggle-flip .toggle-flip__thumb { animation-duration: 0ms !important; }
+}

@@ -1,0 +1,66 @@
+.cb-ripple-fill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-ripple-fill__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-ripple-fill__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-ripple-fill__input:focus-visible + .cb-ripple-fill__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.cb-ripple-fill__box {
+  overflow: hidden;
+  transition: border-color 250ms ease;
+}
+/* The fill spreads out from the centre as a growing circle. */
+.cb-ripple-fill__fill {
+  position: absolute;
+  inset: 0;
+  background: #7c7c7c;
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 280ms cubic-bezier(0.55, 0, 1, 0.45);
+}
+.cb-ripple-fill__check {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+.cb-ripple-fill__input:checked + .cb-ripple-fill__box { border-color: #7c7c7c; }
+.cb-ripple-fill__input:checked + .cb-ripple-fill__box .cb-ripple-fill__fill {
+  clip-path: circle(75% at 50% 50%);
+  transition: clip-path 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cb-ripple-fill__input:checked + .cb-ripple-fill__box .cb-ripple-fill__check {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 180ms ease 200ms, transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1) 200ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-ripple-fill__box,
+  .cb-ripple-fill__box * { animation: none !important; transition: none !important; }
+}

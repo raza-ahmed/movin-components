@@ -1,0 +1,81 @@
+/* Real radios stay in the page (arrow keys + screen readers), just invisible. */
+.radio-magnetic__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.radio-magnetic__option { cursor: pointer; }
+.radio-magnetic__option:has(.radio-magnetic__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* A glowing plate snaps to the chosen row and overshoots, like a magnet. */
+.radio-magnetic {
+  position: relative;
+  width: 208px;
+}
+.radio-magnetic__pill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
+  border: 1px solid rgba(201, 201, 201, 0.4);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(201, 201, 201, 0.15), rgba(167, 167, 167, 0.12));
+  box-shadow: 0 0 16px rgba(201, 201, 201, 0.2), 0 0 4px rgba(201, 201, 201, 0.4);
+  opacity: 0;
+}
+.radio-magnetic--ready .radio-magnetic__pill { transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+.radio-magnetic__option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 46px;
+  padding-left: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.radio-magnetic__ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border: 2px solid rgba(246, 246, 246, 0.2);
+  border-radius: 50%;
+  transition: all 200ms;
+}
+.radio-magnetic__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c9c9c9;
+  transform: scale(0);
+  transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.radio-magnetic__option:has(.radio-magnetic__input:checked) .radio-magnetic__ring { border-color: #c9c9c9; box-shadow: 0 0 8px rgba(201, 201, 201, 0.6); }
+.radio-magnetic__option:has(.radio-magnetic__input:checked) .radio-magnetic__dot { transform: scale(1); }
+
+.radio-magnetic__dot { transition: transform 180ms ease-in; }
+.radio-magnetic__option:has(.radio-magnetic__input:checked) .radio-magnetic__dot { transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+.radio-magnetic__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(246, 246, 246, 0.55);
+  user-select: none;
+  transition: color 200ms;
+}
+.radio-magnetic__option:has(.radio-magnetic__input:checked) .radio-magnetic__label { color: #c9c9c9; }
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-magnetic,
+  .radio-magnetic * { animation: none !important; transition: none !important; }
+}

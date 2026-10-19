@@ -1,0 +1,21 @@
+<div class="card-ink-reveal">
+  <div class="card-ink-reveal__face">
+    <div class="card-ink-reveal__title">Negative space</div>
+    <div class="card-ink-reveal__text">Move to reveal, click to flood</div>
+  </div>
+  <div class="card-ink-reveal__face card-ink-reveal__face--ink" aria-hidden="true">
+    <div class="card-ink-reveal__title">Positive space</div>
+    <div class="card-ink-reveal__text">Everything is inverted here</div>
+  </div>
+  <svg class="card-ink-reveal__defs" aria-hidden="true" focusable="false">
+    <filter id="card-ink-reveal-goo">
+      <feGaussianBlur stdDeviation="7" />
+      <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 24 -10" />
+    </filter>
+    <mask id="card-ink-reveal-mask" maskUnits="userSpaceOnUse" x="-100" y="-100" width="2000" height="2000">
+      <g class="card-ink-reveal__blobs" filter="url(#card-ink-reveal-goo)">
+        <circle r="0" /><circle r="0" /><circle r="0" /><circle r="0" /><circle r="0" /><circle r="0" />
+      </g>
+    </mask>
+  </svg>
+</div>

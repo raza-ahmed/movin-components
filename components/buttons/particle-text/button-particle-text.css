@@ -1,0 +1,56 @@
+.btn-particle-text {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  height: 56px;
+  padding: 0 40px;
+  border: 1px solid #3a3a3a;
+  border-radius: 999px;
+  background: #202020;
+  color: #ededed;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: border-color 0.3s, transform 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-particle-text:hover {
+  border-color: #7c7c7c;
+}
+
+.btn-particle-text:active {
+  transform: scale(0.97);
+}
+
+.btn-particle-text:focus-visible {
+  outline: 2px solid #ededed;
+  outline-offset: 4px;
+}
+
+/* Bigger than the button so the dust can fly past its edge. */
+.btn-particle-text__canvas {
+  position: absolute;
+  top: -48px;
+  left: -48px;
+  width: calc(100% + 96px);
+  height: calc(100% + 96px);
+  pointer-events: none;
+}
+
+.btn-particle-text__label {
+  position: relative;
+}
+
+/* The real text stays for screen readers and as the no-script fallback. */
+.btn-particle-text--live .btn-particle-text__label {
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-particle-text {
+    transition: none;
+  }
+}

@@ -1,0 +1,84 @@
+"use client";
+
+import type { CSSProperties } from 'react';
+
+const css = `
+  .loader-dominoes {
+    --loader-dominoes-t: 2.6s;
+    position: relative;
+    display: inline-block;
+    width: 108px;
+    height: 44px;
+  }
+
+  /* The floor. */
+  .loader-dominoes::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 4px;
+    right: 4px;
+    height: 2px;
+    border-radius: 1px;
+    background: #3a3a3a;
+  }
+
+  /* Each tile tips about its bottom-right corner, one after another. */
+  .loader-dominoes__tile {
+    --loader-dominoes-a: 28deg;
+    position: absolute;
+    bottom: 10px;
+    left: calc(8px + var(--loader-dominoes-i) * 13px);
+    width: 7px;
+    height: 26px;
+    border-radius: 2px;
+    background: linear-gradient(#f6f6f6, #c9c9c9);
+    transform-origin: 100% 100%;
+    animation: loader-dominoes-fall var(--loader-dominoes-t) infinite;
+    animation-delay: calc(var(--loader-dominoes-i) * 0.09s);
+  }
+
+  /* With no next tile to lean on, the last one falls flat. */
+  .loader-dominoes__tile:last-child {
+    --loader-dominoes-a: 90deg;
+  }
+
+  @keyframes loader-dominoes-fall {
+    0% {
+      transform: rotate(0deg);
+      animation-timing-function: cubic-bezier(0.55, 0, 0.9, 0.4);
+    }
+    10% {
+      transform: rotate(var(--loader-dominoes-a));
+      animation-timing-function: ease-out;
+    }
+    13%,
+    58% {
+      transform: rotate(calc(var(--loader-dominoes-a) - 3deg));
+      animation-timing-function: cubic-bezier(0.3, 0, 0.3, 1);
+    }
+    72%,
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .loader-dominoes__tile {
+      animation: none;
+    }
+  }
+`;
+
+export function DominoesLoader() {
+  return (
+    <>
+      <style>{css}</style>
+      <div className="loader-dominoes" role="status" aria-label="Loading">
+        {Array.from({ length: 7 }, (_, i) => (
+          <span key={i} className="loader-dominoes__tile" style={{ '--loader-dominoes-i': i } as CSSProperties} aria-hidden="true" />
+        ))}
+      </div>
+    </>
+  );
+}

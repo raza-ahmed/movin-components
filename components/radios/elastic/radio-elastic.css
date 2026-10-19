@@ -1,0 +1,82 @@
+/* Real radios stay in the page (arrow keys + screen readers), just invisible. */
+.radio-elastic__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.radio-elastic__option { cursor: pointer; }
+.radio-elastic__option:has(.radio-elastic__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* One outlined pill springs between options, overshooting and settling
+   (Framer's stiffness 600, damping 20, mass 0.8, baked into linear()). */
+.radio-elastic {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 208px;
+}
+.radio-elastic__pill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
+  border: 1px solid rgba(167, 167, 167, 0.4);
+  border-radius: 6px;
+  background: rgba(167, 167, 167, 0.12);
+  box-shadow: 0 0 12px rgba(167, 167, 167, 0.15);
+  opacity: 0;
+}
+.radio-elastic--ready .radio-elastic__pill {
+  transition: transform 450ms linear(0, 0.043, 0.153, 0.306, 0.478, 0.651, 0.81, 0.945, 1.052, 1.129, 1.176, 1.197, 1.197, 1.181, 1.154, 1.121, 1.086, 1.053, 1.023, 0.999, 0.981, 0.969, 0.962, 0.96, 0.962, 0.966, 0.973, 0.979, 0.986, 0.993, 0.998, 1.002, 1.005, 1.007, 1.008, 1.008, 1.007, 1.006, 1.005, 1.003, 1);
+}
+.radio-elastic__option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid rgba(246, 246, 246, 0.07);
+  border-radius: 6px;
+}
+.radio-elastic__option:has(.radio-elastic__input:checked) { border-color: transparent; }
+.radio-elastic__ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border: 2px solid rgba(246, 246, 246, 0.2);
+  border-radius: 50%;
+  transition: border-color 200ms;
+}
+.radio-elastic__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a7a7a7;
+  transform: scale(0);
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.radio-elastic__label {
+  font-size: 14px;
+  color: rgba(246, 246, 246, 0.55);
+  user-select: none;
+  transition: color 200ms;
+}
+.radio-elastic__option:has(.radio-elastic__input:checked) .radio-elastic__ring { border-color: #a7a7a7; }
+.radio-elastic__option:has(.radio-elastic__input:checked) .radio-elastic__dot { transform: scale(1); }
+.radio-elastic__option:has(.radio-elastic__input:checked) .radio-elastic__label { font-weight: 600; color: #a7a7a7; }
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-elastic,
+  .radio-elastic * { animation: none !important; transition: none !important; }
+}

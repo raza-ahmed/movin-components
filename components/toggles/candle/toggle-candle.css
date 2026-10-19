@@ -1,0 +1,163 @@
+.toggle-candle {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 12px;
+  color: #ededed;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-candle__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.toggle-candle__candle {
+  position: relative;
+  display: block;
+  width: 44px;
+  height: 86px;
+  border-radius: 8px;
+}
+
+.toggle-candle__input:focus-visible + .toggle-candle__candle {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.toggle-candle__wax {
+  position: absolute;
+  bottom: 0;
+  left: 11px;
+  width: 22px;
+  height: 46px;
+  border-radius: 4px 4px 3px 3px;
+  background: linear-gradient(90deg, #a7a7a7, #ededed 45%, #c9c9c9);
+}
+
+/* A drip down the side. */
+.toggle-candle__wax::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 4px;
+  width: 4px;
+  height: 11px;
+  border-radius: 0 0 2px 2px;
+  background: #f6f6f6;
+}
+
+.toggle-candle__wick {
+  position: absolute;
+  bottom: 45px;
+  left: 21px;
+  width: 2px;
+  height: 7px;
+  border-radius: 1px;
+  background: #4d4d4d;
+}
+
+/* The flame grows from the wick's tip; while lit it flickers. */
+.toggle-candle__flame {
+  position: absolute;
+  bottom: 48px;
+  left: 15px;
+  width: 14px;
+  height: 24px;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  background: radial-gradient(circle at 50% 72%, #f6f6f6 0 22%, #c9c9c9 48%, rgba(201, 201, 201, 0) 72%);
+  transform: scale(0);
+  transform-origin: 50% 90%;
+  transition: transform 0.18s ease-in;
+}
+
+.toggle-candle__glow {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-left: -35px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(237, 237, 237, 0.28), rgba(237, 237, 237, 0) 65%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.toggle-candle__input:checked + .toggle-candle__candle .toggle-candle__flame {
+  transform: scale(1);
+  transition: transform 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+  animation: toggle-candle-flicker 1.6s ease-in-out 0.5s infinite;
+}
+
+.toggle-candle__input:checked + .toggle-candle__candle .toggle-candle__glow {
+  opacity: 1;
+  animation: toggle-candle-breathe 1.6s ease-in-out 0.5s infinite;
+}
+
+@keyframes toggle-candle-flicker {
+  0%,
+  100% {
+    transform: scale(1) skewX(0deg);
+  }
+  25% {
+    transform: scale(0.94, 1.06) skewX(-3deg);
+  }
+  50% {
+    transform: scale(1.04, 0.95) skewX(2deg);
+  }
+  75% {
+    transform: scale(0.97, 1.03) skewX(-1deg);
+  }
+}
+
+@keyframes toggle-candle-breathe {
+  50% {
+    opacity: 0.75;
+  }
+}
+
+/* Smoke: a thin curl that rises from the wick after it is snuffed. */
+.toggle-candle__smoke {
+  position: absolute;
+  bottom: 50px;
+  left: 17px;
+  width: 10px;
+  height: 30px;
+  border-left: 2px solid rgba(201, 201, 201, 0.6);
+  border-radius: 50% 0 0 50%;
+  opacity: 0;
+}
+
+.toggle-candle--snuffed .toggle-candle__smoke {
+  animation: toggle-candle-smoke 1.3s ease-out;
+}
+
+@keyframes toggle-candle-smoke {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scaleY(0.4);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(4px, -18px) scaleY(1.2) skewX(-14deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle-candle__flame,
+  .toggle-candle__glow {
+    transition: none !important;
+    animation: none !important;
+  }
+  .toggle-candle--snuffed .toggle-candle__smoke {
+    animation: none;
+  }
+}

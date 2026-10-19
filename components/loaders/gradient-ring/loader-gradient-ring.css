@@ -1,0 +1,15 @@
+.loader-gradient-ring {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #7c7c7c, #a7a7a7, #a7a7a7, #a7a7a7, #7c7c7c, #7c7c7c, #7c7c7c);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 0);
+  mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 0);
+  animation: loader-gradient-ring 1s linear infinite;
+}
+@keyframes loader-gradient-ring {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader-gradient-ring { animation: none; opacity: 0.5; }
+}

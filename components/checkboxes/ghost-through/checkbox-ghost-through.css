@@ -1,0 +1,65 @@
+.cb-ghost-through {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-ghost-through__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-ghost-through__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-ghost-through__input:focus-visible + .cb-ghost-through__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* The box fades almost to nothing, swaps fill while it's faint, and fades back. */
+.cb-ghost-through__box { transition: border-color 300ms ease; }
+.cb-ghost-through__check {
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+.cb-ghost-through__input:checked + .cb-ghost-through__box {
+  border-color: #a7a7a7;
+  background: #7c7c7c;
+  animation: cb-ghost-through-in 500ms ease forwards;
+}
+.cb-ghost-through__input:checked + .cb-ghost-through__box .cb-ghost-through__check {
+  opacity: 1;
+  transition: opacity 200ms ease 200ms;
+}
+.cb-ghost-through--touched .cb-ghost-through__input:not(:checked) + .cb-ghost-through__box { animation: cb-ghost-through-out 500ms ease forwards; }
+@keyframes cb-ghost-through-in {
+  0% { opacity: 1; background: transparent; }
+  30% { opacity: 0.2; background: transparent; }
+  70% { opacity: 0.2; background: #7c7c7c; }
+  100% { opacity: 1; background: #7c7c7c; }
+}
+@keyframes cb-ghost-through-out {
+  0% { opacity: 1; background: #7c7c7c; }
+  30% { opacity: 0.2; background: #7c7c7c; }
+  70% { opacity: 0.2; background: transparent; }
+  100% { opacity: 1; background: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-ghost-through__box,
+  .cb-ghost-through__box * { animation: none !important; transition: none !important; }
+}

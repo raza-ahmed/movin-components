@@ -1,0 +1,53 @@
+.field-strength {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.field-strength__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(246, 246, 246, 0.15);
+  border-radius: 8px;
+  outline: none;
+  background: rgba(246, 246, 246, 0.06);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+}
+.field-strength__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+.field-strength__input:focus { box-shadow: 0 0 0 1px #a7a7a7; }
+/* Four segments light up as the password gets stronger (the script sets
+   --field-strength-score and the colour). */
+.field-strength__meter {
+  display: flex;
+  gap: 4px;
+  margin-top: 8px;
+}
+.field-strength__meter span {
+  flex: 1;
+  height: 2px;
+  border-radius: 9999px;
+  background: rgba(246, 246, 246, 0.55);
+  transition: background 300ms;
+}
+.field-strength[data-score="1"] .field-strength__meter span:nth-child(-n + 1),
+.field-strength[data-score="2"] .field-strength__meter span:nth-child(-n + 2),
+.field-strength[data-score="3"] .field-strength__meter span:nth-child(-n + 3),
+.field-strength[data-score="4"] .field-strength__meter span { background: var(--field-strength-color); }
+.field-strength__label {
+  height: 14px;
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: var(--field-strength-color, rgba(246, 246, 246, 0.55));
+  transition: color 300ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-strength,
+  .field-strength *,
+  .field-strength *::before,
+  .field-strength *::after { animation: none !important; transition: none !important; }
+}

@@ -1,0 +1,125 @@
+"use client";
+
+const css = `
+  .toggle-padlock {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #ededed;
+    font-size: 15px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .toggle-padlock__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+  }
+
+  .toggle-padlock__track {
+    position: relative;
+    display: block;
+    width: 64px;
+    height: 34px;
+    border-radius: 9999px;
+    background: #282828;
+    box-shadow: inset 0 0 0 1px #3a3a3a;
+    transition: background-color 0.3s;
+  }
+
+  .toggle-padlock__input:focus-visible + .toggle-padlock__track {
+    outline: 2px solid #a7a7a7;
+    outline-offset: 2px;
+  }
+
+  .toggle-padlock__thumb {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #4d4d4d;
+    transition: transform 0.35s cubic-bezier(0.5, 0, 0.3, 1), background-color 0.3s;
+  }
+
+  .toggle-padlock__thumb svg {
+    width: 16px;
+    height: 16px;
+    overflow: visible;
+  }
+
+  /* Open: the shackle stands raised and swung to the side. */
+  .toggle-padlock__shackle {
+    fill: none;
+    stroke: #ededed;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    transform: translate(3px, -3.5px);
+    transform-box: view-box;
+    transition: transform 0.25s ease-out;
+  }
+
+  .toggle-padlock__body {
+    fill: #ededed;
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+  }
+
+  .toggle-padlock__input:checked + .toggle-padlock__track {
+    background: #c9c9c9;
+  }
+
+  .toggle-padlock__input:checked + .toggle-padlock__track .toggle-padlock__thumb {
+    background: #111111;
+    transform: translateX(30px);
+  }
+
+  /* Shut: it drops in once the thumb arrives, and the body takes the knock. */
+  .toggle-padlock__input:checked + .toggle-padlock__track .toggle-padlock__shackle {
+    transform: none;
+    transition: transform 0.3s cubic-bezier(0.4, 1.8, 0.5, 1) 0.28s;
+  }
+
+  .toggle-padlock__input:checked + .toggle-padlock__track .toggle-padlock__body {
+    animation: toggle-padlock-knock 0.3s ease-out 0.38s;
+  }
+
+  @keyframes toggle-padlock-knock {
+    40% {
+      transform: scale(1.12, 0.86);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .toggle-padlock__thumb,
+    .toggle-padlock__shackle,
+    .toggle-padlock__input:checked + .toggle-padlock__track .toggle-padlock__shackle {
+      transition: none;
+    }
+    .toggle-padlock__input:checked + .toggle-padlock__track .toggle-padlock__body {
+      animation: none;
+    }
+  }
+`;
+export function PadlockToggle() {
+  return (
+    <>
+      <style>{css}</style>
+      <label className="toggle-padlock">
+        <input className="toggle-padlock__input" type="checkbox" role="switch" />
+        <span className="toggle-padlock__track" aria-hidden="true">
+          <span className="toggle-padlock__thumb">
+            <svg viewBox="0 0 24 24"><path className="toggle-padlock__shackle" d="M8 11V8a4 4 0 0 1 8 0v3" /><rect className="toggle-padlock__body" x="5.5" y="10.5" width="13" height="10" rx="2.5" /></svg>
+          </span>
+        </span>
+        <span className="toggle-padlock__label">Lock settings</span>
+      </label>
+    </>
+  );
+}

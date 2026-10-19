@@ -1,0 +1,176 @@
+"use client";
+
+import { useId, type CSSProperties } from 'react';
+
+const css = `
+  .radio-dial {
+    --radio-dial-turn: 0deg;
+    position: relative;
+    display: inline-block;
+    width: 168px;
+    height: 116px;
+    color: #7c7c7c;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* Each option is a point at the knob's centre; its label and tick are pushed
+     out along its angle (labels turned back upright). */
+  .radio-dial__option {
+    position: absolute;
+    top: 84px;
+    left: 84px;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+  }
+
+  .radio-dial__option::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    margin: -2px;
+    border-radius: 50%;
+    background: #4d4d4d;
+    transform: rotate(var(--radio-dial-a)) translateY(-37px);
+    transition: background-color 0.2s;
+  }
+
+  .radio-dial__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+  }
+
+  .radio-dial__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3px 7px;
+    border-radius: 6px;
+    white-space: nowrap;
+    transform: translate(-50%, -50%) rotate(var(--radio-dial-a)) translateY(-58px) rotate(calc(var(--radio-dial-a) * -1));
+    transition: color 0.2s, background-color 0.2s;
+  }
+
+  .radio-dial__option:hover .radio-dial__label {
+    color: #c9c9c9;
+  }
+
+  .radio-dial__option:has(.radio-dial__input:checked) .radio-dial__label {
+    background: #282828;
+    color: #f6f6f6;
+  }
+
+  .radio-dial__option:has(.radio-dial__input:checked)::before {
+    background: #ededed;
+  }
+
+  .radio-dial__option:has(.radio-dial__input:focus-visible) .radio-dial__label {
+    outline: 2px solid #a7a7a7;
+    outline-offset: 1px;
+  }
+
+  /* The knob: ridged rim, pointer, and a turn that overshoots and settles. */
+  .radio-dial__knob {
+    position: absolute;
+    top: 84px;
+    left: 84px;
+    width: 56px;
+    height: 56px;
+    margin: -28px;
+    border: 1px solid #3a3a3a;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background: radial-gradient(circle at 35% 30%, #4d4d4d, #282828 70%);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transform: rotate(var(--radio-dial-turn));
+    transition: transform 0.55s cubic-bezier(0.3, 1.45, 0.5, 1);
+  }
+
+  .radio-dial__knob::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    width: 3px;
+    height: 14px;
+    margin-left: -1.5px;
+    border-radius: 2px;
+    background: #ededed;
+  }
+
+  .radio-dial__knob::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: repeating-conic-gradient(#111111 0 3deg, transparent 3deg 10deg);
+    opacity: 0.5;
+    mask-image: radial-gradient(circle, transparent 22px, rgba(0, 0, 0, 1) 23px);
+  }
+
+  /* Where the knob points for each option. */
+  .radio-dial:has(.radio-dial__option:nth-child(1) .radio-dial__input:checked) {
+    --radio-dial-turn: -90deg;
+  }
+
+  .radio-dial:has(.radio-dial__option:nth-child(2) .radio-dial__input:checked) {
+    --radio-dial-turn: -45deg;
+  }
+
+  .radio-dial:has(.radio-dial__option:nth-child(3) .radio-dial__input:checked) {
+    --radio-dial-turn: 0deg;
+  }
+
+  .radio-dial:has(.radio-dial__option:nth-child(4) .radio-dial__input:checked) {
+    --radio-dial-turn: 45deg;
+  }
+
+  .radio-dial:has(.radio-dial__option:nth-child(5) .radio-dial__input:checked) {
+    --radio-dial-turn: 90deg;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .radio-dial__knob {
+      transition: none;
+    }
+  }
+`;
+
+export function DialRadio() {
+  // Each instance gets its own group name, so two on one page stay separate.
+  const name = useId();
+  return (
+    <>
+      <style>{css}</style>
+      <div className="radio-dial" role="radiogroup" aria-label="Fan speed">
+        <label className="radio-dial__option" style={{ '--radio-dial-a': '-90deg' } as CSSProperties}>
+          <input className="radio-dial__input" type="radio" name={name} value="Off" />
+          <span className="radio-dial__label">Off</span>
+        </label>
+        <label className="radio-dial__option" style={{ '--radio-dial-a': '-45deg' } as CSSProperties}>
+          <input className="radio-dial__input" type="radio" name={name} value="Low" />
+          <span className="radio-dial__label">Low</span>
+        </label>
+        <label className="radio-dial__option" style={{ '--radio-dial-a': '0deg' } as CSSProperties}>
+          <input className="radio-dial__input" type="radio" name={name} value="Mid" defaultChecked />
+          <span className="radio-dial__label">Mid</span>
+        </label>
+        <label className="radio-dial__option" style={{ '--radio-dial-a': '45deg' } as CSSProperties}>
+          <input className="radio-dial__input" type="radio" name={name} value="High" />
+          <span className="radio-dial__label">High</span>
+        </label>
+        <label className="radio-dial__option" style={{ '--radio-dial-a': '90deg' } as CSSProperties}>
+          <input className="radio-dial__input" type="radio" name={name} value="Max" />
+          <span className="radio-dial__label">Max</span>
+        </label>
+        <span className="radio-dial__knob" aria-hidden="true" />
+      </div>
+    </>
+  );
+}

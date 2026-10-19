@@ -1,0 +1,76 @@
+/* Real radios stay in the page (arrow keys + screen readers), just invisible. */
+.radio-ink-drop__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.radio-ink-drop__option { cursor: pointer; }
+.radio-ink-drop__option:has(.radio-ink-drop__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.radio-ink-drop {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.radio-ink-drop__option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.radio-ink-drop__well {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 2px solid rgba(246, 246, 246, 0.2);
+  border-radius: 50%;
+  transition: border-color 200ms;
+}
+/* A drop of ink spreads from the centre to fill the chosen well. */
+.radio-ink-drop__ink {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, #3a3a3a 0%, #282828 60%, #111111 100%);
+  transform: scale(0);
+  transition: transform 250ms ease-in;
+}
+.radio-ink-drop__dot {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(246, 246, 246, 0.9);
+  transform: scale(0);
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1) 100ms;
+}
+
+.radio-ink-drop__label {
+  font-size: 14px;
+  color: rgba(246, 246, 246, 0.55);
+  user-select: none;
+  transition: color 200ms;
+}
+
+.radio-ink-drop__option:has(.radio-ink-drop__input:checked) .radio-ink-drop__well { border-color: transparent; }
+.radio-ink-drop__option:has(.radio-ink-drop__input:checked) .radio-ink-drop__ink {
+  transform: scale(1);
+  transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.radio-ink-drop__option:has(.radio-ink-drop__input:checked) .radio-ink-drop__dot { transform: scale(1); }
+.radio-ink-drop__option:has(.radio-ink-drop__input:checked) .radio-ink-drop__label { font-weight: 500; color: rgba(246, 246, 246, 0.95); }
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-ink-drop,
+  .radio-ink-drop * { animation: none !important; transition: none !important; }
+}

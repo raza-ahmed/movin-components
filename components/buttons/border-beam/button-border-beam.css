@@ -1,0 +1,40 @@
+/* A 2px frame clips a big rotating conic square: only the border gap shows, so
+   the light reads as a beam running round the edge. */
+.btn-border-beam {
+  position: relative;
+  display: inline-block;
+  padding: 2px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.btn-border-beam__beam {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin: -200px 0 0 -200px;
+  background: conic-gradient(from 0deg, transparent 0%, #7c7c7c 8%, #a7a7a7 12%, transparent 18%);
+}
+.btn-border-beam:hover .btn-border-beam__beam { animation: btn-border-beam 1.8s linear infinite; }
+.btn-border-beam__button {
+  position: relative;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  background: #202020;
+  color: #f6f6f6;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-border-beam__button:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+@keyframes btn-border-beam {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-border-beam:hover .btn-border-beam__beam { animation: none; }
+}

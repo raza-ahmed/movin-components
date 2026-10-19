@@ -1,0 +1,32 @@
+/* Framer's spring (stiffness 500, damping 20, mass 0.6) baked into a linear() easing. */
+.toggle-spring {
+  --toggle-spring-ease: linear(0, 0.041, 0.145, 0.284, 0.438, 0.589, 0.728, 0.847, 0.942, 1.014, 1.063, 1.093, 1.106, 1.108, 1.1, 1.087, 1.071, 1.055, 1.039, 1.024, 1.012, 1.003, 0.996, 0.992, 0.989, 0.988, 0.989, 0.99, 0.991, 0.993, 0.995, 0.996, 1);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 52px;
+  height: 30px;
+  padding: 4px;
+  border: none;
+  border-radius: 9999px;
+  background: rgba(246, 246, 246, 0.15);
+  cursor: pointer;
+  transition: background 340ms ease;
+}
+.toggle-spring:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+.toggle-spring__knob {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f6f6f6;
+  transition: transform 340ms var(--toggle-spring-ease);
+}
+.toggle-spring[aria-checked="true"] { background: #a7a7a7; }
+.toggle-spring[aria-checked="true"] .toggle-spring__knob { transform: translateX(22px); }
+@media (prefers-reduced-motion: reduce) {
+  .toggle-spring__knob { transition-duration: 120ms; transition-timing-function: ease-out; }
+}

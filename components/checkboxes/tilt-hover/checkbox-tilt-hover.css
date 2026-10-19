@@ -1,0 +1,62 @@
+.cb-tilt-hover {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-tilt-hover__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-tilt-hover__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-tilt-hover__input:focus-visible + .cb-tilt-hover__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* Hovering an unchecked box tips it toward you; checking lays it flat again. */
+.cb-tilt-hover__box {
+  transform: perspective(300px) rotateX(0deg) rotateY(0deg) scale(1);
+  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1), background 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+.cb-tilt-hover:hover .cb-tilt-hover__input:not(:checked) + .cb-tilt-hover__box {
+  border-color: rgba(167, 167, 167, 0.6);
+  box-shadow: 4px 6px 16px rgba(167, 167, 167, 0.25);
+  transform: perspective(300px) rotateX(12deg) rotateY(-14deg) scale(1.08);
+}
+.cb-tilt-hover__check {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+.cb-tilt-hover__input:checked + .cb-tilt-hover__box {
+  border-color: #a7a7a7;
+  background: #7c7c7c;
+  box-shadow: 0 2px 8px rgba(167, 167, 167, 0.3);
+}
+.cb-tilt-hover__input:checked + .cb-tilt-hover__box .cb-tilt-hover__check {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 160ms ease 80ms, transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1) 80ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cb-tilt-hover:hover .cb-tilt-hover__input:not(:checked) + .cb-tilt-hover__box { transform: none; }
+  .cb-tilt-hover__box,
+  .cb-tilt-hover__check { transition: none !important; }
+}

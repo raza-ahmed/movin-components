@@ -1,0 +1,226 @@
+"use client";
+
+import { useId } from 'react';
+
+const css = `
+  .radio-turntable {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .radio-turntable__deck {
+    position: relative;
+    width: 136px;
+    height: 108px;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    background: #202020;
+  }
+
+  /* Three nested spinners: a turns at 33 1/3 rpm, b adds 12, c adds 33 more.
+     Speeds are chosen by pausing or playing them, never by restarting, so the
+     record never jumps. */
+  .radio-turntable__spin {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    animation: radio-turntable-turn 1.8s linear infinite paused;
+  }
+
+  .radio-turntable__spin--a {
+    inset: 8px auto auto 8px;
+    width: 92px;
+    height: 92px;
+  }
+
+  .radio-turntable__spin--b {
+    animation-duration: 5s;
+  }
+
+  .radio-turntable__spin--c {
+    animation-duration: 1.8s;
+  }
+
+  .radio-turntable:has(.radio-turntable__input:not([value='off']):checked) .radio-turntable__spin--a,
+  .radio-turntable:has(.radio-turntable__input[value='45']:checked) .radio-turntable__spin--b,
+  .radio-turntable:has(.radio-turntable__input[value='78']:checked) .radio-turntable__spin--b,
+  .radio-turntable:has(.radio-turntable__input[value='78']:checked) .radio-turntable__spin--c {
+    animation-play-state: running;
+  }
+
+  @keyframes radio-turntable-turn {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Grooves, a sheen that stays put, and a label with a mark you can follow. */
+  .radio-turntable__record {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, #ededed 0 13px, #4d4d4d 13px 14px, transparent 14px),
+      repeating-radial-gradient(circle, #111111 0 2px, #282828 2px 3px);
+  }
+
+  .radio-turntable__record::after {
+    content: '';
+    position: absolute;
+    top: 34px;
+    left: 50%;
+    width: 3px;
+    height: 7px;
+    margin-left: -1.5px;
+    border-radius: 1px;
+    background: #4d4d4d;
+  }
+
+  .radio-turntable__deck::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: 8px;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: conic-gradient(from 20deg, transparent, rgba(246, 246, 246, 0.08) 30deg, transparent 60deg, transparent 180deg, rgba(246, 246, 246, 0.08) 210deg, transparent 240deg);
+    pointer-events: none;
+  }
+
+  /* The tone arm pivots top right and swings in while playing. */
+  .radio-turntable__arm {
+    position: absolute;
+    z-index: 2;
+    top: 12px;
+    right: 14px;
+    width: 4px;
+    height: 64px;
+    border-radius: 2px;
+    background: #a7a7a7;
+    transform: rotate(4deg);
+    transform-origin: 50% 4px;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .radio-turntable__arm::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #4d4d4d;
+  }
+
+  .radio-turntable__arm::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: -2px;
+    width: 8px;
+    height: 10px;
+    border-radius: 2px;
+    background: #ededed;
+  }
+
+  .radio-turntable:has(.radio-turntable__input:not([value='off']):checked) .radio-turntable__arm {
+    transform: rotate(26deg);
+  }
+
+  .radio-turntable__row {
+    display: flex;
+    gap: 6px;
+  }
+
+  .radio-turntable__option {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .radio-turntable__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+  }
+
+  .radio-turntable__chip {
+    display: grid;
+    place-items: center;
+    min-width: 34px;
+    height: 30px;
+    padding: 0 8px;
+    box-sizing: border-box;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    background: #202020;
+    color: #a7a7a7;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  }
+
+  .radio-turntable__option:hover .radio-turntable__chip {
+    border-color: #7c7c7c;
+  }
+
+  .radio-turntable__input:checked + .radio-turntable__chip {
+    border-color: #ededed;
+    background: #ededed;
+    color: #111111;
+  }
+
+  .radio-turntable__input:focus-visible + .radio-turntable__chip {
+    outline: 2px solid #a7a7a7;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .radio-turntable__spin {
+      animation: none;
+    }
+    .radio-turntable__arm {
+      transition: none;
+    }
+  }
+`;
+
+export function TurntableRadio() {
+  // Each instance gets its own group name, so two on one page stay separate.
+  const name = useId();
+  return (
+    <>
+      <style>{css}</style>
+      <div className="radio-turntable">
+        <div className="radio-turntable__deck" aria-hidden="true">
+          <span className="radio-turntable__spin radio-turntable__spin--a"><span className="radio-turntable__spin radio-turntable__spin--b"><span className="radio-turntable__spin radio-turntable__spin--c"><span className="radio-turntable__record" /></span></span></span>
+          <span className="radio-turntable__arm" />
+        </div>
+        <div className="radio-turntable__row" role="radiogroup" aria-label="Speed">
+          <label className="radio-turntable__option">
+            <input className="radio-turntable__input" type="radio" name={name} value="off" />
+            <span className="radio-turntable__chip">Off</span>
+          </label>
+          <label className="radio-turntable__option">
+            <input className="radio-turntable__input" type="radio" name={name} value="33" defaultChecked aria-label="33 rpm" />
+            <span className="radio-turntable__chip">33</span>
+          </label>
+          <label className="radio-turntable__option">
+            <input className="radio-turntable__input" type="radio" name={name} value="45" aria-label="45 rpm" />
+            <span className="radio-turntable__chip">45</span>
+          </label>
+          <label className="radio-turntable__option">
+            <input className="radio-turntable__input" type="radio" name={name} value="78" aria-label="78 rpm" />
+            <span className="radio-turntable__chip">78</span>
+          </label>
+        </div>
+      </div>
+    </>
+  );
+}

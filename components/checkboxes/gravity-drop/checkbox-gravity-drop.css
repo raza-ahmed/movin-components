@@ -1,0 +1,61 @@
+.cb-gravity-drop {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-gravity-drop__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-gravity-drop__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-gravity-drop__input:focus-visible + .cb-gravity-drop__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.cb-gravity-drop__box {
+  overflow: hidden;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+/* The tick drops in from above and bounces; unchecking hops it up and lets it fall out. */
+.cb-gravity-drop__check { opacity: 0; }
+.cb-gravity-drop__input:checked + .cb-gravity-drop__box {
+  border-color: #a7a7a7;
+  background: #202020;
+}
+.cb-gravity-drop__input:checked + .cb-gravity-drop__box .cb-gravity-drop__check { animation: cb-gravity-drop-in 480ms cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.cb-gravity-drop--touched .cb-gravity-drop__input:not(:checked) + .cb-gravity-drop__box .cb-gravity-drop__check { animation: cb-gravity-drop-out 260ms ease-in forwards; }
+@keyframes cb-gravity-drop-in {
+  0% { opacity: 0; transform: translateY(-18px); }
+  55% { opacity: 1; transform: translateY(3px); }
+  75% { transform: translateY(-4px); }
+  88% { transform: translateY(2px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes cb-gravity-drop-out {
+  0% { opacity: 1; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-6px); }
+  100% { opacity: 0; transform: translateY(18px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cb-gravity-drop__box { transition: none; }
+  .cb-gravity-drop__input:checked + .cb-gravity-drop__box .cb-gravity-drop__check { animation: none; opacity: 1; }
+  .cb-gravity-drop--touched .cb-gravity-drop__input:not(:checked) + .cb-gravity-drop__box .cb-gravity-drop__check { animation: none; }
+}

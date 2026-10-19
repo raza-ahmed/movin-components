@@ -1,0 +1,41 @@
+.btn-xp-gain {
+  position: relative;
+  padding: 12px 28px;
+  border: 1px solid #a7a7a7;
+  border-radius: 4px;
+  background: #3a3a3a;
+  color: #c9c9c9;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+.btn-xp-gain:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+.btn-xp-gain__label {
+  position: relative;
+  z-index: 1;
+}
+/* "+100 XP" rises from where you clicked and fades. */
+.btn-xp-gain__float {
+  position: absolute;
+  top: 50%;
+  margin-left: -2.2em;
+  font-size: 14px;
+  font-weight: 600;
+  color: #c9c9c9;
+  text-shadow: 0 0 8px rgba(201, 201, 201, 0.8);
+  white-space: nowrap;
+  pointer-events: none;
+  animation: btn-xp-gain 860ms ease-out forwards;
+}
+@keyframes btn-xp-gain {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  70% { opacity: 0.9; transform: translateY(-32px) scale(1.1); }
+  100% { opacity: 0; transform: translateY(-52px) scale(0.8); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-xp-gain__float { display: none; }
+}

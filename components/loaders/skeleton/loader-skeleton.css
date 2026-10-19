@@ -1,0 +1,35 @@
+.loader-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 224px;
+}
+.loader-skeleton__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.loader-skeleton__lines {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+}
+.loader-skeleton__bone {
+  display: block;
+  border-radius: 4px;
+  background: color-mix(in srgb, currentColor 10%, transparent);
+  animation: loader-skeleton 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.loader-skeleton__avatar {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+@keyframes loader-skeleton {
+  50% { opacity: 0.5; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader-skeleton__bone { animation: none; }
+}

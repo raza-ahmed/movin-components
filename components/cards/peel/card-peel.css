@@ -1,0 +1,95 @@
+.card-peel {
+  position: relative;
+  width: 176px;
+  height: 124px;
+  touch-action: none;
+}
+
+.card-peel__under,
+.card-peel__sticker {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2px;
+  padding: 14px;
+  border-radius: 14px;
+}
+
+.card-peel__under {
+  border: 1px dashed #4d4d4d;
+  background: #202020;
+}
+
+.card-peel__under .card-peel__title {
+  color: #ededed;
+}
+
+.card-peel__under .card-peel__text {
+  color: #a7a7a7;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  letter-spacing: 0.04em;
+}
+
+.card-peel__sticker {
+  background: linear-gradient(150deg, #f6f6f6, #c9c9c9);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  clip-path: var(--card-peel-clip, none);
+}
+
+.card-peel__sticker .card-peel__title {
+  color: #111111;
+}
+
+.card-peel__sticker .card-peel__text {
+  color: #4d4d4d;
+}
+
+.card-peel__title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.card-peel__text {
+  font-size: 12px;
+}
+
+/* The underside of the peeled part: the sticker region past the fold line,
+   mirrored across it. Drawn on an oversized box so it can hang off the card. */
+.card-peel__flap-shadow {
+  position: absolute;
+  inset: -200px;
+  pointer-events: none;
+  filter: drop-shadow(-2px 4px 5px rgba(0, 0, 0, 0.4));
+}
+
+.card-peel__flap {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--card-peel-angle, 135deg), #a7a7a7, #ededed 45%, #f6f6f6);
+  clip-path: var(--card-peel-flap, polygon(0 0, 0 0, 0 0));
+}
+
+.card-peel__corner {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 0 0 14px 0;
+  background: none;
+  cursor: grab;
+}
+
+.card-peel__corner:active {
+  cursor: grabbing;
+}
+
+.card-peel__corner:focus-visible {
+  outline: 2px solid #ededed;
+  outline-offset: -4px;
+}

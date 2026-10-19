@@ -1,0 +1,36 @@
+.btn-hexagon {
+  position: relative;
+  padding: 14px 48px;
+  overflow: hidden;
+  border: none;
+  background: #282828;
+  color: #a7a7a7;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  transition: color 280ms ease;
+}
+.btn-hexagon:focus-visible { background: #3a3a3a; outline: none; }
+/* A disc grows from the centre and fills the hexagon. */
+.btn-hexagon__fill {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: #a7a7a7;
+  transform: scale(0);
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn-hexagon__label {
+  position: relative;
+  z-index: 1;
+}
+.btn-hexagon:hover { color: #3a3a3a; }
+.btn-hexagon:hover .btn-hexagon__fill { transform: scale(1); }
+@media (prefers-reduced-motion: reduce) {
+  .btn-hexagon__fill { transition: none; }
+}

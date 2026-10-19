@@ -1,0 +1,52 @@
+.field-scan-line {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.field-scan-line {
+  overflow: hidden;
+  border: 1px solid rgba(246, 246, 246, 0.12);
+  border-radius: 8px;
+  transition: border-color 200ms;
+}
+.field-scan-line:focus-within { border-color: rgba(167, 167, 167, 0.5); }
+
+.field-scan-line__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background: rgba(246, 246, 246, 0.04);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  display: block;
+  border: none;
+  border-radius: 0;
+}
+.field-scan-line__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+.field-scan-line__input:focus { background: rgba(167, 167, 167, 0.04); }
+/* While focused, a scanline sweeps down through the field on a loop. */
+.field-scan-line__scan {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(167, 167, 167, 0.8), rgba(167, 167, 167, 0.6), transparent);
+  pointer-events: none;
+  opacity: 0;
+}
+.field-scan-line:focus-within .field-scan-line__scan { animation: field-scan-line 2s linear infinite; }
+@keyframes field-scan-line {
+  0% { top: 0%; opacity: 0.8; }
+  80% { opacity: 0.8; }
+  100% { top: 100%; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .field-scan-line__scan { display: none; }
+  .field-scan-line { transition: none; }
+}

@@ -1,0 +1,195 @@
+"use client";
+
+import { useId, type CSSProperties } from 'react';
+
+const css = `
+  .radio-tip-jar {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #a7a7a7;
+    font-size: 12px;
+  }
+
+  /* A glass jar with a rim; coins stack inside from the bottom. */
+  .radio-tip-jar__jar {
+    position: relative;
+    width: 64px;
+    height: 78px;
+    box-sizing: border-box;
+    border: 2px solid #7c7c7c;
+    border-top: 0;
+    border-radius: 6px 6px 16px 16px;
+  }
+
+  .radio-tip-jar__jar::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -6px;
+    right: -6px;
+    height: 6px;
+    border-radius: 3px;
+    background: #7c7c7c;
+  }
+
+  /* Each coin rests at its own height in the pile; out of the jar it waits
+     above the rim, invisible. */
+  .radio-tip-jar__coin {
+    --radio-tip-jar-r: calc((var(--radio-tip-jar-i) - 2) * 6deg);
+    position: absolute;
+    bottom: calc(5px + var(--radio-tip-jar-i) * 12px);
+    left: 50%;
+    width: 34px;
+    height: 11px;
+    margin-left: calc(-17px + (var(--radio-tip-jar-i) - 2) * 2px);
+    box-sizing: border-box;
+    border: 1.5px solid #a7a7a7;
+    border-radius: 50%;
+    background: #ededed;
+    opacity: 0;
+    transform: translateY(calc(-110px + var(--radio-tip-jar-i) * 12px)) rotate(40deg);
+    transition: transform 0.3s ease-in, opacity 0.2s 0.1s;
+  }
+
+  .radio-tip-jar__amount {
+    min-height: 1.4em;
+    color: #ededed;
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .radio-tip-jar__row {
+    display: flex;
+    gap: 6px;
+  }
+
+  .radio-tip-jar__option {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .radio-tip-jar__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+  }
+
+  .radio-tip-jar__chip {
+    display: grid;
+    place-items: center;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    background: #202020;
+    color: #a7a7a7;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  }
+
+  .radio-tip-jar__option:hover .radio-tip-jar__chip {
+    border-color: #7c7c7c;
+  }
+
+  .radio-tip-jar__input:checked + .radio-tip-jar__chip {
+    border-color: #ededed;
+    background: #ededed;
+    color: #111111;
+  }
+
+  .radio-tip-jar__input:focus-visible + .radio-tip-jar__chip {
+    outline: 2px solid #a7a7a7;
+    outline-offset: 2px;
+  }
+
+  /* How many coins each tip drops, and what it comes to. */
+  .radio-tip-jar:has(.radio-tip-jar__option:nth-child(1) .radio-tip-jar__input:checked) .radio-tip-jar__coin:nth-child(-n + 2) {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--radio-tip-jar-r));
+    transition: transform 0.45s cubic-bezier(0.5, 0, 0.6, 1.4) calc(var(--radio-tip-jar-i) * 70ms), opacity 0.1s calc(var(--radio-tip-jar-i) * 70ms);
+  }
+
+  .radio-tip-jar:has(.radio-tip-jar__option:nth-child(1) .radio-tip-jar__input:checked) .radio-tip-jar__amount::after {
+    content: '$4.20 tip';
+  }
+
+  .radio-tip-jar:has(.radio-tip-jar__option:nth-child(2) .radio-tip-jar__input:checked) .radio-tip-jar__coin:nth-child(-n + 3) {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--radio-tip-jar-r));
+    transition: transform 0.45s cubic-bezier(0.5, 0, 0.6, 1.4) calc(var(--radio-tip-jar-i) * 70ms), opacity 0.1s calc(var(--radio-tip-jar-i) * 70ms);
+  }
+
+  .radio-tip-jar:has(.radio-tip-jar__option:nth-child(2) .radio-tip-jar__input:checked) .radio-tip-jar__amount::after {
+    content: '$6.30 tip';
+  }
+
+  .radio-tip-jar:has(.radio-tip-jar__option:nth-child(3) .radio-tip-jar__input:checked) .radio-tip-jar__coin:nth-child(-n + 4) {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--radio-tip-jar-r));
+    transition: transform 0.45s cubic-bezier(0.5, 0, 0.6, 1.4) calc(var(--radio-tip-jar-i) * 70ms), opacity 0.1s calc(var(--radio-tip-jar-i) * 70ms);
+  }
+
+  .radio-tip-jar:has(.radio-tip-jar__option:nth-child(3) .radio-tip-jar__input:checked) .radio-tip-jar__amount::after {
+    content: '$8.40 tip';
+  }
+
+  .radio-tip-jar:has(.radio-tip-jar__option:nth-child(4) .radio-tip-jar__input:checked) .radio-tip-jar__coin:nth-child(-n + 5) {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--radio-tip-jar-r));
+    transition: transform 0.45s cubic-bezier(0.5, 0, 0.6, 1.4) calc(var(--radio-tip-jar-i) * 70ms), opacity 0.1s calc(var(--radio-tip-jar-i) * 70ms);
+  }
+
+  .radio-tip-jar:has(.radio-tip-jar__option:nth-child(4) .radio-tip-jar__input:checked) .radio-tip-jar__amount::after {
+    content: '$10.50 tip';
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .radio-tip-jar__coin,
+    .radio-tip-jar .radio-tip-jar__coin {
+      transition: none !important;
+    }
+  }
+`;
+
+export function TipJarRadio() {
+  // Each instance gets its own group name, so two on one page stay separate.
+  const name = useId();
+  return (
+    <>
+      <style>{css}</style>
+      <div className="radio-tip-jar">
+        <div className="radio-tip-jar__jar" aria-hidden="true">
+          <span className="radio-tip-jar__coin" style={{ '--radio-tip-jar-i': 0 } as CSSProperties} />
+          <span className="radio-tip-jar__coin" style={{ '--radio-tip-jar-i': 1 } as CSSProperties} />
+          <span className="radio-tip-jar__coin" style={{ '--radio-tip-jar-i': 2 } as CSSProperties} />
+          <span className="radio-tip-jar__coin" style={{ '--radio-tip-jar-i': 3 } as CSSProperties} />
+          <span className="radio-tip-jar__coin" style={{ '--radio-tip-jar-i': 4 } as CSSProperties} />
+        </div>
+        <span className="radio-tip-jar__amount" aria-hidden="true" />
+        <div className="radio-tip-jar__row" role="radiogroup" aria-label="Tip">
+          <label className="radio-tip-jar__option">
+            <input className="radio-tip-jar__input" type="radio" name={name} value="10" />
+            <span className="radio-tip-jar__chip">10%</span>
+          </label>
+          <label className="radio-tip-jar__option">
+            <input className="radio-tip-jar__input" type="radio" name={name} value="15" defaultChecked />
+            <span className="radio-tip-jar__chip">15%</span>
+          </label>
+          <label className="radio-tip-jar__option">
+            <input className="radio-tip-jar__input" type="radio" name={name} value="20" />
+            <span className="radio-tip-jar__chip">20%</span>
+          </label>
+          <label className="radio-tip-jar__option">
+            <input className="radio-tip-jar__input" type="radio" name={name} value="25" />
+            <span className="radio-tip-jar__chip">25%</span>
+          </label>
+        </div>
+      </div>
+    </>
+  );
+}

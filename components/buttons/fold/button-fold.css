@@ -1,0 +1,111 @@
+.btn-fold {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: none;
+  color: #111111;
+  font: inherit;
+  cursor: pointer;
+  perspective: 420px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-fold:focus-visible {
+  outline: 2px solid #ededed;
+  outline-offset: 4px;
+}
+
+.btn-fold__paper {
+  position: relative;
+  display: block;
+  width: 168px;
+  height: 56px;
+  transform-style: preserve-3d;
+}
+
+.btn-fold__half {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 50%;
+  transform-style: preserve-3d;
+}
+
+/* The top half hinges on the crease line. */
+.btn-fold__half--top {
+  top: 0;
+  transform-origin: 50% 100%;
+  transition: transform 0.4s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+
+.btn-fold__half--bottom {
+  bottom: 0;
+  transform: translateZ(-1px); /* folded flat, the top half must win, not flicker */
+}
+
+.btn-fold:hover .btn-fold__half--top {
+  transform: rotateX(-14deg);
+}
+
+.btn-fold__face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #ededed;
+  backface-visibility: hidden;
+}
+
+.btn-fold__half--top .btn-fold__face {
+  border-radius: 12px 12px 0 0;
+  box-shadow: inset 0 -1px 0 rgba(17, 17, 17, 0.08);
+}
+
+.btn-fold__half--bottom .btn-fold__face {
+  border-radius: 0 0 12px 12px;
+}
+
+/* Each half shows its half of one full-height label. */
+.btn-fold__text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 56px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 56px;
+  text-align: center;
+}
+
+.btn-fold__half--bottom .btn-fold__text {
+  top: -28px;
+}
+
+/* The underside of the top half, seen once it has folded over. */
+.btn-fold__back {
+  position: absolute;
+  inset: 0;
+  border-radius: 0 0 12px 12px;
+  background: linear-gradient(180deg, #a7a7a7, #c9c9c9);
+  transform: rotateX(180deg);
+  backface-visibility: hidden;
+}
+
+.btn-fold__shade {
+  position: absolute;
+  inset: 0;
+  border-radius: 0 0 12px 12px;
+  background: #111111;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-fold__half--top {
+    transition: none;
+  }
+  .btn-fold:hover .btn-fold__half--top {
+    transform: none;
+  }
+}

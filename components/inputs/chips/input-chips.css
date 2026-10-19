@@ -1,0 +1,142 @@
+.field-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 320px;
+  color: #ededed;
+  font-size: 13px;
+}
+
+.field-chips__label {
+  color: #a7a7a7;
+}
+
+.field-chips__box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  box-sizing: border-box;
+  min-height: 46px;
+  padding: 7px 8px;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  background: #202020;
+  cursor: text;
+  transition: border-color 0.2s;
+}
+
+.field-chips__box:focus-within {
+  border-color: #a7a7a7;
+}
+
+/* The list's chips flow in the same row as the input. */
+.field-chips__list {
+  display: contents;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.field-chips__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 28px;
+  padding: 0 4px 0 10px;
+  border-radius: 7px;
+  background: #3a3a3a;
+  color: #f6f6f6;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.field-chips__chip--nudge {
+  animation: field-chips-nudge 0.45s cubic-bezier(0.3, 0, 0.3, 1);
+}
+
+@keyframes field-chips-nudge {
+  0%,
+  100% {
+    background: #3a3a3a;
+    transform: none;
+  }
+  20% {
+    background: #7c7c7c;
+    transform: translateX(-4px);
+  }
+  45% {
+    transform: translateX(3px);
+  }
+  70% {
+    transform: translateX(-2px);
+  }
+}
+
+.field-chips__remove {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: none;
+  color: #a7a7a7;
+  cursor: pointer;
+}
+
+.field-chips__remove:hover,
+.field-chips__remove:focus-visible {
+  background: #4d4d4d;
+  color: #f6f6f6;
+}
+
+.field-chips__remove:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 1px;
+}
+
+.field-chips__remove svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.field-chips__input {
+  flex: 1;
+  min-width: 80px;
+  height: 28px;
+  margin: 0;
+  padding: 0 4px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 14px;
+}
+
+.field-chips__input::placeholder {
+  color: #7c7c7c;
+}
+
+.field-chips__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-chips__chip--nudge {
+    animation: none;
+  }
+}

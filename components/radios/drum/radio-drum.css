@@ -1,0 +1,92 @@
+/* Each option sits on a cylinder (a step of 22deg at radius 78px fits 30px
+   rows); the wheel turns so the chosen option faces you in the band. */
+.radio-drum {
+  --radio-drum-sel: 0;
+  --radio-drum-step: 22deg;
+  --radio-drum-r: 78px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #a7a7a7;
+  font-size: 12px;
+}
+
+.radio-drum__window {
+  position: relative;
+  width: 160px;
+  height: 156px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #202020;
+  perspective: 480px;
+  cursor: ns-resize;
+  touch-action: none;
+  user-select: none;
+  mask-image: linear-gradient(transparent, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 1) 70%, transparent);
+}
+
+.radio-drum__band {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  right: 8px;
+  height: 32px;
+  margin-top: -16px;
+  border-radius: 8px;
+  background: #3a3a3a;
+}
+
+.radio-drum__window:has(.radio-drum__input:focus-visible) .radio-drum__band {
+  outline: 2px solid #a7a7a7;
+}
+
+.radio-drum__wheel {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: translateZ(calc(var(--radio-drum-r) * -1)) rotateX(calc(var(--radio-drum-sel) * var(--radio-drum-step)));
+}
+
+.radio-drum--ready .radio-drum__wheel {
+  transition: transform 0.45s cubic-bezier(0.3, 1.25, 0.5, 1);
+}
+
+.radio-drum__option {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  height: 30px;
+  margin-top: -15px;
+  backface-visibility: hidden;
+  cursor: pointer;
+  transform: rotateX(calc(var(--radio-drum-i) * var(--radio-drum-step) * -1)) translateZ(var(--radio-drum-r));
+}
+
+.radio-drum__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.radio-drum__text {
+  color: #7c7c7c;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.radio-drum__input:checked + .radio-drum__text {
+  color: #f6f6f6;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-drum--ready .radio-drum__wheel {
+    transition: none;
+  }
+}

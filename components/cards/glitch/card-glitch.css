@@ -1,0 +1,68 @@
+.card-glitch {
+  position: relative;
+  width: 160px;
+  height: 118px;
+  cursor: pointer;
+}
+.card-glitch__layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 1px solid rgba(246, 246, 246, 0.09);
+  border-radius: 12px;
+  background: #111111;
+}
+.card-glitch__layer--a,
+.card-glitch__layer--b {
+  pointer-events: none;
+  opacity: 0;
+}
+.card-glitch__layer--a { filter: invert(1); clip-path: inset(0 0 100% 0); }
+.card-glitch__layer--b { filter: brightness(1.8) contrast(1.4); clip-path: inset(100% 0 0 0); }
+.card-glitch:hover .card-glitch__layer--a { opacity: 0.85; animation: card-glitch-a 0.35s steps(1) infinite; }
+.card-glitch:hover .card-glitch__layer--b { opacity: 0.7; animation: card-glitch-b 0.35s steps(1) 0.05s infinite; }
+.card-glitch__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  background: linear-gradient(135deg, #202020, #282828);
+}
+.card-glitch__mark {
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+  border: 2px solid #ededed;
+  border-radius: 4px;
+  opacity: 0.85;
+}
+.card-glitch__body { padding: 10px 12px 12px; }
+.card-glitch__title {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ededed;
+}
+.card-glitch__text {
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(246, 246, 246, 0.55);
+}
+@keyframes card-glitch-a {
+  0%, 100% { clip-path: inset(0 0 92% 0); transform: translateX(-4px); }
+  20% { clip-path: inset(55% 0 33% 0); transform: translateX(4px); }
+  40% { clip-path: inset(15% 0 72% 0); transform: translateX(-3px); }
+  60% { clip-path: inset(78% 0 10% 0); transform: translateX(3px); }
+  80% { clip-path: inset(38% 0 48% 0); transform: translateX(-4px); }
+}
+@keyframes card-glitch-b {
+  0%, 100% { clip-path: inset(80% 0 8% 0); transform: translateX(4px); }
+  25% { clip-path: inset(22% 0 62% 0); transform: translateX(-4px); }
+  50% { clip-path: inset(60% 0 28% 0); transform: translateX(3px); }
+  75% { clip-path: inset(5% 0 85% 0); transform: translateX(-3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-glitch:hover .card-glitch__layer--a,
+  .card-glitch:hover .card-glitch__layer--b { animation: none; }
+}

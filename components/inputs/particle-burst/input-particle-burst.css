@@ -1,0 +1,43 @@
+.field-particle-burst {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.field-particle-burst__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(246, 246, 246, 0.15);
+  border-radius: 8px;
+  outline: none;
+  background: rgba(246, 246, 246, 0.06);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+}
+.field-particle-burst__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+/* Every focus fires eight sparks out from the field's corners. */
+.field-particle-burst__particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a7a7a7;
+  opacity: 0;
+  pointer-events: none;
+}
+.field-particle-burst:focus-within .field-particle-burst__particle {
+  animation-name: field-particle-burst;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+@keyframes field-particle-burst {
+  0% { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(var(--field-particle-burst-x), var(--field-particle-burst-y)) scale(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .field-particle-burst__particle { display: none; }
+}

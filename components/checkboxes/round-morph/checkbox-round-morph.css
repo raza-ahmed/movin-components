@@ -1,0 +1,54 @@
+.cb-round-morph {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-round-morph__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-round-morph__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-round-morph__input:focus-visible + .cb-round-morph__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* Checking rounds the square into a filled circle. */
+.cb-round-morph__box { transition: border-radius 350ms cubic-bezier(0.34, 1.56, 0.64, 1), background 280ms ease, border-color 280ms ease; }
+.cb-round-morph__check {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+.cb-round-morph__input:checked + .cb-round-morph__box {
+  border-color: #7c7c7c;
+  border-radius: 50%;
+  background: #7c7c7c;
+}
+.cb-round-morph__input:checked + .cb-round-morph__box .cb-round-morph__check {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 200ms ease 150ms, transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1) 150ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-round-morph__box,
+  .cb-round-morph__box * { animation: none !important; transition: none !important; }
+}

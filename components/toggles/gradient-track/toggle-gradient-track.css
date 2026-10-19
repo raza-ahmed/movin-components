@@ -1,0 +1,43 @@
+.toggle-gradient-track {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 52px;
+  height: 30px;
+  padding: 4px;
+  border: none;
+  border-radius: 9999px;
+  background: rgba(246, 246, 246, 0.12);
+  cursor: pointer;
+  transition: background 300ms ease;
+}
+.toggle-gradient-track:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+.toggle-gradient-track__knob {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f6f6f6;
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+/* On: the track becomes a slowly drifting gradient. */
+.toggle-gradient-track[aria-checked="true"] {
+  background: linear-gradient(90deg, #7c7c7c, #7c7c7c, #7c7c7c, #c9c9c9);
+  background-size: 300% 100%;
+  transition: none;
+  animation: toggle-gradient-track 2.5s ease infinite;
+}
+.toggle-gradient-track[aria-checked="true"] .toggle-gradient-track__knob {
+  box-shadow: 0 0 8px rgba(246, 246, 246, 0.5);
+  transform: translateX(22px);
+}
+@keyframes toggle-gradient-track {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .toggle-gradient-track[aria-checked="true"] { animation: none; background: #7c7c7c; }
+}

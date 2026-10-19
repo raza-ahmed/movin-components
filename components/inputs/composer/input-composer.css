@@ -1,0 +1,134 @@
+.field-composer {
+  --field-composer-max: 132px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+  color: #ededed;
+  font-size: 14px;
+}
+
+.field-composer__thread {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  height: 120px;
+  margin: 0;
+  /* The thread's clip edge meets the box, so a sent message rises out of it. */
+  padding: 0 2px 10px;
+  overflow: hidden;
+  list-style: none;
+  mask-image: linear-gradient(transparent, rgba(0, 0, 0, 1) 30%);
+}
+
+.field-composer__msg {
+  align-self: flex-start;
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 14px 14px 14px 4px;
+  background: #282828;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.field-composer__msg--mine {
+  align-self: flex-end;
+  border-radius: 14px 14px 4px 14px;
+  background: #ededed;
+  color: #111111;
+}
+
+/* The button sits on the box's bottom edge, so it rides down as the box grows. */
+.field-composer__box {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 6px 6px 6px 14px;
+  border: 1px solid #3a3a3a;
+  border-radius: 22px;
+  background: #202020;
+  transition: border-color 0.2s;
+}
+
+.field-composer__box:focus-within {
+  border-color: #a7a7a7;
+}
+
+.field-composer__input {
+  flex: 1;
+  box-sizing: border-box;
+  height: 32px;
+  max-height: var(--field-composer-max);
+  margin: 0;
+  padding: 6px 0;
+  overflow-y: hidden;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #f6f6f6;
+  font: inherit;
+  line-height: 20px;
+  resize: none;
+  transition: height 0.32s cubic-bezier(0.3, 1.35, 0.5, 1);
+}
+
+.field-composer__input::placeholder {
+  color: #7c7c7c;
+}
+
+.field-composer--scroll .field-composer__input {
+  overflow-y: auto;
+}
+
+.field-composer__send {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #3a3a3a;
+  color: #7c7c7c;
+  cursor: default;
+  transform: rotate(90deg) scale(0.85);
+  transition: background-color 0.2s, color 0.2s, transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.field-composer__send:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* Awake: it fills and turns to point up, ready to send. */
+.field-composer__send[aria-disabled='false'] {
+  background: #ededed;
+  color: #111111;
+  cursor: pointer;
+  transform: none;
+}
+
+.field-composer__send[aria-disabled='false']:active {
+  transform: scale(0.88);
+}
+
+.field-composer__send svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-composer__input,
+  .field-composer__send {
+    transition: none;
+  }
+}

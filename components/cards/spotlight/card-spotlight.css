@@ -1,0 +1,42 @@
+.card-spotlight {
+  --card-spotlight-x: 80px;
+  --card-spotlight-y: 60px;
+  position: relative;
+  width: 160px;
+  overflow: hidden;
+  border: 1px solid rgba(246, 246, 246, 0.1);
+  border-radius: 12px;
+  background: rgba(246, 246, 246, 0.04);
+  cursor: pointer;
+  transition: border-color 300ms ease;
+}
+.card-spotlight:hover { border-color: rgba(246, 246, 246, 0.22); }
+.card-spotlight__media {
+  height: 64px;
+  background: linear-gradient(135deg, #282828, #3a3a3a);
+}
+.card-spotlight__body { padding: 10px 12px 12px; }
+.card-spotlight__title {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f6f6f6;
+}
+.card-spotlight__text {
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(246, 246, 246, 0.55);
+}
+/* The light: a soft radial gradient centred on the cursor, faded in on hover. */
+.card-spotlight__light {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(140px circle at var(--card-spotlight-x) var(--card-spotlight-y), rgba(246, 246, 246, 0.16), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms ease;
+}
+.card-spotlight:hover .card-spotlight__light { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .card-spotlight__light { transition: none; }
+}

@@ -1,0 +1,76 @@
+.loader-clock {
+  --loader-clock-t: 1.2s;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #4d4d4d;
+  border-radius: 50%;
+  background: #202020;
+}
+
+/* Twelve ticks: a repeating conic gradient masked down to a thin ring. */
+.loader-clock::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from -1.5deg, #7c7c7c 0 3deg, transparent 3deg 30deg);
+  mask-image: radial-gradient(circle, transparent 16px, rgba(0, 0, 0, 1) 16.5px);
+}
+
+/* Centre cap. */
+.loader-clock::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: #ededed;
+}
+
+.loader-clock__hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  border-radius: 1px;
+  background: #ededed;
+  transform-origin: 50% 100%;
+  animation: loader-clock-turn var(--loader-clock-t) linear infinite;
+}
+
+.loader-clock__hand--minute {
+  height: 17px;
+}
+
+.loader-clock__hand--hour {
+  height: 11px;
+  width: 3px;
+  margin-left: -1.5px;
+  background: #a7a7a7;
+  animation-duration: calc(var(--loader-clock-t) * 12);
+}
+
+@keyframes loader-clock-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-clock__hand {
+    animation: none;
+  }
+  .loader-clock__hand--hour {
+    transform: rotate(300deg);
+  }
+  .loader-clock__hand--minute {
+    transform: rotate(60deg);
+  }
+}

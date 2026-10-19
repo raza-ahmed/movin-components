@@ -1,0 +1,68 @@
+/* Real radios stay in the page (arrow keys + screen readers), just invisible. */
+.radio-pillow__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.radio-pillow__option { cursor: pointer; }
+.radio-pillow__option:has(.radio-pillow__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* Soft neumorphic cushions: raised until chosen, then pressed in. */
+.radio-pillow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #282828;
+}
+.radio-pillow__option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #282828;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px #3a3a3a;
+  transition: box-shadow 200ms;
+}
+.radio-pillow__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #282828;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), -3px -3px 6px #3a3a3a;
+  transition: box-shadow 200ms;
+}
+.radio-pillow__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: transparent;
+  transform: scale(0);
+  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1), background 200ms ease;
+}
+.radio-pillow__label {
+  font-size: 14px;
+  color: #a7a7a7;
+  user-select: none;
+  transition: color 200ms;
+}
+.radio-pillow__option:has(.radio-pillow__input:checked) { box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.5), inset -4px -4px 8px #3a3a3a; }
+.radio-pillow__option:has(.radio-pillow__input:checked) .radio-pillow__button { box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5), inset -3px -3px 6px #3a3a3a; }
+.radio-pillow__option:has(.radio-pillow__input:checked) .radio-pillow__dot { background: #f6f6f6; transform: scale(1); }
+.radio-pillow__option:has(.radio-pillow__input:checked) .radio-pillow__label { font-weight: 600; color: #f6f6f6; }
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-pillow,
+  .radio-pillow * { animation: none !important; transition: none !important; }
+}

@@ -1,0 +1,64 @@
+.btn-ticket {
+  position: relative;
+  display: inline-flex;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: #111111;
+  font: inherit;
+  cursor: pointer;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-ticket:focus-visible {
+  outline: 2px solid #ededed;
+  outline-offset: 4px;
+}
+
+/* Two half-circle notches bitten out of each side of the perforation. */
+.btn-ticket__main {
+  display: grid;
+  place-items: center;
+  width: 140px;
+  height: 58px;
+  border-radius: 10px 0 0 10px;
+  background: #ededed;
+  font-size: 15px;
+  font-weight: 600;
+  -webkit-mask: radial-gradient(circle 7px at 100% 0, transparent 98%, #000) top / 100% 51% no-repeat, radial-gradient(circle 7px at 100% 100%, transparent 98%, #000) bottom / 100% 51% no-repeat;
+  mask: radial-gradient(circle 7px at 100% 0, transparent 98%, #000) top / 100% 51% no-repeat, radial-gradient(circle 7px at 100% 100%, transparent 98%, #000) bottom / 100% 51% no-repeat;
+}
+
+.btn-ticket__stub {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 58px;
+  border-radius: 0 10px 10px 0;
+  background: linear-gradient(to bottom, rgba(17, 17, 17, 0.4) 50%, transparent 0) 0 0 / 1.5px 6px repeat-y, #c9c9c9;
+  color: #4d4d4d;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform-origin: 0 0;
+  transition: rotate 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+  -webkit-mask: radial-gradient(circle 7px at 0 0, transparent 98%, #000) top / 100% 51% no-repeat, radial-gradient(circle 7px at 0 100%, transparent 98%, #000) bottom / 100% 51% no-repeat;
+  mask: radial-gradient(circle 7px at 0 0, transparent 98%, #000) top / 100% 51% no-repeat, radial-gradient(circle 7px at 0 100%, transparent 98%, #000) bottom / 100% 51% no-repeat;
+}
+
+.btn-ticket:hover .btn-ticket__stub {
+  rotate: 4deg;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-ticket__stub {
+    transition: none;
+  }
+  .btn-ticket:hover .btn-ticket__stub {
+    rotate: none;
+  }
+}

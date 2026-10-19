@@ -1,0 +1,103 @@
+.field-caret {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 320px;
+  color: #a7a7a7;
+  font-size: 13px;
+}
+
+.field-caret__box {
+  --field-caret-x: 0px;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  background: #202020;
+  transition: border-color 0.2s;
+}
+
+.field-caret__box:focus-within {
+  border-color: #a7a7a7;
+}
+
+/* The native caret is hidden; the custom one stands in for it. */
+.field-caret__input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 46px;
+  margin: 0;
+  padding: 0 14px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 16px;
+  caret-color: transparent;
+}
+
+.field-caret__input::selection {
+  background: #4d4d4d;
+}
+
+.field-caret__head,
+.field-caret__tail {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 20px;
+  margin-top: -10px;
+  border-radius: 1px;
+  background: #ededed;
+  pointer-events: none;
+}
+
+.field-caret__head {
+  width: 2px;
+  opacity: 0;
+  transform: translateX(var(--field-caret-x));
+  transition: transform 0.09s cubic-bezier(0.2, 0, 0, 1), opacity 0.1s;
+}
+
+/* The streak is 1px wide; the script stretches it between the old and new spot. */
+.field-caret__tail {
+  width: 1px;
+  height: 14px;
+  margin-top: -7px;
+  background: linear-gradient(90deg, rgba(237, 237, 237, 0), rgba(237, 237, 237, 0.6));
+  opacity: 0;
+  transform-origin: 0 50%;
+}
+
+/* Moving left, the bright end leads on the left. */
+.field-caret__tail--left {
+  background: linear-gradient(270deg, rgba(237, 237, 237, 0), rgba(237, 237, 237, 0.6));
+}
+
+.field-caret--on .field-caret__head {
+  opacity: 1;
+  animation: field-caret-blink 1.06s steps(1) 0.5s infinite;
+}
+
+.field-caret--moving .field-caret__head {
+  animation: none;
+}
+
+@keyframes field-caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-caret__head {
+    transition: none;
+  }
+  .field-caret__tail {
+    display: none;
+  }
+}

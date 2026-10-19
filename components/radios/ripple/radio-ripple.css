@@ -1,0 +1,85 @@
+/* Real radios stay in the page (arrow keys + screen readers), just invisible. */
+.radio-ripple__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.radio-ripple__option { cursor: pointer; }
+.radio-ripple__option:has(.radio-ripple__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.radio-ripple {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.radio-ripple__option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.radio-ripple__pond {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+/* Choosing an option drops a stone in it: three rings spread out and fade. */
+.radio-ripple__wave {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  border: 1.5px solid rgba(124, 124, 124, 0.7);
+  border-radius: 50%;
+  opacity: 0;
+}
+.radio-ripple__ring {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 50%;
+  transition: all 200ms;
+}
+.radio-ripple__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7c7c7c;
+  transform: scale(0);
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.radio-ripple__label {
+  font-size: 14px;
+  color: rgba(246, 246, 246, 0.55);
+  user-select: none;
+  transition: color 200ms;
+}
+
+.radio-ripple__option:has(.radio-ripple__input:checked) .radio-ripple__wave { animation: radio-ripple 900ms ease-out forwards; }
+.radio-ripple__option:has(.radio-ripple__input:checked) .radio-ripple__wave:nth-child(2) { animation-delay: 130ms; }
+.radio-ripple__option:has(.radio-ripple__input:checked) .radio-ripple__wave:nth-child(3) { animation-delay: 260ms; }
+.radio-ripple__option:has(.radio-ripple__input:checked) .radio-ripple__ring {
+  border-color: #7c7c7c;
+  background: rgba(124, 124, 124, 0.15);
+  box-shadow: 0 0 8px rgba(124, 124, 124, 0.5);
+}
+.radio-ripple__option:has(.radio-ripple__input:checked) .radio-ripple__dot { transform: scale(1); }
+.radio-ripple__option:has(.radio-ripple__input:checked) .radio-ripple__label { color: rgba(246, 246, 246, 0.92); }
+@keyframes radio-ripple {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2.8); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-ripple,
+  .radio-ripple * { animation: none !important; transition: none !important; }
+}

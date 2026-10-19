@@ -1,0 +1,82 @@
+/* Real radios stay in the page (arrow keys + screen readers), just invisible. */
+.radio-frost__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.radio-frost__option { cursor: pointer; }
+.radio-frost__option:has(.radio-frost__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* A frosted-glass pill (backdrop blur) glides to the chosen option. */
+.radio-frost {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 224px;
+}
+.radio-frost__pill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
+  border: 1px solid rgba(246, 246, 246, 0.18);
+  border-radius: 10px;
+  background: rgba(246, 246, 246, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(246, 246, 246, 0.15);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+}
+.radio-frost--ready .radio-frost__pill { transition: transform 450ms cubic-bezier(0.25, 1.25, 0.5, 1); }
+.radio-frost__option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 10px;
+}
+
+.radio-frost__ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border: 2px solid rgba(246, 246, 246, 0.2);
+  border-radius: 50%;
+  transition: all 200ms;
+}
+.radio-frost__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(246, 246, 246, 0.9);
+  transform: scale(0);
+  transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.radio-frost__option:has(.radio-frost__input:checked) .radio-frost__ring { border-color: rgba(246, 246, 246, 0.7); }
+.radio-frost__option:has(.radio-frost__input:checked) .radio-frost__dot { transform: scale(1); }
+
+.radio-frost__label {
+  font-size: 14px;
+  color: rgba(246, 246, 246, 0.55);
+  user-select: none;
+  transition: color 200ms;
+}
+
+.radio-frost__option:has(.radio-frost__input:checked) .radio-frost__label { font-weight: 500; color: rgba(246, 246, 246, 0.92); }
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-frost,
+  .radio-frost * { animation: none !important; transition: none !important; }
+}

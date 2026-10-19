@@ -1,0 +1,108 @@
+.cb-smile {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #ededed;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cb-smile__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.cb-smile__face {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 34px;
+  height: 34px;
+  border: 2px solid #4d4d4d;
+  border-radius: 50%;
+  background: #202020;
+  transition: background-color 0.3s, border-color 0.3s, scale 0.45s cubic-bezier(0.3, 1.8, 0.5, 1);
+}
+
+.cb-smile__input:focus-visible + .cb-smile__face {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.cb-smile__face svg {
+  width: 30px;
+  height: 30px;
+  overflow: visible;
+  fill: none;
+  stroke: #a7a7a7;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.cb-smile__dot {
+  fill: #a7a7a7;
+  stroke: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.2s, fill 0.3s;
+}
+
+.cb-smile__flat {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.2s 0.15s, opacity 0.2s 0.15s;
+}
+
+.cb-smile__arc {
+  stroke-dasharray: 100 102;
+  stroke-dashoffset: 101;
+  opacity: 0; /* short arcs still leave a round-cap dot when undrawn */
+  transition: stroke-dashoffset 0.15s, opacity 0s 0.15s;
+}
+
+.cb-smile__input:checked + .cb-smile__face {
+  border-color: #ededed;
+  background: #ededed;
+  scale: 1.12;
+}
+
+.cb-smile:active .cb-smile__face {
+  scale: 0.9;
+}
+
+.cb-smile__input:checked + .cb-smile__face svg {
+  stroke: #111111;
+}
+
+/* Eyes squeeze shut into arcs; the straight mouth shrinks away as the smile draws. */
+.cb-smile__input:checked + .cb-smile__face .cb-smile__dot {
+  transform: scale(0);
+}
+
+.cb-smile__input:checked + .cb-smile__face .cb-smile__flat {
+  opacity: 0;
+  transform: scaleX(0);
+  transition-delay: 0s;
+}
+
+.cb-smile__input:checked + .cb-smile__face .cb-smile__arc {
+  stroke-dashoffset: 0;
+  opacity: 1;
+  transition: stroke-dashoffset 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0.12s, opacity 0s 0.12s;
+}
+
+.cb-smile__input:checked + .cb-smile__face .cb-smile__arc--eye {
+  transition-delay: 0.05s, 0.05s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-smile__face,
+  .cb-smile__face * {
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}

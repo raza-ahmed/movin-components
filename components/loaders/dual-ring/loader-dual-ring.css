@@ -1,0 +1,29 @@
+.loader-dual-ring {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+.loader-dual-ring__outer,
+.loader-dual-ring__inner {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid transparent;
+}
+.loader-dual-ring__outer {
+  inset: 0;
+  border-top-color: #f6f6f6;
+  border-bottom-color: #f6f6f6;
+  animation: loader-dual-ring-cw 1s linear infinite;
+}
+.loader-dual-ring__inner {
+  inset: 9px;
+  border-left-color: #7c7c7c;
+  border-right-color: #7c7c7c;
+  animation: loader-dual-ring-ccw 0.65s linear infinite;
+}
+@keyframes loader-dual-ring-cw  { to { transform: rotate(360deg); } }
+@keyframes loader-dual-ring-ccw { to { transform: rotate(-360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .loader-dual-ring__outer,
+  .loader-dual-ring__inner { animation: none; }
+}

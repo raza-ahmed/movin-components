@@ -1,0 +1,72 @@
+.cb-charging {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-charging__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-charging__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-charging__input:focus-visible + .cb-charging__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.cb-charging__box {
+  overflow: hidden;
+  transition: border-color 200ms ease;
+}
+/* Checking charges the bar (600 ms ease-out); only once it is full does the tick land. */
+.cb-charging__track {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  left: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(246, 246, 246, 0.12);
+  transition: opacity 200ms ease;
+}
+.cb-charging__bar {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: 9999px;
+  background: #a7a7a7;
+  transition: width 600ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+.cb-charging__check {
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+.cb-charging__input:checked + .cb-charging__box { border-color: #a7a7a7; }
+.cb-charging__input:checked + .cb-charging__box .cb-charging__bar { width: 100%; }
+.cb-charging__input:checked + .cb-charging__box .cb-charging__track { opacity: 0; transition-delay: 600ms; }
+.cb-charging__input:checked + .cb-charging__box .cb-charging__check {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 200ms ease 600ms, transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1) 600ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cb-charging__box *,
+  .cb-charging__input:checked + .cb-charging__box * { transition: none; }
+}

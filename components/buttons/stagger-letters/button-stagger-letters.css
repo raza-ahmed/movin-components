@@ -1,0 +1,28 @@
+.btn-stagger-letters {
+  display: inline-flex;
+  gap: 1px;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to bottom right, #7c7c7c, #4d4d4d);
+  color: #f6f6f6;
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+.btn-stagger-letters:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+/* Each letter rises 38 ms after the one before it (--btn-stagger-letters-i is its index). */
+.btn-stagger-letters__letter {
+  display: inline-block;
+  white-space: pre;
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--btn-stagger-letters-i) * 38ms);
+}
+.btn-stagger-letters:hover .btn-stagger-letters__letter { transform: translateY(-5px); }
+@media (prefers-reduced-motion: reduce) {
+  .btn-stagger-letters__letter { transition: none; }
+  .btn-stagger-letters:hover .btn-stagger-letters__letter { transform: none; }
+}

@@ -1,0 +1,56 @@
+.field-magnetic-label {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* The label sits inside the field, then jumps up and out of it on focus or
+   once filled, on Framer's spring (stiffness 400, damping 30) baked into linear(). */
+.field-magnetic-label {
+  --field-magnetic-label-spring: 390ms linear(0, 0.044, 0.149, 0.283, 0.424, 0.558, 0.677, 0.776, 0.856, 0.917, 0.961, 0.992, 1.011, 1.022, 1.027, 1.028, 1.027, 1.023, 1.019, 1.015, 1.012, 1.008, 1.006, 1.004, 1);
+  padding-top: 24px;
+}
+
+.field-magnetic-label__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(246, 246, 246, 0.12);
+  border-radius: 8px;
+  outline: none;
+  background: rgba(246, 246, 246, 0.04);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  transition: border-color 250ms;
+}
+.field-magnetic-label__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+.field-magnetic-label__label {
+  position: absolute;
+  top: 34px;
+  left: 14px;
+  font-size: 15px;
+  line-height: 1.2;
+  color: rgba(246, 246, 246, 0.55);
+  pointer-events: none;
+  transition: top var(--field-magnetic-label-spring), left var(--field-magnetic-label-spring), font-size var(--field-magnetic-label-spring), letter-spacing var(--field-magnetic-label-spring), color 200ms;
+}
+.field-magnetic-label__input:focus,
+.field-magnetic-label__input:not(:placeholder-shown) { border-color: #a7a7a7; }
+.field-magnetic-label__input:focus + .field-magnetic-label__label,
+.field-magnetic-label__input:not(:placeholder-shown) + .field-magnetic-label__label {
+  top: 2px;
+  left: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #a7a7a7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-magnetic-label,
+  .field-magnetic-label *,
+  .field-magnetic-label *::before,
+  .field-magnetic-label *::after { animation: none !important; transition: none !important; }
+}

@@ -1,0 +1,43 @@
+.toggle-expand {
+  position: relative;
+  box-sizing: border-box;
+  width: 56px;
+  height: 30px;
+  padding: 0;
+  overflow: hidden;
+  border: 1.5px solid rgba(246, 246, 246, 0.14);
+  border-radius: 9999px;
+  background: rgba(246, 246, 246, 0.08);
+  cursor: pointer;
+  transition: background 300ms ease, border-color 300ms ease;
+}
+.toggle-expand:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+/* The knob grows into the whole track when on. */
+.toggle-expand__fill {
+  --toggle-expand-ease: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background: rgba(246, 246, 246, 0.5);
+  transition: top var(--toggle-expand-ease), left var(--toggle-expand-ease), width var(--toggle-expand-ease), height var(--toggle-expand-ease), background 300ms ease;
+}
+.toggle-expand[aria-checked="true"] {
+  border-color: rgba(124, 124, 124, 0.4);
+  background: rgba(124, 124, 124, 0.12);
+}
+.toggle-expand[aria-checked="true"] .toggle-expand__fill {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #7c7c7c;
+}
+@media (prefers-reduced-motion: reduce) {
+  .toggle-expand__fill { transition: none; }
+}

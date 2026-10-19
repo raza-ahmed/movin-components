@@ -1,0 +1,119 @@
+.field-drop {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 320px;
+  color: #a7a7a7;
+  font-size: 13px;
+}
+
+.field-drop__box {
+  position: relative;
+  display: block;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  background: #202020;
+  transition: border-color 0.2s;
+}
+
+.field-drop__box:focus-within {
+  border-color: #a7a7a7;
+}
+
+/* Input and mirror share every metric so the letters sit exactly on the
+   input's own (transparent) text; kerning is off in both for the same reason. */
+.field-drop__input,
+.field-drop__mirror {
+  box-sizing: border-box;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 16px;
+  font-kerning: none;
+  font-variant-ligatures: none;
+  letter-spacing: 0;
+}
+
+.field-drop__input {
+  display: block;
+  width: 100%;
+  height: 46px;
+  margin: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: transparent;
+  caret-color: #ededed;
+}
+
+.field-drop__input::placeholder {
+  color: #7c7c7c;
+}
+
+.field-drop__input::selection {
+  background: #4d4d4d;
+}
+
+.field-drop__mirror {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: inherit;
+  color: #f6f6f6;
+  white-space: pre;
+  pointer-events: none;
+}
+
+.field-drop__line {
+  position: relative;
+  display: block;
+}
+
+.field-drop__char {
+  display: inline-block;
+}
+
+.field-drop__char--in {
+  animation: field-drop-in 0.5s cubic-bezier(0.3, 0, 0.3, 1) backwards;
+}
+
+@keyframes field-drop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-130%) rotate(var(--field-drop-r));
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(12%) rotate(0deg);
+  }
+  78% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* A deleted letter keeps its place out of the flow and falls away. */
+.field-drop__char--out {
+  position: absolute;
+  animation: field-drop-out 0.45s cubic-bezier(0.5, 0, 0.9, 0.5) forwards;
+}
+
+@keyframes field-drop-out {
+  to {
+    opacity: 0;
+    transform: translateY(160%) rotate(var(--field-drop-r));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-drop__char--in {
+    animation: none;
+  }
+  .field-drop__char--out {
+    display: none;
+  }
+}

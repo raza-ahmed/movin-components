@@ -1,0 +1,58 @@
+.field-laser {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.field-laser__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(246, 246, 246, 0.1);
+  border-radius: 6px 6px 0 0;
+  outline: none;
+  background: rgba(246, 246, 246, 0.04);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  border-bottom: none;
+}
+.field-laser__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+/* On focus a laser fires along the bottom rail, then the rail stays lit. */
+.field-laser__rail {
+  position: relative;
+  display: block;
+  height: 2px;
+  overflow: hidden;
+  background: rgba(246, 246, 246, 0.1);
+}
+.field-laser__beam,
+.field-laser__glow {
+  position: absolute;
+  inset: 0;
+}
+.field-laser__beam {
+  background: linear-gradient(90deg, transparent, #a7a7a7, #f6f6f6, #a7a7a7, transparent);
+  box-shadow: 0 0 10px #a7a7a7, 0 0 20px rgba(167, 167, 167, 0.4);
+  opacity: 0;
+  transform-origin: left center;
+}
+.field-laser__glow { transition: all 150ms; }
+.field-laser:focus-within .field-laser__beam {
+  opacity: 1;
+  animation: field-laser 300ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.field-laser:focus-within .field-laser__glow {
+  background: #c9c9c9;
+  box-shadow: 0 0 8px rgba(201, 201, 201, 0.8);
+  transition-delay: 290ms;
+}
+@keyframes field-laser {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .field-laser:focus-within .field-laser__beam { animation: none; }
+  .field-laser__glow { transition: none !important; }
+}

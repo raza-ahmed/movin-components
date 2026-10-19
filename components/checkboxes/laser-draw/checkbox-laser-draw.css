@@ -1,0 +1,62 @@
+.cb-laser-draw {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-laser-draw__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-laser-draw__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-laser-draw__input:focus-visible + .cb-laser-draw__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.cb-laser-draw__box { transition: background 300ms ease, border-color 300ms ease; }
+/* The tick is drawn like a laser line, then keeps glowing. */
+.cb-laser-draw__check { transition: filter 300ms ease; }
+.cb-laser-draw__check path {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  transition: stroke-dashoffset 200ms ease-in;
+}
+.cb-laser-draw__input:checked + .cb-laser-draw__box {
+  border-color: #a7a7a7;
+  background: rgba(167, 167, 167, 0.08);
+}
+.cb-laser-draw__input:checked + .cb-laser-draw__box .cb-laser-draw__check {
+  filter: drop-shadow(0 0 3px #a7a7a7) drop-shadow(0 0 8px #a7a7a7);
+  animation: cb-laser-draw 800ms ease-in-out infinite;
+}
+.cb-laser-draw__input:checked + .cb-laser-draw__box .cb-laser-draw__check path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes cb-laser-draw {
+  0% { filter: drop-shadow(0 0 2px #a7a7a7) drop-shadow(0 0 6px #a7a7a7); }
+  50% { filter: drop-shadow(0 0 5px #a7a7a7) drop-shadow(0 0 14px #a7a7a7) drop-shadow(0 0 24px rgba(167, 167, 167, 0.4)); }
+  100% { filter: drop-shadow(0 0 3px #a7a7a7) drop-shadow(0 0 8px #a7a7a7); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-laser-draw__box,
+  .cb-laser-draw__box * { animation: none !important; transition: none !important; }
+}

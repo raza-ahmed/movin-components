@@ -1,0 +1,60 @@
+.card-ink-reveal {
+  position: relative;
+  width: 184px;
+  height: 128px;
+  border-radius: 14px;
+  cursor: none;
+}
+
+.card-ink-reveal__face {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 3px;
+  padding: 16px;
+  overflow: hidden;
+  border: 1px solid #3a3a3a;
+  border-radius: 14px;
+  background: radial-gradient(circle at 80% 20%, #3a3a3a, transparent 45%), #202020;
+}
+
+.card-ink-reveal__title {
+  color: #ededed;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.card-ink-reveal__text {
+  color: #a7a7a7;
+  font-size: 11px;
+}
+
+/* The inverted card, shown only where the gooey blobs are. */
+.card-ink-reveal__face--ink {
+  border-color: #ededed;
+  background: radial-gradient(circle at 80% 20%, #c9c9c9, transparent 45%), #f6f6f6;
+  -webkit-mask: url(#card-ink-reveal-mask);
+  mask: url(#card-ink-reveal-mask);
+}
+
+.card-ink-reveal__face--ink .card-ink-reveal__title {
+  color: #111111;
+}
+
+.card-ink-reveal__face--ink .card-ink-reveal__text {
+  color: #4d4d4d;
+}
+
+.card-ink-reveal__defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* An alpha mask: only the blob's shape matters, not its colour. */
+.card-ink-reveal__defs mask {
+  mask-type: alpha;
+}

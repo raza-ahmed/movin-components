@@ -1,0 +1,59 @@
+.cb-morph-line {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-morph-line__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-morph-line__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-morph-line__input:focus-visible + .cb-morph-line__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* The path itself morphs: a short dash stretches, then bends into the tick. */
+.cb-morph-line__box { transition: background 300ms ease, border-color 300ms ease; }
+.cb-morph-line__mark path { opacity: 0; }
+.cb-morph-line__input:checked + .cb-morph-line__box {
+  border-color: #c9c9c9;
+  background: #3a3a3a;
+}
+.cb-morph-line__input:checked + .cb-morph-line__box .cb-morph-line__mark path {
+  d: path("M1.5 5 L5 8.5 L11.5 1.5");
+  stroke-width: 2.2;
+  opacity: 1;
+  animation: cb-morph-line-in 380ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.cb-morph-line--touched .cb-morph-line__input:not(:checked) + .cb-morph-line__box .cb-morph-line__mark path { animation: cb-morph-line-out 280ms ease-in forwards; }
+@keyframes cb-morph-line-in {
+  0% { d: path("M3 6.5 L10 6.5"); }
+  40% { d: path("M1.5 6.5 L11.5 6.5"); }
+  100% { d: path("M1.5 5 L5 8.5 L11.5 1.5"); }
+}
+@keyframes cb-morph-line-out {
+  0% { d: path("M1.5 5 L5 8.5 L11.5 1.5"); opacity: 1; }
+  50% { d: path("M1.5 6.5 L11.5 6.5"); opacity: 1; }
+  100% { d: path("M3 6.5 L10 6.5"); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cb-morph-line__mark path { animation: none !important; }
+}

@@ -1,0 +1,71 @@
+.cb-shake-lock {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-shake-lock__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-shake-lock__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-shake-lock__input:focus-visible + .cb-shake-lock__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* A hard shake as it locks on; a smaller one as it lets go. */
+.cb-shake-lock__box { transition: background 200ms ease, border-color 200ms ease; }
+.cb-shake-lock__check {
+  opacity: 0;
+  transition: opacity 100ms ease;
+}
+.cb-shake-lock__input:checked + .cb-shake-lock__box {
+  border-color: #a7a7a7;
+  background: #a7a7a7;
+  animation: cb-shake-lock-in 380ms ease forwards;
+}
+.cb-shake-lock__input:checked + .cb-shake-lock__box .cb-shake-lock__check {
+  opacity: 1;
+  transition: opacity 160ms ease 240ms;
+}
+.cb-shake-lock--touched .cb-shake-lock__input:not(:checked) + .cb-shake-lock__box { animation: cb-shake-lock-out 380ms ease forwards; }
+@keyframes cb-shake-lock-in {
+  0% { transform: translateX(0); }
+  10% { transform: translateX(-5px); }
+  24% { transform: translateX(5px); }
+  38% { transform: translateX(-4px); }
+  52% { transform: translateX(4px); }
+  66% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+@keyframes cb-shake-lock-out {
+  0% { transform: translateX(0); }
+  15% { transform: translateX(4px); }
+  35% { transform: translateX(-3px); }
+  55% { transform: translateX(2px); }
+  80% { transform: translateX(-1px); }
+  100% { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-shake-lock__box,
+  .cb-shake-lock__box * { animation: none !important; transition: none !important; }
+}

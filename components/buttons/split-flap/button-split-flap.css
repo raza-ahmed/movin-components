@@ -1,0 +1,101 @@
+.btn-split-flap {
+  display: inline-flex;
+  gap: 3px;
+  padding: 7px;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  background: #111111;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  color: #ededed;
+  font: 600 18px/1 ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-split-flap:hover {
+  border-color: #7c7c7c;
+}
+
+.btn-split-flap:focus-visible {
+  outline: 2px solid #ededed;
+  outline-offset: 4px;
+}
+
+/* No-script fallback: the plain label. */
+.btn-split-flap__text {
+  padding: 7px 8px;
+  letter-spacing: 0.14em;
+}
+
+.btn-split-flap__cell {
+  position: relative;
+  width: 20px;
+  height: 32px;
+  perspective: 140px;
+}
+
+/* The hinge. */
+.btn-split-flap__cell::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 0.5px);
+  right: 0;
+  left: 0;
+  z-index: 3;
+  height: 1px;
+  background: #111111;
+}
+
+.btn-split-flap__half,
+.btn-split-flap__leaf {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 50%;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.btn-split-flap__half--top,
+.btn-split-flap__leaf--top {
+  top: 0;
+  border-radius: 4px 4px 0 0;
+  background: #282828;
+  transform-origin: 50% 100%;
+}
+
+.btn-split-flap__half--bottom,
+.btn-split-flap__leaf--bottom {
+  bottom: 0;
+  border-radius: 0 0 4px 4px;
+  background: #202020;
+  transform-origin: 50% 0;
+}
+
+.btn-split-flap__leaf {
+  z-index: 2;
+}
+
+.btn-split-flap__leaf--bottom {
+  transform: rotateX(90deg);
+}
+
+.btn-split-flap__glyph {
+  display: block;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+}
+
+.btn-split-flap__half--bottom .btn-split-flap__glyph,
+.btn-split-flap__leaf--bottom .btn-split-flap__glyph {
+  margin-top: -16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-split-flap {
+    transition: none;
+  }
+}

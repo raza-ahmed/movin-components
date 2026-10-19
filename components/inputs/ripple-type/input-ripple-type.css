@@ -1,0 +1,35 @@
+.field-ripple-type {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.field-ripple-type__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(246, 246, 246, 0.15);
+  border-radius: 8px;
+  outline: none;
+  background: rgba(246, 246, 246, 0.06);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+}
+.field-ripple-type__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+.field-ripple-type__input:focus { border-color: rgba(167, 167, 167, 0.5); }
+/* Every keystroke sends a pulse through the border. */
+.field-ripple-type--rippling .field-ripple-type__input { animation: field-ripple-type 400ms ease forwards; }
+@keyframes field-ripple-type {
+  0% { border-color: rgba(246, 246, 246, 0.15); box-shadow: 0 0 0 0 transparent; }
+  30% { border-color: #a7a7a7; box-shadow: 0 0 0 3px rgba(167, 167, 167, 0.2); }
+  100% { border-color: rgba(167, 167, 167, 0.5); box-shadow: 0 0 0 0 transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-ripple-type,
+  .field-ripple-type *,
+  .field-ripple-type *::before,
+  .field-ripple-type *::after { animation: none !important; transition: none !important; }
+}

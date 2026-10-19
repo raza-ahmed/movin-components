@@ -1,0 +1,30 @@
+.loader-dots-circle {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+.loader-dots-circle > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: loader-dots-circle 1s ease-in-out infinite;
+}
+.loader-dots-circle > span:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg)   translateY(-19px); }
+.loader-dots-circle > span:nth-child(2) { transform: translate(-50%, -50%) rotate(45deg)  translateY(-19px); animation-delay: 125ms; }
+.loader-dots-circle > span:nth-child(3) { transform: translate(-50%, -50%) rotate(90deg)  translateY(-19px); animation-delay: 250ms; }
+.loader-dots-circle > span:nth-child(4) { transform: translate(-50%, -50%) rotate(135deg) translateY(-19px); animation-delay: 375ms; }
+.loader-dots-circle > span:nth-child(5) { transform: translate(-50%, -50%) rotate(180deg) translateY(-19px); animation-delay: 500ms; }
+.loader-dots-circle > span:nth-child(6) { transform: translate(-50%, -50%) rotate(225deg) translateY(-19px); animation-delay: 625ms; }
+.loader-dots-circle > span:nth-child(7) { transform: translate(-50%, -50%) rotate(270deg) translateY(-19px); animation-delay: 750ms; }
+.loader-dots-circle > span:nth-child(8) { transform: translate(-50%, -50%) rotate(315deg) translateY(-19px); animation-delay: 875ms; }
+@keyframes loader-dots-circle {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader-dots-circle > span { animation: none; opacity: 0.4; }
+}

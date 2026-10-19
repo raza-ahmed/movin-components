@@ -1,0 +1,120 @@
+.cb-select-all {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #ededed;
+  font-size: 14px;
+}
+
+.cb-select-all__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cb-select-all__row--parent {
+  font-weight: 600;
+}
+
+/* Children hang off a branch line under the parent's box. */
+.cb-select-all__branch {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 10px;
+  padding-left: 20px;
+  border-left: 1px solid #3a3a3a;
+}
+
+.cb-select-all__branch .cb-select-all__row::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  width: 14px;
+  border-top: 1px solid #3a3a3a;
+}
+
+.cb-select-all__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.cb-select-all__box {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #4d4d4d;
+  border-radius: 5px;
+  transition: background-color 0.2s, border-color 0.2s, scale 0.35s cubic-bezier(0.3, 1.8, 0.5, 1);
+}
+
+.cb-select-all__input:focus-visible + .cb-select-all__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.cb-select-all__box svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #111111;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cb-select-all__tick {
+  stroke-dasharray: 100 102;
+  stroke-dashoffset: 101;
+  transition: stroke-dashoffset 0.15s;
+}
+
+.cb-select-all__dash {
+  transform: scaleX(0);
+  transform-origin: 10px 10px;
+  transition: transform 0.2s;
+}
+
+.cb-select-all__input:checked + .cb-select-all__box,
+.cb-select-all__input:indeterminate + .cb-select-all__box {
+  border-color: #ededed;
+  background: #ededed;
+  scale: 1.08;
+}
+
+.cb-select-all__input:checked + .cb-select-all__box .cb-select-all__tick {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.3s cubic-bezier(0.5, 0, 0.3, 1) 0.05s;
+}
+
+/* Half way: a dash grows from the middle; it shrinks away as the tick draws. */
+.cb-select-all__input:indeterminate + .cb-select-all__box .cb-select-all__dash {
+  transform: scaleX(1);
+  transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.cb-select-all__text {
+  transition: color 0.3s;
+}
+
+.cb-select-all__branch .cb-select-all__input:checked ~ .cb-select-all__text {
+  color: #a7a7a7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-select-all__box,
+  .cb-select-all__box * {
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}

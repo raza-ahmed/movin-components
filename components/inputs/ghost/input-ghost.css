@@ -1,0 +1,121 @@
+.field-ghost {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 320px;
+  color: #a7a7a7;
+  font-size: 13px;
+}
+
+.field-ghost__box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  background: #202020;
+  transition: border-color 0.2s;
+}
+
+.field-ghost__box:focus-within {
+  border-color: #a7a7a7;
+}
+
+/* Input and mirror share every metric, so the grey ghost lines up exactly
+   after the typed text. */
+.field-ghost__input,
+.field-ghost__mirror {
+  box-sizing: border-box;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 15px;
+  font-kerning: none;
+  font-variant-ligatures: none;
+  letter-spacing: 0;
+}
+
+.field-ghost__input {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  margin: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #f6f6f6;
+}
+
+.field-ghost__input::placeholder {
+  color: #7c7c7c;
+}
+
+.field-ghost__mirror {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: pre;
+  pointer-events: none;
+}
+
+.field-ghost__typed {
+  color: transparent;
+}
+
+.field-ghost__rest {
+  color: #7c7c7c;
+  transition: color 0.12s;
+}
+
+.field-ghost__key {
+  position: relative;
+  flex-shrink: 0;
+  margin-right: 10px;
+  padding: 3px 7px;
+  border: 1px solid #4d4d4d;
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  color: #a7a7a7;
+  font-size: 11px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(6px);
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.25s cubic-bezier(0.3, 1.4, 0.5, 1), border-bottom-width 0.08s, background-color 0.12s;
+}
+
+.field-ghost--hint .field-ghost__key {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* Accepting: the ghost washes solid and the key goes down. */
+.field-ghost--accept .field-ghost__rest {
+  color: #f6f6f6;
+}
+
+.field-ghost--accept .field-ghost__key {
+  border-bottom-width: 1px;
+  background: #3a3a3a;
+  transform: translateY(1px);
+}
+
+.field-ghost__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-ghost__rest,
+  .field-ghost__key {
+    transition: none;
+  }
+}

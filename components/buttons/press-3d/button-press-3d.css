@@ -1,0 +1,29 @@
+.btn-press-3d {
+  position: relative;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #a7a7a7 0%, #7c7c7c 50%, #4d4d4d 100%);
+  box-shadow: 0 6px 0 #282828, 0 9px 14px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(246, 246, 246, 0.2);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 60ms ease, box-shadow 60ms ease;
+}
+.btn-press-3d:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+/* Pressed: the face drops onto its 6px base. */
+.btn-press-3d:active {
+  box-shadow: 0 1px 0 #282828, inset 0 1px 0 rgba(246, 246, 246, 0.1);
+  transform: translateY(5px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-press-3d { transition: none; }
+}

@@ -1,0 +1,16 @@
+<div class="field-odometer">
+  <span class="field-odometer__label">Guests</span>
+  <div class="field-odometer__control">
+    <button class="field-odometer__step" type="button" data-field-odometer-step="-1" aria-label="Fewer guests">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9" /></svg>
+    </button>
+    <div class="field-odometer__value" role="spinbutton" tabindex="0" aria-label="Guests" aria-valuemin="1" aria-valuemax="99" aria-valuenow="8" data-unit="guests">
+      <span class="field-odometer__digit field-odometer__digit--tens" aria-hidden="true"></span>
+      <span class="field-odometer__digit" aria-hidden="true"></span>
+    </div>
+    <button class="field-odometer__step" type="button" data-field-odometer-step="1" aria-label="More guests">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9" /></svg>
+    </button>
+  </div>
+  <span class="field-odometer__hint">Drag the number to scrub</span>
+</div>

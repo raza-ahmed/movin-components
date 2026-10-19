@@ -1,0 +1,62 @@
+.field-count-ring {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.field-count-ring__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 48px 10px 14px;
+  border: 1px solid rgba(246, 246, 246, 0.15);
+  border-radius: 8px;
+  outline: none;
+  background: rgba(246, 246, 246, 0.06);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  transition: border-color 200ms;
+}
+.field-count-ring__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+.field-count-ring__input:focus { box-shadow: 0 0 0 1px #a7a7a7; }
+/* A ring fills as you type and counts down what's left (80 characters). */
+.field-count-ring__ring {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.field-count-ring__ring svg { transform: rotate(-90deg); }
+.field-count-ring__arc {
+  stroke: #7c7c7c;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 200ms ease, stroke 200ms ease;
+}
+.field-count-ring__left {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(246, 246, 246, 0.55);
+  transition: color 200ms;
+}
+.field-count-ring--near .field-count-ring__arc { stroke: #c9c9c9; }
+.field-count-ring--near .field-count-ring__left { color: #c9c9c9; }
+.field-count-ring--full .field-count-ring__input { border-color: #f6f6f6; }
+.field-count-ring--full .field-count-ring__arc { stroke: #f6f6f6; }
+.field-count-ring--full .field-count-ring__left { color: #f6f6f6; }
+
+@media (prefers-reduced-motion: reduce) {
+  .field-count-ring,
+  .field-count-ring *,
+  .field-count-ring *::before,
+  .field-count-ring *::after { animation: none !important; transition: none !important; }
+}

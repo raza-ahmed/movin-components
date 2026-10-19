@@ -1,0 +1,168 @@
+"use client";
+
+import { useId, type CSSProperties } from 'react';
+
+const css = `
+  /* All three folders occupy the same box; only their tab and body take the
+     pointer, and the chosen one is lifted to the front. Everything below the
+     tab row stays below it, so no tab is ever covered. */
+  .radio-folders {
+    position: relative;
+    display: inline-block;
+    width: 214px;
+    height: 132px;
+  }
+
+  .radio-folders__option {
+    position: absolute;
+    inset: 0;
+    z-index: var(--radio-folders-i);
+    pointer-events: none;
+    perspective: 420px;
+    perspective-origin: 50% 0;
+    transition: transform 0.4s cubic-bezier(0.3, 1.4, 0.5, 1);
+  }
+
+  .radio-folders__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+  }
+
+  .radio-folders__tab,
+  .radio-folders__back,
+  .radio-folders__body {
+    position: absolute;
+    background: #282828;
+    transition: background-color 0.3s;
+  }
+
+  .radio-folders__tab,
+  .radio-folders__body {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .radio-folders__tab {
+    top: 18px;
+    left: calc(8px + var(--radio-folders-i) * 68px);
+    width: 64px;
+    height: 20px;
+    border-radius: 7px 7px 0 0;
+    color: #7c7c7c;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  /* The folder's back wall and its front flap share the same box. */
+  .radio-folders__back,
+  .radio-folders__body {
+    top: 37px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 4px 10px 10px 10px;
+  }
+
+  .radio-folders__back {
+    background: #202020;
+  }
+
+  .radio-folders__body {
+    box-shadow: 0 -1px 0 #3a3a3a, 0 8px 18px rgba(0, 0, 0, 0.4);
+    transform-origin: 50% 100%;
+    transition: background-color 0.3s, transform 0.5s cubic-bezier(0.3, 1.3, 0.5, 1);
+  }
+
+  .radio-folders__option:hover .radio-folders__tab {
+    color: #c9c9c9;
+  }
+
+  /* Papers wait inside, between the back wall and the flap. */
+  .radio-folders__paper {
+    position: absolute;
+    top: 44px;
+    left: 16px;
+    right: 16px;
+    height: 64px;
+    border-radius: 4px;
+    background: repeating-linear-gradient(#ededed 0 9px, #c9c9c9 9px 10px) 0 7px / 100% 100% no-repeat, #ededed;
+    transform: translateY(8px);
+    transition: transform 0.45s cubic-bezier(0.3, 1.3, 0.5, 1);
+  }
+
+  .radio-folders__option:has(.radio-folders__input:checked) {
+    z-index: 3;
+    transform: translateY(-4px);
+  }
+
+  .radio-folders__option:has(.radio-folders__input:checked) .radio-folders__tab,
+  .radio-folders__option:has(.radio-folders__input:checked) .radio-folders__body {
+    background: #4d4d4d;
+  }
+
+  .radio-folders__option:has(.radio-folders__input:checked) .radio-folders__tab {
+    color: #f6f6f6;
+  }
+
+  /* Chosen: the flap tips toward you and the papers settle into view. */
+  .radio-folders__option:has(.radio-folders__input:checked) .radio-folders__body {
+    transform: rotateX(-38deg);
+    transition-delay: 0s, 0.1s;
+  }
+
+  .radio-folders__option:has(.radio-folders__input:checked) .radio-folders__paper {
+    transform: none;
+    transition-delay: 0.15s;
+  }
+
+  .radio-folders__option:has(.radio-folders__input:focus-visible) .radio-folders__tab {
+    outline: 2px solid #a7a7a7;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .radio-folders__option,
+    .radio-folders__paper,
+    .radio-folders__body {
+      transition: none !important;
+    }
+  }
+`;
+
+export function FoldersRadio() {
+  // Each instance gets its own group name, so two on one page stay separate.
+  const name = useId();
+  return (
+    <>
+      <style>{css}</style>
+      <div className="radio-folders" role="radiogroup" aria-label="Folder">
+        <label className="radio-folders__option" style={{ '--radio-folders-i': 0 } as CSSProperties}>
+          <input className="radio-folders__input" type="radio" name={name} value="work" defaultChecked />
+          <span className="radio-folders__back" aria-hidden="true" />
+          <span className="radio-folders__paper" aria-hidden="true" />
+          <span className="radio-folders__tab">Work</span>
+          <span className="radio-folders__body" aria-hidden="true" />
+        </label>
+        <label className="radio-folders__option" style={{ '--radio-folders-i': 1 } as CSSProperties}>
+          <input className="radio-folders__input" type="radio" name={name} value="personal" />
+          <span className="radio-folders__back" aria-hidden="true" />
+          <span className="radio-folders__paper" aria-hidden="true" />
+          <span className="radio-folders__tab">Personal</span>
+          <span className="radio-folders__body" aria-hidden="true" />
+        </label>
+        <label className="radio-folders__option" style={{ '--radio-folders-i': 2 } as CSSProperties}>
+          <input className="radio-folders__input" type="radio" name={name} value="archive" />
+          <span className="radio-folders__back" aria-hidden="true" />
+          <span className="radio-folders__paper" aria-hidden="true" />
+          <span className="radio-folders__tab">Archive</span>
+          <span className="radio-folders__body" aria-hidden="true" />
+        </label>
+      </div>
+    </>
+  );
+}

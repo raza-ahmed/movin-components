@@ -1,0 +1,64 @@
+.cb-radar-sweep {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-radar-sweep__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-radar-sweep__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-radar-sweep__input:focus-visible + .cb-radar-sweep__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* Registered so the sweep angle can transition. */
+@property --cb-radar-sweep-p {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: false;
+}
+/* Checking sweeps the fill round like a radar arm; unchecking sweeps it back. */
+.cb-radar-sweep__box {
+  overflow: hidden;
+  background: conic-gradient(from -90deg, #7c7c7c var(--cb-radar-sweep-p), transparent var(--cb-radar-sweep-p));
+  transition: --cb-radar-sweep-p 700ms cubic-bezier(0.45, 0, 0.55, 1), border-color 200ms ease 700ms;
+}
+.cb-radar-sweep__check {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+.cb-radar-sweep__input:checked + .cb-radar-sweep__box {
+  --cb-radar-sweep-p: 100%;
+  border-color: #7c7c7c;
+  transition: --cb-radar-sweep-p 700ms cubic-bezier(0.45, 0, 0.55, 1), border-color 200ms ease;
+}
+.cb-radar-sweep__input:checked + .cb-radar-sweep__box .cb-radar-sweep__check {
+  opacity: 1;
+  transition-delay: 700ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-radar-sweep__box,
+  .cb-radar-sweep__box * { animation: none !important; transition: none !important; }
+}

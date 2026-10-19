@@ -1,0 +1,64 @@
+/* Registered so the angle and the highlight colour can animate. */
+@property --card-border-glow-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: true;
+}
+@property --card-border-glow-hi {
+  syntax: '<color>';
+  initial-value: transparent;
+  inherits: true;
+}
+.card-border-glow {
+  --card-border-glow-hi: #a7a7a7;
+  position: relative;
+  isolation: isolate;
+  width: 160px;
+  padding: 1px;
+  border-radius: 12px;
+  background: conic-gradient(from var(--card-border-glow-angle), #4d4d4d, var(--card-border-glow-hi) 12%, #4d4d4d 30%, #4d4d4d);
+  cursor: pointer;
+  animation: card-border-glow 4s linear infinite;
+  transition: --card-border-glow-hi 350ms ease;
+}
+/* The halo: the same highlight, blurred, behind the card. */
+.card-border-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: conic-gradient(from var(--card-border-glow-angle), transparent, var(--card-border-glow-hi) 12%, transparent 30%);
+  filter: blur(12px);
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+.card-border-glow:hover { --card-border-glow-hi: #f6f6f6; }
+.card-border-glow:hover::before { opacity: 0.7; }
+.card-border-glow__inner {
+  overflow: hidden;
+  border-radius: 11px;
+  background: #111111;
+}
+.card-border-glow__media {
+  height: 64px;
+  background: linear-gradient(135deg, #282828, #111111);
+}
+.card-border-glow__body { padding: 10px 12px 12px; }
+.card-border-glow__title {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f6f6f6;
+}
+.card-border-glow__text {
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(246, 246, 246, 0.55);
+}
+@keyframes card-border-glow {
+  to { --card-border-glow-angle: 360deg; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-border-glow { animation: none; }
+}

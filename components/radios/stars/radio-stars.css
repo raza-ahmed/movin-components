@@ -1,0 +1,112 @@
+.radio-stars {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.radio-stars__row {
+  display: flex;
+  gap: 2px;
+}
+
+.radio-stars__option {
+  position: relative;
+  display: block;
+  padding: 3px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.radio-stars__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.radio-stars__option:has(.radio-stars__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+}
+
+.radio-stars__star {
+  display: block;
+  width: 30px;
+  height: 30px;
+  fill: transparent;
+  stroke: #4d4d4d;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  transition: fill 0.2s, stroke 0.2s;
+  transition-delay: calc(var(--radio-stars-i) * 45ms);
+}
+
+/* Filled: the checked star and every star before it. */
+.radio-stars__option:has(.radio-stars__input:checked) .radio-stars__star,
+.radio-stars__option:has(~ .radio-stars__option .radio-stars__input:checked) .radio-stars__star {
+  fill: #ededed;
+  stroke: #ededed;
+}
+
+/* Plays only when a star becomes the checked one. */
+.radio-stars__option:has(.radio-stars__input:checked) .radio-stars__star {
+  animation: radio-stars-pop 0.45s cubic-bezier(0.3, 1.8, 0.5, 1);
+}
+
+@keyframes radio-stars-pop {
+  0% {
+    transform: scale(0.6) rotate(-20deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* Hover previews a rating up to the pointer, instantly. */
+.radio-stars__row:hover .radio-stars__option .radio-stars__star {
+  fill: transparent;
+  stroke: #4d4d4d;
+  transition-delay: 0s;
+}
+
+.radio-stars__row:hover .radio-stars__option:hover .radio-stars__star,
+.radio-stars__row:hover .radio-stars__option:has(~ .radio-stars__option:hover) .radio-stars__star {
+  fill: #a7a7a7;
+  stroke: #a7a7a7;
+}
+
+.radio-stars__caption {
+  min-height: 1.4em;
+  color: #a7a7a7;
+  font-size: 13px;
+}
+
+.radio-stars:has(.radio-stars__option:nth-child(1) .radio-stars__input:checked) .radio-stars__caption::after {
+  content: 'Poor';
+}
+
+.radio-stars:has(.radio-stars__option:nth-child(2) .radio-stars__input:checked) .radio-stars__caption::after {
+  content: 'Fair';
+}
+
+.radio-stars:has(.radio-stars__option:nth-child(3) .radio-stars__input:checked) .radio-stars__caption::after {
+  content: 'Good';
+}
+
+.radio-stars:has(.radio-stars__option:nth-child(4) .radio-stars__input:checked) .radio-stars__caption::after {
+  content: 'Great';
+}
+
+.radio-stars:has(.radio-stars__option:nth-child(5) .radio-stars__input:checked) .radio-stars__caption::after {
+  content: 'Loved it';
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-stars__star {
+    transition: none;
+  }
+  .radio-stars__option:has(.radio-stars__input:checked) .radio-stars__star {
+    animation: none;
+  }
+}

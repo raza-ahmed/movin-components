@@ -1,0 +1,63 @@
+.field-split-label {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.field-split-label { padding-top: 22px; }
+/* The label splits into words that rise one after another (and settle back in
+   reverse). The script wraps each word and measures the nudge (--field-split-label-shift)
+   that keeps the shrunken words evenly spaced. */
+.field-split-label__label {
+  position: absolute;
+  top: 22px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 46px;
+  font-size: 14px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.field-split-label__word {
+  display: inline-block;
+  color: #a7a7a7;
+  transform-origin: left;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), color 250ms ease;
+  transition-delay: calc((var(--field-split-label-n) - 1 - var(--field-split-label-i)) * 45ms);
+}
+.field-split-label:focus-within .field-split-label__word,
+.field-split-label:has(.field-split-label__input:not(:placeholder-shown)) .field-split-label__word {
+  font-weight: 500;
+  color: #ededed;
+  transform: translate(var(--field-split-label-shift, 0px), -36px) scale(0.8);
+  transition-delay: calc(var(--field-split-label-i) * 45ms);
+}
+
+.field-split-label__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 14px;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(246, 246, 246, 0.04);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  height: 46px;
+  font-size: 14px;
+  transition: border-color 250ms;
+}
+.field-split-label__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+.field-split-label__input:focus,
+.field-split-label__input:not(:placeholder-shown) { border-color: #a7a7a7; }
+
+@media (prefers-reduced-motion: reduce) {
+  .field-split-label,
+  .field-split-label *,
+  .field-split-label *::before,
+  .field-split-label *::after { animation: none !important; transition: none !important; }
+}

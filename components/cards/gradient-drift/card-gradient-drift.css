@@ -1,0 +1,33 @@
+.card-gradient-drift {
+  width: 160px;
+  overflow: hidden;
+  border: 1px solid rgba(246, 246, 246, 0.1);
+  border-radius: 12px;
+  background: rgba(246, 246, 246, 0.06);
+  cursor: pointer;
+}
+.card-gradient-drift__media {
+  height: 64px;
+  background: linear-gradient(270deg, #7c7c7c, #a7a7a7, #a7a7a7, #a7a7a7, #7c7c7c, #7c7c7c);
+  background-size: 500% 500%;
+  animation: card-gradient-drift 8s ease infinite;
+}
+.card-gradient-drift__body { padding: 10px 12px 12px; }
+.card-gradient-drift__title {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f6f6f6;
+}
+.card-gradient-drift__text {
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(246, 246, 246, 0.55);
+}
+@keyframes card-gradient-drift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-gradient-drift__media { animation: none; background-position: 0% 50%; }
+}

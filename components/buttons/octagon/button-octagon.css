@@ -1,0 +1,35 @@
+.btn-octagon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border: none;
+  background: #202020;
+  font: inherit;
+  cursor: pointer;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  transition: background 350ms ease, transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn-octagon:focus-visible { background: #3a3a3a; outline: none; }
+.btn-octagon__label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #f6f6f6;
+  transition: transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+/* A sixteenth turn lands the octagon on its own outline, rotated a vertex. */
+.btn-octagon:hover {
+  background: linear-gradient(135deg, #a7a7a7, #7c7c7c);
+  transform: scale(1.06) rotate(22.5deg);
+}
+.btn-octagon:hover .btn-octagon__label { transform: rotate(-22.5deg); }
+@media (prefers-reduced-motion: reduce) {
+  .btn-octagon,
+  .btn-octagon__label { transition: background 350ms ease; }
+  .btn-octagon:hover,
+  .btn-octagon:hover .btn-octagon__label { transform: none; }
+}

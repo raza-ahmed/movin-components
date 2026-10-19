@@ -1,0 +1,51 @@
+.field-float-label {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid rgba(246, 246, 246, 0.15);
+  border-radius: 8px;
+  background: rgba(246, 246, 246, 0.05);
+  cursor: text;
+  transition: border-color 200ms;
+}
+.field-float-label:focus-within { border-color: #a7a7a7; }
+.field-float-label__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  transition: padding 200ms;
+}
+.field-float-label__label {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  color: rgba(246, 246, 246, 0.55);
+  font-size: 15px;
+  line-height: 1;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: top 200ms ease-in-out, transform 200ms ease-in-out, font-size 200ms ease-in-out, color 200ms ease-in-out;
+}
+/* Lifted while focused or filled. The placeholder is a single space, so
+   :placeholder-shown means "empty" with no script at all. */
+.field-float-label:focus-within .field-float-label__input,
+.field-float-label__input:not(:placeholder-shown) {
+  padding: 22px 14px 10px;
+}
+.field-float-label:focus-within .field-float-label__label,
+.field-float-label__input:not(:placeholder-shown) + .field-float-label__label {
+  top: 8px;
+  color: #a7a7a7;
+  font-size: 11px;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .field-float-label__input,
+  .field-float-label__label { transition: none; }
+}

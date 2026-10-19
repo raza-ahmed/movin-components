@@ -1,0 +1,76 @@
+.field-validate {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.field-validate__box { position: relative; }
+
+.field-validate__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 40px 10px 14px;
+  border: 1px solid rgba(246, 246, 246, 0.15);
+  border-radius: 8px;
+  outline: none;
+  background: rgba(246, 246, 246, 0.06);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  transition: border-color 200ms;
+}
+.field-validate__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+.field-validate__input:focus { box-shadow: 0 0 0 1px #a7a7a7; }
+/* A tick appears once the address looks valid; a bad submit shakes in a cross. */
+.field-validate__icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  font-size: 16px;
+  color: #c9c9c9;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: opacity 200ms, color 200ms;
+}
+.field-validate--valid .field-validate__input { border-color: #7c7c7c; }
+.field-validate--valid .field-validate__icon { opacity: 1; }
+.field-validate--valid .field-validate__icon::before { content: '\2713'; }
+.field-validate--invalid .field-validate__input { border-color: #f6f6f6; }
+.field-validate--invalid .field-validate__icon {
+  color: #f6f6f6;
+  opacity: 1;
+  animation: field-validate 400ms ease;
+}
+.field-validate--invalid .field-validate__icon::before { content: '\2715'; }
+.field-validate__submit {
+  width: 100%;
+  margin-top: 8px;
+  padding: 6px 0;
+  border: 1px solid rgba(246, 246, 246, 0.15);
+  border-radius: 6px;
+  background: rgba(246, 246, 246, 0.08);
+  color: rgba(246, 246, 246, 0.7);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.field-validate__submit:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+@keyframes field-validate {
+  0%, 100% { transform: translateY(-50%) translateX(0) scale(1); }
+  20% { transform: translateY(-50%) translateX(-3px) scale(1.1); }
+  40% { transform: translateY(-50%) translateX(3px) scale(1.1); }
+  60% { transform: translateY(-50%) translateX(-2px); }
+  80% { transform: translateY(-50%) translateX(2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-validate,
+  .field-validate *,
+  .field-validate *::before,
+  .field-validate *::after { animation: none !important; transition: none !important; }
+}

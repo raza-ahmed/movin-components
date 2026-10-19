@@ -1,0 +1,76 @@
+.cb-heartbeat {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* The real checkbox stays in the page (keyboard + screen readers), just invisible. */
+.cb-heartbeat__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.cb-heartbeat__box {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(246, 246, 246, 0.25);
+  border-radius: 7px;
+}
+.cb-heartbeat__input:focus-visible + .cb-heartbeat__box {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.cb-heartbeat__box {
+  overflow: hidden;
+  transition: background 250ms ease, border-color 250ms ease;
+}
+/* Checking traces one heartbeat across the box; the tick follows once it fades. */
+.cb-heartbeat__pulse {
+  position: absolute;
+  opacity: 0;
+}
+.cb-heartbeat__pulse polyline {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+}
+.cb-heartbeat__check {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 200ms ease, transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.cb-heartbeat__input:checked + .cb-heartbeat__box {
+  border-color: #7c7c7c;
+  background: #202020;
+}
+.cb-heartbeat__input:checked + .cb-heartbeat__box .cb-heartbeat__pulse { animation: cb-heartbeat-fade 700ms ease forwards; }
+.cb-heartbeat__input:checked + .cb-heartbeat__box .cb-heartbeat__pulse polyline { animation: cb-heartbeat-draw 500ms ease forwards; }
+.cb-heartbeat__input:checked + .cb-heartbeat__box .cb-heartbeat__check {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 700ms;
+}
+@keyframes cb-heartbeat-draw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes cb-heartbeat-fade {
+  0%, 60% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cb-heartbeat__input:checked + .cb-heartbeat__box .cb-heartbeat__pulse,
+  .cb-heartbeat__input:checked + .cb-heartbeat__box .cb-heartbeat__pulse polyline { animation: none; }
+  .cb-heartbeat__box,
+  .cb-heartbeat__check { transition: none !important; }
+}

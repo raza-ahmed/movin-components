@@ -1,0 +1,36 @@
+.btn-loading-lock {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 180px;
+  padding: 12px 28px;
+  border: 1px solid #7c7c7c;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #282828, #3a3a3a);
+  color: #c9c9c9;
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: border-color 400ms;
+}
+.btn-loading-lock:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+.btn-loading-lock:not([data-state="idle"]) { cursor: default; }
+.btn-loading-lock[data-state="done"] { border-color: #a7a7a7; }
+/* One icon per state; the script only changes data-state and the label. */
+.btn-loading-lock__icon { display: none; }
+.btn-loading-lock[data-state="idle"] .btn-loading-lock__icon--idle,
+.btn-loading-lock[data-state="loading"] .btn-loading-lock__icon--loading,
+.btn-loading-lock[data-state="done"] .btn-loading-lock__icon--done { display: block; }
+.btn-loading-lock__icon--loading { animation: btn-loading-lock 700ms linear infinite; }
+@keyframes btn-loading-lock {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-loading-lock { transition: none; }
+  .btn-loading-lock__icon--loading { animation: none; }
+}

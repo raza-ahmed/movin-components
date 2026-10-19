@@ -1,0 +1,36 @@
+.btn-burst-ring {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 32px;
+  border: 2px solid #4d4d4d;
+  border-radius: 8px;
+  background: transparent;
+  color: #c9c9c9;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-burst-ring:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+.btn-burst-ring__label {
+  position: relative;
+  z-index: 1;
+}
+.btn-burst-ring__ring {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(167, 167, 167, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: btn-burst-ring 520ms ease-out forwards;
+}
+@keyframes btn-burst-ring {
+  from { transform: translate(-50%, -50%) scale(0.2); opacity: 1; }
+  to   { transform: translate(-50%, -50%) scale(2.8); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-burst-ring__ring { display: none; }
+}

@@ -1,0 +1,9 @@
+function initToggleNeumorphic(root) {
+  function toggle() {
+    root.setAttribute('aria-checked', String(root.getAttribute('aria-checked') !== 'true'));
+  }
+  root.addEventListener('click', toggle);
+  return () => root.removeEventListener('click', toggle);
+}
+
+document.querySelectorAll('.toggle-neumorphic').forEach(initToggleNeumorphic);

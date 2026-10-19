@@ -1,0 +1,39 @@
+.loader-orbit {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+.loader-orbit__track {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, currentColor 10%, transparent);
+}
+.loader-orbit__core {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: color-mix(in srgb, currentColor 30%, transparent);
+}
+.loader-orbit__arm {
+  position: absolute;
+  animation: loader-orbit 1.2s linear infinite;
+}
+.loader-orbit__moon {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translateY(-20px);
+}
+@keyframes loader-orbit {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader-orbit__arm { animation: none; }
+}

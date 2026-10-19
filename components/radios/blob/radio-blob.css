@@ -1,0 +1,67 @@
+/* Real radios stay in the page (arrow keys + screen readers), just invisible. */
+.radio-blob__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.radio-blob__option { cursor: pointer; }
+.radio-blob__option:has(.radio-blob__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+/* One pill slides between options on Framer's spring (stiffness 380, damping
+   30), baked into a linear() easing; the script only says where to go. */
+.radio-blob {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 208px;
+}
+.radio-blob__pill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-radius: 9999px;
+  background: rgba(124, 124, 124, 0.8);
+  box-shadow: 0 4px 20px rgba(124, 124, 124, 0.4);
+  opacity: 0;
+}
+.radio-blob--ready .radio-blob__pill {
+  transition: transform 400ms linear(0, 0.03, 0.104, 0.204, 0.316, 0.429, 0.536, 0.634, 0.72, 0.793, 0.854, 0.902, 0.94, 0.969, 0.99, 1.005, 1.014, 1.02, 1.022, 1.023, 1.022, 1.02, 1.018, 1.015, 1.012, 1.01, 1.008, 1.006, 1.004, 1.003, 1);
+}
+.radio-blob__option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 9999px;
+}
+.radio-blob__dot {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(246, 246, 246, 0.2);
+  transition: background 200ms;
+}
+.radio-blob__label {
+  position: relative;
+  font-size: 14px;
+  color: rgba(246, 246, 246, 0.55);
+  user-select: none;
+  transition: color 200ms;
+}
+.radio-blob__option:has(.radio-blob__input:checked) .radio-blob__dot { background: rgba(246, 246, 246, 0.9); }
+.radio-blob__option:has(.radio-blob__input:checked) .radio-blob__label { font-weight: 600; color: #f6f6f6; }
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-blob,
+  .radio-blob * { animation: none !important; transition: none !important; }
+}

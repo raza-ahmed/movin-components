@@ -1,0 +1,81 @@
+.btn-tile-flip {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 192px;
+  height: 64px;
+  padding: 0;
+  overflow: hidden;
+  isolation: isolate;
+  border: 0;
+  border-radius: 12px;
+  background: #111111;
+  color: #ededed;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-tile-flip:focus-visible {
+  outline: 2px solid #ededed;
+  outline-offset: 4px;
+}
+
+.btn-tile-flip__tiles {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1px;
+}
+
+.btn-tile-flip__tile {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(220px) rotate3d(var(--btn-tile-flip-ax, 0), var(--btn-tile-flip-ay, 1), 0, 0deg);
+  transition: transform 0.6s cubic-bezier(0.35, 1.15, 0.5, 1) var(--btn-tile-flip-d, 0ms);
+}
+
+.btn-tile-flip__tile::before,
+.btn-tile-flip__tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 2px;
+  backface-visibility: hidden;
+}
+
+.btn-tile-flip__tile::before {
+  background: #282828;
+}
+
+/* Turned on the tile's own axis, so a full flip lands it square. */
+.btn-tile-flip__tile::after {
+  background: #ededed;
+  transform: rotate3d(var(--btn-tile-flip-ax, 0), var(--btn-tile-flip-ay, 1), 0, 180deg);
+}
+
+.btn-tile-flip--on .btn-tile-flip__tile {
+  transform: perspective(220px) rotate3d(var(--btn-tile-flip-ax, 0), var(--btn-tile-flip-ay, 1), 0, 180deg);
+}
+
+/* Turns dark as the wave passes under it (a blend would stripe it at the gaps). */
+.btn-tile-flip__label {
+  position: relative;
+  pointer-events: none;
+  transition: color 0.3s 0.15s;
+}
+
+.btn-tile-flip--on .btn-tile-flip__label {
+  color: #111111;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-tile-flip__label,
+  .btn-tile-flip__tile {
+    transition: none;
+  }
+}

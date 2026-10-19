@@ -1,0 +1,35 @@
+.btn-confetti {
+  position: relative;
+  display: inline-block;
+}
+.btn-confetti__button {
+  position: relative;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #a7a7a7, #7c7c7c);
+  color: #f6f6f6;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-confetti__button:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+/* Each piece gets its own direction, spin and duration from the script. */
+.btn-confetti__piece {
+  position: absolute;
+  border-radius: 1px;
+  pointer-events: none;
+  animation: btn-confetti var(--btn-confetti-dur) ease-out forwards;
+}
+@keyframes btn-confetti {
+  to {
+    opacity: 0;
+    transform: translate(var(--btn-confetti-x), var(--btn-confetti-y)) rotate(var(--btn-confetti-rot));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-confetti__piece { display: none; }
+}

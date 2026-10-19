@@ -1,0 +1,120 @@
+.field-peek {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  background: #202020;
+  transition: border-color 0.2s;
+}
+
+.field-peek:focus-within {
+  border-color: #a7a7a7;
+}
+
+.field-peek__label {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: 9px 0 9px 14px;
+  cursor: text;
+}
+
+.field-peek__name {
+  color: #7c7c7c;
+  font-size: 11px;
+}
+
+.field-peek__input {
+  width: 100%;
+  margin: 2px 0 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+.field-peek__toggle {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 44px;
+  height: 52px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0 10px 10px 0;
+  background: none;
+  color: #a7a7a7;
+  cursor: pointer;
+}
+
+.field-peek__toggle:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: -4px;
+}
+
+.field-peek__toggle svg {
+  width: 24px;
+  height: 24px;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The open eye squeezes shut to a line; the lashed lid takes over as it closes. */
+.field-peek__open {
+  transform: scaleY(0.05);
+  transform-origin: 12px 12px;
+  opacity: 0;
+  transition: transform 0.18s ease-in, opacity 0s 0.18s;
+}
+
+.field-peek__white {
+  fill: #282828;
+}
+
+.field-peek__pupil {
+  fill: #ededed;
+  stroke: none;
+  transform: translateX(var(--field-peek-x, 0px));
+  transition: transform 0.12s ease-out;
+}
+
+.field-peek__shut {
+  transition: opacity 0.1s 0.12s;
+}
+
+.field-peek--shown .field-peek__open {
+  opacity: 1;
+  transform: scaleY(1);
+  transition: transform 0.32s cubic-bezier(0.3, 1.5, 0.5, 1), opacity 0s;
+}
+
+.field-peek--shown .field-peek__shut {
+  opacity: 0;
+  transition: opacity 0.06s;
+}
+
+.field-peek--shown .field-peek__toggle {
+  color: #ededed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-peek *,
+  .field-peek--shown * {
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}

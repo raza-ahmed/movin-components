@@ -1,0 +1,48 @@
+.btn-rotating-gradient {
+  position: relative;
+  padding: 12px 36px;
+  overflow: hidden;
+  border: none;
+  border-radius: 9999px;
+  background: #111111;
+  color: #f6f6f6;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-rotating-gradient:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+.btn-rotating-gradient__spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin: -200px 0 0 -200px;
+  background: conic-gradient(from 0deg, #7c7c7c, #7c7c7c, #7c7c7c, #a7a7a7, #a7a7a7, #7c7c7c);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+.btn-rotating-gradient:hover .btn-rotating-gradient__spin {
+  opacity: 0.9;
+  animation: btn-rotating-gradient 3s linear infinite;
+}
+.btn-rotating-gradient__shade {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.25);
+  pointer-events: none;
+}
+.btn-rotating-gradient__label {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+@keyframes btn-rotating-gradient {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-rotating-gradient:hover .btn-rotating-gradient__spin { animation: none; }
+}

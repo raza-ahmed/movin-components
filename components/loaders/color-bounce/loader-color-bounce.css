@@ -1,0 +1,24 @@
+.loader-color-bounce {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.loader-color-bounce__dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: loader-color-bounce 1.2s ease-in-out infinite;
+}
+.loader-color-bounce__dot:nth-child(1) { background: #4d4d4d; }
+.loader-color-bounce__dot:nth-child(2) { background: #7c7c7c; animation-delay: 120ms; }
+.loader-color-bounce__dot:nth-child(3) { background: #a7a7a7; animation-delay: 240ms; }
+.loader-color-bounce__dot:nth-child(4) { background: #c9c9c9; animation-delay: 360ms; }
+.loader-color-bounce__dot:nth-child(5) { background: #f6f6f6; animation-delay: 480ms; }
+@keyframes loader-color-bounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-12px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader-color-bounce__dot { animation: none; }
+}

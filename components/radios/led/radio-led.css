@@ -1,0 +1,70 @@
+/* Real radios stay in the page (arrow keys + screen readers), just invisible. */
+.radio-led__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.radio-led__option { cursor: pointer; }
+.radio-led__option:has(.radio-led__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.radio-led {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.radio-led__option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+/* An unlit lamp sunk into the panel; selecting it lights it and sets it breathing. */
+.radio-led__lamp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #202020;
+  box-shadow: 0 0 0 2px rgba(246, 246, 246, 0.06), inset 0 2px 6px rgba(0, 0, 0, 0.7);
+  transition: all 300ms;
+}
+.radio-led__core {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(246, 246, 246, 0.06);
+  transition: all 300ms;
+}
+.radio-led__label {
+  font-size: 12px;
+  letter-spacing: 0.025em;
+  color: rgba(246, 246, 246, 0.55);
+  user-select: none;
+  transition: color 200ms;
+}
+.radio-led__option:has(.radio-led__input:checked) .radio-led__lamp {
+  background: radial-gradient(circle at 50% 40%, #c9c9c9 0%, #a7a7a7 35%, #7c7c7c 100%);
+  box-shadow: 0 0 0 2px rgba(167, 167, 167, 0.3), 0 0 14px 6px rgba(167, 167, 167, 0.45), 0 0 28px 10px rgba(167, 167, 167, 0.2), inset 0 1px 2px rgba(237, 237, 237, 0.5);
+  animation: radio-led 2s ease-in-out infinite;
+}
+.radio-led__option:has(.radio-led__input:checked) .radio-led__core {
+  background: radial-gradient(circle at 40% 30%, #f6f6f6 0%, #ededed 40%, #c9c9c9 100%);
+  box-shadow: 0 0 6px 3px rgba(237, 237, 237, 0.7);
+}
+.radio-led__option:has(.radio-led__input:checked) .radio-led__label { font-weight: 600; color: #c9c9c9; }
+@keyframes radio-led {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-led,
+  .radio-led * { animation: none !important; transition: none !important; }
+}

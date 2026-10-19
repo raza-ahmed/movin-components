@@ -1,0 +1,45 @@
+.btn-shockwave {
+  position: relative;
+  padding: 12px 32px;
+  overflow: hidden;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4d4d4d, #7c7c7c);
+  color: #f6f6f6;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 150ms ease, filter 200ms ease;
+}
+.btn-shockwave:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+.btn-shockwave:hover { filter: brightness(1.12); }
+.btn-shockwave:active { transform: scale(0.96); }
+.btn-shockwave__label {
+  position: relative;
+  z-index: 1;
+}
+/* Three rings from the click point, each a little later and fainter. */
+.btn-shockwave__ring {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  box-sizing: border-box;
+  border: 2px solid rgba(246, 246, 246, 0.85);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  animation: btn-shockwave 500ms ease-out forwards;
+}
+.btn-shockwave__ring--2 { border-color: rgba(246, 246, 246, 0.6); animation-duration: 520ms; animation-delay: 120ms; }
+.btn-shockwave__ring--3 { border-color: rgba(246, 246, 246, 0.4); animation-duration: 540ms; animation-delay: 240ms; }
+@keyframes btn-shockwave {
+  from { opacity: 0.9; transform: translate(-50%, -50%) scale(0.1); }
+  to { opacity: 0; transform: translate(-50%, -50%) scale(6); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-shockwave { transition: none; }
+  .btn-shockwave__ring { display: none; }
+}

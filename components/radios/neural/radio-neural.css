@@ -1,0 +1,107 @@
+/* Real radios stay in the page (arrow keys + screen readers), just invisible. */
+.radio-neural__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.radio-neural__option { cursor: pointer; }
+.radio-neural__option:has(.radio-neural__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.radio-neural {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.radio-neural__option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+/* Six dormant nodes around each option; choosing one fires them in sequence. */
+.radio-neural__web {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.radio-neural__links {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+}
+.radio-neural__links line {
+  stroke: rgba(246, 246, 246, 0.05);
+  stroke-width: 0.75;
+  transition: stroke 300ms ease;
+}
+.radio-neural__node {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a7a7a7;
+  opacity: 0.15;
+  transform: scale(0.6);
+}
+.radio-neural__ring {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  border: 2px solid rgba(246, 246, 246, 0.2);
+  border-radius: 50%;
+  transition: all 200ms;
+}
+.radio-neural__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a7a7a7;
+  transform: scale(0);
+  transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.radio-neural__label {
+  font-size: 14px;
+  color: rgba(246, 246, 246, 0.55);
+  user-select: none;
+  transition: color 200ms;
+}
+
+.radio-neural__option:has(.radio-neural__input:checked) .radio-neural__links line { stroke: rgba(167, 167, 167, 0.3); }
+.radio-neural__option:has(.radio-neural__input:checked) .radio-neural__node {
+  box-shadow: 0 0 6px rgba(167, 167, 167, 0.8);
+  opacity: 0;
+  animation: radio-neural 400ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.radio-neural__option:has(.radio-neural__input:checked) .radio-neural__node:nth-of-type(2) { animation-delay: 60ms; }
+.radio-neural__option:has(.radio-neural__input:checked) .radio-neural__node:nth-of-type(3) { animation-delay: 120ms; }
+.radio-neural__option:has(.radio-neural__input:checked) .radio-neural__node:nth-of-type(4) { animation-delay: 180ms; }
+.radio-neural__option:has(.radio-neural__input:checked) .radio-neural__node:nth-of-type(5) { animation-delay: 240ms; }
+.radio-neural__option:has(.radio-neural__input:checked) .radio-neural__node:nth-of-type(6) { animation-delay: 300ms; }
+.radio-neural__option:has(.radio-neural__input:checked) .radio-neural__ring {
+  border-color: #a7a7a7;
+  background: rgba(167, 167, 167, 0.2);
+  box-shadow: 0 0 10px rgba(167, 167, 167, 0.5);
+}
+.radio-neural__option:has(.radio-neural__input:checked) .radio-neural__dot { transform: scale(1); }
+.radio-neural__option:has(.radio-neural__input:checked) .radio-neural__label { font-weight: 600; color: #a7a7a7; }
+@keyframes radio-neural {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1.4); }
+  100% { opacity: 0.85; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .radio-neural * { transition: none !important; }
+  .radio-neural__option:has(.radio-neural__input:checked) .radio-neural__node { animation: none; opacity: 1; transform: none; }
+}

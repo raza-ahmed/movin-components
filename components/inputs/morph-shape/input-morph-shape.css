@@ -1,0 +1,39 @@
+.field-morph-shape {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.field-morph-shape__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(246, 246, 246, 0.15);
+  border-radius: 2px;
+  outline: none;
+  background: rgba(246, 246, 246, 0.06);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  transition: border-color 300ms, border-radius 300ms;
+}
+.field-morph-shape__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+/* Every focus squeezes the corners into a full pill and back out to soft corners. */
+.field-morph-shape__input:focus {
+  border-color: #a7a7a7;
+  border-radius: 10px;
+  animation: field-morph-shape 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes field-morph-shape {
+  0% { border-radius: 2px; }
+  30% { border-radius: 50px; }
+  100% { border-radius: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-morph-shape,
+  .field-morph-shape *,
+  .field-morph-shape *::before,
+  .field-morph-shape *::after { animation: none !important; transition: none !important; }
+}

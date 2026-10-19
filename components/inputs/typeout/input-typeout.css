@@ -1,0 +1,50 @@
+.field-typeout {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.field-typeout__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(246, 246, 246, 0.15);
+  border-radius: 8px;
+  outline: none;
+  background: rgba(246, 246, 246, 0.06);
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+  transition: border-color 200ms;
+}
+.field-typeout__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+
+.field-typeout__input:focus { border-color: rgba(167, 167, 167, 0.5); }
+/* The placeholder types itself out, letter by letter, whenever the field is empty and idle. */
+.field-typeout__hint {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 15px;
+  color: rgba(246, 246, 246, 0.55);
+  pointer-events: none;
+}
+.field-typeout__caret {
+  width: 1px;
+  height: 16px;
+  background: rgba(246, 246, 246, 0.5);
+}
+.field-typeout--typed .field-typeout__caret { display: none; }
+.field-typeout:focus-within .field-typeout__hint,
+.field-typeout:has(.field-typeout__input:not(:placeholder-shown)) .field-typeout__hint { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .field-typeout,
+  .field-typeout *,
+  .field-typeout *::before,
+  .field-typeout *::after { animation: none !important; transition: none !important; }
+}

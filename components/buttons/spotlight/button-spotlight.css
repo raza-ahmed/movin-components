@@ -1,0 +1,34 @@
+.btn-spotlight {
+  position: relative;
+  padding: 12px 32px;
+  overflow: hidden;
+  border: 1px solid rgba(246, 246, 246, 0.12);
+  border-radius: 8px;
+  background: #202020;
+  color: #f6f6f6;
+  font: inherit;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+  transition: border-color 250ms;
+}
+.btn-spotlight:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+.btn-spotlight:hover { border-color: rgba(246, 246, 246, 0.28); }
+/* The light: centred on the cursor (the script writes its position), faded in on hover. */
+.btn-spotlight__light {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(70px circle at var(--btn-spotlight-x, 50%) var(--btn-spotlight-y, 50%), rgba(246, 246, 246, 0.26), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms;
+}
+.btn-spotlight:hover .btn-spotlight__light { opacity: 1; }
+.btn-spotlight__label { position: relative; }
+@media (prefers-reduced-motion: reduce) {
+  .btn-spotlight,
+  .btn-spotlight__light { transition: none; }
+}

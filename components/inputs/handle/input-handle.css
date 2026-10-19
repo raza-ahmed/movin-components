@@ -1,0 +1,223 @@
+.field-handle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 320px;
+  color: #a7a7a7;
+  font-size: 13px;
+}
+
+.field-handle__label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-handle__box {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  padding: 0 12px 0 14px;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  background: #202020;
+  cursor: text;
+  transition: border-color 0.2s;
+}
+
+.field-handle__box:focus-within {
+  border-color: #a7a7a7;
+}
+
+.field-handle__prefix {
+  flex-shrink: 0;
+  color: #7c7c7c;
+  font-size: 15px;
+}
+
+.field-handle__input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 1px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #f6f6f6;
+  font: inherit;
+  font-size: 15px;
+}
+
+.field-handle__input::placeholder {
+  color: #4d4d4d;
+}
+
+.field-handle--refused .field-handle__box {
+  animation: field-handle-nudge 0.3s ease-out;
+}
+
+@keyframes field-handle-nudge {
+  25% {
+    transform: translateX(-3px);
+  }
+  60% {
+    transform: translateX(2px);
+  }
+}
+
+/* Dots, tick and cross share one slot at the end of the field. */
+.field-handle__state {
+  position: relative;
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+}
+
+.field-handle__state > * {
+  grid-area: 1 / 1;
+}
+
+.field-handle__dots {
+  display: flex;
+  gap: 3px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.field-handle__dots span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #a7a7a7;
+}
+
+.field-handle--checking .field-handle__dots {
+  opacity: 1;
+}
+
+.field-handle--checking .field-handle__dots span {
+  animation: field-handle-dot 0.9s ease-in-out infinite;
+}
+
+.field-handle--checking .field-handle__dots span:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.field-handle--checking .field-handle__dots span:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+@keyframes field-handle-dot {
+  0%,
+  60%,
+  100% {
+    transform: none;
+  }
+  30% {
+    transform: translateY(-4px);
+  }
+}
+
+.field-handle__ok,
+.field-handle__no {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.field-handle__ok {
+  stroke: #ededed;
+  stroke-width: 2.4;
+}
+
+.field-handle__ok path {
+  stroke-dasharray: 100 102;
+  stroke-dashoffset: 101;
+  transition: stroke-dashoffset 0.12s;
+}
+
+.field-handle--ok .field-handle__ok path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.35s cubic-bezier(0.5, 0, 0.3, 1);
+}
+
+.field-handle__no {
+  stroke: #a7a7a7;
+  stroke-width: 2;
+  transform: scale(0) rotate(-90deg);
+  transition: transform 0.15s ease-in;
+}
+
+.field-handle--taken .field-handle__no {
+  transform: none;
+  transition: transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.field-handle--ok .field-handle__box {
+  border-color: #ededed;
+}
+
+.field-handle__msg {
+  min-height: 1.4em;
+  margin: 0;
+  font-size: 12px;
+}
+
+.field-handle--ok .field-handle__msg {
+  color: #ededed;
+}
+
+.field-handle__ideas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.field-handle__idea {
+  margin: 0;
+  padding: 5px 10px;
+  border: 1px solid #3a3a3a;
+  border-radius: 999px;
+  background: #202020;
+  color: #ededed;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  animation: field-handle-idea 0.4s cubic-bezier(0.3, 1.4, 0.5, 1) backwards;
+  animation-delay: calc(var(--field-handle-i) * 70ms);
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.field-handle__idea:hover {
+  border-color: #7c7c7c;
+  background: #282828;
+}
+
+.field-handle__idea:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+@keyframes field-handle-idea {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.9);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-handle *,
+  .field-handle--refused .field-handle__box {
+    transition-duration: 0s !important;
+    animation: none !important;
+  }
+  .field-handle--checking .field-handle__dots span {
+    animation: none !important;
+  }
+}

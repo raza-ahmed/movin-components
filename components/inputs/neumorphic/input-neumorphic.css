@@ -1,0 +1,33 @@
+/* A soft raised pad; focusing presses it into the surface. */
+.field-neumorphic {
+  display: inline-block;
+  padding: 20px;
+  border-radius: 12px;
+  background: #282828;
+}
+.field-neumorphic__input {
+  box-sizing: border-box;
+  width: 208px;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 8px;
+  outline: 1px solid transparent;
+  background: #282828;
+  box-shadow: 5px 5px 14px rgba(0, 0, 0, 0.5), -5px -5px 14px rgba(246, 246, 246, 0.04);
+  color: rgba(246, 246, 246, 0.85);
+  font: inherit;
+  font-size: 15px;
+  transition: box-shadow 250ms ease-in-out;
+}
+.field-neumorphic__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-neumorphic__input:focus {
+  outline-color: rgba(167, 167, 167, 0.3);
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5), inset -4px -4px 10px rgba(246, 246, 246, 0.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-neumorphic,
+  .field-neumorphic *,
+  .field-neumorphic *::before,
+  .field-neumorphic *::after { animation: none !important; transition: none !important; }
+}

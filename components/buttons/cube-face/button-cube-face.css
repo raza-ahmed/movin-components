@@ -1,0 +1,47 @@
+.btn-cube-face {
+  display: inline-block;
+  perspective: 500px;
+}
+/* A 48px-deep box: the front face and the face below it are both pushed out
+   half its depth, and the whole box tips forward to show the second. */
+.btn-cube-face__cube {
+  position: relative;
+  width: 148px;
+  height: 48px;
+  transform-style: preserve-3d;
+  transition: transform 420ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-cube-face--done .btn-cube-face__cube { transform: rotateX(90deg); }
+.btn-cube-face__front,
+.btn-cube-face__bottom {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #f6f6f6;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.btn-cube-face__front {
+  border: none;
+  background: linear-gradient(to bottom right, #4d4d4d, #7c7c7c);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transform: translateZ(24px);
+}
+.btn-cube-face__front:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+.btn-cube-face__bottom {
+  background: linear-gradient(to bottom right, #7c7c7c, #a7a7a7);
+  transform: rotateX(-90deg) translateZ(24px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-cube-face__cube { transition: none; }
+}

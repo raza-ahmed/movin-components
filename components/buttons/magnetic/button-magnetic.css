@@ -1,0 +1,19 @@
+.btn-magnetic {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 9999px;
+  background: #f6f6f6;
+  color: #111111;
+  font: inherit;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+  will-change: transform;
+}
+.btn-magnetic:focus-visible {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-magnetic { will-change: auto; }
+}

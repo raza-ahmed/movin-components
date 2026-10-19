@@ -1,0 +1,24 @@
+.loader-helix {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.loader-helix__dot {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+.loader-helix__dot--a { background: #f6f6f6; animation: loader-helix-a 1s ease-in-out infinite; }
+.loader-helix__dot--b { background: #7c7c7c; animation: loader-helix-b 1s ease-in-out infinite; }
+@keyframes loader-helix-a {
+  0%, 100% { transform: translateY(-12px) scaleX(0.5); opacity: 0.6; }
+  50% { transform: translateY(12px) scaleX(1); opacity: 1; }
+}
+@keyframes loader-helix-b {
+  0%, 100% { transform: translateY(12px) scaleX(1); opacity: 1; }
+  50% { transform: translateY(-12px) scaleX(0.5); opacity: 0.6; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader-helix__dot { animation: none; }
+}

@@ -1,0 +1,179 @@
+.radio-delivery {
+  --radio-delivery-x: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 280px;
+  color: #ededed;
+  font-size: 13px;
+}
+
+/* A one-week road: a day tick every seventh of the way. */
+.radio-delivery__road {
+  position: relative;
+  height: 46px;
+  background:
+    repeating-linear-gradient(90deg, #4d4d4d 0 1px, transparent 1px calc((100% - 1px) / 7)) 0 30px / 100% 5px no-repeat,
+    linear-gradient(#3a3a3a, #3a3a3a) 0 30px / 100% 1px no-repeat;
+}
+
+.radio-delivery__mark {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #7c7c7c;
+  font-size: 10px;
+}
+
+.radio-delivery__mark--end {
+  right: 0;
+  left: auto;
+}
+
+.radio-delivery__truck {
+  position: absolute;
+  top: 7px;
+  left: calc(var(--radio-delivery-x) * (100% - 34px));
+  width: 34px;
+  height: 22px;
+}
+
+.radio-delivery--ready .radio-delivery__truck {
+  transition: left 0.8s cubic-bezier(0.5, 0, 0.3, 1);
+}
+
+.radio-delivery__truck svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transition: transform 0.2s;
+}
+
+.radio-delivery--back .radio-delivery__truck svg {
+  transform: scaleX(-1);
+}
+
+.radio-delivery__body {
+  fill: #ededed;
+}
+
+.radio-delivery__window {
+  fill: #3a3a3a;
+}
+
+.radio-delivery__wheel {
+  fill: #202020;
+  stroke: #a7a7a7;
+  stroke-width: 1.4;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* While it drives: wheels spin and the body bobs. */
+.radio-delivery--moving .radio-delivery__wheel {
+  animation: radio-delivery-spin 0.3s linear infinite;
+}
+
+.radio-delivery--moving .radio-delivery__body,
+.radio-delivery--moving .radio-delivery__window {
+  animation: radio-delivery-bob 0.2s ease-in-out infinite alternate;
+}
+
+@keyframes radio-delivery-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes radio-delivery-bob {
+  to {
+    transform: translateY(-1px);
+  }
+}
+
+.radio-delivery__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.radio-delivery__option {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 10px;
+  padding: 9px 12px;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  background: #202020;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.radio-delivery__option:hover {
+  border-color: #7c7c7c;
+}
+
+.radio-delivery__option:has(.radio-delivery__input:checked) {
+  border-color: #ededed;
+}
+
+.radio-delivery__option:has(.radio-delivery__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.radio-delivery__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.radio-delivery__dot {
+  grid-row: 1 / 3;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 2px solid #4d4d4d;
+  border-radius: 50%;
+  transition: border-width 0.25s cubic-bezier(0.3, 1.6, 0.5, 1), border-color 0.2s;
+}
+
+.radio-delivery__input:checked + .radio-delivery__dot {
+  border-width: 5px;
+  border-color: #ededed;
+}
+
+.radio-delivery__name {
+  font-weight: 600;
+}
+
+.radio-delivery__eta {
+  grid-column: 2;
+  color: #7c7c7c;
+  font-size: 12px;
+}
+
+.radio-delivery__price {
+  grid-row: 1 / 3;
+  grid-column: 3;
+  color: #a7a7a7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radio-delivery--ready .radio-delivery__truck,
+  .radio-delivery__dot {
+    transition: none;
+  }
+  .radio-delivery--moving .radio-delivery__wheel,
+  .radio-delivery--moving .radio-delivery__body,
+  .radio-delivery--moving .radio-delivery__window {
+    animation: none;
+  }
+}

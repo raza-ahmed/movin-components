@@ -1,0 +1,113 @@
+/* Real radios stay in the page (arrow keys + screen readers), just invisible. */
+.radio-constellation__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+.radio-constellation__option { cursor: pointer; }
+.radio-constellation__option:has(.radio-constellation__input:focus-visible) {
+  outline: 2px solid #a7a7a7;
+  outline-offset: 2px;
+}
+
+.radio-constellation {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.radio-constellation__option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+/* Picking an option draws its constellation: five stars pop in one by one,
+   joined by faint lines, then keep twinkling. */
+.radio-constellation__chart {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.radio-constellation__lines {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+}
+.radio-constellation__lines line {
+  stroke: rgba(201, 201, 201, 0.25);
+  stroke-width: 0.75;
+  opacity: 0;
+}
+.radio-constellation__star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #c9c9c9;
+  box-shadow: 0 0 4px rgba(201, 201, 201, 0.9);
+  opacity: 0;
+}
+.radio-constellation__ring {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 2px solid rgba(246, 246, 246, 0.2);
+  border-radius: 50%;
+  transition: all 200ms;
+}
+.radio-constellation__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9c9c9;
+  transform: scale(0);
+  transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.radio-constellation__label {
+  font-size: 14px;
+  color: rgba(246, 246, 246, 0.55);
+  user-select: none;
+  transition: color 200ms;
+}
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__ring {
+  border-color: #c9c9c9;
+  background: rgba(201, 201, 201, 0.12);
+  box-shadow: 0 0 8px rgba(201, 201, 201, 0.5);
+}
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__dot { transform: scale(1); }
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__label { font-weight: 500; color: #c9c9c9; }
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__lines line { animation: radio-constellation-appear 400ms ease-out forwards; }
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__lines line:nth-child(1) { animation-delay: 50ms; }
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__lines line:nth-child(2) { animation-delay: 110ms; }
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__lines line:nth-child(3) { animation-delay: 170ms; }
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__lines line:nth-child(4) { animation-delay: 230ms; }
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__lines line:nth-child(5) { animation-delay: 290ms; }
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__star {
+  animation: radio-constellation-appear 350ms cubic-bezier(0.34, 1.56, 0.64, 1) both, radio-constellation-twinkle 1200ms ease-in-out 400ms infinite;
+}
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__star:nth-child(3) { animation-delay: 70ms, 470ms; animation-duration: 350ms, 1500ms; }
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__star:nth-child(4) { animation-delay: 140ms, 540ms; animation-duration: 350ms, 1800ms; }
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__star:nth-child(5) { animation-delay: 210ms, 610ms; animation-duration: 350ms, 2100ms; }
+.radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__star:nth-child(6) { animation-delay: 280ms, 680ms; animation-duration: 350ms, 2400ms; }
+@keyframes radio-constellation-appear {
+  0% { opacity: 0; transform: scale(0); }
+  70% { opacity: 1; transform: scale(1.4); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes radio-constellation-twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .radio-constellation * { transition: none !important; }
+  .radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__star,
+  .radio-constellation__option:has(.radio-constellation__input:checked) .radio-constellation__lines line { animation: none; opacity: 1; }
+}
