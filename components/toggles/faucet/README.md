@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/faucet/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-faucet.json
+npx shadcn@latest add @movin/toggle-faucet
 ```
 
 Or copy [`toggle-faucet.tsx`](./toggle-faucet.tsx) into your project. Dependencies: none.

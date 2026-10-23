@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/crystal-break/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-crystal-break.json
+npx shadcn@latest add @movin/checkbox-crystal-break
 ```
 
 Or copy [`checkbox-crystal-break.tsx`](./checkbox-crystal-break.tsx) into your project. Dependencies: none.

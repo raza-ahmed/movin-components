@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/split-flap/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-split-flap.json
+npx shadcn@latest add @movin/button-split-flap
 ```
 
 Or copy [`button-split-flap.tsx`](./button-split-flap.tsx) into your project. Dependencies: none.

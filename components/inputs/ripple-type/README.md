@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/ripple-type/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-ripple-type.json
+npx shadcn@latest add @movin/input-ripple-type
 ```
 
 Or copy [`input-ripple-type.tsx`](./input-ripple-type.tsx) into your project. Dependencies: none.

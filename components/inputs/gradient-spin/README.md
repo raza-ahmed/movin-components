@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/gradient-spin/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-gradient-spin.json
+npx shadcn@latest add @movin/input-gradient-spin
 ```
 
 Or copy [`input-gradient-spin.tsx`](./input-gradient-spin.tsx) into your project. Dependencies: none.

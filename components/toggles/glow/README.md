@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/glow/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-glow.json
+npx shadcn@latest add @movin/toggle-glow
 ```
 
 Or copy [`toggle-glow.tsx`](./toggle-glow.tsx) into your project. Dependencies: none.

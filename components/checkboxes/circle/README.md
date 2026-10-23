@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/circle/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-circle.json
+npx shadcn@latest add @movin/checkbox-circle
 ```
 
 Or copy [`checkbox-circle.tsx`](./checkbox-circle.tsx) into your project. Dependencies: none.

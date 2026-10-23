@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/fire-fill/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-fire-fill.json
+npx shadcn@latest add @movin/checkbox-fire-fill
 ```
 
 Or copy [`checkbox-fire-fill.tsx`](./checkbox-fire-fill.tsx) into your project. Dependencies: none.

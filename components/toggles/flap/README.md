@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/flap/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-flap.json
+npx shadcn@latest add @movin/toggle-flap
 ```
 
 Or copy [`toggle-flap.tsx`](./toggle-flap.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/ripple/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-ripple.json
+npx shadcn@latest add @movin/radio-ripple
 ```
 
 Or copy [`radio-ripple.tsx`](./radio-ripple.tsx) into your project. Dependencies: none.

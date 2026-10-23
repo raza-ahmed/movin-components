@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/orbit-particles/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-orbit-particles.json
+npx shadcn@latest add @movin/button-orbit-particles
 ```
 
 Or copy [`button-orbit-particles.tsx`](./button-orbit-particles.tsx) into your project. Dependencies: none.

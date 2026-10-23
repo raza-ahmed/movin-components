@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/charging/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-charging.json
+npx shadcn@latest add @movin/checkbox-charging
 ```
 
 Or copy [`checkbox-charging.tsx`](./checkbox-charging.tsx) into your project. Dependencies: none.

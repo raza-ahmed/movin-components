@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/heartbeat/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-heartbeat.json
+npx shadcn@latest add @movin/loader-heartbeat
 ```
 
 Or copy [`loader-heartbeat.tsx`](./loader-heartbeat.tsx) into your project. Dependencies: none.

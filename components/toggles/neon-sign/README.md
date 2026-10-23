@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/neon-sign/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-neon-sign.json
+npx shadcn@latest add @movin/toggle-neon-sign
 ```
 
 Or copy [`toggle-neon-sign.tsx`](./toggle-neon-sign.tsx) into your project. Dependencies: none.

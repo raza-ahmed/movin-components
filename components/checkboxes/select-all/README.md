@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/select-all/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-select-all.json
+npx shadcn@latest add @movin/checkbox-select-all
 ```
 
 Or copy [`checkbox-select-all.tsx`](./checkbox-select-all.tsx) into your project. Dependencies: none.

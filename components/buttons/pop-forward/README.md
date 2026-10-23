@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/pop-forward/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-pop-forward.json
+npx shadcn@latest add @movin/button-pop-forward
 ```
 
 Or copy [`button-pop-forward.tsx`](./button-pop-forward.tsx) into your project. Dependencies: none.

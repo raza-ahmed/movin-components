@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/count-up/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-count-up.json
+npx shadcn@latest add @movin/button-count-up
 ```
 
 Or copy [`button-count-up.tsx`](./button-count-up.tsx) into your project. Dependencies: none.

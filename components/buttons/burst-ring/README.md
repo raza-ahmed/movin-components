@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/burst-ring/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-burst-ring.json
+npx shadcn@latest add @movin/button-burst-ring
 ```
 
 Or copy [`button-burst-ring.tsx`](./button-burst-ring.tsx) into your project. Dependencies: none.

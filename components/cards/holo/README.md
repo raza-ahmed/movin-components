@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/holo/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-holo.json
+npx shadcn@latest add @movin/card-holo
 ```
 
 Or copy [`card-holo.tsx`](./card-holo.tsx) into your project. Dependencies: none.

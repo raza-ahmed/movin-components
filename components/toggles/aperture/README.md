@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/aperture/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-aperture.json
+npx shadcn@latest add @movin/toggle-aperture
 ```
 
 Or copy [`toggle-aperture.tsx`](./toggle-aperture.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/zipper/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-zipper.json
+npx shadcn@latest add @movin/toggle-zipper
 ```
 
 Or copy [`toggle-zipper.tsx`](./toggle-zipper.tsx) into your project. Dependencies: none.

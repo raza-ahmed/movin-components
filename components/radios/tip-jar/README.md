@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/tip-jar/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-tip-jar.json
+npx shadcn@latest add @movin/radio-tip-jar
 ```
 
 Or copy [`radio-tip-jar.tsx`](./radio-tip-jar.tsx) into your project. Dependencies: none.

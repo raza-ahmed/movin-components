@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/border-draw/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-border-draw.json
+npx shadcn@latest add @movin/input-border-draw
 ```
 
 Or copy [`input-border-draw.tsx`](./input-border-draw.tsx) into your project. Dependencies: none.

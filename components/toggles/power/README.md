@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/power/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-power.json
+npx shadcn@latest add @movin/toggle-power
 ```
 
 Or copy [`toggle-power.tsx`](./toggle-power.tsx) into your project. Dependencies: none.

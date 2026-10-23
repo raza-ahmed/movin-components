@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/gravity-drop/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-gravity-drop.json
+npx shadcn@latest add @movin/checkbox-gravity-drop
 ```
 
 Or copy [`checkbox-gravity-drop.tsx`](./checkbox-gravity-drop.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/electric/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-electric.json
+npx shadcn@latest add @movin/input-electric
 ```
 
 Or copy [`input-electric.tsx`](./input-electric.tsx) into your project. Dependencies: none.

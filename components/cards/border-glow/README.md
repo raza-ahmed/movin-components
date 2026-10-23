@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/border-glow/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-border-glow.json
+npx shadcn@latest add @movin/card-border-glow
 ```
 
 Or copy [`card-border-glow.tsx`](./card-border-glow.tsx) into your project. Dependencies: none.

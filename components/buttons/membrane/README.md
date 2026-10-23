@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/membrane/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-membrane.json
+npx shadcn@latest add @movin/button-membrane
 ```
 
 Or copy [`button-membrane.tsx`](./button-membrane.tsx) into your project. Dependencies: none.

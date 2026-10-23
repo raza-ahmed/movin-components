@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/rocker/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-rocker.json
+npx shadcn@latest add @movin/toggle-rocker
 ```
 
 Or copy [`toggle-rocker.tsx`](./toggle-rocker.tsx) into your project. Dependencies: none.

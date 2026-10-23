@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/draw-check/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-draw-check.json
+npx shadcn@latest add @movin/checkbox-draw-check
 ```
 
 Or copy [`checkbox-draw-check.tsx`](./checkbox-draw-check.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/flip-card/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-flip-card.json
+npx shadcn@latest add @movin/radio-flip-card
 ```
 
 Or copy [`radio-flip-card.tsx`](./radio-flip-card.tsx) into your project. Dependencies: none.

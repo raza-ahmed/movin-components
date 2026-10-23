@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/orbit-snap/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-orbit-snap.json
+npx shadcn@latest add @movin/checkbox-orbit-snap
 ```
 
 Or copy [`checkbox-orbit-snap.tsx`](./checkbox-orbit-snap.tsx) into your project. Dependencies: none.

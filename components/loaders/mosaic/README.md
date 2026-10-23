@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/mosaic/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-mosaic.json
+npx shadcn@latest add @movin/loader-mosaic
 ```
 
 Or copy [`loader-mosaic.tsx`](./loader-mosaic.tsx) into your project. Dependencies: none.

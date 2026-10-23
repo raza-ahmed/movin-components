@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/dog-ear/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-dog-ear.json
+npx shadcn@latest add @movin/checkbox-dog-ear
 ```
 
 Or copy [`checkbox-dog-ear.tsx`](./checkbox-dog-ear.tsx) into your project. Dependencies: none.

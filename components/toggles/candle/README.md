@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/candle/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-candle.json
+npx shadcn@latest add @movin/toggle-candle
 ```
 
 Or copy [`toggle-candle.tsx`](./toggle-candle.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/skewed/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-skewed.json
+npx shadcn@latest add @movin/button-skewed
 ```
 
 Or copy [`button-skewed.tsx`](./button-skewed.tsx) into your project. Dependencies: none.

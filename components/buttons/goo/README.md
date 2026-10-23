@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/goo/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-goo.json
+npx shadcn@latest add @movin/button-goo
 ```
 
 Or copy [`button-goo.tsx`](./button-goo.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/rotating-gradient/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-rotating-gradient.json
+npx shadcn@latest add @movin/button-rotating-gradient
 ```
 
 Or copy [`button-rotating-gradient.tsx`](./button-rotating-gradient.tsx) into your project. Dependencies: none.

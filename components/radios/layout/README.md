@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/layout/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-layout.json
+npx shadcn@latest add @movin/radio-layout
 ```
 
 Or copy [`radio-layout.tsx`](./radio-layout.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/gravity/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-gravity.json
+npx shadcn@latest add @movin/radio-gravity
 ```
 
 Or copy [`radio-gravity.tsx`](./radio-gravity.tsx) into your project. Dependencies: none.

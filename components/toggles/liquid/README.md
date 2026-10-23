@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/liquid/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-liquid.json
+npx shadcn@latest add @movin/toggle-liquid
 ```
 
 Or copy [`toggle-liquid.tsx`](./toggle-liquid.tsx) into your project. Dependencies: none.

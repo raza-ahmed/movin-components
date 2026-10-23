@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/curtain/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-curtain.json
+npx shadcn@latest add @movin/checkbox-curtain
 ```
 
 Or copy [`checkbox-curtain.tsx`](./checkbox-curtain.tsx) into your project. Dependencies: none.

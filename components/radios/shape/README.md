@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/shape/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-shape.json
+npx shadcn@latest add @movin/radio-shape
 ```
 
 Or copy [`radio-shape.tsx`](./radio-shape.tsx) into your project. Dependencies: none.

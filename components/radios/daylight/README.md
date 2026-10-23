@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/daylight/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-daylight.json
+npx shadcn@latest add @movin/radio-daylight
 ```
 
 Or copy [`radio-daylight.tsx`](./radio-daylight.tsx) into your project. Dependencies: none.

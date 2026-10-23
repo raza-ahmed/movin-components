@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/flip/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-flip.json
+npx shadcn@latest add @movin/card-flip
 ```
 
 Or copy [`card-flip.tsx`](./card-flip.tsx) into your project. Dependencies: none.

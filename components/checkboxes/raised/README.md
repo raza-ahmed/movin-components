@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/raised/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-raised.json
+npx shadcn@latest add @movin/checkbox-raised
 ```
 
 Or copy [`checkbox-raised.tsx`](./checkbox-raised.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/constellation/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-constellation.json
+npx shadcn@latest add @movin/radio-constellation
 ```
 
 Or copy [`radio-constellation.tsx`](./radio-constellation.tsx) into your project. Dependencies: none.

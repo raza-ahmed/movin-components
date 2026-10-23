@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/hexagon/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-hexagon.json
+npx shadcn@latest add @movin/button-hexagon
 ```
 
 Or copy [`button-hexagon.tsx`](./button-hexagon.tsx) into your project. Dependencies: none.

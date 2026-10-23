@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/handle/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-handle.json
+npx shadcn@latest add @movin/input-handle
 ```
 
 Or copy [`input-handle.tsx`](./input-handle.tsx) into your project. Dependencies: none.

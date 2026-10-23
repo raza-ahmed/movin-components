@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/spark-trail/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-spark-trail.json
+npx shadcn@latest add @movin/checkbox-spark-trail
 ```
 
 Or copy [`checkbox-spark-trail.tsx`](./checkbox-spark-trail.tsx) into your project. Dependencies: none.

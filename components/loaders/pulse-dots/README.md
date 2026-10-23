@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/pulse-dots/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-pulse-dots.json
+npx shadcn@latest add @movin/loader-pulse-dots
 ```
 
 Or copy [`loader-pulse-dots.tsx`](./loader-pulse-dots.tsx) into your project. Dependencies: none.

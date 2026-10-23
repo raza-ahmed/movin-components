@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/swap-text/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-swap-text.json
+npx shadcn@latest add @movin/button-swap-text
 ```
 
 Or copy [`button-swap-text.tsx`](./button-swap-text.tsx) into your project. Dependencies: none.

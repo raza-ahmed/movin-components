@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/tag-label/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-tag-label.json
+npx shadcn@latest add @movin/input-tag-label
 ```
 
 Or copy [`input-tag-label.tsx`](./input-tag-label.tsx) into your project. Dependencies: none.

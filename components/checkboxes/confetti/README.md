@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/confetti/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-confetti.json
+npx shadcn@latest add @movin/checkbox-confetti
 ```
 
 Or copy [`checkbox-confetti.tsx`](./checkbox-confetti.tsx) into your project. Dependencies: none.

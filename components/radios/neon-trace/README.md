@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/neon-trace/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-neon-trace.json
+npx shadcn@latest add @movin/radio-neon-trace
 ```
 
 Or copy [`radio-neon-trace.tsx`](./radio-neon-trace.tsx) into your project. Dependencies: none.

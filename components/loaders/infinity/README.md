@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/infinity/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-infinity.json
+npx shadcn@latest add @movin/loader-infinity
 ```
 
 Or copy [`loader-infinity.tsx`](./loader-infinity.tsx) into your project. Dependencies: none.

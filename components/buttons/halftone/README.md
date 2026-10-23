@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/halftone/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-halftone.json
+npx shadcn@latest add @movin/button-halftone
 ```
 
 Or copy [`button-halftone.tsx`](./button-halftone.tsx) into your project. Dependencies: none.

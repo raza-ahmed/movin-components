@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/composer/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-composer.json
+npx shadcn@latest add @movin/input-composer
 ```
 
 Or copy [`input-composer.tsx`](./input-composer.tsx) into your project. Dependencies: none.

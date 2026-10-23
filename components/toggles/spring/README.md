@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/spring/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-spring.json
+npx shadcn@latest add @movin/toggle-spring
 ```
 
 Or copy [`toggle-spring.tsx`](./toggle-spring.tsx) into your project. Dependencies: framer-motion.

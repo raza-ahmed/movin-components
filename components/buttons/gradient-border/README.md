@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/gradient-border/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-gradient-border.json
+npx shadcn@latest add @movin/button-gradient-border
 ```
 
 Or copy [`button-gradient-border.tsx`](./button-gradient-border.tsx) into your project. Dependencies: none.

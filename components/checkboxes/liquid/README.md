@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/liquid/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-liquid.json
+npx shadcn@latest add @movin/checkbox-liquid
 ```
 
 Or copy [`checkbox-liquid.tsx`](./checkbox-liquid.tsx) into your project. Dependencies: none.

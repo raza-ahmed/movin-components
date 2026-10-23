@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/magnetic/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-magnetic.json
+npx shadcn@latest add @movin/card-magnetic
 ```
 
 Or copy [`card-magnetic.tsx`](./card-magnetic.tsx) into your project. Dependencies: none.

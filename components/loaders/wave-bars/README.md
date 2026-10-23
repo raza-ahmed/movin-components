@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/wave-bars/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-wave-bars.json
+npx shadcn@latest add @movin/loader-wave-bars
 ```
 
 Or copy [`loader-wave-bars.tsx`](./loader-wave-bars.tsx) into your project. Dependencies: none.

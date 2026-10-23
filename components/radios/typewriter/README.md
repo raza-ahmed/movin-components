@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/typewriter/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-typewriter.json
+npx shadcn@latest add @movin/radio-typewriter
 ```
 
 Or copy [`radio-typewriter.tsx`](./radio-typewriter.tsx) into your project. Dependencies: none.

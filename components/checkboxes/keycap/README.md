@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/keycap/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-keycap.json
+npx shadcn@latest add @movin/checkbox-keycap
 ```
 
 Or copy [`checkbox-keycap.tsx`](./checkbox-keycap.tsx) into your project. Dependencies: none.

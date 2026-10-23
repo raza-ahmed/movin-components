@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/morph-text/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-morph-text.json
+npx shadcn@latest add @movin/button-morph-text
 ```
 
 Or copy [`button-morph-text.tsx`](./button-morph-text.tsx) into your project. Dependencies: none.

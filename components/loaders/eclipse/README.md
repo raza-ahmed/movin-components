@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/eclipse/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-eclipse.json
+npx shadcn@latest add @movin/loader-eclipse
 ```
 
 Or copy [`loader-eclipse.tsx`](./loader-eclipse.tsx) into your project. Dependencies: none.

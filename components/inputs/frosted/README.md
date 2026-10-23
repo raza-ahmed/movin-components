@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/frosted/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-frosted.json
+npx shadcn@latest add @movin/input-frosted
 ```
 
 Or copy [`input-frosted.tsx`](./input-frosted.tsx) into your project. Dependencies: none.

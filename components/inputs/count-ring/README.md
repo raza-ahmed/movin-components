@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/count-ring/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-count-ring.json
+npx shadcn@latest add @movin/input-count-ring
 ```
 
 Or copy [`input-count-ring.tsx`](./input-count-ring.tsx) into your project. Dependencies: none.

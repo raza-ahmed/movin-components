@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/segmented/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-segmented.json
+npx shadcn@latest add @movin/toggle-segmented
 ```
 
 Or copy [`toggle-segmented.tsx`](./toggle-segmented.tsx) into your project. Dependencies: none.

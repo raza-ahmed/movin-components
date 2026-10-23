@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/wobble/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-wobble.json
+npx shadcn@latest add @movin/input-wobble
 ```
 
 Or copy [`input-wobble.tsx`](./input-wobble.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/tide/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-tide.json
+npx shadcn@latest add @movin/button-tide
 ```
 
 Or copy [`button-tide.tsx`](./button-tide.tsx) into your project. Dependencies: none.

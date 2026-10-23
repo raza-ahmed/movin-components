@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/pixel-fill/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-pixel-fill.json
+npx shadcn@latest add @movin/checkbox-pixel-fill
 ```
 
 Or copy [`checkbox-pixel-fill.tsx`](./checkbox-pixel-fill.tsx) into your project. Dependencies: none.

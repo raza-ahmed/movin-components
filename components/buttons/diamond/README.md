@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/diamond/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-diamond.json
+npx shadcn@latest add @movin/button-diamond
 ```
 
 Or copy [`button-diamond.tsx`](./button-diamond.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/sprout/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-sprout.json
+npx shadcn@latest add @movin/checkbox-sprout
 ```
 
 Or copy [`checkbox-sprout.tsx`](./checkbox-sprout.tsx) into your project. Dependencies: none.

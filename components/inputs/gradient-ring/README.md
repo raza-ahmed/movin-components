@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/gradient-ring/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-gradient-ring.json
+npx shadcn@latest add @movin/input-gradient-ring
 ```
 
 Or copy [`input-gradient-ring.tsx`](./input-gradient-ring.tsx) into your project. Dependencies: none.

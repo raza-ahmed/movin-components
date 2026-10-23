@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/radar/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-radar.json
+npx shadcn@latest add @movin/loader-radar
 ```
 
 Or copy [`loader-radar.tsx`](./loader-radar.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/loupe/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-loupe.json
+npx shadcn@latest add @movin/button-loupe
 ```
 
 Or copy [`button-loupe.tsx`](./button-loupe.tsx) into your project. Dependencies: none.

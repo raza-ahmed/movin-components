@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/stars/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-stars.json
+npx shadcn@latest add @movin/radio-stars
 ```
 
 Or copy [`radio-stars.tsx`](./radio-stars.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/neon-pulse/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-neon-pulse.json
+npx shadcn@latest add @movin/input-neon-pulse
 ```
 
 Or copy [`input-neon-pulse.tsx`](./input-neon-pulse.tsx) into your project. Dependencies: none.

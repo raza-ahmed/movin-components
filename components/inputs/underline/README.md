@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/underline/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-underline.json
+npx shadcn@latest add @movin/input-underline
 ```
 
 Or copy [`input-underline.tsx`](./input-underline.tsx) into your project. Dependencies: none.

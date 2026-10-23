@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/magnetic/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-magnetic.json
+npx shadcn@latest add @movin/radio-magnetic
 ```
 
 Or copy [`radio-magnetic.tsx`](./radio-magnetic.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/ink-blot/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-ink-blot.json
+npx shadcn@latest add @movin/checkbox-ink-blot
 ```
 
 Or copy [`checkbox-ink-blot.tsx`](./checkbox-ink-blot.tsx) into your project. Dependencies: none.

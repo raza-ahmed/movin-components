@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/octagon/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-octagon.json
+npx shadcn@latest add @movin/button-octagon
 ```
 
 Or copy [`button-octagon.tsx`](./button-octagon.tsx) into your project. Dependencies: none.

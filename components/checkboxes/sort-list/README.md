@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/sort-list/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-sort-list.json
+npx shadcn@latest add @movin/checkbox-sort-list
 ```
 
 Or copy [`checkbox-sort-list.tsx`](./checkbox-sort-list.tsx) into your project. Dependencies: none.

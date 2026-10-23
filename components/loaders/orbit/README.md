@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/orbit/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-orbit.json
+npx shadcn@latest add @movin/loader-orbit
 ```
 
 Or copy [`loader-orbit.tsx`](./loader-orbit.tsx) into your project. Dependencies: none.

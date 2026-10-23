@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/icon-shift/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-icon-shift.json
+npx shadcn@latest add @movin/input-icon-shift
 ```
 
 Or copy [`input-icon-shift.tsx`](./input-icon-shift.tsx) into your project. Dependencies: none.

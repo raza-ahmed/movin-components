@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/equalizer/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-equalizer.json
+npx shadcn@latest add @movin/loader-equalizer
 ```
 
 Or copy [`loader-equalizer.tsx`](./loader-equalizer.tsx) into your project. Dependencies: none.

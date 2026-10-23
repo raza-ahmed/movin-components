@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/segment/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-segment.json
+npx shadcn@latest add @movin/loader-segment
 ```
 
 Or copy [`loader-segment.tsx`](./loader-segment.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/drop/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-drop.json
+npx shadcn@latest add @movin/input-drop
 ```
 
 Or copy [`input-drop.tsx`](./input-drop.tsx) into your project. Dependencies: none.

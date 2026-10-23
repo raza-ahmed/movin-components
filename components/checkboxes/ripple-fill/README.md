@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/ripple-fill/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-ripple-fill.json
+npx shadcn@latest add @movin/checkbox-ripple-fill
 ```
 
 Or copy [`checkbox-ripple-fill.tsx`](./checkbox-ripple-fill.tsx) into your project. Dependencies: none.

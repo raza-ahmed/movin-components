@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/eye/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-eye.json
+npx shadcn@latest add @movin/toggle-eye
 ```
 
 Or copy [`toggle-eye.tsx`](./toggle-eye.tsx) into your project. Dependencies: none.

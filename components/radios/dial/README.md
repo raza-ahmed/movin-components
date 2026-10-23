@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/dial/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-dial.json
+npx shadcn@latest add @movin/radio-dial
 ```
 
 Or copy [`radio-dial.tsx`](./radio-dial.tsx) into your project. Dependencies: none.

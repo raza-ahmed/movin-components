@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/count/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-count.json
+npx shadcn@latest add @movin/input-count
 ```
 
 Or copy [`input-count.tsx`](./input-count.tsx) into your project. Dependencies: none.

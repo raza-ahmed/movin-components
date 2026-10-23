@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/flip/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-flip.json
+npx shadcn@latest add @movin/checkbox-flip
 ```
 
 Or copy [`checkbox-flip.tsx`](./checkbox-flip.tsx) into your project. Dependencies: none.

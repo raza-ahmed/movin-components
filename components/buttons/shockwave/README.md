@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/shockwave/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-shockwave.json
+npx shadcn@latest add @movin/button-shockwave
 ```
 
 Or copy [`button-shockwave.tsx`](./button-shockwave.tsx) into your project. Dependencies: none.

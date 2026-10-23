@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/strength/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-strength.json
+npx shadcn@latest add @movin/input-strength
 ```
 
 Or copy [`input-strength.tsx`](./input-strength.tsx) into your project. Dependencies: none.

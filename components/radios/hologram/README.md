@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/hologram/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-hologram.json
+npx shadcn@latest add @movin/radio-hologram
 ```
 
 Or copy [`radio-hologram.tsx`](./radio-hologram.tsx) into your project. Dependencies: none.

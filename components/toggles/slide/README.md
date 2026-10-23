@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/slide/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-slide.json
+npx shadcn@latest add @movin/toggle-slide
 ```
 
 Or copy [`toggle-slide.tsx`](./toggle-slide.tsx) into your project. Dependencies: none.

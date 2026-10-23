@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/tile-flip/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-tile-flip.json
+npx shadcn@latest add @movin/button-tile-flip
 ```
 
 Or copy [`button-tile-flip.tsx`](./button-tile-flip.tsx) into your project. Dependencies: none.

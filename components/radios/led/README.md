@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/led/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-led.json
+npx shadcn@latest add @movin/radio-led
 ```
 
 Or copy [`radio-led.tsx`](./radio-led.tsx) into your project. Dependencies: none.

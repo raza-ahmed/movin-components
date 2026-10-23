@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/expand/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-expand.json
+npx shadcn@latest add @movin/toggle-expand
 ```
 
 Or copy [`toggle-expand.tsx`](./toggle-expand.tsx) into your project. Dependencies: none.

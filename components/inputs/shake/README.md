@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/shake/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-shake.json
+npx shadcn@latest add @movin/input-shake
 ```
 
 Or copy [`input-shake.tsx`](./input-shake.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/caret/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-caret.json
+npx shadcn@latest add @movin/input-caret
 ```
 
 Or copy [`input-caret.tsx`](./input-caret.tsx) into your project. Dependencies: none.

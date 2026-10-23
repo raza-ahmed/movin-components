@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/cord/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-cord.json
+npx shadcn@latest add @movin/toggle-cord
 ```
 
 Or copy [`toggle-cord.tsx`](./toggle-cord.tsx) into your project. Dependencies: none.

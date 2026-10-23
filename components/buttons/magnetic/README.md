@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/magnetic/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-magnetic.json
+npx shadcn@latest add @movin/button-magnetic
 ```
 
 Or copy [`button-magnetic.tsx`](./button-magnetic.tsx) into your project. Dependencies: framer-motion.

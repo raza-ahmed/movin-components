@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/lenticular/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-lenticular.json
+npx shadcn@latest add @movin/card-lenticular
 ```
 
 Or copy [`card-lenticular.tsx`](./card-lenticular.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/scratch/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-scratch.json
+npx shadcn@latest add @movin/checkbox-scratch
 ```
 
 Or copy [`checkbox-scratch.tsx`](./checkbox-scratch.tsx) into your project. Dependencies: none.

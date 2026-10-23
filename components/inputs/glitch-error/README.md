@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/glitch-error/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-glitch-error.json
+npx shadcn@latest add @movin/input-glitch-error
 ```
 
 Or copy [`input-glitch-error.tsx`](./input-glitch-error.tsx) into your project. Dependencies: none.

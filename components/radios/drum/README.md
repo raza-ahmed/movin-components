@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/drum/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-drum.json
+npx shadcn@latest add @movin/radio-drum
 ```
 
 Or copy [`radio-drum.tsx`](./radio-drum.tsx) into your project. Dependencies: none.

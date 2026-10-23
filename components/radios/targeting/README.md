@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/targeting/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-targeting.json
+npx shadcn@latest add @movin/radio-targeting
 ```
 
 Or copy [`radio-targeting.tsx`](./radio-targeting.tsx) into your project. Dependencies: none.

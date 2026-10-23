@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/ink-reveal/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-ink-reveal.json
+npx shadcn@latest add @movin/card-ink-reveal
 ```
 
 Or copy [`card-ink-reveal.tsx`](./card-ink-reveal.tsx) into your project. Dependencies: none.

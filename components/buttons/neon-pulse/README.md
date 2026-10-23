@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/neon-pulse/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-neon-pulse.json
+npx shadcn@latest add @movin/button-neon-pulse
 ```
 
 Or copy [`button-neon-pulse.tsx`](./button-neon-pulse.tsx) into your project. Dependencies: none.

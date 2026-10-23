@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/bounce-dots/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-bounce-dots.json
+npx shadcn@latest add @movin/loader-bounce-dots
 ```
 
 Or copy [`loader-bounce-dots.tsx`](./loader-bounce-dots.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/hold-confirm/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-hold-confirm.json
+npx shadcn@latest add @movin/button-hold-confirm
 ```
 
 Or copy [`button-hold-confirm.tsx`](./button-hold-confirm.tsx) into your project. Dependencies: none.

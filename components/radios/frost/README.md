@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/frost/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-frost.json
+npx shadcn@latest add @movin/radio-frost
 ```
 
 Or copy [`radio-frost.tsx`](./radio-frost.tsx) into your project. Dependencies: framer-motion.

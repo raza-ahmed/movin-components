@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/neon-ripple/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-neon-ripple.json
+npx shadcn@latest add @movin/loader-neon-ripple
 ```
 
 Or copy [`loader-neon-ripple.tsx`](./loader-neon-ripple.tsx) into your project. Dependencies: none.

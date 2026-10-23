@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/folders/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-folders.json
+npx shadcn@latest add @movin/radio-folders
 ```
 
 Or copy [`radio-folders.tsx`](./radio-folders.tsx) into your project. Dependencies: none.

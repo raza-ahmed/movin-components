@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/bounce/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-bounce.json
+npx shadcn@latest add @movin/checkbox-bounce
 ```
 
 Or copy [`checkbox-bounce.tsx`](./checkbox-bounce.tsx) into your project. Dependencies: none.

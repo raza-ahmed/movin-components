@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/wipe-swap/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-wipe-swap.json
+npx shadcn@latest add @movin/button-wipe-swap
 ```
 
 Or copy [`button-wipe-swap.tsx`](./button-wipe-swap.tsx) into your project. Dependencies: none.

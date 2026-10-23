@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/airplane/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-airplane.json
+npx shadcn@latest add @movin/toggle-airplane
 ```
 
 Or copy [`toggle-airplane.tsx`](./toggle-airplane.tsx) into your project. Dependencies: none.

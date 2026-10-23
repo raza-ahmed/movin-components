@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/dual-ring/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-dual-ring.json
+npx shadcn@latest add @movin/loader-dual-ring
 ```
 
 Or copy [`loader-dual-ring.tsx`](./loader-dual-ring.tsx) into your project. Dependencies: none.

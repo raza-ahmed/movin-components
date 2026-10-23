@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/seesaw/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-seesaw.json
+npx shadcn@latest add @movin/toggle-seesaw
 ```
 
 Or copy [`toggle-seesaw.tsx`](./toggle-seesaw.tsx) into your project. Dependencies: none.

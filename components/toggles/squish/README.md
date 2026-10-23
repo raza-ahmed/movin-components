@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/squish/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-squish.json
+npx shadcn@latest add @movin/toggle-squish
 ```
 
 Or copy [`toggle-squish.tsx`](./toggle-squish.tsx) into your project. Dependencies: none.

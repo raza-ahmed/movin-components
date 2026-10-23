@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/lava/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-lava.json
+npx shadcn@latest add @movin/loader-lava
 ```
 
 Or copy [`loader-lava.tsx`](./loader-lava.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/elastic-press/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-elastic-press.json
+npx shadcn@latest add @movin/button-elastic-press
 ```
 
 Or copy [`button-elastic-press.tsx`](./button-elastic-press.tsx) into your project. Dependencies: none.

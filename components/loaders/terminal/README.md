@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/terminal/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-terminal.json
+npx shadcn@latest add @movin/loader-terminal
 ```
 
 Or copy [`loader-terminal.tsx`](./loader-terminal.tsx) into your project. Dependencies: none.

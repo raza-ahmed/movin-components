@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/ghost/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-ghost.json
+npx shadcn@latest add @movin/input-ghost
 ```
 
 Or copy [`input-ghost.tsx`](./input-ghost.tsx) into your project. Dependencies: none.

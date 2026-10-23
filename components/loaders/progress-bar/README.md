@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/progress-bar/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-progress-bar.json
+npx shadcn@latest add @movin/loader-progress-bar
 ```
 
 Or copy [`loader-progress-bar.tsx`](./loader-progress-bar.tsx) into your project. Dependencies: none.

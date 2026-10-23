@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/sizes/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-sizes.json
+npx shadcn@latest add @movin/radio-sizes
 ```
 
 Or copy [`radio-sizes.tsx`](./radio-sizes.tsx) into your project. Dependencies: none.

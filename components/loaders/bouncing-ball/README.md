@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/bouncing-ball/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-bouncing-ball.json
+npx shadcn@latest add @movin/loader-bouncing-ball
 ```
 
 Or copy [`loader-bouncing-ball.tsx`](./loader-bouncing-ball.tsx) into your project. Dependencies: none.

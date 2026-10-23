@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/shatter/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-shatter.json
+npx shadcn@latest add @movin/button-shatter
 ```
 
 Or copy [`button-shatter.tsx`](./button-shatter.tsx) into your project. Dependencies: none.

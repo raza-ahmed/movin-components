@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/offset-block/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-offset-block.json
+npx shadcn@latest add @movin/radio-offset-block
 ```
 
 Or copy [`radio-offset-block.tsx`](./radio-offset-block.tsx) into your project. Dependencies: none.

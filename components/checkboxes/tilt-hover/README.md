@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/tilt-hover/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-tilt-hover.json
+npx shadcn@latest add @movin/checkbox-tilt-hover
 ```
 
 Or copy [`checkbox-tilt-hover.tsx`](./checkbox-tilt-hover.tsx) into your project. Dependencies: none.

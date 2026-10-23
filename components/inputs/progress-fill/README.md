@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/progress-fill/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-progress-fill.json
+npx shadcn@latest add @movin/input-progress-fill
 ```
 
 Or copy [`input-progress-fill.tsx`](./input-progress-fill.tsx) into your project. Dependencies: none.

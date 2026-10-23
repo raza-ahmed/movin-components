@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/code-slots/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-code-slots.json
+npx shadcn@latest add @movin/input-code-slots
 ```
 
 Or copy [`input-code-slots.tsx`](./input-code-slots.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/bookmark/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-bookmark.json
+npx shadcn@latest add @movin/checkbox-bookmark
 ```
 
 Or copy [`checkbox-bookmark.tsx`](./checkbox-bookmark.tsx) into your project. Dependencies: none.

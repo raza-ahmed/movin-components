@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/shimmer-sweep/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-shimmer-sweep.json
+npx shadcn@latest add @movin/button-shimmer-sweep
 ```
 
 Or copy [`button-shimmer-sweep.tsx`](./button-shimmer-sweep.tsx) into your project. Dependencies: none.

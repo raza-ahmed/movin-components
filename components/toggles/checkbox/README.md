@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/checkbox/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-checkbox.json
+npx shadcn@latest add @movin/toggle-checkbox
 ```
 
 Or copy [`toggle-checkbox.tsx`](./toggle-checkbox.tsx) into your project. Dependencies: none.

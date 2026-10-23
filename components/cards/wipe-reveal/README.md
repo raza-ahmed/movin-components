@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/wipe-reveal/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-wipe-reveal.json
+npx shadcn@latest add @movin/card-wipe-reveal
 ```
 
 Or copy [`card-wipe-reveal.tsx`](./card-wipe-reveal.tsx) into your project. Dependencies: none.

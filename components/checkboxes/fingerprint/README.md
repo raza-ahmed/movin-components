@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/fingerprint/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-fingerprint.json
+npx shadcn@latest add @movin/checkbox-fingerprint
 ```
 
 Or copy [`checkbox-fingerprint.tsx`](./checkbox-fingerprint.tsx) into your project. Dependencies: none.

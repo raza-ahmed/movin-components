@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/pixel/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-pixel.json
+npx shadcn@latest add @movin/radio-pixel
 ```
 
 Or copy [`radio-pixel.tsx`](./radio-pixel.tsx) into your project. Dependencies: none.

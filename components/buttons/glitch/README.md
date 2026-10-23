@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/glitch/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-glitch.json
+npx shadcn@latest add @movin/button-glitch
 ```
 
 Or copy [`button-glitch.tsx`](./button-glitch.tsx) into your project. Dependencies: none.

@@ -10,10 +10,12 @@ Live previews, code and an LLM prompt for each: https://movin.design/components/
 ## Install with shadcn
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-airplane.json
+npx shadcn@latest add @movin/toggle-airplane
 ```
 
-Replace `toggle-airplane` with any install name from the tables below. The full index is at
+Replace `toggle-airplane` with any install name from the tables below. `@movin` is listed in the
+shadcn directory, so there is nothing to configure; with an older CLI, use the full URL instead:
+`npx shadcn@latest add https://movin.design/r/toggle-airplane.json`. The full index is at
 https://movin.design/r/registry.json, and [`registry.json`](./registry.json) in this repo mirrors it.
 
 ## Use the plain HTML version

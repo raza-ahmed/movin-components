@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/trifold/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-trifold.json
+npx shadcn@latest add @movin/card-trifold
 ```
 
 Or copy [`card-trifold.tsx`](./card-trifold.tsx) into your project. Dependencies: none.

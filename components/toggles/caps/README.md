@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/caps/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-caps.json
+npx shadcn@latest add @movin/toggle-caps
 ```
 
 Or copy [`toggle-caps.tsx`](./toggle-caps.tsx) into your project. Dependencies: none.

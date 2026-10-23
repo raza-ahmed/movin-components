@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/gears/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-gears.json
+npx shadcn@latest add @movin/loader-gears
 ```
 
 Or copy [`loader-gears.tsx`](./loader-gears.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/typeout/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-typeout.json
+npx shadcn@latest add @movin/input-typeout
 ```
 
 Or copy [`input-typeout.tsx`](./input-typeout.tsx) into your project. Dependencies: none.

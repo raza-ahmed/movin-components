@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/spotlight/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-spotlight.json
+npx shadcn@latest add @movin/button-spotlight
 ```
 
 Or copy [`button-spotlight.tsx`](./button-spotlight.tsx) into your project. Dependencies: none.

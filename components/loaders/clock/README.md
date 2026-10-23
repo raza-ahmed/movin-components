@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/clock/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-clock.json
+npx shadcn@latest add @movin/loader-clock
 ```
 
 Or copy [`loader-clock.tsx`](./loader-clock.tsx) into your project. Dependencies: none.

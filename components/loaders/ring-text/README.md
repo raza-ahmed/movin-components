@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/ring-text/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-ring-text.json
+npx shadcn@latest add @movin/loader-ring-text
 ```
 
 Or copy [`loader-ring-text.tsx`](./loader-ring-text.tsx) into your project. Dependencies: none.

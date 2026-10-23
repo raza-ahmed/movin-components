@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/laser-draw/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-laser-draw.json
+npx shadcn@latest add @movin/checkbox-laser-draw
 ```
 
 Or copy [`checkbox-laser-draw.tsx`](./checkbox-laser-draw.tsx) into your project. Dependencies: none.

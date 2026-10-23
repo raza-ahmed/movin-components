@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/matrix/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-matrix.json
+npx shadcn@latest add @movin/radio-matrix
 ```
 
 Or copy [`radio-matrix.tsx`](./radio-matrix.tsx) into your project. Dependencies: none.

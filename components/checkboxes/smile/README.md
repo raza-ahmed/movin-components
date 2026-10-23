@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/smile/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-smile.json
+npx shadcn@latest add @movin/checkbox-smile
 ```
 
 Or copy [`checkbox-smile.tsx`](./checkbox-smile.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/jello-wobble/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-jello-wobble.json
+npx shadcn@latest add @movin/button-jello-wobble
 ```
 
 Or copy [`button-jello-wobble.tsx`](./button-jello-wobble.tsx) into your project. Dependencies: none.

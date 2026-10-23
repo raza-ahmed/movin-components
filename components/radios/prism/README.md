@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/prism/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-prism.json
+npx shadcn@latest add @movin/radio-prism
 ```
 
 Or copy [`radio-prism.tsx`](./radio-prism.tsx) into your project. Dependencies: none.

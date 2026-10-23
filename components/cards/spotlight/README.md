@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/spotlight/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-spotlight.json
+npx shadcn@latest add @movin/card-spotlight
 ```
 
 Or copy [`card-spotlight.tsx`](./card-spotlight.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/glitch/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-glitch.json
+npx shadcn@latest add @movin/card-glitch
 ```
 
 Or copy [`card-glitch.tsx`](./card-glitch.tsx) into your project. Dependencies: none.

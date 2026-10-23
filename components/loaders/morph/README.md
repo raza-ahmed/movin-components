@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/morph/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-morph.json
+npx shadcn@latest add @movin/loader-morph
 ```
 
 Or copy [`loader-morph.tsx`](./loader-morph.tsx) into your project. Dependencies: none.

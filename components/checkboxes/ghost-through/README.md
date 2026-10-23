@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/ghost-through/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-ghost-through.json
+npx shadcn@latest add @movin/checkbox-ghost-through
 ```
 
 Or copy [`checkbox-ghost-through.tsx`](./checkbox-ghost-through.tsx) into your project. Dependencies: none.

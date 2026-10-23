@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/stack/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-stack.json
+npx shadcn@latest add @movin/loader-stack
 ```
 
 Or copy [`loader-stack.tsx`](./loader-stack.tsx) into your project. Dependencies: none.

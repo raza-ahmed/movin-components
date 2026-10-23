@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/align/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-align.json
+npx shadcn@latest add @movin/radio-align
 ```
 
 Or copy [`radio-align.tsx`](./radio-align.tsx) into your project. Dependencies: none.

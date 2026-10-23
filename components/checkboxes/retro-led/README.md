@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/retro-led/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-retro-led.json
+npx shadcn@latest add @movin/checkbox-retro-led
 ```
 
 Or copy [`checkbox-retro-led.tsx`](./checkbox-retro-led.tsx) into your project. Dependencies: none.

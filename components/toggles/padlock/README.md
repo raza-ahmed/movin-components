@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/padlock/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-padlock.json
+npx shadcn@latest add @movin/toggle-padlock
 ```
 
 Or copy [`toggle-padlock.tsx`](./toggle-padlock.tsx) into your project. Dependencies: none.

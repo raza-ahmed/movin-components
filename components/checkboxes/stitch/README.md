@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/stitch/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-stitch.json
+npx shadcn@latest add @movin/checkbox-stitch
 ```
 
 Or copy [`checkbox-stitch.tsx`](./checkbox-stitch.tsx) into your project. Dependencies: none.

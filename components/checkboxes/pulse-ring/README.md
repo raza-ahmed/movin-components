@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/pulse-ring/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-pulse-ring.json
+npx shadcn@latest add @movin/checkbox-pulse-ring
 ```
 
 Or copy [`checkbox-pulse-ring.tsx`](./checkbox-pulse-ring.tsx) into your project. Dependencies: none.

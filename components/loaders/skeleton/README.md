@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/skeleton/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-skeleton.json
+npx shadcn@latest add @movin/loader-skeleton
 ```
 
 Or copy [`loader-skeleton.tsx`](./loader-skeleton.tsx) into your project. Dependencies: none.

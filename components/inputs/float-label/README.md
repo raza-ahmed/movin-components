@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/float-label/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-float-label.json
+npx shadcn@latest add @movin/input-float-label
 ```
 
 Or copy [`input-float-label.tsx`](./input-float-label.tsx) into your project. Dependencies: none.

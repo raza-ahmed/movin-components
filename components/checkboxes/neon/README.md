@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/neon/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-neon.json
+npx shadcn@latest add @movin/checkbox-neon
 ```
 
 Or copy [`checkbox-neon.tsx`](./checkbox-neon.tsx) into your project. Dependencies: none.

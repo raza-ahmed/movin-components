@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/strike-task/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-strike-task.json
+npx shadcn@latest add @movin/checkbox-strike-task
 ```
 
 Or copy [`checkbox-strike-task.tsx`](./checkbox-strike-task.tsx) into your project. Dependencies: none.

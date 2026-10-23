@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/cursor/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-cursor.json
+npx shadcn@latest add @movin/radio-cursor
 ```
 
 Or copy [`radio-cursor.tsx`](./radio-cursor.tsx) into your project. Dependencies: none.

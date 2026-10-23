@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/radar/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-radar.json
+npx shadcn@latest add @movin/radio-radar
 ```
 
 Or copy [`radio-radar.tsx`](./radio-radar.tsx) into your project. Dependencies: none.

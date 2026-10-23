@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/elastic/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-elastic.json
+npx shadcn@latest add @movin/radio-elastic
 ```
 
 Or copy [`radio-elastic.tsx`](./radio-elastic.tsx) into your project. Dependencies: framer-motion.

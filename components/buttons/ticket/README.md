@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/ticket/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-ticket.json
+npx shadcn@latest add @movin/button-ticket
 ```
 
 Or copy [`button-ticket.tsx`](./button-ticket.tsx) into your project. Dependencies: none.

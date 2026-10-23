@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/dominoes/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-dominoes.json
+npx shadcn@latest add @movin/loader-dominoes
 ```
 
 Or copy [`loader-dominoes.tsx`](./loader-dominoes.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/lens/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-lens.json
+npx shadcn@latest add @movin/input-lens
 ```
 
 Or copy [`input-lens.tsx`](./input-lens.tsx) into your project. Dependencies: none.

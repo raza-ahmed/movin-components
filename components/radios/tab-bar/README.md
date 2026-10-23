@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/tab-bar/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-tab-bar.json
+npx shadcn@latest add @movin/radio-tab-bar
 ```
 
 Or copy [`radio-tab-bar.tsx`](./radio-tab-bar.tsx) into your project. Dependencies: none.

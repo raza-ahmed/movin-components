@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/battery/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-battery.json
+npx shadcn@latest add @movin/loader-battery
 ```
 
 Or copy [`loader-battery.tsx`](./loader-battery.tsx) into your project. Dependencies: none.

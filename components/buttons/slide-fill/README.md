@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/slide-fill/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-slide-fill.json
+npx shadcn@latest add @movin/button-slide-fill
 ```
 
 Or copy [`button-slide-fill.tsx`](./button-slide-fill.tsx) into your project. Dependencies: none.

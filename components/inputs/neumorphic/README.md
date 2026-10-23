@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/neumorphic/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-neumorphic.json
+npx shadcn@latest add @movin/input-neumorphic
 ```
 
 Or copy [`input-neumorphic.tsx`](./input-neumorphic.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/typewriter/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-typewriter.json
+npx shadcn@latest add @movin/button-typewriter
 ```
 
 Or copy [`button-typewriter.tsx`](./button-typewriter.tsx) into your project. Dependencies: none.

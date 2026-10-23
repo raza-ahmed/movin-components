@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/hourglass/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-hourglass.json
+npx shadcn@latest add @movin/loader-hourglass
 ```
 
 Or copy [`loader-hourglass.tsx`](./loader-hourglass.tsx) into your project. Dependencies: none.

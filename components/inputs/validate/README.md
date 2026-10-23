@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/validate/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-validate.json
+npx shadcn@latest add @movin/input-validate
 ```
 
 Or copy [`input-validate.tsx`](./input-validate.tsx) into your project. Dependencies: none.

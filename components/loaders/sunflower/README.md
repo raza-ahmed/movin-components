@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/sunflower/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-sunflower.json
+npx shadcn@latest add @movin/loader-sunflower
 ```
 
 Or copy [`loader-sunflower.tsx`](./loader-sunflower.tsx) into your project. Dependencies: none.

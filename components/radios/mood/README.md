@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/mood/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-mood.json
+npx shadcn@latest add @movin/radio-mood
 ```
 
 Or copy [`radio-mood.tsx`](./radio-mood.tsx) into your project. Dependencies: none.

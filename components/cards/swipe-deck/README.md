@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/swipe-deck/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-swipe-deck.json
+npx shadcn@latest add @movin/card-swipe-deck
 ```
 
 Or copy [`card-swipe-deck.tsx`](./card-swipe-deck.tsx) into your project. Dependencies: none.

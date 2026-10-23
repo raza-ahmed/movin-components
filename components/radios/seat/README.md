@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/seat/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-seat.json
+npx shadcn@latest add @movin/radio-seat
 ```
 
 Or copy [`radio-seat.tsx`](./radio-seat.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/stamp/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-stamp.json
+npx shadcn@latest add @movin/checkbox-stamp
 ```
 
 Or copy [`checkbox-stamp.tsx`](./checkbox-stamp.tsx) into your project. Dependencies: none.

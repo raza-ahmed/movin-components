@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/icon/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-icon.json
+npx shadcn@latest add @movin/toggle-icon
 ```
 
 Or copy [`toggle-icon.tsx`](./toggle-icon.tsx) into your project. Dependencies: none.

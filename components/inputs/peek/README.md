@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/peek/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-peek.json
+npx shadcn@latest add @movin/input-peek
 ```
 
 Or copy [`input-peek.tsx`](./input-peek.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/neon-glow/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-neon-glow.json
+npx shadcn@latest add @movin/card-neon-glow
 ```
 
 Or copy [`card-neon-glow.tsx`](./card-neon-glow.tsx) into your project. Dependencies: none.

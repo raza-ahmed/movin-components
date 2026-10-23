@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/peel/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-peel.json
+npx shadcn@latest add @movin/card-peel
 ```
 
 Or copy [`card-peel.tsx`](./card-peel.tsx) into your project. Dependencies: none.

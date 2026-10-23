@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/split-label/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-split-label.json
+npx shadcn@latest add @movin/input-split-label
 ```
 
 Or copy [`input-split-label.tsx`](./input-split-label.tsx) into your project. Dependencies: none.

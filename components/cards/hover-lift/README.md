@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/hover-lift/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-hover-lift.json
+npx shadcn@latest add @movin/card-hover-lift
 ```
 
 Or copy [`card-hover-lift.tsx`](./card-hover-lift.tsx) into your project. Dependencies: none.

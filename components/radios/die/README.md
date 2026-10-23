@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/die/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-die.json
+npx shadcn@latest add @movin/radio-die
 ```
 
 Or copy [`radio-die.tsx`](./radio-die.tsx) into your project. Dependencies: none.

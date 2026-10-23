@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/split/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-split.json
+npx shadcn@latest add @movin/input-split
 ```
 
 Or copy [`input-split.tsx`](./input-split.tsx) into your project. Dependencies: none.

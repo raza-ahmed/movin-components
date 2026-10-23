@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/fill/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-fill.json
+npx shadcn@latest add @movin/input-fill
 ```
 
 Or copy [`input-fill.tsx`](./input-fill.tsx) into your project. Dependencies: none.

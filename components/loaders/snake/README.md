@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/snake/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-snake.json
+npx shadcn@latest add @movin/loader-snake
 ```
 
 Or copy [`loader-snake.tsx`](./loader-snake.tsx) into your project. Dependencies: none.

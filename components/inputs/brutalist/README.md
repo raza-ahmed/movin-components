@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/brutalist/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-brutalist.json
+npx shadcn@latest add @movin/input-brutalist
 ```
 
 Or copy [`input-brutalist.tsx`](./input-brutalist.tsx) into your project. Dependencies: none.

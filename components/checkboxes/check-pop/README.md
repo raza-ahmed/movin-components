@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/check-pop/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-check-pop.json
+npx shadcn@latest add @movin/checkbox-check-pop
 ```
 
 Or copy [`checkbox-check-pop.tsx`](./checkbox-check-pop.tsx) into your project. Dependencies: none.

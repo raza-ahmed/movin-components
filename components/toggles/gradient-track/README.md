@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/gradient-track/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-gradient-track.json
+npx shadcn@latest add @movin/toggle-gradient-track
 ```
 
 Or copy [`toggle-gradient-track.tsx`](./toggle-gradient-track.tsx) into your project. Dependencies: none.

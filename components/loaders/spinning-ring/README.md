@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/spinning-ring/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-spinning-ring.json
+npx shadcn@latest add @movin/loader-spinning-ring
 ```
 
 Or copy [`loader-spinning-ring.tsx`](./loader-spinning-ring.tsx) into your project. Dependencies: none.

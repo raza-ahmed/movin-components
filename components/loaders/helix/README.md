@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/helix/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-helix.json
+npx shadcn@latest add @movin/loader-helix
 ```
 
 Or copy [`loader-helix.tsx`](./loader-helix.tsx) into your project. Dependencies: none.

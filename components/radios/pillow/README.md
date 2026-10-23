@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/pillow/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-pillow.json
+npx shadcn@latest add @movin/radio-pillow
 ```
 
 Or copy [`radio-pillow.tsx`](./radio-pillow.tsx) into your project. Dependencies: none.

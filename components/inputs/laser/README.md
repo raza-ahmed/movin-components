@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/laser/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-laser.json
+npx shadcn@latest add @movin/input-laser
 ```
 
 Or copy [`input-laser.tsx`](./input-laser.tsx) into your project. Dependencies: none.

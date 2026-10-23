@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/comet/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-comet.json
+npx shadcn@latest add @movin/loader-comet
 ```
 
 Or copy [`loader-comet.tsx`](./loader-comet.tsx) into your project. Dependencies: none.

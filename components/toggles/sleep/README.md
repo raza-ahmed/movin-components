@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/sleep/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-sleep.json
+npx shadcn@latest add @movin/toggle-sleep
 ```
 
 Or copy [`toggle-sleep.tsx`](./toggle-sleep.tsx) into your project. Dependencies: none.

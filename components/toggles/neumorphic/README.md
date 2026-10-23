@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/neumorphic/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-neumorphic.json
+npx shadcn@latest add @movin/toggle-neumorphic
 ```
 
 Or copy [`toggle-neumorphic.tsx`](./toggle-neumorphic.tsx) into your project. Dependencies: none.

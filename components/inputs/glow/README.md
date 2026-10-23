@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/glow/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-glow.json
+npx shadcn@latest add @movin/input-glow
 ```
 
 Or copy [`input-glow.tsx`](./input-glow.tsx) into your project. Dependencies: none.

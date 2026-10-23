@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/loading-lock/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-loading-lock.json
+npx shadcn@latest add @movin/button-loading-lock
 ```
 
 Or copy [`button-loading-lock.tsx`](./button-loading-lock.tsx) into your project. Dependencies: none.

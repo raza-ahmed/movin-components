@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/retro-pixel/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-retro-pixel.json
+npx shadcn@latest add @movin/button-retro-pixel
 ```
 
 Or copy [`button-retro-pixel.tsx`](./button-retro-pixel.tsx) into your project. Dependencies: none.

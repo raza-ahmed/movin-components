@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/particle-text/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-particle-text.json
+npx shadcn@latest add @movin/button-particle-text
 ```
 
 Or copy [`button-particle-text.tsx`](./button-particle-text.tsx) into your project. Dependencies: none.

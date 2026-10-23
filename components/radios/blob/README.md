@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/blob/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-blob.json
+npx shadcn@latest add @movin/radio-blob
 ```
 
 Or copy [`radio-blob.tsx`](./radio-blob.tsx) into your project. Dependencies: framer-motion.

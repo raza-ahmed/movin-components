@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/gradient-drift/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-gradient-drift.json
+npx shadcn@latest add @movin/card-gradient-drift
 ```
 
 Or copy [`card-gradient-drift.tsx`](./card-gradient-drift.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/stagger-letters/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-stagger-letters.json
+npx shadcn@latest add @movin/button-stagger-letters
 ```
 
 Or copy [`button-stagger-letters.tsx`](./button-stagger-letters.tsx) into your project. Dependencies: none.

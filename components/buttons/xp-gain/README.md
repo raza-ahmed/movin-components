@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/xp-gain/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-xp-gain.json
+npx shadcn@latest add @movin/button-xp-gain
 ```
 
 Or copy [`button-xp-gain.tsx`](./button-xp-gain.tsx) into your project. Dependencies: none.

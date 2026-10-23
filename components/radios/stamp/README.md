@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/stamp/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-stamp.json
+npx shadcn@latest add @movin/radio-stamp
 ```
 
 Or copy [`radio-stamp.tsx`](./radio-stamp.tsx) into your project. Dependencies: none.

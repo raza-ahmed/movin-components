@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/scramble/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-scramble.json
+npx shadcn@latest add @movin/button-scramble
 ```
 
 Or copy [`button-scramble.tsx`](./button-scramble.tsx) into your project. Dependencies: none.

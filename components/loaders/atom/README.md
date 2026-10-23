@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/atom/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-atom.json
+npx shadcn@latest add @movin/loader-atom
 ```
 
 Or copy [`loader-atom.tsx`](./loader-atom.tsx) into your project. Dependencies: none.

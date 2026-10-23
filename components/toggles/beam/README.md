@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/beam/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-beam.json
+npx shadcn@latest add @movin/toggle-beam
 ```
 
 Or copy [`toggle-beam.tsx`](./toggle-beam.tsx) into your project. Dependencies: none.

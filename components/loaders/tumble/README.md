@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/tumble/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-tumble.json
+npx shadcn@latest add @movin/loader-tumble
 ```
 
 Or copy [`loader-tumble.tsx`](./loader-tumble.tsx) into your project. Dependencies: none.

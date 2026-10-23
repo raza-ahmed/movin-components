@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/magnetic-label/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-magnetic-label.json
+npx shadcn@latest add @movin/input-magnetic-label
 ```
 
 Or copy [`input-magnetic-label.tsx`](./input-magnetic-label.tsx) into your project. Dependencies: framer-motion.

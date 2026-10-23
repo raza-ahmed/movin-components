@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/border-beam/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-border-beam.json
+npx shadcn@latest add @movin/button-border-beam
 ```
 
 Or copy [`button-border-beam.tsx`](./button-border-beam.tsx) into your project. Dependencies: none.

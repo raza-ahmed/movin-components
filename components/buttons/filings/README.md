@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/filings/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-filings.json
+npx shadcn@latest add @movin/button-filings
 ```
 
 Or copy [`button-filings.tsx`](./button-filings.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/morph-line/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-morph-line.json
+npx shadcn@latest add @movin/checkbox-morph-line
 ```
 
 Or copy [`checkbox-morph-line.tsx`](./checkbox-morph-line.tsx) into your project. Dependencies: none.

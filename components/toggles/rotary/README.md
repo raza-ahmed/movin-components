@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/rotary/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-rotary.json
+npx shadcn@latest add @movin/toggle-rotary
 ```
 
 Or copy [`toggle-rotary.tsx`](./toggle-rotary.tsx) into your project. Dependencies: none.

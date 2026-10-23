@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/flip-square/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-flip-square.json
+npx shadcn@latest add @movin/loader-flip-square
 ```
 
 Or copy [`loader-flip-square.tsx`](./loader-flip-square.tsx) into your project. Dependencies: none.

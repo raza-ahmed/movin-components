@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/odometer/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-odometer.json
+npx shadcn@latest add @movin/input-odometer
 ```
 
 Or copy [`input-odometer.tsx`](./input-odometer.tsx) into your project. Dependencies: none.

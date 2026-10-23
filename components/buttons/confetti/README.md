@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/confetti/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-confetti.json
+npx shadcn@latest add @movin/button-confetti
 ```
 
 Or copy [`button-confetti.tsx`](./button-confetti.tsx) into your project. Dependencies: none.

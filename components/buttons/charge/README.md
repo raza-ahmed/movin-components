@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/charge/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-charge.json
+npx shadcn@latest add @movin/button-charge
 ```
 
 Or copy [`button-charge.tsx`](./button-charge.tsx) into your project. Dependencies: none.

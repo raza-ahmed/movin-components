@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/scan-line/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-scan-line.json
+npx shadcn@latest add @movin/radio-scan-line
 ```
 
 Or copy [`radio-scan-line.tsx`](./radio-scan-line.tsx) into your project. Dependencies: none.

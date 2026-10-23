@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/morph-shape/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-morph-shape.json
+npx shadcn@latest add @movin/input-morph-shape
 ```
 
 Or copy [`input-morph-shape.tsx`](./input-morph-shape.tsx) into your project. Dependencies: none.

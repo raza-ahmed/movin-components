@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/chips/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-chips.json
+npx shadcn@latest add @movin/input-chips
 ```
 
 Or copy [`input-chips.tsx`](./input-chips.tsx) into your project. Dependencies: none.

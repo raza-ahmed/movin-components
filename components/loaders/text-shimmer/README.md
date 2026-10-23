@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/text-shimmer/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-text-shimmer.json
+npx shadcn@latest add @movin/loader-text-shimmer
 ```
 
 Or copy [`loader-text-shimmer.tsx`](./loader-text-shimmer.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/gradient-ring/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-gradient-ring.json
+npx shadcn@latest add @movin/loader-gradient-ring
 ```
 
 Or copy [`loader-gradient-ring.tsx`](./loader-gradient-ring.tsx) into your project. Dependencies: none.

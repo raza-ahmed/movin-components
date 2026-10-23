@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/liquid-fill/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-liquid-fill.json
+npx shadcn@latest add @movin/input-liquid-fill
 ```
 
 Or copy [`input-liquid-fill.tsx`](./input-liquid-fill.tsx) into your project. Dependencies: none.

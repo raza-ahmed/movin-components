@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/cradle/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-cradle.json
+npx shadcn@latest add @movin/loader-cradle
 ```
 
 Or copy [`loader-cradle.tsx`](./loader-cradle.tsx) into your project. Dependencies: none.

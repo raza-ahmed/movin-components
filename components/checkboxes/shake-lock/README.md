@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/shake-lock/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-shake-lock.json
+npx shadcn@latest add @movin/checkbox-shake-lock
 ```
 
 Or copy [`checkbox-shake-lock.tsx`](./checkbox-shake-lock.tsx) into your project. Dependencies: none.

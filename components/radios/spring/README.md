@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/spring/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-spring.json
+npx shadcn@latest add @movin/radio-spring
 ```
 
 Or copy [`radio-spring.tsx`](./radio-spring.tsx) into your project. Dependencies: none.

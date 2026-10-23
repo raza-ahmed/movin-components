@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/shutter/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-shutter.json
+npx shadcn@latest add @movin/checkbox-shutter
 ```
 
 Or copy [`checkbox-shutter.tsx`](./checkbox-shutter.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/ink-stamp/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-ink-stamp.json
+npx shadcn@latest add @movin/button-ink-stamp
 ```
 
 Or copy [`button-ink-stamp.tsx`](./button-ink-stamp.tsx) into your project. Dependencies: none.

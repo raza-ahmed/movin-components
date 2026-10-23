@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/swipe-confirm/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-swipe-confirm.json
+npx shadcn@latest add @movin/button-swipe-confirm
 ```
 
 Or copy [`button-swipe-confirm.tsx`](./button-swipe-confirm.tsx) into your project. Dependencies: none.

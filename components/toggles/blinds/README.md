@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/blinds/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-blinds.json
+npx shadcn@latest add @movin/toggle-blinds
 ```
 
 Or copy [`toggle-blinds.tsx`](./toggle-blinds.tsx) into your project. Dependencies: none.

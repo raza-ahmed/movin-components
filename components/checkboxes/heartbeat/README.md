@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/heartbeat/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-heartbeat.json
+npx shadcn@latest add @movin/checkbox-heartbeat
 ```
 
 Or copy [`checkbox-heartbeat.tsx`](./checkbox-heartbeat.tsx) into your project. Dependencies: none.

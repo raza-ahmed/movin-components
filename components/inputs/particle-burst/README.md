@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/particle-burst/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-particle-burst.json
+npx shadcn@latest add @movin/input-particle-burst
 ```
 
 Or copy [`input-particle-burst.tsx`](./input-particle-burst.tsx) into your project. Dependencies: none.

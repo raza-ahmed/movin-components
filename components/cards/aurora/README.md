@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/aurora/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-aurora.json
+npx shadcn@latest add @movin/card-aurora
 ```
 
 Or copy [`card-aurora.tsx`](./card-aurora.tsx) into your project. Dependencies: none.

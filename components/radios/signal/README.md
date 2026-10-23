@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/signal/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-signal.json
+npx shadcn@latest add @movin/radio-signal
 ```
 
 Or copy [`radio-signal.tsx`](./radio-signal.tsx) into your project. Dependencies: none.

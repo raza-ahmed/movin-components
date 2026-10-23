@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/neural/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-neural.json
+npx shadcn@latest add @movin/radio-neural
 ```
 
 Or copy [`radio-neural.tsx`](./radio-neural.tsx) into your project. Dependencies: none.

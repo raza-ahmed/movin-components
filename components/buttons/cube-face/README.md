@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/cube-face/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-cube-face.json
+npx shadcn@latest add @movin/button-cube-face
 ```
 
 Or copy [`button-cube-face.tsx`](./button-cube-face.tsx) into your project. Dependencies: none.

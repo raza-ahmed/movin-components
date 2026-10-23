@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/x-to-check/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-x-to-check.json
+npx shadcn@latest add @movin/checkbox-x-to-check
 ```
 
 Or copy [`checkbox-x-to-check.tsx`](./checkbox-x-to-check.tsx) into your project. Dependencies: none.

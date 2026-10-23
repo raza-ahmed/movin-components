@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/hud-brackets/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-hud-brackets.json
+npx shadcn@latest add @movin/input-hud-brackets
 ```
 
 Or copy [`input-hud-brackets.tsx`](./input-hud-brackets.tsx) into your project. Dependencies: none.

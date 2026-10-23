@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/clay/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-clay.json
+npx shadcn@latest add @movin/radio-clay
 ```
 
 Or copy [`radio-clay.tsx`](./radio-clay.tsx) into your project. Dependencies: none.

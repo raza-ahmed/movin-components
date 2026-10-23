@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/bubble/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-bubble.json
+npx shadcn@latest add @movin/radio-bubble
 ```
 
 Or copy [`radio-bubble.tsx`](./radio-bubble.tsx) into your project. Dependencies: none.

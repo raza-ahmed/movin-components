@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/fan/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-fan.json
+npx shadcn@latest add @movin/toggle-fan
 ```
 
 Or copy [`toggle-fan.tsx`](./toggle-fan.tsx) into your project. Dependencies: none.

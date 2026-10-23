@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/press-3d/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-press-3d.json
+npx shadcn@latest add @movin/button-press-3d
 ```
 
 Or copy [`button-press-3d.tsx`](./button-press-3d.tsx) into your project. Dependencies: none.

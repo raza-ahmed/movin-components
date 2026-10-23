@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/loaders/color-bounce/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/loader-color-bounce.json
+npx shadcn@latest add @movin/loader-color-bounce
 ```
 
 Or copy [`loader-color-bounce.tsx`](./loader-color-bounce.tsx) into your project. Dependencies: none.

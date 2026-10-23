@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/glitch/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-glitch.json
+npx shadcn@latest add @movin/checkbox-glitch
 ```
 
 Or copy [`checkbox-glitch.tsx`](./checkbox-glitch.tsx) into your project. Dependencies: none.

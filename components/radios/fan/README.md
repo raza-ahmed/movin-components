@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/fan/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-fan.json
+npx shadcn@latest add @movin/radio-fan
 ```
 
 Or copy [`radio-fan.tsx`](./radio-fan.tsx) into your project. Dependencies: none.

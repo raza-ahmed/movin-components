@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/scan-line/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-scan-line.json
+npx shadcn@latest add @movin/input-scan-line
 ```
 
 Or copy [`input-scan-line.tsx`](./input-scan-line.tsx) into your project. Dependencies: none.

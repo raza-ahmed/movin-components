@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/round-morph/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-round-morph.json
+npx shadcn@latest add @movin/checkbox-round-morph
 ```
 
 Or copy [`checkbox-round-morph.tsx`](./checkbox-round-morph.tsx) into your project. Dependencies: none.

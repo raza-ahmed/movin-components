@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/inputs/aurora/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/input-aurora.json
+npx shadcn@latest add @movin/input-aurora
 ```
 
 Or copy [`input-aurora.tsx`](./input-aurora.tsx) into your project. Dependencies: none.

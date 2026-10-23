@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/toggles/shifter/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/toggle-shifter.json
+npx shadcn@latest add @movin/toggle-shifter
 ```
 
 Or copy [`toggle-shifter.tsx`](./toggle-shifter.tsx) into your project. Dependencies: none.

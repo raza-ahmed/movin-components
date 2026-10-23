@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/cards/scratch/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/card-scratch.json
+npx shadcn@latest add @movin/card-scratch
 ```
 
 Or copy [`card-scratch.tsx`](./card-scratch.tsx) into your project. Dependencies: none.

@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/radios/card/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/radio-card.json
+npx shadcn@latest add @movin/radio-card
 ```
 
 Or copy [`radio-card.tsx`](./radio-card.tsx) into your project. Dependencies: none.

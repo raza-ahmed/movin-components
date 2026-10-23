@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/pull-cord/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-pull-cord.json
+npx shadcn@latest add @movin/button-pull-cord
 ```
 
 Or copy [`button-pull-cord.tsx`](./button-pull-cord.tsx) into your project. Dependencies: none.

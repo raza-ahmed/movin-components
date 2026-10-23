@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/radar-sweep/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-radar-sweep.json
+npx shadcn@latest add @movin/checkbox-radar-sweep
 ```
 
 Or copy [`checkbox-radar-sweep.tsx`](./checkbox-radar-sweep.tsx) into your project. Dependencies: none.

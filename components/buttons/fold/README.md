@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/fold/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-fold.json
+npx shadcn@latest add @movin/button-fold
 ```
 
 Or copy [`button-fold.tsx`](./button-fold.tsx) into your project. Dependencies: none.

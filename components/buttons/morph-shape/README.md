@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/buttons/morph-shape/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/button-morph-shape.json
+npx shadcn@latest add @movin/button-morph-shape
 ```
 
 Or copy [`button-morph-shape.tsx`](./button-morph-shape.tsx) into your project. Dependencies: none.

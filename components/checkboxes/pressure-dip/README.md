@@ -9,7 +9,7 @@ Live preview: https://movin.design/components/checkboxes/pressure-dip/
 Install with the shadcn CLI:
 
 ```sh
-npx shadcn@latest add https://movin.design/r/checkbox-pressure-dip.json
+npx shadcn@latest add @movin/checkbox-pressure-dip
 ```
 
 Or copy [`checkbox-pressure-dip.tsx`](./checkbox-pressure-dip.tsx) into your project. Dependencies: none.
