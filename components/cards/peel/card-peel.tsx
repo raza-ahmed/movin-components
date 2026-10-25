@@ -39,17 +39,17 @@ const css = `
   }
 
   .card-peel__sticker {
-    background: linear-gradient(150deg, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd));
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(150deg, light-dark(#fbfcfd, #f1f2f3), light-dark(#ebedf0, #c6c8cd));
+    box-shadow: 0 8px 22px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.35));
     clip-path: var(--card-peel-clip, none);
   }
 
   .card-peel__sticker .card-peel__title {
-    color: light-dark(#fbfcfd, #121417);
+    color: light-dark(#373a40, #121417);
   }
 
   .card-peel__sticker .card-peel__text {
-    color: light-dark(#cbced3, #393c41);
+    color: light-dark(#5f626a, #393c41);
   }
 
   .card-peel__title {
@@ -67,13 +67,13 @@ const css = `
     position: absolute;
     inset: -200px;
     pointer-events: none;
-    filter: drop-shadow(-2px 4px 5px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(-2px 4px 5px light-dark(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.4)));
   }
 
   .card-peel__flap {
     position: absolute;
     inset: 0;
-    background: linear-gradient(var(--card-peel-angle, 135deg), light-dark(#5f626a, #a7abb2), light-dark(#42454c, #e5e6e9) 45%, light-dark(#373a40, #f1f2f3));
+    background: linear-gradient(var(--card-peel-angle, 135deg), light-dark(#dbdde1, #a7abb2), light-dark(#f3f4f7, #e5e6e9) 45%, light-dark(#fbfcfd, #f1f2f3));
     clip-path: var(--card-peel-flap, polygon(0 0, 0 0, 0 0));
   }
 

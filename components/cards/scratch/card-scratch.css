@@ -43,9 +43,9 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  color: light-dark(#5f626a, #a7abb2);
-  border-top-color: light-dark(#42454c, #e5e6e9);
-  outline-color: light-dark(#cbced3, #393c41);
+  color: light-dark(#cbced3, #a7abb2);
+  border-top-color: light-dark(#f3f4f7, #e5e6e9);
+  outline-color: light-dark(#50535b, #393c41);
   cursor: crosshair;
   transition: opacity 0.5s;
 }

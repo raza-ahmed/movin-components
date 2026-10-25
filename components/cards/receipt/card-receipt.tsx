@@ -18,7 +18,7 @@ const css = `
     border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 14px;
     background: light-dark(#ebedf0, #232529);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 24px light-dark(rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.4));
   }
 
   .card-receipt:focus-visible .card-receipt__terminal {
@@ -59,7 +59,7 @@ const css = `
     left: 18px;
     height: 3px;
     border-radius: 2px;
-    background: light-dark(#fbfcfd, #121417);
+    background: light-dark(#50535b, #121417);
   }
 
   /* The paper lives in a window under the slot and feeds down out of it. */
@@ -73,8 +73,8 @@ const css = `
   .card-receipt__paper {
     box-sizing: border-box;
     padding: 18px 12px 18px;
-    background: light-dark(#373a40, #f1f2f3);
-    color: light-dark(#dbdde1, #2e3035);
+    background: light-dark(#ebedf0, #f1f2f3);
+    color: light-dark(#50535b, #2e3035);
     font: 10px/1.7 ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
     transform: translateY(-100%);
     transition: transform 0.3s cubic-bezier(0.5, 0, 0.75, 0);
@@ -90,15 +90,15 @@ const css = `
   .card-receipt__line--total {
     margin-top: 4px;
     padding-top: 4px;
-    border-top: 1px dashed light-dark(#5f626a, #a7abb2);
-    color: light-dark(#fbfcfd, #121417);
+    border-top: 1px dashed light-dark(#cbced3, #a7abb2);
+    color: light-dark(#373a40, #121417);
     font-weight: 600;
   }
 
   .card-receipt__barcode {
     height: 16px;
     margin-top: 8px;
-    background: repeating-linear-gradient(90deg, light-dark(#dbdde1, #2e3035) 0 1px, transparent 1px 3px, light-dark(#dbdde1, #2e3035) 3px 5px, transparent 5px 6px, light-dark(#dbdde1, #2e3035) 6px 7px, transparent 7px 10px);
+    background: repeating-linear-gradient(90deg, light-dark(#42454c, #2e3035) 0 1px, transparent 1px 3px, light-dark(#42454c, #2e3035) 3px 5px, transparent 5px 6px, light-dark(#42454c, #2e3035) 6px 7px, transparent 7px 10px);
   }
 
   /* Printing: the paper feeds in mechanical steps, the light blinks. */

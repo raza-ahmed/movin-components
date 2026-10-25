@@ -48,7 +48,7 @@
   display: flex;
   flex-direction: column;
   padding: 12px;
-  background: linear-gradient(180deg, light-dark(#42454c, #e5e6e9), light-dark(#50535b, #c6c8cd));
+  background: linear-gradient(180deg, light-dark(#f3f4f7, #e5e6e9), light-dark(#dbdde1, #c6c8cd));
   backface-visibility: hidden;
   transition-delay: inherit; /* so the shading below keeps time with its panel */
 }
@@ -58,7 +58,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: light-dark(#fbfcfd, #121417);
+  background: light-dark(#373a40, #121417);
   opacity: 0;
   transition: opacity 0.7s cubic-bezier(0.45, 0, 0.2, 1);
   transition-delay: inherit;
@@ -80,7 +80,7 @@
 }
 
 .card-trifold__panel--middle .card-trifold__face {
-  box-shadow: inset 1px 0 0 light-dark(rgba(251, 252, 253, 0.12), rgba(18, 20, 23, 0.12)), inset -1px 0 0 light-dark(rgba(251, 252, 253, 0.12), rgba(18, 20, 23, 0.12));
+  box-shadow: inset 1px 0 0 light-dark(rgba(55, 58, 64, 0.12), rgba(18, 20, 23, 0.12)), inset -1px 0 0 light-dark(rgba(55, 58, 64, 0.12), rgba(18, 20, 23, 0.12));
 }
 
 .card-trifold__panel--right .card-trifold__face {
@@ -88,7 +88,7 @@
 }
 
 .card-trifold__face--back {
-  background: linear-gradient(180deg, light-dark(#50535b, #c6c8cd), light-dark(#5f626a, #a7abb2));
+  background: linear-gradient(180deg, light-dark(#ebedf0, #c6c8cd), light-dark(#dbdde1, #a7abb2));
   transform: rotateY(180deg);
 }
 
@@ -100,7 +100,7 @@
 .card-trifold__panel--right .card-trifold__face--cover {
   justify-content: flex-end;
   border-radius: 10px 0 0 10px;
-  background: linear-gradient(160deg, light-dark(#dbdde1, #2e3035), light-dark(#fbfcfd, #121417));
+  background: linear-gradient(160deg, light-dark(#dbdde1, #2e3035), light-dark(#f3f4f7, #121417));
 }
 
 .card-trifold__num {
@@ -110,14 +110,14 @@
 
 .card-trifold__title {
   margin-top: auto;
-  color: light-dark(#fbfcfd, #121417);
+  color: light-dark(#373a40, #121417);
   font-size: 15px;
   font-weight: 600;
 }
 
 .card-trifold__text {
   margin-top: 2px;
-  color: light-dark(#cbced3, #393c41);
+  color: light-dark(#5f626a, #393c41);
   font-size: 10px;
 }
 
