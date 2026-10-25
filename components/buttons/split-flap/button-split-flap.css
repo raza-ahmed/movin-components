@@ -5,7 +5,7 @@
   border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 10px;
   background: light-dark(#fbfcfd, #121417);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 10px 30px light-dark(rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.45));
   color: light-dark(#42454c, #e5e6e9);
   font: 600 18px/1 ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   text-transform: uppercase;

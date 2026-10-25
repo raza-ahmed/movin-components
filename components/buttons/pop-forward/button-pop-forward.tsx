@@ -16,8 +16,8 @@ export function PopForwardButton({ children }: { children: React.ReactNode }) {
           transform: hovered ? 'translateZ(28px) scale(1.06)' : 'translateZ(0px) scale(1)',
           transition: 'transform 300ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 300ms ease',
           boxShadow: hovered
-            ? '0 24px 48px light-dark(rgba(109,113,121,0.45), rgba(125,128,135,0.45)), 0 8px 16px rgba(0,0,0,0.4)'
-            : '0 4px 12px rgba(0,0,0,0.3)',
+            ? '0 24px 48px light-dark(rgba(109,113,121,0.45), rgba(125,128,135,0.45)), 0 8px 16px light-dark(rgba(0, 0, 0, 0.12), rgba(0,0,0,0.4))'
+            : '0 4px 12px light-dark(rgba(0, 0, 0, 0.09), rgba(0,0,0,0.3))',
         }}
       >
         {children}

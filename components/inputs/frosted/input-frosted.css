@@ -27,7 +27,7 @@
 .field-frosted__input:focus {
   border-color: light-dark(rgba(55, 58, 64, 0.35), rgba(241, 242, 243, 0.35));
   background: light-dark(rgba(55, 58, 64, 0.18), rgba(241, 242, 243, 0.18));
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
+  box-shadow: 0 4px 20px light-dark(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.2)), inset 0 1px 0 light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   -webkit-backdrop-filter: blur(12px) saturate(1.5);
   backdrop-filter: blur(12px) saturate(1.5);
 }

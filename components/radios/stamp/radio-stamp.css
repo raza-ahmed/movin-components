@@ -60,7 +60,7 @@
 .radio-stamp__option:has(.radio-stamp__input:checked) {
   border-color: light-dark(#fbfcfd, #121417);
   background: light-dark(#373a40, #f1f2f3);
-  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.4), inset -1px -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 2px 2px 0 light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)), inset -1px -1px 0 light-dark(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
   transform: scale(0.97);
 }
 .radio-stamp__option:has(.radio-stamp__input:checked) .radio-stamp__ring { border-color: light-dark(#fbfcfd, #121417); background: light-dark(#fbfcfd, #121417); }

@@ -34,7 +34,7 @@ export function RotatingGradientButton({ children }: { children: React.ReactNode
           }}
         />
         <span className="pointer-events-none absolute inset-0" style={{ background: 'light-dark(rgba(251,252,253,0.25), rgba(18,20,23,0.25))' }} />
-        <span className="relative z-10" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>{children}</span>
+        <span className="relative z-10" style={{ textShadow: '0 1px 4px light-dark(rgba(0, 0, 0, 0.18), rgba(0,0,0,0.6))' }}>{children}</span>
       </button>
     </>
   );

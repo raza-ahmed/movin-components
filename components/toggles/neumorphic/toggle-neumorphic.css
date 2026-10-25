@@ -6,7 +6,7 @@
   border: none;
   border-radius: 9999px;
   background: light-dark(#f3f4f7, #1a1c1f);
-  box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.7), inset -2px -2px 5px light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
+  box-shadow: inset 3px 3px 7px light-dark(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.7)), inset -2px -2px 5px light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
   cursor: pointer;
   transition: box-shadow 300ms ease;
 }
@@ -30,7 +30,7 @@
   height: 22px;
   border-radius: 50%;
   background: linear-gradient(145deg, light-dark(#ebedf0, #232529) 0%, light-dark(#f3f4f7, #1a1c1f) 100%);
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), -1px -1px 4px light-dark(rgba(55, 58, 64, 0.06), rgba(241, 242, 243, 0.06));
+  box-shadow: 3px 3px 6px light-dark(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), -1px -1px 4px light-dark(rgba(55, 58, 64, 0.06), rgba(241, 242, 243, 0.06));
   transition: left 300ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 300ms ease;
 }
 /* The lit knob sits on its own layer so the gradient can fade in. */
@@ -44,12 +44,12 @@
   transition: opacity 300ms ease;
 }
 .toggle-neumorphic[aria-checked="true"] {
-  box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.7), inset -2px -2px 5px light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04)), 0 0 0 1px light-dark(rgba(109, 113, 121, 0.3), rgba(125, 128, 135, 0.3));
+  box-shadow: inset 3px 3px 7px light-dark(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.7)), inset -2px -2px 5px light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04)), 0 0 0 1px light-dark(rgba(109, 113, 121, 0.3), rgba(125, 128, 135, 0.3));
 }
 .toggle-neumorphic[aria-checked="true"] .toggle-neumorphic__tint { opacity: 1; }
 .toggle-neumorphic[aria-checked="true"] .toggle-neumorphic__knob {
   left: 33px;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), -1px -1px 4px light-dark(rgba(55, 58, 64, 0.06), rgba(241, 242, 243, 0.06)), 0 0 10px light-dark(rgba(109, 113, 121, 0.5), rgba(125, 128, 135, 0.5));
+  box-shadow: 3px 3px 6px light-dark(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), -1px -1px 4px light-dark(rgba(55, 58, 64, 0.06), rgba(241, 242, 243, 0.06)), 0 0 10px light-dark(rgba(109, 113, 121, 0.5), rgba(125, 128, 135, 0.5));
 }
 .toggle-neumorphic[aria-checked="true"] .toggle-neumorphic__knob::after { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {

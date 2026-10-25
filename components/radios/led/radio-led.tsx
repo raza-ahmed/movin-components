@@ -46,7 +46,7 @@ export function LEDRadioGroup() {
                   : 'light-dark(#f3f4f7, #1a1c1f)',
                 boxShadow: checked
                   ? '0 0 0 2px light-dark(rgba(95,98,106,0.3), rgba(167,171,178,0.3)), 0 0 14px 6px light-dark(rgba(95,98,106,0.45), rgba(167,171,178,0.45)), 0 0 28px 10px light-dark(rgba(95,98,106,0.2), rgba(167,171,178,0.2)), inset 0 1px 2px light-dark(rgba(66,69,76,0.5), rgba(229,230,233,0.5))'
-                  : '0 0 0 2px light-dark(rgba(55,58,64,0.06), rgba(241,242,243,0.06)), inset 0 2px 6px rgba(0,0,0,0.7)',
+                  : '0 0 0 2px light-dark(rgba(55,58,64,0.06), rgba(241,242,243,0.06)), inset 0 2px 6px light-dark(rgba(0, 0, 0, 0.42), rgba(0,0,0,0.7))',
                 animation: checked ? 'led-pulse 2s ease-in-out infinite' : 'none',
               }}
             >

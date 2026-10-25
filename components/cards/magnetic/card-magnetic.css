@@ -36,7 +36,7 @@
   margin: -16px 0 0 -16px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, light-dark(#42454c, #e5e6e9), light-dark(#6d7179, #7d8087));
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 18px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
   transform: translate(var(--card-magnetic-x), var(--card-magnetic-y));
   transition: var(--card-magnetic-spring);
 }

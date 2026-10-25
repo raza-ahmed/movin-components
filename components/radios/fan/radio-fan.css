@@ -40,7 +40,7 @@
   border-radius: 7px;
   background: light-dark(#ebedf0, #232529);
   color: light-dark(#5f626a, #a7abb2);
-  box-shadow: -2px 3px 8px rgba(0, 0, 0, 0.45);
+  box-shadow: -2px 3px 8px light-dark(rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.45));
   transition: background-color 0.25s, color 0.25s, border-color 0.25s, transform 0.25s;
 }
 
@@ -70,7 +70,7 @@
   border-color: light-dark(#42454c, #e5e6e9);
   background: light-dark(#42454c, #e5e6e9);
   color: light-dark(#fbfcfd, #121417);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 20px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
 }
 
 .radio-fan__option:has(.radio-fan__input:focus-visible) .radio-fan__card {

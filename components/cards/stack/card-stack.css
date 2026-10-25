@@ -22,13 +22,13 @@
 .card-stack__card--back {
   border: 1px solid light-dark(rgba(55, 58, 64, 0.06), rgba(241, 242, 243, 0.06));
   background: linear-gradient(135deg, light-dark(#ebedf0, #232529), light-dark(#dbdde1, #2e3035));
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px light-dark(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.2));
   transform: translate(-6px, 6px) rotate(-3deg);
 }
 .card-stack__card--middle {
   border: 1px solid light-dark(rgba(55, 58, 64, 0.08), rgba(241, 242, 243, 0.08));
   background: linear-gradient(135deg, light-dark(#dbdde1, #2e3035), light-dark(#cbced3, #393c41));
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 10px light-dark(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.18));
   transform: translate(4px, 4px) rotate(2deg);
 }
 .card-stack__card--front {
@@ -38,18 +38,18 @@
   padding: 10px 12px;
   border: 1px solid light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12));
   background: linear-gradient(135deg, light-dark(#f3f4f7, #1a1c1f), light-dark(#ebedf0, #232529));
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 16px light-dark(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.25));
 }
 .card-stack:hover .card-stack__card--back {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 28px light-dark(rgba(0, 0, 0, 0.11), rgba(0, 0, 0, 0.35));
   transform: translate(-16px, 10px) rotate(-6deg);
 }
 .card-stack:hover .card-stack__card--middle {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 28px light-dark(rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.3));
   transform: translate(14px, 8px) rotate(5deg);
 }
 .card-stack:hover .card-stack__card--front {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 40px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
   transform: translateY(-6px);
 }
 .card-stack__title {

@@ -49,7 +49,7 @@ export function RetroPixelButton({ children }: { children: React.ReactNode }) {
             outline: '3px solid light-dark(#fbfcfd, #121417)',
             outlineOffset: '3px',
             boxShadow: pressed
-              ? 'inset 2px 2px 0 rgba(0,0,0,0.5)'
+              ? 'inset 2px 2px 0 light-dark(rgba(0, 0, 0, 0.15), rgba(0,0,0,0.5))'
               : '4px 4px 0 light-dark(#dbdde1, #2e3035), inset 0 2px 0 light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25))',
             transition: 'box-shadow 60ms steps(1)',
           }}

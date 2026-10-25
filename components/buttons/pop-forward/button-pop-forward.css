@@ -7,7 +7,7 @@
   border: 1px solid light-dark(#6d7179, #7d8087);
   border-radius: 12px;
   background: light-dark(#ebedf0, #232529);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px light-dark(rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.3));
   color: light-dark(#50535b, #c6c8cd);
   font: inherit;
   font-weight: 600;
@@ -21,7 +21,7 @@
   outline-offset: 2px;
 }
 .btn-pop-forward__button:hover {
-  box-shadow: 0 24px 48px light-dark(rgba(109, 113, 121, 0.45), rgba(125, 128, 135, 0.45)), 0 8px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 24px 48px light-dark(rgba(109, 113, 121, 0.45), rgba(125, 128, 135, 0.45)), 0 8px 16px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4));
   transform: translateZ(28px) scale(1.06);
 }
 @media (prefers-reduced-motion: reduce) {

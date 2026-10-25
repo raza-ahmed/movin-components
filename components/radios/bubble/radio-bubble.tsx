@@ -30,7 +30,7 @@ export function BubbleRadioGroup() {
                   : 'radial-gradient(circle at 50% 50%, light-dark(rgba(55,58,64,0.04), rgba(241,242,243,0.04)) 0%, light-dark(rgba(109,113,121,0.08), rgba(125,128,135,0.08)) 100%)',
                 boxShadow: checked
                   ? '0 0 0 3px light-dark(rgba(109,113,121,0.2), rgba(125,128,135,0.2)), 0 4px 12px light-dark(rgba(109,113,121,0.45), rgba(125,128,135,0.45)), inset 0 1px 2px light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25))'
-                  : 'inset 0 2px 4px rgba(0,0,0,0.3)',
+                  : 'inset 0 2px 4px light-dark(rgba(0, 0, 0, 0.09), rgba(0,0,0,0.3))',
               }}
             >
               <span

@@ -17,8 +17,8 @@ export function NeumorphicInput({ placeholder = "Soft surface…" }: { placehold
           padding: '11px 16px',
           outline: focused ? '1px solid light-dark(rgba(95,98,106,0.3), rgba(167,171,178,0.3))' : '1px solid transparent',
           boxShadow: focused
-            ? 'inset 4px 4px 10px rgba(0,0,0,0.5),inset -4px -4px 10px light-dark(rgba(55,58,64,0.04), rgba(241,242,243,0.04))'
-            : '5px 5px 14px rgba(0,0,0,0.5),-5px -5px 14px light-dark(rgba(55,58,64,0.04), rgba(241,242,243,0.04))',
+            ? 'inset 4px 4px 10px light-dark(rgba(0, 0, 0, 0.15), rgba(0,0,0,0.5)),inset -4px -4px 10px light-dark(rgba(55,58,64,0.04), rgba(241,242,243,0.04))'
+            : '5px 5px 14px light-dark(rgba(0, 0, 0, 0.15), rgba(0,0,0,0.5)),-5px -5px 14px light-dark(rgba(55,58,64,0.04), rgba(241,242,243,0.04))',
         }}
       />
     </div>

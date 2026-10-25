@@ -43,7 +43,7 @@ export function Tilt3DButton({ children }: { children: React.ReactNode }) {
         transformPerspective: 600,
         transformStyle: 'preserve-3d',
         boxShadow: hovered
-          ? '0 20px 40px light-dark(rgba(109,113,121,0.45), rgba(125,128,135,0.45)),0 8px 16px rgba(0,0,0,0.3)'
+          ? '0 20px 40px light-dark(rgba(109,113,121,0.45), rgba(125,128,135,0.45)),0 8px 16px light-dark(rgba(0, 0, 0, 0.09), rgba(0,0,0,0.3))'
           : '0 4px 12px light-dark(rgba(109,113,121,0.25), rgba(125,128,135,0.25))',
         transition: 'box-shadow 300ms',
       }}

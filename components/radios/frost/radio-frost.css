@@ -29,7 +29,7 @@
   border: 1px solid light-dark(rgba(55, 58, 64, 0.18), rgba(241, 242, 243, 0.18));
   border-radius: 10px;
   background: light-dark(rgba(55, 58, 64, 0.1), rgba(241, 242, 243, 0.1));
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
+  box-shadow: 0 4px 20px light-dark(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.25)), inset 0 1px 0 light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   opacity: 0;

@@ -3,7 +3,7 @@
   border: none;
   border-radius: 9999px;
   background: light-dark(#373a40, #f1f2f3);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px light-dark(rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.1)), 0 4px 6px -4px light-dark(rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.1));
   color: light-dark(#f3f4f7, #1a1c1f);
   font: inherit;
   font-weight: 600;

@@ -19,7 +19,7 @@ export function StampRadioGroup() {
               background: checked ? 'light-dark(#373a40, #f1f2f3)' : 'transparent',
               transform: checked ? 'scale(0.97)' : 'scale(1)',
               boxShadow: checked
-                ? 'inset 2px 2px 0 rgba(0,0,0,0.4), inset -1px -1px 0 rgba(0,0,0,0.15)'
+                ? 'inset 2px 2px 0 light-dark(rgba(0, 0, 0, 0.12), rgba(0,0,0,0.4)), inset -1px -1px 0 light-dark(rgba(0, 0, 0, 0.05), rgba(0,0,0,0.15))'
                 : '2px 2px 0 light-dark(rgba(55,58,64,0.08), rgba(241,242,243,0.08))',
               transition: 'transform 120ms cubic-bezier(0.34,1.56,0.64,1), background 150ms ease, border-color 150ms ease, box-shadow 150ms ease',
             }}

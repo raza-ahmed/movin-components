@@ -31,7 +31,7 @@ const css = `
     border: 4px solid light-dark(#cbced3, #393c41);
     border-radius: 50%;
     background: radial-gradient(circle at 40% 36%, light-dark(#373a40, #f1f2f3) 0 3px, light-dark(#5f626a, #a7abb2) 5px, light-dark(#dbdde1, #2e3035) 55%, light-dark(#fbfcfd, #121417) 75%);
-    box-shadow: 0 0 0 1px light-dark(#6d7179, #7d8087), 0 6px 14px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 1px light-dark(#6d7179, #7d8087), 0 6px 14px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
   }
 
   .toggle-aperture__input:focus-visible + .toggle-aperture__lens {

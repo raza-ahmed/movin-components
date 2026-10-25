@@ -44,8 +44,8 @@ export function ClayRadioGroup() {
                   ? `radial-gradient(circle at 35% 35%,${opt.color}ff,${opt.color}bb)`
                   : 'light-dark(rgba(55,58,64,0.08), rgba(241,242,243,0.08))',
                 boxShadow: checked
-                  ? `0 4px 12px ${opt.shadow},inset 0 -2px 4px rgba(0,0,0,.15),inset 0 2px 4px light-dark(rgba(55,58,64,.3), rgba(241,242,243,.3))`
-                  : 'inset 0 2px 4px rgba(0,0,0,0.2)',
+                  ? `0 4px 12px ${opt.shadow},inset 0 -2px 4px light-dark(rgba(0, 0, 0, 0.05), rgba(0,0,0,.15)),inset 0 2px 4px light-dark(rgba(55,58,64,.3), rgba(241,242,243,.3))`
+                  : 'inset 0 2px 4px light-dark(rgba(0, 0, 0, 0.06), rgba(0,0,0,0.2))',
                 transition:'background 250ms ease,box-shadow 250ms ease',
                 animation: checked ? 'clay-squish 500ms cubic-bezier(0.34,1.56,0.64,1) forwards' : 'none',
               }}

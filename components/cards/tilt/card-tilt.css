@@ -9,7 +9,7 @@
   border: 1px solid light-dark(rgba(55, 58, 64, 0.1), rgba(241, 242, 243, 0.1));
   border-radius: 12px;
   background: light-dark(rgba(55, 58, 64, 0.06), rgba(241, 242, 243, 0.06));
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px light-dark(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.2));
   cursor: pointer;
   transform: rotateX(var(--card-tilt-x)) rotateY(var(--card-tilt-y));
   transform-style: preserve-3d;
@@ -18,7 +18,7 @@
 }
 /* While hovered the tilt follows the cursor directly; on leave it eases back. */
 .card-tilt__card:hover {
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 32px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4));
   transform: rotateX(var(--card-tilt-x)) rotateY(var(--card-tilt-y)) scale(1.04);
   transition: box-shadow 200ms ease;
 }

@@ -33,7 +33,7 @@
 .btn-retro-pixel__label { position: relative; }
 /* Held down: the shadow sinks in and the button shakes in hard steps. */
 .btn-retro-pixel__button:active {
-  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: inset 2px 2px 0 light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
   animation: btn-retro-pixel 220ms steps(1) forwards;
 }
 @keyframes btn-retro-pixel {

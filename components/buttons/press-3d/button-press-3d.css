@@ -4,7 +4,7 @@
   border: none;
   border-radius: 12px;
   background: linear-gradient(180deg, light-dark(#5f626a, #a7abb2) 0%, light-dark(#6d7179, #7d8087) 50%, light-dark(#cbced3, #393c41) 100%);
-  box-shadow: 0 6px 0 light-dark(#ebedf0, #232529), 0 9px 14px rgba(0, 0, 0, 0.4), inset 0 1px 0 light-dark(rgba(55, 58, 64, 0.2), rgba(241, 242, 243, 0.2));
+  box-shadow: 0 6px 0 light-dark(#ebedf0, #232529), 0 9px 14px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)), inset 0 1px 0 light-dark(rgba(55, 58, 64, 0.2), rgba(241, 242, 243, 0.2));
   color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 14px;

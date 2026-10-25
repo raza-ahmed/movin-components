@@ -21,14 +21,14 @@
   border: 1px solid light-dark(#cbced3, #393c41);
   border-radius: 12px;
   background: linear-gradient(160deg, light-dark(#ebedf0, #232529), light-dark(#fbfcfd, #121417));
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4));
   transform: rotateX(var(--card-holo-ry)) rotateY(var(--card-holo-rx));
   transition: transform 0.6s cubic-bezier(0.3, 1.4, 0.5, 1), box-shadow 0.4s;
 }
 
 /* While the cursor drives it, follow closely; the spring is for letting go. */
 .card-holo--active .card-holo__card {
-  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 22px 50px light-dark(rgba(0, 0, 0, 0.17), rgba(0, 0, 0, 0.55));
   transition: transform 0.08s linear, box-shadow 0.4s;
 }
 

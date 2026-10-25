@@ -13,7 +13,7 @@ const css = `
     color: light-dark(#fbfcfd, #121417);
     font: inherit;
     cursor: pointer;
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0 8px 16px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)));
     -webkit-tap-highlight-color: transparent;
   }
 

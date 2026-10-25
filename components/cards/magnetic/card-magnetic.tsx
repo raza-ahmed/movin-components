@@ -45,7 +45,7 @@ export function MagneticCard({ children }: { children: React.ReactNode }) {
           className="absolute left-1/2 top-1/2 -ml-4 -mt-4 h-8 w-8 rounded-full"
           style={{
             background: "radial-gradient(circle at 35% 35%, light-dark(#42454c, #e5e6e9), light-dark(#6d7179, #7d8087))",
-            boxShadow: "0 6px 18px rgba(0,0,0,0.5)",
+            boxShadow: "0 6px 18px light-dark(rgba(0, 0, 0, 0.15), rgba(0,0,0,0.5))",
             transform: `translate(${offset.x}px, ${offset.y}px) scale(${lift ? 1.15 : 1})`,
             transition: hovered ? "transform 60ms linear" : spring,
           }}

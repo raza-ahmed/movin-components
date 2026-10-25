@@ -32,7 +32,7 @@ const css = `
       radial-gradient(circle at 50% 8px, light-dark(#cbced3, #393c41) 0 2px, transparent 2.5px),
       radial-gradient(circle at 50% calc(100% - 8px), light-dark(#cbced3, #393c41) 0 2px, transparent 2.5px),
       light-dark(#ebedf0, #232529);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 6px 16px light-dark(rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.45));
     perspective: 160px;
   }
 
@@ -65,7 +65,7 @@ const css = `
     padding: 6px 0;
     border-radius: 6px;
     background: linear-gradient(light-dark(#f3f4f7, #1a1c1f), light-dark(#cbced3, #393c41) 50%, light-dark(#6d7179, #7d8087));
-    box-shadow: inset 0 0 0 1px light-dark(rgba(55, 58, 64, 0.08), rgba(241, 242, 243, 0.08)), 0 4px 6px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0 0 1px light-dark(rgba(55, 58, 64, 0.08), rgba(241, 242, 243, 0.08)), 0 4px 6px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4));
     transform: rotateX(24deg);
     transition: transform 0.18s cubic-bezier(0.5, 0, 0.3, 1.6), background 0.18s;
   }

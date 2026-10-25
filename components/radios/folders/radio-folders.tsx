@@ -73,7 +73,7 @@ const css = `
   }
 
   .radio-folders__body {
-    box-shadow: 0 -1px 0 light-dark(#dbdde1, #2e3035), 0 8px 18px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 -1px 0 light-dark(#dbdde1, #2e3035), 0 8px 18px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4));
     transform-origin: 50% 100%;
     transition: background-color 0.3s, transform 0.5s cubic-bezier(0.3, 1.3, 0.5, 1);
   }

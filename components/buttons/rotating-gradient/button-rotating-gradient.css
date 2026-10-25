@@ -38,7 +38,7 @@
 .btn-rotating-gradient__label {
   position: relative;
   z-index: 1;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 4px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.6));
 }
 @keyframes btn-rotating-gradient {
   to { transform: rotate(360deg); }

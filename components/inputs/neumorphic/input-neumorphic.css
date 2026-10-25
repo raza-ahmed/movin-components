@@ -13,7 +13,7 @@
   border-radius: 8px;
   outline: 1px solid transparent;
   background: light-dark(#ebedf0, #232529);
-  box-shadow: 5px 5px 14px rgba(0, 0, 0, 0.5), -5px -5px 14px light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
+  box-shadow: 5px 5px 14px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5)), -5px -5px 14px light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
   color: light-dark(rgba(55, 58, 64, 0.85), rgba(241, 242, 243, 0.85));
   font: inherit;
   font-size: 15px;
@@ -22,7 +22,7 @@
 .field-neumorphic__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 .field-neumorphic__input:focus {
   outline-color: light-dark(rgba(95, 98, 106, 0.3), rgba(167, 171, 178, 0.3));
-  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5), inset -4px -4px 10px light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
+  box-shadow: inset 4px 4px 10px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5)), inset -4px -4px 10px light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
 }
 
 @media (prefers-reduced-motion: reduce) {

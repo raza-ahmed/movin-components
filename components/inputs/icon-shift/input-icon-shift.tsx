@@ -11,7 +11,7 @@ export function IconShiftInput(props: React.InputHTMLAttributes<HTMLInputElement
       className={[
         "flex items-center overflow-hidden rounded-lg border bg-[color:light-dark(#373a40,#f1f2f3)]/[0.05] transition-all duration-200",
         focused
-          ? "border-[color:light-dark(#5f626a,#a7abb2)] shadow-[0_0_0_3px_light-dark(rgba(95,98,106,0.15), rgba(167,171,178,0.15))]"
+          ? "border-[color:light-dark(#5f626a,#a7abb2)] shadow-[0_0_0_3px_light-dark(rgba(95,98,106,0.15),rgba(167,171,178,0.15))]"
           : "border-[color:light-dark(#373a40,#f1f2f3)]/15 shadow-none",
       ].join(" ")}
     >

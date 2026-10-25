@@ -22,7 +22,7 @@ export function StackCard({ children }: { children: React.ReactNode }) {
           transform: hovered
             ? "translate(-16px, 10px) rotate(-6deg)"
             : "translate(-6px, 6px) rotate(-3deg)",
-          boxShadow: hovered ? "0 12px 28px rgba(0,0,0,0.35)" : "0 4px 10px rgba(0,0,0,0.2)",
+          boxShadow: hovered ? "0 12px 28px light-dark(rgba(0, 0, 0, 0.11), rgba(0,0,0,0.35))" : "0 4px 10px light-dark(rgba(0, 0, 0, 0.06), rgba(0,0,0,0.2))",
           transition: spring,
         }}
       />
@@ -33,7 +33,7 @@ export function StackCard({ children }: { children: React.ReactNode }) {
           transform: hovered
             ? "translate(14px, 8px) rotate(5deg)"
             : "translate(4px, 4px) rotate(2deg)",
-          boxShadow: hovered ? "0 12px 28px rgba(0,0,0,0.3)" : "0 4px 10px rgba(0,0,0,0.18)",
+          boxShadow: hovered ? "0 12px 28px light-dark(rgba(0, 0, 0, 0.09), rgba(0,0,0,0.3))" : "0 4px 10px light-dark(rgba(0, 0, 0, 0.05), rgba(0,0,0,0.18))",
           transition: spring,
         }}
       />
@@ -42,7 +42,7 @@ export function StackCard({ children }: { children: React.ReactNode }) {
         className="absolute inset-0 flex flex-col justify-end rounded-xl border border-[color:light-dark(#373a40,#f1f2f3)]/10 bg-gradient-to-br from-[color:light-dark(#fbfcfd,#121417)] to-[color:light-dark(#f3f4f7,#1a1c1f)] p-5 will-change-transform"
         style={{
           transform: hovered ? "translate(0, -6px)" : "translate(0, 0)",
-          boxShadow: hovered ? "0 20px 40px rgba(0,0,0,0.5)" : "0 6px 16px rgba(0,0,0,0.25)",
+          boxShadow: hovered ? "0 20px 40px light-dark(rgba(0, 0, 0, 0.15), rgba(0,0,0,0.5))" : "0 6px 16px light-dark(rgba(0, 0, 0, 0.08), rgba(0,0,0,0.25))",
           transition: spring,
         }}
       >

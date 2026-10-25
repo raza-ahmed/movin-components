@@ -26,7 +26,7 @@ export function FrostRadioGroup() {
                   backdropFilter: 'blur(12px)',
                   WebkitBackdropFilter: 'blur(12px)',
                   border: '1px solid light-dark(rgba(55,58,64,0.18), rgba(241,242,243,0.18))',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.25), inset 0 1px 0 light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15))',
+                  boxShadow: '0 4px 20px light-dark(rgba(0, 0, 0, 0.08), rgba(0,0,0,0.25)), inset 0 1px 0 light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15))',
                 }}
                 transition={{ type: 'spring', bounce: 0.2, duration: 0.45 }}
               />

@@ -48,7 +48,7 @@ export function PowerToggle() {
           : 'light-dark(#f3f4f7, #1a1c1f)',
         boxShadow: on
           ? '0 0 0 2px light-dark(rgba(80,83,91,0.3), rgba(198,200,205,0.3)), 0 0 18px 6px light-dark(rgba(80,83,91,0.35), rgba(198,200,205,0.35)), inset 0 1px 2px light-dark(rgba(55,58,64,0.2), rgba(241,242,243,0.2))'
-          : '0 0 0 2px light-dark(rgba(55,58,64,0.07), rgba(241,242,243,0.07)), inset 0 3px 8px rgba(0,0,0,0.8)',
+          : '0 0 0 2px light-dark(rgba(55,58,64,0.07), rgba(241,242,243,0.07)), inset 0 3px 8px light-dark(rgba(0, 0, 0, 0.48), rgba(0,0,0,0.8))',
       }}
     >
       {showRipple && (

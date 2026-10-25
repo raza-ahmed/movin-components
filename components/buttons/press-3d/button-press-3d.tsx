@@ -16,7 +16,7 @@ export function Press3DButton({ children }: { children: React.ReactNode }) {
         transform: pressed ? 'translateY(5px)' : 'translateY(0)',
         boxShadow: pressed
           ? '0 1px 0 light-dark(#ebedf0, #232529), inset 0 1px 0 light-dark(rgba(55,58,64,0.1), rgba(241,242,243,0.1))'
-          : '0 6px 0 light-dark(#ebedf0, #232529), 0 9px 14px rgba(0,0,0,0.4), inset 0 1px 0 light-dark(rgba(55,58,64,0.2), rgba(241,242,243,0.2))',
+          : '0 6px 0 light-dark(#ebedf0, #232529), 0 9px 14px light-dark(rgba(0, 0, 0, 0.12), rgba(0,0,0,0.4)), inset 0 1px 0 light-dark(rgba(55,58,64,0.2), rgba(241,242,243,0.2))',
         transition: 'transform 60ms ease, box-shadow 60ms ease',
       }}
     >

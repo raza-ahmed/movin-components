@@ -21,7 +21,7 @@ export function FrostedInput({ placeholder = 'Frosted glass…' }: { placeholder
           backdropFilter: focused ? 'blur(12px) saturate(1.5)' : 'blur(0px)',
           WebkitBackdropFilter: focused ? 'blur(12px) saturate(1.5)' : 'blur(0px)',
           border: `1px solid ${focused ? 'light-dark(rgba(55,58,64,0.35), rgba(241,242,243,0.35))' : 'light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15))'}`,
-          boxShadow: focused ? '0 4px 20px rgba(0,0,0,0.2),inset 0 1px 0 light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15))' : 'none',
+          boxShadow: focused ? '0 4px 20px light-dark(rgba(0, 0, 0, 0.06), rgba(0,0,0,0.2)),inset 0 1px 0 light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15))' : 'none',
           transition: 'all 300ms ease',
         }}
       />

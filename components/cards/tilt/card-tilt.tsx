@@ -34,7 +34,7 @@ export function TiltCard({ children }: { children: React.ReactNode }) {
         className="cursor-pointer overflow-hidden rounded-xl border border-[color:light-dark(#373a40,#f1f2f3)]/10 bg-[color:light-dark(#373a40,#f1f2f3)]/5 [transform-style:preserve-3d] [will-change:transform]"
         style={{
           transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(${hovered ? 1.04 : 1})`,
-          boxShadow: hovered ? '0 16px 32px rgba(0,0,0,0.4)' : '0 2px 8px rgba(0,0,0,0.2)',
+          boxShadow: hovered ? '0 16px 32px light-dark(rgba(0, 0, 0, 0.12), rgba(0,0,0,0.4))' : '0 2px 8px light-dark(rgba(0, 0, 0, 0.06), rgba(0,0,0,0.2))',
           transition: hovered
             ? 'box-shadow 200ms ease'
             : 'transform 400ms ease, box-shadow 400ms ease',

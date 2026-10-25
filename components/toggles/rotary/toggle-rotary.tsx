@@ -83,7 +83,7 @@ const css = `
     inset: 16px;
     border-radius: 50%;
     background: repeating-conic-gradient(light-dark(#dbdde1, #2e3035) 0 5deg, light-dark(#6d7179, #7d8087) 5deg 10deg);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 6px 12px light-dark(rgba(0, 0, 0, 0.17), rgba(0, 0, 0, 0.55));
     transform: rotate(-45deg);
     transition: transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1);
   }

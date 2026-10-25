@@ -22,7 +22,7 @@
   padding: 6px;
   border-radius: 8px;
   background: light-dark(#f3f4f7, #1a1c1f);
-  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035), 0 6px 14px rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035), 0 6px 14px light-dark(rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.45));
 }
 
 .toggle-flap__input:focus-visible + .toggle-flap__board {

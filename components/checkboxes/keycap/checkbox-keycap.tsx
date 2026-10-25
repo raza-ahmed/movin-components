@@ -30,7 +30,7 @@ const css = `
     padding: 6px 8px;
     border-radius: 9px;
     background: linear-gradient(180deg, light-dark(#dbdde1, #2e3035), light-dark(#ebedf0, #232529));
-    box-shadow: inset 0 1px 0 light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12)), inset 0 -2px 0 light-dark(rgba(251, 252, 253, 0.5), rgba(18, 20, 23, 0.5)), 0 calc(6px - var(--cb-keycap-travel)) 0 light-dark(#fbfcfd, #121417), 0 calc(8px - var(--cb-keycap-travel)) 10px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 1px 0 light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12)), inset 0 -2px 0 light-dark(rgba(251, 252, 253, 0.5), rgba(18, 20, 23, 0.5)), 0 calc(6px - var(--cb-keycap-travel)) 0 light-dark(#fbfcfd, #121417), 0 calc(8px - var(--cb-keycap-travel)) 10px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
     transform: translateY(var(--cb-keycap-travel));
     transition: transform 0.12s cubic-bezier(0.3, 1.5, 0.5, 1), box-shadow 0.12s cubic-bezier(0.3, 1.5, 0.5, 1);
   }
