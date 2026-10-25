@@ -18,8 +18,8 @@ const css = `
     position: absolute;
     inset: 0;
     border-radius: 6px;
-    background: light-dark(#dbdde1, #2e3035);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    background: light-dark(#cbced3, #2e3035);
+    box-shadow: 0 12px 28px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.45));
   }
 
   .card-envelope__letter {
@@ -32,20 +32,20 @@ const css = `
     height: 96px;
     padding: 12px 12px 0;
     border-radius: 4px;
-    background: light-dark(#373a40, #f1f2f3);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background: light-dark(#fbfcfd, #f1f2f3);
+    box-shadow: 0 2px 6px light-dark(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.2));
     transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-envelope__title {
-    color: light-dark(#fbfcfd, #121417);
+    color: light-dark(#373a40, #121417);
     font-size: 14px;
     font-weight: 600;
   }
 
   .card-envelope__text {
     margin-top: 3px;
-    color: light-dark(#cbced3, #393c41);
+    color: light-dark(#5f626a, #393c41);
     font-size: 11px;
   }
 
@@ -55,7 +55,7 @@ const css = `
     inset: 0;
     z-index: 2;
     border-radius: 6px;
-    background: linear-gradient(to top, light-dark(#5f626a, #a7abb2), light-dark(#50535b, #c6c8cd));
+    background: linear-gradient(to top, light-dark(#cbced3, #a7abb2), light-dark(#dbdde1, #c6c8cd));
     clip-path: polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%);
   }
 
@@ -76,7 +76,7 @@ const css = `
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, light-dark(#42454c, #e5e6e9), light-dark(#50535b, #c6c8cd));
+    background: linear-gradient(to bottom, light-dark(#f3f4f7, #e5e6e9), light-dark(#dbdde1, #c6c8cd));
     clip-path: polygon(0 0, 100% 0, 50% 100%);
   }
 
@@ -88,8 +88,8 @@ const css = `
     height: 18px;
     margin-left: -9px;
     border-radius: 50%;
-    background: radial-gradient(circle at 40% 35%, light-dark(#cbced3, #393c41), light-dark(#fbfcfd, #121417));
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    background: radial-gradient(circle at 40% 35%, light-dark(#5f626a, #393c41), light-dark(#373a40, #121417));
+    box-shadow: 0 1px 2px light-dark(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.4));
     transition: opacity 0.2s 0.4s;
   }
 
