@@ -40,7 +40,7 @@ export function FlipToggle() {
         className="flex cursor-pointer items-center rounded-full border-none p-1"
         style={{
           width: 52, height: 30,
-          background: on ? '#c9c9c9' : 'rgba(246,246,246,0.12)',
+          background: on ? 'light-dark(#50535b, #c6c8cd)' : 'light-dark(rgba(55,58,64,0.12), rgba(241,242,243,0.12))',
           transition: 'background 250ms ease',
         }}
       >
@@ -49,7 +49,7 @@ export function FlipToggle() {
           className="flip-thumb block rounded-full"
           style={{
             width: 22, height: 22,
-            background: on ? '#f6f6f6' : 'rgba(246,246,246,0.7)',
+            background: on ? 'light-dark(#373a40, #f1f2f3)' : 'light-dark(rgba(55,58,64,0.7), rgba(241,242,243,0.7))',
             transformOrigin: 'center',
             animation: direction ? `thumb-flip-${direction} 320ms ease-in-out forwards` : undefined,
             transform: direction ? undefined : on ? 'translateX(22px)' : 'translateX(0)',

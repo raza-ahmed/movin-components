@@ -42,18 +42,18 @@ export function NeonCheckbox() {
         data-cb="neon"
         className="flex h-7 w-7 items-center justify-center rounded-[6px] border-2 transition-all duration-300"
         style={{
-          background: on ? 'rgba(237,237,237,0.06)' : '#111111',
-          borderColor: on ? '#ededed' : 'rgba(246,246,246,0.12)',
-          boxShadow: on ? '0 0 4px #ededed, 0 0 10px rgba(237,237,237,0.6), 0 0 22px rgba(237,237,237,0.3)' : 'none',
+          background: on ? 'light-dark(rgba(66,69,76,0.06), rgba(229,230,233,0.06))' : 'light-dark(#fbfcfd, #121417)',
+          borderColor: on ? 'light-dark(#42454c, #e5e6e9)' : 'light-dark(rgba(55,58,64,0.12), rgba(241,242,243,0.12))',
+          boxShadow: on ? '0 0 4px light-dark(#42454c, #e5e6e9), 0 0 10px light-dark(rgba(66,69,76,0.6), rgba(229,230,233,0.6)), 0 0 22px light-dark(rgba(66,69,76,0.3), rgba(229,230,233,0.3))' : 'none',
           animation: on ? 'neon-flicker 400ms ease-out forwards' : 'none',
         }}
       >
         <svg width="13" height="10" viewBox="0 0 13 10" fill="none" aria-hidden="true">
           <path
-            d="M1.5 5L5 8.5L11.5 1.5" stroke="#ededed" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+            d="M1.5 5L5 8.5L11.5 1.5" stroke="light-dark(#42454c, #e5e6e9)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
             pathLength="1" strokeDasharray="1" strokeDashoffset={on ? 0 : 1}
             style={{
-              filter: on ? 'drop-shadow(0 0 3px #ededed)' : 'none',
+              filter: on ? 'drop-shadow(0 0 3px light-dark(#42454c, #e5e6e9))' : 'none',
               transition: on
                 ? 'stroke-dashoffset 350ms cubic-bezier(0.16,1,0.3,1) 150ms, filter 300ms ease 150ms'
                 : 'stroke-dashoffset 180ms ease-in, filter 150ms ease',

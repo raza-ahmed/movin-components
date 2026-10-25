@@ -12,7 +12,7 @@ export function PixelDot({ checked, pixelKey }: { checked: boolean; pixelKey: nu
           key={`${pixelKey}-${i}`}
           style={{
             width:PIXEL_SIZE, height:PIXEL_SIZE,
-            background: checked ? '#a7a7a7' : 'rgba(246,246,246,0.12)',
+            background: checked ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(55,58,64,0.12), rgba(241,242,243,0.12))',
             transform: checked ? 'scale(1)' : 'scale(0)',
             transition: checked
               ? `transform 120ms cubic-bezier(0.34,1.56,0.64,1) ${i*18}ms,background 120ms ease`
@@ -47,7 +47,7 @@ export function PixelRadioGroup() {
               style={{
                 fontFamily:'ui-monospace, SFMono-Regular, Menlo, monospace',
                 fontWeight: checked ? 600 : 400,
-                color: checked ? '#a7a7a7' : 'rgba(246,246,246,0.55)',
+                color: checked ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))',
               }}
             >
               {opt}

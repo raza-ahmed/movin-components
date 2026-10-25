@@ -21,7 +21,7 @@ const css = `
     height: 10px;
     margin: -5px 0 0 -5px;
     border-radius: 50%;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     animation: loader-ring-text-breathe 1.6s ease-in-out infinite;
   }
 
@@ -39,7 +39,7 @@ const css = `
     width: 10px;
     height: 12px;
     margin: -6px 0 0 -5px;
-    color: #4d4d4d;
+    color: light-dark(#cbced3, #393c41);
     font-size: 9.5px;
     font-weight: 600;
     line-height: 12px;
@@ -57,11 +57,11 @@ const css = `
 
   @keyframes loader-ring-text-chase {
     0% {
-      color: #f6f6f6;
+      color: light-dark(#373a40, #f1f2f3);
     }
     30%,
     100% {
-      color: #4d4d4d;
+      color: light-dark(#cbced3, #393c41);
     }
   }
 
@@ -79,7 +79,7 @@ const css = `
       animation: none;
     }
     .loader-ring-text__ring span {
-      color: #a7a7a7;
+      color: light-dark(#5f626a, #a7abb2);
     }
   }
 `;

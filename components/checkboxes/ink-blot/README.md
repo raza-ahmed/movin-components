@@ -1,6 +1,6 @@
 # Ink Blot checkbox
 
-The box fill spreads via border-radius morphing through organic amoeba/blob shapes — animating through asymmetric four-corner border-radius values before settling square again. Feels like ink spreading.
+The box fill spreads via border-radius morphing through organic amoeba/blob shapes, animating through asymmetric four-corner border-radius values before settling square again. Feels like ink spreading.
 
 Live preview: https://movin.design/components/checkboxes/ink-blot/
 

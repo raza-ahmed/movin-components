@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
   font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
   font-size: 13px;
   cursor: pointer;
@@ -24,12 +24,12 @@
   width: 60px;
   height: 30px;
   margin: 3px;
-  background: #202020;
-  box-shadow: 0 -3px 0 #7c7c7c, 0 3px 0 #7c7c7c, -3px 0 0 #7c7c7c, 3px 0 0 #7c7c7c;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: 0 -3px 0 light-dark(#6d7179, #7d8087), 0 3px 0 light-dark(#6d7179, #7d8087), -3px 0 0 light-dark(#6d7179, #7d8087), 3px 0 0 light-dark(#6d7179, #7d8087);
 }
 
 .toggle-pixel__input:focus-visible + .toggle-pixel__track {
-  outline: 2px dashed #a7a7a7;
+  outline: 2px dashed light-dark(#5f626a, #a7abb2);
   outline-offset: 6px;
 }
 
@@ -37,7 +37,7 @@
 .toggle-pixel__fill {
   position: absolute;
   inset: 0;
-  background: repeating-conic-gradient(#4d4d4d 0 25%, #3a3a3a 0 50%) 0 0 / 6px 6px;
+  background: repeating-conic-gradient(light-dark(#cbced3, #393c41) 0 25%, light-dark(#dbdde1, #2e3035) 0 50%) 0 0 / 6px 6px;
   transform: scaleX(0);
   transform-origin: 0 50%;
   transition: transform 0.25s steps(5, end);
@@ -49,8 +49,8 @@
   left: 6px;
   width: 18px;
   height: 18px;
-  background: #ededed;
-  box-shadow: inset -3px -3px 0 #a7a7a7, inset 3px 3px 0 #f6f6f6;
+  background: light-dark(#42454c, #e5e6e9);
+  box-shadow: inset -3px -3px 0 light-dark(#5f626a, #a7abb2), inset 3px 3px 0 light-dark(#373a40, #f1f2f3);
   transition: transform 0.25s steps(5, end);
 }
 

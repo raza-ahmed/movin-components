@@ -5,7 +5,7 @@ const css = `
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -28,7 +28,7 @@ const css = `
   }
 
   .toggle-faucet__input:focus-visible + .toggle-faucet__tap {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 
@@ -39,7 +39,7 @@ const css = `
     width: 9px;
     height: 30px;
     border-radius: 3px;
-    background: linear-gradient(90deg, #4d4d4d, #7c7c7c);
+    background: linear-gradient(90deg, light-dark(#cbced3, #393c41), light-dark(#6d7179, #7d8087));
   }
 
   .toggle-faucet__body {
@@ -49,7 +49,7 @@ const css = `
     width: 50px;
     height: 13px;
     border-radius: 3px 7px 7px 3px;
-    background: linear-gradient(#ededed, #7c7c7c);
+    background: linear-gradient(light-dark(#42454c, #e5e6e9), light-dark(#6d7179, #7d8087));
   }
 
   .toggle-faucet__spout {
@@ -59,7 +59,7 @@ const css = `
     width: 13px;
     height: 14px;
     border-radius: 0 0 4px 4px;
-    background: linear-gradient(90deg, #7c7c7c, #ededed 55%, #a7a7a7);
+    background: linear-gradient(90deg, light-dark(#6d7179, #7d8087), light-dark(#42454c, #e5e6e9) 55%, light-dark(#5f626a, #a7abb2));
   }
 
   /* The lever pivots on its left end, on top of the body. */
@@ -70,7 +70,7 @@ const css = `
     width: 34px;
     height: 6px;
     border-radius: 3px;
-    background: linear-gradient(#f6f6f6, #a7a7a7);
+    background: linear-gradient(light-dark(#373a40, #f1f2f3), light-dark(#5f626a, #a7abb2));
     transform-origin: 3px 50%;
     transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
   }
@@ -83,7 +83,7 @@ const css = `
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #c9c9c9;
+    background: light-dark(#50535b, #c6c8cd);
   }
 
   /* The stream grows down from the spout when on, and when off its top end
@@ -96,7 +96,7 @@ const css = `
     height: 42px;
     overflow: hidden;
     border-radius: 3px;
-    background: rgba(201, 201, 201, 0.55);
+    background: light-dark(rgba(80, 83, 91, 0.55), rgba(198, 200, 205, 0.55));
     transform: scaleY(0);
     transform-origin: 50% 100%;
     transition: transform 0.35s cubic-bezier(0.5, 0, 0.75, 0);
@@ -108,7 +108,7 @@ const css = `
     left: 0;
     width: 100%;
     height: calc(100% + 24px);
-    background: repeating-linear-gradient(rgba(246, 246, 246, 0.85) 0 5px, rgba(246, 246, 246, 0) 5px 12px);
+    background: repeating-linear-gradient(light-dark(rgba(55, 58, 64, 0.85), rgba(241, 242, 243, 0.85)) 0 5px, light-dark(rgba(55, 58, 64, 0), rgba(241, 242, 243, 0)) 5px 12px);
     animation: toggle-faucet-flow 0.3s linear infinite;
   }
 
@@ -125,14 +125,14 @@ const css = `
     width: 50px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(167, 167, 167, 0.18);
-    box-shadow: inset 0 0 0 1px rgba(167, 167, 167, 0.3);
+    background: light-dark(rgba(95, 98, 106, 0.18), rgba(167, 171, 178, 0.18));
+    box-shadow: inset 0 0 0 1px light-dark(rgba(95, 98, 106, 0.3), rgba(167, 171, 178, 0.3));
   }
 
   .toggle-faucet__ring {
     position: absolute;
     inset: 0;
-    border: 1px solid rgba(237, 237, 237, 0.8);
+    border: 1px solid light-dark(rgba(66, 69, 76, 0.8), rgba(229, 230, 233, 0.8));
     border-radius: 50%;
     opacity: 0;
   }

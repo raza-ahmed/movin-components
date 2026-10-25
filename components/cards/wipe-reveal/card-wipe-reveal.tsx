@@ -16,9 +16,9 @@ export function WipeRevealCard({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative cursor-pointer overflow-hidden rounded-xl border border-[#f6f6f6]/10 bg-[#111111]"
+      className="relative cursor-pointer overflow-hidden rounded-xl border border-[color:light-dark(#373a40,#f1f2f3)]/10 bg-[color:light-dark(#fbfcfd,#121417)]"
     >
-      {/* Revealed content — wipes in from bottom */}
+      {/* Revealed content: wipes in from bottom */}
       <div
         style={{
           clipPath: hovered ? "inset(0 0 0 0)" : "inset(0 0 100% 0)",
@@ -28,7 +28,7 @@ export function WipeRevealCard({
         {revealed}
       </div>
 
-      {/* Placeholder — fades out */}
+      {/* Placeholder: fades out */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

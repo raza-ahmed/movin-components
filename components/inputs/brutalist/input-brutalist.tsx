@@ -10,9 +10,9 @@ export function BrutalistInput({ placeholder = "Neo-brutal input…" }: { placeh
       placeholder={placeholder}
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
-      className="w-full bg-[#f6f6f6] font-semibold text-[#111111] placeholder:text-[#111111]/40 outline-none"
+      className="w-full bg-[color:light-dark(#373a40,#f1f2f3)] font-semibold text-[color:light-dark(#fbfcfd,#121417)] placeholder:text-[color:light-dark(#fbfcfd,#121417)]/40 outline-none"
       style={{
-        border: focused ? '3px solid #111111' : '2px solid #111111',
+        border: focused ? '3px solid light-dark(#fbfcfd, #121417)' : '2px solid light-dark(#fbfcfd, #121417)',
         borderRadius: 0,
         fontSize: 15,
         padding: focused ? '9px 13px' : '10px 14px',

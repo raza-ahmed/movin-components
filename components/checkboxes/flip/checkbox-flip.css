@@ -22,11 +22,11 @@
   box-sizing: border-box;
   width: 28px;
   height: 28px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   border-radius: 7px;
 }
 .cb-flip__input:focus-visible + .cb-flip__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -41,8 +41,8 @@
   transition: stroke-dashoffset 150ms ease-in;
 }
 .cb-flip__input:checked + .cb-flip__box {
-  border-color: #7c7c7c;
-  background: #7c7c7c;
+  border-color: light-dark(#6d7179, #7d8087);
+  background: light-dark(#6d7179, #7d8087);
   animation-name: cb-flip-b;
 }
 .cb-flip__input:checked + .cb-flip__box .cb-flip__check path {

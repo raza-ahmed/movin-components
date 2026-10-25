@@ -15,16 +15,16 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.12);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12));
   border-radius: 8px;
   outline: none;
-  background: rgba(246, 246, 246, 0.04);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   transition: border-color 250ms;
 }
-.field-magnetic-label__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-magnetic-label__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
 .field-magnetic-label__label {
   position: absolute;
@@ -32,12 +32,12 @@
   left: 14px;
   font-size: 15px;
   line-height: 1.2;
-  color: rgba(246, 246, 246, 0.55);
+  color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62));
   pointer-events: none;
   transition: top var(--field-magnetic-label-spring), left var(--field-magnetic-label-spring), font-size var(--field-magnetic-label-spring), letter-spacing var(--field-magnetic-label-spring), color 200ms;
 }
 .field-magnetic-label__input:focus,
-.field-magnetic-label__input:not(:placeholder-shown) { border-color: #a7a7a7; }
+.field-magnetic-label__input:not(:placeholder-shown) { border-color: light-dark(#5f626a, #a7abb2); }
 .field-magnetic-label__input:focus + .field-magnetic-label__label,
 .field-magnetic-label__input:not(:placeholder-shown) + .field-magnetic-label__label {
   top: 2px;
@@ -45,7 +45,7 @@
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: #a7a7a7;
+  color: light-dark(#5f626a, #a7abb2);
 }
 
 @media (prefers-reduced-motion: reduce) {

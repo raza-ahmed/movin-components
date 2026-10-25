@@ -19,14 +19,14 @@
 }
 
 .loader-gears__big {
-  fill: #7c7c7c;
+  fill: light-dark(#6d7179, #7d8087);
   transform-origin: 22px 22px;
   animation: loader-gears-cw var(--loader-gears-t) linear infinite;
 }
 
 /* Seven teeth to ten: a full turn takes 7/10 as long, the other way. */
 .loader-gears__small {
-  fill: #ededed;
+  fill: light-dark(#42454c, #e5e6e9);
   transform-origin: 47.5px 22px;
   animation: loader-gears-ccw calc(var(--loader-gears-t) * 0.7) linear infinite;
 }

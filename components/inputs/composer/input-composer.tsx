@@ -9,7 +9,7 @@ const css = `
     flex-direction: column;
     width: 100%;
     max-width: 320px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 14px;
   }
 
@@ -23,7 +23,6 @@ const css = `
     /* The thread's clip edge meets the box, so a sent message rises out of it. */
     padding: 0 2px 10px;
     overflow: hidden;
-    list-style: none;
     mask-image: linear-gradient(transparent, rgba(0, 0, 0, 1) 30%);
   }
 
@@ -32,7 +31,7 @@ const css = `
     max-width: 80%;
     padding: 8px 12px;
     border-radius: 14px 14px 14px 4px;
-    background: #282828;
+    background: light-dark(#ebedf0, #232529);
     line-height: 1.35;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
@@ -41,8 +40,8 @@ const css = `
   .field-composer__msg--mine {
     align-self: flex-end;
     border-radius: 14px 14px 4px 14px;
-    background: #ededed;
-    color: #111111;
+    background: light-dark(#42454c, #e5e6e9);
+    color: light-dark(#fbfcfd, #121417);
   }
 
   /* The button sits on the box's bottom edge, so it rides down as the box grows. */
@@ -51,14 +50,14 @@ const css = `
     align-items: flex-end;
     gap: 6px;
     padding: 6px 6px 6px 14px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 22px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     transition: border-color 0.2s;
   }
 
   .field-composer__box:focus-within {
-    border-color: #a7a7a7;
+    border-color: light-dark(#5f626a, #a7abb2);
   }
 
   .field-composer__input {
@@ -72,7 +71,7 @@ const css = `
     border: 0;
     outline: none;
     background: transparent;
-    color: #f6f6f6;
+    color: light-dark(#373a40, #f1f2f3);
     font: inherit;
     line-height: 20px;
     resize: none;
@@ -80,7 +79,7 @@ const css = `
   }
 
   .field-composer__input::placeholder {
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
   }
 
   .field-composer--scroll .field-composer__input {
@@ -97,22 +96,22 @@ const css = `
     padding: 0;
     border: 0;
     border-radius: 50%;
-    background: #3a3a3a;
-    color: #7c7c7c;
+    background: light-dark(#dbdde1, #2e3035);
+    color: light-dark(#6d7179, #7d8087);
     cursor: default;
     transform: rotate(90deg) scale(0.85);
     transition: background-color 0.2s, color 0.2s, transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1);
   }
 
   .field-composer__send:focus-visible {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 
   /* Awake: it fills and turns to point up, ready to send. */
   .field-composer__send[aria-disabled='false'] {
-    background: #ededed;
-    color: #111111;
+    background: light-dark(#42454c, #e5e6e9);
+    color: light-dark(#fbfcfd, #121417);
     cursor: pointer;
     transform: none;
   }
@@ -146,10 +145,10 @@ export function ComposerInput() {
     <>
       <style>{css}</style>
       <div ref={ref} className="field-composer">
-        <ol className="field-composer__thread" role="log" aria-label="Messages">
-          <li className="field-composer__msg">Did the build pass?</li>
-          <li className="field-composer__msg field-composer__msg--mine">All green. Shipping now</li>
-        </ol>
+        <div className="field-composer__thread" role="log" aria-label="Messages">
+          <div className="field-composer__msg">Did the build pass?</div>
+          <div className="field-composer__msg field-composer__msg--mine">All green. Shipping now</div>
+        </div>
         <div className="field-composer__box">
           <textarea className="field-composer__input" rows={1} placeholder="Write a message" aria-label="Message" />
           <button className="field-composer__send" type="button" aria-label="Send" aria-disabled="true">
@@ -194,11 +193,11 @@ function initComposer(root: HTMLElement): (() => void) | undefined {
     const olds = Array.from(thread.children).slice(-5) as HTMLElement[];
     const before = olds.map((m) => m.getBoundingClientRect().top);
     const from = input.getBoundingClientRect();
-    const li = document.createElement('li');
-    li.className = 'field-composer__msg field-composer__msg--mine';
-    li.textContent = text;
-    thread.appendChild(li);
-    sent.push(li);
+    const msg = document.createElement('div');
+    msg.className = 'field-composer__msg field-composer__msg--mine';
+    msg.textContent = text;
+    thread.appendChild(msg);
+    sent.push(msg);
     // Messages scrolled out of sight are not kept. React never re-renders the
     // thread, so removing its first messages here is safe.
     while (thread.children.length > 6) thread.firstElementChild?.remove();
@@ -209,8 +208,8 @@ function initComposer(root: HTMLElement): (() => void) | undefined {
       const dy = before[i] - m.getBoundingClientRect().top;
       if (dy) m.animate([{ transform: `translateY(${dy}px)` }, { transform: 'none' }], { duration: 380, easing: spring });
     });
-    const to = li.getBoundingClientRect();
-    li.animate(
+    const to = msg.getBoundingClientRect();
+    msg.animate(
       [
         { opacity: 0.3, transform: `translate(${from.left - to.left}px,${from.top - to.top}px) scale(0.92)` },
         { opacity: 1, transform: 'none' },
@@ -237,6 +236,6 @@ function initComposer(root: HTMLElement): (() => void) | undefined {
     input.removeEventListener('input', fit);
     input.removeEventListener('keydown', key);
     send.removeEventListener('click', click);
-    sent.forEach((li) => li.remove());
+    sent.forEach((msg) => msg.remove());
   };
 }

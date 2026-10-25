@@ -22,11 +22,11 @@
   box-sizing: border-box;
   width: 28px;
   height: 28px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   border-radius: 7px;
 }
 .cb-pulse-ring__input:focus-visible + .cb-pulse-ring__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -35,7 +35,7 @@
 .cb-pulse-ring__ring {
   position: absolute;
   inset: -2px;
-  border: 2px solid #7c7c7c;
+  border: 2px solid light-dark(#6d7179, #7d8087);
   border-radius: 7px;
   opacity: 0;
   pointer-events: none;
@@ -46,8 +46,8 @@
   transition: stroke-dashoffset 180ms ease-in;
 }
 .cb-pulse-ring__input:checked + .cb-pulse-ring__box {
-  border-color: #7c7c7c;
-  background: #7c7c7c;
+  border-color: light-dark(#6d7179, #7d8087);
+  background: light-dark(#6d7179, #7d8087);
 }
 .cb-pulse-ring__input:checked + .cb-pulse-ring__box .cb-pulse-ring__ring { animation: cb-pulse-ring 550ms ease-out forwards; }
 .cb-pulse-ring__input:checked + .cb-pulse-ring__box .cb-pulse-ring__check path {

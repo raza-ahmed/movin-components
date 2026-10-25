@@ -1,6 +1,6 @@
 # Split input
 
-Two opaque panels cover the input at rest like sliding doors. On focus they translate outward — left panel slides left, right panel slides right — revealing a gradient background underneath. A sharp cubic-bezier gives the reveal a decisive, mechanical feel.
+Two opaque panels cover the input at rest like sliding doors. On focus they translate outward (left panel slides left, right panel slides right), revealing a gradient background underneath. A sharp cubic-bezier gives the reveal a decisive, mechanical feel.
 
 Live preview: https://movin.design/components/inputs/split/
 

@@ -1,6 +1,6 @@
 # Bounce checkbox
 
-A checkbox that plays a spring-bounce keyframe animation on the box itself when toggled — compresses then overshoots on check, lightly expands then settles on uncheck. Fill and border color transition simultaneously.
+A checkbox that plays a spring-bounce keyframe animation on the box itself when toggled: compresses then overshoots on check, lightly expands then settles on uncheck. Fill and border color transition simultaneously.
 
 Live preview: https://movin.design/components/checkboxes/bounce/
 

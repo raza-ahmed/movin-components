@@ -31,17 +31,17 @@ export function StampCheckbox({ label }: { label?: string }) {
       <div className="relative h-7 w-7 flex-shrink-0">
         <input aria-label={label ?? "Remember me"} type="checkbox" checked={on} onChange={toggle} className="absolute opacity-0 w-0 h-0" />
         <span data-cb="stamp" className="relative flex h-7 w-7 items-center justify-center overflow-visible rounded-[7px] border-2"
-          style={{ background: on ? '#282828' : 'transparent', borderColor: on ? '#4d4d4d' : 'rgba(246,246,246,0.25)', transition: 'background 200ms ease, border-color 200ms ease' }}>
+          style={{ background: on ? 'light-dark(#ebedf0, #232529)' : 'transparent', borderColor: on ? 'light-dark(#cbced3, #393c41)' : 'light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25))', transition: 'background 200ms ease, border-color 200ms ease' }}>
           {showInk && INK_ANGLES.map(angle => (
-            <span key={angle} className="absolute rounded-full" style={{ width: 4, height: 4, background: '#7c7c7c', top: '50%', left: '50%', marginTop: -2, marginLeft: -2, '--angle': `${angle}deg`, animation: 'cb-ink-dot 480ms ease-out forwards' } as React.CSSProperties} />
+            <span key={angle} className="absolute rounded-full" style={{ width: 4, height: 4, background: 'light-dark(#6d7179, #7d8087)', top: '50%', left: '50%', marginTop: -2, marginLeft: -2, '--angle': `${angle}deg`, animation: 'cb-ink-dot 480ms ease-out forwards' } as React.CSSProperties} />
           ))}
           <svg key={stampKey} width="14" height="11" viewBox="0 0 13 10" fill="none" aria-hidden="true"
             style={{ animation: on ? 'cb-stamp-in 380ms cubic-bezier(0.22, 1, 0.36, 1) forwards' : 'cb-stamp-out 200ms ease forwards', opacity: on ? undefined : 0 }}>
-            <path d="M1.5 5L5 8.5L11.5 1.5" stroke="#a7a7a7" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M1.5 5L5 8.5L11.5 1.5" stroke="light-dark(#5f626a, #a7abb2)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
       </div>
-      {label && <span className="select-none text-sm text-[#f6f6f6]/80">{label}</span>}
+      {label && <span className="select-none text-sm text-[color:light-dark(#373a40,#f1f2f3)]/80">{label}</span>}
     </label>
   );
 }

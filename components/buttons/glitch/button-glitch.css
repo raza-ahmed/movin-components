@@ -2,10 +2,10 @@
   position: relative;
   padding: 12px 36px;
   overflow: hidden;
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 6px;
-  background: #111111;
-  color: #f6f6f6;
+  background: light-dark(#fbfcfd, #121417);
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 14px;
   font-weight: 500;
@@ -14,7 +14,7 @@
   cursor: pointer;
 }
 .btn-glitch:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .btn-glitch__label {
@@ -33,18 +33,18 @@
 .btn-glitch:hover .btn-glitch__copy--a { animation: btn-glitch-a 0.35s steps(1) infinite; }
 .btn-glitch:hover .btn-glitch__copy--b { animation: btn-glitch-b 0.35s steps(1) infinite; }
 @keyframes btn-glitch-a {
-  0%, 100% { clip-path: inset(0 0 88% 0); transform: translate(-4px, 0); color: #7c7c7c; }
-  20% { clip-path: inset(20% 0 55% 0); transform: translate(4px, 0); color: #7c7c7c; }
-  40% { clip-path: inset(45% 0 30% 0); transform: translate(-3px, 0); color: #7c7c7c; }
-  60% { clip-path: inset(65% 0 10% 0); transform: translate(3px, 0); color: #7c7c7c; }
-  80% { clip-path: inset(10% 0 70% 0); transform: translate(-2px, 0); color: #7c7c7c; }
+  0%, 100% { clip-path: inset(0 0 88% 0); transform: translate(-4px, 0); color: light-dark(#6d7179, #7d8087); }
+  20% { clip-path: inset(20% 0 55% 0); transform: translate(4px, 0); color: light-dark(#6d7179, #7d8087); }
+  40% { clip-path: inset(45% 0 30% 0); transform: translate(-3px, 0); color: light-dark(#6d7179, #7d8087); }
+  60% { clip-path: inset(65% 0 10% 0); transform: translate(3px, 0); color: light-dark(#6d7179, #7d8087); }
+  80% { clip-path: inset(10% 0 70% 0); transform: translate(-2px, 0); color: light-dark(#6d7179, #7d8087); }
 }
 @keyframes btn-glitch-b {
-  0%, 100% { clip-path: inset(75% 0 0 0); transform: translate(4px, 0); color: #f6f6f6; }
-  20% { clip-path: inset(40% 0 40% 0); transform: translate(-4px, 0); color: #f6f6f6; }
-  40% { clip-path: inset(10% 0 65% 0); transform: translate(3px, 0); color: #f6f6f6; }
-  60% { clip-path: inset(5% 0 75% 0); transform: translate(-3px, 0); color: #f6f6f6; }
-  80% { clip-path: inset(55% 0 20% 0); transform: translate(2px, 0); color: #f6f6f6; }
+  0%, 100% { clip-path: inset(75% 0 0 0); transform: translate(4px, 0); color: light-dark(#373a40, #f1f2f3); }
+  20% { clip-path: inset(40% 0 40% 0); transform: translate(-4px, 0); color: light-dark(#373a40, #f1f2f3); }
+  40% { clip-path: inset(10% 0 65% 0); transform: translate(3px, 0); color: light-dark(#373a40, #f1f2f3); }
+  60% { clip-path: inset(5% 0 75% 0); transform: translate(-3px, 0); color: light-dark(#373a40, #f1f2f3); }
+  80% { clip-path: inset(55% 0 20% 0); transform: translate(2px, 0); color: light-dark(#373a40, #f1f2f3); }
 }
 @media (prefers-reduced-motion: reduce) {
   .btn-glitch:hover .btn-glitch__copy { animation: none; opacity: 0; }

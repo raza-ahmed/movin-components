@@ -10,7 +10,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 2px solid #a7a7a7;
+  border: 2px solid light-dark(#5f626a, #a7abb2);
   animation: loader-neon-ripple 1.8s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
 .loader-neon-ripple__ring:nth-child(2) { animation-delay: 0.6s; }
@@ -19,8 +19,8 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #a7a7a7;
-  box-shadow: 0 0 10px 3px rgba(167, 167, 167, 0.38);
+  background: light-dark(#5f626a, #a7abb2);
+  box-shadow: 0 0 10px 3px light-dark(rgba(95, 98, 106, 0.38), rgba(167, 171, 178, 0.38));
 }
 @keyframes loader-neon-ripple {
   0% { transform: scale(0.1); opacity: 1; }

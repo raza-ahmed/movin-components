@@ -22,11 +22,11 @@
   box-sizing: border-box;
   width: 28px;
   height: 28px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   border-radius: 7px;
 }
 .cb-heartbeat__input:focus-visible + .cb-heartbeat__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -51,8 +51,8 @@
   transition: opacity 200ms ease, transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .cb-heartbeat__input:checked + .cb-heartbeat__box {
-  border-color: #7c7c7c;
-  background: #202020;
+  border-color: light-dark(#6d7179, #7d8087);
+  background: light-dark(#f3f4f7, #1a1c1f);
 }
 .cb-heartbeat__input:checked + .cb-heartbeat__box .cb-heartbeat__pulse { animation: cb-heartbeat-fade 700ms ease forwards; }
 .cb-heartbeat__input:checked + .cb-heartbeat__box .cb-heartbeat__pulse polyline { animation: cb-heartbeat-draw 500ms ease forwards; }

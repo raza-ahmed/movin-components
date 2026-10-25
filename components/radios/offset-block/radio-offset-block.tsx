@@ -15,9 +15,9 @@ export function OffsetBlockRadioGroup() {
             key={opt}
             className="flex cursor-pointer items-center gap-3 rounded-sm px-3.5 py-[11px] motion-reduce:transition-none"
             style={{
-              border: '2px solid #f6f6f6',
-              background: checked ? '#f6f6f6' : '#202020',
-              boxShadow: checked ? '0 0 0 #f6f6f6' : '4px 4px 0 #f6f6f6',
+              border: '2px solid light-dark(#373a40, #f1f2f3)',
+              background: checked ? 'light-dark(#373a40, #f1f2f3)' : 'light-dark(#f3f4f7, #1a1c1f)',
+              boxShadow: checked ? '0 0 0 light-dark(#373a40, #f1f2f3)' : '4px 4px 0 light-dark(#373a40, #f1f2f3)',
               transform: checked ? 'translate(4px,4px)' : 'translate(0,0)',
               transition: 'box-shadow 130ms cubic-bezier(0.22,1,0.36,1), transform 130ms cubic-bezier(0.22,1,0.36,1), background 130ms ease',
             }}
@@ -29,18 +29,18 @@ export function OffsetBlockRadioGroup() {
             />
             <span
               className="flex h-[18px] w-[18px] flex-shrink-0 items-center justify-center rounded-full"
-              style={{ border: `2.5px solid ${checked ? '#111111' : '#f6f6f6'}` }}
+              style={{ border: `2.5px solid ${checked ? 'light-dark(#fbfcfd, #121417)' : 'light-dark(#373a40, #f1f2f3)'}` }}
             >
               <span style={{
                 width:7,height:7,borderRadius:'50%',
-                background: checked ? '#111111' : '#f6f6f6',
+                background: checked ? 'light-dark(#fbfcfd, #121417)' : 'light-dark(#373a40, #f1f2f3)',
                 transform: checked ? 'scale(1)' : 'scale(0)',
                 transition: 'transform 180ms cubic-bezier(0.34,1.56,0.64,1)',
               }}/>
             </span>
             <span
               className="select-none text-[13px] font-semibold tracking-wider transition-colors duration-100"
-              style={{ fontFamily:'ui-monospace, SFMono-Regular, Menlo, monospace', color: checked ? '#111111' : '#f6f6f6' }}
+              style={{ fontFamily:'ui-monospace, SFMono-Regular, Menlo, monospace', color: checked ? 'light-dark(#fbfcfd, #121417)' : 'light-dark(#373a40, #f1f2f3)' }}
             >
               {opt}
             </span>

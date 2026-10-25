@@ -25,7 +25,7 @@ export function SignalRadioGroup() {
               {checked && [0,1,2].map((i) => (
                 <span key={`${signalKey}-${i}`} className="signal-arc pointer-events-none absolute inset-0 rounded-full"
                   style={{
-                    border:'1.5px solid rgba(167,167,167,0.8)',
+                    border:'1.5px solid light-dark(rgba(95,98,106,0.8), rgba(167,171,178,0.8))',
                     animation:`signal-arc 1000ms ease-out ${i*200}ms both`,
                   }}
                 />
@@ -33,20 +33,20 @@ export function SignalRadioGroup() {
               <span
                 className="absolute inset-0 flex items-center justify-center rounded-full border-2 transition-all duration-200"
                 style={{
-                  borderColor: checked ? '#a7a7a7' : 'rgba(246,246,246,0.2)',
-                  background: checked ? 'rgba(167,167,167,0.12)' : 'transparent',
-                  boxShadow: checked ? '0 0 10px rgba(167,167,167,0.5)' : 'none',
+                  borderColor: checked ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(55,58,64,0.2), rgba(241,242,243,0.2))',
+                  background: checked ? 'light-dark(rgba(95,98,106,0.12), rgba(167,171,178,0.12))' : 'transparent',
+                  boxShadow: checked ? '0 0 10px light-dark(rgba(95,98,106,0.5), rgba(167,171,178,0.5))' : 'none',
                 }}
               >
                 <span style={{
-                  width:8,height:8,borderRadius:'50%',background:'#a7a7a7',
+                  width:8,height:8,borderRadius:'50%',background:'light-dark(#5f626a, #a7abb2)',
                   transform:checked?'scale(1)':'scale(0)',
                   transition:'transform 300ms cubic-bezier(0.34,1.56,0.64,1)',
                 }}/>
               </span>
             </span>
             <span className="select-none text-sm transition-colors duration-200"
-              style={{ fontWeight:checked?600:400, color:checked?'#a7a7a7':'rgba(246,246,246,0.55)' }}>
+              style={{ fontWeight:checked?600:400, color:checked?'light-dark(#5f626a, #a7abb2)':'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))' }}>
               {opt}
             </span>
           </label>

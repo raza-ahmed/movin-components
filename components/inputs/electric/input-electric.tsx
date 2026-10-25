@@ -21,18 +21,18 @@ export function ElectricInput({ placeholder = 'Focus to electrify…' }: { place
         placeholder={placeholder}
         onFocus={handleFocus}
         onBlur={() => setFocused(false)}
-        className="w-full rounded-lg border bg-[#f6f6f6]/[0.04] px-3.5 py-2.5 text-[15px] text-[#f6f6f6] placeholder:text-[#f6f6f6]/[0.55] outline-none transition-[background,border-color] duration-300"
-        style={{ borderColor: 'rgba(246,246,246,0.12)', background: focused ? 'rgba(201,201,201,0.04)' : undefined }}
+        className="w-full rounded-lg border bg-[color:light-dark(#373a40,#f1f2f3)]/[0.04] px-3.5 py-2.5 text-[15px] text-[color:light-dark(#373a40,#f1f2f3)] placeholder:text-[color:light-dark(#373a40ba,#f1f2f39e)] outline-none transition-[background,border-color] duration-300"
+        style={{ borderColor: 'light-dark(rgba(55,58,64,0.12), rgba(241,242,243,0.12))', background: focused ? 'light-dark(rgba(80,83,91,0.04), rgba(198,200,205,0.04))' : undefined }}
       />
       <svg className="pointer-events-none absolute inset-0 overflow-visible" width={W} height={H}>
         <rect
           key={traceKey}
           className="el-path"
           x={1} y={1} width={W - 2} height={H - 2} rx={R - 1}
-          fill="none" stroke="#c9c9c9" strokeWidth={1.5} strokeLinecap="round"
+          fill="none" stroke="light-dark(#50535b, #c6c8cd)" strokeWidth={1.5} strokeLinecap="round"
           strokeDasharray={PERIM} strokeDashoffset={focused ? 0 : PERIM}
           style={{
-            filter: focused ? 'drop-shadow(0 0 4px #c9c9c9) drop-shadow(0 0 8px rgba(201,201,201,0.5))' : 'none',
+            filter: focused ? 'drop-shadow(0 0 4px light-dark(#50535b, #c6c8cd)) drop-shadow(0 0 8px light-dark(rgba(80,83,91,0.5), rgba(198,200,205,0.5)))' : 'none',
             animation: traceKey > 0 && focused ? 'el-trace 600ms cubic-bezier(0.22,1,0.36,1) forwards' : 'none',
           }}
         />

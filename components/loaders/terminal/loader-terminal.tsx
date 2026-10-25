@@ -6,10 +6,10 @@ const css = `
     box-sizing: border-box;
     width: 240px;
     padding: 10px 14px 12px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 10px;
-    background: #202020;
-    color: #a7a7a7;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    color: light-dark(#5f626a, #a7abb2);
     font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
     font-size: 12px;
     line-height: 1.5;
@@ -25,7 +25,7 @@ const css = `
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #3a3a3a;
+    background: light-dark(#dbdde1, #2e3035);
   }
 
   .loader-terminal__line {
@@ -35,7 +35,7 @@ const css = `
   }
 
   .loader-terminal__prompt {
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
   }
 
   /* One-line windows over vertical strips. */
@@ -47,7 +47,7 @@ const css = `
 
   .loader-terminal__window--spin {
     width: 1ch;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
   }
 
   .loader-terminal__frames,

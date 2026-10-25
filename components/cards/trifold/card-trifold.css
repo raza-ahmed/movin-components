@@ -48,7 +48,7 @@
   display: flex;
   flex-direction: column;
   padding: 12px;
-  background: linear-gradient(180deg, #ededed, #c9c9c9);
+  background: linear-gradient(180deg, light-dark(#42454c, #e5e6e9), light-dark(#50535b, #c6c8cd));
   backface-visibility: hidden;
   transition-delay: inherit; /* so the shading below keeps time with its panel */
 }
@@ -58,7 +58,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: #111111;
+  background: light-dark(#fbfcfd, #121417);
   opacity: 0;
   transition: opacity 0.7s cubic-bezier(0.45, 0, 0.2, 1);
   transition-delay: inherit;
@@ -80,7 +80,7 @@
 }
 
 .card-trifold__panel--middle .card-trifold__face {
-  box-shadow: inset 1px 0 0 rgba(17, 17, 17, 0.12), inset -1px 0 0 rgba(17, 17, 17, 0.12);
+  box-shadow: inset 1px 0 0 light-dark(rgba(251, 252, 253, 0.12), rgba(18, 20, 23, 0.12)), inset -1px 0 0 light-dark(rgba(251, 252, 253, 0.12), rgba(18, 20, 23, 0.12));
 }
 
 .card-trifold__panel--right .card-trifold__face {
@@ -88,7 +88,7 @@
 }
 
 .card-trifold__face--back {
-  background: linear-gradient(180deg, #c9c9c9, #a7a7a7);
+  background: linear-gradient(180deg, light-dark(#50535b, #c6c8cd), light-dark(#5f626a, #a7abb2));
   transform: rotateY(180deg);
 }
 
@@ -100,39 +100,39 @@
 .card-trifold__panel--right .card-trifold__face--cover {
   justify-content: flex-end;
   border-radius: 10px 0 0 10px;
-  background: linear-gradient(160deg, #3a3a3a, #111111);
+  background: linear-gradient(160deg, light-dark(#dbdde1, #2e3035), light-dark(#fbfcfd, #121417));
 }
 
 .card-trifold__num {
-  color: #7c7c7c;
+  color: light-dark(#6d7179, #7d8087);
   font: 600 10px ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 }
 
 .card-trifold__title {
   margin-top: auto;
-  color: #111111;
+  color: light-dark(#fbfcfd, #121417);
   font-size: 15px;
   font-weight: 600;
 }
 
 .card-trifold__text {
   margin-top: 2px;
-  color: #4d4d4d;
+  color: light-dark(#cbced3, #393c41);
   font-size: 10px;
 }
 
 .card-trifold__cover-title {
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
   font-size: 15px;
   font-weight: 600;
 }
 
 .card-trifold__face--cover .card-trifold__text {
-  color: #a7a7a7;
+  color: light-dark(#5f626a, #a7abb2);
 }
 
 .card-trifold:focus-visible .card-trifold__panel--middle {
-  outline: 2px solid #ededed;
+  outline: 2px solid light-dark(#42454c, #e5e6e9);
   outline-offset: 6px;
 }
 

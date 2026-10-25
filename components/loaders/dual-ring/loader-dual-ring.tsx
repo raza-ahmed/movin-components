@@ -12,8 +12,8 @@ export function DualRingLoader({ label = "Loading" }: { label?: string }) {
           inset: 0;
           border-radius: 50%;
           border: 3px solid transparent;
-          border-top-color: #f6f6f6;
-          border-bottom-color: #f6f6f6;
+          border-top-color: light-dark(#373a40, #f1f2f3);
+          border-bottom-color: light-dark(#373a40, #f1f2f3);
           animation: dual-ring-cw 1s linear infinite;
         }
         .dual-ring-inner {
@@ -21,8 +21,8 @@ export function DualRingLoader({ label = "Loading" }: { label?: string }) {
           inset: 9px;
           border-radius: 50%;
           border: 3px solid transparent;
-          border-left-color: #7c7c7c;
-          border-right-color: #7c7c7c;
+          border-left-color: light-dark(#6d7179, #7d8087);
+          border-right-color: light-dark(#6d7179, #7d8087);
           animation: dual-ring-ccw 0.65s linear infinite;
         }
         @media (prefers-reduced-motion: reduce) {

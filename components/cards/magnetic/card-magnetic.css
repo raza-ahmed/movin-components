@@ -6,13 +6,13 @@
   --card-magnetic-spring: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
   width: 160px;
   overflow: hidden;
-  border: 1px solid rgba(246, 246, 246, 0.1);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.1), rgba(241, 242, 243, 0.1));
   border-radius: 12px;
-  background: rgba(246, 246, 246, 0.05);
+  background: light-dark(rgba(55, 58, 64, 0.05), rgba(241, 242, 243, 0.05));
   cursor: pointer;
   transition: border-color 300ms ease;
 }
-.card-magnetic:hover { border-color: rgba(246, 246, 246, 0.2); }
+.card-magnetic:hover { border-color: light-dark(rgba(55, 58, 64, 0.2), rgba(241, 242, 243, 0.2)); }
 .card-magnetic__media {
   position: relative;
   height: 64px;
@@ -22,7 +22,7 @@
 .card-magnetic__backdrop {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #282828, #3a3a3a);
+  background: linear-gradient(135deg, light-dark(#ebedf0, #232529), light-dark(#dbdde1, #2e3035));
   transform: translate(calc(var(--card-magnetic-x) * 0.3), calc(var(--card-magnetic-y) * 0.3));
   transition: var(--card-magnetic-spring);
 }
@@ -35,7 +35,7 @@
   height: 32px;
   margin: -16px 0 0 -16px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #ededed, #7c7c7c);
+  background: radial-gradient(circle at 35% 35%, light-dark(#42454c, #e5e6e9), light-dark(#6d7179, #7d8087));
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
   transform: translate(var(--card-magnetic-x), var(--card-magnetic-y));
   transition: var(--card-magnetic-spring);
@@ -60,12 +60,12 @@
   margin-bottom: 4px;
   font-size: 13px;
   font-weight: 600;
-  color: #f6f6f6;
+  color: light-dark(#373a40, #f1f2f3);
 }
 .card-magnetic__text {
   font-size: 11px;
   line-height: 1.4;
-  color: rgba(246, 246, 246, 0.55);
+  color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62));
 }
 @media (prefers-reduced-motion: reduce) {
   .card-magnetic__backdrop,

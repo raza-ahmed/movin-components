@@ -8,14 +8,14 @@
   overflow: hidden;
   border: none;
   border-radius: 28px;
-  background: linear-gradient(to bottom right, #4d4d4d, #7c7c7c);
-  color: #f6f6f6;
+  background: linear-gradient(to bottom right, light-dark(#cbced3, #393c41), light-dark(#6d7179, #7d8087));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   cursor: pointer;
   transition: width 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-morph-shape:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .btn-morph-shape__label,

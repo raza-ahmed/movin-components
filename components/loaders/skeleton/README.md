@@ -1,6 +1,6 @@
 # Skeleton loader
 
-A shimmer content placeholder — avatar, name, and body line shapes with a sweeping highlight. Pure CSS, no dependencies.
+A shimmer content placeholder: avatar, name, and body line shapes with a sweeping highlight. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/loaders/skeleton/
 

@@ -15,11 +15,11 @@ export function TextShimmerLoader({ label = "Loading" }: { label?: string }) {
           text-transform: uppercase;
           background: linear-gradient(
             90deg,
-            rgba(246,246,246,0.25) 0%,
-            rgba(246,246,246,0.25) 30%,
-            rgba(246,246,246,1)    50%,
-            rgba(246,246,246,0.25) 70%,
-            rgba(246,246,246,0.25) 100%
+            light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25)) 0%,
+            light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25)) 30%,
+            light-dark(rgba(55,58,64,1), rgba(241,242,243,1))    50%,
+            light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25)) 70%,
+            light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25)) 100%
           );
           background-size: 200% auto;
           -webkit-background-clip: text;
@@ -31,7 +31,7 @@ export function TextShimmerLoader({ label = "Loading" }: { label?: string }) {
           .shimmer-text {
             animation: none;
             background: none;
-            -webkit-text-fill-color: rgba(246,246,246,0.45);
+            -webkit-text-fill-color: light-dark(rgba(55,58,64,0.45), rgba(241,242,243,0.45));
           }
         }
       `}</style>

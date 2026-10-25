@@ -1,6 +1,6 @@
 # Neon Pulse button
 
-A white neon glow breathes in and out continuously around the button using layered box-shadows — ideal for a primary CTA that demands attention. Pure CSS, no dependencies.
+A white neon glow breathes in and out continuously around the button using layered box-shadows, ideal for a primary CTA that demands attention. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/buttons/neon-pulse/
 

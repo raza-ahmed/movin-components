@@ -1,6 +1,6 @@
 # Check Pop checkbox
 
-A checkbox where the SVG checkmark springs into view with a scale overshoot (cubic-bezier spring) on check and collapses instantly on uncheck. No keyframes needed — pure CSS transition on the SVG transform.
+A checkbox where the SVG checkmark springs into view with a scale overshoot (cubic-bezier spring) on check and collapses instantly on uncheck. No keyframes needed: pure CSS transition on the SVG transform.
 
 Live preview: https://movin.design/components/checkboxes/check-pop/
 

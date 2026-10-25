@@ -17,7 +17,7 @@ export function SpringToggle({ defaultOn = false }: { defaultOn?: boolean }) {
     x.set(on ? 22 : 0);
   }, [on, x]);
 
-  const bg = useTransform(x, [0, 22], ["rgba(246,246,246,0.15)", "#a7a7a7"]);
+  const bg = useTransform(x, [0, 22], ["light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15))", "light-dark(#5f626a, #a7abb2)"]);
 
   return (
     <motion.button
@@ -29,7 +29,7 @@ export function SpringToggle({ defaultOn = false }: { defaultOn?: boolean }) {
       style={{ background: bg }}
     >
       <motion.span
-        className="block h-[22px] w-[22px] rounded-full bg-[#f6f6f6]"
+        className="block h-[22px] w-[22px] rounded-full bg-[color:light-dark(#373a40,#f1f2f3)]"
         style={{ x }}
       />
     </motion.button>

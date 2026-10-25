@@ -16,7 +16,7 @@ export function StaggerLettersButton({ children }: { children: React.ReactNode }
         type="button"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="inline-flex gap-px rounded-lg border-none bg-gradient-to-br from-[#7c7c7c] to-[#4d4d4d] px-8 py-3 font-semibold tracking-widest text-[#f6f6f6] cursor-pointer"
+        className="inline-flex gap-px rounded-lg border-none bg-gradient-to-br from-[color:light-dark(#6d7179,#7d8087)] to-[color:light-dark(#cbced3,#393c41)] px-8 py-3 font-semibold tracking-widest text-[color:light-dark(#373a40,#f1f2f3)] cursor-pointer"
       >
         {label.split('').map((char, i) => (
           <span

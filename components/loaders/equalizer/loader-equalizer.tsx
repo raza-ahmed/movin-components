@@ -14,11 +14,11 @@ export function EqualizerLoader({ label = "Loading" }: { label?: string }) {
           width: 5px;
           border-radius: 3px;
         }
-        .eq-bar:nth-child(1) { background: #4d4d4d; animation: eq-a 0.9s  ease-in-out infinite; }
-        .eq-bar:nth-child(2) { background: #7c7c7c; animation: eq-b 0.7s  ease-in-out infinite; }
-        .eq-bar:nth-child(3) { background: #a7a7a7; animation: eq-c 1.1s  ease-in-out infinite; }
-        .eq-bar:nth-child(4) { background: #c9c9c9; animation: eq-d 0.8s  ease-in-out infinite; }
-        .eq-bar:nth-child(5) { background: #f6f6f6; animation: eq-e 0.95s ease-in-out infinite; }
+        .eq-bar:nth-child(1) { background: light-dark(#cbced3, #393c41); animation: eq-a 0.9s  ease-in-out infinite; }
+        .eq-bar:nth-child(2) { background: light-dark(#6d7179, #7d8087); animation: eq-b 0.7s  ease-in-out infinite; }
+        .eq-bar:nth-child(3) { background: light-dark(#5f626a, #a7abb2); animation: eq-c 1.1s  ease-in-out infinite; }
+        .eq-bar:nth-child(4) { background: light-dark(#50535b, #c6c8cd); animation: eq-d 0.8s  ease-in-out infinite; }
+        .eq-bar:nth-child(5) { background: light-dark(#373a40, #f1f2f3); animation: eq-e 0.95s ease-in-out infinite; }
         @media (prefers-reduced-motion: reduce) {
           .eq-bar { animation: none; height: 16px; }
         }

@@ -27,12 +27,12 @@ export function InkStampButton({ children }: { children: React.ReactNode }) {
       <button
         type="button"
         onClick={handleClick}
-        className="relative overflow-hidden rounded-lg border border-[#7c7c7c] bg-[#282828] px-8 py-3 font-semibold tracking-widest text-[#f6f6f6] cursor-pointer"
+        className="relative overflow-hidden rounded-lg border border-[color:light-dark(#6d7179,#7d8087)] bg-[color:light-dark(#ebedf0,#232529)] px-8 py-3 font-semibold tracking-widest text-[color:light-dark(#373a40,#f1f2f3)] cursor-pointer"
       >
         <span
           ref={stampRef}
           className="pointer-events-none absolute left-1/2 top-1/2 h-16 w-16 rounded-full opacity-0"
-          style={{ background: 'radial-gradient(circle, rgba(124,124,124,0.7) 0%, rgba(124,124,124,0.3) 60%, transparent 100%)' }}
+          style={{ background: 'radial-gradient(circle, light-dark(rgba(109,113,121,0.7), rgba(125,128,135,0.7)) 0%, light-dark(rgba(109,113,121,0.3), rgba(125,128,135,0.3)) 60%, transparent 100%)' }}
         />
         <span className="relative z-10">{children}</span>
       </button>

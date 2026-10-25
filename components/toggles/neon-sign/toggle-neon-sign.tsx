@@ -20,14 +20,14 @@ const css = `
     place-items: center;
     width: 132px;
     height: 60px;
-    border: 2px solid #282828;
+    border: 2px solid light-dark(#ebedf0, #232529);
     border-radius: 12px;
-    background: #111111;
+    background: light-dark(#fbfcfd, #121417);
     transition: box-shadow 0.4s;
   }
 
   .toggle-neon-sign__input:focus-visible + .toggle-neon-sign__board {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 3px;
   }
 
@@ -35,7 +35,7 @@ const css = `
   .toggle-neon-sign__word {
     display: flex;
     gap: 0.12em;
-    color: #3a3a3a;
+    color: light-dark(#dbdde1, #2e3035);
     font-size: 28px;
     font-weight: 300;
     letter-spacing: 0.06em;
@@ -44,12 +44,12 @@ const css = `
 
   /* Lit: a stutter, then a steady glow on the letters and the board. */
   .toggle-neon-sign__input:checked + .toggle-neon-sign__board {
-    box-shadow: inset 0 0 22px rgba(237, 237, 237, 0.12), 0 0 18px rgba(237, 237, 237, 0.08);
+    box-shadow: inset 0 0 22px light-dark(rgba(66, 69, 76, 0.12), rgba(229, 230, 233, 0.12)), 0 0 18px light-dark(rgba(66, 69, 76, 0.08), rgba(229, 230, 233, 0.08));
   }
 
   .toggle-neon-sign__input:checked + .toggle-neon-sign__board .toggle-neon-sign__word {
-    color: #f6f6f6;
-    text-shadow: 0 0 3px #f6f6f6, 0 0 10px rgba(237, 237, 237, 0.8), 0 0 22px rgba(237, 237, 237, 0.45);
+    color: light-dark(#373a40, #f1f2f3);
+    text-shadow: 0 0 3px light-dark(#373a40, #f1f2f3), 0 0 10px light-dark(rgba(66, 69, 76, 0.8), rgba(229, 230, 233, 0.8)), 0 0 22px light-dark(rgba(66, 69, 76, 0.45), rgba(229, 230, 233, 0.45));
     animation: toggle-neon-sign-strike 0.9s steps(1);
   }
 
@@ -62,14 +62,14 @@ const css = `
     12%,
     30%,
     52% {
-      color: #3a3a3a;
+      color: light-dark(#dbdde1, #2e3035);
       text-shadow: none;
     }
     8%,
     22%,
     40% {
-      color: #c9c9c9;
-      text-shadow: 0 0 8px rgba(237, 237, 237, 0.5);
+      color: light-dark(#50535b, #c6c8cd);
+      text-shadow: 0 0 8px light-dark(rgba(66, 69, 76, 0.5), rgba(229, 230, 233, 0.5));
     }
   }
 

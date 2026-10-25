@@ -19,38 +19,38 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 8px;
   outline: none;
-  background: rgba(246, 246, 246, 0.05);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.05), rgba(241, 242, 243, 0.05));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   transition: border-color 150ms;
 }
-.field-shake__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-shake__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
-.field-shake__input:focus { box-shadow: 0 0 0 1px #a7a7a7; }
-.field-shake__input[aria-invalid="true"] { border-color: #f6f6f6; }
+.field-shake__input:focus { box-shadow: 0 0 0 1px light-dark(#5f626a, #a7abb2); }
+.field-shake__input[aria-invalid="true"] { border-color: light-dark(#373a40, #f1f2f3); }
 .field-shake__error {
   padding-left: 2px;
   font-size: 12px;
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
 }
 /* An empty submit shakes the field like a head saying no. */
 .field-shake--shaking .field-shake__group { animation: field-shake 450ms ease; }
 .field-shake__submit {
   padding: 8px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 8px;
-  background: rgba(246, 246, 246, 0.1);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.1), rgba(241, 242, 243, 0.1));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 14px;
   cursor: pointer;
 }
 .field-shake__submit:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 @keyframes field-shake {

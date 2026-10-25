@@ -63,18 +63,18 @@ export function TypewriterCard({
     <div
       onMouseEnter={() => run(hoverTitle, hoverDescription)}
       onMouseLeave={() => run(title, description)}
-      className="cursor-pointer overflow-hidden rounded-xl border border-[#f6f6f6]/10 bg-[#f6f6f6]/[0.04] font-mono"
+      className="cursor-pointer overflow-hidden rounded-xl border border-[color:light-dark(#373a40,#f1f2f3)]/10 bg-[color:light-dark(#373a40,#f1f2f3)]/[0.04] font-mono"
     >
-      <div className="flex h-16 items-center justify-center gap-1 bg-gradient-to-br from-[#111111] to-[#202020] text-xs text-[#c9c9c9]">
+      <div className="flex h-16 items-center justify-center gap-1 bg-gradient-to-br from-[color:light-dark(#fbfcfd,#121417)] to-[color:light-dark(#f3f4f7,#1a1c1f)] text-xs text-[color:light-dark(#50535b,#c6c8cd)]">
         <span>&gt; run</span>
         <span className="tw-cursor">_</span>
       </div>
       <div className="p-4">
-        <p className="mb-1 text-sm font-semibold text-[#c9c9c9]">
+        <p className="mb-1 text-sm font-semibold text-[color:light-dark(#50535b,#c6c8cd)]">
           {displayTitle}
           {typing && <span className="tw-cursor ml-0.5">|</span>}
         </p>
-        <p className="text-xs text-[#f6f6f6]/[0.55]">{displayDesc}</p>
+        <p className="text-xs text-[color:light-dark(#373a40ba,#f1f2f39e)]">{displayDesc}</p>
       </div>
     </div>
   );

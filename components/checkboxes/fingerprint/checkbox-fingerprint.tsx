@@ -8,7 +8,7 @@ const css = `
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -31,14 +31,14 @@ const css = `
     place-items: center;
     width: 52px;
     height: 52px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 50%;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     transition: border-color 0.3s, scale 0.2s;
   }
 
   .cb-fingerprint__input:focus-visible + .cb-fingerprint__pad {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 3px;
   }
 
@@ -52,7 +52,7 @@ const css = `
 
   /* Each ridge lights after the one inside it: the delay is its ring number. */
   .cb-fingerprint__ridge {
-    stroke: #4d4d4d;
+    stroke: light-dark(#cbced3, #393c41);
     transition: stroke 0.25s ease-in;
   }
 
@@ -62,12 +62,12 @@ const css = `
 
   .cb-fingerprint--holding .cb-fingerprint__ridge,
   .cb-fingerprint__input:checked + .cb-fingerprint__pad .cb-fingerprint__ridge {
-    stroke: #ededed;
+    stroke: light-dark(#42454c, #e5e6e9);
     transition: stroke 0.12s ease-out calc(var(--cb-fingerprint-i) * var(--cb-fingerprint-hold) / 7);
   }
 
   .cb-fingerprint__input:checked + .cb-fingerprint__pad {
-    border-color: #7c7c7c;
+    border-color: light-dark(#6d7179, #7d8087);
   }
 
   .cb-fingerprint__badge {
@@ -78,9 +78,9 @@ const css = `
     place-items: center;
     width: 18px;
     height: 18px;
-    border: 2px solid #111111;
+    border: 2px solid light-dark(#fbfcfd, #121417);
     border-radius: 50%;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     transform: scale(0);
     transition: transform 0.15s ease-in;
   }
@@ -89,7 +89,7 @@ const css = `
     width: 11px;
     height: 11px;
     fill: none;
-    stroke: #111111;
+    stroke: light-dark(#fbfcfd, #121417);
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -107,7 +107,7 @@ const css = `
   }
 
   .cb-fingerprint__hint {
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
     font-size: 12px;
   }
 

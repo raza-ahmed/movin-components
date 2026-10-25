@@ -14,16 +14,16 @@ export function HexagonButton({ children }: { children: React.ReactNode }) {
       className="relative overflow-hidden border-none cursor-pointer select-none px-12 py-3.5 text-xs font-semibold uppercase tracking-widest"
       style={{
         clipPath: HEX,
-        color: hovered ? '#3a3a3a' : '#a7a7a7',
+        color: hovered ? 'light-dark(#dbdde1, #2e3035)' : 'light-dark(#5f626a, #a7abb2)',
         background: 'transparent',
         transition: 'color 280ms ease',
       }}
     >
-      <span className="absolute inset-0" style={{ background: '#282828' }} />
+      <span className="absolute inset-0" style={{ background: 'light-dark(#ebedf0, #232529)' }} />
       <span
         className="absolute inset-0 rounded-full"
         style={{
-          background: '#a7a7a7',
+          background: 'light-dark(#5f626a, #a7abb2)',
           transform: hovered ? 'scale(1)' : 'scale(0)',
           transformOrigin: 'center',
           transition: 'transform 320ms cubic-bezier(0.34,1.56,0.64,1)',

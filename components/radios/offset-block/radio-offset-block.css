@@ -8,7 +8,7 @@
 }
 .radio-offset-block__option { cursor: pointer; }
 .radio-offset-block__option:has(.radio-offset-block__input:focus-visible) {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -24,10 +24,10 @@
   align-items: center;
   gap: 12px;
   padding: 11px 14px;
-  border: 2px solid #f6f6f6;
+  border: 2px solid light-dark(#373a40, #f1f2f3);
   border-radius: 2px;
-  background: #202020;
-  box-shadow: 4px 4px 0 #f6f6f6;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: 4px 4px 0 light-dark(#373a40, #f1f2f3);
   transition: box-shadow 130ms cubic-bezier(0.22, 1, 0.36, 1), transform 130ms cubic-bezier(0.22, 1, 0.36, 1), background 130ms ease;
 }
 .radio-offset-block__ring {
@@ -38,14 +38,14 @@
   height: 18px;
   flex-shrink: 0;
   box-sizing: border-box;
-  border: 2.5px solid #f6f6f6;
+  border: 2.5px solid light-dark(#373a40, #f1f2f3);
   border-radius: 50%;
 }
 .radio-offset-block__dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #f6f6f6;
+  background: light-dark(#373a40, #f1f2f3);
   transform: scale(0);
   transition: transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -54,18 +54,18 @@
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: #f6f6f6;
+  color: light-dark(#373a40, #f1f2f3);
   user-select: none;
   transition: color 100ms;
 }
 .radio-offset-block__option:has(.radio-offset-block__input:checked) {
-  background: #f6f6f6;
-  box-shadow: 0 0 0 #f6f6f6;
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 0 0 light-dark(#373a40, #f1f2f3);
   transform: translate(4px, 4px);
 }
-.radio-offset-block__option:has(.radio-offset-block__input:checked) .radio-offset-block__ring { border-color: #111111; }
-.radio-offset-block__option:has(.radio-offset-block__input:checked) .radio-offset-block__dot { background: #111111; transform: scale(1); }
-.radio-offset-block__option:has(.radio-offset-block__input:checked) .radio-offset-block__label { color: #111111; }
+.radio-offset-block__option:has(.radio-offset-block__input:checked) .radio-offset-block__ring { border-color: light-dark(#fbfcfd, #121417); }
+.radio-offset-block__option:has(.radio-offset-block__input:checked) .radio-offset-block__dot { background: light-dark(#fbfcfd, #121417); transform: scale(1); }
+.radio-offset-block__option:has(.radio-offset-block__input:checked) .radio-offset-block__label { color: light-dark(#fbfcfd, #121417); }
 
 @media (prefers-reduced-motion: reduce) {
   .radio-offset-block,

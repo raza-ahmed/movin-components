@@ -5,7 +5,7 @@ const css = `
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -25,12 +25,12 @@ const css = `
     width: 148px;
     height: 30px;
     border-radius: 6px;
-    background: #282828;
-    box-shadow: inset 0 0 0 1px #3a3a3a;
+    background: light-dark(#ebedf0, #232529);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
   }
 
   .toggle-zipper__input:focus-visible + .toggle-zipper__track {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 3px;
   }
 
@@ -46,18 +46,18 @@ const css = `
 
   .toggle-zipper__open {
     background-image:
-      repeating-linear-gradient(90deg, #a7a7a7 0 4px, transparent 4px 8px),
-      repeating-linear-gradient(90deg, transparent 0 4px, #a7a7a7 4px 8px),
-      linear-gradient(#111111, #111111);
+      repeating-linear-gradient(90deg, light-dark(#5f626a, #a7abb2) 0 4px, transparent 4px 8px),
+      repeating-linear-gradient(90deg, transparent 0 4px, light-dark(#5f626a, #a7abb2) 4px 8px),
+      linear-gradient(light-dark(#fbfcfd, #121417), light-dark(#fbfcfd, #121417));
     background-size: 100% 6px, 100% 6px, 100% 8px;
     background-position: 0 4px, 0 20px, 0 11px;
   }
 
   .toggle-zipper__closed {
-    background-color: #282828;
+    background-color: light-dark(#ebedf0, #232529);
     background-image:
-      repeating-linear-gradient(90deg, #c9c9c9 0 4px, transparent 4px 8px),
-      repeating-linear-gradient(90deg, transparent 0 4px, #ededed 4px 8px);
+      repeating-linear-gradient(90deg, light-dark(#50535b, #c6c8cd) 0 4px, transparent 4px 8px),
+      repeating-linear-gradient(90deg, transparent 0 4px, light-dark(#42454c, #e5e6e9) 4px 8px);
     background-size: 100% 7px, 100% 7px;
     background-position: 0 9px, 0 14px;
     clip-path: inset(0 135px 0 0);
@@ -71,7 +71,7 @@ const css = `
     width: 22px;
     height: 18px;
     border-radius: 4px 9px 9px 4px;
-    background: linear-gradient(#f6f6f6, #a7a7a7);
+    background: linear-gradient(light-dark(#373a40, #f1f2f3), light-dark(#5f626a, #a7abb2));
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     transform: translateX(2px);
     transition: transform 0.6s cubic-bezier(0.55, 0, 0.3, 1);
@@ -86,8 +86,8 @@ const css = `
     height: 22px;
     border-radius: 3px 3px 4px 4px;
     background:
-      radial-gradient(circle at 50% 16px, #282828 0 2px, transparent 2.5px),
-      linear-gradient(90deg, #a7a7a7, #ededed 50%, #a7a7a7);
+      radial-gradient(circle at 50% 16px, light-dark(#ebedf0, #232529) 0 2px, transparent 2.5px),
+      linear-gradient(90deg, light-dark(#5f626a, #a7abb2), light-dark(#42454c, #e5e6e9) 50%, light-dark(#5f626a, #a7abb2));
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.45);
     transform-origin: 50% 0;
     transform: rotate(8deg);

@@ -28,7 +28,7 @@ const css = `
     height: 4px;
     margin: -2px 0 0 -2px;
     border-radius: 50%;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     transform: rotate(calc(var(--loader-sunflower-i) * 137.508deg)) translateX(calc(sqrt(var(--loader-sunflower-i)) * 4.8px)) scale(0.35);
     animation: loader-sunflower-pulse var(--loader-sunflower-t) ease-in-out infinite;
     animation-delay: calc(sqrt(var(--loader-sunflower-i)) * var(--loader-sunflower-t) / 8 - var(--loader-sunflower-t));

@@ -5,7 +5,7 @@ const css = `
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -26,13 +26,13 @@ const css = `
     box-sizing: border-box;
     width: 22px;
     height: 22px;
-    border: 2px solid #4d4d4d;
+    border: 2px solid light-dark(#cbced3, #393c41);
     border-radius: 6px;
     transition: background-color 0.25s, border-color 0.25s;
   }
 
   .cb-strike-task__input:focus-visible + .cb-strike-task__box {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 
@@ -40,7 +40,7 @@ const css = `
     width: 18px;
     height: 18px;
     fill: none;
-    stroke: #111111;
+    stroke: light-dark(#fbfcfd, #121417);
     stroke-width: 2.4;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -70,7 +70,7 @@ const css = `
     margin-top: -6px;
     overflow: visible;
     fill: none;
-    stroke: #a7a7a7;
+    stroke: light-dark(#5f626a, #a7abb2);
     stroke-width: 1.8;
     stroke-linecap: round;
     pointer-events: none;
@@ -83,8 +83,8 @@ const css = `
   }
 
   .cb-strike-task__input:checked + .cb-strike-task__box {
-    border-color: #ededed;
-    background: #ededed;
+    border-color: light-dark(#42454c, #e5e6e9);
+    background: light-dark(#42454c, #e5e6e9);
   }
 
   .cb-strike-task__input:checked + .cb-strike-task__box .cb-strike-task__tick {
@@ -93,7 +93,7 @@ const css = `
   }
 
   .cb-strike-task__input:checked ~ .cb-strike-task__text {
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
   }
 
   /* The pen goes out, then comes back. */

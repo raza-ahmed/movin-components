@@ -8,7 +8,7 @@ const css = `
     box-sizing: border-box;
     width: 40px;
     height: 40px;
-    border: 2px solid #a7a7a7;
+    border: 2px solid light-dark(#5f626a, #a7abb2);
     border-radius: 22px;
     background: transparent;
     transition: width 0.5s cubic-bezier(0.6, 0, 0.2, 1), height 0.5s cubic-bezier(0.6, 0, 0.2, 1), border-width 0.3s, border-color 0.3s, background-color 0.3s;
@@ -23,18 +23,18 @@ const css = `
     width: 13px;
     height: 3px;
     border-radius: 2px;
-    background: #a7a7a7;
+    background: light-dark(#5f626a, #a7abb2);
     transform: rotate(45deg);
     transform-origin: 0 50%;
     transition: transform 0.3s cubic-bezier(0.3, 1.4, 0.5, 1) 0.25s, opacity 0.2s 0.25s;
   }
 
   .field-lens:hover:not(:focus-within) {
-    border-color: #ededed;
+    border-color: light-dark(#42454c, #e5e6e9);
   }
 
   .field-lens:hover:not(:focus-within)::after {
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
   }
 
   .field-lens__input {
@@ -49,7 +49,7 @@ const css = `
     border-radius: inherit;
     outline: none;
     background: transparent;
-    color: #f6f6f6;
+    color: light-dark(#373a40, #f1f2f3);
     font: inherit;
     font-size: 14px;
     opacity: 0;
@@ -64,7 +64,7 @@ const css = `
   }
 
   .field-lens__input::placeholder {
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
   }
 
   .field-lens__icon {
@@ -75,7 +75,7 @@ const css = `
     height: 16px;
     margin-top: -8px;
     fill: none;
-    stroke: #a7a7a7;
+    stroke: light-dark(#5f626a, #a7abb2);
     stroke-width: 1.6;
     stroke-linecap: round;
     pointer-events: none;
@@ -90,12 +90,12 @@ const css = `
     width: 280px;
     height: 44px;
     border-width: 1px;
-    border-color: #4d4d4d;
-    background: #202020;
+    border-color: light-dark(#cbced3, #393c41);
+    background: light-dark(#f3f4f7, #1a1c1f);
   }
 
   .field-lens:focus-within {
-    border-color: #a7a7a7;
+    border-color: light-dark(#5f626a, #a7abb2);
   }
 
   .field-lens:focus-within::after,

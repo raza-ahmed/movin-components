@@ -6,11 +6,11 @@
 
 .field-scan-line {
   overflow: hidden;
-  border: 1px solid rgba(246, 246, 246, 0.12);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12));
   border-radius: 8px;
   transition: border-color 200ms;
 }
-.field-scan-line:focus-within { border-color: rgba(167, 167, 167, 0.5); }
+.field-scan-line:focus-within { border-color: light-dark(rgba(95, 98, 106, 0.5), rgba(167, 171, 178, 0.5)); }
 
 .field-scan-line__input {
   box-sizing: border-box;
@@ -19,24 +19,24 @@
   border: 1px solid transparent;
   border-radius: 8px;
   outline: none;
-  background: rgba(246, 246, 246, 0.04);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   display: block;
   border: none;
   border-radius: 0;
 }
-.field-scan-line__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-scan-line__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
-.field-scan-line__input:focus { background: rgba(167, 167, 167, 0.04); }
+.field-scan-line__input:focus { background: light-dark(rgba(95, 98, 106, 0.04), rgba(167, 171, 178, 0.04)); }
 /* While focused, a scanline sweeps down through the field on a loop. */
 .field-scan-line__scan {
   position: absolute;
   right: 0;
   left: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(167, 167, 167, 0.8), rgba(167, 167, 167, 0.6), transparent);
+  background: linear-gradient(90deg, transparent, light-dark(rgba(95, 98, 106, 0.8), rgba(167, 171, 178, 0.8)), light-dark(rgba(95, 98, 106, 0.6), rgba(167, 171, 178, 0.6)), transparent);
   pointer-events: none;
   opacity: 0;
 }

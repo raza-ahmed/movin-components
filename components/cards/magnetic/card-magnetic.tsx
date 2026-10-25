@@ -28,13 +28,13 @@ export function MagneticCard({ children }: { children: React.ReactNode }) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => { setOffset({ x: 0, y: 0 }); setHovered(false); }}
-      className="cursor-pointer overflow-hidden rounded-xl border bg-[#f6f6f6]/5 transition-colors duration-300"
-      style={{ borderColor: hovered ? "rgba(246,246,246,0.2)" : "rgba(246,246,246,0.1)" }}
+      className="cursor-pointer overflow-hidden rounded-xl border bg-[color:light-dark(#373a40,#f1f2f3)]/5 transition-colors duration-300"
+      style={{ borderColor: hovered ? "light-dark(rgba(55,58,64,0.2), rgba(241,242,243,0.2))" : "light-dark(rgba(55,58,64,0.1), rgba(241,242,243,0.1))" }}
     >
       <div className="relative h-16 overflow-hidden">
         {/* Backdrop drifts at 30% (scaled up so its edges never show) */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-[#282828] to-[#3a3a3a]"
+          className="absolute inset-0 bg-gradient-to-br from-[color:light-dark(#ebedf0,#232529)] to-[color:light-dark(#dbdde1,#2e3035)]"
           style={{
             transform: `translate(${offset.x * 0.3}px, ${offset.y * 0.3}px) scale(${lift ? 1.12 : 1})`,
             transition: hovered ? "transform 80ms linear" : spring,
@@ -44,7 +44,7 @@ export function MagneticCard({ children }: { children: React.ReactNode }) {
         <div
           className="absolute left-1/2 top-1/2 -ml-4 -mt-4 h-8 w-8 rounded-full"
           style={{
-            background: "radial-gradient(circle at 35% 35%, #ededed, #7c7c7c)",
+            background: "radial-gradient(circle at 35% 35%, light-dark(#42454c, #e5e6e9), light-dark(#6d7179, #7d8087))",
             boxShadow: "0 6px 18px rgba(0,0,0,0.5)",
             transform: `translate(${offset.x}px, ${offset.y}px) scale(${lift ? 1.15 : 1})`,
             transition: hovered ? "transform 60ms linear" : spring,

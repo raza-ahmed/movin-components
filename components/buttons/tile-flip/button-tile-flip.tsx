@@ -14,8 +14,8 @@ const css = `
     isolation: isolate;
     border: 0;
     border-radius: 12px;
-    background: #111111;
-    color: #ededed;
+    background: light-dark(#fbfcfd, #121417);
+    color: light-dark(#42454c, #e5e6e9);
     font: inherit;
     font-size: 15px;
     font-weight: 600;
@@ -24,7 +24,7 @@ const css = `
   }
 
   .btn-tile-flip:focus-visible {
-    outline: 2px solid #ededed;
+    outline: 2px solid light-dark(#42454c, #e5e6e9);
     outline-offset: 4px;
   }
 
@@ -54,12 +54,12 @@ const css = `
   }
 
   .btn-tile-flip__tile::before {
-    background: #282828;
+    background: light-dark(#ebedf0, #232529);
   }
 
   /* Turned on the tile's own axis, so a full flip lands it square. */
   .btn-tile-flip__tile::after {
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     transform: rotate3d(var(--btn-tile-flip-ax, 0), var(--btn-tile-flip-ay, 1), 0, 180deg);
   }
 
@@ -75,7 +75,7 @@ const css = `
   }
 
   .btn-tile-flip--on .btn-tile-flip__label {
-    color: #111111;
+    color: light-dark(#fbfcfd, #121417);
   }
 
   @media (prefers-reduced-motion: reduce) {

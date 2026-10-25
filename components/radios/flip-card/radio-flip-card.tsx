@@ -52,17 +52,17 @@ const css = `
     gap: 2px;
     box-sizing: border-box;
     padding: 12px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 12px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     backface-visibility: hidden;
   }
 
   .radio-flip-card__face--back {
     justify-content: space-between;
-    border-color: #ededed;
-    background: #ededed;
-    color: #111111;
+    border-color: light-dark(#42454c, #e5e6e9);
+    background: light-dark(#42454c, #e5e6e9);
+    color: light-dark(#fbfcfd, #121417);
     transform: rotateY(180deg);
   }
 
@@ -72,36 +72,36 @@ const css = `
     padding: 3px;
     box-sizing: border-box;
     border-radius: 50%;
-    background: #111111;
+    background: light-dark(#fbfcfd, #121417);
     fill: none;
-    stroke: #ededed;
+    stroke: light-dark(#42454c, #e5e6e9);
     stroke-width: 2.6;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
 
   .radio-flip-card__name {
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 14px;
     font-weight: 600;
   }
 
   .radio-flip-card__price {
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
     font-size: 12px;
   }
 
   .radio-flip-card__face--back .radio-flip-card__name {
-    color: #111111;
+    color: light-dark(#fbfcfd, #121417);
     margin-top: auto;
   }
 
   .radio-flip-card__face--back .radio-flip-card__price {
-    color: #4d4d4d;
+    color: light-dark(#cbced3, #393c41);
   }
 
   .radio-flip-card__option:hover .radio-flip-card__face--front {
-    border-color: #7c7c7c;
+    border-color: light-dark(#6d7179, #7d8087);
   }
 
   .radio-flip-card__option:has(.radio-flip-card__input:checked) .radio-flip-card__card {
@@ -109,7 +109,7 @@ const css = `
   }
 
   .radio-flip-card__option:has(.radio-flip-card__input:focus-visible) .radio-flip-card__face {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 

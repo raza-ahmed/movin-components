@@ -7,13 +7,13 @@
   height: 56px;
   border: none;
   border-radius: 50%;
-  background: #202020;
-  box-shadow: 0 0 0 2px rgba(246, 246, 246, 0.07), inset 0 3px 8px rgba(0, 0, 0, 0.8);
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: 0 0 0 2px light-dark(rgba(55, 58, 64, 0.07), rgba(241, 242, 243, 0.07)), inset 0 3px 8px rgba(0, 0, 0, 0.8);
   cursor: pointer;
   transition: box-shadow 300ms ease;
 }
 .toggle-power:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 4px;
 }
 /* The lit face sits on its own layer so the radial gradient can fade in. */
@@ -22,30 +22,30 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: radial-gradient(circle at 40% 35%, #c9c9c9 0%, #a7a7a7 100%);
+  background: radial-gradient(circle at 40% 35%, light-dark(#50535b, #c6c8cd) 0%, light-dark(#5f626a, #a7abb2) 100%);
   opacity: 0;
   transition: opacity 300ms ease;
 }
 .toggle-power__icon {
   position: relative;
-  stroke: rgba(246, 246, 246, 0.3);
+  stroke: light-dark(rgba(55, 58, 64, 0.3), rgba(241, 242, 243, 0.3));
   transition: stroke 300ms ease;
 }
 .toggle-power__ripple {
   position: absolute;
   inset: 0;
   box-sizing: border-box;
-  border: 2px solid rgba(246, 246, 246, 0.3);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.3), rgba(241, 242, 243, 0.3));
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;
 }
 .toggle-power[aria-checked="true"] {
-  box-shadow: 0 0 0 2px rgba(201, 201, 201, 0.3), 0 0 18px 6px rgba(201, 201, 201, 0.35), inset 0 1px 2px rgba(246, 246, 246, 0.2);
+  box-shadow: 0 0 0 2px light-dark(rgba(80, 83, 91, 0.3), rgba(198, 200, 205, 0.3)), 0 0 18px 6px light-dark(rgba(80, 83, 91, 0.35), rgba(198, 200, 205, 0.35)), inset 0 1px 2px light-dark(rgba(55, 58, 64, 0.2), rgba(241, 242, 243, 0.2));
 }
 .toggle-power[aria-checked="true"]::before { opacity: 1; }
-.toggle-power[aria-checked="true"] .toggle-power__icon { stroke: #f6f6f6; }
-.toggle-power[aria-checked="true"] .toggle-power__ripple { border-color: #c9c9c9; }
+.toggle-power[aria-checked="true"] .toggle-power__icon { stroke: light-dark(#373a40, #f1f2f3); }
+.toggle-power[aria-checked="true"] .toggle-power__ripple { border-color: light-dark(#50535b, #c6c8cd); }
 /* Replayed on every press by the script (class removed, reflow, re-added). */
 .toggle-power--pressed .toggle-power__icon { animation: toggle-power-spin 500ms cubic-bezier(0.34, 1.56, 0.64, 1); }
 .toggle-power--pressed .toggle-power__ripple { animation: toggle-power-ripple 600ms ease-out; }

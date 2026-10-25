@@ -32,17 +32,17 @@ export function GlitchErrorInput({ placeholder = 'Required field…' }: { placeh
         value={value}
         onChange={(e) => { setValue(e.target.value); setHasError(false); }}
         aria-invalid={hasError}
-        className="glitch-inp w-full rounded-lg border bg-[#f6f6f6]/[0.06] px-3.5 py-2.5 text-[15px] text-[#f6f6f6] placeholder:text-[#f6f6f6]/[0.55] outline-none focus:ring-1 focus:ring-[#a7a7a7] transition-[border-color,background] duration-200"
+        className="glitch-inp w-full rounded-lg border bg-[color:light-dark(#373a40,#f1f2f3)]/[0.06] px-3.5 py-2.5 text-[15px] text-[color:light-dark(#373a40,#f1f2f3)] placeholder:text-[color:light-dark(#373a40ba,#f1f2f39e)] outline-none focus:ring-1 focus:ring-[color:light-dark(#5f626a,#a7abb2)] transition-[border-color,background] duration-200"
         style={{
-          borderColor: hasError ? '#f6f6f6' : 'rgba(246,246,246,0.15)',
-          background: hasError ? 'rgba(246,246,246,0.1)' : 'rgba(246,246,246,0.06)',
+          borderColor: hasError ? 'light-dark(#373a40, #f1f2f3)' : 'light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15))',
+          background: hasError ? 'light-dark(rgba(55,58,64,0.1), rgba(241,242,243,0.1))' : 'light-dark(rgba(55,58,64,0.06), rgba(241,242,243,0.06))',
           animation: glitchKey > 0 ? 'glitch-jitter 500ms ease forwards' : 'none',
         }}
       />
-      {hasError && <p className="mt-1 text-xs text-[#ededed]">This field is required.</p>}
+      {hasError && <p className="mt-1 text-xs text-[color:light-dark(#42454c,#e5e6e9)]">This field is required.</p>}
       <button
         onClick={handleSubmit}
-        className="mt-2 w-full cursor-pointer rounded-md border border-[#f6f6f6]/15 bg-[#f6f6f6]/[0.08] py-1.5 text-[13px] text-[#f6f6f6]/70"
+        className="mt-2 w-full cursor-pointer rounded-md border border-[color:light-dark(#373a40,#f1f2f3)]/15 bg-[color:light-dark(#373a40,#f1f2f3)]/[0.08] py-1.5 text-[13px] text-[color:light-dark(#373a40ba,#f1f2f3b3)]"
       >
         Submit (empty to trigger)
       </button>

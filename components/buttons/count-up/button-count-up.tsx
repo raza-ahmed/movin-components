@@ -29,12 +29,12 @@ export function CountUpButton({ children }: { children: React.ReactNode }) {
       <button
         type="button"
         onClick={handleClick}
-        className="inline-flex items-center gap-2.5 rounded-lg bg-gradient-to-br from-[#4d4d4d] to-[#7c7c7c] px-7 py-3 font-semibold text-[#f6f6f6] cursor-pointer border-none"
+        className="inline-flex items-center gap-2.5 rounded-lg bg-gradient-to-br from-[color:light-dark(#cbced3,#393c41)] to-[color:light-dark(#6d7179,#7d8087)] px-7 py-3 font-semibold text-[color:light-dark(#373a40,#f1f2f3)] cursor-pointer border-none"
       >
         <span>{children}</span>
         <span
           ref={numRef}
-          className="inline-flex items-center justify-center min-w-[28px] h-7 rounded-md bg-[#f6f6f6]/20 px-1.5 text-sm font-semibold tabular-nums"
+          className="inline-flex items-center justify-center min-w-[28px] h-7 rounded-md bg-[color:light-dark(#373a40,#f1f2f3)]/20 px-1.5 text-sm font-semibold tabular-nums"
         >
           {count}
         </span>

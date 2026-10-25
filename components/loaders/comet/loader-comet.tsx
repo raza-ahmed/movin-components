@@ -12,10 +12,10 @@ export function CometLoader({ label = "Loading" }: { label?: string }) {
           width: 44px;
           height: 44px;
           border-radius: 50%;
-          background: conic-gradient(from 0deg, transparent 0%, #7c7c7c 70%, #f6f6f6 100%);
+          background: conic-gradient(from 0deg, transparent 0%, light-dark(#6d7179, #7d8087) 70%, light-dark(#373a40, #f1f2f3) 100%);
           animation: comet-spin 0.9s linear infinite;
-          -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #f6f6f6 calc(100% - 3px));
-          mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #f6f6f6 calc(100% - 3px));
+          -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), light-dark(#373a40, #f1f2f3) calc(100% - 3px));
+          mask: radial-gradient(farthest-side, transparent calc(100% - 4px), light-dark(#373a40, #f1f2f3) calc(100% - 3px));
         }
         @media (prefers-reduced-motion: reduce) {
           .comet-ring { animation: none; }

@@ -5,7 +5,7 @@
   overflow: hidden;
   border: none;
   background: transparent;
-  color: #a7a7a7;
+  color: light-dark(#5f626a, #a7abb2);
   font: inherit;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -13,12 +13,12 @@
   clip-path: var(--btn-skewed-shape);
   transition: color 280ms ease;
 }
-.btn-skewed:focus-visible { color: #f6f6f6; outline: none; }
+.btn-skewed:focus-visible { color: light-dark(#373a40, #f1f2f3); outline: none; }
 /* The fill wipes in from the left, slanted to match the outline. */
 .btn-skewed__fill {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #4d4d4d, #7c7c7c);
+  background: linear-gradient(90deg, light-dark(#cbced3, #393c41), light-dark(#6d7179, #7d8087));
   transform: skewX(-12deg) scaleX(0);
   transform-origin: left center;
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -26,14 +26,14 @@
 .btn-skewed__frame {
   position: absolute;
   inset: 0;
-  border: 2px solid #7c7c7c;
+  border: 2px solid light-dark(#6d7179, #7d8087);
   clip-path: var(--btn-skewed-shape);
 }
 .btn-skewed__label {
   position: relative;
   z-index: 1;
 }
-.btn-skewed:hover { color: #f6f6f6; }
+.btn-skewed:hover { color: light-dark(#373a40, #f1f2f3); }
 .btn-skewed:hover .btn-skewed__fill { transform: skewX(-12deg) scaleX(1); }
 @media (prefers-reduced-motion: reduce) {
   .btn-skewed__fill { transition: none; }

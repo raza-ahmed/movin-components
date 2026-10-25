@@ -27,7 +27,7 @@ export function GravityRadioGroup() {
             <span className="relative h-[22px] w-[22px] flex-shrink-0">
               <span
                 className="absolute inset-0 rounded-full border-2 transition-colors duration-200"
-                style={{ borderColor: checked ? '#a7a7a7' : 'rgba(246,246,246,0.2)' }}
+                style={{ borderColor: checked ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(55,58,64,0.2), rgba(241,242,243,0.2))' }}
               />
               {checked && (
                 <span
@@ -35,9 +35,9 @@ export function GravityRadioGroup() {
                   className="gravity-drop absolute rounded-full"
                   style={{
                     top:3,left:3,right:3,bottom:3,
-                    background:'radial-gradient(circle at 40% 35%,#a7a7a7,#7c7c7c)',
+                    background:'radial-gradient(circle at 40% 35%,light-dark(#5f626a, #a7abb2),light-dark(#6d7179, #7d8087))',
                     animation:'gravity-drop 600ms cubic-bezier(0.55,0,1,1) forwards',
-                    boxShadow:'0 2px 8px rgba(167,167,167,0.5)',
+                    boxShadow:'0 2px 8px light-dark(rgba(95,98,106,0.5), rgba(167,171,178,0.5))',
                   }}
                 />
               )}
@@ -46,7 +46,7 @@ export function GravityRadioGroup() {
               className="select-none text-sm transition-colors duration-200"
               style={{
                 fontWeight: checked ? 600 : 400,
-                color: checked ? '#a7a7a7' : 'rgba(246,246,246,0.55)',
+                color: checked ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))',
               }}
             >
               {opt}

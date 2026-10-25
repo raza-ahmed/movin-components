@@ -1,6 +1,6 @@
 # Elastic Press button
 
-On click, a CSS keyframe animation fires — squishing the button horizontally then snapping back with an overshoot oscillation that simulates spring physics. The animation is re-triggered cleanly on every click by removing and re-adding the data attribute with a forced reflow. No dependencies.
+On click, a CSS keyframe animation fires, squishing the button horizontally then snapping back with an overshoot oscillation that simulates spring physics. The animation is re-triggered cleanly on every click by removing and re-adding the data attribute with a forced reflow. No dependencies.
 
 Live preview: https://movin.design/components/buttons/elastic-press/
 

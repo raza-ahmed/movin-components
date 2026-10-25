@@ -11,10 +11,10 @@ export function CircleCheckbox() {
     <label className="relative inline-flex h-7 w-7 flex-shrink-0 cursor-pointer items-center justify-center">
       <input aria-label="Remember me" type="checkbox" checked={on} onChange={() => setOn(v => !v)} className="absolute opacity-0 w-0 h-0 m-0" />
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" className="absolute inset-0">
-        <circle cx="14" cy="14" r="11" stroke="rgba(246,246,246,0.15)" strokeWidth="2" />
+        <circle cx="14" cy="14" r="11" stroke="light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15))" strokeWidth="2" />
         <circle
           cx="14" cy="14" r="11"
-          stroke="#a7a7a7" strokeWidth="2" strokeLinecap="round"
+          stroke="light-dark(#5f626a, #a7abb2)" strokeWidth="2" strokeLinecap="round"
           strokeDasharray={CIRCUMFERENCE}
           strokeDashoffset={on ? 0 : CIRCUMFERENCE}
           transform="rotate(-90 14 14)"
@@ -30,7 +30,7 @@ export function CircleCheckbox() {
             ? 'transform 300ms cubic-bezier(0.34,1.56,0.64,1) 280ms, opacity 200ms ease 280ms'
             : 'transform 150ms ease-in, opacity 120ms ease',
         }}>
-        <path d="M1 4.5L4.5 8L11 1" stroke="#a7a7a7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M1 4.5L4.5 8L11 1" stroke="light-dark(#5f626a, #a7abb2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </label>
   );

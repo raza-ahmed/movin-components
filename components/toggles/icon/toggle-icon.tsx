@@ -15,22 +15,22 @@ export function IconToggle() {
       className="flex h-8 w-[60px] cursor-pointer items-center rounded-full border-none p-1 transition-all duration-300"
       style={{
         background: on
-          ? 'linear-gradient(135deg, #c9c9c9 0%, #a7a7a7 100%)'
-          : 'linear-gradient(135deg, #282828 0%, #3a3a3a 100%)',
-        boxShadow: on ? '0 0 12px rgba(201,201,201,0.4)' : '0 0 12px rgba(124,124,124,0.25)',
+          ? 'linear-gradient(135deg, light-dark(#50535b, #c6c8cd) 0%, light-dark(#5f626a, #a7abb2) 100%)'
+          : 'linear-gradient(135deg, light-dark(#ebedf0, #232529) 0%, light-dark(#dbdde1, #2e3035) 100%)',
+        boxShadow: on ? '0 0 12px light-dark(rgba(80,83,91,0.4), rgba(198,200,205,0.4))' : '0 0 12px light-dark(rgba(109,113,121,0.25), rgba(125,128,135,0.25))',
       }}
     >
       <span
         className="relative flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full transition-all duration-[350ms]"
         style={{
-          background: on ? 'rgba(246,246,246,0.95)' : 'rgba(246,246,246,0.12)',
+          background: on ? 'light-dark(rgba(55,58,64,0.95), rgba(241,242,243,0.95))' : 'light-dark(rgba(55,58,64,0.12), rgba(241,242,243,0.12))',
           transform: on ? 'translateX(28px)' : 'translateX(0)',
           transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
         }}
       >
         {/* Sun */}
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#a7a7a7" strokeWidth="2.5" strokeLinecap="round"
+          stroke="light-dark(#5f626a, #a7abb2)" strokeWidth="2.5" strokeLinecap="round"
           className="absolute transition-all duration-300"
           style={{
             transform: on ? 'rotate(0deg) scale(1)' : 'rotate(-90deg) scale(0)',
@@ -48,7 +48,7 @@ export function IconToggle() {
         </svg>
         {/* Moon */}
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-          stroke="rgba(201,201,201,0.85)" strokeWidth="2.5" strokeLinecap="round"
+          stroke="light-dark(rgba(80,83,91,0.85), rgba(198,200,205,0.85))" strokeWidth="2.5" strokeLinecap="round"
           className="absolute transition-all duration-300"
           style={{
             transform: on ? 'rotate(90deg) scale(0)' : 'rotate(0deg) scale(1)',

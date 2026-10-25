@@ -8,12 +8,12 @@ const css = `
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 13px;
   }
 
   .field-odometer__label {
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
   }
 
   .field-odometer__control {
@@ -21,9 +21,9 @@ const css = `
     align-items: center;
     gap: 6px;
     padding: 6px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 999px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
   }
 
   .field-odometer__step {
@@ -35,14 +35,14 @@ const css = `
     padding: 0;
     border: 0;
     border-radius: 50%;
-    background: #282828;
-    color: #ededed;
+    background: light-dark(#ebedf0, #232529);
+    color: light-dark(#42454c, #e5e6e9);
     cursor: pointer;
     transition: background-color 0.15s, color 0.15s, scale 0.15s;
   }
 
   .field-odometer__step:hover {
-    background: #3a3a3a;
+    background: light-dark(#dbdde1, #2e3035);
   }
 
   .field-odometer__step:active {
@@ -50,14 +50,14 @@ const css = `
   }
 
   .field-odometer__step[aria-disabled='true'] {
-    background: #202020;
-    color: #4d4d4d;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    color: light-dark(#cbced3, #393c41);
     cursor: default;
   }
 
   .field-odometer__step:focus-visible,
   .field-odometer__value:focus-visible {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 
@@ -128,7 +128,7 @@ const css = `
   }
 
   .field-odometer__hint {
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
     font-size: 11px;
   }
 

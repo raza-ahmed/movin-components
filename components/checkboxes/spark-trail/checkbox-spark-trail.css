@@ -22,11 +22,11 @@
   box-sizing: border-box;
   width: 28px;
   height: 28px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   border-radius: 7px;
 }
 .cb-spark-trail__input:focus-visible + .cb-spark-trail__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -40,7 +40,7 @@
   height: 2px;
   margin: -1px 0 0 -3px;
   border-radius: 1px;
-  background: rgba(246, 246, 246, 0.9);
+  background: light-dark(rgba(55, 58, 64, 0.9), rgba(241, 242, 243, 0.9));
   opacity: 0;
 }
 .cb-spark-trail__spark:nth-child(2) { --cb-spark-trail-angle: 45deg; }
@@ -56,8 +56,8 @@
   transition: opacity 120ms ease, transform 120ms ease;
 }
 .cb-spark-trail__input:checked + .cb-spark-trail__box {
-  border-color: #a7a7a7;
-  background: #7c7c7c;
+  border-color: light-dark(#5f626a, #a7abb2);
+  background: light-dark(#6d7179, #7d8087);
 }
 .cb-spark-trail__input:checked + .cb-spark-trail__box .cb-spark-trail__spark { animation: cb-spark-trail 300ms ease-out forwards; }
 .cb-spark-trail__input:checked + .cb-spark-trail__box .cb-spark-trail__check {

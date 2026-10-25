@@ -7,12 +7,12 @@ const css = `
     display: inline-block;
     width: 28px;
     height: 48px;
-    filter: drop-shadow(0 0 3px rgba(237, 237, 237, 0.35));
+    filter: drop-shadow(0 0 3px light-dark(rgba(66, 69, 76, 0.35), rgba(229, 230, 233, 0.35)));
   }
 
   .loader-segment__seg {
     position: absolute;
-    background: #282828;
+    background: light-dark(#ebedf0, #232529);
     animation: loader-segment-lit var(--loader-segment-t) linear infinite;
   }
 
@@ -101,11 +101,11 @@ const css = `
   @keyframes loader-segment-lit {
     0%,
     12.5% {
-      background: #f6f6f6;
+      background: light-dark(#373a40, #f1f2f3);
     }
     37.5%,
     100% {
-      background: #282828;
+      background: light-dark(#ebedf0, #232529);
     }
   }
 
@@ -114,19 +114,19 @@ const css = `
     12.5%,
     50%,
     62.5% {
-      background: #f6f6f6;
+      background: light-dark(#373a40, #f1f2f3);
     }
     37.5%,
     87.5%,
     100% {
-      background: #282828;
+      background: light-dark(#ebedf0, #232529);
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .loader-segment__seg {
       animation: none;
-      background: #4d4d4d;
+      background: light-dark(#cbced3, #393c41);
     }
   }
 `;

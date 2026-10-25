@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
   font-size: 15px;
   cursor: pointer;
   user-select: none;
@@ -24,7 +24,7 @@
 }
 
 .cb-bookmark__input:focus-visible + .cb-bookmark__icon {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -34,7 +34,7 @@
   position: relative;
   width: 22px;
   height: 30px;
-  background: #7c7c7c;
+  background: light-dark(#6d7179, #7d8087);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
   transform-origin: 50% 0;
 }
@@ -43,14 +43,14 @@
   content: '';
   position: absolute;
   inset: 2px 2px 0;
-  background: #111111;
+  background: light-dark(#fbfcfd, #121417);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3px), 50% calc(74% - 1px), 0 calc(100% - 3px));
 }
 
 .cb-bookmark__fill {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #f6f6f6, #c9c9c9);
+  background: linear-gradient(180deg, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd));
   transform: scaleY(0);
   transform-origin: 50% 0;
   transition: transform 0.2s ease-in;

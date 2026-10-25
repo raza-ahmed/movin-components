@@ -32,10 +32,10 @@ function initFieldComposer(root) {
       return m.getBoundingClientRect().top;
     });
     var from = input.getBoundingClientRect();
-    var li = document.createElement('li');
-    li.className = 'field-composer__msg field-composer__msg--mine';
-    li.textContent = text;
-    thread.appendChild(li);
+    var msg = document.createElement('div');
+    msg.className = 'field-composer__msg field-composer__msg--mine';
+    msg.textContent = text;
+    thread.appendChild(msg);
     // Messages scrolled out of sight are not kept.
     while (thread.children.length > 6) thread.removeChild(thread.firstElementChild);
     input.value = '';
@@ -45,8 +45,8 @@ function initFieldComposer(root) {
       var dy = before[i] - m.getBoundingClientRect().top;
       if (dy) m.animate([{ transform: 'translateY(' + dy + 'px)' }, { transform: 'none' }], { duration: 380, easing: spring });
     });
-    var to = li.getBoundingClientRect();
-    li.animate(
+    var to = msg.getBoundingClientRect();
+    msg.animate(
       [
         { opacity: 0.3, transform: 'translate(' + (from.left - to.left) + 'px,' + (from.top - to.top) + 'px) scale(0.92)' },
         { opacity: 1, transform: 'none' },

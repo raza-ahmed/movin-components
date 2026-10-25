@@ -22,11 +22,11 @@
   box-sizing: border-box;
   width: 28px;
   height: 28px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   border-radius: 7px;
 }
 .cb-confetti__input:focus-visible + .cb-confetti__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -53,18 +53,18 @@
   margin: -2px 0 0 -2px;
   border-radius: 50%;
 }
-.cb-confetti__piece:nth-child(1) { --cb-confetti-angle: 0deg; background: #f6f6f6; }
-.cb-confetti__piece:nth-child(2) { --cb-confetti-angle: 45deg; background: #a7a7a7; animation-delay: 20ms; }
-.cb-confetti__piece:nth-child(3) { --cb-confetti-angle: 90deg; background: #c9c9c9; animation-delay: 40ms; }
-.cb-confetti__piece:nth-child(4) { --cb-confetti-angle: 135deg; background: #7c7c7c; animation-delay: 60ms; }
-.cb-confetti__piece:nth-child(5) { --cb-confetti-angle: 180deg; background: #f6f6f6; animation-delay: 80ms; }
-.cb-confetti__piece:nth-child(6) { --cb-confetti-angle: 225deg; background: #a7a7a7; animation-delay: 100ms; }
-.cb-confetti__piece:nth-child(7) { --cb-confetti-angle: 270deg; background: #c9c9c9; animation-delay: 120ms; }
-.cb-confetti__piece:nth-child(8) { --cb-confetti-angle: 315deg; background: #7c7c7c; animation-delay: 140ms; }
+.cb-confetti__piece:nth-child(1) { --cb-confetti-angle: 0deg; background: light-dark(#373a40, #f1f2f3); }
+.cb-confetti__piece:nth-child(2) { --cb-confetti-angle: 45deg; background: light-dark(#5f626a, #a7abb2); animation-delay: 20ms; }
+.cb-confetti__piece:nth-child(3) { --cb-confetti-angle: 90deg; background: light-dark(#50535b, #c6c8cd); animation-delay: 40ms; }
+.cb-confetti__piece:nth-child(4) { --cb-confetti-angle: 135deg; background: light-dark(#6d7179, #7d8087); animation-delay: 60ms; }
+.cb-confetti__piece:nth-child(5) { --cb-confetti-angle: 180deg; background: light-dark(#373a40, #f1f2f3); animation-delay: 80ms; }
+.cb-confetti__piece:nth-child(6) { --cb-confetti-angle: 225deg; background: light-dark(#5f626a, #a7abb2); animation-delay: 100ms; }
+.cb-confetti__piece:nth-child(7) { --cb-confetti-angle: 270deg; background: light-dark(#50535b, #c6c8cd); animation-delay: 120ms; }
+.cb-confetti__piece:nth-child(8) { --cb-confetti-angle: 315deg; background: light-dark(#6d7179, #7d8087); animation-delay: 140ms; }
 /* Checking (never unchecking) bursts them out. */
 .cb-confetti__input:checked + .cb-confetti__box {
-  border-color: #7c7c7c;
-  background: #7c7c7c;
+  border-color: light-dark(#6d7179, #7d8087);
+  background: light-dark(#6d7179, #7d8087);
 }
 .cb-confetti__input:checked + .cb-confetti__box .cb-confetti__piece {
   animation-name: cb-confetti;

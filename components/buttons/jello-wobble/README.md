@@ -1,6 +1,6 @@
 # Jello Wobble button
 
-On hover, the button squishes and stretches with a decaying scaleX/scaleY oscillation that simulates rubber or jello physics — starting with a large deformation and settling back to rest over 600ms. Re-triggers cleanly on every mouseenter. No dependencies.
+On hover, the button squishes and stretches with a decaying scaleX/scaleY oscillation that simulates rubber or jello physics, starting with a large deformation and settling back to rest over 600ms. Re-triggers cleanly on every mouseenter. No dependencies.
 
 Live preview: https://movin.design/components/buttons/jello-wobble/
 

@@ -2,13 +2,13 @@
   position: relative;
   width: 100%;
   max-width: 320px;
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 8px;
-  background: rgba(246, 246, 246, 0.05);
+  background: light-dark(rgba(55, 58, 64, 0.05), rgba(241, 242, 243, 0.05));
   cursor: text;
   transition: border-color 200ms;
 }
-.field-float-label:focus-within { border-color: #a7a7a7; }
+.field-float-label:focus-within { border-color: light-dark(#5f626a, #a7abb2); }
 .field-float-label__input {
   box-sizing: border-box;
   width: 100%;
@@ -16,7 +16,7 @@
   border: none;
   outline: none;
   background: transparent;
-  color: #f6f6f6;
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   transition: padding 200ms;
@@ -25,7 +25,7 @@
   position: absolute;
   top: 50%;
   left: 14px;
-  color: rgba(246, 246, 246, 0.55);
+  color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62));
   font-size: 15px;
   line-height: 1;
   pointer-events: none;
@@ -41,7 +41,7 @@
 .field-float-label:focus-within .field-float-label__label,
 .field-float-label__input:not(:placeholder-shown) + .field-float-label__label {
   top: 8px;
-  color: #a7a7a7;
+  color: light-dark(#5f626a, #a7abb2);
   font-size: 11px;
   transform: none;
 }

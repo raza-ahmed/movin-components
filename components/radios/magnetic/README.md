@@ -1,6 +1,6 @@
 # Magnetic radio button
 
-The selection indicator snaps to the chosen option with a magnetic spring-overshoot cubic-bezier — fast pull-in followed by a damped overshoot, simulating ferromagnetic attraction. Field lines ripple out on snap.
+The selection indicator snaps to the chosen option with a magnetic spring-overshoot cubic-bezier: fast pull-in followed by a damped overshoot, simulating ferromagnetic attraction. Field lines ripple out on snap.
 
 Live preview: https://movin.design/components/radios/magnetic/
 

@@ -1,6 +1,6 @@
 # Color Bounce loader
 
-Five dots — each a step lighter than the last — bouncing vertically in a rolling wave. A tonalul take on the classic typing indicator. Pure CSS, no dependencies.
+Five dots (each a step lighter than the last), bouncing vertically in a rolling wave. A tonalul take on the classic typing indicator. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/loaders/color-bounce/
 

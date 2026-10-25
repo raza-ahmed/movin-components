@@ -21,10 +21,10 @@ const css = `
     padding: 0 32px;
     overflow: hidden;
     isolation: isolate;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 12px;
-    background: #202020;
-    color: #ededed;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    color: light-dark(#42454c, #e5e6e9);
     font: inherit;
     font-size: 15px;
     font-weight: 600;
@@ -34,11 +34,11 @@ const css = `
   }
 
   .btn-halftone:hover {
-    border-color: #7c7c7c;
+    border-color: light-dark(#6d7179, #7d8087);
   }
 
   .btn-halftone:focus-visible {
-    outline: 2px solid #ededed;
+    outline: 2px solid light-dark(#42454c, #e5e6e9);
     outline-offset: 4px;
   }
 
@@ -54,11 +54,11 @@ const css = `
   }
 
   .btn-halftone__dots {
-    background-image: radial-gradient(circle, #3a3a3a 0.9px, transparent 1.4px);
+    background-image: radial-gradient(circle, light-dark(#dbdde1, #2e3035) 0.9px, transparent 1.4px);
   }
 
   .btn-halftone__torch {
-    background-image: radial-gradient(circle, #a7a7a7 1.7px, transparent 2.2px);
+    background-image: radial-gradient(circle, light-dark(#5f626a, #a7abb2) 1.7px, transparent 2.2px);
     -webkit-mask-image: radial-gradient(circle 72px at var(--btn-halftone-x) var(--btn-halftone-y), #000 10%, transparent);
     mask-image: radial-gradient(circle 72px at var(--btn-halftone-x) var(--btn-halftone-y), #000 10%, transparent);
     opacity: 0;
@@ -70,7 +70,7 @@ const css = `
   }
 
   .btn-halftone__wave {
-    background-image: radial-gradient(circle, #f6f6f6 2.3px, transparent 2.9px);
+    background-image: radial-gradient(circle, light-dark(#373a40, #f1f2f3) 2.3px, transparent 2.9px);
     -webkit-mask-image: radial-gradient(circle at var(--btn-halftone-wx) var(--btn-halftone-wy), transparent max(0px, calc(var(--btn-halftone-r) - 30px)), #000 max(0px, calc(var(--btn-halftone-r) - 8px)), transparent var(--btn-halftone-r));
     mask-image: radial-gradient(circle at var(--btn-halftone-wx) var(--btn-halftone-wy), transparent max(0px, calc(var(--btn-halftone-r) - 30px)), #000 max(0px, calc(var(--btn-halftone-r) - 8px)), transparent var(--btn-halftone-r));
     opacity: 0;
@@ -82,7 +82,7 @@ const css = `
 
   .btn-halftone__label {
     position: relative;
-    text-shadow: 0 0 10px #202020, 0 0 4px #202020;
+    text-shadow: 0 0 10px light-dark(#f3f4f7, #1a1c1f), 0 0 4px light-dark(#f3f4f7, #1a1c1f);
   }
 
   @keyframes btn-halftone-wave {

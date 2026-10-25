@@ -4,14 +4,14 @@
   overflow: hidden;
   border: none;
   border-radius: 9999px;
-  background: #111111;
-  color: #f6f6f6;
+  background: light-dark(#fbfcfd, #121417);
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-weight: 600;
   cursor: pointer;
 }
 .btn-rotating-gradient:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .btn-rotating-gradient__spin {
@@ -21,7 +21,7 @@
   width: 400px;
   height: 400px;
   margin: -200px 0 0 -200px;
-  background: conic-gradient(from 0deg, #7c7c7c, #7c7c7c, #7c7c7c, #a7a7a7, #a7a7a7, #7c7c7c);
+  background: conic-gradient(from 0deg, light-dark(#6d7179, #7d8087), light-dark(#6d7179, #7d8087), light-dark(#6d7179, #7d8087), light-dark(#5f626a, #a7abb2), light-dark(#5f626a, #a7abb2), light-dark(#6d7179, #7d8087));
   opacity: 0;
   transition: opacity 300ms ease;
 }
@@ -32,7 +32,7 @@
 .btn-rotating-gradient__shade {
   position: absolute;
   inset: 0;
-  background: rgba(17, 17, 17, 0.25);
+  background: light-dark(rgba(251, 252, 253, 0.25), rgba(18, 20, 23, 0.25));
   pointer-events: none;
 }
 .btn-rotating-gradient__label {

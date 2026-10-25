@@ -36,7 +36,7 @@ export function GlitchCard({ children }: { children: React.ReactNode }) {
   const [hovered, setHovered] = useState(false);
 
   const sharedClass =
-    "absolute inset-0 rounded-xl border border-[#f6f6f6]/10 bg-[#111111] overflow-hidden";
+    "absolute inset-0 rounded-xl border border-[color:light-dark(#373a40,#f1f2f3)]/10 bg-[color:light-dark(#fbfcfd,#121417)] overflow-hidden";
 
   return (
     <div

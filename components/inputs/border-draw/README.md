@@ -1,6 +1,6 @@
 # Border Draw input
 
-On focus, four border lines trace around the input clockwise — top, right, bottom, left — each starting after the previous finishes. Pure CSS transforms, no dependencies.
+On focus, four border lines trace around the input clockwise (top, right, bottom, left), each starting after the previous finishes. Pure CSS transforms, no dependencies.
 
 Live preview: https://movin.design/components/inputs/border-draw/
 

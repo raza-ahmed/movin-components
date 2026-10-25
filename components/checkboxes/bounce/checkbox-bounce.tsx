@@ -46,8 +46,8 @@ export function BounceCheckbox({ label }: { label?: string }) {
           data-cb="bounce"
           className="flex h-7 w-7 items-center justify-center rounded-[7px] border-2"
           style={{
-            background: on ? '#7c7c7c' : 'transparent',
-            borderColor: on ? '#7c7c7c' : 'rgba(246,246,246,0.25)',
+            background: on ? 'light-dark(#6d7179, #7d8087)' : 'transparent',
+            borderColor: on ? 'light-dark(#6d7179, #7d8087)' : 'light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25))',
             transition: 'background 180ms ease, border-color 180ms ease',
             animation: `${animIn ? 'cb-bounce-in' : 'cb-bounce-out'} 440ms ease forwards`,
           }}
@@ -55,7 +55,7 @@ export function BounceCheckbox({ label }: { label?: string }) {
           <svg width="13" height="10" viewBox="0 0 13 10" fill="none" aria-hidden="true">
             <path
               d="M1.5 5L5 8.5L11.5 1.5"
-              stroke="#f6f6f6"
+              stroke="light-dark(#373a40, #f1f2f3)"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -64,7 +64,7 @@ export function BounceCheckbox({ label }: { label?: string }) {
           </svg>
         </span>
       </div>
-      {label && <span className="select-none text-sm text-[#f6f6f6]/80">{label}</span>}
+      {label && <span className="select-none text-sm text-[color:light-dark(#373a40,#f1f2f3)]/80">{label}</span>}
     </label>
   );
 }

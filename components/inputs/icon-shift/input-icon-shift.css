@@ -9,24 +9,24 @@
   align-items: center;
   box-sizing: border-box;
   overflow: hidden;
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 8px;
-  background: rgba(246, 246, 246, 0.05);
+  background: light-dark(rgba(55, 58, 64, 0.05), rgba(241, 242, 243, 0.05));
   transition: all 200ms;
 }
 .field-icon-shift:focus-within {
-  border-color: #a7a7a7;
-  box-shadow: 0 0 0 3px rgba(167, 167, 167, 0.15);
+  border-color: light-dark(#5f626a, #a7abb2);
+  box-shadow: 0 0 0 3px light-dark(rgba(95, 98, 106, 0.15), rgba(167, 171, 178, 0.15));
 }
 /* The magnifier leans in (a little tilt and nudge) as the field takes focus. */
 .field-icon-shift__icon {
   flex-shrink: 0;
   margin-left: 12px;
-  stroke: rgba(246, 246, 246, 0.3);
+  stroke: light-dark(rgba(55, 58, 64, 0.3), rgba(241, 242, 243, 0.3));
   transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), stroke 200ms ease;
 }
 .field-icon-shift:focus-within .field-icon-shift__icon {
-  stroke: #a7a7a7;
+  stroke: light-dark(#5f626a, #a7abb2);
   transform: translateX(-2px) rotate(15deg);
 }
 
@@ -38,12 +38,12 @@
   border-radius: 8px;
   outline: none;
   background: transparent;
-  color: #f6f6f6;
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   border: none;
 }
-.field-icon-shift__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-icon-shift__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
 @media (prefers-reduced-motion: reduce) {
   .field-icon-shift,

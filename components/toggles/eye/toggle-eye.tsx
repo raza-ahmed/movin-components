@@ -5,7 +5,7 @@ const css = `
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -28,7 +28,7 @@ const css = `
   }
 
   .toggle-eye__input:focus-visible + .toggle-eye__eye {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 4px;
   }
 
@@ -36,7 +36,7 @@ const css = `
     position: absolute;
     inset: 0;
     overflow: hidden;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     clip-path: path('M3 20C15 5 49 5 61 20C49 35 15 35 3 20Z');
   }
 
@@ -48,8 +48,8 @@ const css = `
     height: 22px;
     border-radius: 50%;
     background:
-      radial-gradient(circle at 36% 32%, #f6f6f6 0 2px, transparent 2.5px),
-      radial-gradient(circle, #111111 0 4px, #4d4d4d 5px, #7c7c7c 70%, #3a3a3a 72%);
+      radial-gradient(circle at 36% 32%, light-dark(#373a40, #f1f2f3) 0 2px, transparent 2.5px),
+      radial-gradient(circle, light-dark(#fbfcfd, #121417) 0 4px, light-dark(#cbced3, #393c41) 5px, light-dark(#6d7179, #7d8087) 70%, light-dark(#dbdde1, #2e3035) 72%);
   }
 
   /* The lids meet in the middle when shut and fold away when open. */
@@ -58,7 +58,7 @@ const css = `
     left: 0;
     width: 100%;
     height: 51%;
-    background: #3a3a3a;
+    background: light-dark(#dbdde1, #2e3035);
     transition: transform 0.35s cubic-bezier(0.5, 0, 0.3, 1.2);
   }
 
@@ -82,13 +82,13 @@ const css = `
   }
 
   .toggle-eye__outline {
-    stroke: #a7a7a7;
+    stroke: light-dark(#5f626a, #a7abb2);
     opacity: 0;
     transition: opacity 0.2s;
   }
 
   .toggle-eye__lashes {
-    stroke: #c9c9c9;
+    stroke: light-dark(#50535b, #c6c8cd);
     transition: opacity 0.15s 0.1s;
   }
 

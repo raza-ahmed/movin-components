@@ -32,7 +32,7 @@ const css = `
   }
 
   .radio-stars__option:has(.radio-stars__input:focus-visible) {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
   }
 
   .radio-stars__star {
@@ -40,7 +40,7 @@ const css = `
     width: 30px;
     height: 30px;
     fill: transparent;
-    stroke: #4d4d4d;
+    stroke: light-dark(#cbced3, #393c41);
     stroke-width: 1.5;
     stroke-linejoin: round;
     transition: fill 0.2s, stroke 0.2s;
@@ -50,8 +50,8 @@ const css = `
   /* Filled: the checked star and every star before it. */
   .radio-stars__option:has(.radio-stars__input:checked) .radio-stars__star,
   .radio-stars__option:has(~ .radio-stars__option .radio-stars__input:checked) .radio-stars__star {
-    fill: #ededed;
-    stroke: #ededed;
+    fill: light-dark(#42454c, #e5e6e9);
+    stroke: light-dark(#42454c, #e5e6e9);
   }
 
   /* Plays only when a star becomes the checked one. */
@@ -71,19 +71,19 @@ const css = `
   /* Hover previews a rating up to the pointer, instantly. */
   .radio-stars__row:hover .radio-stars__option .radio-stars__star {
     fill: transparent;
-    stroke: #4d4d4d;
+    stroke: light-dark(#cbced3, #393c41);
     transition-delay: 0s;
   }
 
   .radio-stars__row:hover .radio-stars__option:hover .radio-stars__star,
   .radio-stars__row:hover .radio-stars__option:has(~ .radio-stars__option:hover) .radio-stars__star {
-    fill: #a7a7a7;
-    stroke: #a7a7a7;
+    fill: light-dark(#5f626a, #a7abb2);
+    stroke: light-dark(#5f626a, #a7abb2);
   }
 
   .radio-stars__caption {
     min-height: 1.4em;
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 13px;
   }
 

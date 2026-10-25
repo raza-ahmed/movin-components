@@ -8,9 +8,9 @@ const css = `
     box-sizing: border-box;
     width: 52px;
     height: 52px;
-    border: 2px solid #4d4d4d;
+    border: 2px solid light-dark(#cbced3, #393c41);
     border-radius: 50%;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
   }
 
   /* Twelve ticks: a repeating conic gradient masked down to a thin ring. */
@@ -19,7 +19,7 @@ const css = `
     position: absolute;
     inset: 3px;
     border-radius: 50%;
-    background: repeating-conic-gradient(from -1.5deg, #7c7c7c 0 3deg, transparent 3deg 30deg);
+    background: repeating-conic-gradient(from -1.5deg, light-dark(#6d7179, #7d8087) 0 3deg, transparent 3deg 30deg);
     mask-image: radial-gradient(circle, transparent 16px, rgba(0, 0, 0, 1) 16.5px);
   }
 
@@ -33,7 +33,7 @@ const css = `
     height: 6px;
     margin: -3px 0 0 -3px;
     border-radius: 50%;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
   }
 
   .loader-clock__hand {
@@ -43,7 +43,7 @@ const css = `
     width: 2px;
     margin-left: -1px;
     border-radius: 1px;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     transform-origin: 50% 100%;
     animation: loader-clock-turn var(--loader-clock-t) linear infinite;
   }
@@ -56,7 +56,7 @@ const css = `
     height: 11px;
     width: 3px;
     margin-left: -1.5px;
-    background: #a7a7a7;
+    background: light-dark(#5f626a, #a7abb2);
     animation-duration: calc(var(--loader-clock-t) * 12);
   }
 

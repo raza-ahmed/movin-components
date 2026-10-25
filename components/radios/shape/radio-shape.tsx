@@ -16,7 +16,7 @@ const css = `
     display: block;
     width: 84px;
     height: 84px;
-    background: linear-gradient(150deg, #f6f6f6, #7c7c7c);
+    background: linear-gradient(150deg, light-dark(#373a40, #f1f2f3), light-dark(#6d7179, #7d8087));
     transition: clip-path 0.6s cubic-bezier(0.3, 1.3, 0.5, 1);
   }
 
@@ -24,9 +24,9 @@ const css = `
     display: flex;
     gap: 4px;
     padding: 4px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 10px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
   }
 
   .radio-shape__option {
@@ -48,21 +48,21 @@ const css = `
     width: 36px;
     height: 30px;
     border-radius: 7px;
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
     transition: background-color 0.2s, color 0.2s;
   }
 
   .radio-shape__option:hover {
-    color: #c9c9c9;
+    color: light-dark(#50535b, #c6c8cd);
   }
 
   .radio-shape__option:has(.radio-shape__input:checked) {
-    background: #ededed;
-    color: #111111;
+    background: light-dark(#42454c, #e5e6e9);
+    color: light-dark(#fbfcfd, #121417);
   }
 
   .radio-shape__option:has(.radio-shape__input:focus-visible) {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 

@@ -1,17 +1,17 @@
 .btn-typewriter {
   min-width: 140px;
   padding: 12px 32px;
-  border: 1px solid #4d4d4d;
+  border: 1px solid light-dark(#cbced3, #393c41);
   border-radius: 8px;
-  background: #202020;
-  color: #ededed;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  color: light-dark(#42454c, #e5e6e9);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-weight: 600;
   letter-spacing: 0.05em;
   cursor: pointer;
 }
 .btn-typewriter:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .btn-typewriter__text { white-space: pre; }

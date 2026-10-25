@@ -10,12 +10,12 @@
   gap: 6px;
 }
 .field-count__box {
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 8px;
-  background: rgba(246, 246, 246, 0.05);
+  background: light-dark(rgba(55, 58, 64, 0.05), rgba(241, 242, 243, 0.05));
   transition: border-color 200ms;
 }
-.field-count:focus-within .field-count__box { border-color: #a7a7a7; }
+.field-count:focus-within .field-count__box { border-color: light-dark(#5f626a, #a7abb2); }
 
 .field-count__input {
   box-sizing: border-box;
@@ -25,12 +25,12 @@
   border-radius: 8px;
   outline: none;
   background: transparent;
-  color: #f6f6f6;
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   border: none;
 }
-.field-count__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-count__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
 /* A meter slides in under the field: it fills as you type and brightens near the limit. */
 .field-count__meter {
@@ -48,26 +48,26 @@
   height: 2px;
   overflow: hidden;
   border-radius: 9999px;
-  background: rgba(246, 246, 246, 0.1);
+  background: light-dark(rgba(55, 58, 64, 0.1), rgba(241, 242, 243, 0.1));
 }
 .field-count__bar {
   display: block;
   width: 0;
   height: 100%;
   border-radius: 9999px;
-  background: #7c7c7c;
+  background: light-dark(#6d7179, #7d8087);
   transition: all 150ms;
 }
 .field-count__count {
   font-size: 11px;
   font-variant-numeric: tabular-nums;
-  color: rgba(246, 246, 246, 0.55);
+  color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62));
   transition: color 200ms;
 }
-.field-count--near .field-count__bar { background: #c9c9c9; }
-.field-count--near .field-count__count { color: #c9c9c9; }
-.field-count--full .field-count__bar { background: #f6f6f6; }
-.field-count--full .field-count__count { color: #f6f6f6; }
+.field-count--near .field-count__bar { background: light-dark(#50535b, #c6c8cd); }
+.field-count--near .field-count__count { color: light-dark(#50535b, #c6c8cd); }
+.field-count--full .field-count__bar { background: light-dark(#373a40, #f1f2f3); }
+.field-count--full .field-count__count { color: light-dark(#373a40, #f1f2f3); }
 
 @media (prefers-reduced-motion: reduce) {
   .field-count,

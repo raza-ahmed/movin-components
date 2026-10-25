@@ -1,6 +1,6 @@
 # Morph Line checkbox
 
-A short horizontal line morphs into a check mark using SVG path d attribute animation — extending first, then bending into the check V-shape. Unchecking reverses the morph back to a line.
+A short horizontal line morphs into a check mark using SVG path d attribute animation, extending first, then bending into the check V-shape. Unchecking reverses the morph back to a line.
 
 Live preview: https://movin.design/components/checkboxes/morph-line/
 

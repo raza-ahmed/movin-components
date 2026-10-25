@@ -16,36 +16,36 @@
   gap: 3px;
   padding: 16px;
   overflow: hidden;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 14px;
-  background: radial-gradient(circle at 80% 20%, #3a3a3a, transparent 45%), #202020;
+  background: radial-gradient(circle at 80% 20%, light-dark(#dbdde1, #2e3035), transparent 45%), light-dark(#f3f4f7, #1a1c1f);
 }
 
 .card-ink-reveal__title {
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
   font-size: 15px;
   font-weight: 600;
 }
 
 .card-ink-reveal__text {
-  color: #a7a7a7;
+  color: light-dark(#5f626a, #a7abb2);
   font-size: 11px;
 }
 
 /* The inverted card, shown only where the gooey blobs are. */
 .card-ink-reveal__face--ink {
-  border-color: #ededed;
-  background: radial-gradient(circle at 80% 20%, #c9c9c9, transparent 45%), #f6f6f6;
+  border-color: light-dark(#42454c, #e5e6e9);
+  background: radial-gradient(circle at 80% 20%, light-dark(#50535b, #c6c8cd), transparent 45%), light-dark(#373a40, #f1f2f3);
   -webkit-mask: url(#card-ink-reveal-mask);
   mask: url(#card-ink-reveal-mask);
 }
 
 .card-ink-reveal__face--ink .card-ink-reveal__title {
-  color: #111111;
+  color: light-dark(#fbfcfd, #121417);
 }
 
 .card-ink-reveal__face--ink .card-ink-reveal__text {
-  color: #4d4d4d;
+  color: light-dark(#cbced3, #393c41);
 }
 
 .card-ink-reveal__defs {

@@ -3,7 +3,7 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #7c7c7c;
+  background: light-dark(#6d7179, #7d8087);
   animation: loader-morph 2.4s ease-in-out infinite;
 }
 @keyframes loader-morph {

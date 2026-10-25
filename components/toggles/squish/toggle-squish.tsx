@@ -43,13 +43,13 @@ export function SquishToggle({ defaultOn = false }: { defaultOn?: boolean }) {
       onClick={toggle}
       className={[
         "flex h-[30px] w-[52px] cursor-pointer items-center rounded-full border-none p-1 transition-colors duration-200 ease-in-out motion-reduce:transition-none",
-        on ? "bg-[#a7a7a7]" : "bg-[#f6f6f6]/15",
+        on ? "bg-[color:light-dark(#5f626a,#a7abb2)]" : "bg-[color:light-dark(#373a40,#f1f2f3)]/15",
       ].join(" ")}
     >
       <span
         key={animKey}
         data-toggle-thumb=""
-        className="block h-[22px] w-[22px] origin-center bg-[#f6f6f6]"
+        className="block h-[22px] w-[22px] origin-center bg-[color:light-dark(#373a40,#f1f2f3)]"
         style={{
           borderRadius: "30%",
           animation: direction

@@ -33,7 +33,7 @@ export function JelloWobbleButton({ children }: { children: React.ReactNode }) {
         ref={btnRef}
         type="button"
         onMouseEnter={handleMouseEnter}
-        className="jello-btn inline-block rounded-full border-none bg-[#c9c9c9] px-8 py-3 font-semibold text-[#202020] cursor-pointer origin-center"
+        className="jello-btn inline-block rounded-full border-none bg-[color:light-dark(#50535b,#c6c8cd)] px-8 py-3 font-semibold text-[color:light-dark(#f3f4f7,#1a1c1f)] cursor-pointer origin-center"
       >
         {children}
       </button>

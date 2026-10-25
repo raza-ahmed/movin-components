@@ -9,9 +9,9 @@ const css = `
     width: 46px;
     height: 24px;
     margin-right: 4px;
-    border: 2px solid #7c7c7c;
+    border: 2px solid light-dark(#6d7179, #7d8087);
     border-radius: 6px;
-    background: #111111;
+    background: light-dark(#fbfcfd, #121417);
   }
 
   /* The terminal nub. */
@@ -24,7 +24,7 @@ const css = `
     height: 9px;
     margin-top: -4.5px;
     border-radius: 0 2px 2px 0;
-    background: #7c7c7c;
+    background: light-dark(#6d7179, #7d8087);
   }
 
   /* One bar masked into four cells; its width steps a whole cell at a time. */
@@ -35,7 +35,7 @@ const css = `
     left: 3px;
     width: 0;
     border-radius: 2px;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     mask-image: repeating-linear-gradient(90deg, rgba(0, 0, 0, 1) 0 8px, transparent 8px 9.333px);
     animation: loader-battery-charge var(--loader-battery-t) infinite;
   }
@@ -48,7 +48,7 @@ const css = `
     width: 11px;
     height: 15px;
     margin: -7.5px 0 0 -5.5px;
-    fill: #111111;
+    fill: light-dark(#fbfcfd, #121417);
   }
 
   @keyframes loader-battery-charge {

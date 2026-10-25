@@ -1,5 +1,5 @@
 function initBtnConfetti(root) {
-  const COLORS = ['#f6f6f6', '#ededed', '#c9c9c9', '#a7a7a7', '#7c7c7c', '#f6f6f6', '#4d4d4d'];
+  const COLORS = ['light-dark(#373a40, #f1f2f3)', 'light-dark(#42454c, #e5e6e9)', 'light-dark(#50535b, #c6c8cd)', 'light-dark(#5f626a, #a7abb2)', 'light-dark(#6d7179, #7d8087)', 'light-dark(#373a40, #f1f2f3)', 'light-dark(#cbced3, #393c41)'];
   const button = root.querySelector('.btn-confetti__button');
 
   function burst(event) {

@@ -26,13 +26,13 @@ export function BurstRingButton({ children }: { children: React.ReactNode }) {
       <button
         type="button"
         onClick={handleClick}
-        className="relative overflow-hidden rounded-lg border-2 border-[#4d4d4d] px-8 py-3 font-semibold text-[#c9c9c9] cursor-pointer bg-transparent"
+        className="relative overflow-hidden rounded-lg border-2 border-[color:light-dark(#cbced3,#393c41)] px-8 py-3 font-semibold text-[color:light-dark(#50535b,#c6c8cd)] cursor-pointer bg-transparent"
       >
         {rings.map(({ id, x, y }) => (
           <span
             key={id}
             data-burst-ring
-            className="pointer-events-none absolute h-10 w-10 rounded-full border-2 border-[#a7a7a7]/70 bg-transparent"
+            className="pointer-events-none absolute h-10 w-10 rounded-full border-2 border-[color:light-dark(#5f626a,#a7abb2)]/70 bg-transparent"
             style={{ left: x, top: y }}
           />
         ))}

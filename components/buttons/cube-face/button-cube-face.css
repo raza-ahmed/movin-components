@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  color: #f6f6f6;
+  color: light-dark(#373a40, #f1f2f3);
   font-weight: 600;
   letter-spacing: 0.025em;
   -webkit-backface-visibility: hidden;
@@ -28,18 +28,18 @@
 }
 .btn-cube-face__front {
   border: none;
-  background: linear-gradient(to bottom right, #4d4d4d, #7c7c7c);
+  background: linear-gradient(to bottom right, light-dark(#cbced3, #393c41), light-dark(#6d7179, #7d8087));
   font: inherit;
   font-weight: 600;
   cursor: pointer;
   transform: translateZ(24px);
 }
 .btn-cube-face__front:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .btn-cube-face__bottom {
-  background: linear-gradient(to bottom right, #7c7c7c, #a7a7a7);
+  background: linear-gradient(to bottom right, light-dark(#6d7179, #7d8087), light-dark(#5f626a, #a7abb2));
   transform: rotateX(-90deg) translateZ(24px);
 }
 @media (prefers-reduced-motion: reduce) {

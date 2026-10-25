@@ -22,11 +22,11 @@
   box-sizing: border-box;
   width: 28px;
   height: 28px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   border-radius: 7px;
 }
 .cb-orbit-snap__input:focus-visible + .cb-orbit-snap__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -40,8 +40,8 @@
   height: 8px;
   margin: -4px 0 0 -4px;
   border-radius: 50%;
-  background: #a7a7a7;
-  box-shadow: 0 0 6px rgba(167, 167, 167, 0.8);
+  background: light-dark(#5f626a, #a7abb2);
+  box-shadow: 0 0 6px light-dark(rgba(95, 98, 106, 0.8), rgba(167, 171, 178, 0.8));
   opacity: 0;
 }
 .cb-orbit-snap__check {
@@ -50,8 +50,8 @@
   transition: opacity 180ms ease, transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .cb-orbit-snap__input:checked + .cb-orbit-snap__box {
-  border-color: #a7a7a7;
-  background: #7c7c7c;
+  border-color: light-dark(#5f626a, #a7abb2);
+  background: light-dark(#6d7179, #7d8087);
   transition: background 200ms ease 700ms, border-color 200ms ease;
 }
 .cb-orbit-snap__input:checked + .cb-orbit-snap__box .cb-orbit-snap__dot { animation: cb-orbit-snap 600ms linear infinite, cb-orbit-snap-show 700ms steps(1) forwards; }

@@ -72,7 +72,7 @@
   position: absolute;
   inset: 0;
   border-radius: 9px;
-  box-shadow: inset 0 0 0 1px rgba(17, 17, 17, 0.15);
+  box-shadow: inset 0 0 0 1px light-dark(rgba(251, 252, 253, 0.15), rgba(18, 20, 23, 0.15));
 }
 
 .radio-die__face--1 {
@@ -107,7 +107,7 @@
   height: 10px;
   margin-left: -28px;
   border-radius: 50%;
-  background: radial-gradient(#111111, transparent 70%);
+  background: radial-gradient(light-dark(#fbfcfd, #121417), transparent 70%);
   opacity: 0.8;
 }
 
@@ -124,27 +124,27 @@
 
 /* Pips. */
 .radio-die__face--1 {
-  background: radial-gradient(circle at 50% 50%, #111111 0 4.5px, transparent 5px), linear-gradient(145deg, #f6f6f6, #c9c9c9);
+  background: radial-gradient(circle at 50% 50%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), linear-gradient(145deg, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd));
 }
 
 .radio-die__face--2 {
-  background: radial-gradient(circle at 28% 28%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 72% 72%, #111111 0 4.5px, transparent 5px), linear-gradient(145deg, #f6f6f6, #c9c9c9);
+  background: radial-gradient(circle at 28% 28%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 72% 72%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), linear-gradient(145deg, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd));
 }
 
 .radio-die__face--3 {
-  background: radial-gradient(circle at 28% 28%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 50% 50%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 72% 72%, #111111 0 4.5px, transparent 5px), linear-gradient(145deg, #f6f6f6, #c9c9c9);
+  background: radial-gradient(circle at 28% 28%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 50% 50%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 72% 72%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), linear-gradient(145deg, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd));
 }
 
 .radio-die__face--4 {
-  background: radial-gradient(circle at 28% 28%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 72% 28%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 28% 72%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 72% 72%, #111111 0 4.5px, transparent 5px), linear-gradient(145deg, #f6f6f6, #c9c9c9);
+  background: radial-gradient(circle at 28% 28%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 72% 28%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 28% 72%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 72% 72%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), linear-gradient(145deg, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd));
 }
 
 .radio-die__face--5 {
-  background: radial-gradient(circle at 28% 28%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 72% 28%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 50% 50%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 28% 72%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 72% 72%, #111111 0 4.5px, transparent 5px), linear-gradient(145deg, #f6f6f6, #c9c9c9);
+  background: radial-gradient(circle at 28% 28%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 72% 28%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 50% 50%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 28% 72%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 72% 72%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), linear-gradient(145deg, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd));
 }
 
 .radio-die__face--6 {
-  background: radial-gradient(circle at 28% 25%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 72% 25%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 28% 50%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 72% 50%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 28% 75%, #111111 0 4.5px, transparent 5px), radial-gradient(circle at 72% 75%, #111111 0 4.5px, transparent 5px), linear-gradient(145deg, #f6f6f6, #c9c9c9);
+  background: radial-gradient(circle at 28% 25%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 72% 25%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 28% 50%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 72% 50%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 28% 75%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), radial-gradient(circle at 72% 75%, light-dark(#fbfcfd, #121417) 0 4.5px, transparent 5px), linear-gradient(145deg, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd));
 }
 
 .radio-die__row {
@@ -170,27 +170,27 @@
   place-items: center;
   width: 30px;
   height: 30px;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 8px;
-  background: #202020;
-  color: #a7a7a7;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  color: light-dark(#5f626a, #a7abb2);
   font-size: 13px;
   font-weight: 600;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .radio-die__option:hover .radio-die__chip {
-  border-color: #7c7c7c;
+  border-color: light-dark(#6d7179, #7d8087);
 }
 
 .radio-die__input:checked + .radio-die__chip {
-  border-color: #ededed;
-  background: #ededed;
-  color: #111111;
+  border-color: light-dark(#42454c, #e5e6e9);
+  background: light-dark(#42454c, #e5e6e9);
+  color: light-dark(#fbfcfd, #121417);
 }
 
 .radio-die__input:focus-visible + .radio-die__chip {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 

@@ -7,9 +7,9 @@ const css = `
     display: inline-flex;
     gap: 4px;
     padding: 6px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 9999px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
   }
 
   .radio-tab-bar__option {
@@ -33,12 +33,12 @@ const css = `
     height: 40px;
     padding: 0 11px;
     border-radius: 9999px;
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
     transition: grid-template-columns 0.4s cubic-bezier(0.3, 1.2, 0.5, 1), background-color 0.3s, color 0.3s;
   }
 
   .radio-tab-bar__option:hover .radio-tab-bar__tab {
-    color: #c9c9c9;
+    color: light-dark(#50535b, #c6c8cd);
   }
 
   .radio-tab-bar__icon {
@@ -69,8 +69,8 @@ const css = `
 
   .radio-tab-bar__input:checked + .radio-tab-bar__tab {
     grid-template-columns: auto 1fr;
-    background: #ededed;
-    color: #111111;
+    background: light-dark(#42454c, #e5e6e9);
+    color: light-dark(#fbfcfd, #121417);
   }
 
   .radio-tab-bar__input:checked + .radio-tab-bar__tab .radio-tab-bar__icon {
@@ -94,7 +94,7 @@ const css = `
   }
 
   .radio-tab-bar__input:focus-visible + .radio-tab-bar__tab {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 

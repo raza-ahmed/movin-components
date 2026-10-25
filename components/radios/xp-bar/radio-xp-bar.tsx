@@ -2,9 +2,9 @@
 
 import * as React from "react";
 const OPTIONS = [
-  { label:'Novice', xp:'XP +50',  color:'#7c7c7c' },
-  { label:'Adept',  xp:'XP +150', color:'#c9c9c9' },
-  { label:'Master', xp:'XP +500', color:'#f6f6f6' },
+  { label:'Novice', xp:'XP +50',  color:'light-dark(#6d7179, #7d8087)' },
+  { label:'Adept',  xp:'XP +150', color:'light-dark(#50535b, #c6c8cd)' },
+  { label:'Master', xp:'XP +500', color:'light-dark(#373a40, #f1f2f3)' },
 ];
 const SPARKS = [{x:0,y:-10},{x:6,y:-8},{x:-6,y:-8},{x:8,y:-4}];
 
@@ -28,8 +28,8 @@ export function XPBarRadioGroup() {
             key={opt.label}
             className="flex cursor-pointer flex-col gap-1.5 rounded-lg border px-3 py-2.5 transition-all duration-200"
             style={{
-              background: checked ? `${opt.color}0f` : 'rgba(246,246,246,0.02)',
-              borderColor: checked ? `${opt.color}40` : 'rgba(246,246,246,0.07)',
+              background: checked ? `${opt.color}0f` : 'light-dark(rgba(55,58,64,0.02), rgba(241,242,243,0.02))',
+              borderColor: checked ? `${opt.color}40` : 'light-dark(rgba(55,58,64,0.07), rgba(241,242,243,0.07))',
             }}
           >
             <input
@@ -39,15 +39,15 @@ export function XPBarRadioGroup() {
             />
             <div className="flex items-center justify-between">
               <span className="select-none text-[13px] font-semibold tracking-wide transition-colors duration-200"
-                style={{ fontFamily:'ui-monospace, SFMono-Regular, Menlo, monospace', color: checked ? opt.color : 'rgba(246,246,246,0.55)' }}>
+                style={{ fontFamily:'ui-monospace, SFMono-Regular, Menlo, monospace', color: checked ? opt.color : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))' }}>
                 {opt.label}
               </span>
               <span className="text-[10px] font-semibold tracking-wider transition-colors duration-200"
-                style={{ fontFamily:'ui-monospace, SFMono-Regular, Menlo, monospace', color: checked ? opt.color : 'rgba(246,246,246,0.55)' }}>
+                style={{ fontFamily:'ui-monospace, SFMono-Regular, Menlo, monospace', color: checked ? opt.color : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))' }}>
                 {opt.xp}
               </span>
             </div>
-            <div className="relative h-1 overflow-hidden rounded-sm" style={{ background:'rgba(246,246,246,0.08)' }}>
+            <div className="relative h-1 overflow-hidden rounded-sm" style={{ background:'light-dark(rgba(55,58,64,0.08), rgba(241,242,243,0.08))' }}>
               {checked && (
                 <div key={fillKey} className="xp-fill-bar h-full rounded-sm"
                   style={{

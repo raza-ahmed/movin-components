@@ -31,7 +31,7 @@ export function TiltCard({ children }: { children: React.ReactNode }) {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={handleMouseLeave}
-        className="cursor-pointer overflow-hidden rounded-xl border border-[#f6f6f6]/10 bg-[#f6f6f6]/5 [transform-style:preserve-3d] [will-change:transform]"
+        className="cursor-pointer overflow-hidden rounded-xl border border-[color:light-dark(#373a40,#f1f2f3)]/10 bg-[color:light-dark(#373a40,#f1f2f3)]/5 [transform-style:preserve-3d] [will-change:transform]"
         style={{
           transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(${hovered ? 1.04 : 1})`,
           boxShadow: hovered ? '0 16px 32px rgba(0,0,0,0.4)' : '0 2px 8px rgba(0,0,0,0.2)',

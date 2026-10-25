@@ -10,14 +10,14 @@ const css = `
     width: 100%;
     max-width: 300px;
     box-sizing: border-box;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 10px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     transition: border-color 0.2s;
   }
 
   .field-peek:focus-within {
-    border-color: #a7a7a7;
+    border-color: light-dark(#5f626a, #a7abb2);
   }
 
   .field-peek__label {
@@ -30,7 +30,7 @@ const css = `
   }
 
   .field-peek__name {
-    color: #7c7c7c;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 11px;
   }
 
@@ -41,7 +41,7 @@ const css = `
     border: 0;
     outline: none;
     background: transparent;
-    color: #f6f6f6;
+    color: light-dark(#373a40, #f1f2f3);
     font: inherit;
     font-size: 15px;
     letter-spacing: 0.02em;
@@ -58,12 +58,12 @@ const css = `
     border: 0;
     border-radius: 0 10px 10px 0;
     background: none;
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     cursor: pointer;
   }
 
   .field-peek__toggle:focus-visible {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: -4px;
   }
 
@@ -87,11 +87,11 @@ const css = `
   }
 
   .field-peek__white {
-    fill: #282828;
+    fill: light-dark(#ebedf0, #232529);
   }
 
   .field-peek__pupil {
-    fill: #ededed;
+    fill: light-dark(#42454c, #e5e6e9);
     stroke: none;
     transform: translateX(var(--field-peek-x, 0px));
     transition: transform 0.12s ease-out;
@@ -113,7 +113,7 @@ const css = `
   }
 
   .field-peek--shown .field-peek__toggle {
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
   }
 
   @media (prefers-reduced-motion: reduce) {

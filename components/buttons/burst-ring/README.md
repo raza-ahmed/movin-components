@@ -1,6 +1,6 @@
 # Burst Ring button
 
-On click, a single transparent ring (border only, no fill) expands outward from the exact click point and fades — different from ripple which fills. Multiple rings can overlap. Uses React useState to track active rings and removes them after 540ms. No dependencies.
+On click, a single transparent ring (border only, no fill) expands outward from the exact click point and fades, different from ripple which fills. Multiple rings can overlap. Uses React useState to track active rings and removes them after 540ms. No dependencies.
 
 Live preview: https://movin.design/components/buttons/burst-ring/
 

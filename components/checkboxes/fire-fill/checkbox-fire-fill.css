@@ -22,11 +22,11 @@
   box-sizing: border-box;
   width: 28px;
   height: 28px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   border-radius: 7px;
 }
 .cb-fire-fill__input:focus-visible + .cb-fire-fill__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -41,7 +41,7 @@
   bottom: 0;
   left: 0;
   height: 130%;
-  background: linear-gradient(0deg, #7c7c7c 0%, #a7a7a7 40%, #c9c9c9 80%);
+  background: linear-gradient(0deg, light-dark(#6d7179, #7d8087) 0%, light-dark(#5f626a, #a7abb2) 40%, light-dark(#50535b, #c6c8cd) 80%);
   transform: translateY(100%);
   transition: transform 280ms cubic-bezier(0.55, 0, 1, 0.45);
 }
@@ -51,7 +51,7 @@
   opacity: 0;
   transition: opacity 120ms ease;
 }
-.cb-fire-fill__input:checked + .cb-fire-fill__box { border-color: #a7a7a7; }
+.cb-fire-fill__input:checked + .cb-fire-fill__box { border-color: light-dark(#5f626a, #a7abb2); }
 .cb-fire-fill__input:checked + .cb-fire-fill__box .cb-fire-fill__flame {
   transform: translateY(0);
   transition: transform 420ms cubic-bezier(0.4, 0, 0.2, 1);

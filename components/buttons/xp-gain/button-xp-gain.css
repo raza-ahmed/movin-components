@@ -1,17 +1,17 @@
 .btn-xp-gain {
   position: relative;
   padding: 12px 28px;
-  border: 1px solid #a7a7a7;
+  border: 1px solid light-dark(#5f626a, #a7abb2);
   border-radius: 4px;
-  background: #3a3a3a;
-  color: #c9c9c9;
+  background: light-dark(#dbdde1, #2e3035);
+  color: light-dark(#50535b, #c6c8cd);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-weight: 600;
   letter-spacing: 0.05em;
   cursor: pointer;
 }
 .btn-xp-gain:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .btn-xp-gain__label {
@@ -25,8 +25,8 @@
   margin-left: -2.2em;
   font-size: 14px;
   font-weight: 600;
-  color: #c9c9c9;
-  text-shadow: 0 0 8px rgba(201, 201, 201, 0.8);
+  color: light-dark(#50535b, #c6c8cd);
+  text-shadow: 0 0 8px light-dark(rgba(80, 83, 91, 0.8), rgba(198, 200, 205, 0.8));
   white-space: nowrap;
   pointer-events: none;
   animation: btn-xp-gain 860ms ease-out forwards;

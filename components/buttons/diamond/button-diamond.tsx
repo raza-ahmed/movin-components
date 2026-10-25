@@ -8,8 +8,8 @@ export function DiamondButton({ children }: { children: React.ReactNode }) {
     <>
       <style>{`
         @keyframes btn-diamond-pulse {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(124,124,124,0.5); }
-          50%       { box-shadow: 0 0 0 14px rgba(124,124,124,0); }
+          0%, 100% { box-shadow: 0 0 0 0 light-dark(rgba(109,113,121,0.5), rgba(125,128,135,0.5)); }
+          50%       { box-shadow: 0 0 0 14px light-dark(rgba(109,113,121,0), rgba(125,128,135,0)); }
         }
         @media (prefers-reduced-motion: reduce) { [data-diamond-pulse] { animation: none !important; } }
       `}</style>
@@ -27,17 +27,17 @@ export function DiamondButton({ children }: { children: React.ReactNode }) {
           data-diamond-pulse={hovered ? '' : undefined}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className="w-full h-full rounded-lg border-2 border-[#7c7c7c] cursor-pointer flex items-center justify-center"
+          className="w-full h-full rounded-lg border-2 border-[color:light-dark(#6d7179,#7d8087)] cursor-pointer flex items-center justify-center"
           style={{
             background: hovered
-              ? 'linear-gradient(135deg,#7c7c7c,#4d4d4d)'
-              : '#282828',
+              ? 'linear-gradient(135deg,light-dark(#6d7179, #7d8087),light-dark(#cbced3, #393c41))'
+              : 'light-dark(#ebedf0, #232529)',
             transition: 'background 300ms ease',
             animation: hovered ? 'btn-diamond-pulse 1s ease-out infinite' : 'none',
           }}
         >
           <span
-            className="font-semibold text-[#ededed] tracking-wider text-sm leading-none text-center"
+            className="font-semibold text-[color:light-dark(#42454c,#e5e6e9)] tracking-wider text-sm leading-none text-center"
             style={{ transform: 'rotate(-45deg)' }}
           >
             {children}

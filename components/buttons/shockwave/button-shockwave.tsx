@@ -12,9 +12,9 @@ export function ShockwaveButton({ children }: { children: React.ReactNode }) {
     const y = e.clientY - rect.top;
 
     const waves = [
-      { delay: '0ms',   dur: '500ms', color: 'rgba(246,246,246,0.85)' },
-      { delay: '120ms', dur: '520ms', color: 'rgba(246,246,246,0.6)' },
-      { delay: '240ms', dur: '540ms', color: 'rgba(246,246,246,0.4)' },
+      { delay: '0ms',   dur: '500ms', color: 'light-dark(rgba(55,58,64,0.85), rgba(241,242,243,0.85))' },
+      { delay: '120ms', dur: '520ms', color: 'light-dark(rgba(55,58,64,0.6), rgba(241,242,243,0.6))' },
+      { delay: '240ms', dur: '540ms', color: 'light-dark(rgba(55,58,64,0.4), rgba(241,242,243,0.4))' },
     ];
 
     for (const wave of waves) {
@@ -43,8 +43,8 @@ export function ShockwaveButton({ children }: { children: React.ReactNode }) {
         ref={btnRef}
         type="button"
         onClick={handleClick}
-        className="shockwave-btn relative overflow-hidden rounded-lg border-none px-8 py-3 font-semibold text-[#f6f6f6] cursor-pointer"
-        style={{ background: 'linear-gradient(135deg,#4d4d4d,#7c7c7c)' }}
+        className="shockwave-btn relative overflow-hidden rounded-lg border-none px-8 py-3 font-semibold text-[color:light-dark(#373a40,#f1f2f3)] cursor-pointer"
+        style={{ background: 'linear-gradient(135deg,light-dark(#cbced3, #393c41),light-dark(#6d7179, #7d8087))' }}
       >
         <span className="relative z-10">{children}</span>
       </button>

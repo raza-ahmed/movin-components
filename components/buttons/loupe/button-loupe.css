@@ -9,15 +9,15 @@
   overflow: hidden;
   border: 0;
   border-radius: 14px;
-  background: #ededed;
-  color: #111111;
+  background: light-dark(#42454c, #e5e6e9);
+  color: light-dark(#fbfcfd, #121417);
   font: inherit;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
 
 .btn-loupe:focus-visible {
-  outline: 2px solid #ededed;
+  outline: 2px solid light-dark(#42454c, #e5e6e9);
   outline-offset: 4px;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .btn-loupe__fine {
-  color: #4d4d4d;
+  color: light-dark(#cbced3, #393c41);
   font-size: 5px;
   letter-spacing: 0.02em;
 }
@@ -54,8 +54,8 @@
   margin: -38px 0 0 -38px;
   overflow: hidden;
   border-radius: 50%;
-  background: #f6f6f6;
-  box-shadow: inset 0 0 0 1.5px rgba(17, 17, 17, 0.55), 0 8px 18px rgba(17, 17, 17, 0.35);
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: inset 0 0 0 1.5px light-dark(rgba(251, 252, 253, 0.55), rgba(18, 20, 23, 0.55)), 0 8px 18px light-dark(rgba(251, 252, 253, 0.35), rgba(18, 20, 23, 0.35));
   pointer-events: none;
   translate: var(--btn-loupe-x) var(--btn-loupe-y);
   scale: 0;
@@ -67,8 +67,8 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle at 32% 26%, rgba(246, 246, 246, 0.7), transparent 38%);
-  box-shadow: inset 0 -6px 12px rgba(17, 17, 17, 0.12);
+  background: radial-gradient(circle at 32% 26%, light-dark(rgba(55, 58, 64, 0.7), rgba(241, 242, 243, 0.7)), transparent 38%);
+  box-shadow: inset 0 -6px 12px light-dark(rgba(251, 252, 253, 0.12), rgba(18, 20, 23, 0.12));
 }
 
 .btn-loupe__zoom {

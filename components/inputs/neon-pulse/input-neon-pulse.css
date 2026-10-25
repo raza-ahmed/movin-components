@@ -8,27 +8,27 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.12);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12));
   border-radius: 8px;
   outline: none;
-  background: rgba(246, 246, 246, 0.04);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   transition: background 300ms, border-color 300ms, color 300ms;
 }
-.field-neon-pulse__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-neon-pulse__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
 /* Focused, the field glows and the glow breathes. */
 .field-neon-pulse__input:focus {
-  border-color: rgba(167, 167, 167, 0.6);
-  background: rgba(167, 167, 167, 0.06);
-  color: #ededed;
+  border-color: light-dark(rgba(95, 98, 106, 0.6), rgba(167, 171, 178, 0.6));
+  background: light-dark(rgba(95, 98, 106, 0.06), rgba(167, 171, 178, 0.06));
+  color: light-dark(#42454c, #e5e6e9);
   animation: field-neon-pulse 1.8s ease-in-out infinite;
 }
 @keyframes field-neon-pulse {
-  0%, 100% { box-shadow: 0 0 4px rgba(167, 167, 167, 0.5), 0 0 12px rgba(167, 167, 167, 0.3), 0 0 24px rgba(167, 167, 167, 0.15); }
-  50% { box-shadow: 0 0 8px rgba(167, 167, 167, 0.8), 0 0 20px rgba(167, 167, 167, 0.5), 0 0 40px rgba(167, 167, 167, 0.25); }
+  0%, 100% { box-shadow: 0 0 4px light-dark(rgba(95, 98, 106, 0.5), rgba(167, 171, 178, 0.5)), 0 0 12px light-dark(rgba(95, 98, 106, 0.3), rgba(167, 171, 178, 0.3)), 0 0 24px light-dark(rgba(95, 98, 106, 0.15), rgba(167, 171, 178, 0.15)); }
+  50% { box-shadow: 0 0 8px light-dark(rgba(95, 98, 106, 0.8), rgba(167, 171, 178, 0.8)), 0 0 20px light-dark(rgba(95, 98, 106, 0.5), rgba(167, 171, 178, 0.5)), 0 0 40px light-dark(rgba(95, 98, 106, 0.25), rgba(167, 171, 178, 0.25)); }
 }
 @media (prefers-reduced-motion: reduce) {
   .field-neon-pulse__input:focus { animation-play-state: paused; }

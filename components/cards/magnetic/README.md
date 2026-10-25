@@ -1,6 +1,6 @@
 # Magnetic card
 
-Card layers move toward the cursor at different strengths — the orb the most, the backdrop at 30%, the text at 15% — creating a parallax depth illusion without any 3D rotation or perspective.
+Card layers move toward the cursor at different strengths (the orb the most, the backdrop at 30%, the text at 15%), creating a parallax depth illusion without any 3D rotation or perspective.
 
 Live preview: https://movin.design/components/cards/magnetic/
 

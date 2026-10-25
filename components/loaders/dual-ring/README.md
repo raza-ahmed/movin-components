@@ -1,6 +1,6 @@
 # Dual Ring loader
 
-Two concentric rings rotating in opposite directions at different speeds — bright outer ring clockwise, dimmer inner ring counter-clockwise. Pure CSS, no dependencies.
+Two concentric rings rotating in opposite directions at different speeds: bright outer ring clockwise, dimmer inner ring counter-clockwise. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/loaders/dual-ring/
 

@@ -8,7 +8,7 @@
 .field-border-draw__edge {
   position: absolute;
   z-index: 1;
-  background: #a7a7a7;
+  background: light-dark(#5f626a, #a7abb2);
   pointer-events: none;
   transition: transform 220ms ease-in-out;
 }
@@ -22,15 +22,15 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.1);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.1), rgba(241, 242, 243, 0.1));
   border-radius: 0;
   outline: none;
-  background: rgba(246, 246, 246, 0.05);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.05), rgba(241, 242, 243, 0.05));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
 }
-.field-border-draw__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-border-draw__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
 @media (prefers-reduced-motion: reduce) {
   .field-border-draw__edge { transition: none; }

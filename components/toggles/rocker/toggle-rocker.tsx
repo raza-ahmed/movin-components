@@ -5,7 +5,7 @@ const css = `
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -26,18 +26,18 @@ const css = `
     place-items: center;
     width: 56px;
     height: 84px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 10px;
     background:
-      radial-gradient(circle at 50% 8px, #4d4d4d 0 2px, transparent 2.5px),
-      radial-gradient(circle at 50% calc(100% - 8px), #4d4d4d 0 2px, transparent 2.5px),
-      #282828;
+      radial-gradient(circle at 50% 8px, light-dark(#cbced3, #393c41) 0 2px, transparent 2.5px),
+      radial-gradient(circle at 50% calc(100% - 8px), light-dark(#cbced3, #393c41) 0 2px, transparent 2.5px),
+      light-dark(#ebedf0, #232529);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
     perspective: 160px;
   }
 
   .toggle-rocker__input:focus-visible + .toggle-rocker__plate {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 3px;
   }
 
@@ -48,7 +48,7 @@ const css = `
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background: #3a3a3a;
+    background: light-dark(#dbdde1, #2e3035);
     transition: background-color 0.2s, box-shadow 0.3s;
   }
 
@@ -64,27 +64,27 @@ const css = `
     height: 50px;
     padding: 6px 0;
     border-radius: 6px;
-    background: linear-gradient(#202020, #4d4d4d 50%, #7c7c7c);
-    box-shadow: inset 0 0 0 1px rgba(246, 246, 246, 0.08), 0 4px 6px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(light-dark(#f3f4f7, #1a1c1f), light-dark(#cbced3, #393c41) 50%, light-dark(#6d7179, #7d8087));
+    box-shadow: inset 0 0 0 1px light-dark(rgba(55, 58, 64, 0.08), rgba(241, 242, 243, 0.08)), 0 4px 6px rgba(0, 0, 0, 0.4);
     transform: rotateX(24deg);
     transition: transform 0.18s cubic-bezier(0.5, 0, 0.3, 1.6), background 0.18s;
   }
 
   .toggle-rocker__mark {
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 9px;
     font-weight: 700;
     line-height: 1;
   }
 
   .toggle-rocker__input:checked + .toggle-rocker__plate .toggle-rocker__paddle {
-    background: linear-gradient(#7c7c7c, #4d4d4d 50%, #202020);
+    background: linear-gradient(light-dark(#6d7179, #7d8087), light-dark(#cbced3, #393c41) 50%, light-dark(#f3f4f7, #1a1c1f));
     transform: rotateX(-24deg);
   }
 
   .toggle-rocker__input:checked + .toggle-rocker__plate .toggle-rocker__led {
-    background: #f6f6f6;
-    box-shadow: 0 0 6px 2px rgba(246, 246, 246, 0.6);
+    background: light-dark(#373a40, #f1f2f3);
+    box-shadow: 0 0 6px 2px light-dark(rgba(55, 58, 64, 0.6), rgba(241, 242, 243, 0.6));
   }
 
   @media (prefers-reduced-motion: reduce) {

@@ -1,6 +1,6 @@
 # Comet loader
 
-A conic-gradient ring that spins like a comet tail — gray-to-white arc on a masked circle. Pure CSS, no dependencies.
+A conic-gradient ring that spins like a comet tail: gray-to-white arc on a masked circle. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/loaders/comet/
 

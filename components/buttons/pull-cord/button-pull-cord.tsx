@@ -19,10 +19,10 @@ const css = `
     width: 168px;
     height: 56px;
     padding: 0;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 14px;
-    background: #202020;
-    color: #a7a7a7;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    color: light-dark(#5f626a, #a7abb2);
     font: inherit;
     font-size: 15px;
     font-weight: 600;
@@ -32,7 +32,7 @@ const css = `
   }
 
   .btn-pull-cord__button:focus-visible {
-    outline: 2px solid #ededed;
+    outline: 2px solid light-dark(#42454c, #e5e6e9);
     outline-offset: 4px;
   }
 
@@ -47,10 +47,10 @@ const css = `
   }
 
   .btn-pull-cord__button[aria-pressed='true'] {
-    border-color: #ededed;
-    background: #ededed;
-    box-shadow: 0 0 48px 6px rgba(237, 237, 237, 0.26), 0 20px 70px rgba(237, 237, 237, 0.16);
-    color: #111111;
+    border-color: light-dark(#42454c, #e5e6e9);
+    background: light-dark(#42454c, #e5e6e9);
+    box-shadow: 0 0 48px 6px light-dark(rgba(66, 69, 76, 0.26), rgba(229, 230, 233, 0.26)), 0 20px 70px light-dark(rgba(66, 69, 76, 0.16), rgba(229, 230, 233, 0.16));
+    color: light-dark(#fbfcfd, #121417);
   }
 
   .btn-pull-cord__button[aria-pressed='true'] .btn-pull-cord__off {
@@ -74,7 +74,7 @@ const css = `
 
   .btn-pull-cord__line {
     fill: none;
-    stroke: #7c7c7c;
+    stroke: light-dark(#6d7179, #7d8087);
     stroke-width: 1.5;
     stroke-linecap: round;
   }
@@ -87,8 +87,8 @@ const css = `
     height: 16px;
     margin: -8px 0 0 -8px;
     border-radius: 50%;
-    background: #c9c9c9;
-    box-shadow: inset 0 -2px 0 rgba(17, 17, 17, 0.3);
+    background: light-dark(#50535b, #c6c8cd);
+    box-shadow: inset 0 -2px 0 light-dark(rgba(251, 252, 253, 0.3), rgba(18, 20, 23, 0.3));
     cursor: grab;
     touch-action: none;
     transform: translate(var(--btn-pull-cord-x, 84px), var(--btn-pull-cord-y, 100px));
@@ -101,7 +101,7 @@ const css = `
 
   /* Pulled far enough: letting go now will switch it. */
   .btn-pull-cord--armed .btn-pull-cord__bead {
-    background: #f6f6f6;
+    background: light-dark(#373a40, #f1f2f3);
     scale: 1.2;
   }
 

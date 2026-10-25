@@ -23,9 +23,9 @@ export function WobbleInput({ placeholder = "Focus to wobble…" }: { placeholde
         type="text"
         placeholder={placeholder}
         onFocus={() => setWobbleKey((k) => k + 1)}
-        className="wobble-input-el w-full rounded-lg border bg-[#f6f6f6]/[0.06] px-3.5 py-2.5 text-[15px] text-[#f6f6f6] placeholder:text-[#f6f6f6]/[0.55] outline-none"
+        className="wobble-input-el w-full rounded-lg border bg-[color:light-dark(#373a40,#f1f2f3)]/[0.06] px-3.5 py-2.5 text-[15px] text-[color:light-dark(#373a40,#f1f2f3)] placeholder:text-[color:light-dark(#373a40ba,#f1f2f39e)] outline-none"
         style={{
-          borderColor: 'rgba(246,246,246,0.15)',
+          borderColor: 'light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15))',
           animation: wobbleKey > 0 ? 'input-wobble 400ms cubic-bezier(0.22,1,0.36,1) forwards' : 'none',
         }}
       />

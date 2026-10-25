@@ -1,6 +1,6 @@
 # Slide toggle
 
-Classic on/off toggle — the thumb slides with a spring overshoot and the track fades between colors. Pure CSS transitions, no dependencies.
+Classic on/off toggle: the thumb slides with a spring overshoot and the track fades between colors. Pure CSS transitions, no dependencies.
 
 Live preview: https://movin.design/components/toggles/slide/
 

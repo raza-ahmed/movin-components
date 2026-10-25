@@ -1,6 +1,6 @@
 # Wipe Reveal card
 
-Hover sweeps a clip-path from inset(0 0 100% 0) to inset(0 0 0 0) — a bottom-to-top wipe that reveals hidden card content. A placeholder state fades out simultaneously. Sharp cubic-bezier easing gives the reveal a crisp, decisive feel.
+Hover sweeps a clip-path from inset(0 0 100% 0) to inset(0 0 0 0): a bottom-to-top wipe that reveals hidden card content. A placeholder state fades out simultaneously. Sharp cubic-bezier easing gives the reveal a crisp, decisive feel.
 
 Live preview: https://movin.design/components/cards/wipe-reveal/
 

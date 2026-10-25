@@ -9,7 +9,7 @@ const css = `
     gap: 8px;
     width: 100%;
     max-width: 320px;
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 13px;
   }
 
@@ -17,14 +17,14 @@ const css = `
     position: relative;
     display: flex;
     align-items: center;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 10px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     transition: border-color 0.2s;
   }
 
   .field-ghost__box:focus-within {
-    border-color: #a7a7a7;
+    border-color: light-dark(#5f626a, #a7abb2);
   }
 
   /* Input and mirror share every metric, so the grey ghost lines up exactly
@@ -49,11 +49,11 @@ const css = `
     border: 0;
     outline: none;
     background: transparent;
-    color: #f6f6f6;
+    color: light-dark(#373a40, #f1f2f3);
   }
 
   .field-ghost__input::placeholder {
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
   }
 
   .field-ghost__mirror {
@@ -71,7 +71,7 @@ const css = `
   }
 
   .field-ghost__rest {
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
     transition: color 0.12s;
   }
 
@@ -80,10 +80,10 @@ const css = `
     flex-shrink: 0;
     margin-right: 10px;
     padding: 3px 7px;
-    border: 1px solid #4d4d4d;
+    border: 1px solid light-dark(#cbced3, #393c41);
     border-bottom-width: 2px;
     border-radius: 5px;
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 11px;
     cursor: pointer;
     opacity: 0;
@@ -100,12 +100,12 @@ const css = `
 
   /* Accepting: the ghost washes solid and the key goes down. */
   .field-ghost--accept .field-ghost__rest {
-    color: #f6f6f6;
+    color: light-dark(#373a40, #f1f2f3);
   }
 
   .field-ghost--accept .field-ghost__key {
     border-bottom-width: 1px;
-    background: #3a3a3a;
+    background: light-dark(#dbdde1, #2e3035);
     transform: translateY(1px);
   }
 

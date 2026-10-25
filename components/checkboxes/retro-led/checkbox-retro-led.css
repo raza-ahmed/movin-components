@@ -22,11 +22,11 @@
   box-sizing: border-box;
   width: 28px;
   height: 28px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   border-radius: 7px;
 }
 .cb-retro-led__input:focus-visible + .cb-retro-led__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -39,20 +39,20 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 1.5px;
   padding: 3px;
-  border-color: rgba(246, 246, 246, 0.2);
+  border-color: light-dark(rgba(55, 58, 64, 0.2), rgba(241, 242, 243, 0.2));
   border-radius: 5px;
-  background: #111111;
+  background: light-dark(#fbfcfd, #121417);
   transition: border-color 200ms ease;
 }
 .cb-retro-led__box > span {
   border-radius: 50%;
-  background: rgba(246, 246, 246, 0.08);
+  background: light-dark(rgba(55, 58, 64, 0.08), rgba(241, 242, 243, 0.08));
   transition: background 60ms ease calc((24 - var(--cb-retro-led-i)) * 16ms);
 }
-.cb-retro-led__input:checked + .cb-retro-led__box { border-color: #a7a7a7; }
+.cb-retro-led__input:checked + .cb-retro-led__box { border-color: light-dark(#5f626a, #a7abb2); }
 .cb-retro-led__input:checked + .cb-retro-led__box > span {
-  background: #c9c9c9;
-  box-shadow: 0 0 3px rgba(201, 201, 201, 0.6);
+  background: light-dark(#50535b, #c6c8cd);
+  box-shadow: 0 0 3px light-dark(rgba(80, 83, 91, 0.6), rgba(198, 200, 205, 0.6));
   transition: background 80ms ease calc(var(--cb-retro-led-i) * 22ms), box-shadow 80ms ease calc(var(--cb-retro-led-i) * 22ms);
 }
 

@@ -1,6 +1,6 @@
 # Pressure Dip checkbox
 
-The entire box squishes flat (scaleY 0.28) under simulated finger pressure then springs back up with an overshoot, revealing the checked fill. Distinct from raised (3D) — this is a flat squeeze-and-spring.
+The entire box squishes flat (scaleY 0.28) under simulated finger pressure then springs back up with an overshoot, revealing the checked fill. Distinct from raised (3D): this is a flat squeeze-and-spring.
 
 Live preview: https://movin.design/components/checkboxes/pressure-dip/
 

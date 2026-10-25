@@ -49,18 +49,18 @@ export function ChargeButton() {
       style={{
         minWidth: '12rem',
         padding: '0.75rem 2.25rem',
-        color: isFired ? '#202020' : '#f6f6f6',
-        background: '#202020',
-        borderColor: isFired ? '#c9c9c9' : isCharging ? '#c9c9c9' : 'rgba(246,246,246,0.15)',
+        color: isFired ? 'light-dark(#f3f4f7, #1a1c1f)' : 'light-dark(#373a40, #f1f2f3)',
+        background: 'light-dark(#f3f4f7, #1a1c1f)',
+        borderColor: isFired ? 'light-dark(#50535b, #c6c8cd)' : isCharging ? 'light-dark(#50535b, #c6c8cd)' : 'light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15))',
         transition: 'border-color 200ms, color 150ms, box-shadow 200ms',
-        boxShadow: isFired ? '0 0 24px rgba(201,201,201,0.7),0 0 48px rgba(201,201,201,0.3)' : 'none',
+        boxShadow: isFired ? '0 0 24px light-dark(rgba(80,83,91,0.7), rgba(198,200,205,0.7)),0 0 48px light-dark(rgba(80,83,91,0.3), rgba(198,200,205,0.3))' : 'none',
       }}
     >
       <span
         className="pointer-events-none absolute bottom-0 left-0 top-0"
         style={{
           width: `${chargeWidth}%`,
-          background: isFired ? 'linear-gradient(90deg,#a7a7a7,#c9c9c9)' : 'linear-gradient(90deg,#a7a7a7,#c9c9c9)',
+          background: isFired ? 'linear-gradient(90deg,light-dark(#5f626a, #a7abb2),light-dark(#50535b, #c6c8cd))' : 'linear-gradient(90deg,light-dark(#5f626a, #a7abb2),light-dark(#50535b, #c6c8cd))',
           transition: isFired ? 'background 150ms' : 'none',
         }}
       />

@@ -23,9 +23,9 @@ export function MorphShapeInput({ placeholder = 'Focus to morph…', label = 'Yo
       placeholder={placeholder}
       onFocus={handleFocus}
       onBlur={() => setFocused(false)}
-      className="w-full border bg-[#f6f6f6]/[0.06] px-3.5 py-2.5 text-[15px] text-[#f6f6f6] placeholder:text-[#f6f6f6]/[0.55] outline-none transition-[border-color,border-radius] duration-300"
+      className="w-full border bg-[color:light-dark(#373a40,#f1f2f3)]/[0.06] px-3.5 py-2.5 text-[15px] text-[color:light-dark(#373a40,#f1f2f3)] placeholder:text-[color:light-dark(#373a40ba,#f1f2f39e)] outline-none transition-[border-color,border-radius] duration-300"
       style={{
-        borderColor: focused ? '#a7a7a7' : 'rgba(246,246,246,0.15)',
+        borderColor: focused ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15))',
         borderRadius: focused ? 10 : 2,
       }}
     />

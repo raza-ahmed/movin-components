@@ -1,6 +1,6 @@
 # Spark Trail checkbox
 
-On check, 8 short white spark-streaks shoot outward in all directions and fade quickly, like an electric discharge. More energy-focused and rapid than confetti — pure white, no color variation.
+On check, 8 short white spark-streaks shoot outward in all directions and fade quickly, like an electric discharge. More energy-focused and rapid than confetti: pure white, no color variation.
 
 Live preview: https://movin.design/components/checkboxes/spark-trail/
 

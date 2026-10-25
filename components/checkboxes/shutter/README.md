@@ -1,6 +1,6 @@
 # Shutter checkbox
 
-The checked fill opens like a camera iris/shutter using clip-path polygon animation — panels spread outward from a collapsed line to full coverage. Sharp, mechanical feel.
+The checked fill opens like a camera iris/shutter using clip-path polygon animation: panels spread outward from a collapsed line to full coverage. Sharp, mechanical feel.
 
 Live preview: https://movin.design/components/checkboxes/shutter/
 

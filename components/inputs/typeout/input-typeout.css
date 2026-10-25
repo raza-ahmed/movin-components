@@ -8,18 +8,18 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 8px;
   outline: none;
-  background: rgba(246, 246, 246, 0.06);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.06), rgba(241, 242, 243, 0.06));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   transition: border-color 200ms;
 }
-.field-typeout__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-typeout__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
-.field-typeout__input:focus { border-color: rgba(167, 167, 167, 0.5); }
+.field-typeout__input:focus { border-color: light-dark(rgba(95, 98, 106, 0.5), rgba(167, 171, 178, 0.5)); }
 /* The placeholder types itself out, letter by letter, whenever the field is empty and idle. */
 .field-typeout__hint {
   position: absolute;
@@ -30,13 +30,13 @@
   align-items: center;
   gap: 2px;
   font-size: 15px;
-  color: rgba(246, 246, 246, 0.55);
+  color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62));
   pointer-events: none;
 }
 .field-typeout__caret {
   width: 1px;
   height: 16px;
-  background: rgba(246, 246, 246, 0.5);
+  background: light-dark(rgba(55, 58, 64, 0.5), rgba(241, 242, 243, 0.5));
 }
 .field-typeout--typed .field-typeout__caret { display: none; }
 .field-typeout:focus-within .field-typeout__hint,

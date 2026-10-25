@@ -11,7 +11,7 @@ export function HudBracketsInput({ placeholder = "Targeting…" }: { placeholder
     return {
       position: 'absolute',
       width: 10, height: 10,
-      borderColor: focused ? '#a7a7a7' : 'rgba(167,167,167,0.3)',
+      borderColor: focused ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(95,98,106,0.3), rgba(167,171,178,0.3))',
       borderStyle: 'solid',
       borderTopWidth: isTop ? 2 : 0,
       borderBottomWidth: isTop ? 0 : 2,
@@ -39,9 +39,9 @@ export function HudBracketsInput({ placeholder = "Targeting…" }: { placeholder
           onBlur={() => setFocused(false)}
           className="w-full rounded border px-3 py-2 text-sm font-mono outline-none transition-all duration-[220ms]"
           style={{
-            background: focused ? 'rgba(167,167,167,0.04)' : 'rgba(246,246,246,0.04)',
-            borderColor: focused ? 'rgba(167,167,167,0.4)' : 'rgba(246,246,246,0.12)',
-            color: focused ? '#c9c9c9' : '#f6f6f6',
+            background: focused ? 'light-dark(rgba(95,98,106,0.04), rgba(167,171,178,0.04))' : 'light-dark(rgba(55,58,64,0.04), rgba(241,242,243,0.04))',
+            borderColor: focused ? 'light-dark(rgba(95,98,106,0.4), rgba(167,171,178,0.4))' : 'light-dark(rgba(55,58,64,0.12), rgba(241,242,243,0.12))',
+            color: focused ? 'light-dark(#50535b, #c6c8cd)' : 'light-dark(#373a40, #f1f2f3)',
             letterSpacing: focused ? '0.05em' : '0',
           }}
         />

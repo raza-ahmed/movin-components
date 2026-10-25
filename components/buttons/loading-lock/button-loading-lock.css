@@ -5,10 +5,10 @@
   gap: 10px;
   min-width: 180px;
   padding: 12px 28px;
-  border: 1px solid #7c7c7c;
+  border: 1px solid light-dark(#6d7179, #7d8087);
   border-radius: 8px;
-  background: linear-gradient(135deg, #282828, #3a3a3a);
-  color: #c9c9c9;
+  background: linear-gradient(135deg, light-dark(#ebedf0, #232529), light-dark(#dbdde1, #2e3035));
+  color: light-dark(#50535b, #c6c8cd);
   font: inherit;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -16,11 +16,11 @@
   transition: border-color 400ms;
 }
 .btn-loading-lock:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .btn-loading-lock:not([data-state="idle"]) { cursor: default; }
-.btn-loading-lock[data-state="done"] { border-color: #a7a7a7; }
+.btn-loading-lock[data-state="done"] { border-color: light-dark(#5f626a, #a7abb2); }
 /* One icon per state; the script only changes data-state and the label. */
 .btn-loading-lock__icon { display: none; }
 .btn-loading-lock[data-state="idle"] .btn-loading-lock__icon--idle,

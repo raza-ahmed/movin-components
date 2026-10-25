@@ -12,8 +12,8 @@ const css = `
     padding: 0;
     border: 0;
     border-radius: 14px;
-    background: #ededed;
-    color: #111111;
+    background: light-dark(#42454c, #e5e6e9);
+    color: light-dark(#fbfcfd, #121417);
     font: inherit;
     font-size: 15px;
     font-weight: 600;
@@ -38,7 +38,7 @@ const css = `
   }
 
   .btn-membrane__fill {
-    fill: #ededed;
+    fill: light-dark(#42454c, #e5e6e9);
   }
 
   .btn-membrane__label {
@@ -48,7 +48,7 @@ const css = `
   }
 
   .btn-membrane:focus-visible {
-    outline: 2px solid #ededed;
+    outline: 2px solid light-dark(#42454c, #e5e6e9);
     outline-offset: 4px;
   }
 `;

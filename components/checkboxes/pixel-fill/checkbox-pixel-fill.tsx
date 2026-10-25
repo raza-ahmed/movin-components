@@ -35,7 +35,7 @@ export function PixelFillCheckbox({ label }: { label?: string }) {
           className="grid h-7 w-7 rounded-[7px] border-2 overflow-hidden p-0.5 gap-px"
           style={{
             gridTemplateColumns: `repeat(${SIZE}, 1fr)`,
-            borderColor: on ? '#7c7c7c' : 'rgba(246,246,246,0.25)',
+            borderColor: on ? 'light-dark(#6d7179, #7d8087)' : 'light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25))',
             transition: 'border-color 200ms ease',
           }}
         >
@@ -44,7 +44,7 @@ export function PixelFillCheckbox({ label }: { label?: string }) {
               key={i}
               className="rounded-[1px]"
               style={{
-                background: on ? '#7c7c7c' : 'transparent',
+                background: on ? 'light-dark(#6d7179, #7d8087)' : 'transparent',
                 transition: on
                   ? `background 80ms ease ${order[i] * 18}ms`
                   : `background 60ms ease ${(CELLS - 1 - order[i]) * 12}ms`,
@@ -53,7 +53,7 @@ export function PixelFillCheckbox({ label }: { label?: string }) {
           ))}
         </span>
       </div>
-      {label && <span className="select-none text-sm text-[#f6f6f6]/80">{label}</span>}
+      {label && <span className="select-none text-sm text-[color:light-dark(#373a40,#f1f2f3)]/80">{label}</span>}
     </label>
   );
 }

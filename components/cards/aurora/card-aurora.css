@@ -2,13 +2,13 @@
   position: relative;
   width: 160px;
   overflow: hidden;
-  border: 1px solid rgba(246, 246, 246, 0.07);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.07), rgba(241, 242, 243, 0.07));
   border-radius: 12px;
-  background: #111111;
+  background: light-dark(#fbfcfd, #121417);
   cursor: pointer;
   transition: border-color 400ms ease;
 }
-.card-aurora:hover { border-color: rgba(246, 246, 246, 0.2); }
+.card-aurora:hover { border-color: light-dark(rgba(55, 58, 64, 0.2), rgba(241, 242, 243, 0.2)); }
 .card-aurora__field {
   position: absolute;
   inset: 0;
@@ -25,7 +25,7 @@
   left: -16px;
   width: 90px;
   height: 90px;
-  background: #c9c9c9;
+  background: light-dark(#50535b, #c6c8cd);
   filter: blur(30px);
   opacity: 0.55;
   animation: card-aurora-1 5s ease-in-out infinite;
@@ -35,7 +35,7 @@
   right: -18px;
   width: 75px;
   height: 75px;
-  background: #a7a7a7;
+  background: light-dark(#5f626a, #a7abb2);
   filter: blur(26px);
   opacity: 0.5;
   animation: card-aurora-2 7s ease-in-out infinite;
@@ -45,7 +45,7 @@
   left: 28px;
   width: 65px;
   height: 65px;
-  background: #7c7c7c;
+  background: light-dark(#6d7179, #7d8087);
   filter: blur(22px);
   opacity: 0.5;
   animation: card-aurora-3 6s ease-in-out infinite;
@@ -60,12 +60,12 @@
   margin-bottom: 4px;
   font-size: 13px;
   font-weight: 600;
-  color: #f6f6f6;
+  color: light-dark(#373a40, #f1f2f3);
 }
 .card-aurora__text {
   font-size: 11px;
   line-height: 1.4;
-  color: rgba(246, 246, 246, 0.55);
+  color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62));
 }
 @keyframes card-aurora-1 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(26px, -12px); } }
 @keyframes card-aurora-2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-22px, 16px); } }

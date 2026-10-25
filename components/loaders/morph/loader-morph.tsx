@@ -7,17 +7,17 @@ export function MorphLoader({ label = "Loading" }: { label?: string }) {
         @keyframes morph-shape {
           0%, 100% {
             border-radius: 50%;
-            background: #7c7c7c;
+            background: light-dark(#6d7179, #7d8087);
             transform: rotate(0deg);
           }
           33% {
             border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            background: #7c7c7c;
+            background: light-dark(#6d7179, #7d8087);
             transform: rotate(120deg);
           }
           66% {
             border-radius: 8px;
-            background: #7c7c7c;
+            background: light-dark(#6d7179, #7d8087);
             transform: rotate(240deg);
           }
         }
@@ -28,7 +28,7 @@ export function MorphLoader({ label = "Loading" }: { label?: string }) {
           animation: morph-shape 2.4s ease-in-out infinite;
         }
         @media (prefers-reduced-motion: reduce) {
-          .morph-el { animation: none; border-radius: 50%; background: #7c7c7c; }
+          .morph-el { animation: none; border-radius: 50%; background: light-dark(#6d7179, #7d8087); }
         }
       `}</style>
       <div role="status" aria-label={label}>

@@ -1,6 +1,6 @@
 # Checkbox toggle
 
-A square checkbox that fills with mid-gray on check. The SVG checkmark springs in with an overshoot scale — a completely different shape from pill-style toggles. No dependencies.
+A square checkbox that fills with mid-gray on check. The SVG checkmark springs in with an overshoot scale: a completely different shape from pill-style toggles. No dependencies.
 
 Live preview: https://movin.design/components/toggles/checkbox/
 

@@ -8,10 +8,10 @@ const css = `
     box-sizing: border-box;
     width: 220px;
     padding: 12px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 14px;
-    background: #202020;
-    color: #ededed;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 13px;
   }
 
@@ -27,7 +27,7 @@ const css = `
   }
 
   .cb-sort-list__count {
-    color: #7c7c7c;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 11px;
     font-variant-numeric: tabular-nums;
   }
@@ -37,14 +37,14 @@ const css = `
     margin: 8px 0 6px;
     overflow: hidden;
     border-radius: 2px;
-    background: #3a3a3a;
+    background: light-dark(#dbdde1, #2e3035);
   }
 
   .cb-sort-list__fill {
     display: block;
     height: 100%;
     border-radius: 2px;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     transform: scaleX(var(--cb-sort-list-p));
     transform-origin: 0 50%;
     transition: transform 0.5s cubic-bezier(0.3, 1.2, 0.5, 1);
@@ -58,7 +58,7 @@ const css = `
 
   .cb-sort-list__item {
     position: relative;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
   }
 
   .cb-sort-list__row {
@@ -85,13 +85,13 @@ const css = `
     box-sizing: border-box;
     width: 18px;
     height: 18px;
-    border: 2px solid #4d4d4d;
+    border: 2px solid light-dark(#cbced3, #393c41);
     border-radius: 50%;
     transition: background-color 0.2s, border-color 0.2s;
   }
 
   .cb-sort-list__input:focus-visible + .cb-sort-list__box {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 
@@ -99,7 +99,7 @@ const css = `
     width: 14px;
     height: 14px;
     fill: none;
-    stroke: #111111;
+    stroke: light-dark(#fbfcfd, #121417);
     stroke-width: 2.8;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -116,8 +116,8 @@ const css = `
   }
 
   .cb-sort-list__input:checked + .cb-sort-list__box {
-    border-color: #a7a7a7;
-    background: #a7a7a7;
+    border-color: light-dark(#5f626a, #a7abb2);
+    background: light-dark(#5f626a, #a7abb2);
   }
 
   .cb-sort-list__input:checked + .cb-sort-list__box path {
@@ -126,9 +126,9 @@ const css = `
   }
 
   .cb-sort-list__input:checked ~ .cb-sort-list__text {
-    color: #7c7c7c;
+    color: light-dark(#5f626a, #a7abb2);
     text-decoration: line-through;
-    text-decoration-color: #4d4d4d;
+    text-decoration-color: light-dark(#cbced3, #393c41);
   }
 
   @media (prefers-reduced-motion: reduce) {

@@ -1,18 +1,18 @@
 .btn-scramble {
   min-width: 148px;
   padding: 12px 32px;
-  border: 1px solid #7c7c7c;
+  border: 1px solid light-dark(#6d7179, #7d8087);
   border-radius: 6px;
-  background: #111111;
-  box-shadow: 0 0 12px rgba(167, 167, 167, 0.15);
-  color: #c9c9c9;
+  background: light-dark(#fbfcfd, #121417);
+  box-shadow: 0 0 12px light-dark(rgba(95, 98, 106, 0.15), rgba(167, 171, 178, 0.15));
+  color: light-dark(#50535b, #c6c8cd);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-weight: 600;
   letter-spacing: 0.15em;
-  text-shadow: 0 0 8px rgba(201, 201, 201, 0.5);
+  text-shadow: 0 0 8px light-dark(rgba(80, 83, 91, 0.5), rgba(198, 200, 205, 0.5));
   cursor: pointer;
 }
 .btn-scramble:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }

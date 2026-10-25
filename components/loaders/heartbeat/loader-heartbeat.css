@@ -19,20 +19,20 @@
 }
 
 .loader-heartbeat__track {
-  stroke: #282828;
+  stroke: light-dark(#ebedf0, #232529);
   stroke-width: 1.5;
 }
 
 /* The tail is 34 long and the head 10, both ending at the same point. */
 .loader-heartbeat__tail {
-  stroke: #7c7c7c;
+  stroke: light-dark(#6d7179, #7d8087);
   stroke-width: 2;
   stroke-dasharray: 34 66;
   animation: loader-heartbeat-tail var(--loader-heartbeat-t) linear infinite;
 }
 
 .loader-heartbeat__head {
-  stroke: #f6f6f6;
+  stroke: light-dark(#373a40, #f1f2f3);
   stroke-width: 2.2;
   stroke-dasharray: 10 90;
   stroke-dashoffset: -24;
@@ -46,8 +46,8 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #f6f6f6;
-  box-shadow: 0 0 8px 1px rgba(246, 246, 246, 0.7);
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 0 8px 1px light-dark(rgba(55, 58, 64, 0.7), rgba(241, 242, 243, 0.7));
   offset-path: path('M0 22H32L35 15L39 30L44 5L49 34L53 22H100');
   offset-anchor: 50% 50%;
   offset-rotate: 0deg;

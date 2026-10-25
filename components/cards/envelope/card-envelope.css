@@ -15,7 +15,7 @@
   position: absolute;
   inset: 0;
   border-radius: 6px;
-  background: #3a3a3a;
+  background: light-dark(#dbdde1, #2e3035);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
 }
 
@@ -29,20 +29,20 @@
   height: 96px;
   padding: 12px 12px 0;
   border-radius: 4px;
-  background: #f6f6f6;
+  background: light-dark(#373a40, #f1f2f3);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-envelope__title {
-  color: #111111;
+  color: light-dark(#fbfcfd, #121417);
   font-size: 14px;
   font-weight: 600;
 }
 
 .card-envelope__text {
   margin-top: 3px;
-  color: #4d4d4d;
+  color: light-dark(#cbced3, #393c41);
   font-size: 11px;
 }
 
@@ -52,7 +52,7 @@
   inset: 0;
   z-index: 2;
   border-radius: 6px;
-  background: linear-gradient(to top, #a7a7a7, #c9c9c9);
+  background: linear-gradient(to top, light-dark(#5f626a, #a7abb2), light-dark(#50535b, #c6c8cd));
   clip-path: polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -73,7 +73,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, #ededed, #c9c9c9);
+  background: linear-gradient(to bottom, light-dark(#42454c, #e5e6e9), light-dark(#50535b, #c6c8cd));
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 
@@ -85,7 +85,7 @@
   height: 18px;
   margin-left: -9px;
   border-radius: 50%;
-  background: radial-gradient(circle at 40% 35%, #4d4d4d, #111111);
+  background: radial-gradient(circle at 40% 35%, light-dark(#cbced3, #393c41), light-dark(#fbfcfd, #121417));
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   transition: opacity 0.2s 0.4s;
 }
@@ -110,7 +110,7 @@
 }
 
 .card-envelope:focus-visible .card-envelope__back {
-  outline: 2px solid #ededed;
+  outline: 2px solid light-dark(#42454c, #e5e6e9);
   outline-offset: 4px;
 }
 

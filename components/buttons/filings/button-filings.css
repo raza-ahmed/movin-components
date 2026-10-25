@@ -6,10 +6,10 @@
   height: 64px;
   padding: 0;
   overflow: hidden;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 14px;
-  background: #111111;
-  color: #ededed;
+  background: light-dark(#fbfcfd, #121417);
+  color: light-dark(#42454c, #e5e6e9);
   font: inherit;
   font-size: 15px;
   font-weight: 600;
@@ -19,11 +19,11 @@
 }
 
 .btn-filings:hover {
-  border-color: #7c7c7c;
+  border-color: light-dark(#6d7179, #7d8087);
 }
 
 .btn-filings:focus-visible {
-  outline: 2px solid #ededed;
+  outline: 2px solid light-dark(#42454c, #e5e6e9);
   outline-offset: 4px;
 }
 
@@ -41,7 +41,7 @@
   width: 11px;
   height: 2px;
   border-radius: 1px;
-  background: linear-gradient(90deg, #4d4d4d 50%, #ededed 50%);
+  background: linear-gradient(90deg, light-dark(#cbced3, #393c41) 50%, light-dark(#42454c, #e5e6e9) 50%);
   opacity: var(--btn-filings-o, 0.45);
   transform: rotate(var(--btn-filings-a, 0deg)) scaleX(var(--btn-filings-s, 0.8));
   transition: transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 1), opacity 0.4s;
@@ -51,8 +51,8 @@
   position: relative;
   padding: 4px 12px;
   border-radius: 8px;
-  background: #111111;
-  box-shadow: 0 0 14px 8px #111111;
+  background: light-dark(#fbfcfd, #121417);
+  box-shadow: 0 0 14px 8px light-dark(#fbfcfd, #121417);
   pointer-events: none;
 }
 

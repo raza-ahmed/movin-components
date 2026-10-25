@@ -13,7 +13,7 @@
   height: 5px;
   margin: -2.5px 0 0 -2.5px;
   border-radius: 50%;
-  background: rgba(167, 167, 167, 0.65);
+  background: light-dark(rgba(95, 98, 106, 0.65), rgba(167, 171, 178, 0.65));
   opacity: 0;
   pointer-events: none;
   transition: opacity 250ms ease;
@@ -22,7 +22,7 @@
   width: 8px;
   height: 8px;
   margin: -4px 0 0 -4px;
-  background: #a7a7a7;
+  background: light-dark(#5f626a, #a7abb2);
 }
 .btn-orbit-particles__dot:nth-child(2) { animation-delay: -0.3s; }
 .btn-orbit-particles__dot:nth-child(3) { animation-delay: -0.6s; }
@@ -40,17 +40,17 @@
   position: relative;
   z-index: 1;
   padding: 12px 32px;
-  border: 1px solid #7c7c7c;
+  border: 1px solid light-dark(#6d7179, #7d8087);
   border-radius: 8px;
-  background: #282828;
-  color: #c9c9c9;
+  background: light-dark(#ebedf0, #232529);
+  color: light-dark(#50535b, #c6c8cd);
   font: inherit;
   font-weight: 600;
   letter-spacing: 0.05em;
   cursor: pointer;
 }
 .btn-orbit-particles__button:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 @keyframes btn-orbit-particles {

@@ -9,21 +9,21 @@ const css = `
     gap: 8px;
     width: 100%;
     max-width: 320px;
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 13px;
   }
 
   .field-drop__box {
     position: relative;
     display: block;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 10px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     transition: border-color 0.2s;
   }
 
   .field-drop__box:focus-within {
-    border-color: #a7a7a7;
+    border-color: light-dark(#5f626a, #a7abb2);
   }
 
   /* Input and mirror share every metric so the letters sit exactly on the
@@ -48,15 +48,15 @@ const css = `
     outline: none;
     background: transparent;
     color: transparent;
-    caret-color: #ededed;
+    caret-color: light-dark(#42454c, #e5e6e9);
   }
 
   .field-drop__input::placeholder {
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
   }
 
   .field-drop__input::selection {
-    background: #4d4d4d;
+    background: light-dark(#cbced3, #393c41);
   }
 
   .field-drop__mirror {
@@ -66,7 +66,7 @@ const css = `
     align-items: center;
     overflow: hidden;
     border-radius: inherit;
-    color: #f6f6f6;
+    color: light-dark(#373a40, #f1f2f3);
     white-space: pre;
     pointer-events: none;
   }

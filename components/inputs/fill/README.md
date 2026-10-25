@@ -1,6 +1,6 @@
 # Fill input
 
-On focus, a tinted background layer scales from scaleX(0) to scaleX(1) with transformOrigin left — flooding the input with color from left to right. Border color transitions simultaneously. Pure transform, no opacity flash.
+On focus, a tinted background layer scales from scaleX(0) to scaleX(1) with transformOrigin left, flooding the input with color from left to right. Border color transitions simultaneously. Pure transform, no opacity flash.
 
 Live preview: https://movin.design/components/inputs/fill/
 

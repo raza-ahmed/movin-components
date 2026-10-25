@@ -1,11 +1,11 @@
 "use client";
 
 const BARS = [
-  { color: '#7c7c7c', delay: '0ms' },
-  { color: '#a7a7a7', delay: '100ms' },
-  { color: '#f6f6f6', delay: '200ms' },
-  { color: '#a7a7a7', delay: '300ms' },
-  { color: '#7c7c7c', delay: '400ms' },
+  { color: 'light-dark(#6d7179, #7d8087)', delay: '0ms' },
+  { color: 'light-dark(#5f626a, #a7abb2)', delay: '100ms' },
+  { color: 'light-dark(#373a40, #f1f2f3)', delay: '200ms' },
+  { color: 'light-dark(#5f626a, #a7abb2)', delay: '300ms' },
+  { color: 'light-dark(#6d7179, #7d8087)', delay: '400ms' },
 ];
 
 export function WaveBars({ label = "Loading" }: { label?: string }) {

@@ -5,7 +5,7 @@ const css = `
     display: inline-flex;
     align-items: flex-end;
     gap: 12px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -41,14 +41,14 @@ const css = `
     box-sizing: border-box;
     width: 28px;
     height: 28px;
-    border: 2px solid #4d4d4d;
+    border: 2px solid light-dark(#cbced3, #393c41);
     border-radius: 7px;
-    background: #111111;
+    background: light-dark(#fbfcfd, #121417);
     transition: background-color 0.25s, border-color 0.25s;
   }
 
   .cb-sprout__input:focus-visible + .cb-sprout__pot .cb-sprout__box {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 
@@ -56,7 +56,7 @@ const css = `
     width: 18px;
     height: 18px;
     fill: none;
-    stroke: #111111;
+    stroke: light-dark(#fbfcfd, #121417);
     stroke-width: 2.4;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -83,14 +83,14 @@ const css = `
 
   .cb-sprout__stem {
     fill: none;
-    stroke: #a7a7a7;
+    stroke: light-dark(#5f626a, #a7abb2);
     stroke-width: 2;
     stroke-linecap: round;
     transition: stroke-dashoffset 0.2s ease-in 0.1s;
   }
 
   .cb-sprout__leaf {
-    fill: #ededed;
+    fill: light-dark(#42454c, #e5e6e9);
     transform: scale(0);
     transition: transform 0.2s ease-in;
   }
@@ -104,8 +104,8 @@ const css = `
   }
 
   .cb-sprout__input:checked + .cb-sprout__pot .cb-sprout__box {
-    border-color: #ededed;
-    background: #ededed;
+    border-color: light-dark(#42454c, #e5e6e9);
+    background: light-dark(#42454c, #e5e6e9);
   }
 
   .cb-sprout__input:checked + .cb-sprout__pot .cb-sprout__tick {

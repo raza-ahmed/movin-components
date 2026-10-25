@@ -2,10 +2,10 @@
   position: relative;
   padding: 12px 32px;
   overflow: hidden;
-  border: 1px solid rgba(246, 246, 246, 0.12);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12));
   border-radius: 8px;
-  background: #202020;
-  color: #f6f6f6;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-weight: 500;
   letter-spacing: 0.025em;
@@ -13,15 +13,15 @@
   transition: border-color 250ms;
 }
 .btn-spotlight:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
-.btn-spotlight:hover { border-color: rgba(246, 246, 246, 0.28); }
+.btn-spotlight:hover { border-color: light-dark(rgba(55, 58, 64, 0.28), rgba(241, 242, 243, 0.28)); }
 /* The light: centred on the cursor (the script writes its position), faded in on hover. */
 .btn-spotlight__light {
   position: absolute;
   inset: 0;
-  background: radial-gradient(70px circle at var(--btn-spotlight-x, 50%) var(--btn-spotlight-y, 50%), rgba(246, 246, 246, 0.26), transparent 70%);
+  background: radial-gradient(70px circle at var(--btn-spotlight-x, 50%) var(--btn-spotlight-y, 50%), light-dark(rgba(55, 58, 64, 0.26), rgba(241, 242, 243, 0.26)), transparent 70%);
   opacity: 0;
   pointer-events: none;
   transition: opacity 250ms;

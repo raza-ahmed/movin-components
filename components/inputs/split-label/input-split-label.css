@@ -22,7 +22,7 @@
 }
 .field-split-label__word {
   display: inline-block;
-  color: #a7a7a7;
+  color: light-dark(#5f626a, #a7abb2);
   transform-origin: left;
   transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), color 250ms ease;
   transition-delay: calc((var(--field-split-label-n) - 1 - var(--field-split-label-i)) * 45ms);
@@ -30,7 +30,7 @@
 .field-split-label:focus-within .field-split-label__word,
 .field-split-label:has(.field-split-label__input:not(:placeholder-shown)) .field-split-label__word {
   font-weight: 500;
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
   transform: translate(var(--field-split-label-shift, 0px), -36px) scale(0.8);
   transition-delay: calc(var(--field-split-label-i) * 45ms);
 }
@@ -39,21 +39,21 @@
   box-sizing: border-box;
   width: 100%;
   padding: 0 14px;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 10px;
   outline: none;
-  background: rgba(246, 246, 246, 0.04);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   height: 46px;
   font-size: 14px;
   transition: border-color 250ms;
 }
-.field-split-label__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-split-label__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
 .field-split-label__input:focus,
-.field-split-label__input:not(:placeholder-shown) { border-color: #a7a7a7; }
+.field-split-label__input:not(:placeholder-shown) { border-color: light-dark(#5f626a, #a7abb2); }
 
 @media (prefers-reduced-motion: reduce) {
   .field-split-label,

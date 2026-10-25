@@ -1,6 +1,6 @@
 # Stack card
 
-Three layered cards sit in a tight stack at rest. On hover they fan outward — back card rotates −6° and slides left, middle rotates +5° and slides right, front card lifts upward — using a spring cubic-bezier that physically overshoots before settling.
+Three layered cards sit in a tight stack at rest. On hover they fan outward (back card rotates −6° and slides left, middle rotates +5° and slides right, front card lifts upward), using a spring cubic-bezier that physically overshoots before settling.
 
 Live preview: https://movin.design/components/cards/stack/
 

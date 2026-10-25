@@ -5,7 +5,7 @@ const css = `
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -28,7 +28,7 @@ const css = `
   }
 
   .toggle-seesaw__input:focus-visible + .toggle-seesaw__rig {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 
@@ -40,7 +40,7 @@ const css = `
     width: 76px;
     height: 8px;
     border-radius: 4px;
-    background: #4d4d4d;
+    background: light-dark(#cbced3, #393c41);
     transform: rotate(-9deg);
     transition: transform 0.3s cubic-bezier(0.3, 1.5, 0.5, 1), background-color 0.3s;
   }
@@ -52,7 +52,7 @@ const css = `
     width: 18px;
     height: 18px;
     margin-left: -9px;
-    background: #3a3a3a;
+    background: light-dark(#dbdde1, #2e3035);
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
   }
 
@@ -65,12 +65,12 @@ const css = `
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: linear-gradient(90deg, transparent 6px, #7c7c7c 6px 10px, transparent 10px), radial-gradient(circle at 35% 30%, #f6f6f6, #c9c9c9);
+    background: linear-gradient(90deg, transparent 6px, light-dark(#6d7179, #7d8087) 6px 10px, transparent 10px), radial-gradient(circle at 35% 30%, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd));
     transition: transform 0.6s cubic-bezier(0.5, 0, 0.6, 1.2) 0.08s;
   }
 
   .toggle-seesaw__input:checked + .toggle-seesaw__rig .toggle-seesaw__beam {
-    background: #c9c9c9;
+    background: light-dark(#50535b, #c6c8cd);
     transform: rotate(9deg);
   }
 

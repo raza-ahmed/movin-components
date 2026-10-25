@@ -1,6 +1,6 @@
 # Flip toggle
 
-The thumb squishes flat at mid-travel then snaps back — like a coin flipping — as it moves between positions. Bright track on active state. No dependencies.
+The thumb squishes flat at mid-travel then snaps back (like a coin flipping) as it moves between positions. Bright track on active state. No dependencies.
 
 Live preview: https://movin.design/components/toggles/flip/
 

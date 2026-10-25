@@ -5,7 +5,7 @@ const css = `
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -25,14 +25,14 @@ const css = `
     box-sizing: border-box;
     width: 34px;
     height: 34px;
-    border: 2px solid #4d4d4d;
+    border: 2px solid light-dark(#cbced3, #393c41);
     border-radius: 50%;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     transition: background-color 0.3s, border-color 0.3s, scale 0.45s cubic-bezier(0.3, 1.8, 0.5, 1);
   }
 
   .cb-smile__input:focus-visible + .cb-smile__face {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 
@@ -41,13 +41,13 @@ const css = `
     height: 30px;
     overflow: visible;
     fill: none;
-    stroke: #a7a7a7;
+    stroke: light-dark(#5f626a, #a7abb2);
     stroke-width: 2;
     stroke-linecap: round;
   }
 
   .cb-smile__dot {
-    fill: #a7a7a7;
+    fill: light-dark(#5f626a, #a7abb2);
     stroke: none;
     transform-box: fill-box;
     transform-origin: center;
@@ -68,8 +68,8 @@ const css = `
   }
 
   .cb-smile__input:checked + .cb-smile__face {
-    border-color: #ededed;
-    background: #ededed;
+    border-color: light-dark(#42454c, #e5e6e9);
+    background: light-dark(#42454c, #e5e6e9);
     scale: 1.12;
   }
 
@@ -78,7 +78,7 @@ const css = `
   }
 
   .cb-smile__input:checked + .cb-smile__face svg {
-    stroke: #111111;
+    stroke: light-dark(#fbfcfd, #121417);
   }
 
   /* Eyes squeeze shut into arcs; the straight mouth shrinks away as the smile draws. */

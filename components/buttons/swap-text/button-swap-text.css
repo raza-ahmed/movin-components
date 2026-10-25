@@ -5,15 +5,15 @@
   overflow: hidden;
   border: none;
   border-radius: 8px;
-  background: #4d4d4d;
-  color: #f6f6f6;
+  background: light-dark(#cbced3, #393c41);
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-weight: 500;
   letter-spacing: 0.025em;
   cursor: pointer;
 }
 .btn-swap-text:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 /* The label rolls up and out; the second one rolls up into its place. */

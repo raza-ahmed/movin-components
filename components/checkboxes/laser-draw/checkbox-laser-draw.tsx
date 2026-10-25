@@ -12,9 +12,9 @@ export function LaserDrawCheckbox({ label }: { label?: string }) {
     el.id = id;
     el.textContent = `
       @keyframes laser-glow {
-        0%   { filter: drop-shadow(0 0 2px #a7a7a7) drop-shadow(0 0 6px #a7a7a7); }
-        50%  { filter: drop-shadow(0 0 5px #a7a7a7) drop-shadow(0 0 14px #a7a7a7) drop-shadow(0 0 24px rgba(167,167,167,0.4)); }
-        100% { filter: drop-shadow(0 0 3px #a7a7a7) drop-shadow(0 0 8px #a7a7a7); }
+        0%   { filter: drop-shadow(0 0 2px light-dark(#5f626a, #a7abb2)) drop-shadow(0 0 6px light-dark(#5f626a, #a7abb2)); }
+        50%  { filter: drop-shadow(0 0 5px light-dark(#5f626a, #a7abb2)) drop-shadow(0 0 14px light-dark(#5f626a, #a7abb2)) drop-shadow(0 0 24px light-dark(rgba(95,98,106,0.4), rgba(167,171,178,0.4))); }
+        100% { filter: drop-shadow(0 0 3px light-dark(#5f626a, #a7abb2)) drop-shadow(0 0 8px light-dark(#5f626a, #a7abb2)); }
       }
       @media (prefers-reduced-motion: reduce) { [data-cb="laser-draw"] * { animation: none !important; transition: none !important; } }
     `;
@@ -31,20 +31,20 @@ export function LaserDrawCheckbox({ label }: { label?: string }) {
           data-cb="laser-draw"
           className="flex h-7 w-7 items-center justify-center rounded-[7px] border-2"
           style={{
-            background: on ? 'rgba(167,167,167,0.08)' : 'transparent',
-            borderColor: on ? '#a7a7a7' : 'rgba(246,246,246,0.25)',
+            background: on ? 'light-dark(rgba(95,98,106,0.08), rgba(167,171,178,0.08))' : 'transparent',
+            borderColor: on ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25))',
             transition: 'background 300ms ease, border-color 300ms ease',
           }}
         >
           <svg key={drawKey} width="13" height="10" viewBox="0 0 13 10" fill="none" aria-hidden="true"
-            style={{ animation: on ? 'laser-glow 800ms ease-in-out infinite' : 'none', filter: on ? 'drop-shadow(0 0 3px #a7a7a7) drop-shadow(0 0 8px #a7a7a7)' : 'none', transition: 'filter 300ms ease' }}>
-            <path d="M1.5 5L5 8.5L11.5 1.5" stroke="#a7a7a7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+            style={{ animation: on ? 'laser-glow 800ms ease-in-out infinite' : 'none', filter: on ? 'drop-shadow(0 0 3px light-dark(#5f626a, #a7abb2)) drop-shadow(0 0 8px light-dark(#5f626a, #a7abb2))' : 'none', transition: 'filter 300ms ease' }}>
+            <path d="M1.5 5L5 8.5L11.5 1.5" stroke="light-dark(#5f626a, #a7abb2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
               pathLength="1" strokeDasharray="1" strokeDashoffset={on ? 0 : 1}
               style={{ transition: on ? 'stroke-dashoffset 420ms cubic-bezier(0.16, 1, 0.3, 1)' : 'stroke-dashoffset 200ms ease-in' }} />
           </svg>
         </span>
       </div>
-      {label && <span className="select-none text-sm text-[#f6f6f6]/80">{label}</span>}
+      {label && <span className="select-none text-sm text-[color:light-dark(#373a40,#f1f2f3)]/80">{label}</span>}
     </label>
   );
 }

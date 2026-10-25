@@ -8,7 +8,7 @@
 }
 .radio-pillow__option { cursor: pointer; }
 .radio-pillow__option:has(.radio-pillow__input:focus-visible) {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -19,7 +19,7 @@
   gap: 12px;
   padding: 16px;
   border-radius: 16px;
-  background: #282828;
+  background: light-dark(#ebedf0, #232529);
 }
 .radio-pillow__option {
   display: flex;
@@ -27,8 +27,8 @@
   gap: 12px;
   padding: 12px 16px;
   border-radius: 12px;
-  background: #282828;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px #3a3a3a;
+  background: light-dark(#ebedf0, #232529);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px light-dark(#dbdde1, #2e3035);
   transition: box-shadow 200ms;
 }
 .radio-pillow__button {
@@ -39,8 +39,8 @@
   height: 22px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: #282828;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), -3px -3px 6px #3a3a3a;
+  background: light-dark(#ebedf0, #232529);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), -3px -3px 6px light-dark(#dbdde1, #2e3035);
   transition: box-shadow 200ms;
 }
 .radio-pillow__dot {
@@ -53,14 +53,14 @@
 }
 .radio-pillow__label {
   font-size: 14px;
-  color: #a7a7a7;
+  color: light-dark(#5f626a, #a7abb2);
   user-select: none;
   transition: color 200ms;
 }
-.radio-pillow__option:has(.radio-pillow__input:checked) { box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.5), inset -4px -4px 8px #3a3a3a; }
-.radio-pillow__option:has(.radio-pillow__input:checked) .radio-pillow__button { box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5), inset -3px -3px 6px #3a3a3a; }
-.radio-pillow__option:has(.radio-pillow__input:checked) .radio-pillow__dot { background: #f6f6f6; transform: scale(1); }
-.radio-pillow__option:has(.radio-pillow__input:checked) .radio-pillow__label { font-weight: 600; color: #f6f6f6; }
+.radio-pillow__option:has(.radio-pillow__input:checked) { box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.5), inset -4px -4px 8px light-dark(#dbdde1, #2e3035); }
+.radio-pillow__option:has(.radio-pillow__input:checked) .radio-pillow__button { box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5), inset -3px -3px 6px light-dark(#dbdde1, #2e3035); }
+.radio-pillow__option:has(.radio-pillow__input:checked) .radio-pillow__dot { background: light-dark(#373a40, #f1f2f3); transform: scale(1); }
+.radio-pillow__option:has(.radio-pillow__input:checked) .radio-pillow__label { font-weight: 600; color: light-dark(#373a40, #f1f2f3); }
 
 @media (prefers-reduced-motion: reduce) {
   .radio-pillow,

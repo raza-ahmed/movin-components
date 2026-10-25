@@ -9,10 +9,10 @@ export function IconShiftInput(props: React.InputHTMLAttributes<HTMLInputElement
   return (
     <div
       className={[
-        "flex items-center overflow-hidden rounded-lg border bg-[#f6f6f6]/[0.05] transition-all duration-200",
+        "flex items-center overflow-hidden rounded-lg border bg-[color:light-dark(#373a40,#f1f2f3)]/[0.05] transition-all duration-200",
         focused
-          ? "border-[#a7a7a7] shadow-[0_0_0_3px_rgba(167,167,167,0.15)]"
-          : "border-[#f6f6f6]/15 shadow-none",
+          ? "border-[color:light-dark(#5f626a,#a7abb2)] shadow-[0_0_0_3px_light-dark(rgba(95,98,106,0.15), rgba(167,171,178,0.15))]"
+          : "border-[color:light-dark(#373a40,#f1f2f3)]/15 shadow-none",
       ].join(" ")}
     >
       <div
@@ -25,13 +25,13 @@ export function IconShiftInput(props: React.InputHTMLAttributes<HTMLInputElement
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
           <circle
             cx="6.5" cy="6.5" r="4"
-            stroke={focused ? "#a7a7a7" : "rgba(246,246,246,0.3)"}
+            stroke={focused ? "light-dark(#5f626a, #a7abb2)" : "light-dark(rgba(55,58,64,0.3), rgba(241,242,243,0.3))"}
             strokeWidth="1.5"
             style={{ transition: "stroke 200ms ease" }}
           />
           <line
             x1="9.5" y1="9.5" x2="13" y2="13"
-            stroke={focused ? "#a7a7a7" : "rgba(246,246,246,0.3)"}
+            stroke={focused ? "light-dark(#5f626a, #a7abb2)" : "light-dark(rgba(55,58,64,0.3), rgba(241,242,243,0.3))"}
             strokeWidth="1.5" strokeLinecap="round"
             style={{ transition: "stroke 200ms ease" }}
           />
@@ -41,7 +41,7 @@ export function IconShiftInput(props: React.InputHTMLAttributes<HTMLInputElement
         {...props}
         onFocus={(e) => { setFocused(true); props.onFocus?.(e); }}
         onBlur={(e) => { setFocused(false); props.onBlur?.(e); }}
-        className="w-full bg-transparent px-3 py-2.5 text-[#f6f6f6] outline-none placeholder:text-[#f6f6f6]/[0.55]"
+        className="w-full bg-transparent px-3 py-2.5 text-[color:light-dark(#373a40,#f1f2f3)] outline-none placeholder:text-[color:light-dark(#373a40ba,#f1f2f39e)]"
       />
     </div>
   );

@@ -11,7 +11,7 @@ const css = `
   }
   @keyframes gr-spin { to { --gr-angle: 360deg; } }
   .gr-ring-active {
-    background: conic-gradient(from var(--gr-angle), #7c7c7c, #7c7c7c, #7c7c7c, #a7a7a7, #7c7c7c);
+    background: conic-gradient(from var(--gr-angle), light-dark(#6d7179, #7d8087), light-dark(#6d7179, #7d8087), light-dark(#6d7179, #7d8087), light-dark(#5f626a, #a7abb2), light-dark(#6d7179, #7d8087));
     animation: gr-spin 2s linear infinite;
   }
   @media (prefers-reduced-motion: reduce) {
@@ -41,7 +41,7 @@ export function GradientRingInput(props: React.InputHTMLAttributes<HTMLInputElem
         {...props}
         onFocus={(e) => { setFocused(true); props.onFocus?.(e); }}
         onBlur={(e) => { setFocused(false); props.onBlur?.(e); }}
-        className="relative w-full rounded-lg border border-[#f6f6f6]/15 bg-[#111111] px-4 py-2.5 text-[#f6f6f6] outline-none placeholder:text-[#f6f6f6]/[0.55]"
+        className="relative w-full rounded-lg border border-[color:light-dark(#373a40,#f1f2f3)]/15 bg-[color:light-dark(#fbfcfd,#121417)] px-4 py-2.5 text-[color:light-dark(#373a40,#f1f2f3)] outline-none placeholder:text-[color:light-dark(#373a40ba,#f1f2f39e)]"
       />
     </div>
   );

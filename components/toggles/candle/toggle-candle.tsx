@@ -7,7 +7,7 @@ const css = `
     display: inline-flex;
     align-items: flex-end;
     gap: 12px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -30,7 +30,7 @@ const css = `
   }
 
   .toggle-candle__input:focus-visible + .toggle-candle__candle {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 
@@ -41,7 +41,7 @@ const css = `
     width: 22px;
     height: 46px;
     border-radius: 4px 4px 3px 3px;
-    background: linear-gradient(90deg, #a7a7a7, #ededed 45%, #c9c9c9);
+    background: linear-gradient(90deg, light-dark(#5f626a, #a7abb2), light-dark(#42454c, #e5e6e9) 45%, light-dark(#50535b, #c6c8cd));
   }
 
   /* A drip down the side. */
@@ -53,7 +53,7 @@ const css = `
     width: 4px;
     height: 11px;
     border-radius: 0 0 2px 2px;
-    background: #f6f6f6;
+    background: light-dark(#373a40, #f1f2f3);
   }
 
   .toggle-candle__wick {
@@ -63,7 +63,7 @@ const css = `
     width: 2px;
     height: 7px;
     border-radius: 1px;
-    background: #4d4d4d;
+    background: light-dark(#cbced3, #393c41);
   }
 
   /* The flame grows from the wick's tip; while lit it flickers. */
@@ -74,7 +74,7 @@ const css = `
     width: 14px;
     height: 24px;
     border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
-    background: radial-gradient(circle at 50% 72%, #f6f6f6 0 22%, #c9c9c9 48%, rgba(201, 201, 201, 0) 72%);
+    background: radial-gradient(circle at 50% 72%, light-dark(#373a40, #f1f2f3) 0 22%, light-dark(#50535b, #c6c8cd) 48%, light-dark(rgba(80, 83, 91, 0), rgba(198, 200, 205, 0)) 72%);
     transform: scale(0);
     transform-origin: 50% 90%;
     transition: transform 0.18s ease-in;
@@ -88,7 +88,7 @@ const css = `
     height: 70px;
     margin-left: -35px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(237, 237, 237, 0.28), rgba(237, 237, 237, 0) 65%);
+    background: radial-gradient(circle, light-dark(rgba(66, 69, 76, 0.28), rgba(229, 230, 233, 0.28)), light-dark(rgba(66, 69, 76, 0), rgba(229, 230, 233, 0)) 65%);
     opacity: 0;
     transition: opacity 0.3s;
   }
@@ -133,7 +133,7 @@ const css = `
     left: 17px;
     width: 10px;
     height: 30px;
-    border-left: 2px solid rgba(201, 201, 201, 0.6);
+    border-left: 2px solid light-dark(rgba(80, 83, 91, 0.6), rgba(198, 200, 205, 0.6));
     border-radius: 50% 0 0 50%;
     opacity: 0;
   }

@@ -10,13 +10,13 @@
   inherits: true;
 }
 .btn-gradient-border {
-  --btn-gradient-border-hi: #a7a7a7;
+  --btn-gradient-border-hi: light-dark(#5f626a, #a7abb2);
   position: relative;
   isolation: isolate;
   display: inline-block;
   padding: 1px;
   border-radius: 10px;
-  background: conic-gradient(from var(--btn-gradient-border-angle), #4d4d4d, var(--btn-gradient-border-hi) 15%, #4d4d4d 35%, #4d4d4d);
+  background: conic-gradient(from var(--btn-gradient-border-angle), light-dark(#cbced3, #393c41), var(--btn-gradient-border-hi) 15%, light-dark(#cbced3, #393c41) 35%, light-dark(#cbced3, #393c41));
   animation: btn-gradient-border 3s linear infinite;
   transition: --btn-gradient-border-hi 300ms ease;
 }
@@ -32,15 +32,15 @@
   opacity: 0;
   transition: opacity 300ms ease;
 }
-.btn-gradient-border:hover { --btn-gradient-border-hi: #f6f6f6; }
+.btn-gradient-border:hover { --btn-gradient-border-hi: light-dark(#373a40, #f1f2f3); }
 .btn-gradient-border:hover::before { opacity: 0.75; }
 .btn-gradient-border__button {
   display: block;
   padding: 12px 32px;
   border: none;
   border-radius: 9px;
-  background: #111111;
-  color: #f6f6f6;
+  background: light-dark(#fbfcfd, #121417);
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-weight: 500;
   letter-spacing: 0.025em;
@@ -48,7 +48,7 @@
   transition: transform 150ms ease;
 }
 .btn-gradient-border__button:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .btn-gradient-border__button:active { transform: scale(0.97); }

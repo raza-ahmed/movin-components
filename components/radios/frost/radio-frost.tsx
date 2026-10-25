@@ -22,11 +22,11 @@ export function FrostRadioGroup() {
                 layoutId="frost-pill"
                 className="absolute inset-0 rounded-[10px]"
                 style={{
-                  background: 'rgba(246,246,246,0.10)',
+                  background: 'light-dark(rgba(55,58,64,0.10), rgba(241,242,243,0.10))',
                   backdropFilter: 'blur(12px)',
                   WebkitBackdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(246,246,246,0.18)',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.25), inset 0 1px 0 rgba(246,246,246,0.15)',
+                  border: '1px solid light-dark(rgba(55,58,64,0.18), rgba(241,242,243,0.18))',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.25), inset 0 1px 0 light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15))',
                 }}
                 transition={{ type: 'spring', bounce: 0.2, duration: 0.45 }}
               />
@@ -41,11 +41,11 @@ export function FrostRadioGroup() {
             />
             <span
               className="relative z-10 flex h-[18px] w-[18px] flex-shrink-0 items-center justify-center rounded-full border-2 transition-colors duration-200"
-              style={{ borderColor: checked ? 'rgba(246,246,246,0.7)' : 'rgba(246,246,246,0.2)' }}
+              style={{ borderColor: checked ? 'light-dark(rgba(55,58,64,0.7), rgba(241,242,243,0.7))' : 'light-dark(rgba(55,58,64,0.2), rgba(241,242,243,0.2))' }}
             >
               <span style={{
                 width: 7, height: 7, borderRadius: '50%',
-                background: 'rgba(246,246,246,0.9)',
+                background: 'light-dark(rgba(55,58,64,0.9), rgba(241,242,243,0.9))',
                 transform: checked ? 'scale(1)' : 'scale(0)',
                 transition: 'transform 240ms cubic-bezier(0.34,1.56,0.64,1)',
               }} />
@@ -54,7 +54,7 @@ export function FrostRadioGroup() {
               className="relative z-10 select-none text-sm transition-colors duration-200"
               style={{
                 fontWeight: checked ? 500 : 400,
-                color: checked ? 'rgba(246,246,246,0.92)' : 'rgba(246,246,246,0.55)',
+                color: checked ? 'light-dark(rgba(55,58,64,0.92), rgba(241,242,243,0.92))' : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))',
               }}
             >
               {opt}

@@ -20,7 +20,7 @@ const css = `
     right: 6px;
     height: 2px;
     border-radius: 1px;
-    background: #4d4d4d;
+    background: light-dark(#cbced3, #393c41);
   }
 
   /* Each ball hangs from a string drawn by ::before; it pivots at the bar. */
@@ -38,7 +38,7 @@ const css = `
     left: 50%;
     width: 1px;
     height: 33px;
-    background: #4d4d4d;
+    background: light-dark(#cbced3, #393c41);
   }
 
   .loader-cradle__ball::after {
@@ -49,7 +49,7 @@ const css = `
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 30%, #f6f6f6, #a7a7a7 70%);
+    background: radial-gradient(circle at 35% 30%, light-dark(#373a40, #f1f2f3), light-dark(#5f626a, #a7abb2) 70%);
   }
 
   /* The first swings out for the first half, the last for the second. Ease-out

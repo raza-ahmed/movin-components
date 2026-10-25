@@ -10,18 +10,18 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 14px;
-  border: 2px solid #111111;
+  border: 2px solid light-dark(#fbfcfd, #121417);
   border-radius: 0;
   outline: none;
-  background: #f6f6f6;
+  background: light-dark(#373a40, #f1f2f3);
   box-shadow: 8px 8px 0 #000;
-  color: #111111;
+  color: light-dark(#fbfcfd, #121417);
   font: inherit;
   font-size: 15px;
   font-weight: 600;
   transition: box-shadow var(--field-brutalist-ease), transform var(--field-brutalist-ease), border var(--field-brutalist-ease), padding var(--field-brutalist-ease);
 }
-.field-brutalist__input::placeholder { color: rgba(17, 17, 17, 0.4); }
+.field-brutalist__input::placeholder { color: light-dark(rgba(251, 252, 253, 0.4), rgba(18, 20, 23, 0.4)); }
 .field-brutalist__input:focus {
   padding: 9px 13px;
   border-width: 3px;

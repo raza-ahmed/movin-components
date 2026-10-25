@@ -29,14 +29,14 @@ export function XpGainButton({ children }: { children: React.ReactNode }) {
       <button
         type="button"
         onClick={handleClick}
-        className="relative cursor-pointer rounded border border-[#a7a7a7] bg-[#3a3a3a] px-7 py-3 font-mono font-semibold tracking-wider text-[#c9c9c9]"
+        className="relative cursor-pointer rounded border border-[color:light-dark(#5f626a,#a7abb2)] bg-[color:light-dark(#dbdde1,#2e3035)] px-7 py-3 font-mono font-semibold tracking-wider text-[color:light-dark(#50535b,#c6c8cd)]"
       >
         {items.map(({ id, x }) => (
           <span
             key={id}
             data-xp-float
-            className="pointer-events-none absolute -translate-x-1/2 whitespace-nowrap text-sm font-semibold text-[#c9c9c9]"
-            style={{ left: x, top: '50%', textShadow: '0 0 8px rgba(201,201,201,0.8)' }}
+            className="pointer-events-none absolute -translate-x-1/2 whitespace-nowrap text-sm font-semibold text-[color:light-dark(#50535b,#c6c8cd)]"
+            style={{ left: x, top: '50%', textShadow: '0 0 8px light-dark(rgba(80,83,91,0.8), rgba(198,200,205,0.8))' }}
           >
             +100 XP
           </span>

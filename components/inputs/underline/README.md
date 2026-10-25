@@ -1,6 +1,6 @@
 # Underline input
 
-Minimal borderless input — a bright line draws from left to right under the field on focus. Pure CSS transform, no dependencies.
+Minimal borderless input: a bright line draws from left to right under the field on focus. Pure CSS transform, no dependencies.
 
 Live preview: https://movin.design/components/inputs/underline/
 

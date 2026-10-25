@@ -1,6 +1,6 @@
 # Gradient Drift card
 
-The card header runs a multi-stop grayscale gradient that slowly drifts left-to-right in a continuous loop — an ambient living colour effect. Pure CSS, no dependencies.
+The card header runs a multi-stop grayscale gradient that slowly drifts left-to-right in a continuous loop: an ambient living colour effect. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/cards/gradient-drift/
 

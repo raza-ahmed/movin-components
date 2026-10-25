@@ -8,12 +8,12 @@ export function SlideFillButton({ children }: { children: React.ReactNode }) {
       type="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative overflow-hidden rounded-lg border border-[#f6f6f6]/25 px-8 py-3 font-medium tracking-wide text-[#f6f6f6] cursor-pointer bg-transparent motion-reduce:[&_span:first-child]:transition-none"
+      className="relative overflow-hidden rounded-lg border border-[color:light-dark(#373a40,#f1f2f3)]/25 px-8 py-3 font-medium tracking-wide text-[color:light-dark(#373a40,#f1f2f3)] cursor-pointer bg-transparent motion-reduce:[&_span:first-child]:transition-none"
     >
       <span
         className="absolute inset-0 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
         style={{
-          background: '#7c7c7c',
+          background: 'light-dark(#6d7179, #7d8087)',
           transform: hovered ? 'translateX(0)' : 'translateX(-100%)',
         }}
       />

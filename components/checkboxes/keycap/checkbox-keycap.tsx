@@ -5,7 +5,7 @@ const css = `
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -29,14 +29,14 @@ const css = `
     height: 48px;
     padding: 6px 8px;
     border-radius: 9px;
-    background: linear-gradient(180deg, #3a3a3a, #282828);
-    box-shadow: inset 0 1px 0 rgba(246, 246, 246, 0.12), inset 0 -2px 0 rgba(17, 17, 17, 0.5), 0 calc(6px - var(--cb-keycap-travel)) 0 #111111, 0 calc(8px - var(--cb-keycap-travel)) 10px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(180deg, light-dark(#dbdde1, #2e3035), light-dark(#ebedf0, #232529));
+    box-shadow: inset 0 1px 0 light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12)), inset 0 -2px 0 light-dark(rgba(251, 252, 253, 0.5), rgba(18, 20, 23, 0.5)), 0 calc(6px - var(--cb-keycap-travel)) 0 light-dark(#fbfcfd, #121417), 0 calc(8px - var(--cb-keycap-travel)) 10px rgba(0, 0, 0, 0.5);
     transform: translateY(var(--cb-keycap-travel));
     transition: transform 0.12s cubic-bezier(0.3, 1.5, 0.5, 1), box-shadow 0.12s cubic-bezier(0.3, 1.5, 0.5, 1);
   }
 
   .cb-keycap__input:focus-visible + .cb-keycap__key {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 4px;
   }
 
@@ -47,7 +47,7 @@ const css = `
     width: 6px;
     height: 3px;
     border-radius: 2px;
-    background: #111111;
+    background: light-dark(#fbfcfd, #121417);
     transition: background-color 0.15s, box-shadow 0.25s;
   }
 
@@ -55,7 +55,7 @@ const css = `
     position: absolute;
     right: 8px;
     bottom: 6px;
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 12px;
     font-weight: 600;
   }
@@ -70,12 +70,12 @@ const css = `
   }
 
   .cb-keycap__input:checked + .cb-keycap__key .cb-keycap__led {
-    background: #f6f6f6;
-    box-shadow: 0 0 6px 1px rgba(246, 246, 246, 0.7), 0 0 14px rgba(246, 246, 246, 0.35);
+    background: light-dark(#373a40, #f1f2f3);
+    box-shadow: 0 0 6px 1px light-dark(rgba(55, 58, 64, 0.7), rgba(241, 242, 243, 0.7)), 0 0 14px light-dark(rgba(55, 58, 64, 0.35), rgba(241, 242, 243, 0.35));
   }
 
   .cb-keycap__input:checked + .cb-keycap__key .cb-keycap__legend {
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
   }
 
   @media (prefers-reduced-motion: reduce) {

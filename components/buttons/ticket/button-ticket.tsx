@@ -10,7 +10,7 @@ const css = `
     border: 0;
     border-radius: 10px;
     background: none;
-    color: #111111;
+    color: light-dark(#fbfcfd, #121417);
     font: inherit;
     cursor: pointer;
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
@@ -18,7 +18,7 @@ const css = `
   }
 
   .btn-ticket:focus-visible {
-    outline: 2px solid #ededed;
+    outline: 2px solid light-dark(#42454c, #e5e6e9);
     outline-offset: 4px;
   }
 
@@ -29,7 +29,7 @@ const css = `
     width: 140px;
     height: 58px;
     border-radius: 10px 0 0 10px;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     font-weight: 600;
     -webkit-mask: radial-gradient(circle 7px at 100% 0, transparent 98%, #000) top / 100% 51% no-repeat, radial-gradient(circle 7px at 100% 100%, transparent 98%, #000) bottom / 100% 51% no-repeat;
@@ -42,8 +42,8 @@ const css = `
     width: 46px;
     height: 58px;
     border-radius: 0 10px 10px 0;
-    background: linear-gradient(to bottom, rgba(17, 17, 17, 0.4) 50%, transparent 0) 0 0 / 1.5px 6px repeat-y, #c9c9c9;
-    color: #4d4d4d;
+    background: linear-gradient(to bottom, light-dark(rgba(251, 252, 253, 0.4), rgba(18, 20, 23, 0.4)) 50%, transparent 0) 0 0 / 1.5px 6px repeat-y, light-dark(#50535b, #c6c8cd);
+    color: light-dark(#cbced3, #393c41);
     font-size: 9px;
     font-weight: 600;
     letter-spacing: 0.16em;

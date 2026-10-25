@@ -30,13 +30,13 @@ export function CubeFaceButton({ children, doneLabel = '✓ DONE' }: { children:
           <button
             type="button"
             onClick={handleClick}
-            className="absolute inset-0 rounded-lg border-none font-semibold text-[#f6f6f6] cursor-pointer bg-gradient-to-br from-[#4d4d4d] to-[#7c7c7c] tracking-wide"
+            className="absolute inset-0 rounded-lg border-none font-semibold text-[color:light-dark(#373a40,#f1f2f3)] cursor-pointer bg-gradient-to-br from-[color:light-dark(#cbced3,#393c41)] to-[color:light-dark(#6d7179,#7d8087)] tracking-wide"
             style={{ backfaceVisibility: 'hidden', transform: 'translateZ(24px)' }}
           >
             {children}
           </button>
           <div
-            className="absolute inset-0 rounded-lg font-semibold text-[#f6f6f6] flex items-center justify-center bg-gradient-to-br from-[#7c7c7c] to-[#a7a7a7] tracking-wide"
+            className="absolute inset-0 rounded-lg font-semibold text-[color:light-dark(#373a40,#f1f2f3)] flex items-center justify-center bg-gradient-to-br from-[color:light-dark(#6d7179,#7d8087)] to-[color:light-dark(#5f626a,#a7abb2)] tracking-wide"
             style={{ backfaceVisibility: 'hidden', transform: 'rotateX(-90deg) translateZ(24px)' }}
           >
             {doneLabel}

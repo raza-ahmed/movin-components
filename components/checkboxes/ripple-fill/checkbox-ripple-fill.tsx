@@ -21,14 +21,14 @@ export function RippleFillCheckbox({ label }: { label?: string }) {
           data-cb="ripple-fill"
           className="relative flex h-7 w-7 items-center justify-center overflow-hidden rounded-[7px] border-2"
           style={{
-            borderColor: on ? '#7c7c7c' : 'rgba(246,246,246,0.25)',
+            borderColor: on ? 'light-dark(#6d7179, #7d8087)' : 'light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25))',
             transition: 'border-color 250ms ease',
           }}
         >
           <span
             className="absolute inset-0"
             style={{
-              background: '#7c7c7c',
+              background: 'light-dark(#6d7179, #7d8087)',
               clipPath: on ? 'circle(75% at 50% 50%)' : 'circle(0% at 50% 50%)',
               transition: on
                 ? 'clip-path 360ms cubic-bezier(0.22, 1, 0.36, 1)'
@@ -45,11 +45,11 @@ export function RippleFillCheckbox({ label }: { label?: string }) {
                 : 'opacity 120ms ease, transform 120ms ease',
             }}
           >
-            <path d="M1.5 5L5 8.5L11.5 1.5" stroke="#f6f6f6" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M1.5 5L5 8.5L11.5 1.5" stroke="light-dark(#373a40, #f1f2f3)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
       </div>
-      {label && <span className="select-none text-sm text-[#f6f6f6]/80">{label}</span>}
+      {label && <span className="select-none text-sm text-[color:light-dark(#373a40,#f1f2f3)]/80">{label}</span>}
     </label>
   );
 }

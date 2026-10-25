@@ -5,7 +5,7 @@ const css = `
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -25,13 +25,13 @@ const css = `
     width: 64px;
     height: 34px;
     border-radius: 9999px;
-    background: #282828;
-    box-shadow: inset 0 0 0 1px #3a3a3a;
+    background: light-dark(#ebedf0, #232529);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
     transition: background-color 0.3s;
   }
 
   .toggle-padlock__input:focus-visible + .toggle-padlock__track {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 
@@ -44,7 +44,7 @@ const css = `
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    background: #4d4d4d;
+    background: light-dark(#cbced3, #393c41);
     transition: transform 0.35s cubic-bezier(0.5, 0, 0.3, 1), background-color 0.3s;
   }
 
@@ -57,7 +57,7 @@ const css = `
   /* Open: the shackle stands raised and swung to the side. */
   .toggle-padlock__shackle {
     fill: none;
-    stroke: #ededed;
+    stroke: light-dark(#42454c, #e5e6e9);
     stroke-width: 2.2;
     stroke-linecap: round;
     transform: translate(3px, -3.5px);
@@ -66,17 +66,17 @@ const css = `
   }
 
   .toggle-padlock__body {
-    fill: #ededed;
+    fill: light-dark(#42454c, #e5e6e9);
     transform-box: fill-box;
     transform-origin: 50% 100%;
   }
 
   .toggle-padlock__input:checked + .toggle-padlock__track {
-    background: #c9c9c9;
+    background: light-dark(#50535b, #c6c8cd);
   }
 
   .toggle-padlock__input:checked + .toggle-padlock__track .toggle-padlock__thumb {
-    background: #111111;
+    background: light-dark(#fbfcfd, #121417);
     transform: translateX(30px);
   }
 

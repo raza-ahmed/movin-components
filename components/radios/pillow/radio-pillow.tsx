@@ -2,9 +2,9 @@
 
 import * as React from "react";
 const OPTIONS = ['Silk', 'Velvet', 'Cotton'];
-const BG = '#282828';
+const BG = 'light-dark(#ebedf0, #232529)';
 const DARK = 'rgba(0,0,0,0.5)';
-const LIGHT = '#3a3a3a';
+const LIGHT = 'light-dark(#dbdde1, #2e3035)';
 
 export function PillowRadioGroup() {
   const [selected, setSelected] = React.useState<string | null>(null);
@@ -40,7 +40,7 @@ export function PillowRadioGroup() {
             >
               <span style={{
                 width:8,height:8,borderRadius:'50%',
-                background: checked ? '#f6f6f6' : 'transparent',
+                background: checked ? 'light-dark(#373a40, #f1f2f3)' : 'transparent',
                 transform: checked ? 'scale(1)' : 'scale(0)',
                 transition: 'transform 200ms cubic-bezier(0.34,1.56,0.64,1), background 200ms ease',
               }}/>
@@ -49,7 +49,7 @@ export function PillowRadioGroup() {
               className="select-none text-sm transition-colors duration-200"
               style={{
                 fontWeight: checked ? 600 : 400,
-                color: checked ? '#f6f6f6' : '#a7a7a7',
+                color: checked ? 'light-dark(#373a40, #f1f2f3)' : 'light-dark(#5f626a, #a7abb2)',
               }}
             >
               {opt}

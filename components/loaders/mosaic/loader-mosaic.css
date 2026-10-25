@@ -10,11 +10,11 @@
   animation: loader-mosaic 1.6s ease-in-out infinite;
 }
 /* Colour + delay ripple out from the corners to the centre. */
-.loader-mosaic > span:nth-child(1), .loader-mosaic > span:nth-child(9) { background: #f6f6f6; }
-.loader-mosaic > span:nth-child(2), .loader-mosaic > span:nth-child(8) { background: #c9c9c9; animation-delay: 100ms; }
-.loader-mosaic > span:nth-child(3), .loader-mosaic > span:nth-child(7) { background: #a7a7a7; animation-delay: 200ms; }
-.loader-mosaic > span:nth-child(4), .loader-mosaic > span:nth-child(6) { background: #7c7c7c; animation-delay: 300ms; }
-.loader-mosaic > span:nth-child(5) { background: #4d4d4d; animation-delay: 400ms; }
+.loader-mosaic > span:nth-child(1), .loader-mosaic > span:nth-child(9) { background: light-dark(#373a40, #f1f2f3); }
+.loader-mosaic > span:nth-child(2), .loader-mosaic > span:nth-child(8) { background: light-dark(#50535b, #c6c8cd); animation-delay: 100ms; }
+.loader-mosaic > span:nth-child(3), .loader-mosaic > span:nth-child(7) { background: light-dark(#5f626a, #a7abb2); animation-delay: 200ms; }
+.loader-mosaic > span:nth-child(4), .loader-mosaic > span:nth-child(6) { background: light-dark(#6d7179, #7d8087); animation-delay: 300ms; }
+.loader-mosaic > span:nth-child(5) { background: light-dark(#cbced3, #393c41); animation-delay: 400ms; }
 @keyframes loader-mosaic {
   0%, 100% { opacity: 0.15; transform: scale(0.75); }
   50% { opacity: 1; transform: scale(1); }

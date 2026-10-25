@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  color: #a7a7a7;
+  color: light-dark(#5f626a, #a7abb2);
   font-size: 12px;
 }
 
@@ -13,7 +13,7 @@
   width: 64px;
   height: 78px;
   box-sizing: border-box;
-  border: 2px solid #7c7c7c;
+  border: 2px solid light-dark(#6d7179, #7d8087);
   border-top: 0;
   border-radius: 6px 6px 16px 16px;
 }
@@ -26,7 +26,7 @@
   right: -6px;
   height: 6px;
   border-radius: 3px;
-  background: #7c7c7c;
+  background: light-dark(#6d7179, #7d8087);
 }
 
 /* Each coin rests at its own height in the pile; out of the jar it waits
@@ -40,9 +40,9 @@
   height: 11px;
   margin-left: calc(-17px + (var(--radio-tip-jar-i) - 2) * 2px);
   box-sizing: border-box;
-  border: 1.5px solid #a7a7a7;
+  border: 1.5px solid light-dark(#5f626a, #a7abb2);
   border-radius: 50%;
-  background: #ededed;
+  background: light-dark(#42454c, #e5e6e9);
   opacity: 0;
   transform: translateY(calc(-110px + var(--radio-tip-jar-i) * 12px)) rotate(40deg);
   transition: transform 0.3s ease-in, opacity 0.2s 0.1s;
@@ -50,7 +50,7 @@
 
 .radio-tip-jar__amount {
   min-height: 1.4em;
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
   font-size: 13px;
   font-variant-numeric: tabular-nums;
 }
@@ -78,27 +78,27 @@
   place-items: center;
   height: 30px;
   padding: 0 10px;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 8px;
-  background: #202020;
-  color: #a7a7a7;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  color: light-dark(#5f626a, #a7abb2);
   font-size: 12px;
   font-variant-numeric: tabular-nums;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .radio-tip-jar__option:hover .radio-tip-jar__chip {
-  border-color: #7c7c7c;
+  border-color: light-dark(#6d7179, #7d8087);
 }
 
 .radio-tip-jar__input:checked + .radio-tip-jar__chip {
-  border-color: #ededed;
-  background: #ededed;
-  color: #111111;
+  border-color: light-dark(#42454c, #e5e6e9);
+  background: light-dark(#42454c, #e5e6e9);
+  color: light-dark(#fbfcfd, #121417);
 }
 
 .radio-tip-jar__input:focus-visible + .radio-tip-jar__chip {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 

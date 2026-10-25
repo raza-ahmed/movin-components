@@ -3,7 +3,7 @@
   width: 240px;
   height: 156px;
   overflow: hidden;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 14px;
 }
 
@@ -11,9 +11,9 @@
    circle from its own chip; the old one holds until it is covered, then
    closes instantly underneath. */
 .radio-theme__layer {
-  --radio-theme-bg: #111111;
-  --radio-theme-ink: #3a3a3a;
-  --radio-theme-accent: #ededed;
+  --radio-theme-bg: light-dark(#fbfcfd, #121417);
+  --radio-theme-ink: light-dark(#dbdde1, #2e3035);
+  --radio-theme-accent: light-dark(#42454c, #e5e6e9);
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -24,16 +24,16 @@
 
 .radio-theme__layer--light {
   --radio-theme-x: 25%;
-  --radio-theme-bg: #f6f6f6;
-  --radio-theme-ink: #c9c9c9;
-  --radio-theme-accent: #111111;
+  --radio-theme-bg: light-dark(#373a40, #f1f2f3);
+  --radio-theme-ink: light-dark(#50535b, #c6c8cd);
+  --radio-theme-accent: light-dark(#fbfcfd, #121417);
 }
 
 .radio-theme__layer--dim {
   --radio-theme-x: 50%;
-  --radio-theme-bg: #4d4d4d;
-  --radio-theme-ink: #7c7c7c;
-  --radio-theme-accent: #ededed;
+  --radio-theme-bg: light-dark(#cbced3, #393c41);
+  --radio-theme-ink: light-dark(#6d7179, #7d8087);
+  --radio-theme-accent: light-dark(#42454c, #e5e6e9);
 }
 
 .radio-theme__layer--dark {
@@ -113,32 +113,32 @@
 .radio-theme__chip {
   display: block;
   padding: 5px 12px;
-  border: 1px solid #7c7c7c;
+  border: 1px solid light-dark(#6d7179, #7d8087);
   border-radius: 9999px;
-  color: #a7a7a7;
+  color: light-dark(#5f626a, #a7abb2);
   font-size: 12px;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .radio-theme__panel:has(.radio-theme__option--light .radio-theme__input:checked) .radio-theme__chip {
-  color: #4d4d4d;
+  color: light-dark(#cbced3, #393c41);
   transition-delay: 0.25s;
 }
 
 .radio-theme__input:checked + .radio-theme__chip {
-  border-color: #ededed;
-  background: #ededed;
-  color: #111111;
+  border-color: light-dark(#42454c, #e5e6e9);
+  background: light-dark(#42454c, #e5e6e9);
+  color: light-dark(#fbfcfd, #121417);
 }
 
 .radio-theme__panel:has(.radio-theme__option--light .radio-theme__input:checked) .radio-theme__input:checked + .radio-theme__chip {
-  border-color: #111111;
-  background: #111111;
-  color: #f6f6f6;
+  border-color: light-dark(#fbfcfd, #121417);
+  background: light-dark(#fbfcfd, #121417);
+  color: light-dark(#373a40, #f1f2f3);
 }
 
 .radio-theme__input:focus-visible + .radio-theme__chip {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 

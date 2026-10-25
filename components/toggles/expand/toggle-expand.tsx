@@ -14,8 +14,8 @@ export function ExpandToggle() {
       style={{
         width: 56,
         height: 30,
-        background: on ? 'rgba(124,124,124,0.12)' : 'rgba(246,246,246,0.08)',
-        border: `1.5px solid ${on ? 'rgba(124,124,124,0.4)' : 'rgba(246,246,246,0.14)'}`,
+        background: on ? 'light-dark(rgba(109,113,121,0.12), rgba(125,128,135,0.12))' : 'light-dark(rgba(55,58,64,0.08), rgba(241,242,243,0.08))',
+        border: `1.5px solid ${on ? 'light-dark(rgba(109,113,121,0.4), rgba(125,128,135,0.4))' : 'light-dark(rgba(55,58,64,0.14), rgba(241,242,243,0.14))'}`,
         transition: 'background 300ms ease, border-color 300ms ease',
       }}
     >
@@ -26,7 +26,7 @@ export function ExpandToggle() {
           left: on ? 0 : 3,
           width: on ? '100%' : 22,
           height: on ? '100%' : 22,
-          background: on ? '#7c7c7c' : 'rgba(246,246,246,0.5)',
+          background: on ? 'light-dark(#6d7179, #7d8087)' : 'light-dark(rgba(55,58,64,0.5), rgba(241,242,243,0.5))',
           transition: 'top 350ms cubic-bezier(0.4,0,0.2,1), left 350ms cubic-bezier(0.4,0,0.2,1), width 350ms cubic-bezier(0.4,0,0.2,1), height 350ms cubic-bezier(0.4,0,0.2,1), background 300ms ease',
         }}
       />

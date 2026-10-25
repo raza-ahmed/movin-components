@@ -10,11 +10,11 @@
   transform-origin: center;
   animation: loader-wave-bars 1s ease-in-out infinite;
 }
-.loader-wave-bars > span:nth-child(1) { background: #7c7c7c; }
-.loader-wave-bars > span:nth-child(2) { background: #a7a7a7; animation-delay: 100ms; }
-.loader-wave-bars > span:nth-child(3) { background: #f6f6f6; animation-delay: 200ms; }
-.loader-wave-bars > span:nth-child(4) { background: #a7a7a7; animation-delay: 300ms; }
-.loader-wave-bars > span:nth-child(5) { background: #7c7c7c; animation-delay: 400ms; }
+.loader-wave-bars > span:nth-child(1) { background: light-dark(#6d7179, #7d8087); }
+.loader-wave-bars > span:nth-child(2) { background: light-dark(#5f626a, #a7abb2); animation-delay: 100ms; }
+.loader-wave-bars > span:nth-child(3) { background: light-dark(#373a40, #f1f2f3); animation-delay: 200ms; }
+.loader-wave-bars > span:nth-child(4) { background: light-dark(#5f626a, #a7abb2); animation-delay: 300ms; }
+.loader-wave-bars > span:nth-child(5) { background: light-dark(#6d7179, #7d8087); animation-delay: 400ms; }
 @keyframes loader-wave-bars {
   0%, 100% { transform: scaleY(0.35); }
   50% { transform: scaleY(1); }

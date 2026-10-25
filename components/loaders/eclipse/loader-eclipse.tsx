@@ -5,7 +5,7 @@ const css = `
      page background. */
   .loader-eclipse {
     --loader-eclipse-t: 3.2s;
-    --loader-eclipse-sky: #111111;
+    --loader-eclipse-sky: light-dark(#fbfcfd, #121417);
     position: relative;
     display: inline-block;
     width: 76px;
@@ -26,8 +26,8 @@ const css = `
     width: 32px;
     height: 32px;
     margin: -16px 0 0 -16px;
-    background: radial-gradient(circle at 40% 35%, #f6f6f6, #c9c9c9);
-    box-shadow: 0 0 12px 2px rgba(237, 237, 237, 0.25);
+    background: radial-gradient(circle at 40% 35%, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd));
+    box-shadow: 0 0 12px 2px light-dark(rgba(66, 69, 76, 0.25), rgba(229, 230, 233, 0.25));
   }
 
   /* The corona: a soft halo that only flares while the sun is covered. */
@@ -36,7 +36,7 @@ const css = `
     position: absolute;
     inset: -14px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(246, 246, 246, 0.6) 45%, rgba(246, 246, 246, 0.15) 60%, rgba(246, 246, 246, 0) 72%);
+    background: radial-gradient(circle, light-dark(rgba(55, 58, 64, 0.6), rgba(241, 242, 243, 0.6)) 45%, light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15)) 60%, light-dark(rgba(55, 58, 64, 0), rgba(241, 242, 243, 0)) 72%);
     opacity: 0;
     animation: loader-eclipse-corona var(--loader-eclipse-t) ease-in-out infinite;
   }

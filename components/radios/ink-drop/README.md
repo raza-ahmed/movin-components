@@ -1,6 +1,6 @@
 # Ink Drop radio button
 
-An ink blot spreads from the center of the selected radio dot — scaling from 0 to 1 with a dramatic ease-out cubic-bezier and slight overshoot. The ink bleeds into a rich dark fill with a subtle paper-like texture vibe.
+An ink blot spreads from the center of the selected radio dot, scaling from 0 to 1 with a dramatic ease-out cubic-bezier and slight overshoot. The ink bleeds into a rich dark fill with a subtle paper-like texture vibe.
 
 Live preview: https://movin.design/components/radios/ink-drop/
 

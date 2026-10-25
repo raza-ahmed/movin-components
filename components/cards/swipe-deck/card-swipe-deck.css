@@ -9,7 +9,7 @@
 }
 
 .card-swipe-deck:focus-visible {
-  outline: 2px solid #ededed;
+  outline: 2px solid light-dark(#42454c, #e5e6e9);
   outline-offset: 8px;
   border-radius: 16px;
 }
@@ -22,9 +22,9 @@
   display: flex;
   flex-direction: column;
   padding: 14px;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 14px;
-  background: linear-gradient(160deg, #282828, #202020);
+  background: linear-gradient(160deg, light-dark(#ebedf0, #232529), light-dark(#f3f4f7, #1a1c1f));
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   opacity: calc(1 - max(0, var(--card-swipe-deck-i, 0) - 2));
   transform: translate(var(--card-swipe-deck-dx, 0px), calc(var(--card-swipe-deck-i, 0) * 9px + var(--card-swipe-deck-dy, 0px))) rotate(var(--card-swipe-deck-rot, 0deg)) scale(calc(1 - var(--card-swipe-deck-i, 0) * 0.05));
@@ -42,20 +42,20 @@
 }
 
 .card-swipe-deck__num {
-  color: #7c7c7c;
+  color: light-dark(#6d7179, #7d8087);
   font: 600 11px ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 }
 
 .card-swipe-deck__title {
   margin-top: auto;
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
   font-size: 16px;
   font-weight: 600;
 }
 
 .card-swipe-deck__text {
   margin-top: 3px;
-  color: #a7a7a7;
+  color: light-dark(#5f626a, #a7abb2);
   font-size: 11px;
 }
 
@@ -63,9 +63,9 @@
   position: absolute;
   top: 16px;
   padding: 2px 8px;
-  border: 2px solid #ededed;
+  border: 2px solid light-dark(#42454c, #e5e6e9);
   border-radius: 6px;
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -81,8 +81,8 @@
 
 .card-swipe-deck__stamp--skip {
   left: 12px;
-  border-color: #7c7c7c;
-  color: #7c7c7c;
+  border-color: light-dark(#6d7179, #7d8087);
+  color: light-dark(#6d7179, #7d8087);
   opacity: var(--card-swipe-deck-skip, 0);
   transform: rotate(-12deg);
 }

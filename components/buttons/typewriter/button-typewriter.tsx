@@ -45,7 +45,7 @@ export function TypewriterButton() {
       type="button"
       onMouseEnter={() => animateTo(LABEL_B)}
       onMouseLeave={() => animateTo(LABEL_A)}
-      className="min-w-[140px] rounded-lg border border-[#4d4d4d] bg-[#202020] px-8 py-3 font-mono font-semibold tracking-wider text-[#ededed] cursor-pointer"
+      className="min-w-[140px] rounded-lg border border-[color:light-dark(#cbced3,#393c41)] bg-[color:light-dark(#f3f4f7,#1a1c1f)] px-8 py-3 font-mono font-semibold tracking-wider text-[color:light-dark(#42454c,#e5e6e9)] cursor-pointer"
     >
       {displayed}
       <span className="opacity-50">|</span>

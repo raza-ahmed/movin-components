@@ -9,12 +9,12 @@ export function BorderGlowCard({ children }: { children: React.ReactNode }) {
         @property --border-hi { syntax: '<color>'; initial-value: transparent; inherits: true; }
         @keyframes border-spin { to { --border-angle: 360deg; } }
         .border-glow-card {
-          --border-hi: #a7a7a7;
+          --border-hi: light-dark(#5f626a, #a7abb2);
           position: relative;
           isolation: isolate;
           padding: 1px;
           border-radius: 12px;
-          background: conic-gradient(from var(--border-angle), #4d4d4d, var(--border-hi) 12%, #4d4d4d 30%, #4d4d4d);
+          background: conic-gradient(from var(--border-angle), light-dark(#cbced3, #393c41), var(--border-hi) 12%, light-dark(#cbced3, #393c41) 30%, light-dark(#cbced3, #393c41));
           animation: border-spin 4s linear infinite;
           transition: --border-hi 350ms ease;
         }
@@ -30,14 +30,14 @@ export function BorderGlowCard({ children }: { children: React.ReactNode }) {
           opacity: 0;
           transition: opacity 350ms ease;
         }
-        .border-glow-card:hover { --border-hi: #f6f6f6; }
+        .border-glow-card:hover { --border-hi: light-dark(#373a40, #f1f2f3); }
         .border-glow-card:hover::before { opacity: 0.7; }
         @media (prefers-reduced-motion: reduce) {
           .border-glow-card { animation: none; }
         }
       `}</style>
       <div className="border-glow-card cursor-pointer">
-        <div className="overflow-hidden rounded-[11px] bg-[#111111]">{children}</div>
+        <div className="overflow-hidden rounded-[11px] bg-[color:light-dark(#fbfcfd,#121417)]">{children}</div>
       </div>
     </>
   );

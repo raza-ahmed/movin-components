@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
   font-size: 15px;
   cursor: pointer;
   user-select: none;
@@ -25,7 +25,7 @@
 }
 
 .toggle-rotary__input:focus-visible + .toggle-rotary__dial {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -46,11 +46,11 @@
 }
 
 .toggle-rotary__track {
-  stroke: #3a3a3a;
+  stroke: light-dark(#dbdde1, #2e3035);
 }
 
 .toggle-rotary__fill {
-  stroke: #ededed;
+  stroke: light-dark(#42454c, #e5e6e9);
   stroke-dashoffset: 58.1;
   transition: stroke-dashoffset 0.4s cubic-bezier(0.5, 0, 0.3, 1);
 }
@@ -58,7 +58,7 @@
 .toggle-rotary__mark {
   position: absolute;
   top: 0;
-  color: #7c7c7c;
+  color: light-dark(#6d7179, #7d8087);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -67,7 +67,7 @@
 
 .toggle-rotary__mark--off {
   left: -6px;
-  color: #c9c9c9;
+  color: light-dark(#50535b, #c6c8cd);
 }
 
 .toggle-rotary__mark--on {
@@ -79,7 +79,7 @@
   position: absolute;
   inset: 16px;
   border-radius: 50%;
-  background: repeating-conic-gradient(#3a3a3a 0 5deg, #7c7c7c 5deg 10deg);
+  background: repeating-conic-gradient(light-dark(#dbdde1, #2e3035) 0 5deg, light-dark(#6d7179, #7d8087) 5deg 10deg);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.55);
   transform: rotate(-45deg);
   transition: transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1);
@@ -90,8 +90,8 @@
   position: absolute;
   inset: 5px;
   border-radius: 50%;
-  background: radial-gradient(circle at 40% 30%, #4d4d4d, #202020 75%);
-  box-shadow: inset 0 1px 0 rgba(246, 246, 246, 0.12);
+  background: radial-gradient(circle at 40% 30%, light-dark(#cbced3, #393c41), light-dark(#f3f4f7, #1a1c1f) 75%);
+  box-shadow: inset 0 1px 0 light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12));
 }
 
 .toggle-rotary__knob::after {
@@ -103,7 +103,7 @@
   height: 14px;
   margin-left: -2px;
   border-radius: 2px;
-  background: #ededed;
+  background: light-dark(#42454c, #e5e6e9);
 }
 
 .toggle-rotary__input:checked + .toggle-rotary__dial .toggle-rotary__knob {
@@ -115,11 +115,11 @@
 }
 
 .toggle-rotary__input:checked + .toggle-rotary__dial .toggle-rotary__mark--off {
-  color: #7c7c7c;
+  color: light-dark(#6d7179, #7d8087);
 }
 
 .toggle-rotary__input:checked + .toggle-rotary__dial .toggle-rotary__mark--on {
-  color: #f6f6f6;
+  color: light-dark(#373a40, #f1f2f3);
 }
 
 @media (prefers-reduced-motion: reduce) {

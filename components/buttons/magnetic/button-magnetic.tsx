@@ -34,7 +34,7 @@ export function MagneticButton({ children }: { children: React.ReactNode }) {
       style={{ x: springX, y: springY }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="rounded-full bg-[#f6f6f6] px-8 py-3 font-medium tracking-wide text-[#111111]"
+      className="rounded-full bg-[color:light-dark(#373a40,#f1f2f3)] px-8 py-3 font-medium tracking-wide text-[color:light-dark(#fbfcfd,#121417)]"
     >
       {children}
     </motion.button>

@@ -28,7 +28,7 @@ export function RippleRadioGroup() {
               {checked && [0,1,2].map((i) => (
                 <span key={`${rippleKey}-${i}`} className="ripple-ring absolute inset-0 rounded-full"
                   style={{
-                    border:'1.5px solid rgba(124,124,124,0.7)',
+                    border:'1.5px solid light-dark(rgba(109,113,121,0.7), rgba(125,128,135,0.7))',
                     animation:'ripple-out 900ms ease-out forwards',
                     animationDelay:`${i*130}ms`,
                   }}
@@ -37,13 +37,13 @@ export function RippleRadioGroup() {
               <span
                 className="absolute inset-0 flex items-center justify-center rounded-full border-2 transition-all duration-200"
                 style={{
-                  borderColor: checked ? '#7c7c7c' : 'rgba(246,246,246,0.25)',
-                  background: checked ? 'rgba(124,124,124,0.15)' : 'transparent',
-                  boxShadow: checked ? '0 0 8px rgba(124,124,124,0.5)' : 'none',
+                  borderColor: checked ? 'light-dark(#6d7179, #7d8087)' : 'light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25))',
+                  background: checked ? 'light-dark(rgba(109,113,121,0.15), rgba(125,128,135,0.15))' : 'transparent',
+                  boxShadow: checked ? '0 0 8px light-dark(rgba(109,113,121,0.5), rgba(125,128,135,0.5))' : 'none',
                 }}
               >
                 <span style={{
-                  width:8,height:8,borderRadius:'50%',background:'#7c7c7c',
+                  width:8,height:8,borderRadius:'50%',background:'light-dark(#6d7179, #7d8087)',
                   transform:checked?'scale(1)':'scale(0)',
                   transition:'transform 300ms cubic-bezier(0.34,1.56,0.64,1)',
                 }}/>
@@ -51,7 +51,7 @@ export function RippleRadioGroup() {
             </span>
             <span
               className="select-none text-sm transition-colors duration-200"
-              style={{ color: checked ? 'rgba(246,246,246,0.92)' : 'rgba(246,246,246,0.55)' }}
+              style={{ color: checked ? 'light-dark(rgba(55,58,64,0.92), rgba(241,242,243,0.92))' : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))' }}
             >
               {opt}
             </span>

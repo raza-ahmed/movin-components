@@ -9,7 +9,7 @@ export function MorphShapeButton({ children }: { children: React.ReactNode }) {
       type="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative flex items-center justify-center overflow-hidden border-none cursor-pointer bg-gradient-to-br from-[#4d4d4d] to-[#7c7c7c]"
+      className="relative flex items-center justify-center overflow-hidden border-none cursor-pointer bg-gradient-to-br from-[color:light-dark(#cbced3,#393c41)] to-[color:light-dark(#6d7179,#7d8087)]"
       style={{
         width: hovered ? 56 : 160,
         height: 56,
@@ -18,7 +18,7 @@ export function MorphShapeButton({ children }: { children: React.ReactNode }) {
       }}
     >
       <span
-        className="absolute font-semibold text-[#f6f6f6] tracking-wider text-sm"
+        className="absolute font-semibold text-[color:light-dark(#373a40,#f1f2f3)] tracking-wider text-sm"
         style={{
           opacity: hovered ? 0 : 1,
           transform: hovered ? 'scale(0.7)' : 'scale(1)',
@@ -29,7 +29,7 @@ export function MorphShapeButton({ children }: { children: React.ReactNode }) {
         {children}
       </span>
       <span
-        className="absolute text-[#f6f6f6] text-2xl leading-none"
+        className="absolute text-[color:light-dark(#373a40,#f1f2f3)] text-2xl leading-none"
         aria-hidden="true"
         style={{
           opacity: hovered ? 1 : 0,

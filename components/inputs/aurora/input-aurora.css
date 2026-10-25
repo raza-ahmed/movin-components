@@ -16,7 +16,7 @@
   position: absolute;
   inset: -2px;
   border-radius: 8px;
-  background: conic-gradient(from var(--field-aurora-angle), rgba(246, 246, 246, 0.5), rgba(246, 246, 246, 0.05), rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.08), rgba(246, 246, 246, 0.5));
+  background: conic-gradient(from var(--field-aurora-angle), light-dark(rgba(55, 58, 64, 0.5), rgba(241, 242, 243, 0.5)), light-dark(rgba(55, 58, 64, 0.05), rgba(241, 242, 243, 0.05)), light-dark(rgba(55, 58, 64, 0.3), rgba(241, 242, 243, 0.3)), light-dark(rgba(55, 58, 64, 0.08), rgba(241, 242, 243, 0.08)), light-dark(rgba(55, 58, 64, 0.5), rgba(241, 242, 243, 0.5)));
   filter: blur(16px);
   opacity: 0;
   pointer-events: none;
@@ -32,19 +32,19 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.12);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12));
   border-radius: 8px;
   outline: none;
-  background: rgba(246, 246, 246, 0.04);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   position: relative;
   transition: background 300ms, border-color 300ms;
 }
-.field-aurora__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-aurora__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
-.field-aurora__input:focus { border-color: rgba(246, 246, 246, 0.25); }
+.field-aurora__input:focus { border-color: light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25)); }
 @keyframes field-aurora {
   to { --field-aurora-angle: 360deg; }
 }

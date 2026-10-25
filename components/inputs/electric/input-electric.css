@@ -8,18 +8,18 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.12);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12));
   border-radius: 8px;
   outline: none;
-  background: rgba(246, 246, 246, 0.04);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   transition: background 300ms, border-color 300ms;
 }
-.field-electric__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-electric__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
-.field-electric__input:focus { background: rgba(201, 201, 201, 0.04); }
+.field-electric__input:focus { background: light-dark(rgba(80, 83, 91, 0.04), rgba(198, 200, 205, 0.04)); }
 /* Each focus sends a charge once round the outline, which then stays lit.
    pathLength="1" means the dash maths holds at any width. */
 .field-electric__trace {
@@ -34,14 +34,14 @@
   width: calc(100% - 2px);
   height: calc(100% - 2px);
   fill: none;
-  stroke: #c9c9c9;
+  stroke: light-dark(#50535b, #c6c8cd);
   stroke-width: 1.5;
   stroke-linecap: round;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
 }
 .field-electric:focus-within .field-electric__trace rect {
-  filter: drop-shadow(0 0 4px #c9c9c9) drop-shadow(0 0 8px rgba(201, 201, 201, 0.5));
+  filter: drop-shadow(0 0 4px light-dark(#50535b, #c6c8cd)) drop-shadow(0 0 8px light-dark(rgba(80, 83, 91, 0.5), rgba(198, 200, 205, 0.5)));
   animation: field-electric 600ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 @keyframes field-electric {

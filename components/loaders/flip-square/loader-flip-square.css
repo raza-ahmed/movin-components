@@ -3,7 +3,7 @@
   width: 30px;
   height: 30px;
   border-radius: 6px;
-  background: #7c7c7c;
+  background: light-dark(#6d7179, #7d8087);
   animation: loader-flip-square 1.4s ease-in-out infinite;
 }
 @keyframes loader-flip-square {

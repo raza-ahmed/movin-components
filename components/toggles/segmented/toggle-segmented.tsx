@@ -8,7 +8,7 @@ export function SegmentedToggle({ defaultValue = 'Off' }: { defaultValue?: Optio
   const [active, setActive] = React.useState<Option>(defaultValue);
   return (
     <div role="group" aria-label="Toggle" className="relative inline-flex rounded-[10px] p-[3px]"
-      style={{ background: 'rgba(246,246,246,0.07)' }}
+      style={{ background: 'light-dark(rgba(55,58,64,0.07), rgba(241,242,243,0.07))' }}
     >
       <span
         aria-hidden="true"
@@ -16,8 +16,8 @@ export function SegmentedToggle({ defaultValue = 'Off' }: { defaultValue?: Optio
         style={{
           left: active === 'On' ? 'calc(50%)' : '3px',
           width: 'calc(50% - 3px)',
-          background: 'rgba(246,246,246,0.13)',
-          borderColor: 'rgba(246,246,246,0.1)',
+          background: 'light-dark(rgba(55,58,64,0.13), rgba(241,242,243,0.13))',
+          borderColor: 'light-dark(rgba(55,58,64,0.1), rgba(241,242,243,0.1))',
         }}
       />
       {OPTIONS.map((label) => (
@@ -27,7 +27,7 @@ export function SegmentedToggle({ defaultValue = 'Off' }: { defaultValue?: Optio
           onClick={() => setActive(label)}
           className="relative z-10 cursor-pointer rounded-[7px] border-none bg-transparent px-[18px] py-[5px] font-[inherit] text-[13px] transition-colors duration-[220ms] ease-out"
           style={{
-            color: active === label ? '#f6f6f6' : 'rgba(246,246,246,0.55)',
+            color: active === label ? 'light-dark(#373a40, #f1f2f3)' : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))',
             fontWeight: active === label ? 600 : 400,
           }}
         >

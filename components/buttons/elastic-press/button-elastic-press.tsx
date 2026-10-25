@@ -34,7 +34,7 @@ export function ElasticPressButton({ children }: { children: React.ReactNode }) 
         ref={btnRef}
         type="button"
         onClick={handleClick}
-        className="elastic-btn rounded-full bg-[#f6f6f6] px-8 py-3 font-semibold text-[#202020] shadow-lg cursor-pointer border-none origin-center"
+        className="elastic-btn rounded-full bg-[color:light-dark(#373a40,#f1f2f3)] px-8 py-3 font-semibold text-[color:light-dark(#f3f4f7,#1a1c1f)] shadow-lg cursor-pointer border-none origin-center"
       >
         {children}
       </button>

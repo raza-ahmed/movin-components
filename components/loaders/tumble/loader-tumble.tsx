@@ -20,7 +20,7 @@ const css = `
     left: 0;
     right: -18px;
     height: 2px;
-    background: repeating-linear-gradient(90deg, #4d4d4d 0 10px, transparent 10px 18px);
+    background: repeating-linear-gradient(90deg, light-dark(#cbced3, #393c41) 0 10px, transparent 10px 18px);
     animation: loader-tumble-floor var(--loader-tumble-t) infinite;
   }
 
@@ -33,7 +33,7 @@ const css = `
     width: 18px;
     height: 18px;
     border-radius: 4px;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     transform-origin: 100% 100%;
     animation: loader-tumble-roll var(--loader-tumble-t) infinite;
   }

@@ -6,7 +6,7 @@ function initBtnParticleText(root) {
   if (!ctx) return;
 
   var COLOR = '';
-  var parts = []; // flat: x, y, vx, vy, homeX, homeY, alpha — in device pixels
+  var parts = []; // flat: x, y, vx, vy, homeX, homeY, alpha: in device pixels
   var STRIDE = 7;
   var dpr = 1;
   var pointer = null; // device px inside the canvas, or null

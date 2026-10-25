@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
   font-size: 15px;
   cursor: pointer;
   user-select: none;
@@ -22,7 +22,7 @@
   width: 64px;
   height: 34px;
   border-radius: 9999px;
-  background: #4d4d4d;
+  background: light-dark(#cbced3, #393c41);
   transition: background-color 0.4s;
 }
 
@@ -32,13 +32,13 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: radial-gradient(circle at 14px 11px, #ededed 0 1px, transparent 1.5px), radial-gradient(circle at 24px 22px, #a7a7a7 0 1px, transparent 1.5px);
+  background: radial-gradient(circle at 14px 11px, light-dark(#42454c, #e5e6e9) 0 1px, transparent 1.5px), radial-gradient(circle at 24px 22px, light-dark(#5f626a, #a7abb2) 0 1px, transparent 1.5px);
   opacity: 0;
   transition: opacity 0.4s;
 }
 
 .toggle-sleep__input:focus-visible + .toggle-sleep__track {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -49,7 +49,7 @@
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: #ededed;
+  background: light-dark(#42454c, #e5e6e9);
   transition: transform 0.4s cubic-bezier(0.3, 1.3, 0.5, 1);
 }
 
@@ -64,7 +64,7 @@
 
 .toggle-sleep__bell {
   fill: none;
-  stroke: #4d4d4d;
+  stroke: light-dark(#cbced3, #393c41);
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -72,14 +72,14 @@
 }
 
 .toggle-sleep__moon {
-  fill: #111111;
+  fill: light-dark(#fbfcfd, #121417);
   opacity: 0;
   transform: rotate(-90deg) scale(0.4);
 }
 
 .toggle-sleep__input:checked + .toggle-sleep__track {
-  background: #111111;
-  box-shadow: inset 0 0 0 1px #3a3a3a;
+  background: light-dark(#fbfcfd, #121417);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
 }
 
 .toggle-sleep__input:checked + .toggle-sleep__track::before {
@@ -105,7 +105,7 @@
   position: absolute;
   top: 2px;
   right: 10px;
-  color: #a7a7a7;
+  color: light-dark(#5f626a, #a7abb2);
   font-size: 9px;
   font-weight: 700;
   line-height: 1;

@@ -10,36 +10,36 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 40px 10px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 8px;
   outline: none;
-  background: rgba(246, 246, 246, 0.06);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.06), rgba(241, 242, 243, 0.06));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   transition: border-color 200ms;
 }
-.field-validate__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-validate__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
-.field-validate__input:focus { box-shadow: 0 0 0 1px #a7a7a7; }
+.field-validate__input:focus { box-shadow: 0 0 0 1px light-dark(#5f626a, #a7abb2); }
 /* A tick appears once the address looks valid; a bad submit shakes in a cross. */
 .field-validate__icon {
   position: absolute;
   top: 50%;
   right: 12px;
   font-size: 16px;
-  color: #c9c9c9;
+  color: light-dark(#50535b, #c6c8cd);
   opacity: 0;
   pointer-events: none;
   transform: translateY(-50%);
   transition: opacity 200ms, color 200ms;
 }
-.field-validate--valid .field-validate__input { border-color: #7c7c7c; }
+.field-validate--valid .field-validate__input { border-color: light-dark(#6d7179, #7d8087); }
 .field-validate--valid .field-validate__icon { opacity: 1; }
 .field-validate--valid .field-validate__icon::before { content: '\2713'; }
-.field-validate--invalid .field-validate__input { border-color: #f6f6f6; }
+.field-validate--invalid .field-validate__input { border-color: light-dark(#373a40, #f1f2f3); }
 .field-validate--invalid .field-validate__icon {
-  color: #f6f6f6;
+  color: light-dark(#373a40, #f1f2f3);
   opacity: 1;
   animation: field-validate 400ms ease;
 }
@@ -48,16 +48,16 @@
   width: 100%;
   margin-top: 8px;
   padding: 6px 0;
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 6px;
-  background: rgba(246, 246, 246, 0.08);
-  color: rgba(246, 246, 246, 0.7);
+  background: light-dark(rgba(55, 58, 64, 0.08), rgba(241, 242, 243, 0.08));
+  color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.7));
   font: inherit;
   font-size: 13px;
   cursor: pointer;
 }
 .field-validate__submit:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 @keyframes field-validate {

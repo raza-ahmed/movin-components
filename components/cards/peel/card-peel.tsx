@@ -24,32 +24,32 @@ const css = `
   }
 
   .card-peel__under {
-    border: 1px dashed #4d4d4d;
-    background: #202020;
+    border: 1px dashed light-dark(#cbced3, #393c41);
+    background: light-dark(#f3f4f7, #1a1c1f);
   }
 
   .card-peel__under .card-peel__title {
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
   }
 
   .card-peel__under .card-peel__text {
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
     letter-spacing: 0.04em;
   }
 
   .card-peel__sticker {
-    background: linear-gradient(150deg, #f6f6f6, #c9c9c9);
+    background: linear-gradient(150deg, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd));
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
     clip-path: var(--card-peel-clip, none);
   }
 
   .card-peel__sticker .card-peel__title {
-    color: #111111;
+    color: light-dark(#fbfcfd, #121417);
   }
 
   .card-peel__sticker .card-peel__text {
-    color: #4d4d4d;
+    color: light-dark(#cbced3, #393c41);
   }
 
   .card-peel__title {
@@ -73,7 +73,7 @@ const css = `
   .card-peel__flap {
     position: absolute;
     inset: 0;
-    background: linear-gradient(var(--card-peel-angle, 135deg), #a7a7a7, #ededed 45%, #f6f6f6);
+    background: linear-gradient(var(--card-peel-angle, 135deg), light-dark(#5f626a, #a7abb2), light-dark(#42454c, #e5e6e9) 45%, light-dark(#373a40, #f1f2f3));
     clip-path: var(--card-peel-flap, polygon(0 0, 0 0, 0 0));
   }
 
@@ -95,7 +95,7 @@ const css = `
   }
 
   .card-peel__corner:focus-visible {
-    outline: 2px solid #ededed;
+    outline: 2px solid light-dark(#42454c, #e5e6e9);
     outline-offset: -4px;
   }
 `;

@@ -1,6 +1,6 @@
 # Spring toggle
 
-Framer Motion spring physics drives both the thumb position and the track color — the thumb overshoots and bounces back with genuine physical weight.
+Framer Motion spring physics drives both the thumb position and the track color: the thumb overshoots and bounces back with genuine physical weight.
 
 Live preview: https://movin.design/components/toggles/spring/
 

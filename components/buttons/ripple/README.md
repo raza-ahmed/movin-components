@@ -1,6 +1,6 @@
 # Ripple button
 
-A soft white ripple circle expands from the exact click point and fades out — Material Design's satisfying click feedback pattern. Pure CSS animation, no dependencies.
+A soft white ripple circle expands from the exact click point and fades out: Material Design's satisfying click feedback pattern. Pure CSS animation, no dependencies.
 
 Live preview: https://movin.design/components/buttons/ripple/
 

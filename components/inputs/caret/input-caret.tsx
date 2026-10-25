@@ -9,7 +9,7 @@ const css = `
     gap: 8px;
     width: 100%;
     max-width: 320px;
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 13px;
   }
 
@@ -18,14 +18,14 @@ const css = `
     position: relative;
     display: block;
     overflow: hidden;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 10px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     transition: border-color 0.2s;
   }
 
   .field-caret__box:focus-within {
-    border-color: #a7a7a7;
+    border-color: light-dark(#5f626a, #a7abb2);
   }
 
   /* The native caret is hidden; the custom one stands in for it. */
@@ -39,14 +39,14 @@ const css = `
     border: 0;
     outline: none;
     background: transparent;
-    color: #f6f6f6;
+    color: light-dark(#373a40, #f1f2f3);
     font: inherit;
     font-size: 16px;
     caret-color: transparent;
   }
 
   .field-caret__input::selection {
-    background: #4d4d4d;
+    background: light-dark(#cbced3, #393c41);
   }
 
   .field-caret__head,
@@ -57,7 +57,7 @@ const css = `
     height: 20px;
     margin-top: -10px;
     border-radius: 1px;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     pointer-events: none;
   }
 
@@ -73,14 +73,14 @@ const css = `
     width: 1px;
     height: 14px;
     margin-top: -7px;
-    background: linear-gradient(90deg, rgba(237, 237, 237, 0), rgba(237, 237, 237, 0.6));
+    background: linear-gradient(90deg, light-dark(rgba(66, 69, 76, 0), rgba(229, 230, 233, 0)), light-dark(rgba(66, 69, 76, 0.6), rgba(229, 230, 233, 0.6)));
     opacity: 0;
     transform-origin: 0 50%;
   }
 
   /* Moving left, the bright end leads on the left. */
   .field-caret__tail--left {
-    background: linear-gradient(270deg, rgba(237, 237, 237, 0), rgba(237, 237, 237, 0.6));
+    background: linear-gradient(270deg, light-dark(rgba(66, 69, 76, 0), rgba(229, 230, 233, 0)), light-dark(rgba(66, 69, 76, 0.6), rgba(229, 230, 233, 0.6)));
   }
 
   .field-caret--on .field-caret__head {

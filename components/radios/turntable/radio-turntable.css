@@ -9,9 +9,9 @@
   position: relative;
   width: 136px;
   height: 108px;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 12px;
-  background: #202020;
+  background: light-dark(#f3f4f7, #1a1c1f);
 }
 
 /* Three nested spinners: a turns at 33 1/3 rpm, b adds 12, c adds 33 more.
@@ -57,8 +57,8 @@
   inset: 0;
   border-radius: 50%;
   background:
-    radial-gradient(circle, #ededed 0 13px, #4d4d4d 13px 14px, transparent 14px),
-    repeating-radial-gradient(circle, #111111 0 2px, #282828 2px 3px);
+    radial-gradient(circle, light-dark(#42454c, #e5e6e9) 0 13px, light-dark(#cbced3, #393c41) 13px 14px, transparent 14px),
+    repeating-radial-gradient(circle, light-dark(#fbfcfd, #121417) 0 2px, light-dark(#ebedf0, #232529) 2px 3px);
 }
 
 .radio-turntable__record::after {
@@ -70,7 +70,7 @@
   height: 7px;
   margin-left: -1.5px;
   border-radius: 1px;
-  background: #4d4d4d;
+  background: light-dark(#cbced3, #393c41);
 }
 
 .radio-turntable__deck::before {
@@ -82,7 +82,7 @@
   width: 92px;
   height: 92px;
   border-radius: 50%;
-  background: conic-gradient(from 20deg, transparent, rgba(246, 246, 246, 0.08) 30deg, transparent 60deg, transparent 180deg, rgba(246, 246, 246, 0.08) 210deg, transparent 240deg);
+  background: conic-gradient(from 20deg, transparent, light-dark(rgba(55, 58, 64, 0.08), rgba(241, 242, 243, 0.08)) 30deg, transparent 60deg, transparent 180deg, light-dark(rgba(55, 58, 64, 0.08), rgba(241, 242, 243, 0.08)) 210deg, transparent 240deg);
   pointer-events: none;
 }
 
@@ -95,7 +95,7 @@
   width: 4px;
   height: 64px;
   border-radius: 2px;
-  background: #a7a7a7;
+  background: light-dark(#5f626a, #a7abb2);
   transform: rotate(4deg);
   transform-origin: 50% 4px;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -109,7 +109,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #4d4d4d;
+  background: light-dark(#cbced3, #393c41);
 }
 
 .radio-turntable__arm::after {
@@ -120,7 +120,7 @@
   width: 8px;
   height: 10px;
   border-radius: 2px;
-  background: #ededed;
+  background: light-dark(#42454c, #e5e6e9);
 }
 
 .radio-turntable:has(.radio-turntable__input:not([value='off']):checked) .radio-turntable__arm {
@@ -152,27 +152,27 @@
   height: 30px;
   padding: 0 8px;
   box-sizing: border-box;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 8px;
-  background: #202020;
-  color: #a7a7a7;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  color: light-dark(#5f626a, #a7abb2);
   font-size: 12px;
   font-variant-numeric: tabular-nums;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .radio-turntable__option:hover .radio-turntable__chip {
-  border-color: #7c7c7c;
+  border-color: light-dark(#6d7179, #7d8087);
 }
 
 .radio-turntable__input:checked + .radio-turntable__chip {
-  border-color: #ededed;
-  background: #ededed;
-  color: #111111;
+  border-color: light-dark(#42454c, #e5e6e9);
+  background: light-dark(#42454c, #e5e6e9);
+  color: light-dark(#fbfcfd, #121417);
 }
 
 .radio-turntable__input:focus-visible + .radio-turntable__chip {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 

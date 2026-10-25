@@ -38,8 +38,8 @@ export function TypewriterRadioGroup() {
             key={opt}
             className="flex cursor-pointer items-center gap-2.5 rounded-lg border px-3.5 py-2.5 transition-all duration-200"
             style={{
-              background: checked ? 'rgba(246,246,246,0.04)' : 'transparent',
-              borderColor: checked ? 'rgba(246,246,246,0.12)' : 'transparent',
+              background: checked ? 'light-dark(rgba(55,58,64,0.04), rgba(241,242,243,0.04))' : 'transparent',
+              borderColor: checked ? 'light-dark(rgba(55,58,64,0.12), rgba(241,242,243,0.12))' : 'transparent',
             }}
           >
             <input
@@ -53,10 +53,10 @@ export function TypewriterRadioGroup() {
             />
             <span
               className="flex h-[18px] w-[18px] flex-shrink-0 items-center justify-center rounded-full border-2 transition-colors duration-200"
-              style={{ borderColor: checked ? '#ededed' : 'rgba(246,246,246,0.2)' }}
+              style={{ borderColor: checked ? 'light-dark(#42454c, #e5e6e9)' : 'light-dark(rgba(55,58,64,0.2), rgba(241,242,243,0.2))' }}
             >
               <span style={{
-                width: 7, height: 7, borderRadius: '50%', background: '#ededed',
+                width: 7, height: 7, borderRadius: '50%', background: 'light-dark(#42454c, #e5e6e9)',
                 transform: checked ? 'scale(1)' : 'scale(0)',
                 transition: 'transform 200ms cubic-bezier(0.34,1.56,0.64,1)',
               }} />
@@ -65,7 +65,7 @@ export function TypewriterRadioGroup() {
               className="select-none text-[13px] transition-colors duration-150"
               style={{
                 fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
-                color: checked ? 'rgba(246,246,246,0.9)' : 'rgba(246,246,246,0.55)',
+                color: checked ? 'light-dark(rgba(55,58,64,0.9), rgba(241,242,243,0.9))' : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))',
                 minWidth: 120,
               }}
             >

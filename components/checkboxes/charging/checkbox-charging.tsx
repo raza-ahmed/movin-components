@@ -35,18 +35,18 @@ export function ChargingCheckbox({ label }: { label?: string }) {
         <span
           data-cb="charging"
           className="relative flex h-7 w-7 items-center justify-center overflow-hidden rounded-[7px] border-2"
-          style={{ borderColor: on ? '#a7a7a7' : 'rgba(246,246,246,0.25)', transition: 'border-color 200ms ease' }}
+          style={{ borderColor: on ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25))', transition: 'border-color 200ms ease' }}
         >
-          <span className="absolute bottom-1 left-1 right-1 h-1 rounded-full" style={{ background: 'rgba(246,246,246,0.12)', opacity: charged ? 0 : 1, transition: 'opacity 200ms ease' }}>
-            <span className="block h-full rounded-full" style={{ background: '#a7a7a7', width: `${barWidth}%` }} />
+          <span className="absolute bottom-1 left-1 right-1 h-1 rounded-full" style={{ background: 'light-dark(rgba(55,58,64,0.12), rgba(241,242,243,0.12))', opacity: charged ? 0 : 1, transition: 'opacity 200ms ease' }}>
+            <span className="block h-full rounded-full" style={{ background: 'light-dark(#5f626a, #a7abb2)', width: `${barWidth}%` }} />
           </span>
           <svg width="13" height="10" viewBox="0 0 13 10" fill="none" aria-hidden="true"
             style={{ opacity: charged ? 1 : 0, transform: charged ? 'scale(1)' : 'scale(0.4)', transition: charged ? 'opacity 200ms ease, transform 280ms cubic-bezier(0.34,1.56,0.64,1)' : 'opacity 150ms ease, transform 150ms ease' }}>
-            <path d="M1.5 5L5 8.5L11.5 1.5" stroke="#a7a7a7" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M1.5 5L5 8.5L11.5 1.5" stroke="light-dark(#5f626a, #a7abb2)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
       </div>
-      {label && <span className="select-none text-sm text-[#f6f6f6]/80">{label}</span>}
+      {label && <span className="select-none text-sm text-[color:light-dark(#373a40,#f1f2f3)]/80">{label}</span>}
     </label>
   );
 }

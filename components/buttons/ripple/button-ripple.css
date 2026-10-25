@@ -2,17 +2,17 @@
   position: relative;
   padding: 12px 32px;
   overflow: hidden;
-  border: 1px solid rgba(246, 246, 246, 0.1);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.1), rgba(241, 242, 243, 0.1));
   border-radius: 8px;
-  background: #202020;
-  color: #f6f6f6;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-weight: 500;
   letter-spacing: 0.025em;
   cursor: pointer;
 }
 .btn-ripple:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .btn-ripple__label {
@@ -26,7 +26,7 @@
   height: 10px;
   margin: -5px 0 0 -5px;
   border-radius: 50%;
-  background: rgba(124, 124, 124, 0.55);
+  background: light-dark(rgba(109, 113, 121, 0.55), rgba(125, 128, 135, 0.55));
   pointer-events: none;
   transform: scale(0);
   animation: btn-ripple 600ms ease-out forwards;

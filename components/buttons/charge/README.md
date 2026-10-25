@@ -1,6 +1,6 @@
 # Charge button
 
-A fighting-game style button: hover to charge a light gray power bar from left to right over 1.5 seconds via requestAnimationFrame. When the bar reaches 100%, the button fires — turning bright white with a pulsing box-shadow glow and "FIRED!" text for 800ms. Mousing away before full charge resets the bar. No dependencies.
+A fighting-game style button: hover to charge a light gray power bar from left to right over 1.5 seconds via requestAnimationFrame. When the bar reaches 100%, the button fires, turning bright white with a pulsing box-shadow glow and "FIRED!" text for 800ms. Mousing away before full charge resets the bar. No dependencies.
 
 Live preview: https://movin.design/components/buttons/charge/
 

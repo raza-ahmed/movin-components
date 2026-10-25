@@ -9,10 +9,10 @@ const css = `
     place-items: center;
     height: 56px;
     padding: 0 40px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 999px;
-    background: #202020;
-    color: #ededed;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    color: light-dark(#42454c, #e5e6e9);
     font: inherit;
     font-size: 18px;
     font-weight: 600;
@@ -23,7 +23,7 @@ const css = `
   }
 
   .btn-particle-text:hover {
-    border-color: #7c7c7c;
+    border-color: light-dark(#6d7179, #7d8087);
   }
 
   .btn-particle-text:active {
@@ -31,7 +31,7 @@ const css = `
   }
 
   .btn-particle-text:focus-visible {
-    outline: 2px solid #ededed;
+    outline: 2px solid light-dark(#42454c, #e5e6e9);
     outline-offset: 4px;
   }
 
@@ -84,7 +84,7 @@ function initParticleText(root: HTMLElement): (() => void) | undefined {
   if (!canvas || !label || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
-  const STRIDE = 7; // x, y, vx, vy, homeX, homeY, alpha — device pixels
+  const STRIDE = 7; // x, y, vx, vy, homeX, homeY, alpha: device pixels
   let parts = new Float32Array(0);
   let colour = '';
   let dpr = 1;

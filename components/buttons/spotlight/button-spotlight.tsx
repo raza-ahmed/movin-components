@@ -20,15 +20,15 @@ export function SpotlightButton({ children }: { children: React.ReactNode }) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative cursor-pointer overflow-hidden rounded-lg border bg-[#202020] px-8 py-3 font-medium tracking-wide text-[#f6f6f6] transition-colors duration-[250ms]"
-      style={{ borderColor: hovered ? 'rgba(246,246,246,0.28)' : 'rgba(246,246,246,0.12)' }}
+      className="relative cursor-pointer overflow-hidden rounded-lg border bg-[color:light-dark(#f3f4f7,#1a1c1f)] px-8 py-3 font-medium tracking-wide text-[color:light-dark(#373a40,#f1f2f3)] transition-colors duration-[250ms]"
+      style={{ borderColor: hovered ? 'light-dark(rgba(55,58,64,0.28), rgba(241,242,243,0.28))' : 'light-dark(rgba(55,58,64,0.12), rgba(241,242,243,0.12))' }}
     >
       {/* The light: centred on the cursor, faded in on hover */}
       <span
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 transition-opacity duration-[250ms]"
         style={{
-          background: 'radial-gradient(70px circle at var(--sx, 50%) var(--sy, 50%), rgba(246,246,246,0.26), transparent 70%)',
+          background: 'radial-gradient(70px circle at var(--sx, 50%) var(--sy, 50%), light-dark(rgba(55,58,64,0.26), rgba(241,242,243,0.26)), transparent 70%)',
           opacity: hovered ? 1 : 0,
         }}
       />

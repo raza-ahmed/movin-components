@@ -26,8 +26,8 @@ export function NeonTraceRadioGroup() {
             className="relative flex cursor-pointer items-center gap-2.5 pl-3.5"
             style={{
               width: W, height: H, borderRadius: R,
-              background: checked ? 'rgba(237,237,237,0.04)' : 'rgba(246,246,246,0.02)',
-              border: `1px solid ${checked ? 'rgba(237,237,237,0.08)' : 'rgba(246,246,246,0.07)'}`,
+              background: checked ? 'light-dark(rgba(66,69,76,0.04), rgba(229,230,233,0.04))' : 'light-dark(rgba(55,58,64,0.02), rgba(241,242,243,0.02))',
+              border: `1px solid ${checked ? 'light-dark(rgba(66,69,76,0.08), rgba(229,230,233,0.08))' : 'light-dark(rgba(55,58,64,0.07), rgba(241,242,243,0.07))'}`,
             }}
           >
             <input
@@ -38,22 +38,22 @@ export function NeonTraceRadioGroup() {
             {checked && (
               <svg key={`trace-${traceKey}`} width={W} height={H} className="pointer-events-none absolute inset-0 overflow-visible">
                 <rect x=".75" y=".75" width={W-1.5} height={H-1.5} rx={R} ry={R}
-                  fill="none" stroke="#ededed" strokeWidth="1.5"
+                  fill="none" stroke="light-dark(#42454c, #e5e6e9)" strokeWidth="1.5"
                   strokeDasharray={PERIMETER}
                   className="neon-trace-path"
                   style={{
                     animation:'neon-trace 700ms cubic-bezier(0.4,0,0.2,1) forwards',
-                    filter:'drop-shadow(0 0 3px #ededed) drop-shadow(0 0 8px #ededed)',
+                    filter:'drop-shadow(0 0 3px light-dark(#42454c, #e5e6e9)) drop-shadow(0 0 8px light-dark(#42454c, #e5e6e9))',
                   }}
                 />
               </svg>
             )}
             <span
               className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full border-2 transition-colors duration-200"
-              style={{ borderColor: checked ? '#ededed' : 'rgba(246,246,246,0.2)' }}
+              style={{ borderColor: checked ? 'light-dark(#42454c, #e5e6e9)' : 'light-dark(rgba(55,58,64,0.2), rgba(241,242,243,0.2))' }}
             >
               <span style={{
-                width:6,height:6,borderRadius:'50%',background:'#ededed',
+                width:6,height:6,borderRadius:'50%',background:'light-dark(#42454c, #e5e6e9)',
                 transform:checked?'scale(1)':'scale(0)',
                 transition:'transform 280ms cubic-bezier(0.34,1.56,0.64,1)',
               }}/>
@@ -61,8 +61,8 @@ export function NeonTraceRadioGroup() {
             <span
               className="select-none text-[13px] font-medium tracking-wide transition-all duration-200"
               style={{
-                color:checked?'#ededed':'rgba(246,246,246,0.55)',
-                textShadow:checked?'0 0 8px rgba(237,237,237,0.4)':'none',
+                color:checked?'light-dark(#42454c, #e5e6e9)':'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))',
+                textShadow:checked?'0 0 8px light-dark(rgba(66,69,76,0.4), rgba(229,230,233,0.4))':'none',
               }}
             >
               {opt}

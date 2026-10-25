@@ -1,6 +1,6 @@
 # Helix loader
 
-Two dots oscillating vertically in opposite phase with scaleX depth — a DNA helix cross-section effect. Pure CSS, no dependencies.
+Two dots oscillating vertically in opposite phase with scaleX depth: a DNA helix cross-section effect. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/loaders/helix/
 

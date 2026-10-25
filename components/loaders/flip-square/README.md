@@ -1,6 +1,6 @@
 # Flip Square loader
 
-A gradient rounded square continuously tumbling on its Y axis using CSS 3D perspective — a satisfying single-element loader. Pure CSS, no dependencies.
+A gradient rounded square continuously tumbling on its Y axis using CSS 3D perspective: a satisfying single-element loader. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/loaders/flip-square/
 

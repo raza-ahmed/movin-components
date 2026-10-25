@@ -7,12 +7,12 @@
   padding: 4px;
   border: none;
   border-radius: 9999px;
-  background: rgba(246, 246, 246, 0.15);
+  background: light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   cursor: pointer;
   transition: background 200ms ease-in-out;
 }
 .toggle-squish:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .toggle-squish__thumb {
@@ -20,10 +20,10 @@
   width: 22px;
   height: 22px;
   border-radius: 30%;
-  background: #f6f6f6;
+  background: light-dark(#373a40, #f1f2f3);
   transform-origin: center;
 }
-.toggle-squish[aria-checked="true"] { background: #a7a7a7; }
+.toggle-squish[aria-checked="true"] { background: light-dark(#5f626a, #a7abb2); }
 .toggle-squish[aria-checked="true"] .toggle-squish__thumb { transform: translateX(22px); }
 /* After the first click: the thumb stretches as it travels, then settles. */
 .toggle-squish--touched .toggle-squish__thumb { animation: toggle-squish-off 320ms cubic-bezier(0.4, 0, 0.2, 1) forwards; }

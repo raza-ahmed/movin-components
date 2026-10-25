@@ -1,15 +1,15 @@
 "use client";
 
 const CELLS = [
-  { color: '#f6f6f6', delay: '0ms' },
-  { color: '#c9c9c9', delay: '100ms' },
-  { color: '#a7a7a7', delay: '200ms' },
-  { color: '#7c7c7c', delay: '300ms' },
-  { color: '#4d4d4d', delay: '400ms' },
-  { color: '#7c7c7c', delay: '300ms' },
-  { color: '#a7a7a7', delay: '200ms' },
-  { color: '#c9c9c9', delay: '100ms' },
-  { color: '#f6f6f6', delay: '0ms' },
+  { color: 'light-dark(#373a40, #f1f2f3)', delay: '0ms' },
+  { color: 'light-dark(#50535b, #c6c8cd)', delay: '100ms' },
+  { color: 'light-dark(#5f626a, #a7abb2)', delay: '200ms' },
+  { color: 'light-dark(#6d7179, #7d8087)', delay: '300ms' },
+  { color: 'light-dark(#cbced3, #393c41)', delay: '400ms' },
+  { color: 'light-dark(#6d7179, #7d8087)', delay: '300ms' },
+  { color: 'light-dark(#5f626a, #a7abb2)', delay: '200ms' },
+  { color: 'light-dark(#50535b, #c6c8cd)', delay: '100ms' },
+  { color: 'light-dark(#373a40, #f1f2f3)', delay: '0ms' },
 ];
 
 export function Mosaic({ label = "Loading" }: { label?: string }) {

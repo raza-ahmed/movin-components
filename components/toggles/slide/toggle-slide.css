@@ -7,12 +7,12 @@
   padding: 4px;
   border: none;
   border-radius: 9999px;
-  background: rgba(246, 246, 246, 0.15);
+  background: light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   cursor: pointer;
   transition: background 200ms ease-in-out;
 }
 .toggle-slide:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .toggle-slide__knob {
@@ -20,10 +20,10 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #f6f6f6;
+  background: light-dark(#373a40, #f1f2f3);
   transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.toggle-slide[aria-checked="true"] { background: #c9c9c9; }
+.toggle-slide[aria-checked="true"] { background: light-dark(#50535b, #c6c8cd); }
 .toggle-slide[aria-checked="true"] .toggle-slide__knob { transform: translateX(22px); }
 @media (prefers-reduced-motion: reduce) {
   .toggle-slide,

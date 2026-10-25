@@ -20,7 +20,7 @@ const css = `
     right: 4px;
     height: 2px;
     border-radius: 1px;
-    background: #3a3a3a;
+    background: light-dark(#dbdde1, #2e3035);
   }
 
   /* Each tile tips about its bottom-right corner, one after another. */
@@ -32,7 +32,7 @@ const css = `
     width: 7px;
     height: 26px;
     border-radius: 2px;
-    background: linear-gradient(#f6f6f6, #c9c9c9);
+    background: linear-gradient(light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd));
     transform-origin: 100% 100%;
     animation: loader-dominoes-fall var(--loader-dominoes-t) infinite;
     animation-delay: calc(var(--loader-dominoes-i) * 0.09s);

@@ -1,6 +1,6 @@
 # Glitch card
 
-On hover, two ghost copies of the card clip to random horizontal bands and translate sideways — one inverted, one overexposed — simulating a corrupted signal. Pure CSS keyframes with step() timing for a digital glitch aesthetic.
+On hover, two ghost copies of the card clip to random horizontal bands and translate sideways (one inverted, one overexposed), simulating a corrupted signal. Pure CSS keyframes with step() timing for a digital glitch aesthetic.
 
 Live preview: https://movin.design/components/cards/glitch/
 

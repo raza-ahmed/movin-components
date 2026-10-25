@@ -9,12 +9,12 @@ const css = `
     gap: 8px;
     width: 100%;
     max-width: 320px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 13px;
   }
 
   .field-chips__label {
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
   }
 
   .field-chips__box {
@@ -25,15 +25,15 @@ const css = `
     box-sizing: border-box;
     min-height: 46px;
     padding: 7px 8px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 10px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     cursor: text;
     transition: border-color 0.2s;
   }
 
   .field-chips__box:focus-within {
-    border-color: #a7a7a7;
+    border-color: light-dark(#5f626a, #a7abb2);
   }
 
   /* The list's chips flow in the same row as the input. */
@@ -51,8 +51,8 @@ const css = `
     height: 28px;
     padding: 0 4px 0 10px;
     border-radius: 7px;
-    background: #3a3a3a;
-    color: #f6f6f6;
+    background: light-dark(#dbdde1, #2e3035);
+    color: light-dark(#373a40, #f1f2f3);
     white-space: nowrap;
     cursor: default;
   }
@@ -64,11 +64,11 @@ const css = `
   @keyframes field-chips-nudge {
     0%,
     100% {
-      background: #3a3a3a;
+      background: light-dark(#dbdde1, #2e3035);
       transform: none;
     }
     20% {
-      background: #7c7c7c;
+      background: light-dark(#6d7179, #7d8087);
       transform: translateX(-4px);
     }
     45% {
@@ -89,18 +89,18 @@ const css = `
     border: 0;
     border-radius: 5px;
     background: none;
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     cursor: pointer;
   }
 
   .field-chips__remove:hover,
   .field-chips__remove:focus-visible {
-    background: #4d4d4d;
-    color: #f6f6f6;
+    background: light-dark(#cbced3, #393c41);
+    color: light-dark(#373a40, #f1f2f3);
   }
 
   .field-chips__remove:focus-visible {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 1px;
   }
 
@@ -122,13 +122,13 @@ const css = `
     border: 0;
     outline: none;
     background: transparent;
-    color: #f6f6f6;
+    color: light-dark(#373a40, #f1f2f3);
     font: inherit;
     font-size: 14px;
   }
 
   .field-chips__input::placeholder {
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
   }
 
   .field-chips__status {

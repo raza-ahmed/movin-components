@@ -1,6 +1,6 @@
 # Aurora input
 
-Blurred bands of light drift around the input on focus — a conic gradient whose start angle rotates via an animated @property. When unfocused, the glow fades out.
+Blurred bands of light drift around the input on focus: a conic gradient whose start angle rotates via an animated @property. When unfocused, the glow fades out.
 
 Live preview: https://movin.design/components/inputs/aurora/
 

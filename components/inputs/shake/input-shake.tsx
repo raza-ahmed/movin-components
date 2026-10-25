@@ -51,16 +51,16 @@ export function ShakeInput() {
           value={value}
           onChange={(e) => { setValue(e.target.value); if (error) setError(""); }}
           className={[
-            "w-full rounded-lg border bg-[#f6f6f6]/5 px-3.5 py-2.5 text-[15px] text-[#f6f6f6] placeholder:text-[#f6f6f6]/[0.55] outline-none focus:ring-1 focus:ring-[#a7a7a7] transition-colors duration-150",
-            error ? "border-[#f6f6f6]" : "border-[#f6f6f6]/15",
+            "w-full rounded-lg border bg-[color:light-dark(#373a40,#f1f2f3)]/5 px-3.5 py-2.5 text-[15px] text-[color:light-dark(#373a40,#f1f2f3)] placeholder:text-[color:light-dark(#373a40ba,#f1f2f39e)] outline-none focus:ring-1 focus:ring-[color:light-dark(#5f626a,#a7abb2)] transition-colors duration-150",
+            error ? "border-[color:light-dark(#373a40,#f1f2f3)]" : "border-[color:light-dark(#373a40,#f1f2f3)]/15",
           ].join(" ")}
         />
-        {error && <span className="pl-0.5 text-xs text-[#ededed]">{error}</span>}
+        {error && <span className="pl-0.5 text-xs text-[color:light-dark(#42454c,#e5e6e9)]">{error}</span>}
       </div>
       <button
         type="button"
         onClick={handleSubmit}
-        className="rounded-lg border border-[#f6f6f6]/15 bg-[#f6f6f6]/10 px-3.5 py-2 text-sm text-[#f6f6f6] cursor-pointer"
+        className="rounded-lg border border-[color:light-dark(#373a40,#f1f2f3)]/15 bg-[color:light-dark(#373a40,#f1f2f3)]/10 px-3.5 py-2 text-sm text-[color:light-dark(#373a40,#f1f2f3)] cursor-pointer"
       >
         Submit
       </button>

@@ -34,7 +34,7 @@ export function OrbitParticlesButton({ children }: { children: React.ReactNode }
               height: large ? 8 : 5,
               marginLeft: large ? -4 : -2.5,
               marginTop: large ? -4 : -2.5,
-              background: large ? '#a7a7a7' : 'rgba(167,167,167,0.65)',
+              background: large ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(95,98,106,0.65), rgba(167,171,178,0.65))',
               opacity: hovered ? 1 : 0,
               transition: 'opacity 250ms ease',
               animation: hovered ? `btn-orbit 1.8s linear ${delay} infinite` : 'none',
@@ -45,7 +45,7 @@ export function OrbitParticlesButton({ children }: { children: React.ReactNode }
           type="button"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className="relative z-10 rounded-lg border border-[#7c7c7c] bg-[#282828] px-8 py-3 font-semibold tracking-wider text-[#c9c9c9] cursor-pointer"
+          className="relative z-10 rounded-lg border border-[color:light-dark(#6d7179,#7d8087)] bg-[color:light-dark(#ebedf0,#232529)] px-8 py-3 font-semibold tracking-wider text-[color:light-dark(#50535b,#c6c8cd)] cursor-pointer"
         >
           {children}
         </button>

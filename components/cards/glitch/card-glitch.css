@@ -8,9 +8,9 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border: 1px solid rgba(246, 246, 246, 0.09);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.09), rgba(241, 242, 243, 0.09));
   border-radius: 12px;
-  background: #111111;
+  background: light-dark(#fbfcfd, #121417);
 }
 .card-glitch__layer--a,
 .card-glitch__layer--b {
@@ -26,13 +26,13 @@
   align-items: center;
   justify-content: center;
   height: 64px;
-  background: linear-gradient(135deg, #202020, #282828);
+  background: linear-gradient(135deg, light-dark(#f3f4f7, #1a1c1f), light-dark(#ebedf0, #232529));
 }
 .card-glitch__mark {
   width: 28px;
   height: 28px;
   box-sizing: border-box;
-  border: 2px solid #ededed;
+  border: 2px solid light-dark(#42454c, #e5e6e9);
   border-radius: 4px;
   opacity: 0.85;
 }
@@ -42,12 +42,12 @@
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
 }
 .card-glitch__text {
   font-size: 11px;
   line-height: 1.4;
-  color: rgba(246, 246, 246, 0.55);
+  color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62));
 }
 @keyframes card-glitch-a {
   0%, 100% { clip-path: inset(0 0 92% 0); transform: translateX(-4px); }

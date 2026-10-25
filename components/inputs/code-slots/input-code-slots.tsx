@@ -7,12 +7,12 @@ const css = `
     display: inline-flex;
     flex-direction: column;
     gap: 10px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 13px;
   }
 
   .field-code-slots__label {
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
   }
 
   .field-code-slots__wrap {
@@ -52,9 +52,9 @@ const css = `
     width: 40px;
     height: 48px;
     overflow: hidden;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 10px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     font-size: 20px;
     font-weight: 600;
     font-variant-numeric: tabular-nums;
@@ -74,7 +74,7 @@ const css = `
 
   .field-code-slots__input:focus-visible ~ .field-code-slots__cells .field-code-slots__cell--active,
   .field-code-slots__cell--active {
-    border-color: #a7a7a7;
+    border-color: light-dark(#5f626a, #a7abb2);
   }
 
   .field-code-slots__cell--active::after {
@@ -83,7 +83,7 @@ const css = `
     width: 2px;
     height: 20px;
     border-radius: 1px;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     animation: field-code-slots-blink 1s steps(1) infinite;
   }
 
@@ -103,9 +103,9 @@ const css = `
     content: '';
     position: absolute;
     inset: 0;
-    border: 1px solid #ededed;
+    border: 1px solid light-dark(#42454c, #e5e6e9);
     border-radius: 12px;
-    background: #282828;
+    background: light-dark(#ebedf0, #232529);
     opacity: 0;
     transition: opacity 0.2s;
   }
@@ -128,7 +128,7 @@ const css = `
 
   .field-code-slots--done .field-code-slots__input:focus-visible ~ .field-code-slots__cells {
     border-radius: 14px;
-    outline: 2px solid #7c7c7c;
+    outline: 2px solid light-dark(#6d7179, #7d8087);
     outline-offset: 3px;
   }
 
@@ -141,7 +141,7 @@ const css = `
     height: 26px;
     margin-left: 12px;
     border-radius: 50%;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     transform: scale(0);
     transition: transform 0.2s ease-in;
   }
@@ -150,7 +150,7 @@ const css = `
     width: 16px;
     height: 16px;
     fill: none;
-    stroke: #111111;
+    stroke: light-dark(#fbfcfd, #121417);
     stroke-width: 2.6;
     stroke-linecap: round;
     stroke-linejoin: round;

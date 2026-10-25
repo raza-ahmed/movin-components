@@ -1,6 +1,6 @@
 # Progress Bar loader
 
-An indeterminate progress bar — a gradient shimmer slides across a pill-shaped track from left to right on loop. Pure CSS, no dependencies.
+An indeterminate progress bar: a gradient shimmer slides across a pill-shaped track from left to right on loop. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/loaders/progress-bar/
 

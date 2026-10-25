@@ -10,7 +10,7 @@ export function GradientDriftCard({ children }: { children: React.ReactNode }) {
           50% { background-position: 100% 50%; }
         }
         .drift-header {
-          background: linear-gradient(270deg, #7c7c7c, #a7a7a7, #a7a7a7, #a7a7a7, #7c7c7c, #7c7c7c);
+          background: linear-gradient(270deg, light-dark(#6d7179, #7d8087), light-dark(#5f626a, #a7abb2), light-dark(#5f626a, #a7abb2), light-dark(#5f626a, #a7abb2), light-dark(#6d7179, #7d8087), light-dark(#6d7179, #7d8087));
           background-size: 500% 500%;
           animation: gradient-drift 8s ease infinite;
         }
@@ -18,7 +18,7 @@ export function GradientDriftCard({ children }: { children: React.ReactNode }) {
           .drift-header { animation: none; background-position: 0% 50%; }
         }
       `}</style>
-      <div className="cursor-pointer overflow-hidden rounded-xl border border-[#f6f6f6]/10 bg-[#f6f6f6]/5">
+      <div className="cursor-pointer overflow-hidden rounded-xl border border-[color:light-dark(#373a40,#f1f2f3)]/10 bg-[color:light-dark(#373a40,#f1f2f3)]/5">
         <div className="drift-header h-16" />
         {children}
       </div>

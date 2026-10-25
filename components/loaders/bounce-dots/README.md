@@ -1,6 +1,6 @@
 # Bounce Dots loader
 
-Three dots that bounce vertically in sequence — the classic typing-indicator pattern. Pure CSS, no dependencies.
+Three dots that bounce vertically in sequence: the classic typing-indicator pattern. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/loaders/bounce-dots/
 

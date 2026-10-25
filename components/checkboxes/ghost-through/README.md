@@ -1,6 +1,6 @@
 # Ghost Through checkbox
 
-The box fades to near-translucency while the check mark materializes through it, then the box fades back to solid — creating a "materializing through" ghost effect. Eerie and subtle.
+The box fades to near-translucency while the check mark materializes through it, then the box fades back to solid, creating a "materializing through" ghost effect. Eerie and subtle.
 
 Live preview: https://movin.design/components/checkboxes/ghost-through/
 

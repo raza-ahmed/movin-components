@@ -9,8 +9,8 @@
   height: 14px;
   border-radius: 50%;
 }
-.loader-helix__dot--a { background: #f6f6f6; animation: loader-helix-a 1s ease-in-out infinite; }
-.loader-helix__dot--b { background: #7c7c7c; animation: loader-helix-b 1s ease-in-out infinite; }
+.loader-helix__dot--a { background: light-dark(#373a40, #f1f2f3); animation: loader-helix-a 1s ease-in-out infinite; }
+.loader-helix__dot--b { background: light-dark(#6d7179, #7d8087); animation: loader-helix-b 1s ease-in-out infinite; }
 @keyframes loader-helix-a {
   0%, 100% { transform: translateY(-12px) scaleX(0.5); opacity: 0.6; }
   50% { transform: translateY(12px) scaleX(1); opacity: 1; }

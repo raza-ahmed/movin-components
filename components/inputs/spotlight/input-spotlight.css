@@ -10,7 +10,7 @@
   position: absolute;
   inset: 1px;
   border-radius: 7px;
-  background: radial-gradient(ellipse 60px 100% at var(--field-spotlight-x) 50%, rgba(167, 167, 167, 0.15) 0%, transparent 80%);
+  background: radial-gradient(ellipse 60px 100% at var(--field-spotlight-x) 50%, light-dark(rgba(95, 98, 106, 0.15), rgba(167, 171, 178, 0.15)) 0%, transparent 80%);
   opacity: 0;
   pointer-events: none;
   transition: opacity 200ms;
@@ -21,18 +21,18 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.12);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12));
   border-radius: 8px;
   outline: none;
-  background: rgba(246, 246, 246, 0.04);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   transition: border-color 200ms;
 }
-.field-spotlight__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-spotlight__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
-.field-spotlight__input:focus { border-color: rgba(167, 167, 167, 0.4); }
+.field-spotlight__input:focus { border-color: light-dark(rgba(95, 98, 106, 0.4), rgba(167, 171, 178, 0.4)); }
 
 @media (prefers-reduced-motion: reduce) {
   .field-spotlight,

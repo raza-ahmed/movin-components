@@ -5,10 +5,10 @@
   width: 172px;
   height: 56px;
   padding: 0;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 999px;
-  background: #202020;
-  color: #ededed;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  color: light-dark(#42454c, #e5e6e9);
   font: inherit;
   font-size: 19px;
   font-weight: 600;
@@ -18,12 +18,12 @@
 }
 
 .btn-morph-text:hover {
-  border-color: #7c7c7c;
-  background: #282828;
+  border-color: light-dark(#6d7179, #7d8087);
+  background: light-dark(#ebedf0, #232529);
 }
 
 .btn-morph-text:focus-visible {
-  outline: 2px solid #ededed;
+  outline: 2px solid light-dark(#42454c, #e5e6e9);
   outline-offset: 4px;
 }
 

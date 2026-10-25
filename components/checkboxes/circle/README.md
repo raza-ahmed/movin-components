@@ -1,6 +1,6 @@
 # Circle checkbox
 
-No box — a circular ring indicator. On check, an SVG circle stroke draws around the full circumference via strokeDashoffset, then the check mark springs into the center. Completely different shape from square checkboxes.
+No box: a circular ring indicator. On check, an SVG circle stroke draws around the full circumference via strokeDashoffset, then the check mark springs into the center. Completely different shape from square checkboxes.
 
 Live preview: https://movin.design/components/checkboxes/circle/
 

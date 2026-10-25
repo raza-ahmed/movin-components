@@ -1,6 +1,6 @@
 # Gravity Drop checkbox
 
-The check mark falls from above the box with realistic gravity physics — accelerates in, overshoots slightly, bounces twice, then settles. Unchecking tosses it back upward and fades it out.
+The check mark falls from above the box with realistic gravity physics, accelerates in, overshoots slightly, bounces twice, then settles. Unchecking tosses it back upward and fades it out.
 
 Live preview: https://movin.design/components/checkboxes/gravity-drop/
 

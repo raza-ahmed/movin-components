@@ -26,13 +26,13 @@ export function BorderBeamButton({ children }: { children: React.ReactNode }) {
             top: '50%', left: '50%',
             width: '400px', height: '400px',
             marginLeft: '-200px', marginTop: '-200px',
-            background: 'conic-gradient(from 0deg,transparent 0%,#7c7c7c 8%,#a7a7a7 12%,transparent 18%)',
+            background: 'conic-gradient(from 0deg,transparent 0%,light-dark(#6d7179, #7d8087) 8%,light-dark(#5f626a, #a7abb2) 12%,transparent 18%)',
           }}
         />
         <button
           type="button"
-          className="relative border-none px-8 py-3 font-semibold text-[#f6f6f6] cursor-pointer"
-          style={{ background: '#202020', borderRadius: '8px' }}
+          className="relative border-none px-8 py-3 font-semibold text-[color:light-dark(#373a40,#f1f2f3)] cursor-pointer"
+          style={{ background: 'light-dark(#f3f4f7, #1a1c1f)', borderRadius: '8px' }}
         >
           {children}
         </button>

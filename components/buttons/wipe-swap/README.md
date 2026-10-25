@@ -1,6 +1,6 @@
 # Wipe Swap button
 
-On hover, the primary label slides out to the left while a secondary label simultaneously slides in from the right — both driven by the same translateX transition. Different from swap-text which moves vertically; this is a horizontal wipe with distinct label content. No dependencies.
+On hover, the primary label slides out to the left while a secondary label simultaneously slides in from the right, both driven by the same translateX transition. Different from swap-text which moves vertically; this is a horizontal wipe with distinct label content. No dependencies.
 
 Live preview: https://movin.design/components/buttons/wipe-swap/
 

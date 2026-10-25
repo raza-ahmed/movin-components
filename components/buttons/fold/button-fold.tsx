@@ -9,7 +9,7 @@ const css = `
     border: 0;
     border-radius: 12px;
     background: none;
-    color: #111111;
+    color: light-dark(#fbfcfd, #121417);
     font: inherit;
     cursor: pointer;
     perspective: 420px;
@@ -17,7 +17,7 @@ const css = `
   }
 
   .btn-fold:focus-visible {
-    outline: 2px solid #ededed;
+    outline: 2px solid light-dark(#42454c, #e5e6e9);
     outline-offset: 4px;
   }
 
@@ -57,13 +57,13 @@ const css = `
     position: absolute;
     inset: 0;
     overflow: hidden;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     backface-visibility: hidden;
   }
 
   .btn-fold__half--top .btn-fold__face {
     border-radius: 12px 12px 0 0;
-    box-shadow: inset 0 -1px 0 rgba(17, 17, 17, 0.08);
+    box-shadow: inset 0 -1px 0 light-dark(rgba(251, 252, 253, 0.08), rgba(18, 20, 23, 0.08));
   }
 
   .btn-fold__half--bottom .btn-fold__face {
@@ -92,7 +92,7 @@ const css = `
     position: absolute;
     inset: 0;
     border-radius: 0 0 12px 12px;
-    background: linear-gradient(180deg, #a7a7a7, #c9c9c9);
+    background: linear-gradient(180deg, light-dark(#5f626a, #a7abb2), light-dark(#50535b, #c6c8cd));
     transform: rotateX(180deg);
     backface-visibility: hidden;
   }
@@ -101,7 +101,7 @@ const css = `
     position: absolute;
     inset: 0;
     border-radius: 0 0 12px 12px;
-    background: #111111;
+    background: light-dark(#fbfcfd, #121417);
     opacity: 0;
     pointer-events: none;
   }

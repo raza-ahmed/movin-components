@@ -12,11 +12,11 @@ export function RaisedCheckbox() {
         className="flex h-7 w-7 items-center justify-center rounded-[8px]"
         style={{
           background: on
-            ? 'radial-gradient(circle at 42% 32%, #a7a7a7 0%, #7c7c7c 45%, #3a3a3a 100%)'
-            : '#111111',
-          border: on ? 'none' : '2px solid rgba(246,246,246,0.18)',
+            ? 'radial-gradient(circle at 42% 32%, light-dark(#5f626a, #a7abb2) 0%, light-dark(#6d7179, #7d8087) 45%, light-dark(#dbdde1, #2e3035) 100%)'
+            : 'light-dark(#fbfcfd, #121417)',
+          border: on ? 'none' : '2px solid light-dark(rgba(55,58,64,0.18), rgba(241,242,243,0.18))',
           boxShadow: on
-            ? '0 -1px 0 1px rgba(167,167,167,0.5), 0 0 0 3px rgba(124,124,124,0.3), 0 8px 20px rgba(58,58,58,0.65), 0 3px 6px rgba(0,0,0,0.4), inset 0 1px 3px rgba(246,246,246,0.35), inset 0 -2px 4px rgba(0,0,0,0.35)'
+            ? '0 -1px 0 1px light-dark(rgba(95,98,106,0.5), rgba(167,171,178,0.5)), 0 0 0 3px light-dark(rgba(109,113,121,0.3), rgba(125,128,135,0.3)), 0 8px 20px light-dark(rgba(219,221,225,0.65), rgba(46,48,53,0.65)), 0 3px 6px rgba(0,0,0,0.4), inset 0 1px 3px light-dark(rgba(55,58,64,0.35), rgba(241,242,243,0.35)), inset 0 -2px 4px rgba(0,0,0,0.35)'
             : 'inset 0 2px 4px rgba(0,0,0,0.5)',
           transform: on ? 'scale(1) translateY(-1px)' : 'scale(1) translateY(0px)',
           transition: on
@@ -33,7 +33,7 @@ export function RaisedCheckbox() {
               ? 'transform 300ms cubic-bezier(0.34,1.56,0.64,1) 80ms, opacity 200ms ease 80ms, filter 200ms ease 80ms'
               : 'transform 150ms ease-in, opacity 120ms ease',
           }}>
-          <path d="M1.5 5L5 8.5L11.5 1.5" stroke="#f6f6f6" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M1.5 5L5 8.5L11.5 1.5" stroke="light-dark(#373a40, #f1f2f3)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </span>
     </label>

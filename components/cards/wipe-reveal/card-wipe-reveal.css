@@ -2,15 +2,15 @@
   position: relative;
   width: 160px;
   overflow: hidden;
-  border: 1px solid rgba(246, 246, 246, 0.09);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.09), rgba(241, 242, 243, 0.09));
   border-radius: 12px;
-  background: #111111;
+  background: light-dark(#fbfcfd, #121417);
   cursor: pointer;
 }
 .card-wipe-reveal__media {
   position: relative;
   height: 64px;
-  background: linear-gradient(135deg, #3a3a3a, #7c7c7c);
+  background: linear-gradient(135deg, light-dark(#dbdde1, #2e3035), light-dark(#6d7179, #7d8087));
 }
 .card-wipe-reveal__icon,
 .card-wipe-reveal__dots {
@@ -22,7 +22,7 @@
 }
 .card-wipe-reveal__icon {
   font-size: 22px;
-  color: rgba(246, 246, 246, 0.9);
+  color: light-dark(rgba(55, 58, 64, 0.9), rgba(241, 242, 243, 0.9));
   transition: opacity 250ms ease;
 }
 .card-wipe-reveal__dots {
@@ -34,11 +34,11 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #7c7c7c;
+  background: light-dark(#6d7179, #7d8087);
   transform: scale(0);
   transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.card-wipe-reveal__dots i:nth-child(2) { background: #c9c9c9; transition-delay: 60ms; }
+.card-wipe-reveal__dots i:nth-child(2) { background: light-dark(#50535b, #c6c8cd); transition-delay: 60ms; }
 .card-wipe-reveal__dots i:nth-child(3) { transition-delay: 120ms; }
 /* The real content wipes in from the top; the placeholder fades out over it. */
 .card-wipe-reveal__revealed {
@@ -53,7 +53,7 @@
   pointer-events: none;
   transition: opacity 180ms ease;
 }
-.card-wipe-reveal__placeholder .card-wipe-reveal__title { color: rgba(246, 246, 246, 0.55); }
+.card-wipe-reveal__placeholder .card-wipe-reveal__title { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 .card-wipe-reveal:hover .card-wipe-reveal__icon,
 .card-wipe-reveal:hover .card-wipe-reveal__placeholder { opacity: 0; }
 .card-wipe-reveal:hover .card-wipe-reveal__dots { opacity: 1; }
@@ -64,12 +64,12 @@
   margin-bottom: 4px;
   font-size: 13px;
   font-weight: 600;
-  color: #f6f6f6;
+  color: light-dark(#373a40, #f1f2f3);
 }
 .card-wipe-reveal__text {
   font-size: 11px;
   line-height: 1.4;
-  color: rgba(246, 246, 246, 0.55);
+  color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62));
 }
 @media (prefers-reduced-motion: reduce) {
   .card-wipe-reveal *,

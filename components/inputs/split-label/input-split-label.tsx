@@ -34,7 +34,7 @@ export function SplitLabelInput({ label = 'Your name' }: { label?: string }) {
             className="split-word inline-block origin-left"
             style={{
               transform: active ? `translate(${shifts[i] ?? 0}px, ${LIFT}px) scale(${SCALE})` : 'none',
-              color: active ? '#ededed' : '#a7a7a7',
+              color: active ? 'light-dark(#42454c, #e5e6e9)' : 'light-dark(#5f626a, #a7abb2)',
               fontWeight: active ? 500 : 400,
               transition: 'transform 420ms cubic-bezier(0.22, 1, 0.36, 1), color 250ms ease',
               // Rise left to right; settle back right to left.
@@ -52,8 +52,8 @@ export function SplitLabelInput({ label = 'Your name' }: { label?: string }) {
         onChange={(e) => setValue(e.target.value)}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        className="h-[46px] w-full rounded-[10px] border bg-[#f6f6f6]/[0.04] px-3.5 text-sm text-[#f6f6f6] outline-none transition-[border-color] duration-[250ms]"
-        style={{ borderColor: active ? '#a7a7a7' : '#3a3a3a' }}
+        className="h-[46px] w-full rounded-[10px] border bg-[color:light-dark(#373a40,#f1f2f3)]/[0.04] px-3.5 text-sm text-[color:light-dark(#373a40,#f1f2f3)] outline-none transition-[border-color] duration-[250ms]"
+        style={{ borderColor: active ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(#dbdde1, #2e3035)' }}
       />
     </div>
   );

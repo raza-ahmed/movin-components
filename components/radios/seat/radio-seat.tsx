@@ -8,7 +8,7 @@ const css = `
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 11px;
   }
 
@@ -16,9 +16,9 @@ const css = `
   .radio-seat__screen {
     width: 140px;
     padding-top: 8px;
-    border-top: 2px solid #7c7c7c;
+    border-top: 2px solid light-dark(#6d7179, #7d8087);
     border-radius: 50% 50% 0 0 / 10px 10px 0 0;
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
     font-size: 10px;
     letter-spacing: 0.2em;
     text-align: center;
@@ -56,9 +56,9 @@ const css = `
     width: 26px;
     height: 22px;
     box-sizing: border-box;
-    border: 1.5px solid #4d4d4d;
+    border: 1.5px solid light-dark(#cbced3, #393c41);
     border-radius: 8px 8px 4px 4px;
-    background: #282828;
+    background: light-dark(#ebedf0, #232529);
     transition: background-color 0.2s, border-color 0.2s, transform 0.35s cubic-bezier(0.3, 1.8, 0.5, 1);
   }
 
@@ -71,26 +71,26 @@ const css = `
     left: 3px;
     height: 4px;
     border-radius: 2px;
-    background: #3a3a3a;
+    background: light-dark(#dbdde1, #2e3035);
     transition: background-color 0.2s;
   }
 
   .radio-seat__option:hover .radio-seat__input:not(:disabled) + .radio-seat__seat {
-    border-color: #a7a7a7;
+    border-color: light-dark(#5f626a, #a7abb2);
   }
 
   .radio-seat__input:checked + .radio-seat__seat {
-    border-color: #ededed;
-    background: #ededed;
+    border-color: light-dark(#42454c, #e5e6e9);
+    background: light-dark(#42454c, #e5e6e9);
     transform: translateY(-3px) scale(1.08);
   }
 
   .radio-seat__input:checked + .radio-seat__seat::after {
-    background: #a7a7a7;
+    background: light-dark(#5f626a, #a7abb2);
   }
 
   .radio-seat__input:focus-visible + .radio-seat__seat {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 
@@ -100,11 +100,11 @@ const css = `
   }
 
   .radio-seat__input:disabled + .radio-seat__seat {
-    border-color: #282828;
+    border-color: light-dark(#ebedf0, #232529);
     background:
-      linear-gradient(45deg, transparent 46%, #4d4d4d 46% 54%, transparent 54%),
-      linear-gradient(-45deg, transparent 46%, #4d4d4d 46% 54%, transparent 54%),
-      #202020;
+      linear-gradient(45deg, transparent 46%, light-dark(#cbced3, #393c41) 46% 54%, transparent 54%),
+      linear-gradient(-45deg, transparent 46%, light-dark(#cbced3, #393c41) 46% 54%, transparent 54%),
+      light-dark(#f3f4f7, #1a1c1f);
   }
 
   .radio-seat__input:disabled + .radio-seat__seat::after {
@@ -116,12 +116,12 @@ const css = `
     align-items: baseline;
     gap: 8px;
     padding: 6px 14px;
-    border: 1px dashed #4d4d4d;
+    border: 1px dashed light-dark(#cbced3, #393c41);
     border-radius: 8px;
   }
 
   .radio-seat__ticket-label {
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
@@ -133,7 +133,7 @@ const css = `
     min-width: 2.4em;
     height: 20px;
     overflow: hidden;
-    color: #f6f6f6;
+    color: light-dark(#373a40, #f1f2f3);
     font-size: 16px;
     font-variant-numeric: tabular-nums;
     font-weight: 600;

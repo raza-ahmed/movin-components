@@ -14,14 +14,14 @@
   width: 10px;
   height: 10px;
   box-sizing: border-box;
-  border: 0 solid rgba(167, 167, 167, 0.3);
+  border: 0 solid light-dark(rgba(95, 98, 106, 0.3), rgba(167, 171, 178, 0.3));
   transition: all 220ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .field-hud-brackets__bracket--tl { top: 4px; left: 4px; border-top-width: 2px; border-left-width: 2px; }
 .field-hud-brackets__bracket--tr { top: 4px; right: 4px; border-top-width: 2px; border-right-width: 2px; }
 .field-hud-brackets__bracket--bl { bottom: 4px; left: 4px; border-bottom-width: 2px; border-left-width: 2px; }
 .field-hud-brackets__bracket--br { right: 4px; bottom: 4px; border-right-width: 2px; border-bottom-width: 2px; }
-.field-hud-brackets:focus-within .field-hud-brackets__bracket { border-color: #a7a7a7; }
+.field-hud-brackets:focus-within .field-hud-brackets__bracket { border-color: light-dark(#5f626a, #a7abb2); }
 .field-hud-brackets:focus-within .field-hud-brackets__bracket--tl,
 .field-hud-brackets:focus-within .field-hud-brackets__bracket--tr { top: -4px; }
 .field-hud-brackets:focus-within .field-hud-brackets__bracket--bl,
@@ -35,23 +35,23 @@
   box-sizing: border-box;
   width: 100%;
   padding: 8px 12px;
-  border: 1px solid rgba(246, 246, 246, 0.12);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12));
   border-radius: 4px;
   outline: none;
-  background: rgba(246, 246, 246, 0.04);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 14px;
   transition: all 220ms;
 }
-.field-hud-brackets__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-hud-brackets__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
 .field-hud-brackets__input:focus {
-  border-color: rgba(167, 167, 167, 0.4);
-  background: rgba(167, 167, 167, 0.04);
-  color: #c9c9c9;
+  border-color: light-dark(rgba(95, 98, 106, 0.4), rgba(167, 171, 178, 0.4));
+  background: light-dark(rgba(95, 98, 106, 0.04), rgba(167, 171, 178, 0.04));
+  color: light-dark(#50535b, #c6c8cd);
   letter-spacing: 0.05em;
 }
 

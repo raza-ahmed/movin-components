@@ -13,7 +13,7 @@ export function ProgressBarLoader({ label = "Loading" }: { label?: string }) {
           width: 180px;
           height: 6px;
           border-radius: 9999px;
-          background: rgba(246,246,246,0.15);
+          background: light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15));
           overflow: hidden;
         }
         .progress-bar {
@@ -23,11 +23,11 @@ export function ProgressBarLoader({ label = "Loading" }: { label?: string }) {
           width: 55%;
           height: 100%;
           border-radius: 9999px;
-          background: linear-gradient(90deg, transparent, #7c7c7c, #7c7c7c, transparent);
+          background: linear-gradient(90deg, transparent, light-dark(#6d7179, #7d8087), light-dark(#6d7179, #7d8087), transparent);
           animation: progress-slide 1.6s ease-in-out infinite;
         }
         @media (prefers-reduced-motion: reduce) {
-          .progress-bar { animation: none; left: 20%; width: 60%; background: #7c7c7c; }
+          .progress-bar { animation: none; left: 20%; width: 60%; background: light-dark(#6d7179, #7d8087); }
         }
       `}</style>
       <div

@@ -24,8 +24,8 @@ const css = `
   .radio-sizes__shirt {
     width: 80px;
     height: 72px;
-    fill: #3a3a3a;
-    stroke: #a7a7a7;
+    fill: light-dark(#dbdde1, #2e3035);
+    stroke: light-dark(#5f626a, #a7abb2);
     stroke-width: 1.5;
     stroke-linejoin: round;
     transform: scale(var(--radio-sizes-s));
@@ -34,7 +34,7 @@ const css = `
   }
 
   .radio-sizes__measure {
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
     font-size: 11px;
     font-variant-numeric: tabular-nums;
   }
@@ -64,17 +64,17 @@ const css = `
     height: 34px;
     padding: 0 10px;
     box-sizing: border-box;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 9px;
-    background: #202020;
-    color: #a7a7a7;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 13px;
     font-weight: 600;
     transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
   }
 
   .radio-sizes__option:hover .radio-sizes__pill {
-    border-color: #7c7c7c;
+    border-color: light-dark(#6d7179, #7d8087);
   }
 
   .radio-sizes__option:active .radio-sizes__pill {
@@ -82,13 +82,13 @@ const css = `
   }
 
   .radio-sizes__input:checked + .radio-sizes__pill {
-    border-color: #ededed;
-    background: #ededed;
-    color: #111111;
+    border-color: light-dark(#42454c, #e5e6e9);
+    background: light-dark(#42454c, #e5e6e9);
+    color: light-dark(#fbfcfd, #121417);
   }
 
   .radio-sizes__input:focus-visible + .radio-sizes__pill {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 

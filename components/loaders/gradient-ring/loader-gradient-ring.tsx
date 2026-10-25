@@ -18,7 +18,7 @@ export function GradientRing({ label = "Loading" }: { label?: string }) {
           width: 44,
           height: 44,
           borderRadius: '50%',
-          background: 'conic-gradient(from 0deg, #7c7c7c, #a7a7a7, #a7a7a7, #a7a7a7, #7c7c7c, #7c7c7c, #7c7c7c)',
+          background: 'conic-gradient(from 0deg, light-dark(#6d7179, #7d8087), light-dark(#5f626a, #a7abb2), light-dark(#5f626a, #a7abb2), light-dark(#5f626a, #a7abb2), light-dark(#6d7179, #7d8087), light-dark(#6d7179, #7d8087), light-dark(#6d7179, #7d8087))',
           WebkitMask: 'radial-gradient(farthest-side, transparent calc(100% - 4px), black 0)',
           mask: 'radial-gradient(farthest-side, transparent calc(100% - 4px), black 0)',
         }}

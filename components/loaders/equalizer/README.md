@@ -1,6 +1,6 @@
 # Equalizer loader
 
-Five bars each running an independent height animation at a different duration — the unsynchronized cadences create an organic music-equalizer feel. Pure CSS, no dependencies.
+Five bars each running an independent height animation at a different duration: the unsynchronized cadences create an organic music-equalizer feel. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/loaders/equalizer/
 

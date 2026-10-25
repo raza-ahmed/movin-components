@@ -22,7 +22,7 @@
   width: 28px;
   height: 28px;
   border-radius: 7px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   transition: background 180ms ease, border-color 180ms ease;
   animation: cb-bounce-out 440ms ease;
 }
@@ -32,18 +32,18 @@
 }
 /* Switching the animation name restarts it, so each toggle bounces once. */
 .cb-bounce__input:checked + .cb-bounce__box {
-  background: #7c7c7c;
-  border-color: #7c7c7c;
+  background: light-dark(#6d7179, #7d8087);
+  border-color: light-dark(#6d7179, #7d8087);
   animation: cb-bounce-in 440ms ease;
 }
 .cb-bounce__input:checked + .cb-bounce__box path { opacity: 1; }
 .cb-bounce__input:focus-visible + .cb-bounce__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .cb-bounce__label {
   font-size: 14px;
-  color: rgba(246, 246, 246, 0.8);
+  color: light-dark(rgba(55, 58, 64, 0.8), rgba(241, 242, 243, 0.8));
   user-select: none;
 }
 @keyframes cb-bounce-in {

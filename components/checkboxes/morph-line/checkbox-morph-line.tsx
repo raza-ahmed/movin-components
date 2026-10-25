@@ -25,14 +25,14 @@ export function MorphLineCheckbox({ label }: { label?: string }) {
       <div className="relative h-7 w-7 flex-shrink-0">
         <input aria-label={label ?? "Remember me"} type="checkbox" checked={on} onChange={toggle} className="absolute opacity-0 w-0 h-0" />
         <span data-cb="morph-line" className="flex h-7 w-7 items-center justify-center rounded-[7px] border-2"
-          style={{ background: on ? '#3a3a3a' : 'transparent', borderColor: on ? '#c9c9c9' : 'rgba(246,246,246,0.25)', transition: 'background 300ms ease, border-color 300ms ease' }}>
+          style={{ background: on ? 'light-dark(#dbdde1, #2e3035)' : 'transparent', borderColor: on ? 'light-dark(#50535b, #c6c8cd)' : 'light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25))', transition: 'background 300ms ease, border-color 300ms ease' }}>
           <svg key={key} width="13" height="10" viewBox="0 0 13 10" fill="none" aria-hidden="true">
-            <path d={on ? 'M1.5 5 L5 8.5 L11.5 1.5' : 'M3 6.5 L10 6.5'} stroke="#c9c9c9" strokeWidth={on ? 2.2 : 2.5} strokeLinecap="round" strokeLinejoin="round"
+            <path d={on ? 'M1.5 5 L5 8.5 L11.5 1.5' : 'M3 6.5 L10 6.5'} stroke="light-dark(#50535b, #c6c8cd)" strokeWidth={on ? 2.2 : 2.5} strokeLinecap="round" strokeLinejoin="round"
               style={{ animation: on ? 'cb-line-to-check 380ms cubic-bezier(0.22, 1, 0.36, 1) forwards' : 'cb-check-to-line 280ms ease-in forwards' }} />
           </svg>
         </span>
       </div>
-      {label && <span className="select-none text-sm text-[#f6f6f6]/80">{label}</span>}
+      {label && <span className="select-none text-sm text-[color:light-dark(#373a40,#f1f2f3)]/80">{label}</span>}
     </label>
   );
 }

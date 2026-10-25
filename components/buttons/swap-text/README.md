@@ -1,6 +1,6 @@
 # Swap Text button
 
-The button label slides upward out of frame on hover while a secondary label slides in from below — a clean way to surface a call-to-action hint. Pure CSS transitions, no dependencies.
+The button label slides upward out of frame on hover while a secondary label slides in from below: a clean way to surface a call-to-action hint. Pure CSS transitions, no dependencies.
 
 Live preview: https://movin.design/components/buttons/swap-text/
 

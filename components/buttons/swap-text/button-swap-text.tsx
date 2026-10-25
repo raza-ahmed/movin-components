@@ -8,8 +8,8 @@ export function SwapTextButton({ label, swapLabel }: { label: string; swapLabel:
       type="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative min-w-36 overflow-hidden rounded-lg px-8 py-3 font-medium tracking-wide text-[#f6f6f6] cursor-pointer border-none"
-      style={{ background: '#4d4d4d' }}
+      className="relative min-w-36 overflow-hidden rounded-lg px-8 py-3 font-medium tracking-wide text-[color:light-dark(#373a40,#f1f2f3)] cursor-pointer border-none"
+      style={{ background: 'light-dark(#cbced3, #393c41)' }}
     >
       <span
         className="block transition-transform duration-[280ms] ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none"

@@ -19,8 +19,8 @@ export function BlobRadioGroup() {
                 layoutId="blob-indicator"
                 className="absolute inset-0 rounded-full"
                 style={{
-                  background: 'rgba(124,124,124,0.8)',
-                  boxShadow: '0 4px 20px rgba(124,124,124,0.4)',
+                  background: 'light-dark(rgba(109,113,121,0.8), rgba(125,128,135,0.8))',
+                  boxShadow: '0 4px 20px light-dark(rgba(109,113,121,0.4), rgba(125,128,135,0.4))',
                 }}
                 transition={{ type: 'spring', stiffness: 380, damping: 30, mass: 1 }}
               />
@@ -32,13 +32,13 @@ export function BlobRadioGroup() {
             />
             <span
               className="relative z-10 h-2.5 w-2.5 flex-shrink-0 rounded-full transition-colors duration-200"
-              style={{ background: checked ? 'rgba(246,246,246,0.9)' : 'rgba(246,246,246,0.2)' }}
+              style={{ background: checked ? 'light-dark(rgba(55,58,64,0.9), rgba(241,242,243,0.9))' : 'light-dark(rgba(55,58,64,0.2), rgba(241,242,243,0.2))' }}
             />
             <span
               className="relative z-10 select-none text-sm transition-colors duration-200"
               style={{
                 fontWeight: checked ? 600 : 400,
-                color: checked ? '#f6f6f6' : 'rgba(246,246,246,0.55)',
+                color: checked ? 'light-dark(#373a40, #f1f2f3)' : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))',
               }}
             >
               {opt}

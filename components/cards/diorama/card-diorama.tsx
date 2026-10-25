@@ -42,7 +42,7 @@ const css = `
 
   .card-diorama__layer--sky {
     overflow: hidden;
-    background: linear-gradient(180deg, #3a3a3a, #282828);
+    background: linear-gradient(180deg, light-dark(#dbdde1, #2e3035), light-dark(#ebedf0, #232529));
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
   }
 
@@ -63,7 +63,7 @@ const css = `
     justify-content: flex-end;
     gap: 1px;
     padding: 0 12px 7px;
-    border: 8px solid #ededed;
+    border: 8px solid light-dark(#42454c, #e5e6e9);
     border-bottom-width: 34px;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
     transform: translateZ(calc(var(--card-diorama-z) * 3));
@@ -76,12 +76,12 @@ const css = `
   }
 
   .card-diorama__layer--far .card-diorama__shape {
-    background: #7c7c7c;
+    background: light-dark(#6d7179, #7d8087);
     clip-path: polygon(0 62%, 14% 44%, 26% 54%, 42% 30%, 58% 50%, 70% 38%, 86% 52%, 100% 40%, 100% 100%, 0 100%);
   }
 
   .card-diorama__layer--near .card-diorama__shape {
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     clip-path: polygon(0 74%, 18% 62%, 34% 72%, 52% 58%, 70% 70%, 84% 62%, 100% 70%, 100% 100%, 0 100%);
   }
 
@@ -92,7 +92,7 @@ const css = `
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: #c9c9c9;
+    background: light-dark(#50535b, #c6c8cd);
   }
 
   /* The text sits in the frame's deep bottom border. */
@@ -101,23 +101,25 @@ const css = `
     position: relative;
     margin: 0 -12px;
     transform: translateY(34px);
+    /* The border's own colour, so the text has a real background behind it. */
+    background: light-dark(#42454c, #e5e6e9);
   }
 
   .card-diorama__title {
-    color: #111111;
+    color: light-dark(#fbfcfd, #121417);
     font-size: 12px;
     font-weight: 600;
     line-height: 1.2;
   }
 
   .card-diorama__text {
-    color: #4d4d4d;
+    color: light-dark(#cbced3, #393c41);
     font-size: 10px;
     line-height: 1.2;
   }
 
   .card-diorama:focus-visible .card-diorama__layer--sky {
-    outline: 2px solid #ededed;
+    outline: 2px solid light-dark(#42454c, #e5e6e9);
     outline-offset: 4px;
   }
 

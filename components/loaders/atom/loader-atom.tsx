@@ -19,8 +19,8 @@ const css = `
     height: 9px;
     margin: -4.5px 0 0 -4.5px;
     border-radius: 50%;
-    background: #f6f6f6;
-    box-shadow: 0 0 10px 2px rgba(246, 246, 246, 0.35);
+    background: light-dark(#373a40, #f1f2f3);
+    box-shadow: 0 0 10px 2px light-dark(rgba(55, 58, 64, 0.35), rgba(241, 242, 243, 0.35));
   }
 
   /* Each orbit is a 72px box turned to its tilt; the ring is its ::before and
@@ -46,7 +46,7 @@ const css = `
     width: 64px;
     height: 22px;
     box-sizing: border-box;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 50%;
   }
 
@@ -57,7 +57,7 @@ const css = `
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     offset-path: path('M4 36A32 11 0 1 1 68 36A32 11 0 1 1 4 36');
     offset-anchor: 50% 50%;
     offset-rotate: 0deg;

@@ -8,7 +8,7 @@
 }
 .radio-prism__option { cursor: pointer; }
 .radio-prism__option:has(.radio-prism__input:focus-visible) {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -22,7 +22,7 @@
   align-items: center;
   gap: 12px;
   padding: 10px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.05);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.05), rgba(241, 242, 243, 0.05));
   border-radius: 8px;
   transition: all 200ms;
 }
@@ -35,7 +35,7 @@
   height: 20px;
   flex-shrink: 0;
   box-sizing: border-box;
-  border: 2px solid rgba(246, 246, 246, 0.2);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.2), rgba(241, 242, 243, 0.2));
   border-radius: 50%;
   transition: all 300ms;
 }
@@ -44,29 +44,29 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: rgba(246, 246, 246, 0.9);
+  background: light-dark(rgba(55, 58, 64, 0.9), rgba(241, 242, 243, 0.9));
 }
 
 .radio-prism__label {
   font-size: 14px;
-  color: rgba(246, 246, 246, 0.55);
+  color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62));
   user-select: none;
   transition: color 200ms;
 }
 
 .radio-prism__option:has(.radio-prism__input:checked) {
-  border-color: rgba(246, 246, 246, 0.12);
-  background: rgba(246, 246, 246, 0.03);
+  border-color: light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12));
+  background: light-dark(rgba(55, 58, 64, 0.03), rgba(241, 242, 243, 0.03));
 }
 .radio-prism__option:has(.radio-prism__input:checked) .radio-prism__gem {
   border-color: transparent;
-  background: linear-gradient(135deg, #7c7c7c, #a7a7a7, #c9c9c9, #ededed, #a7a7a7, #7c7c7c) border-box;
-  box-shadow: 0 0 10px rgba(124, 124, 124, 0.5);
+  background: linear-gradient(135deg, light-dark(#6d7179, #7d8087), light-dark(#5f626a, #a7abb2), light-dark(#50535b, #c6c8cd), light-dark(#42454c, #e5e6e9), light-dark(#5f626a, #a7abb2), light-dark(#6d7179, #7d8087)) border-box;
+  box-shadow: 0 0 10px light-dark(rgba(109, 113, 121, 0.5), rgba(125, 128, 135, 0.5));
 }
 .radio-prism__option:has(.radio-prism__input:checked) .radio-prism__dot { display: block; }
 .radio-prism__option:has(.radio-prism__input:checked) .radio-prism__label {
   font-weight: 600;
-  background-image: linear-gradient(90deg, #7c7c7c, #a7a7a7, #c9c9c9, #ededed, #a7a7a7, #7c7c7c, #7c7c7c);
+  background-image: linear-gradient(90deg, light-dark(#6d7179, #7d8087), light-dark(#5f626a, #a7abb2), light-dark(#50535b, #c6c8cd), light-dark(#42454c, #e5e6e9), light-dark(#5f626a, #a7abb2), light-dark(#6d7179, #7d8087), light-dark(#6d7179, #7d8087));
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;

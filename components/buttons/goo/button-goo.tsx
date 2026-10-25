@@ -12,7 +12,7 @@ const css = `
     padding: 0;
     border: 0;
     background: none;
-    color: #111111;
+    color: light-dark(#fbfcfd, #121417);
     font: inherit;
     font-size: 15px;
     font-weight: 600;
@@ -21,7 +21,7 @@ const css = `
   }
 
   .btn-goo:focus-visible {
-    outline: 2px solid #ededed;
+    outline: 2px solid light-dark(#42454c, #e5e6e9);
     outline-offset: 6px;
     border-radius: 999px;
   }
@@ -38,7 +38,7 @@ const css = `
     position: absolute;
     inset: 0;
     border-radius: 999px;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     transition: scale 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
   }
 
@@ -51,7 +51,7 @@ const css = `
     position: absolute;
     top: 50%;
     border-radius: 50%;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
   }
 
   .btn-goo__drop {

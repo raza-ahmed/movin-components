@@ -1,6 +1,6 @@
 # Diamond button
 
-A diamond-shaped button using a 45-degree rotated wrapper with counter-rotated text. On hover, the button scales up, the background gradient brightens, and a pulse box-shadow animation radiates outward. No clip-path — pure CSS rotate transform.
+A diamond-shaped button using a 45-degree rotated wrapper with counter-rotated text. On hover, the button scales up, the background gradient brightens, and a pulse box-shadow animation radiates outward. No clip-path: pure CSS rotate transform.
 
 Live preview: https://movin.design/components/buttons/diamond/
 

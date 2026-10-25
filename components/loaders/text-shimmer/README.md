@@ -1,6 +1,6 @@
 # Text Shimmer loader
 
-The word "Loading" rendered in uppercase with a bright spotlight sweeping across it via background-clip:text — a text-as-canvas shimmer effect. Pure CSS, no dependencies.
+The word "Loading" rendered in uppercase with a bright spotlight sweeping across it via background-clip:text, a text-as-canvas shimmer effect. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/loaders/text-shimmer/
 

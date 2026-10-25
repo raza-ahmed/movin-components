@@ -8,10 +8,10 @@
   padding: 0;
   overflow: hidden;
   isolation: isolate;
-  border: 1px solid #4d4d4d;
+  border: 1px solid light-dark(#cbced3, #393c41);
   border-radius: 14px;
-  background: #202020;
-  color: #ededed;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  color: light-dark(#42454c, #e5e6e9);
   font: inherit;
   font-size: 15px;
   font-weight: 600;
@@ -20,7 +20,7 @@
 }
 
 .btn-tide:focus-visible {
-  outline: 2px solid #ededed;
+  outline: 2px solid light-dark(#42454c, #e5e6e9);
   outline-offset: 4px;
 }
 
@@ -31,7 +31,7 @@
   left: -25%;
   width: 150%;
   height: 100%;
-  background: #ededed;
+  background: light-dark(#42454c, #e5e6e9);
   translate: 0 calc(100% + 16px);
   rotate: var(--btn-tide-tilt);
   transition: translate 1s cubic-bezier(0.3, 1.25, 0.5, 1);
@@ -53,7 +53,7 @@
   left: 0;
   width: 200%;
   height: 12px;
-  fill: #ededed;
+  fill: light-dark(#42454c, #e5e6e9);
   animation: btn-tide-roll 2.4s linear infinite;
 }
 

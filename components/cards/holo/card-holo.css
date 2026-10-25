@@ -18,9 +18,9 @@
   height: 204px;
   padding: 8px;
   overflow: hidden;
-  border: 1px solid #4d4d4d;
+  border: 1px solid light-dark(#cbced3, #393c41);
   border-radius: 12px;
-  background: linear-gradient(160deg, #282828, #111111);
+  background: linear-gradient(160deg, light-dark(#ebedf0, #232529), light-dark(#fbfcfd, #121417));
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   transform: rotateX(var(--card-holo-ry)) rotateY(var(--card-holo-rx));
   transition: transform 0.6s cubic-bezier(0.3, 1.4, 0.5, 1), box-shadow 0.4s;
@@ -36,9 +36,9 @@
   position: relative;
   flex: 1;
   overflow: hidden;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 8px;
-  background: radial-gradient(circle at 50% 45%, #3a3a3a, #202020 70%);
+  background: radial-gradient(circle at 50% 45%, light-dark(#dbdde1, #2e3035), light-dark(#f3f4f7, #1a1c1f) 70%);
 }
 
 .card-holo__emblem {
@@ -48,10 +48,10 @@
   width: 52px;
   height: 52px;
   margin: -26px 0 0 -26px;
-  border: 2px solid #a7a7a7;
+  border: 2px solid light-dark(#5f626a, #a7abb2);
   border-radius: 50%;
-  background: radial-gradient(circle, #ededed 0 6px, transparent 7px);
-  box-shadow: 0 0 0 8px #282828, 0 0 0 9px #4d4d4d, inset 0 0 0 10px #3a3a3a;
+  background: radial-gradient(circle, light-dark(#42454c, #e5e6e9) 0 6px, transparent 7px);
+  box-shadow: 0 0 0 8px light-dark(#ebedf0, #232529), 0 0 0 9px light-dark(#cbced3, #393c41), inset 0 0 0 10px light-dark(#dbdde1, #2e3035);
 }
 
 .card-holo__body {
@@ -59,14 +59,14 @@
 }
 
 .card-holo__title {
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
   font-size: 13px;
   font-weight: 600;
 }
 
 .card-holo__text {
   margin-top: 2px;
-  color: #a7a7a7;
+  color: light-dark(#5f626a, #a7abb2);
   font-size: 11px;
 }
 
@@ -75,7 +75,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: repeating-linear-gradient(115deg, rgba(246, 246, 246, 0) 0%, rgba(246, 246, 246, 0.5) 4%, rgba(246, 246, 246, 0) 8%, rgba(167, 167, 167, 0.3) 12%, rgba(246, 246, 246, 0) 16%), radial-gradient(circle, rgba(246, 246, 246, 0.28) 0.5px, transparent 0.9px);
+  background-image: repeating-linear-gradient(115deg, light-dark(rgba(55, 58, 64, 0), rgba(241, 242, 243, 0)) 0%, light-dark(rgba(55, 58, 64, 0.5), rgba(241, 242, 243, 0.5)) 4%, light-dark(rgba(55, 58, 64, 0), rgba(241, 242, 243, 0)) 8%, light-dark(rgba(95, 98, 106, 0.3), rgba(167, 171, 178, 0.3)) 12%, light-dark(rgba(55, 58, 64, 0), rgba(241, 242, 243, 0)) 16%), radial-gradient(circle, light-dark(rgba(55, 58, 64, 0.28), rgba(241, 242, 243, 0.28)) 0.5px, transparent 0.9px);
   background-position: var(--card-holo-x) var(--card-holo-y), 0 0;
   background-size: 400% 400%, 5px 5px;
   mix-blend-mode: color-dodge;
@@ -87,7 +87,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at var(--card-holo-x) var(--card-holo-y), rgba(246, 246, 246, 0.45), transparent 55%);
+  background: radial-gradient(circle at var(--card-holo-x) var(--card-holo-y), light-dark(rgba(55, 58, 64, 0.45), rgba(241, 242, 243, 0.45)), transparent 55%);
   mix-blend-mode: overlay;
   opacity: var(--card-holo-o);
   transition: opacity 0.4s;

@@ -9,12 +9,12 @@
   padding: 4px;
   border: none;
   border-radius: 9999px;
-  background: rgba(246, 246, 246, 0.15);
+  background: light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   cursor: pointer;
   transition: background 340ms ease;
 }
 .toggle-spring:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .toggle-spring__knob {
@@ -22,10 +22,10 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #f6f6f6;
+  background: light-dark(#373a40, #f1f2f3);
   transition: transform 340ms var(--toggle-spring-ease);
 }
-.toggle-spring[aria-checked="true"] { background: #a7a7a7; }
+.toggle-spring[aria-checked="true"] { background: light-dark(#5f626a, #a7abb2); }
 .toggle-spring[aria-checked="true"] .toggle-spring__knob { transform: translateX(22px); }
 @media (prefers-reduced-motion: reduce) {
   .toggle-spring__knob { transition-duration: 120ms; transition-timing-function: ease-out; }

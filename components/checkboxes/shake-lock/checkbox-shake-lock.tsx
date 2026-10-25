@@ -27,18 +27,18 @@ export function ShakeLockCheckbox({ label }: { label?: string }) {
         <input aria-label={label ?? "Remember me"} type="checkbox" checked={on} onChange={toggle} className="absolute opacity-0 w-0 h-0" />
         <span key={key} data-cb="shake" className="flex h-7 w-7 items-center justify-center rounded-[7px] border-2"
           style={{
-            background: on ? '#a7a7a7' : 'transparent',
-            borderColor: on ? '#a7a7a7' : 'rgba(246,246,246,0.25)',
+            background: on ? 'light-dark(#5f626a, #a7abb2)' : 'transparent',
+            borderColor: on ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25))',
             transition: 'background 200ms ease, border-color 200ms ease',
             animation: `${animIn ? 'cb-shake-in' : 'cb-shake-out'} 380ms ease forwards`,
           }}>
           <svg width="13" height="10" viewBox="0 0 13 10" fill="none" aria-hidden="true"
             style={{ opacity: on ? 1 : 0, transition: on ? 'opacity 160ms ease 240ms' : 'opacity 100ms ease' }}>
-            <path d="M1.5 5L5 8.5L11.5 1.5" stroke="#f6f6f6" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M1.5 5L5 8.5L11.5 1.5" stroke="light-dark(#373a40, #f1f2f3)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
       </div>
-      {label && <span className="select-none text-sm text-[#f6f6f6]/80">{label}</span>}
+      {label && <span className="select-none text-sm text-[color:light-dark(#373a40,#f1f2f3)]/80">{label}</span>}
     </label>
   );
 }

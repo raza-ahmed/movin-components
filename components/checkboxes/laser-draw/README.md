@@ -1,6 +1,6 @@
 # Laser Draw checkbox
 
-The check mark draws itself with a glowing white laser effect using stroke-dashoffset animation and a pulsing drop-shadow filter. Visually distinct from draw-check — hot, fiery, continuous glow.
+The check mark draws itself with a glowing white laser effect using stroke-dashoffset animation and a pulsing drop-shadow filter. Visually distinct from draw-check: hot, fiery, continuous glow.
 
 Live preview: https://movin.design/components/checkboxes/laser-draw/
 

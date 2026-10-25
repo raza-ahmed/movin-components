@@ -1,6 +1,6 @@
 # Bouncing Ball loader
 
-A squash-and-stretch ball with a synced shadow — multi-stop keyframes fake physical bounce physics. Pure CSS, no dependencies.
+A squash-and-stretch ball with a synced shadow: multi-stop keyframes fake physical bounce physics. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/loaders/bouncing-ball/
 

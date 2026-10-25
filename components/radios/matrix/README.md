@@ -1,6 +1,6 @@
 # Matrix radio button
 
-On selection, the label characters cycle through random glyphs (0–9, symbols) before resolving to the real character — a Matrix-style decode effect. Monospace light gray font on dark background. Each character resolves on a staggered delay.
+On selection, the label characters cycle through random glyphs (0–9, symbols) before resolving to the real character: a Matrix-style decode effect. Monospace light gray font on dark background. Each character resolves on a staggered delay.
 
 Live preview: https://movin.design/components/radios/matrix/
 

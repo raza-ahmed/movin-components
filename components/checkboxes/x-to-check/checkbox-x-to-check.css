@@ -22,17 +22,17 @@
   box-sizing: border-box;
   width: 28px;
   height: 28px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   border-radius: 7px;
 }
 .cb-x-to-check__input:focus-visible + .cb-x-to-check__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
 /* Unchecked shows a cross; checking spins it away and spins the tick in. */
 .cb-x-to-check__box {
-  background: rgba(246, 246, 246, 0.04);
+  background: light-dark(rgba(55, 58, 64, 0.04), rgba(241, 242, 243, 0.04));
   transition: background 250ms, border-color 250ms;
 }
 .cb-x-to-check__x,
@@ -44,8 +44,8 @@
   transition: transform 180ms ease-in, opacity 150ms ease;
 }
 .cb-x-to-check__input:checked + .cb-x-to-check__box {
-  border-color: #a7a7a7;
-  background: #a7a7a7;
+  border-color: light-dark(#5f626a, #a7abb2);
+  background: light-dark(#5f626a, #a7abb2);
 }
 .cb-x-to-check__input:checked + .cb-x-to-check__box .cb-x-to-check__x { opacity: 0; transform: rotate(45deg) scale(0); }
 .cb-x-to-check__input:checked + .cb-x-to-check__box .cb-x-to-check__check {

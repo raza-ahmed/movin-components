@@ -8,20 +8,20 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 2px;
   outline: none;
-  background: rgba(246, 246, 246, 0.06);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.06), rgba(241, 242, 243, 0.06));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   transition: border-color 300ms, border-radius 300ms;
 }
-.field-morph-shape__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-morph-shape__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
 /* Every focus squeezes the corners into a full pill and back out to soft corners. */
 .field-morph-shape__input:focus {
-  border-color: #a7a7a7;
+  border-color: light-dark(#5f626a, #a7abb2);
   border-radius: 10px;
   animation: field-morph-shape 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }

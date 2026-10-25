@@ -41,8 +41,8 @@ export function ScrambleButton({ children }: { children: React.ReactNode }) {
       type="button"
       onMouseEnter={start}
       onMouseLeave={stop}
-      className="min-w-[148px] rounded-md border border-[#7c7c7c] bg-[#111111] px-8 py-3 font-mono font-semibold tracking-[0.15em] text-[#c9c9c9] cursor-pointer"
-      style={{ textShadow: '0 0 8px rgba(201,201,201,0.5)', boxShadow: '0 0 12px rgba(167,167,167,0.15)' }}
+      className="min-w-[148px] rounded-md border border-[color:light-dark(#6d7179,#7d8087)] bg-[color:light-dark(#fbfcfd,#121417)] px-8 py-3 font-mono font-semibold tracking-[0.15em] text-[color:light-dark(#50535b,#c6c8cd)] cursor-pointer"
+      style={{ textShadow: '0 0 8px light-dark(rgba(80,83,91,0.5), rgba(198,200,205,0.5))', boxShadow: '0 0 12px light-dark(rgba(95,98,106,0.15), rgba(167,171,178,0.15))' }}
     >
       {text}
     </button>

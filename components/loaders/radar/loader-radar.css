@@ -6,13 +6,13 @@
   width: 64px;
   height: 64px;
   overflow: hidden;
-  border: 1.5px solid #4d4d4d;
+  border: 1.5px solid light-dark(#cbced3, #393c41);
   border-radius: 50%;
   background:
-    linear-gradient(#282828, #282828) 50% 0 / 1px 100% no-repeat,
-    linear-gradient(#282828, #282828) 0 50% / 100% 1px no-repeat,
-    repeating-radial-gradient(circle, transparent 0 9.5px, #282828 9.5px 10.5px),
-    #111111;
+    linear-gradient(light-dark(#ebedf0, #232529), light-dark(#ebedf0, #232529)) 50% 0 / 1px 100% no-repeat,
+    linear-gradient(light-dark(#ebedf0, #232529), light-dark(#ebedf0, #232529)) 0 50% / 100% 1px no-repeat,
+    repeating-radial-gradient(circle, transparent 0 9.5px, light-dark(#ebedf0, #232529) 9.5px 10.5px),
+    light-dark(#fbfcfd, #121417);
 }
 
 /* The wake trails behind the bright leading edge at 70deg. */
@@ -20,7 +20,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: conic-gradient(transparent 0deg, rgba(237, 237, 237, 0.4) 69deg, #ededed 70deg, transparent 70.5deg);
+  background: conic-gradient(transparent 0deg, light-dark(rgba(66, 69, 76, 0.4), rgba(229, 230, 233, 0.4)) 69deg, light-dark(#42454c, #e5e6e9) 70deg, transparent 70.5deg);
   animation: loader-radar-sweep var(--loader-radar-t) linear infinite;
 }
 
@@ -42,8 +42,8 @@
   height: 5px;
   margin: -2.5px 0 0 -2.5px;
   border-radius: 50%;
-  background: #f6f6f6;
-  box-shadow: 0 0 6px rgba(246, 246, 246, 0.8);
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 0 6px light-dark(rgba(55, 58, 64, 0.8), rgba(241, 242, 243, 0.8));
   opacity: 0;
   animation: loader-radar-blip var(--loader-radar-t) linear infinite;
   animation-delay: calc((var(--loader-radar-a) - 70) / 360 * var(--loader-radar-t) - var(--loader-radar-t));

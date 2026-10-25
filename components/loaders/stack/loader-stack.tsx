@@ -19,7 +19,7 @@ const css = `
     right: 8px;
     height: 2px;
     border-radius: 1px;
-    background: #4d4d4d;
+    background: light-dark(#cbced3, #393c41);
   }
 
   .loader-stack__block {
@@ -35,7 +35,7 @@ const css = `
     bottom: 12px;
     width: 32px;
     margin-left: -16px;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     animation: loader-stack-1 var(--loader-stack-t) infinite;
   }
 
@@ -43,7 +43,7 @@ const css = `
     bottom: 24px;
     width: 24px;
     margin-left: -12px;
-    background: #c9c9c9;
+    background: light-dark(#50535b, #c6c8cd);
     animation: loader-stack-2 var(--loader-stack-t) infinite;
   }
 
@@ -51,7 +51,7 @@ const css = `
     bottom: 36px;
     width: 16px;
     margin-left: -8px;
-    background: #a7a7a7;
+    background: light-dark(#5f626a, #a7abb2);
     animation: loader-stack-3 var(--loader-stack-t) infinite;
   }
 

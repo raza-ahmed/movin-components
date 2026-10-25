@@ -9,7 +9,7 @@ const css = `
     width: 40px;
     height: 72px;
     overflow: hidden;
-    border: 2px solid #4d4d4d;
+    border: 2px solid light-dark(#cbced3, #393c41);
     border-radius: 20px;
     isolation: isolate;
   }
@@ -20,7 +20,7 @@ const css = `
   .loader-lava__wax {
     position: absolute;
     inset: -8px;
-    background: #111111;
+    background: light-dark(#fbfcfd, #121417);
     filter: blur(4px) contrast(14);
   }
 
@@ -29,7 +29,7 @@ const css = `
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(#c9c9c9, #7c7c7c);
+    background: linear-gradient(light-dark(#50535b, #c6c8cd), light-dark(#6d7179, #7d8087));
     mix-blend-mode: multiply;
     pointer-events: none;
   }
@@ -38,7 +38,7 @@ const css = `
   .loader-lava__blob {
     position: absolute;
     border-radius: 50%;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
   }
 
   .loader-lava__pool {

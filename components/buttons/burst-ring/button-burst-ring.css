@@ -2,16 +2,16 @@
   position: relative;
   overflow: hidden;
   padding: 12px 32px;
-  border: 2px solid #4d4d4d;
+  border: 2px solid light-dark(#cbced3, #393c41);
   border-radius: 8px;
   background: transparent;
-  color: #c9c9c9;
+  color: light-dark(#50535b, #c6c8cd);
   font: inherit;
   font-weight: 600;
   cursor: pointer;
 }
 .btn-burst-ring:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .btn-burst-ring__label {
@@ -22,7 +22,7 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  border: 2px solid rgba(167, 167, 167, 0.7);
+  border: 2px solid light-dark(rgba(95, 98, 106, 0.7), rgba(167, 171, 178, 0.7));
   border-radius: 50%;
   pointer-events: none;
   animation: btn-burst-ring 520ms ease-out forwards;

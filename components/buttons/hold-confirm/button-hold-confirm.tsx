@@ -50,22 +50,22 @@ export function HoldConfirmButton({ children }: { children: React.ReactNode }) {
       onMouseLeave={handleRelease}
       className="inline-flex select-none items-center gap-2.5 rounded-lg border px-6 py-2.5 font-semibold tracking-wide transition-colors duration-300"
       style={{
-        background: confirmed ? '#282828' : '#202020',
-        color: confirmed ? '#c9c9c9' : '#c9c9c9',
-        borderColor: confirmed ? '#a7a7a7' : '#7c7c7c',
+        background: confirmed ? 'light-dark(#ebedf0, #232529)' : 'light-dark(#f3f4f7, #1a1c1f)',
+        color: confirmed ? 'light-dark(#50535b, #c6c8cd)' : 'light-dark(#50535b, #c6c8cd)',
+        borderColor: confirmed ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(#6d7179, #7d8087)',
         cursor: confirmed ? 'default' : 'pointer',
       }}
     >
       <svg width="52" height="52">
-        <circle cx="26" cy="26" r={R} stroke="#282828" strokeWidth="4" fill="none" />
+        <circle cx="26" cy="26" r={R} stroke="light-dark(#ebedf0, #232529)" strokeWidth="4" fill="none" />
         <circle
           cx="26" cy="26" r={R}
-          stroke={confirmed ? '#a7a7a7' : '#7c7c7c'}
+          stroke={confirmed ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(#6d7179, #7d8087)'}
           strokeWidth="4" fill="none"
           strokeDasharray={CIRC} strokeDashoffset={offset} strokeLinecap="round"
           style={{ transform: 'rotate(-90deg)', transformOrigin: '26px 26px', transition: confirmed ? 'stroke 300ms ease' : 'none' }}
         />
-        <text x="26" y="31" textAnchor="middle" fontSize="14" fontWeight="bold" fill={confirmed ? '#c9c9c9' : '#a7a7a7'}>
+        <text x="26" y="31" textAnchor="middle" fontSize="14" fontWeight="bold" fill={confirmed ? 'light-dark(#50535b, #c6c8cd)' : 'light-dark(#5f626a, #a7abb2)'}>
           {confirmed ? '✓' : `${Math.round(progress * 100)}%`}
         </text>
       </svg>

@@ -1,6 +1,6 @@
 # Dots Circle loader
 
-Eight dots arranged in a clock face, fading in and out in radial sequence — the classic OS-native loading indicator pattern. Pure CSS, no dependencies.
+Eight dots arranged in a clock face, fading in and out in radial sequence: the classic OS-native loading indicator pattern. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/loaders/dots-circle/
 

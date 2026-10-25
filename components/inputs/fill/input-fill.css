@@ -6,16 +6,16 @@
 
 .field-fill {
   overflow: hidden;
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 8px;
   transition: border-color 200ms;
 }
-.field-fill:focus-within { border-color: #a7a7a7; }
+.field-fill:focus-within { border-color: light-dark(#5f626a, #a7abb2); }
 /* A tint sweeps in from the left across the field on focus. */
 .field-fill__fill {
   position: absolute;
   inset: 0;
-  background: rgba(167, 167, 167, 0.1);
+  background: light-dark(rgba(95, 98, 106, 0.1), rgba(167, 171, 178, 0.1));
   pointer-events: none;
   transform: scaleX(0);
   transform-origin: left;
@@ -31,8 +31,8 @@
   border: 1px solid transparent;
   border-radius: 8px;
   outline: none;
-  background: rgba(246, 246, 246, 0.05);
-  color: #f6f6f6;
+  background: light-dark(rgba(55, 58, 64, 0.05), rgba(241, 242, 243, 0.05));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   position: relative;
@@ -40,7 +40,7 @@
   border-radius: 0;
   transition: background 380ms ease;
 }
-.field-fill__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-fill__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
 .field-fill__input:focus { background: transparent; }
 

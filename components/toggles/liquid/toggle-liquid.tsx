@@ -47,8 +47,8 @@ export function LiquidToggle() {
       onClick={toggle}
       className="relative h-[30px] w-[52px] cursor-pointer rounded-full border-2 transition-all duration-300"
       style={{
-        background: on ? 'rgba(167,167,167,0.25)' : 'rgba(246,246,246,0.1)',
-        borderColor: on ? 'rgba(167,167,167,0.6)' : 'rgba(246,246,246,0.15)',
+        background: on ? 'light-dark(rgba(95,98,106,0.25), rgba(167,171,178,0.25))' : 'light-dark(rgba(55,58,64,0.1), rgba(241,242,243,0.1))',
+        borderColor: on ? 'light-dark(rgba(95,98,106,0.6), rgba(167,171,178,0.6))' : 'light-dark(rgba(55,58,64,0.15), rgba(241,242,243,0.15))',
       }}
     >
       <span
@@ -56,8 +56,8 @@ export function LiquidToggle() {
         data-liquid-knob
         className="absolute top-1 h-[18px]"
         style={{
-          background: on ? 'linear-gradient(90deg, #a7a7a7 0%, #c9c9c9 100%)' : 'rgba(246,246,246,0.7)',
-          boxShadow: on ? '0 0 8px rgba(167,167,167,0.5)' : 'none',
+          background: on ? 'linear-gradient(90deg, light-dark(#5f626a, #a7abb2) 0%, light-dark(#50535b, #c6c8cd) 100%)' : 'light-dark(rgba(55,58,64,0.7), rgba(241,242,243,0.7))',
+          boxShadow: on ? '0 0 8px light-dark(rgba(95,98,106,0.5), rgba(167,171,178,0.5))' : 'none',
           animation: direction ? `liquid-${direction} 420ms cubic-bezier(0.4,0,0.2,1) forwards` : undefined,
           left: direction ? undefined : on ? 26 : 4,
           width: direction ? undefined : 22,

@@ -1,6 +1,6 @@
 # Press 3D button
 
-A chunky RPG-style button with a thick box-shadow that simulates physical depth. On mousedown it snaps down 5px while the shadow collapses, then springs back on release — replicating the feel of pressing a physical arcade or game controller button. No dependencies.
+A chunky RPG-style button with a thick box-shadow that simulates physical depth. On mousedown it snaps down 5px while the shadow collapses, then springs back on release, replicating the feel of pressing a physical arcade or game controller button. No dependencies.
 
 Live preview: https://movin.design/components/buttons/press-3d/
 

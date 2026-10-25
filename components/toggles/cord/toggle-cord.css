@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: #ededed;
+  color: light-dark(#42454c, #e5e6e9);
   font-size: 15px;
   cursor: pointer;
   user-select: none;
@@ -25,7 +25,7 @@
 }
 
 .toggle-cord__input:focus-visible + .toggle-cord__lamp {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -35,7 +35,7 @@
   left: 31px;
   width: 2px;
   height: 18px;
-  background: #4d4d4d;
+  background: light-dark(#cbced3, #393c41);
 }
 
 .toggle-cord__shade {
@@ -44,7 +44,7 @@
   left: 8px;
   width: 48px;
   height: 22px;
-  background: linear-gradient(90deg, #3a3a3a, #7c7c7c 45%, #4d4d4d);
+  background: linear-gradient(90deg, light-dark(#dbdde1, #2e3035), light-dark(#6d7179, #7d8087) 45%, light-dark(#cbced3, #393c41));
   clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);
 }
 
@@ -55,7 +55,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #3a3a3a;
+  background: light-dark(#dbdde1, #2e3035);
   transition: background-color 0.15s 0.12s, box-shadow 0.3s 0.12s;
 }
 
@@ -65,7 +65,7 @@
   left: 0;
   width: 64px;
   height: 66px;
-  background: linear-gradient(rgba(237, 237, 237, 0.3), rgba(237, 237, 237, 0));
+  background: linear-gradient(light-dark(rgba(66, 69, 76, 0.3), rgba(229, 230, 233, 0.3)), light-dark(rgba(66, 69, 76, 0), rgba(229, 230, 233, 0)));
   clip-path: polygon(38% 0, 62% 0, 100% 100%, 0 100%);
   opacity: 0;
   transition: opacity 0.25s 0.12s;
@@ -78,7 +78,7 @@
   left: 40px;
   width: 8px;
   height: 54px;
-  background: linear-gradient(#7c7c7c, #7c7c7c) 50% 0 / 2px 48px no-repeat;
+  background: linear-gradient(light-dark(#6d7179, #7d8087), light-dark(#6d7179, #7d8087)) 50% 0 / 2px 48px no-repeat;
 }
 
 .toggle-cord__chain::after {
@@ -89,7 +89,7 @@
   width: 8px;
   height: 10px;
   border-radius: 4px;
-  background: linear-gradient(90deg, #a7a7a7, #f6f6f6 50%, #a7a7a7);
+  background: linear-gradient(90deg, light-dark(#5f626a, #a7abb2), light-dark(#373a40, #f1f2f3) 50%, light-dark(#5f626a, #a7abb2));
 }
 
 .toggle-cord--pulled .toggle-cord__chain {
@@ -115,8 +115,8 @@
 }
 
 .toggle-cord__input:checked + .toggle-cord__lamp .toggle-cord__bulb {
-  background: #f6f6f6;
-  box-shadow: 0 0 14px 4px rgba(246, 246, 246, 0.55);
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 0 14px 4px light-dark(rgba(55, 58, 64, 0.55), rgba(241, 242, 243, 0.55));
 }
 
 .toggle-cord__input:checked + .toggle-cord__lamp .toggle-cord__cone {

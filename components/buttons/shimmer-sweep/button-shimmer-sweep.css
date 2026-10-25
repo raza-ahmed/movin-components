@@ -4,14 +4,14 @@
   overflow: hidden;
   border: none;
   border-radius: 8px;
-  background: #4d4d4d;
-  color: #f6f6f6;
+  background: light-dark(#cbced3, #393c41);
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-weight: 600;
   cursor: pointer;
 }
 .btn-shimmer-sweep:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 /* The shine waits off the left edge and sweeps across once per hover. */
@@ -22,7 +22,7 @@
   left: 0;
   width: 55%;
   height: 100%;
-  background: linear-gradient(105deg, transparent 0%, rgba(246, 246, 246, 0.38) 50%, transparent 100%);
+  background: linear-gradient(105deg, transparent 0%, light-dark(rgba(55, 58, 64, 0.38), rgba(241, 242, 243, 0.38)) 50%, transparent 100%);
   pointer-events: none;
   transform: translateX(-120%) skewX(-15deg);
 }

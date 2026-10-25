@@ -6,12 +6,12 @@
 
 .field-split {
   overflow: hidden;
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 8px;
-  background: #282828;
+  background: light-dark(#ebedf0, #232529);
   transition: border-color 300ms;
 }
-.field-split:focus-within { border-color: #a7a7a7; }
+.field-split:focus-within { border-color: light-dark(#5f626a, #a7abb2); }
 /* Two doors cover the field and slide apart when it takes focus. */
 .field-split__door {
   position: absolute;
@@ -19,7 +19,7 @@
   bottom: 0;
   z-index: 1;
   width: 50%;
-  background: #202020;
+  background: light-dark(#f3f4f7, #1a1c1f);
   pointer-events: none;
   transition: transform 380ms cubic-bezier(0.76, 0, 0.24, 1);
 }
@@ -36,14 +36,14 @@
   border-radius: 8px;
   outline: none;
   background: transparent;
-  color: #f6f6f6;
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   position: relative;
   z-index: 2;
   border: none;
 }
-.field-split__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-split__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
 @media (prefers-reduced-motion: reduce) {
   .field-split,

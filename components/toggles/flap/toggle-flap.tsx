@@ -7,7 +7,7 @@ const css = `
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -26,12 +26,12 @@ const css = `
     gap: 3px;
     padding: 6px;
     border-radius: 8px;
-    background: #202020;
-    box-shadow: inset 0 0 0 1px #3a3a3a, 0 6px 14px rgba(0, 0, 0, 0.45);
+    background: light-dark(#f3f4f7, #1a1c1f);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035), 0 6px 14px rgba(0, 0, 0, 0.45);
   }
 
   .toggle-flap__input:focus-visible + .toggle-flap__board {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 3px;
   }
 
@@ -40,7 +40,7 @@ const css = `
     display: block;
     width: 26px;
     height: 36px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font: 700 22px/36px ui-monospace, SFMono-Regular, Menlo, monospace;
     text-align: center;
     perspective: 120px;
@@ -55,7 +55,7 @@ const css = `
     width: 100%;
     height: 50%;
     overflow: hidden;
-    background: #282828;
+    background: light-dark(#ebedf0, #232529);
     backface-visibility: hidden;
   }
 
@@ -86,7 +86,7 @@ const css = `
 
   .toggle-flap__half--top,
   .toggle-flap__leaf--top {
-    background: linear-gradient(#3a3a3a, #282828);
+    background: linear-gradient(light-dark(#dbdde1, #2e3035), light-dark(#ebedf0, #232529));
   }
 
   .toggle-flap__leaf--bottom {
@@ -101,11 +101,11 @@ const css = `
     left: 0;
     width: 100%;
     height: 1px;
-    background: #111111;
+    background: light-dark(#fbfcfd, #121417);
   }
 
   .toggle-flap__input:checked + .toggle-flap__board .toggle-flap__cell {
-    color: #f6f6f6;
+    color: light-dark(#373a40, #f1f2f3);
   }
 `;
 

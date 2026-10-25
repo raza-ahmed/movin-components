@@ -22,11 +22,11 @@
   box-sizing: border-box;
   width: 28px;
   height: 28px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   border-radius: 7px;
 }
 .cb-round-morph__input:focus-visible + .cb-round-morph__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -38,9 +38,9 @@
   transition: opacity 150ms ease, transform 150ms ease;
 }
 .cb-round-morph__input:checked + .cb-round-morph__box {
-  border-color: #7c7c7c;
+  border-color: light-dark(#6d7179, #7d8087);
   border-radius: 50%;
-  background: #7c7c7c;
+  background: light-dark(#6d7179, #7d8087);
 }
 .cb-round-morph__input:checked + .cb-round-morph__box .cb-round-morph__check {
   opacity: 1;

@@ -23,12 +23,12 @@ export function RippleButton({ children }: { children: React.ReactNode }) {
       <button
         type="button"
         onClick={handleClick}
-        className="relative overflow-hidden rounded-lg border border-[#f6f6f6]/10 bg-[#202020] px-8 py-3 font-medium tracking-wide text-[#f6f6f6] cursor-pointer"
+        className="relative overflow-hidden rounded-lg border border-[color:light-dark(#373a40,#f1f2f3)]/10 bg-[color:light-dark(#f3f4f7,#1a1c1f)] px-8 py-3 font-medium tracking-wide text-[color:light-dark(#373a40,#f1f2f3)] cursor-pointer"
       >
         {ripples.map(({ id, x, y }) => (
           <span
             key={id}
-            className="ripple-dot pointer-events-none absolute h-2.5 w-2.5 rounded-full bg-[#7c7c7c]/55"
+            className="ripple-dot pointer-events-none absolute h-2.5 w-2.5 rounded-full bg-[color:light-dark(#6d7179,#7d8087)]/55"
             style={{ left: x - 5, top: y - 5, transform: 'scale(0)' }}
           />
         ))}

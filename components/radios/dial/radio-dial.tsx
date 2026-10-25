@@ -9,7 +9,7 @@ const css = `
     display: inline-block;
     width: 168px;
     height: 116px;
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
     font-size: 12px;
     user-select: none;
   }
@@ -32,7 +32,7 @@ const css = `
     height: 4px;
     margin: -2px;
     border-radius: 50%;
-    background: #4d4d4d;
+    background: light-dark(#cbced3, #393c41);
     transform: rotate(var(--radio-dial-a)) translateY(-37px);
     transition: background-color 0.2s;
   }
@@ -57,20 +57,20 @@ const css = `
   }
 
   .radio-dial__option:hover .radio-dial__label {
-    color: #c9c9c9;
+    color: light-dark(#50535b, #c6c8cd);
   }
 
   .radio-dial__option:has(.radio-dial__input:checked) .radio-dial__label {
-    background: #282828;
-    color: #f6f6f6;
+    background: light-dark(#ebedf0, #232529);
+    color: light-dark(#373a40, #f1f2f3);
   }
 
   .radio-dial__option:has(.radio-dial__input:checked)::before {
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
   }
 
   .radio-dial__option:has(.radio-dial__input:focus-visible) .radio-dial__label {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 1px;
   }
 
@@ -82,10 +82,10 @@ const css = `
     width: 56px;
     height: 56px;
     margin: -28px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 50%;
     box-sizing: border-box;
-    background: radial-gradient(circle at 35% 30%, #4d4d4d, #282828 70%);
+    background: radial-gradient(circle at 35% 30%, light-dark(#cbced3, #393c41), light-dark(#ebedf0, #232529) 70%);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
     pointer-events: none;
     transform: rotate(var(--radio-dial-turn));
@@ -101,7 +101,7 @@ const css = `
     height: 14px;
     margin-left: -1.5px;
     border-radius: 2px;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
   }
 
   .radio-dial__knob::after {
@@ -109,7 +109,7 @@ const css = `
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: repeating-conic-gradient(#111111 0 3deg, transparent 3deg 10deg);
+    background: repeating-conic-gradient(light-dark(#fbfcfd, #121417) 0 3deg, transparent 3deg 10deg);
     opacity: 0.5;
     mask-image: radial-gradient(circle, transparent 22px, rgba(0, 0, 0, 1) 23px);
   }

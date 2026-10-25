@@ -1,6 +1,6 @@
 # Typewriter card
 
-Hover erases the card title and description character-by-character then retypes new content — terminal-style with a blinking cursor visible during the erase/type phases. Mouse leave reverses the animation back to the original text.
+Hover erases the card title and description character-by-character then retypes new content, terminal-style with a blinking cursor visible during the erase/type phases. Mouse leave reverses the animation back to the original text.
 
 Live preview: https://movin.design/components/cards/typewriter/
 

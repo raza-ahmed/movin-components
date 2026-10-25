@@ -1,6 +1,6 @@
 # Icon toggle
 
-A dark-mode toggle pill with a sun/moon icon swap. The track shifts from a deep charcoal gradient to a light gray gradient. The knob slides with spring and crossfades between a moon (off) and a sun with rays (on) — each icon counter-rotates 90° as it enters/exits.
+A dark-mode toggle pill with a sun/moon icon swap. The track shifts from a deep charcoal gradient to a light gray gradient. The knob slides with spring and crossfades between a moon (off) and a sun with rays (on). Each icon counter-rotates 90° as it enters/exits.
 
 Live preview: https://movin.design/components/toggles/icon/
 

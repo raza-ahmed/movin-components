@@ -1,6 +1,6 @@
 # Glitch Error input
 
-On failed validation the input briefly glitches — a CSS invert/brightness flicker plus translateX jitter keyframe over 500ms — then snaps to a bright border. Unsettling, memorable error feedback.
+On failed validation the input briefly glitches (a CSS invert/brightness flicker plus translateX jitter keyframe over 500ms), then snaps to a bright border. Unsettling, memorable error feedback.
 
 Live preview: https://movin.design/components/inputs/glitch-error/
 

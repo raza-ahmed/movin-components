@@ -7,7 +7,7 @@ const css = `
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -30,7 +30,7 @@ const css = `
   }
 
   .toggle-blinds__input:focus-visible + .toggle-blinds__room {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 4px;
   }
 
@@ -43,12 +43,12 @@ const css = `
     box-sizing: border-box;
     height: 84px;
     padding-top: 4px;
-    border: 3px solid #4d4d4d;
+    border: 3px solid light-dark(#cbced3, #393c41);
     border-radius: 4px;
     background:
-      radial-gradient(circle at 72% 30%, #f6f6f6 0 7px, rgba(246, 246, 246, 0) 18px),
-      linear-gradient(#ededed, #a7a7a7);
-    box-shadow: inset 0 4px 0 #c9c9c9;
+      radial-gradient(circle at 72% 30%, light-dark(#373a40, #f1f2f3) 0 7px, light-dark(rgba(55, 58, 64, 0), rgba(241, 242, 243, 0)) 18px),
+      linear-gradient(light-dark(#42454c, #e5e6e9), light-dark(#5f626a, #a7abb2));
+    box-shadow: inset 0 4px 0 light-dark(#50535b, #c6c8cd);
     perspective: 240px;
   }
 
@@ -57,8 +57,8 @@ const css = `
     flex: none;
     height: 10px;
     margin-bottom: -1px;
-    background: linear-gradient(#7c7c7c, #4d4d4d);
-    box-shadow: 0 1px 0 #3a3a3a;
+    background: linear-gradient(light-dark(#6d7179, #7d8087), light-dark(#cbced3, #393c41));
+    box-shadow: 0 1px 0 light-dark(#dbdde1, #2e3035);
     transform: rotateX(0deg);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) calc(var(--i) * 30ms);
   }
@@ -70,7 +70,7 @@ const css = `
     left: 6px;
     width: 60px;
     height: 22px;
-    background: repeating-linear-gradient(rgba(237, 237, 237, 0.32) 0 3px, rgba(237, 237, 237, 0) 3px 6px);
+    background: repeating-linear-gradient(light-dark(rgba(66, 69, 76, 0.32), rgba(229, 230, 233, 0.32)) 0 3px, light-dark(rgba(66, 69, 76, 0), rgba(229, 230, 233, 0)) 3px 6px);
     -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     transform: skewX(-28deg);

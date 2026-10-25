@@ -22,11 +22,11 @@
   box-sizing: border-box;
   width: 28px;
   height: 28px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   border-radius: 7px;
 }
 .cb-ghost-through__input:focus-visible + .cb-ghost-through__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -37,8 +37,8 @@
   transition: opacity 120ms ease;
 }
 .cb-ghost-through__input:checked + .cb-ghost-through__box {
-  border-color: #a7a7a7;
-  background: #7c7c7c;
+  border-color: light-dark(#5f626a, #a7abb2);
+  background: light-dark(#6d7179, #7d8087);
   animation: cb-ghost-through-in 500ms ease forwards;
 }
 .cb-ghost-through__input:checked + .cb-ghost-through__box .cb-ghost-through__check {
@@ -49,12 +49,12 @@
 @keyframes cb-ghost-through-in {
   0% { opacity: 1; background: transparent; }
   30% { opacity: 0.2; background: transparent; }
-  70% { opacity: 0.2; background: #7c7c7c; }
-  100% { opacity: 1; background: #7c7c7c; }
+  70% { opacity: 0.2; background: light-dark(#6d7179, #7d8087); }
+  100% { opacity: 1; background: light-dark(#6d7179, #7d8087); }
 }
 @keyframes cb-ghost-through-out {
-  0% { opacity: 1; background: #7c7c7c; }
-  30% { opacity: 0.2; background: #7c7c7c; }
+  0% { opacity: 1; background: light-dark(#6d7179, #7d8087); }
+  30% { opacity: 0.2; background: light-dark(#6d7179, #7d8087); }
   70% { opacity: 0.2; background: transparent; }
   100% { opacity: 1; background: transparent; }
 }

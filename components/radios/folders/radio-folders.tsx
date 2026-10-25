@@ -35,7 +35,7 @@ const css = `
   .radio-folders__back,
   .radio-folders__body {
     position: absolute;
-    background: #282828;
+    background: light-dark(#ebedf0, #232529);
     transition: background-color 0.3s;
   }
 
@@ -51,7 +51,7 @@ const css = `
     width: 64px;
     height: 20px;
     border-radius: 7px 7px 0 0;
-    color: #7c7c7c;
+    color: light-dark(#6d7179, #7d8087);
     font-size: 12px;
     line-height: 20px;
     text-align: center;
@@ -69,17 +69,17 @@ const css = `
   }
 
   .radio-folders__back {
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
   }
 
   .radio-folders__body {
-    box-shadow: 0 -1px 0 #3a3a3a, 0 8px 18px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 -1px 0 light-dark(#dbdde1, #2e3035), 0 8px 18px rgba(0, 0, 0, 0.4);
     transform-origin: 50% 100%;
     transition: background-color 0.3s, transform 0.5s cubic-bezier(0.3, 1.3, 0.5, 1);
   }
 
   .radio-folders__option:hover .radio-folders__tab {
-    color: #c9c9c9;
+    color: light-dark(#50535b, #c6c8cd);
   }
 
   /* Papers wait inside, between the back wall and the flap. */
@@ -90,7 +90,7 @@ const css = `
     right: 16px;
     height: 64px;
     border-radius: 4px;
-    background: repeating-linear-gradient(#ededed 0 9px, #c9c9c9 9px 10px) 0 7px / 100% 100% no-repeat, #ededed;
+    background: repeating-linear-gradient(light-dark(#42454c, #e5e6e9) 0 9px, light-dark(#50535b, #c6c8cd) 9px 10px) 0 7px / 100% 100% no-repeat, light-dark(#42454c, #e5e6e9);
     transform: translateY(8px);
     transition: transform 0.45s cubic-bezier(0.3, 1.3, 0.5, 1);
   }
@@ -102,11 +102,11 @@ const css = `
 
   .radio-folders__option:has(.radio-folders__input:checked) .radio-folders__tab,
   .radio-folders__option:has(.radio-folders__input:checked) .radio-folders__body {
-    background: #4d4d4d;
+    background: light-dark(#cbced3, #393c41);
   }
 
   .radio-folders__option:has(.radio-folders__input:checked) .radio-folders__tab {
-    color: #f6f6f6;
+    color: light-dark(#373a40, #f1f2f3);
   }
 
   /* Chosen: the flap tips toward you and the papers settle into view. */
@@ -121,7 +121,7 @@ const css = `
   }
 
   .radio-folders__option:has(.radio-folders__input:focus-visible) .radio-folders__tab {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 

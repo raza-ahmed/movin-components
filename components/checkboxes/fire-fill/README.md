@@ -1,6 +1,6 @@
 # Fire Fill checkbox
 
-Animated flame gradient rises from the box bottom with a jagged flickering top edge (clip-path polygon keyframes). Light-to-dark gray fill with continuous flicker — clearly distinct from liquid (smooth, no animation while filled).
+Animated flame gradient rises from the box bottom with a jagged flickering top edge (clip-path polygon keyframes). Light-to-dark gray fill with continuous flicker: clearly distinct from liquid (smooth, no animation while filled).
 
 Live preview: https://movin.design/components/checkboxes/fire-fill/
 

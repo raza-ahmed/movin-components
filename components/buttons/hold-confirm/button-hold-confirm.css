@@ -3,10 +3,10 @@
   align-items: center;
   gap: 10px;
   padding: 10px 24px;
-  border: 1px solid #7c7c7c;
+  border: 1px solid light-dark(#6d7179, #7d8087);
   border-radius: 8px;
-  background: #202020;
-  color: #c9c9c9;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  color: light-dark(#50535b, #c6c8cd);
   font: inherit;
   font-weight: 600;
   letter-spacing: 0.025em;
@@ -15,28 +15,28 @@
   transition: background 300ms, border-color 300ms;
 }
 .btn-hold-confirm:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 /* The arc is drawn by the script through stroke-dashoffset (138.23 = 2πr). */
 .btn-hold-confirm__arc {
-  stroke: #7c7c7c;
+  stroke: light-dark(#6d7179, #7d8087);
   stroke-dasharray: 138.23;
   stroke-dashoffset: 138.23;
   transform: rotate(-90deg);
   transform-origin: 26px 26px;
 }
-.btn-hold-confirm__pct { fill: #a7a7a7; }
+.btn-hold-confirm__pct { fill: light-dark(#5f626a, #a7abb2); }
 .btn-hold-confirm--done {
-  border-color: #a7a7a7;
-  background: #282828;
+  border-color: light-dark(#5f626a, #a7abb2);
+  background: light-dark(#ebedf0, #232529);
   cursor: default;
 }
 .btn-hold-confirm--done .btn-hold-confirm__arc {
-  stroke: #a7a7a7;
+  stroke: light-dark(#5f626a, #a7abb2);
   transition: stroke 300ms ease;
 }
-.btn-hold-confirm--done .btn-hold-confirm__pct { fill: #c9c9c9; }
+.btn-hold-confirm--done .btn-hold-confirm__pct { fill: light-dark(#50535b, #c6c8cd); }
 @media (prefers-reduced-motion: reduce) {
   .btn-hold-confirm,
   .btn-hold-confirm--done .btn-hold-confirm__arc { transition: none; }

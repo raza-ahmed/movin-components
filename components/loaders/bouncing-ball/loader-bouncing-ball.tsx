@@ -24,7 +24,7 @@ export function BouncingBallLoader({ label = "Loading" }: { label?: string }) {
           width: 26px;
           height: 26px;
           border-radius: 50%;
-          background: radial-gradient(circle at 35% 35%, #a7a7a7, #7c7c7c);
+          background: radial-gradient(circle at 35% 35%, light-dark(#5f626a, #a7abb2), light-dark(#6d7179, #7d8087));
           animation: ball-bounce 0.75s ease-in-out infinite;
         }
         .ball-shadow {
@@ -32,7 +32,7 @@ export function BouncingBallLoader({ label = "Loading" }: { label?: string }) {
           width: 26px;
           height: 5px;
           border-radius: 50%;
-          background: rgba(124,124,124,0.35);
+          background: light-dark(rgba(109,113,121,0.35), rgba(125,128,135,0.35));
           animation: ball-shadow 0.75s ease-in-out infinite;
         }
         @media (prefers-reduced-motion: reduce) {

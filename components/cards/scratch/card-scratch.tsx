@@ -8,9 +8,9 @@ const css = `
     width: 184px;
     height: 120px;
     overflow: hidden;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 14px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     touch-action: none;
   }
 
@@ -25,14 +25,14 @@ const css = `
   }
 
   .card-scratch__title {
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
   }
 
   .card-scratch__amount {
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 20px;
     font-weight: 600;
   }
@@ -48,9 +48,9 @@ const css = `
     inset: 0;
     width: 100%;
     height: 100%;
-    color: #a7a7a7;
-    border-top-color: #ededed;
-    outline-color: #4d4d4d;
+    color: light-dark(#5f626a, #a7abb2);
+    border-top-color: light-dark(#42454c, #e5e6e9);
+    outline-color: light-dark(#cbced3, #393c41);
     cursor: crosshair;
     transition: opacity 0.5s;
   }
@@ -65,7 +65,7 @@ const css = `
     width: 4px;
     height: 4px;
     border-radius: 1px;
-    background: #c9c9c9;
+    background: light-dark(#50535b, #c6c8cd);
     pointer-events: none;
   }
 
@@ -75,10 +75,10 @@ const css = `
     right: 8px;
     bottom: 8px;
     padding: 4px 10px;
-    border: 1px solid #4d4d4d;
+    border: 1px solid light-dark(#cbced3, #393c41);
     border-radius: 999px;
-    background: #111111;
-    color: #ededed;
+    background: light-dark(#fbfcfd, #121417);
+    color: light-dark(#42454c, #e5e6e9);
     font: inherit;
     font-size: 11px;
     cursor: pointer;
@@ -92,7 +92,7 @@ const css = `
   }
 
   .card-scratch__action:focus-visible {
-    outline: 2px solid #ededed;
+    outline: 2px solid light-dark(#42454c, #e5e6e9);
     outline-offset: 2px;
   }
 

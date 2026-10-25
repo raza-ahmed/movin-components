@@ -4,15 +4,15 @@
   padding: 12px 32px;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(to bottom right, #7c7c7c, #4d4d4d);
-  color: #f6f6f6;
+  background: linear-gradient(to bottom right, light-dark(#6d7179, #7d8087), light-dark(#cbced3, #393c41));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-weight: 600;
   letter-spacing: 0.1em;
   cursor: pointer;
 }
 .btn-stagger-letters:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 /* Each letter rises 38 ms after the one before it (--btn-stagger-letters-i is its index). */

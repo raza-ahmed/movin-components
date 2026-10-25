@@ -18,7 +18,7 @@ export function MagneticLabelInput({ label = 'Email address' }: { label?: string
             left: isActive ? 2 : 14,
             top: isActive ? 0 : 22,
             fontSize: isActive ? 11 : 15,
-            color: isActive ? '#a7a7a7' : 'rgba(246,246,246,0.55)',
+            color: isActive ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))',
             fontWeight: isActive ? 600 : 400,
             letterSpacing: isActive ? '0.04em' : 0,
           }}
@@ -32,8 +32,8 @@ export function MagneticLabelInput({ label = 'Email address' }: { label?: string
           onChange={(e) => setValue(e.target.value)}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          className="w-full rounded-lg border bg-[#f6f6f6]/[0.04] px-3.5 py-2.5 text-[15px] text-[#f6f6f6] outline-none transition-[border-color] duration-[250ms]"
-          style={{ borderColor: isActive ? '#a7a7a7' : 'rgba(246,246,246,0.12)' }}
+          className="w-full rounded-lg border bg-[color:light-dark(#373a40,#f1f2f3)]/[0.04] px-3.5 py-2.5 text-[15px] text-[color:light-dark(#373a40,#f1f2f3)] outline-none transition-[border-color] duration-[250ms]"
+          style={{ borderColor: isActive ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(55,58,64,0.12), rgba(241,242,243,0.12))' }}
         />
       </div>
     </div>

@@ -8,15 +8,15 @@ export function ShimmerCard({ children }: { children: React.ReactNode }) {
         .shimmer-card {
           position: relative;
           overflow: hidden;
-          border: 1px solid rgba(246,246,246,0.1);
+          border: 1px solid light-dark(rgba(55,58,64,0.1), rgba(241,242,243,0.1));
           transition: border-color 300ms ease;
         }
-        .shimmer-card:hover { border-color: rgba(246,246,246,0.24); }
+        .shimmer-card:hover { border-color: light-dark(rgba(55,58,64,0.24), rgba(241,242,243,0.24)); }
         .shimmer-card::after {
           content: '';
           position: absolute;
           inset: 0;
-          background: linear-gradient(105deg, transparent 30%, rgba(246,246,246,0.35) 50%, transparent 70%);
+          background: linear-gradient(105deg, transparent 30%, light-dark(rgba(55,58,64,0.35), rgba(241,242,243,0.35)) 50%, transparent 70%);
           transform: translateX(-100%) skewX(-10deg);
           transition: none;
           pointer-events: none;
@@ -29,7 +29,7 @@ export function ShimmerCard({ children }: { children: React.ReactNode }) {
           .shimmer-card::after { display: none; }
         }
       `}</style>
-      <div className="shimmer-card cursor-pointer rounded-xl bg-[#f6f6f6]/[0.06]">
+      <div className="shimmer-card cursor-pointer rounded-xl bg-[color:light-dark(#373a40,#f1f2f3)]/[0.06]">
         {children}
       </div>
     </>

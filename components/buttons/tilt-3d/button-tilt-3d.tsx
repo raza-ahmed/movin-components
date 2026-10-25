@@ -35,23 +35,23 @@ export function Tilt3DButton({ children }: { children: React.ReactNode }) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleMouseLeave}
-      className="relative overflow-hidden rounded-xl px-8 py-3 font-semibold text-[#f6f6f6] cursor-pointer border-none"
+      className="relative overflow-hidden rounded-xl px-8 py-3 font-semibold text-[color:light-dark(#373a40,#f1f2f3)] cursor-pointer border-none"
       style={{
-        background: '#4d4d4d',
+        background: 'light-dark(#cbced3, #393c41)',
         rotateX: prefersReducedMotion ? 0 : rotateX,
         rotateY: prefersReducedMotion ? 0 : rotateY,
         transformPerspective: 600,
         transformStyle: 'preserve-3d',
         boxShadow: hovered
-          ? '0 20px 40px rgba(124,124,124,0.45),0 8px 16px rgba(0,0,0,0.3)'
-          : '0 4px 12px rgba(124,124,124,0.25)',
+          ? '0 20px 40px light-dark(rgba(109,113,121,0.45), rgba(125,128,135,0.45)),0 8px 16px rgba(0,0,0,0.3)'
+          : '0 4px 12px light-dark(rgba(109,113,121,0.25), rgba(125,128,135,0.25))',
         transition: 'box-shadow 300ms',
       }}
     >
       <motion.span
         className="pointer-events-none absolute h-20 w-20 rounded-full blur-xl"
         style={{
-          background: 'rgba(246,246,246,0.18)',
+          background: 'light-dark(rgba(55,58,64,0.18), rgba(241,242,243,0.18))',
           left: sheenX,
           top: sheenY,
           transform: 'translate(-50%,-50%)',

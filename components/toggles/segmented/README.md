@@ -1,6 +1,6 @@
 # Segmented toggle
 
-An iOS-style segmented control with two labelled options. A frosted-glass pill slides underneath the active segment — fundamentally different from a circular-thumb toggle. No dependencies.
+An iOS-style segmented control with two labelled options. A frosted-glass pill slides underneath the active segment, fundamentally different from a circular-thumb toggle. No dependencies.
 
 Live preview: https://movin.design/components/toggles/segmented/
 

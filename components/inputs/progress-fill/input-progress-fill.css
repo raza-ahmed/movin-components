@@ -10,7 +10,7 @@
   position: absolute;
   inset: 1px;
   border-radius: 7px;
-  background: rgba(167, 167, 167, 0.12);
+  background: light-dark(rgba(95, 98, 106, 0.12), rgba(167, 171, 178, 0.12));
   pointer-events: none;
   transform: scaleX(0);
   transform-origin: left;
@@ -21,29 +21,29 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 8px;
   outline: none;
   background: transparent;
-  color: #f6f6f6;
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   position: relative;
   transition: border-color 200ms;
 }
-.field-progress-fill__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-progress-fill__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
-.field-progress-fill__input:focus { border-color: rgba(167, 167, 167, 0.5); }
+.field-progress-fill__input:focus { border-color: light-dark(rgba(95, 98, 106, 0.5), rgba(167, 171, 178, 0.5)); }
 .field-progress-fill__meta {
   display: flex;
   justify-content: space-between;
   margin-top: 6px;
   font-size: 11px;
 }
-.field-progress-fill__count { color: rgba(246, 246, 246, 0.55); }
-.field-progress-fill__done { color: #f6f6f6; }
-.field-progress-fill--done .field-progress-fill__bar { background: rgba(246, 246, 246, 0.16); }
-.field-progress-fill--done .field-progress-fill__input { border-color: #f6f6f6; }
+.field-progress-fill__count { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
+.field-progress-fill__done { color: light-dark(#373a40, #f1f2f3); }
+.field-progress-fill--done .field-progress-fill__bar { background: light-dark(rgba(55, 58, 64, 0.16), rgba(241, 242, 243, 0.16)); }
+.field-progress-fill--done .field-progress-fill__input { border-color: light-dark(#373a40, #f1f2f3); }
 
 @media (prefers-reduced-motion: reduce) {
   .field-progress-fill,

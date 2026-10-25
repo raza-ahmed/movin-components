@@ -1,6 +1,6 @@
 # Glitch button
 
-Two cloned text layers are absolutely positioned over the button. On hover, staggered clip-path animations in steps() slice each clone into horizontal bands while offsetting them in opposite directions — one dark, one bright — creating a channel-split digital glitch effect. No dependencies.
+Two cloned text layers are absolutely positioned over the button. On hover, staggered clip-path animations in steps() slice each clone into horizontal bands while offsetting them in opposite directions (one dark, one bright), creating a channel-split digital glitch effect. No dependencies.
 
 Live preview: https://movin.design/components/buttons/glitch/
 

@@ -10,7 +10,7 @@ const css = `
     display: inline-block;
     width: 56px;
     height: 56px;
-    background: radial-gradient(circle, #3a3a3a 1.5px, transparent 2px) 0 0 / 14px 14px;
+    background: radial-gradient(circle, light-dark(#dbdde1, #2e3035) 1.5px, transparent 2px) 0 0 / 14px 14px;
   }
 
   .loader-snake__seg {
@@ -20,7 +20,7 @@ const css = `
     width: 10px;
     height: 10px;
     border-radius: 3px;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     offset-path: path('M7 7H49V21H21V35H49V49H7Z');
     offset-anchor: 50% 50%;
     offset-rotate: 0deg;

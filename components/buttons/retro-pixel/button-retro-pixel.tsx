@@ -35,26 +35,26 @@ export function RetroPixelButton({ children }: { children: React.ReactNode }) {
           .pixel-btn[data-pressing] { animation: none; transform: translateY(3px); }
         }
       `}</style>
-      <div className="inline-block bg-[#111111] p-1">
+      <div className="inline-block bg-[color:light-dark(#fbfcfd,#121417)] p-1">
         <button
           ref={btnRef}
           type="button"
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
-          className="pixel-btn relative block cursor-pointer select-none border-[3px] border-[#111111] px-7 py-2.5 font-mono text-xs font-semibold uppercase tracking-widest text-[#f6f6f6]"
+          className="pixel-btn relative block cursor-pointer select-none border-[3px] border-[color:light-dark(#fbfcfd,#121417)] px-7 py-2.5 font-mono text-xs font-semibold uppercase tracking-widest text-[color:light-dark(#373a40,#f1f2f3)]"
           style={{
             borderRadius: 0,
-            background: '#7c7c7c',
-            outline: '3px solid #111111',
+            background: 'light-dark(#6d7179, #7d8087)',
+            outline: '3px solid light-dark(#fbfcfd, #121417)',
             outlineOffset: '3px',
             boxShadow: pressed
               ? 'inset 2px 2px 0 rgba(0,0,0,0.5)'
-              : '4px 4px 0 #3a3a3a, inset 0 2px 0 rgba(246,246,246,0.25)',
+              : '4px 4px 0 light-dark(#dbdde1, #2e3035), inset 0 2px 0 light-dark(rgba(55,58,64,0.25), rgba(241,242,243,0.25))',
             transition: 'box-shadow 60ms steps(1)',
           }}
         >
-          <span className="pointer-events-none absolute inset-0" style={{ background: 'repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(17,17,17,0.1) 3px,rgba(17,17,17,0.1) 4px)' }} />
+          <span className="pointer-events-none absolute inset-0" style={{ background: 'repeating-linear-gradient(0deg,transparent,transparent 3px,light-dark(rgba(251,252,253,0.1), rgba(18,20,23,0.1)) 3px,light-dark(rgba(251,252,253,0.1), rgba(18,20,23,0.1)) 4px)' }} />
           <span className="relative">▶ {children}</span>
         </button>
       </div>

@@ -19,20 +19,20 @@ const css = `
   }
 
   .loader-infinity__track {
-    stroke: #282828;
+    stroke: light-dark(#ebedf0, #232529);
   }
 
   /* The head starts 20 units further along than the 34-unit tail, so it
      always sits at the tail's leading end. */
   .loader-infinity__tail {
-    stroke: #7c7c7c;
+    stroke: light-dark(#6d7179, #7d8087);
     stroke-dasharray: 34 66;
     opacity: 0.6;
     animation: loader-infinity-tail var(--loader-infinity-t) linear infinite;
   }
 
   .loader-infinity__head {
-    stroke: #f6f6f6;
+    stroke: light-dark(#373a40, #f1f2f3);
     stroke-dasharray: 14 86;
     stroke-dashoffset: -20;
     animation: loader-infinity-head var(--loader-infinity-t) linear infinite;

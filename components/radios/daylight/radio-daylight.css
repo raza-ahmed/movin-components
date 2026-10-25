@@ -1,5 +1,5 @@
 .radio-daylight {
-  --radio-daylight-sky: #3a3a3a;
+  --radio-daylight-sky: light-dark(#dbdde1, #2e3035);
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -7,15 +7,15 @@
 }
 
 .radio-daylight:has(.radio-daylight__input[value='noon']:checked) {
-  --radio-daylight-sky: #7c7c7c;
+  --radio-daylight-sky: light-dark(#6d7179, #7d8087);
 }
 
 .radio-daylight:has(.radio-daylight__input[value='evening']:checked) {
-  --radio-daylight-sky: #282828;
+  --radio-daylight-sky: light-dark(#ebedf0, #232529);
 }
 
 .radio-daylight:has(.radio-daylight__input[value='night']:checked) {
-  --radio-daylight-sky: #111111;
+  --radio-daylight-sky: light-dark(#fbfcfd, #121417);
 }
 
 .radio-daylight__sky {
@@ -23,7 +23,7 @@
   width: 200px;
   height: 116px;
   overflow: hidden;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 12px;
   background: var(--radio-daylight-sky);
   transition: background-color 0.7s;
@@ -37,8 +37,8 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #f6f6f6;
-  box-shadow: 0 0 14px 3px rgba(246, 246, 246, 0.45);
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 0 14px 3px light-dark(rgba(55, 58, 64, 0.45), rgba(241, 242, 243, 0.45));
   offset-path: path('M14 100A86 74 0 0 1 186 100');
   offset-anchor: 50% 50%;
   offset-rotate: 0deg;
@@ -59,7 +59,7 @@
 }
 
 .radio-daylight:has(.radio-daylight__input[value='night']:checked) .radio-daylight__sun {
-  box-shadow: 0 0 10px 1px rgba(246, 246, 246, 0.2);
+  box-shadow: 0 0 10px 1px light-dark(rgba(55, 58, 64, 0.2), rgba(241, 242, 243, 0.2));
 }
 
 .radio-daylight:has(.radio-daylight__input[value='night']:checked) .radio-daylight__sun::after {
@@ -72,7 +72,7 @@
   width: 2px;
   height: 2px;
   border-radius: 50%;
-  background: #ededed;
+  background: light-dark(#42454c, #e5e6e9);
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -89,16 +89,16 @@
   left: 0;
   height: 18px;
   border-radius: 60% 60% 0 0 / 10px 10px 0 0;
-  background: #202020;
+  background: light-dark(#f3f4f7, #1a1c1f);
 }
 
 .radio-daylight__row {
   display: flex;
   gap: 4px;
   padding: 4px;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 10px;
-  background: #202020;
+  background: light-dark(#f3f4f7, #1a1c1f);
 }
 
 .radio-daylight__option {
@@ -118,22 +118,22 @@
   display: block;
   padding: 6px 9px;
   border-radius: 7px;
-  color: #7c7c7c;
+  color: light-dark(#5f626a, #a7abb2);
   font-size: 12px;
   transition: background-color 0.2s, color 0.2s;
 }
 
 .radio-daylight__option:hover .radio-daylight__chip {
-  color: #c9c9c9;
+  color: light-dark(#50535b, #c6c8cd);
 }
 
 .radio-daylight__input:checked + .radio-daylight__chip {
-  background: #ededed;
-  color: #111111;
+  background: light-dark(#42454c, #e5e6e9);
+  color: light-dark(#fbfcfd, #121417);
 }
 
 .radio-daylight__input:focus-visible + .radio-daylight__chip {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 

@@ -22,11 +22,11 @@
   box-sizing: border-box;
   width: 28px;
   height: 28px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   border-radius: 7px;
 }
 .cb-morph-line__input:focus-visible + .cb-morph-line__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -34,8 +34,8 @@
 .cb-morph-line__box { transition: background 300ms ease, border-color 300ms ease; }
 .cb-morph-line__mark path { opacity: 0; }
 .cb-morph-line__input:checked + .cb-morph-line__box {
-  border-color: #c9c9c9;
-  background: #3a3a3a;
+  border-color: light-dark(#50535b, #c6c8cd);
+  background: light-dark(#dbdde1, #2e3035);
 }
 .cb-morph-line__input:checked + .cb-morph-line__box .cb-morph-line__mark path {
   d: path("M1.5 5 L5 8.5 L11.5 1.5");

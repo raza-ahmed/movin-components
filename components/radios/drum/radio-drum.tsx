@@ -13,7 +13,7 @@ const css = `
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 12px;
   }
 
@@ -23,7 +23,7 @@ const css = `
     height: 156px;
     overflow: hidden;
     border-radius: 14px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     perspective: 480px;
     cursor: ns-resize;
     touch-action: none;
@@ -39,11 +39,11 @@ const css = `
     height: 32px;
     margin-top: -16px;
     border-radius: 8px;
-    background: #3a3a3a;
+    background: light-dark(#dbdde1, #2e3035);
   }
 
   .radio-drum__window:has(.radio-drum__input:focus-visible) .radio-drum__band {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
   }
 
   .radio-drum__wheel {
@@ -80,13 +80,13 @@ const css = `
   }
 
   .radio-drum__text {
-    color: #7c7c7c;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 16px;
     transition: color 0.2s;
   }
 
   .radio-drum__input:checked + .radio-drum__text {
-    color: #f6f6f6;
+    color: light-dark(#373a40, #f1f2f3);
     font-weight: 600;
   }
 

@@ -10,7 +10,7 @@
   position: absolute;
   inset: 1px;
   border-radius: 7px;
-  background: linear-gradient(to top, rgba(167, 167, 167, 0.3), rgba(167, 167, 167, 0.1));
+  background: linear-gradient(to top, light-dark(rgba(95, 98, 106, 0.3), rgba(167, 171, 178, 0.3)), light-dark(rgba(95, 98, 106, 0.1), rgba(167, 171, 178, 0.1)));
   pointer-events: none;
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
 }
@@ -19,19 +19,19 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid rgba(246, 246, 246, 0.15);
+  border: 1px solid light-dark(rgba(55, 58, 64, 0.15), rgba(241, 242, 243, 0.15));
   border-radius: 8px;
   outline: none;
   background: transparent;
-  color: #f6f6f6;
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 15px;
   position: relative;
   transition: border-color 200ms;
 }
-.field-liquid-fill__input::placeholder { color: rgba(246, 246, 246, 0.55); }
+.field-liquid-fill__input::placeholder { color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62)); }
 
-.field-liquid-fill__input:focus { border-color: rgba(167, 167, 167, 0.5); }
+.field-liquid-fill__input:focus { border-color: light-dark(rgba(95, 98, 106, 0.5), rgba(167, 171, 178, 0.5)); }
 @media (prefers-reduced-motion: reduce) {
   .field-liquid-fill__input { transition: none; }
 }

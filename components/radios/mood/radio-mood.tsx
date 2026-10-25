@@ -28,7 +28,7 @@ const css = `
   }
 
   .radio-mood__option:has(.radio-mood__input:focus-visible) {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
   }
 
   .radio-mood__face {
@@ -39,20 +39,20 @@ const css = `
   }
 
   .radio-mood__head {
-    fill: #202020;
-    stroke: #4d4d4d;
+    fill: light-dark(#f3f4f7, #1a1c1f);
+    stroke: light-dark(#cbced3, #393c41);
     stroke-width: 1.5;
     transition: fill 0.25s, stroke 0.25s;
   }
 
   .radio-mood__eye {
-    fill: #7c7c7c;
+    fill: light-dark(#6d7179, #7d8087);
     transition: fill 0.25s;
   }
 
   .radio-mood__mouth {
     fill: none;
-    stroke: #7c7c7c;
+    stroke: light-dark(#6d7179, #7d8087);
     stroke-width: 1.8;
     stroke-linecap: round;
     transform-box: fill-box;
@@ -65,7 +65,7 @@ const css = `
   }
 
   .radio-mood__option:hover .radio-mood__head {
-    stroke: #7c7c7c;
+    stroke: light-dark(#6d7179, #7d8087);
   }
 
   /* Chosen: bigger, lit, features dark, and the mouth bounces once. */
@@ -74,16 +74,16 @@ const css = `
   }
 
   .radio-mood__option:has(.radio-mood__input:checked) .radio-mood__head {
-    fill: #ededed;
-    stroke: #ededed;
+    fill: light-dark(#42454c, #e5e6e9);
+    stroke: light-dark(#42454c, #e5e6e9);
   }
 
   .radio-mood__option:has(.radio-mood__input:checked) .radio-mood__eye {
-    fill: #111111;
+    fill: light-dark(#fbfcfd, #121417);
   }
 
   .radio-mood__option:has(.radio-mood__input:checked) .radio-mood__mouth {
-    stroke: #111111;
+    stroke: light-dark(#fbfcfd, #121417);
     animation: radio-mood-bounce 0.5s cubic-bezier(0.3, 1.6, 0.5, 1) 0.1s;
   }
 
@@ -101,7 +101,7 @@ const css = `
     top: 100%;
     left: 50%;
     margin-top: 4px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 12px;
     white-space: nowrap;
     opacity: 0;

@@ -22,11 +22,11 @@
   box-sizing: border-box;
   width: 28px;
   height: 28px;
-  border: 2px solid rgba(246, 246, 246, 0.25);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25));
   border-radius: 7px;
 }
 .cb-glitch__input:focus-visible + .cb-glitch__box {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -46,19 +46,19 @@
   inset: 0;
   opacity: 0;
 }
-.cb-glitch__split--light { background: rgba(246, 246, 246, 0.25); }
-.cb-glitch__split--dark { background: rgba(17, 17, 17, 0.4); }
+.cb-glitch__split--light { background: light-dark(rgba(55, 58, 64, 0.25), rgba(241, 242, 243, 0.25)); }
+.cb-glitch__split--dark { background: light-dark(rgba(251, 252, 253, 0.4), rgba(18, 20, 23, 0.4)); }
 .cb-glitch__scan {
   position: absolute;
   right: 0;
   left: 0;
   height: 2px;
-  background: rgba(246, 246, 246, 0.6);
+  background: light-dark(rgba(55, 58, 64, 0.6), rgba(241, 242, 243, 0.6));
   opacity: 0;
 }
 .cb-glitch__input:checked + .cb-glitch__box {
-  border-color: #a7a7a7;
-  background: #202020;
+  border-color: light-dark(#5f626a, #a7abb2);
+  background: light-dark(#f3f4f7, #1a1c1f);
 }
 .cb-glitch__input:checked + .cb-glitch__box .cb-glitch__check {
   opacity: 1;

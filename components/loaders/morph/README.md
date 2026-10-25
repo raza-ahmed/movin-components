@@ -1,6 +1,6 @@
 # Morph loader
 
-A single element that continuously morphs through three shapes — circle, blob, and square — while rotating and shifting color. Pure CSS, no dependencies.
+A single element that continuously morphs through three shapes (circle, blob, and square), while rotating and shifting color. Pure CSS, no dependencies.
 
 Live preview: https://movin.design/components/loaders/morph/
 

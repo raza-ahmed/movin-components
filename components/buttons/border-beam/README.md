@@ -1,6 +1,6 @@
 # Border Beam button
 
-On hover, a white light beam races continuously around the button border. A 2px-padded wrapper div clips a large rotating conic-gradient square — only the border gap is visible, creating the illusion of a beam orbiting the perimeter. The button interior stays dark. No dependencies.
+On hover, a white light beam races continuously around the button border. A 2px-padded wrapper div clips a large rotating conic-gradient square: only the border gap is visible, creating the illusion of a beam orbiting the perimeter. The button interior stays dark. No dependencies.
 
 Live preview: https://movin.design/components/buttons/border-beam/
 

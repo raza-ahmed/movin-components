@@ -8,7 +8,7 @@ const css = `
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 15px;
     cursor: pointer;
     user-select: none;
@@ -29,10 +29,10 @@ const css = `
     place-items: center;
     width: 56px;
     height: 56px;
-    border: 2px solid #4d4d4d;
+    border: 2px solid light-dark(#cbced3, #393c41);
     border-radius: 50%;
     box-sizing: border-box;
-    background: repeating-radial-gradient(circle, transparent 0 6px, #282828 6px 7px);
+    background: repeating-radial-gradient(circle, transparent 0 6px, light-dark(#ebedf0, #232529) 6px 7px);
   }
 
   .toggle-fan__fan::after {
@@ -40,14 +40,14 @@ const css = `
     position: absolute;
     inset: 5px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(201, 201, 201, 0.35) 30%, rgba(201, 201, 201, 0.1) 70%, transparent 72%);
+    background: radial-gradient(circle, light-dark(rgba(80, 83, 91, 0.35), rgba(198, 200, 205, 0.35)) 30%, light-dark(rgba(80, 83, 91, 0.1), rgba(198, 200, 205, 0.1)) 70%, transparent 72%);
     opacity: calc(var(--toggle-fan-v) * 0.9);
   }
 
   .toggle-fan__blades {
     width: 44px;
     height: 44px;
-    fill: #a7a7a7;
+    fill: light-dark(#5f626a, #a7abb2);
     opacity: calc(1 - var(--toggle-fan-v) * 0.55);
   }
 
@@ -57,7 +57,7 @@ const css = `
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
   }
 
   /* A plain switch beside it shows the state. */
@@ -66,7 +66,7 @@ const css = `
     width: 40px;
     height: 22px;
     border-radius: 9999px;
-    background: #3a3a3a;
+    background: light-dark(#dbdde1, #2e3035);
     transition: background-color 0.25s;
   }
 
@@ -77,21 +77,21 @@ const css = `
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: #ededed;
+    background: light-dark(#42454c, #e5e6e9);
     transition: transform 0.3s cubic-bezier(0.3, 1.5, 0.5, 1);
   }
 
   .toggle-fan__input:checked ~ .toggle-fan__switch {
-    background: #c9c9c9;
+    background: light-dark(#50535b, #c6c8cd);
   }
 
   .toggle-fan__input:checked ~ .toggle-fan__switch .toggle-fan__knob {
-    background: #111111;
+    background: light-dark(#fbfcfd, #121417);
     transform: translateX(18px);
   }
 
   .toggle-fan__input:focus-visible ~ .toggle-fan__switch {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 

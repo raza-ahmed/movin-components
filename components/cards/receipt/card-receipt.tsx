@@ -15,14 +15,14 @@ const css = `
     width: 184px;
     height: 84px;
     padding: 14px 16px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 14px;
-    background: #282828;
+    background: light-dark(#ebedf0, #232529);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
   }
 
   .card-receipt:focus-visible .card-receipt__terminal {
-    outline: 2px solid #ededed;
+    outline: 2px solid light-dark(#42454c, #e5e6e9);
     outline-offset: 4px;
   }
 
@@ -33,7 +33,7 @@ const css = `
   }
 
   .card-receipt__title {
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 11px;
   }
 
@@ -41,12 +41,12 @@ const css = `
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #4d4d4d;
+    background: light-dark(#cbced3, #393c41);
   }
 
   .card-receipt__total {
     margin-top: 4px;
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
     font-size: 22px;
     font-weight: 600;
     font-variant-numeric: tabular-nums;
@@ -59,7 +59,7 @@ const css = `
     left: 18px;
     height: 3px;
     border-radius: 2px;
-    background: #111111;
+    background: light-dark(#fbfcfd, #121417);
   }
 
   /* The paper lives in a window under the slot and feeds down out of it. */
@@ -73,8 +73,8 @@ const css = `
   .card-receipt__paper {
     box-sizing: border-box;
     padding: 18px 12px 18px;
-    background: #f6f6f6;
-    color: #3a3a3a;
+    background: light-dark(#373a40, #f1f2f3);
+    color: light-dark(#dbdde1, #2e3035);
     font: 10px/1.7 ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
     transform: translateY(-100%);
     transition: transform 0.3s cubic-bezier(0.5, 0, 0.75, 0);
@@ -90,15 +90,15 @@ const css = `
   .card-receipt__line--total {
     margin-top: 4px;
     padding-top: 4px;
-    border-top: 1px dashed #a7a7a7;
-    color: #111111;
+    border-top: 1px dashed light-dark(#5f626a, #a7abb2);
+    color: light-dark(#fbfcfd, #121417);
     font-weight: 600;
   }
 
   .card-receipt__barcode {
     height: 16px;
     margin-top: 8px;
-    background: repeating-linear-gradient(90deg, #3a3a3a 0 1px, transparent 1px 3px, #3a3a3a 3px 5px, transparent 5px 6px, #3a3a3a 6px 7px, transparent 7px 10px);
+    background: repeating-linear-gradient(90deg, light-dark(#dbdde1, #2e3035) 0 1px, transparent 1px 3px, light-dark(#dbdde1, #2e3035) 3px 5px, transparent 5px 6px, light-dark(#dbdde1, #2e3035) 6px 7px, transparent 7px 10px);
   }
 
   /* Printing: the paper feeds in mechanical steps, the light blinks. */
@@ -115,8 +115,8 @@ const css = `
 
   @keyframes card-receipt-blink {
     50% {
-      background: #ededed;
-      box-shadow: 0 0 6px #ededed;
+      background: light-dark(#42454c, #e5e6e9);
+      box-shadow: 0 0 6px light-dark(#42454c, #e5e6e9);
     }
   }
 

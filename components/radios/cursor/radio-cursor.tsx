@@ -15,9 +15,9 @@ export function CursorRadioGroup() {
           className="absolute inset-x-0 rounded-lg border motion-reduce:transition-none"
           style={{
             height: ITEM_H,
-            background: 'rgba(124,124,124,0.15)',
-            borderColor: 'rgba(124,124,124,0.35)',
-            boxShadow: '0 0 12px rgba(124,124,124,0.2)',
+            background: 'light-dark(rgba(109,113,121,0.15), rgba(125,128,135,0.15))',
+            borderColor: 'light-dark(rgba(109,113,121,0.35), rgba(125,128,135,0.35))',
+            boxShadow: '0 0 12px light-dark(rgba(109,113,121,0.2), rgba(125,128,135,0.2))',
             transform: `translateY(${selectedIndex * ITEM_H}px)`,
             transition: 'transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1)',
           }}
@@ -36,12 +36,12 @@ export function CursorRadioGroup() {
               />
               <span
                 className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full border-2 transition-colors duration-200"
-                style={{ borderColor: checked ? '#7c7c7c' : 'rgba(246,246,246,0.2)' }}
+                style={{ borderColor: checked ? 'light-dark(#6d7179, #7d8087)' : 'light-dark(rgba(55,58,64,0.2), rgba(241,242,243,0.2))' }}
               >
                 <span
                   style={{
                     width: 6, height: 6, borderRadius: '50%',
-                    background: '#7c7c7c',
+                    background: 'light-dark(#6d7179, #7d8087)',
                     transform: checked ? 'scale(1)' : 'scale(0)',
                     transition: 'transform 240ms cubic-bezier(0.34,1.56,0.64,1)',
                   }}
@@ -51,7 +51,7 @@ export function CursorRadioGroup() {
                 className="select-none text-sm transition-colors duration-200"
                 style={{
                   fontWeight: checked ? 600 : 400,
-                  color: checked ? 'rgba(246,246,246,0.95)' : 'rgba(246,246,246,0.55)',
+                  color: checked ? 'light-dark(rgba(55,58,64,0.95), rgba(241,242,243,0.95))' : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))',
                 }}
               >
                 {opt}

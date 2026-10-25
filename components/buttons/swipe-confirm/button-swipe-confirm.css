@@ -12,9 +12,9 @@
   width: 260px;
   height: 60px;
   overflow: hidden;
-  border: 1px solid #3a3a3a;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
   border-radius: 999px;
-  background: #202020;
+  background: light-dark(#f3f4f7, #1a1c1f);
   font-size: 15px;
   font-weight: 600;
   user-select: none;
@@ -34,7 +34,7 @@
   left: 0;
   width: calc(56px + var(--btn-swipe-confirm-p) * var(--btn-swipe-confirm-travel));
   border-radius: 999px;
-  background: #3a3a3a;
+  background: light-dark(#dbdde1, #2e3035);
   transition: background-color 0.35s;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .btn-swipe-confirm__hint {
-  background: linear-gradient(90deg, #7c7c7c 40%, #f6f6f6 50%, #7c7c7c 60%) 0 0 / 250% 100%;
+  background: linear-gradient(90deg, light-dark(#6d7179, #7d8087) 40%, light-dark(#373a40, #f1f2f3) 50%, light-dark(#6d7179, #7d8087) 60%) 0 0 / 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -58,7 +58,7 @@
 
 .btn-swipe-confirm__done {
   padding-left: 0;
-  color: #111111;
+  color: light-dark(#fbfcfd, #121417);
   opacity: 0;
   transition: opacity 0.3s 0.15s;
 }
@@ -74,8 +74,8 @@
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: #ededed;
-  color: #111111;
+  background: light-dark(#42454c, #e5e6e9);
+  color: light-dark(#fbfcfd, #121417);
   cursor: grab;
   touch-action: none;
   translate: calc(var(--btn-swipe-confirm-p) * var(--btn-swipe-confirm-travel)) 0;
@@ -89,7 +89,7 @@
 }
 
 .btn-swipe-confirm__knob:focus-visible {
-  outline: 2px solid #ededed;
+  outline: 2px solid light-dark(#42454c, #e5e6e9);
   outline-offset: 3px;
 }
 
@@ -114,7 +114,7 @@
 }
 
 .btn-swipe-confirm--done .btn-swipe-confirm__fill {
-  background: #ededed;
+  background: light-dark(#42454c, #e5e6e9);
 }
 
 .btn-swipe-confirm--done .btn-swipe-confirm__done {
@@ -122,8 +122,8 @@
 }
 
 .btn-swipe-confirm--done .btn-swipe-confirm__knob {
-  background: #111111;
-  color: #ededed;
+  background: light-dark(#fbfcfd, #121417);
+  color: light-dark(#42454c, #e5e6e9);
 }
 
 .btn-swipe-confirm--done .btn-swipe-confirm__arrow {

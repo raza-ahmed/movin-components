@@ -5,14 +5,14 @@
   padding: 12px 28px;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(to bottom right, #4d4d4d, #7c7c7c);
-  color: #f6f6f6;
+  background: linear-gradient(to bottom right, light-dark(#cbced3, #393c41), light-dark(#6d7179, #7d8087));
+  color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-weight: 600;
   cursor: pointer;
 }
 .btn-count-up:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .btn-count-up__count {
@@ -24,7 +24,7 @@
   box-sizing: border-box;
   padding: 0 6px;
   border-radius: 6px;
-  background: rgba(246, 246, 246, 0.2);
+  background: light-dark(rgba(55, 58, 64, 0.2), rgba(241, 242, 243, 0.2));
   font-size: 14px;
   font-variant-numeric: tabular-nums;
 }

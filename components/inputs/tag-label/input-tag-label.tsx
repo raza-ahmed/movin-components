@@ -13,7 +13,7 @@ export function TagLabelInput({ label = 'Username' }: { label?: string }) {
         <div
           className="tag-pill-bg absolute inset-0 rounded"
           style={{
-            background: 'rgba(167,167,167,0.15)',
+            background: 'light-dark(rgba(95,98,106,0.15), rgba(167,171,178,0.15))',
             transformOrigin: 'left center',
             transform: isActive ? 'scaleX(1)' : 'scaleX(0)',
             transition: 'transform 200ms cubic-bezier(0.22,1,0.36,1)',
@@ -24,7 +24,7 @@ export function TagLabelInput({ label = 'Username' }: { label?: string }) {
           style={{
             fontSize: isActive ? 11 : 13,
             fontWeight: isActive ? 600 : 400,
-            color: isActive ? '#a7a7a7' : 'rgba(246,246,246,0.55)',
+            color: isActive ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))',
             letterSpacing: isActive ? '0.06em' : 0,
             padding: isActive ? '2px 6px' : '1px 2px',
             textTransform: isActive ? 'uppercase' : 'none',
@@ -39,8 +39,8 @@ export function TagLabelInput({ label = 'Username' }: { label?: string }) {
         onChange={(e) => setValue(e.target.value)}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        className="block w-full rounded-lg border bg-[#f6f6f6]/[0.04] px-3.5 py-2.5 text-[15px] text-[#f6f6f6] outline-none transition-[border-color] duration-200"
-        style={{ borderColor: isActive ? 'rgba(167,167,167,0.4)' : 'rgba(246,246,246,0.12)' }}
+        className="block w-full rounded-lg border bg-[color:light-dark(#373a40,#f1f2f3)]/[0.04] px-3.5 py-2.5 text-[15px] text-[color:light-dark(#373a40,#f1f2f3)] outline-none transition-[border-color] duration-200"
+        style={{ borderColor: isActive ? 'light-dark(rgba(95,98,106,0.4), rgba(167,171,178,0.4))' : 'light-dark(rgba(55,58,64,0.12), rgba(241,242,243,0.12))' }}
       />
     </div>
   );

@@ -20,9 +20,9 @@ export function CardRadioGroup() {
             key={opt.value}
             className="flex cursor-pointer items-center gap-3 rounded-[10px] border px-3.5 py-3 transition-all duration-200"
             style={{
-              borderColor: checked ? 'rgba(167,167,167,0.5)' : 'rgba(246,246,246,0.08)',
-              background: checked ? 'rgba(167,167,167,0.07)' : 'rgba(246,246,246,0.03)',
-              boxShadow: checked ? 'inset 3px 0 0 #a7a7a7' : 'inset 3px 0 0 transparent',
+              borderColor: checked ? 'light-dark(rgba(95,98,106,0.5), rgba(167,171,178,0.5))' : 'light-dark(rgba(55,58,64,0.08), rgba(241,242,243,0.08))',
+              background: checked ? 'light-dark(rgba(95,98,106,0.07), rgba(167,171,178,0.07))' : 'light-dark(rgba(55,58,64,0.03), rgba(241,242,243,0.03))',
+              boxShadow: checked ? 'inset 3px 0 0 light-dark(#5f626a, #a7abb2)' : 'inset 3px 0 0 transparent',
             }}
           >
             <input
@@ -36,23 +36,23 @@ export function CardRadioGroup() {
             <div className="min-w-0 flex-1">
               <div
                 className="text-sm font-semibold transition-colors duration-200"
-                style={{ color: checked ? 'rgba(246,246,246,0.95)' : 'rgba(246,246,246,0.6)' }}
+                style={{ color: checked ? 'light-dark(rgba(55,58,64,0.95), rgba(241,242,243,0.95))' : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))' }}
               >
                 {opt.label}
               </div>
               <div
                 className="truncate text-[11px] transition-colors duration-200"
-                style={{ color: checked ? 'rgba(167,167,167,0.85)' : 'rgba(246,246,246,0.55)' }}
+                style={{ color: checked ? 'light-dark(rgba(95,98,106,0.85), rgba(167,171,178,0.85))' : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))' }}
               >
                 {opt.sub}
               </div>
             </div>
             <span
               className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full border-2 transition-colors duration-200"
-              style={{ borderColor: checked ? '#a7a7a7' : 'rgba(246,246,246,0.2)' }}
+              style={{ borderColor: checked ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(55,58,64,0.2), rgba(241,242,243,0.2))' }}
             >
               <span
-                className="h-1.5 w-1.5 rounded-full bg-[#a7a7a7]"
+                className="h-1.5 w-1.5 rounded-full bg-[color:light-dark(#5f626a,#a7abb2)]"
                 style={{
                   transform: checked ? 'scale(1)' : 'scale(0)',
                   transition: checked

@@ -4,11 +4,11 @@
 }
 .btn-pop-forward__button {
   padding: 12px 36px;
-  border: 1px solid #7c7c7c;
+  border: 1px solid light-dark(#6d7179, #7d8087);
   border-radius: 12px;
-  background: #282828;
+  background: light-dark(#ebedf0, #232529);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  color: #c9c9c9;
+  color: light-dark(#50535b, #c6c8cd);
   font: inherit;
   font-weight: 600;
   letter-spacing: 0.025em;
@@ -17,11 +17,11 @@
   transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 300ms ease;
 }
 .btn-pop-forward__button:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .btn-pop-forward__button:hover {
-  box-shadow: 0 24px 48px rgba(124, 124, 124, 0.45), 0 8px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 24px 48px light-dark(rgba(109, 113, 121, 0.45), rgba(125, 128, 135, 0.45)), 0 8px 16px rgba(0, 0, 0, 0.4);
   transform: translateZ(28px) scale(1.06);
 }
 @media (prefers-reduced-motion: reduce) {

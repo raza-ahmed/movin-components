@@ -40,28 +40,28 @@ export function RadarRadioGroup() {
             <span className="relative h-[22px] w-[22px] flex-shrink-0">
               {checked && (
                 <span
-                  className="absolute inset-0 rounded-full border-2 border-[#c9c9c9]"
+                  className="absolute inset-0 rounded-full border-2 border-[color:light-dark(#50535b,#c6c8cd)]"
                   style={{ animation: 'radar-ring 1.1s ease-out infinite', animationDelay: '0ms' }}
                 />
               )}
               {checked && (
                 <span
-                  className="absolute inset-0 rounded-full border-2 border-[#c9c9c9]"
+                  className="absolute inset-0 rounded-full border-2 border-[color:light-dark(#50535b,#c6c8cd)]"
                   style={{ animation: 'radar-ring 1.1s ease-out infinite', animationDelay: '360ms' }}
                 />
               )}
               <span
                 className="absolute inset-0 rounded-full border-2 transition-all duration-200"
                 style={{
-                  borderColor: checked ? '#a7a7a7' : 'rgba(167,167,167,0.25)',
+                  borderColor: checked ? 'light-dark(#5f626a, #a7abb2)' : 'light-dark(rgba(95,98,106,0.25), rgba(167,171,178,0.25))',
                   background: checked
-                    ? 'radial-gradient(circle at 40% 35%, rgba(167,167,167,0.6) 0%, rgba(167,167,167,0.15) 60%, transparent 100%)'
+                    ? 'radial-gradient(circle at 40% 35%, light-dark(rgba(95,98,106,0.6), rgba(167,171,178,0.6)) 0%, light-dark(rgba(95,98,106,0.15), rgba(167,171,178,0.15)) 60%, transparent 100%)'
                     : 'transparent',
-                  boxShadow: checked ? '0 0 8px rgba(167,167,167,0.5)' : 'none',
+                  boxShadow: checked ? '0 0 8px light-dark(rgba(95,98,106,0.5), rgba(167,171,178,0.5))' : 'none',
                 }}
               />
               <span
-                className="absolute top-1/2 left-1/2 h-1.5 w-1.5 rounded-full bg-[#c9c9c9]"
+                className="absolute top-1/2 left-1/2 h-1.5 w-1.5 rounded-full bg-[color:light-dark(#50535b,#c6c8cd)]"
                 style={{
                   transform: checked
                     ? 'translate(-50%, -50%) scale(1)'
@@ -74,7 +74,7 @@ export function RadarRadioGroup() {
             </span>
             <span
               className="select-none text-[13px] tracking-widest transition-colors duration-200"
-              style={{ color: checked ? '#c9c9c9' : 'rgba(201,201,201,0.65)' }}
+              style={{ color: checked ? 'light-dark(#50535b, #c6c8cd)' : 'light-dark(rgba(80,83,91,0.84), rgba(198,200,205,0.78))' }}
             >
               {`SIGNAL_${opt.toUpperCase()}`}
             </span>

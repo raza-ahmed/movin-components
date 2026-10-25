@@ -14,7 +14,7 @@ export function FlipSquareLoader({ label = "Loading" }: { label?: string }) {
           width: 30px;
           height: 30px;
           border-radius: 6px;
-          background: #7c7c7c;
+          background: light-dark(#6d7179, #7d8087);
           animation: flip-square-y 1.4s ease-in-out infinite;
         }
         @media (prefers-reduced-motion: reduce) {

@@ -8,7 +8,7 @@
 }
 .radio-magnetic__option { cursor: pointer; }
 .radio-magnetic__option:has(.radio-magnetic__input:focus-visible) {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 
@@ -23,10 +23,10 @@
   right: 0;
   left: 0;
   box-sizing: border-box;
-  border: 1px solid rgba(201, 201, 201, 0.4);
+  border: 1px solid light-dark(rgba(80, 83, 91, 0.4), rgba(198, 200, 205, 0.4));
   border-radius: 8px;
-  background: linear-gradient(135deg, rgba(201, 201, 201, 0.15), rgba(167, 167, 167, 0.12));
-  box-shadow: 0 0 16px rgba(201, 201, 201, 0.2), 0 0 4px rgba(201, 201, 201, 0.4);
+  background: linear-gradient(135deg, light-dark(rgba(80, 83, 91, 0.15), rgba(198, 200, 205, 0.15)), light-dark(rgba(95, 98, 106, 0.12), rgba(167, 171, 178, 0.12)));
+  box-shadow: 0 0 16px light-dark(rgba(80, 83, 91, 0.2), rgba(198, 200, 205, 0.2)), 0 0 4px light-dark(rgba(80, 83, 91, 0.4), rgba(198, 200, 205, 0.4));
   opacity: 0;
 }
 .radio-magnetic--ready .radio-magnetic__pill { transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1); }
@@ -49,7 +49,7 @@
   height: 18px;
   flex-shrink: 0;
   box-sizing: border-box;
-  border: 2px solid rgba(246, 246, 246, 0.2);
+  border: 2px solid light-dark(rgba(55, 58, 64, 0.2), rgba(241, 242, 243, 0.2));
   border-radius: 50%;
   transition: all 200ms;
 }
@@ -57,11 +57,11 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #c9c9c9;
+  background: light-dark(#50535b, #c6c8cd);
   transform: scale(0);
   transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.radio-magnetic__option:has(.radio-magnetic__input:checked) .radio-magnetic__ring { border-color: #c9c9c9; box-shadow: 0 0 8px rgba(201, 201, 201, 0.6); }
+.radio-magnetic__option:has(.radio-magnetic__input:checked) .radio-magnetic__ring { border-color: light-dark(#50535b, #c6c8cd); box-shadow: 0 0 8px light-dark(rgba(80, 83, 91, 0.6), rgba(198, 200, 205, 0.6)); }
 .radio-magnetic__option:has(.radio-magnetic__input:checked) .radio-magnetic__dot { transform: scale(1); }
 
 .radio-magnetic__dot { transition: transform 180ms ease-in; }
@@ -69,11 +69,11 @@
 .radio-magnetic__label {
   font-size: 13px;
   font-weight: 600;
-  color: rgba(246, 246, 246, 0.55);
+  color: light-dark(rgba(55, 58, 64, 0.73), rgba(241, 242, 243, 0.62));
   user-select: none;
   transition: color 200ms;
 }
-.radio-magnetic__option:has(.radio-magnetic__input:checked) .radio-magnetic__label { color: #c9c9c9; }
+.radio-magnetic__option:has(.radio-magnetic__input:checked) .radio-magnetic__label { color: light-dark(#50535b, #c6c8cd); }
 
 @media (prefers-reduced-motion: reduce) {
   .radio-magnetic,

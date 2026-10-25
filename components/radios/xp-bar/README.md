@@ -1,6 +1,6 @@
 # XP Bar radio button
 
-Gaming-style XP progress bar fills left-to-right on selection with a gradient bar and particle burst effect. Selecting an option "awards XP" — the bar charges from 0% to 100% and confetti sparks pop at the fill edge.
+Gaming-style XP progress bar fills left-to-right on selection with a gradient bar and particle burst effect. Selecting an option "awards XP": the bar charges from 0% to 100% and confetti sparks pop at the fill edge.
 
 Live preview: https://movin.design/components/radios/xp-bar/
 

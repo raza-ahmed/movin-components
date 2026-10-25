@@ -42,11 +42,11 @@ export function LEDRadioGroup() {
               className="flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300"
               style={{
                 background: checked
-                  ? 'radial-gradient(circle at 50% 40%, #c9c9c9 0%, #a7a7a7 35%, #7c7c7c 100%)'
-                  : '#202020',
+                  ? 'radial-gradient(circle at 50% 40%, light-dark(#50535b, #c6c8cd) 0%, light-dark(#5f626a, #a7abb2) 35%, light-dark(#6d7179, #7d8087) 100%)'
+                  : 'light-dark(#f3f4f7, #1a1c1f)',
                 boxShadow: checked
-                  ? '0 0 0 2px rgba(167,167,167,0.3), 0 0 14px 6px rgba(167,167,167,0.45), 0 0 28px 10px rgba(167,167,167,0.2), inset 0 1px 2px rgba(237,237,237,0.5)'
-                  : '0 0 0 2px rgba(246,246,246,0.06), inset 0 2px 6px rgba(0,0,0,0.7)',
+                  ? '0 0 0 2px light-dark(rgba(95,98,106,0.3), rgba(167,171,178,0.3)), 0 0 14px 6px light-dark(rgba(95,98,106,0.45), rgba(167,171,178,0.45)), 0 0 28px 10px light-dark(rgba(95,98,106,0.2), rgba(167,171,178,0.2)), inset 0 1px 2px light-dark(rgba(66,69,76,0.5), rgba(229,230,233,0.5))'
+                  : '0 0 0 2px light-dark(rgba(55,58,64,0.06), rgba(241,242,243,0.06)), inset 0 2px 6px rgba(0,0,0,0.7)',
                 animation: checked ? 'led-pulse 2s ease-in-out infinite' : 'none',
               }}
             >
@@ -54,9 +54,9 @@ export function LEDRadioGroup() {
                 className="h-3 w-3 rounded-full transition-all duration-300"
                 style={{
                   background: checked
-                    ? 'radial-gradient(circle at 40% 30%, #f6f6f6 0%, #ededed 40%, #c9c9c9 100%)'
-                    : 'rgba(246,246,246,0.06)',
-                  boxShadow: checked ? '0 0 6px 3px rgba(237,237,237,0.7)' : 'none',
+                    ? 'radial-gradient(circle at 40% 30%, light-dark(#373a40, #f1f2f3) 0%, light-dark(#42454c, #e5e6e9) 40%, light-dark(#50535b, #c6c8cd) 100%)'
+                    : 'light-dark(rgba(55,58,64,0.06), rgba(241,242,243,0.06))',
+                  boxShadow: checked ? '0 0 6px 3px light-dark(rgba(66,69,76,0.7), rgba(229,230,233,0.7))' : 'none',
                 }}
               />
             </span>
@@ -64,7 +64,7 @@ export function LEDRadioGroup() {
               className="select-none text-xs tracking-wide transition-colors duration-200"
               style={{
                 fontWeight: checked ? 600 : 400,
-                color: checked ? '#c9c9c9' : 'rgba(246,246,246,0.55)',
+                color: checked ? 'light-dark(#50535b, #c6c8cd)' : 'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))',
               }}
             >
               {opt}

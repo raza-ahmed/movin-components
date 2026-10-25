@@ -9,7 +9,7 @@ const css = `
     gap: 8px;
     width: 100%;
     max-width: 320px;
-    color: #a7a7a7;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 13px;
   }
 
@@ -24,20 +24,20 @@ const css = `
     align-items: center;
     height: 46px;
     padding: 0 12px 0 14px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 10px;
-    background: #202020;
+    background: light-dark(#f3f4f7, #1a1c1f);
     cursor: text;
     transition: border-color 0.2s;
   }
 
   .field-handle__box:focus-within {
-    border-color: #a7a7a7;
+    border-color: light-dark(#5f626a, #a7abb2);
   }
 
   .field-handle__prefix {
     flex-shrink: 0;
-    color: #7c7c7c;
+    color: light-dark(#5f626a, #a7abb2);
     font-size: 15px;
   }
 
@@ -50,13 +50,13 @@ const css = `
     border: 0;
     outline: none;
     background: transparent;
-    color: #f6f6f6;
+    color: light-dark(#373a40, #f1f2f3);
     font: inherit;
     font-size: 15px;
   }
 
   .field-handle__input::placeholder {
-    color: #4d4d4d;
+    color: light-dark(#cbced3, #393c41);
   }
 
   .field-handle--refused .field-handle__box {
@@ -97,7 +97,7 @@ const css = `
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background: #a7a7a7;
+    background: light-dark(#5f626a, #a7abb2);
   }
 
   .field-handle--checking .field-handle__dots {
@@ -137,7 +137,7 @@ const css = `
   }
 
   .field-handle__ok {
-    stroke: #ededed;
+    stroke: light-dark(#42454c, #e5e6e9);
     stroke-width: 2.4;
   }
 
@@ -153,7 +153,7 @@ const css = `
   }
 
   .field-handle__no {
-    stroke: #a7a7a7;
+    stroke: light-dark(#5f626a, #a7abb2);
     stroke-width: 2;
     transform: scale(0) rotate(-90deg);
     transition: transform 0.15s ease-in;
@@ -165,7 +165,7 @@ const css = `
   }
 
   .field-handle--ok .field-handle__box {
-    border-color: #ededed;
+    border-color: light-dark(#42454c, #e5e6e9);
   }
 
   .field-handle__msg {
@@ -175,7 +175,7 @@ const css = `
   }
 
   .field-handle--ok .field-handle__msg {
-    color: #ededed;
+    color: light-dark(#42454c, #e5e6e9);
   }
 
   .field-handle__ideas {
@@ -187,10 +187,10 @@ const css = `
   .field-handle__idea {
     margin: 0;
     padding: 5px 10px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid light-dark(#dbdde1, #2e3035);
     border-radius: 999px;
-    background: #202020;
-    color: #ededed;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    color: light-dark(#42454c, #e5e6e9);
     font: inherit;
     font-size: 12px;
     cursor: pointer;
@@ -200,12 +200,12 @@ const css = `
   }
 
   .field-handle__idea:hover {
-    border-color: #7c7c7c;
-    background: #282828;
+    border-color: light-dark(#6d7179, #7d8087);
+    background: light-dark(#ebedf0, #232529);
   }
 
   .field-handle__idea:focus-visible {
-    outline: 2px solid #a7a7a7;
+    outline: 2px solid light-dark(#5f626a, #a7abb2);
     outline-offset: 2px;
   }
 

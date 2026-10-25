@@ -7,13 +7,13 @@
   padding: 4px;
   border: none;
   border-radius: 9999px;
-  background: linear-gradient(135deg, #282828 0%, #3a3a3a 100%);
-  box-shadow: 0 0 12px rgba(124, 124, 124, 0.25);
+  background: linear-gradient(135deg, light-dark(#ebedf0, #232529) 0%, light-dark(#dbdde1, #2e3035) 100%);
+  box-shadow: 0 0 12px light-dark(rgba(109, 113, 121, 0.25), rgba(125, 128, 135, 0.25));
   cursor: pointer;
   transition: box-shadow 300ms ease;
 }
 .toggle-icon:focus-visible {
-  outline: 2px solid #a7a7a7;
+  outline: 2px solid light-dark(#5f626a, #a7abb2);
   outline-offset: 2px;
 }
 .toggle-icon__knob {
@@ -25,7 +25,7 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(246, 246, 246, 0.12);
+  background: light-dark(rgba(55, 58, 64, 0.12), rgba(241, 242, 243, 0.12));
   transition: transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1), background 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .toggle-icon__sun,
@@ -35,11 +35,11 @@
 }
 .toggle-icon__sun { opacity: 0; transform: rotate(-90deg) scale(0); }
 .toggle-icon[aria-checked="true"] {
-  background: linear-gradient(135deg, #c9c9c9 0%, #a7a7a7 100%);
-  box-shadow: 0 0 12px rgba(201, 201, 201, 0.4);
+  background: linear-gradient(135deg, light-dark(#50535b, #c6c8cd) 0%, light-dark(#5f626a, #a7abb2) 100%);
+  box-shadow: 0 0 12px light-dark(rgba(80, 83, 91, 0.4), rgba(198, 200, 205, 0.4));
 }
 .toggle-icon[aria-checked="true"] .toggle-icon__knob {
-  background: rgba(246, 246, 246, 0.95);
+  background: light-dark(rgba(55, 58, 64, 0.95), rgba(241, 242, 243, 0.95));
   transform: translateX(28px);
 }
 .toggle-icon[aria-checked="true"] .toggle-icon__sun { opacity: 1; transform: none; }

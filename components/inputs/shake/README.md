@@ -1,6 +1,6 @@
 # Shake input
 
-On invalid submission the input rattles horizontally to signal an error — a rapidly damping shake with a bright border. Pure CSS keyframes, no dependencies.
+On invalid submission the input rattles horizontally to signal an error: a rapidly damping shake with a bright border. Pure CSS keyframes, no dependencies.
 
 Live preview: https://movin.design/components/inputs/shake/
 

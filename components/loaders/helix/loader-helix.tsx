@@ -13,8 +13,8 @@ export function HelixLoader({ label = "Loading" }: { label?: string }) {
           50% { transform: translateY(-12px) scaleX(0.5); opacity: 0.6; }
         }
         .helix-dot { display: block; width: 14px; height: 14px; border-radius: 50%; }
-        .helix-dot-a { background: #f6f6f6; animation: helix-a 1s ease-in-out infinite; }
-        .helix-dot-b { background: #7c7c7c; animation: helix-b 1s ease-in-out infinite; }
+        .helix-dot-a { background: light-dark(#373a40, #f1f2f3); animation: helix-a 1s ease-in-out infinite; }
+        .helix-dot-b { background: light-dark(#6d7179, #7d8087); animation: helix-b 1s ease-in-out infinite; }
         @media (prefers-reduced-motion: reduce) {
           .helix-dot-a, .helix-dot-b { animation: none; }
         }

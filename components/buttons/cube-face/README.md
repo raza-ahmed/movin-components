@@ -1,6 +1,6 @@
 # Cube Face button
 
-On click, a 3D cube rotates 90 degrees on the X axis to reveal a second face with a confirmation message. Uses CSS transform-style: preserve-3d with two absolutely-positioned faces — a front face (translateZ) and a top face (rotateX + translateZ). Auto-resets after 1.8 seconds.
+On click, a 3D cube rotates 90 degrees on the X axis to reveal a second face with a confirmation message. Uses CSS transform-style: preserve-3d with two absolutely-positioned faces, a front face (translateZ) and a top face (rotateX + translateZ). Auto-resets after 1.8 seconds.
 
 Live preview: https://movin.design/components/buttons/cube-face/
 

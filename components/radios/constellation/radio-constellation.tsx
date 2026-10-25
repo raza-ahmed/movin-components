@@ -30,16 +30,16 @@ export function ConstellationRadioGroup() {
                 {checked && LINES.map(([a,b],i)=>(
                   <line key={`${starKey}-l-${i}`}
                     x1={C+STARS[a].x} y1={C+STARS[a].y} x2={C+STARS[b].x} y2={C+STARS[b].y}
-                    stroke="rgba(201,201,201,0.25)" strokeWidth=".75"
+                    stroke="light-dark(rgba(80,83,91,0.25), rgba(198,200,205,0.25))" strokeWidth=".75"
                     style={{opacity:0,animation:`star-appear 400ms ease-out ${50+i*60}ms forwards`}}/>
                 ))}
               </svg>
               {checked && STARS.map((s,i)=>(
                 <span key={`${starKey}-s-${i}`} className="star-dot absolute rounded-full"
                   style={{
-                    width:4,height:4,background:'#c9c9c9',
+                    width:4,height:4,background:'light-dark(#50535b, #c6c8cd)',
                     left:C+s.x-2,top:C+s.y-2,
-                    boxShadow:'0 0 4px rgba(201,201,201,0.9)',
+                    boxShadow:'0 0 4px light-dark(rgba(80,83,91,0.9), rgba(198,200,205,0.9))',
                     animation:`star-appear 350ms cubic-bezier(0.34,1.56,0.64,1) ${i*70}ms both,star-twinkle ${1200+i*300}ms ease-in-out ${i*70+400}ms infinite`,
                   }}/>
               ))}
@@ -47,18 +47,18 @@ export function ConstellationRadioGroup() {
                 className="absolute flex items-center justify-center rounded-full border-2 transition-all duration-200"
                 style={{
                   width:16,height:16,left:C-8,top:C-8,
-                  borderColor:checked?'#c9c9c9':'rgba(246,246,246,0.2)',
-                  background:checked?'rgba(201,201,201,0.12)':'transparent',
-                  boxShadow:checked?'0 0 8px rgba(201,201,201,0.5)':'none',
+                  borderColor:checked?'light-dark(#50535b, #c6c8cd)':'light-dark(rgba(55,58,64,0.2), rgba(241,242,243,0.2))',
+                  background:checked?'light-dark(rgba(80,83,91,0.12), rgba(198,200,205,0.12))':'transparent',
+                  boxShadow:checked?'0 0 8px light-dark(rgba(80,83,91,0.5), rgba(198,200,205,0.5))':'none',
                 }}
               >
-                <span style={{width:6,height:6,borderRadius:'50%',background:'#c9c9c9',
+                <span style={{width:6,height:6,borderRadius:'50%',background:'light-dark(#50535b, #c6c8cd)',
                   transform:checked?'scale(1)':'scale(0)',
                   transition:'transform 250ms cubic-bezier(0.34,1.56,0.64,1)'}}/>
               </span>
             </span>
             <span className="select-none text-sm transition-colors duration-200"
-              style={{fontWeight:checked?500:400,color:checked?'#c9c9c9':'rgba(246,246,246,0.55)'}}>
+              style={{fontWeight:checked?500:400,color:checked?'light-dark(#50535b, #c6c8cd)':'light-dark(rgba(55,58,64,0.73), rgba(241,242,243,0.62))'}}>
               {opt}
             </span>
           </label>
