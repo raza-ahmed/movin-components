@@ -1,0 +1,115 @@
+"use client";
+
+const css = `
+  @keyframes btn-radar-sweep { to { transform: rotate(360deg); } }
+  @keyframes btn-radar-blip {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(1.4); }
+    12% { transform: translate(-50%, -50%) scale(1); }
+    75%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+  }
+  .btn-radar {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 132px;
+    height: 132px;
+    padding: 0;
+    border: 1px solid light-dark(#cbced3, #393c41);
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, transparent 0 21px, light-dark(#dbdde1, #2e3035) 21px 22px, transparent 22px 43px, light-dark(#dbdde1, #2e3035) 43px 44px, transparent 44px),
+      linear-gradient(light-dark(#dbdde1, #2e3035), light-dark(#dbdde1, #2e3035)) center / 1px 100% no-repeat,
+      linear-gradient(light-dark(#dbdde1, #2e3035), light-dark(#dbdde1, #2e3035)) center / 100% 1px no-repeat,
+      light-dark(#fbfcfd, #121417);
+    color: light-dark(#373a40, #f1f2f3);
+    font-family: inherit;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: inset 0 0 24px light-dark(rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.45));
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn-radar:hover {
+    border-color: light-dark(#5f626a, #a7abb2);
+    box-shadow: inset 0 0 24px light-dark(rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.45)), 0 0 26px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 16%, transparent);
+  }
+  .btn-radar:focus-visible { outline: 2px solid light-dark(#42454c, #e5e6e9); outline-offset: 4px; }
+  .btn-radar__sweep {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent 0deg 280deg, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 38%, transparent) 360deg);
+    animation: btn-radar-sweep 3s linear infinite;
+  }
+  .btn-radar__sweep::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 50%;
+    background: light-dark(#373a40, #f1f2f3);
+    box-shadow: 0 0 6px light-dark(#373a40, #f1f2f3);
+  }
+  .btn-radar__blip {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: light-dark(#373a40, #f1f2f3);
+    box-shadow: 0 0 8px light-dark(#373a40, #f1f2f3);
+    opacity: 0;
+    animation: btn-radar-blip 3s linear infinite;
+  }
+  .btn-radar__label {
+    position: relative;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: color-mix(in oklab, light-dark(#fbfcfd, #121417) 80%, transparent);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-radar__sweep { animation: none; transform: rotate(60deg); }
+    .btn-radar__blip { animation: none; opacity: 0.6; }
+  }
+`;
+
+// Contacts at [bearing in degrees clockwise from north, distance from centre in px].
+const BLIPS: [number, number][] = [
+  [38, 44],
+  [128, 28],
+  [205, 52],
+  [292, 38],
+];
+
+export function RadarButton() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <button type="button" className="btn-radar">
+        <span className="btn-radar__sweep" aria-hidden="true" />
+        {BLIPS.map(([deg, r]) => {
+          const a = (deg * Math.PI) / 180;
+          return (
+            <span
+              key={deg}
+              className="btn-radar__blip"
+              aria-hidden="true"
+              style={{
+                left: `calc(50% + ${(Math.sin(a) * r).toFixed(1)}px)`,
+                top: `calc(50% - ${(Math.cos(a) * r).toFixed(1)}px)`,
+                // The beam reaches this bearing deg/360 of the way through its turn.
+                animationDelay: `${((deg / 360) * 3).toFixed(2)}s`,
+              }}
+            />
+          );
+        })}
+        <span className="btn-radar__label">Scan</span>
+      </button>
+    </>
+  );
+}

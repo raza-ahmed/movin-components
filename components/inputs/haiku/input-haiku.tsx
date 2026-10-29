@@ -1,0 +1,108 @@
+"use client";
+
+import { useId, useState } from 'react';
+
+const LINES = [
+  { target: 5, ph: 'Morning light on glass' },
+  { target: 7, ph: 'the kettle hums a low tune' },
+  { target: 5, ph: 'steam writes, then is gone' },
+];
+
+// An English syllable estimate: vowel groups, less a silent ending. Good enough to count beads by.
+function syllables(text: string) {
+  return text
+    .toLowerCase()
+    .split(/[^a-z']+/)
+    .filter(Boolean)
+    .reduce((n, w) => {
+      if (w.length <= 3) return n + 1;
+      const core = w.replace(/(?:[^laeiouy]es|[^laeiouy]ed|[^laeiouy]e)$/, '').replace(/^y/, '');
+      return n + Math.max(1, (core.match(/[aeiouy]{1,2}/g) ?? []).length);
+    }, 0);
+}
+
+const css = `
+  @keyframes field-haiku-seal { 0% { transform: rotate(-30deg) scale(1.8); opacity: 0; } 60% { transform: rotate(-8deg) scale(0.94); opacity: 1; } 100% { transform: rotate(-10deg) scale(1); opacity: 1; } }
+  .field-haiku { position: relative; display: grid; gap: 2px; width: 280px; }
+  .field-haiku__row { display: flex; align-items: center; gap: 10px; border-bottom: 1px solid light-dark(#dbdde1, #2e3035); transition: border-color 0.2s; }
+  .field-haiku__row:focus-within { border-color: light-dark(#5f626a, #a7abb2); }
+  .field-haiku__input { flex: 1; min-width: 0; height: 36px; padding: 0 2px; border: 0; outline: 0; background: none; color: light-dark(#373a40, #f1f2f3); font-family: Georgia, 'Times New Roman', serif; font-size: 13.5px; font-style: italic; }
+  .field-haiku__input::placeholder { color: light-dark(#6d7179, #7d8087); }
+  .field-haiku__beads { display: flex; gap: 2.5px; }
+  .field-haiku__bead { width: 6px; height: 6px; border-radius: 50%; box-shadow: inset 0 0 0 1px light-dark(#6d7179, #7d8087); transition: background-color 0.2s, transform 0.3s cubic-bezier(0.3, 1.8, 0.5, 1); }
+  .field-haiku__bead[data-on] { background: light-dark(#42454c, #e5e6e9); box-shadow: none; transform: scale(1.15); }
+  .field-haiku__row[data-over] .field-haiku__bead { background: light-dark(#6d7179, #7d8087); }
+  .field-haiku__over { min-width: 16px; color: light-dark(#5f626a, #a7abb2); font-size: 10px; font-variant-numeric: tabular-nums; }
+  .field-haiku__seal {
+    position: absolute;
+    right: -4px;
+    top: -30px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    box-shadow: inset 0 0 0 2px light-dark(#50535b, #c6c8cd);
+    color: light-dark(#50535b, #c6c8cd);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+    text-align: center;
+    opacity: 0;
+    transform: rotate(-10deg);
+  }
+  .field-haiku[data-done] .field-haiku__seal { animation: field-haiku-seal 0.45s cubic-bezier(0.4, 0, 0.4, 1) both; }
+  @media (prefers-reduced-motion: reduce) {
+    .field-haiku__seal { animation: none !important; }
+    .field-haiku[data-done] .field-haiku__seal { opacity: 1; }
+  }
+`;
+
+export function HaikuInput() {
+  const id = useId();
+  const [lines, setLines] = useState(['', '', '']);
+  const counts = lines.map(syllables);
+  const done = counts.every((c, i) => c === LINES[i]!.target);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="field-haiku" role="group" aria-label="Write a haiku" data-done={done || undefined}>
+        {LINES.map((l, i) => {
+          const c = counts[i]!;
+          return (
+            <div key={i} className="field-haiku__row" data-over={c > l.target || undefined}>
+              <input
+                className="field-haiku__input"
+                aria-label={`Line ${i + 1}, ${l.target} syllables`}
+                aria-describedby={`${id}-c${i}`}
+                placeholder={l.ph}
+                value={lines[i]}
+                onChange={(e) => setLines((ls) => ls.map((v, k) => (k === i ? e.target.value : v)))}
+              />
+              <span className="field-haiku__beads" aria-hidden="true">
+                {Array.from({ length: l.target }, (_, k) => (
+                  <span key={k} className="field-haiku__bead" data-on={k < c || undefined} />
+                ))}
+              </span>
+              <span id={`${id}-c${i}`} className="field-haiku__over">
+                {c > l.target ? `+${c - l.target}` : <span style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)' }}>{`${c} of ${l.target} syllables`}</span>}
+              </span>
+            </div>
+          );
+        })}
+        <span className="field-haiku__seal" aria-live="polite">
+          {done ? (
+            <>
+              HAI
+              <br />
+              KU
+            </>
+          ) : null}
+        </span>
+      </div>
+    </>
+  );
+}

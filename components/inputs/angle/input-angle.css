@@ -1,0 +1,32 @@
+.field-angle { user-select: none; -webkit-user-select: none; display: flex; align-items: center; gap: 16px; }
+.field-angle__dial {
+  position: relative;
+  flex: none;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background: radial-gradient(circle, light-dark(#f3f4f7, #1a1c1f) 58%, light-dark(#ebedf0, #232529) 59%);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  cursor: grab;
+  touch-action: none;
+  outline: none;
+}
+.field-angle__dial:active { cursor: grabbing; }
+.field-angle__dial:focus-visible { box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035), 0 0 0 2px light-dark(#5f626a, #a7abb2); }
+.field-angle__tick { position: absolute; left: 50%; top: 50%; width: 2px; height: 6px; margin: -3px 0 0 -1px; border-radius: 1px; background: light-dark(#cbced3, #393c41); transform: rotate(var(--a)) translateY(-45px); transition: background-color 0.2s, height 0.2s; }
+.field-angle__tick[data-major] { height: 8px; background: light-dark(#6d7179, #7d8087); }
+.field-angle__tick[data-near] { background: light-dark(#373a40, #f1f2f3); }
+.field-angle__hand { position: absolute; left: 50%; top: 50%; width: 0; height: 0; }
+.field-angle__hand::before { content: ''; position: absolute; left: -1px; bottom: 0; width: 2px; height: 34px; border-radius: 1px; background: light-dark(#50535b, #c6c8cd); }
+.field-angle__knob { position: absolute; left: -8px; top: -50px; width: 16px; height: 16px; border-radius: 50%; background: light-dark(#373a40, #f1f2f3); box-shadow: 0 0 0 3px light-dark(#f3f4f7, #1a1c1f); }
+.field-angle__hub { position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: light-dark(#50535b, #c6c8cd); }
+.field-angle__side { display: grid; gap: 8px; width: 110px; }
+.field-angle__label { color: light-dark(#50535b, #c6c8cd); font-size: 12px; }
+.field-angle__num { display: flex; align-items: center; height: 34px; padding: 0 8px; border-radius: 8px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+.field-angle__num:focus-within { box-shadow: inset 0 0 0 1px light-dark(#5f626a, #a7abb2); }
+.field-angle__num input { width: 100%; border: 0; outline: 0; background: none; color: light-dark(#373a40, #f1f2f3); font-family: inherit; font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.field-angle__num span { color: light-dark(#5f626a, #a7abb2); font-size: 13px; }
+.field-angle__swatch { height: 42px; border-radius: 8px; box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+@media (prefers-reduced-motion: reduce) {
+  .field-angle__tick { transition: none; }
+}

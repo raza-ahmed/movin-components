@@ -1,0 +1,16 @@
+.slider-spring { display: grid; justify-items: center; gap: 10px; width: 230px; }
+.slider-spring__view { position: relative; width: 230px; height: 76px; }
+.slider-spring__view svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.slider-spring__wall { fill: light-dark(#dbdde1, #2e3035); }
+.slider-spring__hatch { stroke: light-dark(#6d7179, #7d8087); stroke-width: 1; }
+.slider-spring__coil { fill: none; stroke: light-dark(#50535b, #c6c8cd); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.slider-spring__floor { stroke: light-dark(#dbdde1, #2e3035); stroke-width: 1; stroke-dasharray: 3 4; }
+.slider-spring__weight { fill: light-dark(#42454c, #e5e6e9); }
+.slider-spring__weight-top { fill: light-dark(#373a40, #f1f2f3); }
+.slider-spring__label { fill: light-dark(#ebedf0, #232529); font-size: 9px; font-weight: 600; font-family: system-ui, sans-serif; }
+.slider-spring__read { color: light-dark(#50535b, #c6c8cd); font-size: 12px; }
+.slider-spring__read b { color: light-dark(#373a40, #f1f2f3); font-weight: 600; font-variant-numeric: tabular-nums; }
+.slider-spring:has(.slider-spring__input:focus-visible) .slider-spring__weight { stroke: light-dark(#373a40, #f1f2f3); stroke-width: 2; }
+.slider-spring__input { position: absolute; inset: 0 0 0 18px; width: calc(100% - 18px); height: 100%; margin: 0; opacity: 0; cursor: ew-resize; -webkit-appearance: none; appearance: none; background: none; }
+.slider-spring__input::-webkit-slider-thumb { -webkit-appearance: none; width: 36px; height: 76px; }
+.slider-spring__input::-moz-range-thumb { width: 36px; height: 76px; border: 0; }

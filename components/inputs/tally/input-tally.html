@@ -1,0 +1,31 @@
+<div class="field-tally">
+  <div class="field-tally__head">
+    <div class="field-tally__top">
+      <span id="field-tally-label" class="field-tally__label">Laps</span>
+      <button type="button" class="field-tally__info" aria-label="Tap the board to count" data-tip="Tap the board to count">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 11v5M12 7.5v.01"></path>
+        </svg>
+      </button>
+    </div>
+    <span class="field-tally__count" aria-live="polite">
+      <span>7</span>
+    </span>
+  </div>
+  <button type="button" class="field-tally__board" aria-labelledby="field-tally-label">
+    <svg viewBox="0 0 240 78" aria-hidden="true">
+      <path class="field-tally__mark" d="M17.68 21.19 L18.49 56.42" pathLength="1"></path>
+      <path class="field-tally__mark" d="M25.8 21.07 L24.18 55.67" pathLength="1"></path>
+      <path class="field-tally__mark" d="M32.35 22.39 L32.1 55.42" pathLength="1"></path>
+      <path class="field-tally__mark" d="M40.12 22.74 L39.99 55.33" pathLength="1"></path>
+      <path class="field-tally__mark" d="M13 50.19 L45 27.07" pathLength="1"></path>
+      <path class="field-tally__mark" d="M54.6 22.25 L53.07 56.65" pathLength="1"></path>
+      <path class="field-tally__mark" d="M60.87 23.17 L60.62 54.82" pathLength="1"></path>
+    </svg>
+  </button>
+  <div class="field-tally__foot">
+    <span id="field-tally-hint"></span>
+    <button type="button" class="field-tally__undo">Undo</button>
+  </div>
+</div>

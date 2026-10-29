@@ -1,0 +1,32 @@
+@keyframes loader-maze-solve {
+  0% { stroke-dashoffset: 1; opacity: 1; }
+  70% { stroke-dashoffset: 0; opacity: 1; }
+  85% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@keyframes loader-maze-goal {
+  0%, 66% { opacity: 0.35; transform: scale(1); }
+  72% { opacity: 1; transform: scale(1.8); }
+  85% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.35; }
+}
+.loader-maze { display: block; width: 96px; height: 96px; }
+.loader-maze__walls { fill: none; stroke: light-dark(#6d7179, #7d8087); stroke-width: 0.1; stroke-linecap: square; }
+.loader-maze__route {
+  fill: none;
+  stroke: light-dark(#373a40, #f1f2f3);
+  stroke-width: 0.16;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  animation: loader-maze-solve 3s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+.loader-maze__goal {
+  fill: light-dark(#373a40, #f1f2f3);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: loader-maze-goal 3s ease infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader-maze__route, .loader-maze__goal { animation: none; stroke-dashoffset: 0; }
+}

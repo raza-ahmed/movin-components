@@ -55,7 +55,7 @@
   overflow: hidden;
   border-radius: 50%;
   background: light-dark(#373a40, #f1f2f3);
-  box-shadow: inset 0 0 0 1.5px light-dark(rgba(251, 252, 253, 0.55), rgba(18, 20, 23, 0.55)), 0 8px 18px light-dark(rgba(251, 252, 253, 0.35), rgba(18, 20, 23, 0.35));
+  box-shadow: inset 0 0 0 1.5px light-dark(rgba(0, 0, 0, 0.3), rgba(18, 20, 23, 0.55)), 0 8px 18px light-dark(rgba(0, 0, 0, 0.12), rgba(18, 20, 23, 0.35));
   pointer-events: none;
   translate: var(--btn-loupe-x) var(--btn-loupe-y);
   scale: 0;
@@ -68,7 +68,7 @@
   inset: 0;
   border-radius: 50%;
   background: radial-gradient(circle at 32% 26%, light-dark(rgba(55, 58, 64, 0.7), rgba(241, 242, 243, 0.7)), transparent 38%);
-  box-shadow: inset 0 -6px 12px light-dark(rgba(251, 252, 253, 0.12), rgba(18, 20, 23, 0.12));
+  box-shadow: inset 0 -6px 12px light-dark(rgba(0, 0, 0, 0.06), rgba(18, 20, 23, 0.12));
 }
 
 .btn-loupe__zoom {

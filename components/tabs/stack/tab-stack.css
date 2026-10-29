@@ -1,0 +1,30 @@
+.tabs-stack { width: 250px; }
+.tabs-stack__list { display: flex; justify-content: center; gap: 4px; margin-bottom: 30px; }
+.tabs-stack__tab { padding: 5px 12px; border: 0; border-radius: 999px; background: none; color: light-dark(#5f626a, #a7abb2); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; transition: color 0.2s, background-color 0.2s; }
+.tabs-stack__tab:hover { color: light-dark(#42454c, #e5e6e9); }
+.tabs-stack__tab[aria-selected='true'] { background: light-dark(#ebedf0, #232529); color: light-dark(#373a40, #f1f2f3); }
+.tabs-stack__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; }
+.tabs-stack__deck { position: relative; height: 128px; }
+.tabs-stack__card {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, light-dark(#cbced3, #393c41), light-dark(#ebedf0, #232529));
+  box-shadow: inset 0 1px 0 light-dark(#6d7179, #7d8087), 0 12px 24px -12px light-dark(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.7));
+  z-index: calc(10 - var(--tabs-stack-k));
+  opacity: calc(1 - var(--tabs-stack-k) * 0.25);
+  transform: translateY(calc(var(--tabs-stack-k) * -12px)) scale(calc(1 - var(--tabs-stack-k) * 0.06));
+  transform-origin: 50% 0;
+  transition: transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 1), opacity 0.3s;
+}
+.tabs-stack__top { display: flex; justify-content: space-between; color: light-dark(#42454c, #e5e6e9); font-size: 12px; font-weight: 600; }
+.tabs-stack__chip { width: 26px; height: 19px; border-radius: 4px; background: linear-gradient(135deg, light-dark(#50535b, #c6c8cd), light-dark(#6d7179, #7d8087)); }
+.tabs-stack__num { color: light-dark(#373a40, #f1f2f3); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; letter-spacing: 0.12em; }
+.tabs-stack__kind { color: light-dark(#50535b, #c6c8cd); font-size: 11px; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-stack__card { transition: none; }
+}

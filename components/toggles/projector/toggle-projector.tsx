@@ -1,0 +1,100 @@
+"use client";
+
+import { useState } from 'react';
+
+const css = `
+  @keyframes toggle-projector-go {
+    0% { transform: translateX(0); opacity: 1; }
+    10% { transform: translateX(2px); opacity: 0.3; }
+    20% { transform: translateX(-2px); opacity: 0.8; }
+    30% { transform: translateX(0); opacity: 0; }
+    31% { transform: translateX(48px); opacity: 0; }
+    50% { transform: translateX(50px); opacity: 0.7; }
+    60% { transform: translateX(46px); opacity: 0.2; }
+    75% { transform: translateX(48px); opacity: 1; }
+    100% { transform: translateX(48px); opacity: 1; }
+  }
+  @keyframes toggle-projector-back {
+    0% { transform: translateX(48px); opacity: 1; }
+    10% { transform: translateX(46px); opacity: 0.3; }
+    20% { transform: translateX(50px); opacity: 0.8; }
+    30% { transform: translateX(48px); opacity: 0; }
+    31% { transform: translateX(0); opacity: 0; }
+    50% { transform: translateX(-2px); opacity: 0.7; }
+    60% { transform: translateX(2px); opacity: 0.2; }
+    75% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes toggle-projector-flicker { 0%, 100% { opacity: 1; } 47% { opacity: 1; } 48% { opacity: 0.55; } 50% { opacity: 1; } 83% { opacity: 0.8; } }
+  .toggle-projector { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .toggle-projector__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .toggle-projector__track { position: relative; width: 76px; height: 42px; border-radius: 6px; }
+  .toggle-projector__input:focus-visible + .toggle-projector__track { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+  .toggle-projector__emitter {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 6px;
+    border-radius: 3px;
+    background: light-dark(#ebedf0, #232529);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  }
+  .toggle-projector__holo { position: absolute; left: 2px; bottom: 6px; width: 24px; height: 36px; }
+  .toggle-projector__lens { position: absolute; left: 4px; right: 4px; bottom: -6px; height: 6px; border-radius: 3px; background: light-dark(#6d7179, #7d8087); transition: background-color 0.3s; }
+  .toggle-projector__beam {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    bottom: 0;
+    clip-path: polygon(38% 100%, 62% 100%, 100% 0, 0 0);
+    background: linear-gradient(to top, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 40%, transparent), transparent);
+    opacity: 0.25;
+    transition: opacity 0.3s;
+  }
+  .toggle-projector__figure {
+    position: absolute;
+    left: 2px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid light-dark(#50535b, #c6c8cd);
+    background: repeating-linear-gradient(0deg, light-dark(#42454c, #e5e6e9) 0 1px, transparent 1px 3px);
+    opacity: 0.35;
+    transition: opacity 0.3s;
+  }
+  .toggle-projector__input:checked + .toggle-projector__track .toggle-projector__holo { transform: translateX(48px); }
+  .toggle-projector__input:checked + .toggle-projector__track .toggle-projector__lens { background: light-dark(#373a40, #f1f2f3); }
+  .toggle-projector__input:checked + .toggle-projector__track .toggle-projector__beam { opacity: 1; }
+  .toggle-projector__input:checked + .toggle-projector__track .toggle-projector__figure { opacity: 0.95; animation: toggle-projector-flicker 2.4s steps(1) infinite; }
+  .toggle-projector[data-armed] .toggle-projector__input:checked + .toggle-projector__track .toggle-projector__holo { animation: toggle-projector-go 0.6s linear; }
+  .toggle-projector[data-armed] .toggle-projector__input:not(:checked) + .toggle-projector__track .toggle-projector__holo { animation: toggle-projector-back 0.6s linear; }
+  @media (prefers-reduced-motion: reduce) {
+    .toggle-projector__track * { animation: none !important; }
+  }
+`;
+
+export function ProjectorToggle() {
+  const [armed, setArmed] = useState(false);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="toggle-projector" data-armed={armed || undefined}>
+        <input className="toggle-projector__input" type="checkbox" role="switch" onChange={() => setArmed(true)} />
+        <span className="toggle-projector__track" aria-hidden="true">
+          <span className="toggle-projector__emitter" />
+          <span className="toggle-projector__holo">
+            <span className="toggle-projector__beam" />
+            <span className="toggle-projector__figure" />
+            <span className="toggle-projector__lens" />
+          </span>
+        </span>
+        Hologram
+      </label>
+    </>
+  );
+}

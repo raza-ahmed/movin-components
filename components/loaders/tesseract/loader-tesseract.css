@@ -1,0 +1,4 @@
+.loader-tesseract { display: block; width: 104px; height: 104px; }
+.loader-tesseract__edges { fill: none; stroke: light-dark(#5f626a, #a7abb2); stroke-width: 1; stroke-linejoin: round; }
+.loader-tesseract__inner { fill: none; stroke: light-dark(#373a40, #f1f2f3); stroke-width: 1.2; }
+.loader-tesseract__nodes { fill: light-dark(#373a40, #f1f2f3); }

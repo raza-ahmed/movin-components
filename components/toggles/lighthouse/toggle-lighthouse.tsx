@@ -1,0 +1,87 @@
+"use client";
+
+const css = `
+  @keyframes toggle-lighthouse-sweep { 0% { transform: scaleX(1); } 50% { transform: scaleX(-1); } 100% { transform: scaleX(1); } }
+  @keyframes toggle-lighthouse-sea { to { background-position: 12px 0; } }
+  .toggle-lighthouse { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .toggle-lighthouse__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .toggle-lighthouse__track { position: relative; width: 64px; height: 56px; border-radius: 8px; }
+  .toggle-lighthouse__input:focus-visible + .toggle-lighthouse__track { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+  .toggle-lighthouse__sea {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 5px;
+    background: radial-gradient(circle at 50% 100%, transparent 3px, light-dark(#dbdde1, #2e3035) 3.5px) 0 0 / 12px 5px;
+    animation: toggle-lighthouse-sea 3s linear infinite;
+  }
+  .toggle-lighthouse__tower {
+    position: absolute;
+    left: 25px;
+    bottom: 4px;
+    width: 14px;
+    height: 32px;
+    clip-path: polygon(22% 0, 78% 0, 100% 100%, 0 100%);
+    background: repeating-linear-gradient(light-dark(#50535b, #c6c8cd) 0 7px, light-dark(#cbced3, #393c41) 7px 13px);
+  }
+  .toggle-lighthouse__lamp {
+    position: absolute;
+    left: 27px;
+    bottom: 36px;
+    width: 10px;
+    height: 9px;
+    border-radius: 2px;
+    background: light-dark(#dbdde1, #2e3035);
+    box-shadow: inset 0 0 0 1.5px light-dark(#6d7179, #7d8087);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  .toggle-lighthouse__roof { position: absolute; left: 26px; bottom: 45px; width: 12px; height: 6px; clip-path: polygon(50% 0, 100% 100%, 0 100%); background: light-dark(#6d7179, #7d8087); }
+  /* A one-sided cone: flipping its scale through zero reads as the light turning toward you and away. */
+  .toggle-lighthouse__beam {
+    position: absolute;
+    left: -28px;
+    bottom: 33px;
+    width: 120px;
+    height: 16px;
+    opacity: 0;
+    transition: opacity 0.4s;
+    animation: toggle-lighthouse-sweep 3s ease-in-out infinite paused;
+  }
+  .toggle-lighthouse__beam::before {
+    content: '';
+    position: absolute;
+    left: 60px;
+    top: 0;
+    width: 60px;
+    height: 16px;
+    clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 60%);
+    background: linear-gradient(90deg, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 75%, transparent), transparent);
+  }
+  .toggle-lighthouse__input:checked + .toggle-lighthouse__track .toggle-lighthouse__lamp { background: light-dark(#373a40, #f1f2f3); box-shadow: 0 0 10px 2px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 55%, transparent); }
+  .toggle-lighthouse__input:checked + .toggle-lighthouse__track .toggle-lighthouse__beam { opacity: 1; animation-play-state: running; }
+  @media (prefers-reduced-motion: reduce) {
+    .toggle-lighthouse__track * { animation: none !important; }
+  }
+`;
+
+export function LighthouseToggle() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="toggle-lighthouse">
+        <input className="toggle-lighthouse__input" type="checkbox" role="switch" />
+        <span className="toggle-lighthouse__track" aria-hidden="true">
+          <span className="toggle-lighthouse__beam" />
+          <span className="toggle-lighthouse__tower" />
+          <span className="toggle-lighthouse__lamp" />
+          <span className="toggle-lighthouse__roof" />
+          <span className="toggle-lighthouse__sea" />
+        </span>
+        Beacon
+      </label>
+    </>
+  );
+}

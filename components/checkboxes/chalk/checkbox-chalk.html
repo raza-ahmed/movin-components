@@ -1,0 +1,24 @@
+<label class="cb-chalk">
+  <input class="cb-chalk__input" type="checkbox"/>
+  <span class="cb-chalk__box" aria-hidden="true">
+    <svg viewBox="0 0 34 34">
+      <defs>
+        <filter id="cb-chalk-def" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="1" seed="3" result="n"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" result="rough"></feDisplacementMap>
+          <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.4 1.9" result="holes"></feColorMatrix>
+          <feComposite in="rough" in2="holes" operator="in"></feComposite>
+        </filter>
+      </defs>
+      <g filter="url(#cb-chalk-def)">
+        <path class="cb-chalk__frame" d="M5 6C12 4.5 22 5 29 5.5C29.5 13 29 21 28.6 29C20 29.4 12 29 5.4 28.6C4.8 21 5 13 5 6Z"></path>
+        <path class="cb-chalk__tick" d="M9 17.5C11 19.5 13 22 14.5 24C18 17 22.5 11 29 6" pathLength="1"></path>
+      </g>
+    </svg>
+    <span class="cb-chalk__dust" style="left:10px;--d:0.3s"></span>
+    <span class="cb-chalk__dust" style="left:16px;--d:0.42s"></span>
+    <span class="cb-chalk__dust" style="left:22px;--d:0.36s"></span>
+    <span class="cb-chalk__dust" style="left:27px;--d:0.5s"></span>
+  </span>
+  <span class="cb-chalk__text">Lesson done</span>
+</label>

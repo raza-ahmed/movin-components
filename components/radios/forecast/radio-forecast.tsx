@@ -1,0 +1,122 @@
+"use client";
+
+import * as React from "react";
+import { useId } from 'react';
+
+const css = `
+  @keyframes radio-forecast-rays { to { transform: rotate(360deg); } }
+  @keyframes radio-forecast-rain { 0% { opacity: 0; transform: translateY(-4px); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(14px); } }
+  .radio-forecast { --radio-forecast-k: 0; display: grid; justify-items: center; gap: 12px; }
+  .radio-forecast:has(.radio-forecast__input[value='cloudy']:checked) { --radio-forecast-k: 1; }
+  .radio-forecast:has(.radio-forecast__input[value='rain']:checked) { --radio-forecast-k: 2; }
+  .radio-forecast__scene { display: flex; align-items: center; gap: 14px; }
+  .radio-forecast__icon { position: relative; width: 76px; height: 70px; }
+  .radio-forecast__sun {
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.6s cubic-bezier(0.4, 1.2, 0.5, 1), opacity 0.4s;
+  }
+  .radio-forecast__disc { position: absolute; inset: 9px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd)); box-shadow: 0 0 14px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 35%, transparent); }
+  .radio-forecast__rays { position: absolute; inset: 0; animation: radio-forecast-rays 12s linear infinite; transition: transform 0.5s; }
+  .radio-forecast__ray { position: absolute; left: 19px; top: 0; width: 2px; height: 6px; border-radius: 1px; background: light-dark(#42454c, #e5e6e9); transform-origin: 1px 20px; transition: scale 0.45s cubic-bezier(0.4, 1.2, 0.5, 1); }
+  .radio-forecast__cloud {
+    position: absolute;
+    left: 18px;
+    top: 22px;
+    width: 52px;
+    height: 34px;
+    opacity: 0;
+    transform: translateX(26px);
+    transition: transform 0.6s cubic-bezier(0.4, 1.1, 0.5, 1), opacity 0.4s;
+  }
+  .radio-forecast__cloud path { fill: light-dark(#5f626a, #a7abb2); stroke: light-dark(#50535b, #c6c8cd); stroke-width: 1; transition: fill 0.4s; }
+  .radio-forecast__drop { position: absolute; top: 54px; width: 2px; height: 7px; border-radius: 1px; background: light-dark(#50535b, #c6c8cd); opacity: 0; }
+  .radio-forecast:has(.radio-forecast__input[value='cloudy']:checked) .radio-forecast__sun { transform: translate(-4px, -4px) scale(0.8); }
+  .radio-forecast:has(.radio-forecast__input[value='cloudy']:checked) .radio-forecast__ray { scale: 0.5; }
+  .radio-forecast:has(.radio-forecast__input[value='rain']:checked) .radio-forecast__sun { transform: translate(6px, 6px) scale(0.5); opacity: 0; }
+  .radio-forecast:not(:has(.radio-forecast__input[value='sunny']:checked)) .radio-forecast__cloud { opacity: 1; transform: none; }
+  .radio-forecast:has(.radio-forecast__input[value='rain']:checked) .radio-forecast__cloud path { fill: light-dark(#6d7179, #7d8087); }
+  .radio-forecast:has(.radio-forecast__input[value='rain']:checked) .radio-forecast__drop { animation: radio-forecast-rain 0.7s linear infinite; animation-delay: var(--d); }
+  .radio-forecast__temp { height: 30px; overflow: hidden; }
+  .radio-forecast__strip { display: grid; transform: translateY(calc(var(--radio-forecast-k) * -30px)); transition: transform 0.45s cubic-bezier(0.3, 1.3, 0.5, 1); }
+  .radio-forecast__strip span { height: 30px; color: light-dark(#373a40, #f1f2f3); font-size: 24px; font-weight: 600; line-height: 30px; font-variant-numeric: tabular-nums; }
+  .radio-forecast__opts { display: flex; gap: 4px; padding: 4px; border-radius: 10px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+  .radio-forecast__opt {
+    position: relative;
+    padding: 5px 12px;
+    border-radius: 7px;
+    color: light-dark(#5f626a, #a7abb2);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+  }
+  .radio-forecast__opt:hover { color: light-dark(#42454c, #e5e6e9); }
+  .radio-forecast__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .radio-forecast__opt:has(.radio-forecast__input:focus-visible) { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; }
+  .radio-forecast__opt:has(.radio-forecast__input:checked) { background: light-dark(#42454c, #e5e6e9); color: light-dark(#fbfcfd, #121417); }
+  @media (prefers-reduced-motion: reduce) {
+    .radio-forecast * { animation: none !important; transition-duration: 0.01s !important; }
+  }
+`;
+
+const DROPS = [
+  { x: 28, d: '0s' },
+  { x: 38, d: '0.35s' },
+  { x: 48, d: '0.15s' },
+  { x: 58, d: '0.5s' },
+];
+const DAYS = [
+  { value: 'sunny', label: 'Sunny', temp: '24°' },
+  { value: 'cloudy', label: 'Cloudy', temp: '17°' },
+  { value: 'rain', label: 'Rain', temp: '11°' },
+];
+
+export function ForecastRadio() {
+  const name = useId();
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="radio-forecast">
+        <span className="radio-forecast__scene" aria-hidden="true">
+          <span className="radio-forecast__icon">
+            <span className="radio-forecast__sun">
+              <span className="radio-forecast__rays">
+                {Array.from({ length: 8 }, (_, i) => (
+                  <span key={i} className="radio-forecast__ray" style={{ transform: `rotate(${i * 45}deg)` }} />
+                ))}
+              </span>
+              <span className="radio-forecast__disc" />
+            </span>
+            <svg className="radio-forecast__cloud" viewBox="0 0 52 34">
+              <path d="M14 32A10 10 0 0 1 13 12A13 13 0 0 1 38 10A11 11 0 0 1 40 32Z" />
+            </svg>
+            {DROPS.map((d) => (
+              <span key={d.x} className="radio-forecast__drop" style={{ left: d.x, '--d': d.d } as React.CSSProperties} />
+            ))}
+          </span>
+          <span className="radio-forecast__temp">
+            <span className="radio-forecast__strip">
+              {DAYS.map((d) => (
+                <span key={d.value}>{d.temp}</span>
+              ))}
+            </span>
+          </span>
+        </span>
+        <div className="radio-forecast__opts" role="radiogroup" aria-label="Forecast">
+          {DAYS.map((d, i) => (
+            <label key={d.value} className="radio-forecast__opt">
+              <input className="radio-forecast__input" type="radio" name={name} value={d.value} defaultChecked={i === 0} />
+              {d.label}
+            </label>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}

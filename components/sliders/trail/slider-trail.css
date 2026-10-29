@@ -1,0 +1,16 @@
+.slider-trail { display: grid; gap: 8px; width: 230px; }
+.slider-trail__read { display: flex; justify-content: space-between; color: light-dark(#5f626a, #a7abb2); font-size: 11px; }
+.slider-trail__read b { color: light-dark(#373a40, #f1f2f3); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.slider-trail__map { position: relative; height: 90px; }
+.slider-trail__map svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.slider-trail__area { fill: light-dark(#f3f4f7, #1a1c1f); }
+.slider-trail__walked { fill: color-mix(in oklab, light-dark(#50535b, #c6c8cd) 30%, transparent); clip-path: inset(0 calc((1 - var(--slider-trail-v)) * 100%) 0 0); }
+.slider-trail__line { fill: none; stroke: light-dark(#cbced3, #393c41); stroke-width: 1.5; stroke-dasharray: 3 3; }
+.slider-trail__line--done { stroke: light-dark(#373a40, #f1f2f3); stroke-width: 2; stroke-dasharray: none; clip-path: inset(0 calc((1 - var(--slider-trail-v)) * 100%) 0 0); }
+.slider-trail__drop { stroke: light-dark(#50535b, #c6c8cd); stroke-width: 1; stroke-dasharray: 2 3; }
+.slider-trail__hiker { fill: light-dark(#373a40, #f1f2f3); stroke: light-dark(#fbfcfd, #121417); stroke-width: 3; paint-order: stroke; }
+.slider-trail__flag { fill: light-dark(#50535b, #c6c8cd); }
+.slider-trail:has(.slider-trail__input:focus-visible) .slider-trail__hiker { stroke: light-dark(#50535b, #c6c8cd); }
+.slider-trail__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; -webkit-appearance: none; appearance: none; background: none; }
+.slider-trail__input::-webkit-slider-thumb { -webkit-appearance: none; width: 2px; height: 90px; }
+.slider-trail__input::-moz-range-thumb { width: 2px; height: 90px; border: 0; }

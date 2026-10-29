@@ -1,0 +1,16 @@
+@keyframes cb-chalk-dust { from { transform: translateY(0); opacity: 0.9; } to { transform: translateY(16px); opacity: 0; } }
+.cb-chalk { position: relative; display: inline-flex; align-items: center; gap: 14px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+.cb-chalk__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.cb-chalk__box { position: relative; width: 34px; height: 34px; }
+.cb-chalk__input:focus-visible + .cb-chalk__box { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; border-radius: 6px; }
+.cb-chalk__box svg { width: 100%; height: 100%; overflow: visible; }
+.cb-chalk__frame { fill: none; stroke: light-dark(#5f626a, #a7abb2); stroke-width: 2; stroke-linecap: round; }
+.cb-chalk__tick { fill: none; stroke: light-dark(#373a40, #f1f2f3); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 0.2s; }
+.cb-chalk__input:checked + .cb-chalk__box .cb-chalk__tick { stroke-dashoffset: 0; transition: stroke-dashoffset 0.45s cubic-bezier(0.6, 0, 0.3, 1); }
+.cb-chalk__dust { position: absolute; top: 24px; width: 2px; height: 2px; border-radius: 50%; background: light-dark(#50535b, #c6c8cd); opacity: 0; }
+.cb-chalk[data-armed] .cb-chalk__input:checked + .cb-chalk__box .cb-chalk__dust { animation: cb-chalk-dust 0.8s ease-in var(--d) both; }
+.cb-chalk__text { font-style: italic; letter-spacing: 0.01em; }
+@media (prefers-reduced-motion: reduce) {
+  .cb-chalk__tick { transition-duration: 0.01s !important; }
+  .cb-chalk__dust { animation: none !important; }
+}

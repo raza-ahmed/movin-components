@@ -1,0 +1,21 @@
+@keyframes slider-notch-click-a { 0% { transform: scale(1); } 30% { transform: scale(0.82); } 100% { transform: scale(1); } }
+@keyframes slider-notch-click-b { 0% { transform: scale(1); } 30% { transform: scale(0.82); } 100% { transform: scale(1); } }
+.slider-notch { display: grid; gap: 8px; width: 220px; }
+.slider-notch__track { position: relative; height: 28px; }
+.slider-notch__rail { position: absolute; left: 12px; right: 12px; top: 12px; height: 4px; border-radius: 2px; background: light-dark(#ebedf0, #232529); }
+.slider-notch__fill { position: absolute; left: 12px; top: 12px; height: 4px; border-radius: 2px; width: calc(var(--slider-notch-v) * (100% - 24px)); background: light-dark(#50535b, #c6c8cd); transition: width 0.4s cubic-bezier(0.3, 1.8, 0.5, 1); }
+.slider-notch__stop { --on: clamp(0, calc((var(--slider-notch-v) * 4 - var(--k)) * 10 + 1), 1); position: absolute; top: 9px; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: color-mix(in oklab, light-dark(#50535b, #c6c8cd) calc(var(--on) * 100%), light-dark(#ebedf0, #232529)); box-shadow: 0 0 0 3px light-dark(#fbfcfd, #121417); transition: background-color 0.2s; }
+.slider-notch__thumb { position: absolute; top: 2px; left: calc(var(--slider-notch-v) * (100% - 24px)); width: 24px; height: 24px; transition: left 0.4s cubic-bezier(0.3, 1.8, 0.5, 1); }
+.slider-notch__knob { display: block; width: 100%; height: 100%; border-radius: 50%; background: light-dark(#373a40, #f1f2f3); box-shadow: inset 0 -2px 0 light-dark(#50535b, #c6c8cd), 0 3px 8px light-dark(rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.45)); }
+.slider-notch[data-flip='a'] .slider-notch__knob { animation: slider-notch-click-a 0.3s ease-out; }
+.slider-notch[data-flip='b'] .slider-notch__knob { animation: slider-notch-click-b 0.3s ease-out; }
+.slider-notch:has(.slider-notch__input:focus-visible) .slider-notch__knob { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+.slider-notch__labels { position: relative; height: 16px; }
+.slider-notch__label { position: absolute; width: 30px; margin-left: -15px; color: light-dark(#6d7179, #7d8087); font-size: 11px; font-weight: 600; text-align: center; transition: color 0.2s, transform 0.3s cubic-bezier(0.3, 1.8, 0.5, 1); }
+.slider-notch__label[data-on] { color: light-dark(#373a40, #f1f2f3); transform: translateY(-1px) scale(1.1); }
+.slider-notch__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-notch__input::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; }
+.slider-notch__input::-moz-range-thumb { width: 24px; height: 24px; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .slider-notch * { transition-duration: 0.01s !important; animation: none !important; }
+}

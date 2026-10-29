@@ -5,10 +5,13 @@ export function PixelFillCheckbox({ label }: { label?: string }) {
   const SIZE = 4;
   const CELLS = SIZE * SIZE;
 
+  // A seeded shuffle: the same order on the server and in the browser, so hydration matches.
   function shuffle(arr: number[]) {
     const a = [...arr];
+    let seed = 7;
+    const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
     for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+      const j = Math.floor(rnd() * (i + 1));
       [a[i], a[j]] = [a[j], a[i]];
     }
     return a;

@@ -1,0 +1,70 @@
+"use client";
+
+import { useId } from 'react';
+
+const OPTIONS = [{"value": "dim", "label": "Dim"}, {"value": "soft", "label": "Soft"}, {"value": "bright", "label": "Bright"}];
+
+const css = `
+  .radio-lux { --i: 1; display: grid; justify-items: center; gap: 10px; width: 260px; }
+  .radio-lux:has(.radio-lux__opt:nth-child(1) input:checked) { --i: 0; }
+  .radio-lux:has(.radio-lux__opt:nth-child(2) input:checked) { --i: 1; }
+  .radio-lux:has(.radio-lux__opt:nth-child(3) input:checked) { --i: 2; }
+  .radio-lux__room { position: relative; width: 200px; height: 118px; }
+  .radio-lux__cord { position: absolute; left: 50%; top: 0; width: 1.5px; height: 22px; margin-left: -0.75px; background: light-dark(#6d7179, #7d8087); }
+  .radio-lux__shade { position: absolute; left: 50%; top: 22px; width: 46px; height: 20px; margin-left: -23px; background: light-dark(#6d7179, #7d8087); clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%); }
+  .radio-lux__bulb { position: absolute; left: 50%; top: 38px; width: 12px; height: 8px; margin-left: -6px; border-radius: 0 0 6px 6px; background: light-dark(#373a40, #f1f2f3); box-shadow: 0 0 calc(var(--g) * 22px) calc(var(--g) * 6px) color-mix(in oklab, light-dark(#373a40, #f1f2f3) 60%, transparent); transition: box-shadow 0.5s; }
+  .radio-lux__beam { position: absolute; left: 50%; top: 42px; width: 180px; height: 66px; margin-left: -90px; background: linear-gradient(color-mix(in oklab, light-dark(#373a40, #f1f2f3) 32%, transparent), transparent); clip-path: polygon(calc(50% - 23px) 0, calc(50% + 23px) 0, calc(50% + 90px * var(--w)) 100%, calc(50% - 90px * var(--w)) 100%); opacity: var(--g); transition: opacity 0.5s, clip-path 0.5s; }
+  .radio-lux__table { position: absolute; left: 22px; right: 22px; bottom: 6px; height: 5px; border-radius: 3px; background: light-dark(#cbced3, #393c41); }
+  .radio-lux__pool { position: absolute; left: 50%; bottom: 8px; width: 150px; height: 14px; margin-left: -75px; border-radius: 50%; background: radial-gradient(closest-side, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 45%, transparent), transparent); opacity: var(--g); transform: scaleX(var(--w)); transition: opacity 0.5s, transform 0.5s; }
+  .radio-lux:has(.radio-lux__opt:nth-child(1) input:checked) { --g: 0.22; --w: 0.55; }
+  .radio-lux:has(.radio-lux__opt:nth-child(2) input:checked) { --g: 0.5; --w: 0.8; }
+  .radio-lux:has(.radio-lux__opt:nth-child(3) input:checked) { --g: 0.9; --w: 1.0; }
+  .radio-lux__read { display: grid; color: light-dark(#50535b, #c6c8cd); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .radio-lux__read > * { grid-area: 1 / 1; text-align: center; opacity: 0; transform: translateY(4px); transition: opacity 0.25s, transform 0.3s; }
+  .radio-lux:has(.radio-lux__opt:nth-child(1) input:checked) .radio-lux__read > :nth-child(1) { opacity: 1; transform: none; }
+  .radio-lux:has(.radio-lux__opt:nth-child(2) input:checked) .radio-lux__read > :nth-child(2) { opacity: 1; transform: none; }
+  .radio-lux:has(.radio-lux__opt:nth-child(3) input:checked) .radio-lux__read > :nth-child(3) { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .radio-lux * { transition: none !important; }
+  }
+  .radio-lux__opts { display: flex; gap: 3px; padding: 4px; border-radius: 12px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+  .radio-lux__opt { position: relative; flex: 1; padding: 7px 10px; border-radius: 8px; color: light-dark(#5f626a, #a7abb2); font-size: 12.5px; font-weight: 500; text-align: center; white-space: nowrap; cursor: pointer; transition: background-color 0.25s, color 0.25s; }
+  .radio-lux__opt:hover { color: light-dark(#42454c, #e5e6e9); }
+  .radio-lux__opt:has(input:checked) { background: light-dark(#373a40, #f1f2f3); color: light-dark(#fbfcfd, #121417); }
+  .radio-lux__opt:has(input:focus-visible) { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+  .radio-lux__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+`;
+
+export function LuxRadio() {
+  const name = useId();
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="radio-lux">
+        <div className="radio-lux__room" aria-hidden="true">
+          <span className="radio-lux__beam" />
+          <span className="radio-lux__pool" />
+          <span className="radio-lux__cord" />
+          <span className="radio-lux__shade" />
+          <span className="radio-lux__bulb" />
+          <span className="radio-lux__table" />
+        </div>
+        <span className="radio-lux__read" aria-hidden="true">
+          <span>15% · reading nook</span>
+          <span>50% · dinner</span>
+          <span>100% · working</span>
+        </span>
+        <div className="radio-lux__opts" role="radiogroup" aria-label="Light level">
+          {OPTIONS.map((o, i) => (
+            <label key={o.value} className="radio-lux__opt">
+              <input className="radio-lux__input" type="radio" name={name} value={o.value} defaultChecked={i === 1} />
+              {o.label}
+            </label>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}

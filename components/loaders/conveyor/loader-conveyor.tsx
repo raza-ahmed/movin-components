@@ -1,0 +1,100 @@
+"use client";
+
+import * as React from "react";
+const css = `
+  @keyframes loader-conveyor-roll { to { transform: rotate(360deg); } }
+  @keyframes loader-conveyor-belt { to { background-position: 12px 0; } }
+  @keyframes loader-conveyor-ride {
+    0% { transform: translate(-18px, 0) rotate(0deg); opacity: 0; }
+    8% { opacity: 1; }
+    74% { transform: translate(112px, 0) rotate(0deg); opacity: 1; }
+    /* Over the end roller: tip and fall. */
+    100% { transform: translate(132px, 34px) rotate(70deg); opacity: 0; }
+  }
+  .loader-conveyor { position: relative; width: 140px; height: 80px; overflow: hidden; }
+  .loader-conveyor__belt {
+    position: absolute;
+    left: 6px;
+    right: 18px;
+    top: 44px;
+    height: 16px;
+    border-radius: 8px;
+    border: 1.5px solid light-dark(#6d7179, #7d8087);
+  }
+  .loader-conveyor__belt::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    top: -1.5px;
+    height: 1.5px;
+    background: repeating-linear-gradient(90deg, light-dark(#50535b, #c6c8cd) 0 6px, transparent 6px 12px);
+    animation: loader-conveyor-belt 0.35s linear infinite;
+  }
+  .loader-conveyor__roller {
+    position: absolute;
+    top: 47px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid light-dark(#5f626a, #a7abb2);
+    animation: loader-conveyor-roll 0.6s linear infinite;
+  }
+  .loader-conveyor__roller::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1.5px;
+    margin-left: -0.75px;
+    background: light-dark(#5f626a, #a7abb2);
+  }
+  .loader-conveyor__box {
+    position: absolute;
+    left: 6px;
+    top: 26px;
+    width: 18px;
+    height: 16px;
+    border-radius: 3px;
+    background: light-dark(#50535b, #c6c8cd);
+    box-shadow: inset 0 0 0 1px light-dark(#42454c, #e5e6e9), inset 0 -4px 0 light-dark(#5f626a, #a7abb2);
+    transform-origin: 100% 100%;
+    opacity: 0;
+    animation: loader-conveyor-ride 2.4s linear var(--d) infinite;
+  }
+  .loader-conveyor__box::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 4px;
+    width: 3px;
+    margin-left: -1.5px;
+    background: light-dark(#6d7179, #7d8087);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .loader-conveyor__roller, .loader-conveyor__belt::before, .loader-conveyor__box { animation-duration: 8s; }
+  }
+`;
+
+const ROLLERS = [10, 34, 58, 82, 106];
+
+export function ConveyorLoader() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="loader-conveyor" role="status" aria-label="Loading">
+        <span className="loader-conveyor__belt" aria-hidden="true" />
+        {ROLLERS.map((x) => (
+          <span key={x} className="loader-conveyor__roller" style={{ left: x }} aria-hidden="true" />
+        ))}
+        {[0, -0.8, -1.6].map((d) => (
+          <span key={d} className="loader-conveyor__box" style={{ '--d': `${d}s` } as React.CSSProperties} aria-hidden="true" />
+        ))}
+      </div>
+    </>
+  );
+}

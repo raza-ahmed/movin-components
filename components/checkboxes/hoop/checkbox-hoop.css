@@ -1,0 +1,65 @@
+@keyframes cb-hoop-x { 0% { transform: translateX(2px); } 70%, 100% { transform: translateX(47px); } }
+@keyframes cb-hoop-y {
+  0% { transform: translateY(45px); animation-timing-function: cubic-bezier(0.2, 0.6, 0.4, 1); }
+  38% { transform: translateY(1px); animation-timing-function: cubic-bezier(0.6, 0, 0.8, 0.4); }
+  70% { transform: translateY(19px); animation-timing-function: linear; }
+  85% { transform: translateY(45px); animation-timing-function: ease-out; }
+  92% { transform: translateY(41px); animation-timing-function: ease-in; }
+  100% { transform: translateY(45px); }
+}
+@keyframes cb-hoop-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(400deg); } }
+@keyframes cb-hoop-back { 0% { transform: translateX(47px); } 100% { transform: translateX(2px); } }
+@keyframes cb-hoop-roll { 0% { transform: rotate(400deg); } 100% { transform: rotate(0deg); } }
+@keyframes cb-hoop-swish { 0%, 64% { transform: none; } 74% { transform: scale(0.85, 1.4); } 86% { transform: scale(1.05, 0.92); } 100% { transform: none; } }
+.cb-hoop { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+.cb-hoop__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.cb-hoop__court { position: relative; width: 72px; height: 58px; border-radius: 6px; }
+.cb-hoop__input:focus-visible + .cb-hoop__court { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+.cb-hoop__floor { position: absolute; left: 0; right: 0; bottom: 0; height: 1.5px; background: light-dark(#dbdde1, #2e3035); }
+.cb-hoop__board {
+  position: absolute;
+  left: 44px;
+  top: 0;
+  width: 26px;
+  height: 20px;
+  border-radius: 3px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: inset 0 0 0 1.5px light-dark(#6d7179, #7d8087);
+}
+.cb-hoop__target {
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  width: 12px;
+  height: 10px;
+  border-radius: 1px;
+  box-shadow: inset 0 0 0 1.5px light-dark(#6d7179, #7d8087);
+  transition: background-color 0.25s, box-shadow 0.25s;
+}
+.cb-hoop__target svg { position: absolute; inset: 0; width: 12px; height: 10px; }
+.cb-hoop__target path { fill: none; stroke: light-dark(#f3f4f7, #1a1c1f); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; opacity: 0; transition: opacity 0.2s; }
+.cb-hoop__input:checked + .cb-hoop__court .cb-hoop__target {
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: inset 0 0 0 1.5px light-dark(#373a40, #f1f2f3), 0 0 8px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 45%, transparent);
+  transition-delay: 0.55s;
+}
+.cb-hoop__input:checked + .cb-hoop__court .cb-hoop__target path { opacity: 1; transition-delay: 0.55s; }
+.cb-hoop__bx, .cb-hoop__by { position: absolute; left: 0; top: 0; }
+.cb-hoop__bx { transform: translateX(2px); }
+.cb-hoop__by { transform: translateY(45px); }
+.cb-hoop__input:checked + .cb-hoop__court .cb-hoop__bx { transform: translateX(47px); }
+.cb-hoop__ball { display: block; width: 12px; height: 12px; }
+.cb-hoop__ball circle { fill: light-dark(#5f626a, #a7abb2); }
+.cb-hoop__ball path { fill: none; stroke: light-dark(#dbdde1, #2e3035); stroke-width: 0.9; }
+.cb-hoop__rim { position: absolute; left: 42px; top: 24px; width: 22px; height: 5px; border-radius: 50%; border: 2px solid light-dark(#50535b, #c6c8cd); }
+.cb-hoop__net { position: absolute; left: 43px; top: 27px; width: 20px; height: 14px; transform-origin: 50% 0; }
+.cb-hoop__net path { fill: none; stroke: light-dark(#6d7179, #7d8087); stroke-width: 1; }
+.cb-hoop[data-armed] .cb-hoop__input:checked + .cb-hoop__court .cb-hoop__bx { animation: cb-hoop-x 0.75s linear; }
+.cb-hoop[data-armed] .cb-hoop__input:checked + .cb-hoop__court .cb-hoop__by { animation: cb-hoop-y 0.75s; }
+.cb-hoop[data-armed] .cb-hoop__input:checked + .cb-hoop__court .cb-hoop__ball { animation: cb-hoop-spin 0.75s linear; }
+.cb-hoop[data-armed] .cb-hoop__input:checked + .cb-hoop__court .cb-hoop__net { animation: cb-hoop-swish 0.75s ease-out; }
+.cb-hoop[data-armed] .cb-hoop__input:not(:checked) + .cb-hoop__court .cb-hoop__bx { animation: cb-hoop-back 0.6s ease-in-out; }
+.cb-hoop[data-armed] .cb-hoop__input:not(:checked) + .cb-hoop__court .cb-hoop__ball { animation: cb-hoop-roll 0.6s ease-in-out; }
+@media (prefers-reduced-motion: reduce) {
+  .cb-hoop__court * { animation: none !important; transition-delay: 0s !important; }
+}

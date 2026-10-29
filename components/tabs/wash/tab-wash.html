@@ -1,0 +1,24 @@
+<div class="tabs-wash" style="--i:0;--p:0">
+  <div class="tabs-wash__list" role="tablist" aria-label="Palette">
+    <button class="tabs-wash__tab" type="button" role="tab" id="tabs-wash-tab-0" aria-selected="true" aria-controls="tabs-wash-panel-0" tabindex="0">Dawn</button>
+    <button class="tabs-wash__tab" type="button" role="tab" id="tabs-wash-tab-1" aria-selected="false" aria-controls="tabs-wash-panel-1" tabindex="-1">Noon</button>
+    <button class="tabs-wash__tab" type="button" role="tab" id="tabs-wash-tab-2" aria-selected="false" aria-controls="tabs-wash-panel-2" tabindex="-1">Dusk</button>
+    <span class="tabs-wash__wash" aria-hidden="true">
+      <svg viewBox="0 0 74 40">
+        <defs>
+          <filter id="tabs-wash-def" x="-20%" y="-30%" width="140%" height="160%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="7" result="n"></feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="9"></feDisplacementMap>
+          </filter>
+        </defs>
+        <g filter="url(#tabs-wash-def)">
+          <ellipse cx="37" cy="20" rx="33" ry="15"></ellipse>
+          <ellipse class="tabs-wash__edge" cx="37" cy="20" rx="33" ry="15"></ellipse>
+        </g>
+      </svg>
+    </span>
+  </div>
+  <div class="tabs-wash__panel" role="tabpanel" id="tabs-wash-panel-0" aria-labelledby="tabs-wash-tab-0">Soft greys and a cool, quiet light.</div>
+  <div class="tabs-wash__panel" role="tabpanel" id="tabs-wash-panel-1" aria-labelledby="tabs-wash-tab-1" hidden="">Hard edges, bright paper, short shadows.</div>
+  <div class="tabs-wash__panel" role="tabpanel" id="tabs-wash-panel-2" aria-labelledby="tabs-wash-tab-2" hidden="">Long shadows and a warm, low glow.</div>
+</div>

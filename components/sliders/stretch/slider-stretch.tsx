@@ -1,0 +1,76 @@
+"use client";
+
+import * as React from "react";
+import { useRef, useState } from 'react';
+
+const css = `
+  .slider-stretch { width: 220px; }
+  .slider-stretch__track { position: relative; height: 40px; }
+  .slider-stretch__rail { position: absolute; left: 0; right: 0; top: 18px; height: 4px; border-radius: 2px; background: light-dark(#ebedf0, #232529); }
+  .slider-stretch__fill { position: absolute; left: 0; top: 18px; height: 4px; border-radius: 2px; width: calc(13px + var(--slider-stretch-v) * (100% - 26px)); background: light-dark(#50535b, #c6c8cd); }
+  .slider-stretch__thumb {
+    position: absolute;
+    top: 7px;
+    left: calc(var(--slider-stretch-v) * (100% - 26px));
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    background: light-dark(#373a40, #f1f2f3);
+    box-shadow: 0 3px 8px light-dark(rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.45));
+    transform-origin: var(--slider-stretch-o) 50%;
+    transform: scale(calc(1 + var(--slider-stretch-s)), calc(1 / (1 + var(--slider-stretch-s) * 0.6)));
+    transition: transform 0.55s cubic-bezier(0.25, 2.2, 0.4, 1);
+  }
+  .slider-stretch:has(.slider-stretch__input:focus-visible) .slider-stretch__thumb { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+  .slider-stretch__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+  .slider-stretch__input::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; }
+  .slider-stretch__input::-moz-range-thumb { width: 26px; height: 26px; border: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    .slider-stretch__thumb { transition: none; transform: none; }
+  }
+`;
+
+export function StretchSlider() {
+  const [v, setV] = useState(35);
+  const [pull, setPull] = useState({ s: 0, right: true });
+  const settle = useRef<ReturnType<typeof setTimeout>>(undefined);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div
+        className="slider-stretch"
+        style={
+          {
+            '--slider-stretch-v': v / 100,
+            '--slider-stretch-s': pull.s.toFixed(2),
+            '--slider-stretch-o': pull.right ? '100%' : '0%',
+          } as React.CSSProperties
+        }
+      >
+        <div className="slider-stretch__track">
+          <span className="slider-stretch__rail" />
+          <span className="slider-stretch__fill" />
+          <span className="slider-stretch__thumb" />
+          <input
+            className="slider-stretch__input"
+            type="range"
+            min={0}
+            max={100}
+            value={v}
+            onChange={(e) => {
+              const next = +e.target.value;
+              // The faster the drag, the longer the thumb; it stretches back from its leading edge.
+              setPull({ s: Math.min(1.1, Math.abs(next - v) * 0.12), right: next > v });
+              setV(next);
+              clearTimeout(settle.current);
+              settle.current = setTimeout(() => setPull((p) => ({ ...p, s: 0 })), 90);
+            }}
+            aria-label="Opacity"
+          />
+        </div>
+      </div>
+    </>
+  );
+}

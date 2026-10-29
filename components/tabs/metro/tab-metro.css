@@ -1,0 +1,24 @@
+@keyframes tabs-metro-doors-a { 0%, 55% { transform: scaleX(1); } 75%, 100% { transform: scaleX(0.15); } }
+@keyframes tabs-metro-doors-b { 0%, 55% { transform: scaleX(1); } 75%, 100% { transform: scaleX(0.15); } }
+@keyframes tabs-metro-arrive { 0%, 60% { opacity: 0; transform: translateY(4px); } 100% { opacity: 1; transform: none; } }
+.tabs-metro { display: grid; gap: 14px; width: 260px; }
+.tabs-metro__list { position: relative; display: flex; justify-content: space-between; padding-top: 34px; }
+.tabs-metro__list::before { content: ''; position: absolute; left: 16px; right: 16px; top: 44px; height: 3px; border-radius: 2px; background: light-dark(#cbced3, #393c41); }
+.tabs-metro__tab { position: relative; padding: 0; border: 0; background: none; font: inherit; cursor: pointer; }
+.tabs-metro__tab:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; border-radius: 8px; }
+.tabs-metro__tab { display: grid; justify-items: center; gap: 8px; width: 60px; color: light-dark(#5f626a, #a7abb2); font-size: 11.5px; transition: color 0.3s; }
+.tabs-metro__tab::before { content: ''; position: relative; width: 11px; height: 11px; border-radius: 50%; background: light-dark(#fbfcfd, #121417); box-shadow: inset 0 0 0 2.5px light-dark(#6d7179, #7d8087); transition: box-shadow 0.3s; }
+.tabs-metro__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); font-weight: 500; }
+.tabs-metro__tab[aria-selected='true']::before { box-shadow: inset 0 0 0 2.5px light-dark(#373a40, #f1f2f3); }
+/* The train rides the line to the chosen stop, easing in and braking; its doors open once it stops. */
+.tabs-metro__train { position: absolute; top: 4px; left: calc(30px + var(--i) * ((100% - 60px) / 3) - 26px); display: flex; gap: 4px; align-items: center; justify-content: center; width: 52px; height: 26px; border-radius: 8px 8px 4px 4px; background: light-dark(#42454c, #e5e6e9); box-shadow: 0 4px 10px -6px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.6)); pointer-events: none; transition: left 0.9s cubic-bezier(0.65, 0, 0.35, 1); }
+.tabs-metro__door { width: 10px; height: 15px; border-radius: 2px; background: light-dark(#dbdde1, #2e3035); transform-origin: 50% 50%; }
+.tabs-metro[data-flip='a'] .tabs-metro__door { animation: tabs-metro-doors-a 1.3s ease-in-out; }
+.tabs-metro[data-flip='b'] .tabs-metro__door { animation: tabs-metro-doors-b 1.3s ease-in-out; }
+.tabs-metro__door { transform: scaleX(0.15); }
+.tabs-metro__panel { padding: 10px 12px; border-radius: 10px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); color: light-dark(#50535b, #c6c8cd); font-size: 12.5px; line-height: 1.45; }
+.tabs-metro[data-armed] .tabs-metro__panel { animation: tabs-metro-arrive 1.2s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-metro__train { transition: none; }
+  .tabs-metro__door, .tabs-metro__panel { animation: none !important; }
+}

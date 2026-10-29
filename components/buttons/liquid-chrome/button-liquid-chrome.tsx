@@ -1,0 +1,95 @@
+"use client";
+
+import { useRef } from 'react';
+
+const css = `
+  @property --btn-liquid-chrome-a { syntax: '<angle>'; inherits: true; initial-value: 115deg; }
+  @keyframes btn-liquid-chrome-drift {
+    0%, 100% { --btn-liquid-chrome-a: 105deg; }
+    50% { --btn-liquid-chrome-a: 135deg; }
+  }
+  .btn-liquid-chrome {
+    --x: 50%;
+    --y: 50%;
+    position: relative;
+    padding: 2px;
+    border: none;
+    border-radius: 999px;
+    /* The rim: a thin band of the same metal at a steeper angle. */
+    background: linear-gradient(calc(var(--btn-liquid-chrome-a) + 60deg), light-dark(#42454c, #e5e6e9), light-dark(#cbced3, #393c41) 40%, light-dark(#373a40, #f1f2f3) 60%, light-dark(#6d7179, #7d8087));
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 10px 24px -8px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.6)), 0 2px 4px light-dark(rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.3));
+    animation: btn-liquid-chrome-drift 6s ease-in-out infinite;
+    transition: transform 0.25s ease;
+  }
+  .btn-liquid-chrome:active { transform: scale(0.97); }
+  .btn-liquid-chrome:focus-visible { outline: 2px solid light-dark(#42454c, #e5e6e9); outline-offset: 3px; }
+  .btn-liquid-chrome__face {
+    position: relative;
+    display: block;
+    padding: 0.85rem 2.2rem;
+    border-radius: 999px;
+    overflow: hidden;
+    /* Banded reflections, like a horizon in polished metal; the cursor slides them. */
+    background:
+      linear-gradient(var(--btn-liquid-chrome-a), light-dark(#50535b, #c6c8cd) 0%, light-dark(#373a40, #f1f2f3) 16%, light-dark(#6d7179, #7d8087) 30%, light-dark(#42454c, #e5e6e9) 44%, light-dark(#dbdde1, #2e3035) 50%, light-dark(#50535b, #c6c8cd) 58%, light-dark(#373a40, #f1f2f3) 76%, light-dark(#6d7179, #7d8087) 100%)
+      var(--x) var(--y) / 260% 260%;
+    color: light-dark(#fbfcfd, #121417);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 color-mix(in oklab, light-dark(#373a40, #f1f2f3) 60%, transparent);
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  /* Specular hotspot under the cursor. */
+  .btn-liquid-chrome__face::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle 46px at var(--hx, 50%) var(--hy, 30%), color-mix(in oklab, light-dark(#373a40, #f1f2f3) 75%, transparent), transparent);
+    mix-blend-mode: screen;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .btn-liquid-chrome:hover .btn-liquid-chrome__face::after { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-liquid-chrome { animation: none; }
+    .btn-liquid-chrome__face { transition: none; }
+  }
+`;
+
+export function LiquidChromeButton() {
+  const btn = useRef<HTMLButtonElement>(null);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <button
+        ref={btn}
+        type="button"
+        className="btn-liquid-chrome"
+        onPointerMove={(e) => {
+          const r = btn.current!.getBoundingClientRect();
+          const u = (e.clientX - r.left) / r.width;
+          const v = (e.clientY - r.top) / r.height;
+          const s = btn.current!.style;
+          // Reflections move AGAINST the cursor, as they would on a curved surface.
+          s.setProperty('--x', `${(100 - u * 100).toFixed(1)}%`);
+          s.setProperty('--y', `${(100 - v * 100).toFixed(1)}%`);
+          s.setProperty('--hx', `${(u * 100).toFixed(1)}%`);
+          s.setProperty('--hy', `${(v * 100).toFixed(1)}%`);
+        }}
+        onPointerLeave={() => {
+          const s = btn.current!.style;
+          s.setProperty('--x', '50%');
+          s.setProperty('--y', '50%');
+        }}
+      >
+        <span className="btn-liquid-chrome__face">Chrome</span>
+      </button>
+    </>
+  );
+}

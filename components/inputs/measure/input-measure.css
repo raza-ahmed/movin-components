@@ -1,0 +1,38 @@
+.field-measure { width: 256px; }
+.field-measure__label { display: block; margin-bottom: 6px; color: light-dark(#50535b, #c6c8cd); font-size: 12px; }
+.field-measure__sheet {
+  position: relative;
+  height: 96px;
+  border-radius: 8px;
+  background:
+    linear-gradient(light-dark(#ebedf0, #232529) 1px, transparent 1px) 0 0 / 100% 12px,
+    linear-gradient(90deg, light-dark(#ebedf0, #232529) 1px, transparent 1px) 0 0 / 12px 100%,
+    light-dark(#fbfcfd, #121417);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  overflow: hidden;
+}
+.field-measure__sheet:focus-within { box-shadow: inset 0 0 0 1px light-dark(#5f626a, #a7abb2); }
+.field-measure__input, .field-measure__ruler { font-family: inherit; font-size: 24px; font-weight: 600; font-kerning: none; letter-spacing: -0.01em; }
+.field-measure__input { position: absolute; left: 0; top: 18px; width: 100%; height: 34px; padding: 0 14px; border: 0; outline: 0; background: none; color: light-dark(#373a40, #f1f2f3); }
+.field-measure__ruler { position: absolute; left: 14px; top: 0; visibility: hidden; white-space: pre; }
+/* Baseline and cap-height guides. */
+.field-measure__guide { position: absolute; left: 0; right: 0; height: 0; border-top: 1px dashed light-dark(#dbdde1, #2e3035); }
+.field-measure__dim { position: absolute; left: 14px; top: 64px; height: 14px; transition: width 0.25s cubic-bezier(0.2, 0.8, 0.3, 1); }
+.field-measure__dim::before { content: ''; position: absolute; left: 0; right: 0; top: 6px; border-top: 1px solid light-dark(#50535b, #c6c8cd); }
+.field-measure__dim i { position: absolute; top: 0; width: 1px; height: 13px; background: light-dark(#50535b, #c6c8cd); }
+.field-measure__dim i:first-child { left: 0; }
+.field-measure__dim i:last-child { right: 0; }
+.field-measure__tag {
+  position: absolute;
+  left: 50%;
+  top: -1px;
+  padding: 0 5px;
+  transform: translateX(-50%);
+  background: light-dark(#fbfcfd, #121417);
+  color: light-dark(#42454c, #e5e6e9);
+  font: 600 10px/14px ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.field-measure__meta { display: flex; justify-content: space-between; margin-top: 6px; color: light-dark(#5f626a, #a7abb2); font: 10px ui-monospace, SFMono-Regular, Menlo, monospace; }
+@media (prefers-reduced-motion: reduce) { .field-measure__dim { transition: none; } }

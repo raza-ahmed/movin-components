@@ -1,0 +1,117 @@
+"use client";
+
+import * as React from "react";
+import { useId, useRef, useState } from 'react';
+
+const ACTS = [
+  { label: 'Act I', title: 'The arrival', body: 'A stranger steps off the last train.' },
+  { label: 'Act II', title: 'The storm', body: 'The lights go out across the town.' },
+  { label: 'Act III', title: 'The return', body: 'Morning, and one empty chair.' },
+];
+
+const css = `
+  @keyframes tabs-curtain-sweep-a { 0%, 100% { transform: scaleX(0.16); } 42%, 58% { transform: scaleX(1); } }
+  @keyframes tabs-curtain-sweep-b { 0%, 100% { transform: scaleX(0.16); } 42%, 58% { transform: scaleX(1); } }
+  @keyframes tabs-curtain-show { 0%, 49% { visibility: hidden; } 50%, 100% { visibility: visible; } }
+  @keyframes tabs-curtain-hide { 0%, 49% { visibility: visible; } 50%, 100% { visibility: hidden; } }
+  .tabs-curtain { width: 250px; }
+  .tabs-curtain__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-bottom: 10px; }
+  .tabs-curtain__tab { padding: 6px 0; border: 0; border-radius: 7px; background: none; color: light-dark(#5f626a, #a7abb2); font: inherit; font-family: Georgia, 'Times New Roman', serif; font-size: 13px; font-style: italic; cursor: pointer; transition: color 0.2s, background-color 0.2s; }
+  .tabs-curtain__tab:hover { color: light-dark(#42454c, #e5e6e9); }
+  .tabs-curtain__tab[aria-selected='true'] { background: light-dark(#ebedf0, #232529); color: light-dark(#373a40, #f1f2f3); }
+  .tabs-curtain__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; }
+  .tabs-curtain__stage { position: relative; display: grid; height: 124px; overflow: hidden; border-radius: 10px; background: radial-gradient(ellipse at 50% 0%, light-dark(#dbdde1, #2e3035), light-dark(#f3f4f7, #1a1c1f) 70%); box-shadow: inset 0 -18px 0 light-dark(#ebedf0, #232529); }
+  .tabs-curtain__panel { grid-area: 1 / 1; display: grid; align-content: center; justify-items: center; padding: 0 44px 10px; text-align: center; }
+  .tabs-curtain__panel[data-prev] { animation: tabs-curtain-hide 1s forwards; }
+  .tabs-curtain[data-armed] .tabs-curtain__panel[data-on] { animation: tabs-curtain-show 1s; }
+  .tabs-curtain__title { display: block; margin-bottom: 4px; color: light-dark(#373a40, #f1f2f3); font-family: Georgia, 'Times New Roman', serif; font-size: 17px; }
+  .tabs-curtain__body { color: light-dark(#50535b, #c6c8cd); font-size: 12px; line-height: 1.45; }
+  .tabs-curtain__drape {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background: linear-gradient(transparent 80%, color-mix(in oklab, light-dark(#fbfcfd, #121417) 35%, transparent)), repeating-linear-gradient(90deg, light-dark(#6d7179, #7d8087) 0 5px, light-dark(#cbced3, #393c41) 5px 10px, light-dark(#dbdde1, #2e3035) 10px 12px);
+    transform: scaleX(0.16);
+    pointer-events: none;
+  }
+  .tabs-curtain__drape--l { left: 0; transform-origin: 0 50%; border-radius: 0 0 40% 0 / 0 0 12% 0; }
+  .tabs-curtain__drape--r { right: 0; transform-origin: 100% 50%; border-radius: 0 0 0 40% / 0 0 0 12%; }
+  .tabs-curtain[data-flip='a'] .tabs-curtain__drape { animation: tabs-curtain-sweep-a 1s cubic-bezier(0.45, 0, 0.3, 1); }
+  .tabs-curtain[data-flip='b'] .tabs-curtain__drape { animation: tabs-curtain-sweep-b 1s cubic-bezier(0.45, 0, 0.3, 1); }
+  .tabs-curtain__valance { position: absolute; left: 0; right: 0; top: 0; height: 14px; background: radial-gradient(circle at 10px 0, light-dark(#6d7179, #7d8087) 9px, transparent 9.5px) 0 0 / 20px 14px repeat-x; pointer-events: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .tabs-curtain__drape, .tabs-curtain__panel { animation: none !important; }
+    .tabs-curtain__panel[data-prev] { display: none; }
+  }
+`;
+
+export function CurtainTabs() {
+  const id = useId();
+  const [state, setState] = useState({ sel: 0, prev: -1, flip: 0 });
+  const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const { sel, prev, flip } = state;
+  const select = (i: number) => {
+    if (i !== sel) setState((s) => ({ sel: i, prev: s.sel, flip: s.flip + 1 }));
+  };
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    const n = ACTS.length;
+    const next = { ArrowRight: (sel + 1) % n, ArrowLeft: (sel + n - 1) % n, Home: 0, End: n - 1 }[e.key];
+    if (next === undefined) return;
+    e.preventDefault();
+    select(next);
+    tabs.current[next]?.focus();
+  };
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="tabs-curtain" data-armed={flip ? '' : undefined} data-flip={flip ? (flip % 2 ? 'a' : 'b') : undefined}>
+        <div className="tabs-curtain__list" role="tablist" aria-label="Acts" onKeyDown={onKeyDown}>
+          {ACTS.map((a, i) => (
+            <button
+              key={a.label}
+              ref={(el) => {
+                tabs.current[i] = el;
+              }}
+              className="tabs-curtain__tab"
+              type="button"
+              role="tab"
+              id={`${id}-tab-${i}`}
+              aria-selected={sel === i}
+              aria-controls={`${id}-panel-${i}`}
+              tabIndex={sel === i ? 0 : -1}
+              onClick={() => select(i)}
+            >
+              {a.label}
+            </button>
+          ))}
+        </div>
+        <div className="tabs-curtain__stage">
+          {/* The act you left stays up until the curtains meet, then the new one takes the stage. */}
+          {ACTS.map((a, i) => (
+            <div
+              key={a.label}
+              className="tabs-curtain__panel"
+              role="tabpanel"
+              id={`${id}-panel-${i}`}
+              aria-labelledby={`${id}-tab-${i}`}
+              hidden={i !== sel && i !== prev}
+              aria-hidden={i === prev || undefined}
+              inert={i === prev}
+              data-on={i === sel ? '' : undefined}
+              data-prev={i === prev ? '' : undefined}
+            >
+              <span className="tabs-curtain__title">{a.title}</span>
+              <span className="tabs-curtain__body">{a.body}</span>
+            </div>
+          ))}
+          <span className="tabs-curtain__drape tabs-curtain__drape--l" aria-hidden="true" />
+          <span className="tabs-curtain__drape tabs-curtain__drape--r" aria-hidden="true" />
+          <span className="tabs-curtain__valance" aria-hidden="true" />
+        </div>
+      </div>
+    </>
+  );
+}

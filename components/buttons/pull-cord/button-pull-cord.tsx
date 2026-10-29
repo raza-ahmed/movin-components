@@ -88,7 +88,7 @@ const css = `
     margin: -8px 0 0 -8px;
     border-radius: 50%;
     background: light-dark(#50535b, #c6c8cd);
-    box-shadow: inset 0 -2px 0 light-dark(rgba(251, 252, 253, 0.3), rgba(18, 20, 23, 0.3));
+    box-shadow: inset 0 -2px 0 light-dark(rgba(0, 0, 0, 0.08), rgba(18, 20, 23, 0.3));
     cursor: grab;
     touch-action: none;
     transform: translate(var(--btn-pull-cord-x, 84px), var(--btn-pull-cord-y, 100px));

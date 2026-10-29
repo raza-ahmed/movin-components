@@ -1,0 +1,95 @@
+"use client";
+
+import * as React from "react";
+import { useId, useRef, useState } from 'react';
+
+const ITEMS = [
+  { label: 'Coast', caption: 'Cliffs, Sunday', scene: 'coast' },
+  { label: 'Hills', caption: 'Morning walk', scene: 'hills' },
+  { label: 'City', caption: 'Last night out', scene: 'city' },
+];
+
+const css = `
+  /* Developing: from a pale blank, the image surfaces dark and soft, then clears to full contrast. */
+  @keyframes tabs-develop-develop { 0% { opacity: 0; filter: blur(3px) contrast(0.4); } 35% { opacity: 0.55; filter: blur(2px) contrast(0.6) brightness(0.6); } 100% { opacity: 1; filter: none; } }
+  .tabs-develop { display: grid; justify-items: center; gap: 12px; width: 240px; }
+  .tabs-develop__list { display: flex; gap: 4px; padding: 4px; border-radius: 10px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+  .tabs-develop__tab { position: relative; padding: 0; border: 0; background: none; font: inherit; cursor: pointer; }
+  .tabs-develop__tab:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; border-radius: 8px; }
+  .tabs-develop__tab { padding: 6px 14px; border-radius: 7px; color: light-dark(#5f626a, #a7abb2); font-size: 12.5px; font-weight: 500; transition: background-color 0.2s, color 0.2s; }
+  .tabs-develop__tab[aria-selected='true'] { background: light-dark(#373a40, #f1f2f3); color: light-dark(#fbfcfd, #121417); }
+  /* An instant photo has a pale frame in either theme, so the print keeps the dark palette. */
+  .tabs-develop__panel { color-scheme: dark; width: 136px; padding: 8px 8px 26px; border-radius: 2px; background: light-dark(#373a40, #f1f2f3); box-shadow: 0 12px 22px -12px light-dark(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.7)); transform: rotate(-2deg); }
+  .tabs-develop__panel:nth-child(even) { transform: rotate(2deg); }
+  .tabs-develop__photo { position: relative; height: 110px; overflow: hidden; background: light-dark(#dbdde1, #2e3035); }
+  .tabs-develop__img { position: absolute; inset: 0; }
+  .tabs-develop[data-armed] .tabs-develop__img { animation: tabs-develop-develop 2.2s ease-out both; }
+  .tabs-develop__img[data-scene='coast'] { background: radial-gradient(circle at 70% 26%, light-dark(#373a40, #f1f2f3) 0 9px, transparent 10px), linear-gradient(170deg, transparent 58%, light-dark(#f3f4f7, #1a1c1f) 58%), linear-gradient(light-dark(#6d7179, #7d8087), light-dark(#cbced3, #393c41) 55%, light-dark(#ebedf0, #232529) 56%); }
+  .tabs-develop__img[data-scene='hills'] { background: radial-gradient(ellipse 80% 50% at 20% 100%, light-dark(#f3f4f7, #1a1c1f) 60%, transparent 61%), radial-gradient(ellipse 90% 60% at 85% 100%, light-dark(#ebedf0, #232529) 60%, transparent 61%), linear-gradient(light-dark(#5f626a, #a7abb2), light-dark(#cbced3, #393c41)); }
+  .tabs-develop__img[data-scene='city'] { background: linear-gradient(transparent 50%, light-dark(#fbfcfd, #121417) 50%) 0 100% / 100% 100%, repeating-linear-gradient(90deg, light-dark(#f3f4f7, #1a1c1f) 0 14px, transparent 14px 18px, light-dark(#ebedf0, #232529) 18px 30px, transparent 30px 34px) 0 100% / 100% 70% no-repeat, radial-gradient(circle at 26% 22%, light-dark(#42454c, #e5e6e9) 0 5px, transparent 6px), linear-gradient(light-dark(#dbdde1, #2e3035), light-dark(#6d7179, #7d8087)); }
+  .tabs-develop__caption { position: absolute; left: 10px; right: 10px; bottom: 6px; color: light-dark(#dbdde1, #2e3035); font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-style: italic; text-align: center; }
+  .tabs-develop__panel { position: relative; }
+  @media (prefers-reduced-motion: reduce) {
+    .tabs-develop__img { animation: none !important; }
+  }
+`;
+
+export function DevelopTabs() {
+  const id = useId();
+  const [state, setState] = useState({ sel: 0, prev: -1, flip: 0 });
+  const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const { sel, prev, flip } = state;
+  const select = (i: number) => {
+    if (i !== sel) setState((s) => ({ sel: i, prev: s.sel, flip: s.flip + 1 }));
+  };
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    const n = ITEMS.length;
+    const next = ({ ArrowRight: (sel + 1) % n, ArrowLeft: (sel + n - 1) % n, Home: 0, End: n - 1 } as Record<string, number>)[e.key];
+    if (next === undefined) return;
+    e.preventDefault();
+    select(next);
+    tabs.current[next]?.focus();
+  };
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div
+        className="tabs-develop"
+        data-armed={flip ? '' : undefined}
+        data-flip={flip ? (flip % 2 ? 'a' : 'b') : undefined}
+        style={{ '--i': sel, '--p': prev < 0 ? sel : prev } as React.CSSProperties}
+      >
+        <div className="tabs-develop__list" role="tablist" aria-label="Trip" onKeyDown={onKeyDown}>
+          {ITEMS.map((t, i) => (
+            <button
+              key={t.label}
+              ref={(el) => {
+                tabs.current[i] = el;
+              }}
+              className="tabs-develop__tab"
+              type="button"
+              role="tab"
+              id={`${id}-tab-${i}`}
+              aria-selected={sel === i}
+              aria-controls={`${id}-panel-${i}`}
+              tabIndex={sel === i ? 0 : -1}
+              onClick={() => select(i)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+        {ITEMS.map((t, i) => (
+          <div key={t.label} className="tabs-develop__panel" role="tabpanel" id={`${id}-panel-${i}`} aria-labelledby={`${id}-tab-${i}`} hidden={sel !== i}>
+            <div className="tabs-develop__photo">
+              <span className="tabs-develop__img" data-scene={t.scene} role="img" aria-label={`Photo: ${t.caption}`} />
+            </div>
+            <span className="tabs-develop__caption">{t.caption}</span>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}

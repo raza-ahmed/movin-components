@@ -1,0 +1,19 @@
+@keyframes field-mood-blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(0.1); } }
+@keyframes field-mood-word { from { opacity: 0; transform: translateY(6px); } }
+.field-mood { display: grid; justify-items: center; width: 230px; }
+.field-mood__face { width: 76px; height: 76px; margin-bottom: 4px; }
+.field-mood__head { fill: light-dark(#ebedf0, #232529); stroke: light-dark(#cbced3, #393c41); stroke-width: 1.5; }
+.field-mood__eye { fill: light-dark(#373a40, #f1f2f3); transform-box: fill-box; transform-origin: center; animation: field-mood-blink 4.5s infinite; }
+.field-mood__brow, .field-mood__mouth { fill: none; stroke: light-dark(#373a40, #f1f2f3); stroke-width: 3; stroke-linecap: round; }
+.field-mood__cheek { fill: light-dark(#6d7179, #7d8087); }
+.field-mood__word { height: 22px; color: light-dark(#373a40, #f1f2f3); font-size: 15px; font-weight: 600; animation: field-mood-word 0.25s ease-out; }
+.field-mood__label { margin-bottom: 10px; color: light-dark(#5f626a, #a7abb2); font-size: 11px; }
+.field-mood__range { width: 100%; height: 22px; margin: 0; background: none; -webkit-appearance: none; appearance: none; cursor: pointer; }
+.field-mood__range::-webkit-slider-runnable-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, light-dark(#dbdde1, #2e3035), light-dark(#50535b, #c6c8cd)); }
+.field-mood__range::-moz-range-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, light-dark(#dbdde1, #2e3035), light-dark(#50535b, #c6c8cd)); }
+.field-mood__range::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; margin-top: -8px; border-radius: 50%; background: light-dark(#373a40, #f1f2f3); box-shadow: 0 0 0 4px light-dark(#f3f4f7, #1a1c1f), 0 2px 6px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5)); }
+.field-mood__range::-moz-range-thumb { width: 22px; height: 22px; border: 0; border-radius: 50%; background: light-dark(#373a40, #f1f2f3); box-shadow: 0 0 0 4px light-dark(#f3f4f7, #1a1c1f), 0 2px 6px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5)); }
+.field-mood__range:focus-visible { outline: none; }
+.field-mood__range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px light-dark(#f3f4f7, #1a1c1f), 0 0 0 6px light-dark(#5f626a, #a7abb2); }
+.field-mood__range:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 4px light-dark(#f3f4f7, #1a1c1f), 0 0 0 6px light-dark(#5f626a, #a7abb2); }
+@media (prefers-reduced-motion: reduce) { .field-mood__eye, .field-mood__word { animation: none; } }

@@ -1,0 +1,89 @@
+"use client";
+
+const css = `
+  .card-book { display: grid; justify-items: center; gap: 12px; outline: none; }
+  .card-book__scene { position: relative; width: 116px; height: 156px; perspective: 900px; transition: transform 0.8s cubic-bezier(0.3, 1, 0.4, 1); }
+  .card-book__page {
+    position: absolute;
+    inset: 3px 4px 3px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding: 14px 14px 14px 18px;
+    border-radius: 0 3px 3px 0;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    box-shadow: inset 6px 0 10px -6px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)), 0 10px 22px -12px light-dark(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.7));
+    color: light-dark(#50535b, #c6c8cd);
+    font-size: 10.5px;
+    font-style: italic;
+    line-height: 1.45;
+  }
+  .card-book__page b { color: light-dark(#373a40, #f1f2f3); font-size: 11px; font-style: normal; font-weight: 500; }
+  .card-book__page small { align-self: flex-end; color: light-dark(#5f626a, #a7abb2); font-size: 10px; }
+  .card-book__cover {
+    position: absolute;
+    inset: 0;
+    transform-origin: 0 50%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.3, 1, 0.4, 1);
+  }
+  .card-book__face, .card-book__inside { position: absolute; inset: 0; border-radius: 2px 6px 6px 2px; backface-visibility: hidden; }
+  .card-book__face {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px 14px 14px 20px;
+    background: linear-gradient(90deg, light-dark(#cbced3, #393c41) 0 7px, light-dark(#dbdde1, #2e3035) 7px 9px, light-dark(#ebedf0, #232529) 9px);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, light-dark(#6d7179, #7d8087) 40%, transparent), 0 12px 24px -12px light-dark(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.7));
+    color: light-dark(#373a40, #f1f2f3);
+  }
+  .card-book__title { font-size: 15px; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; }
+  .card-book__rule { width: 22px; height: 1px; margin-top: 8px; background: light-dark(#5f626a, #a7abb2); }
+  .card-book__author { color: light-dark(#50535b, #c6c8cd); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; }
+  .card-book__inside {
+    transform: rotateY(180deg);
+    background: repeating-linear-gradient(45deg, light-dark(#ebedf0, #232529) 0 4px, light-dark(#f3f4f7, #1a1c1f) 4px 8px);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  }
+  .card-book__caption { color: light-dark(#5f626a, #a7abb2); font-size: 12px; transition: opacity 0.3s; }
+  /* Open: the cover swings back past 150 degrees and the book slides right, so the spread stays centred. */
+  .card-book:is(:hover, :focus-visible) .card-book__scene { transform: translateX(50px); }
+  .card-book:is(:hover, :focus-visible) .card-book__cover { transform: rotateY(-158deg); }
+  .card-book:focus-visible .card-book__scene { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 6px; border-radius: 4px; }
+  @media (prefers-reduced-motion: reduce) {
+    .card-book__scene, .card-book__cover { transition-duration: 0.01s; }
+  }
+`;
+
+export function BookCard() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="card-book" tabIndex={0} role="group" aria-label="The Quiet Year by M. Hale. Inscribed: For Ada, who always reads the ending first.">
+        <div className="card-book__scene" aria-hidden="true">
+          <div className="card-book__page">
+            <b>For Ada,</b>
+            who always reads the ending first. Not this time.
+            <small>M. Hale</small>
+          </div>
+          <div className="card-book__cover">
+            <div className="card-book__face">
+              <span>
+                <span className="card-book__title">The Quiet Year</span>
+                <span className="card-book__rule" style={{ display: 'block' }} />
+              </span>
+              <span className="card-book__author">M. Hale</span>
+            </div>
+            <div className="card-book__inside" />
+          </div>
+        </div>
+        <span className="card-book__caption" aria-hidden="true">
+          Signed first edition
+        </span>
+      </div>
+    </>
+  );
+}

@@ -3,8 +3,8 @@
   padding: 12px 40px;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(180deg, light-dark(#5f626a, #a7abb2) 0%, light-dark(#6d7179, #7d8087) 50%, light-dark(#cbced3, #393c41) 100%);
-  box-shadow: 0 6px 0 light-dark(#ebedf0, #232529), 0 9px 14px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)), inset 0 1px 0 light-dark(rgba(55, 58, 64, 0.2), rgba(241, 242, 243, 0.2));
+  background: linear-gradient(180deg, light-dark(#f3f4f7, #a7abb2) 0%, light-dark(#ebedf0, #7d8087) 50%, light-dark(#dbdde1, #393c41) 100%);
+  box-shadow: 0 6px 0 light-dark(#cbced3, #232529), 0 9px 14px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)), inset 0 1px 0 light-dark(rgba(251, 252, 253, 0.2), rgba(241, 242, 243, 0.2));
   color: light-dark(#373a40, #f1f2f3);
   font: inherit;
   font-size: 14px;
@@ -21,7 +21,7 @@
 }
 /* Pressed: the face drops onto its 6px base. */
 .btn-press-3d:active {
-  box-shadow: 0 1px 0 light-dark(#ebedf0, #232529), inset 0 1px 0 light-dark(rgba(55, 58, 64, 0.1), rgba(241, 242, 243, 0.1));
+  box-shadow: 0 1px 0 light-dark(#cbced3, #232529), inset 0 1px 0 light-dark(rgba(251, 252, 253, 0.1), rgba(241, 242, 243, 0.1));
   transform: translateY(5px);
 }
 @media (prefers-reduced-motion: reduce) {

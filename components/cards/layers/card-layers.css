@@ -1,0 +1,73 @@
+.card-layers {
+  width: 210px;
+  height: 140px;
+  perspective: 900px;
+  cursor: pointer;
+}
+.card-layers__stack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.card-layers:hover .card-layers__stack,
+.card-layers:focus-visible .card-layers__stack { transform: rotateX(56deg) rotateZ(-38deg) scale(0.82); }
+.card-layers:focus-visible { outline: none; }
+.card-layers__layer {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.7s ease;
+}
+.card-layers:hover .card-layers__layer,
+.card-layers:focus-visible .card-layers__layer {
+  transform: translateZ(calc(var(--i) * 26px));
+  box-shadow: 0 0 0 1px light-dark(#6d7179, #7d8087);
+}
+.card-layers__layer--base { background: light-dark(#f3f4f7, #1a1c1f); box-shadow: 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+.card-layers__layer--media::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 12px;
+  height: 56px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, light-dark(#6d7179, #7d8087), light-dark(#dbdde1, #2e3035));
+}
+.card-layers__layer--text { padding: 78px 14px 0; }
+.card-layers__layer--text b { display: block; color: light-dark(#373a40, #f1f2f3); font-size: 13px; font-weight: 600; }
+.card-layers__layer--text span { display: block; color: light-dark(#5f626a, #a7abb2); font-size: 11px; margin-top: 2px; }
+.card-layers__layer--action::before {
+  content: 'Open';
+  position: absolute;
+  right: 12px;
+  bottom: 14px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: light-dark(#373a40, #f1f2f3);
+  color: light-dark(#fbfcfd, #121417);
+  font-size: 10px;
+  font-weight: 600;
+}
+/* The layer's name, readable only once it is pulled apart. */
+.card-layers__layer::after {
+  content: attr(data-name);
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 0;
+  color: light-dark(#5f626a, #a7abb2);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.card-layers:hover .card-layers__layer::after { opacity: 1; transition-delay: 0.35s; }
+.card-layers:hover .card-layers__layer--media,
+.card-layers:hover .card-layers__layer--text,
+.card-layers:hover .card-layers__layer--action { background: color-mix(in oklab, light-dark(#373a40, #f1f2f3) 4%, transparent); }
+@media (prefers-reduced-motion: reduce) {
+  .card-layers__stack, .card-layers__layer { transition-duration: 0.01s; }
+}

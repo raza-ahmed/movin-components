@@ -77,7 +77,7 @@ const css = `
     position: absolute;
     inset: 0;
     border-radius: 9px;
-    box-shadow: inset 0 0 0 1px light-dark(rgba(251, 252, 253, 0.15), rgba(18, 20, 23, 0.15));
+    box-shadow: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.08), rgba(18, 20, 23, 0.15));
   }
 
   .radio-die__face--1 {

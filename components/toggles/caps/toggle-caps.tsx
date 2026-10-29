@@ -46,7 +46,7 @@ const css = `
     padding: 9px 10px;
     border-radius: 10px;
     background: linear-gradient(light-dark(#cbced3, #393c41), light-dark(#dbdde1, #2e3035));
-    box-shadow: inset 0 1px 0 light-dark(rgba(55, 58, 64, 0.14), rgba(241, 242, 243, 0.14)), inset 0 -3px 0 light-dark(#ebedf0, #232529);
+    box-shadow: inset 0 1px 0 light-dark(rgba(251, 252, 253, 0.14), rgba(241, 242, 243, 0.14)), inset 0 -3px 0 light-dark(rgba(0, 0, 0, 0.14), #232529);
     transition: transform 0.28s cubic-bezier(0.3, 2, 0.5, 1);
   }
 

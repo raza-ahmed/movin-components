@@ -1,0 +1,15 @@
+@keyframes tabs-decode-body { from { opacity: 0; } }
+.tabs-decode { width: 250px; }
+.tabs-decode__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-bottom: 12px; }
+.tabs-decode__tab { padding: 6px 0; border: 0; border-radius: 6px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#ebedf0, #232529); color: light-dark(#5f626a, #a7abb2); font: inherit; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: color 0.2s, box-shadow 0.2s; }
+.tabs-decode__tab:hover { color: light-dark(#42454c, #e5e6e9); }
+.tabs-decode__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); box-shadow: inset 0 0 0 1px light-dark(#50535b, #c6c8cd); }
+.tabs-decode__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; }
+.tabs-decode__panel { min-height: 72px; padding: 0 4px; }
+.tabs-decode__title { display: block; margin-bottom: 6px; color: light-dark(#373a40, #f1f2f3); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 15px; font-weight: 600; letter-spacing: 0.06em; white-space: pre; }
+.tabs-decode__body { display: block; color: light-dark(#50535b, #c6c8cd); font-size: 12.5px; line-height: 1.5; }
+.tabs-decode[data-armed] .tabs-decode__body { animation: tabs-decode-body 0.5s ease-out 0.25s backwards; }
+.tabs-decode__sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-decode__body { animation: none !important; }
+}

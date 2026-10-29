@@ -1,0 +1,22 @@
+@keyframes field-heat-cool {
+  from {
+    color: light-dark(#373a40, #f1f2f3);
+    text-shadow: 0 0 calc(var(--h) * 9px) color-mix(in oklab, light-dark(#373a40, #f1f2f3) calc(var(--h) * 90%), transparent);
+    transform: translateY(calc(var(--h) * -2px));
+  }
+  to { color: light-dark(#42454c, #e5e6e9); text-shadow: none; transform: none; }
+}
+.field-heat { width: 250px; }
+.field-heat__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.field-heat__label { color: light-dark(#50535b, #c6c8cd); font-size: 12px; }
+.field-heat__wpm { color: light-dark(#5f626a, #a7abb2); font-size: 11px; font-variant-numeric: tabular-nums; }
+.field-heat__box { position: relative; height: 42px; border-radius: 10px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); transition: box-shadow 0.2s; }
+.field-heat__box:focus-within { box-shadow: inset 0 0 0 1px light-dark(#5f626a, #a7abb2); }
+.field-heat__input, .field-heat__mirror { padding: 0 12px; font-family: inherit; font-size: 15px; font-kerning: none; letter-spacing: 0; }
+.field-heat__input { position: relative; z-index: 1; width: 100%; height: 100%; border: 0; outline: 0; background: none; color: transparent; caret-color: light-dark(#373a40, #f1f2f3); }
+.field-heat__input::placeholder { color: light-dark(#5f626a, #a7abb2); }
+.field-heat__mirror { position: absolute; inset: 0; display: flex; align-items: center; overflow: hidden; color: light-dark(#42454c, #e5e6e9); white-space: pre; pointer-events: none; }
+.field-heat__ch { display: inline-block; animation: field-heat-cool 2.4s cubic-bezier(0.2, 0.7, 0.4, 1) both; }
+.field-heat__meter { height: 4px; margin-top: 8px; border-radius: 2px; background: light-dark(#ebedf0, #232529); overflow: hidden; }
+.field-heat__meter span { display: block; height: 100%; border-radius: 2px; background: linear-gradient(90deg, light-dark(#6d7179, #7d8087), light-dark(#373a40, #f1f2f3)); transform-origin: left; transition: transform 0.3s ease; }
+@media (prefers-reduced-motion: reduce) { .field-heat__ch { animation: none; } }

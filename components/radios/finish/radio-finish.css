@@ -1,0 +1,69 @@
+.radio-finish { --radio-finish-s: 34px; --radio-finish-b: 10px; --radio-finish-o: 0.3; --radio-finish-g: 0; display: grid; justify-items: center; gap: 14px; }
+.radio-finish:has(.radio-finish__input[value='satin']:checked) { --radio-finish-s: 20px; --radio-finish-b: 5px; --radio-finish-o: 0.55; --radio-finish-g: 0.4; }
+.radio-finish:has(.radio-finish__input[value='gloss']:checked) { --radio-finish-s: 9px; --radio-finish-b: 0.5px; --radio-finish-o: 1; --radio-finish-g: 1; }
+.radio-finish__stage { position: relative; width: 120px; height: 100px; }
+.radio-finish__floor {
+  position: absolute;
+  left: 26px;
+  bottom: 4px;
+  width: 68px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in oklab, light-dark(#fbfcfd, #121417) 80%, transparent), transparent);
+}
+.radio-finish__ball {
+  position: absolute;
+  left: 24px;
+  top: 4px;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 32%, light-dark(#5f626a, #a7abb2), light-dark(#cbced3, #393c41) 55%, light-dark(#ebedf0, #232529) 100%);
+}
+.radio-finish__spec {
+  position: absolute;
+  left: 25px;
+  top: 21px;
+  width: var(--radio-finish-s);
+  height: calc(var(--radio-finish-s) * 0.75);
+  margin: calc(var(--radio-finish-s) * -0.375) 0 0 calc(var(--radio-finish-s) * -0.5);
+  border-radius: 50%;
+  background: light-dark(#373a40, #f1f2f3);
+  opacity: var(--radio-finish-o);
+  filter: blur(var(--radio-finish-b));
+  transform: rotate(-30deg);
+  transition: width 0.5s ease, height 0.5s ease, margin 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+}
+/* Only a glossy surface shows the window reflected in it, and a rim of light. */
+.radio-finish__window {
+  position: absolute;
+  left: 44px;
+  top: 14px;
+  width: 10px;
+  height: 13px;
+  border-radius: 2px;
+  background: linear-gradient(transparent 45%, light-dark(#ebedf0, #232529) 45% 55%, transparent 55%), color-mix(in oklab, light-dark(#373a40, #f1f2f3) 70%, transparent);
+  opacity: var(--radio-finish-g);
+  transform: skewX(-12deg) scale(0.8);
+  transition: opacity 0.5s ease;
+}
+.radio-finish__rim { position: absolute; inset: 0; border-radius: 50%; box-shadow: inset -4px -5px 8px -4px light-dark(#50535b, #c6c8cd); opacity: var(--radio-finish-g); transition: opacity 0.5s; }
+.radio-finish__opts { display: flex; gap: 4px; padding: 4px; border-radius: 10px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+.radio-finish__opt {
+  position: relative;
+  padding: 5px 12px;
+  border-radius: 7px;
+  color: light-dark(#5f626a, #a7abb2);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+}
+.radio-finish__opt:hover { color: light-dark(#42454c, #e5e6e9); }
+.radio-finish__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.radio-finish__opt:has(.radio-finish__input:focus-visible) { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; }
+.radio-finish__opt:has(.radio-finish__input:checked) { background: light-dark(#42454c, #e5e6e9); color: light-dark(#fbfcfd, #121417); }
+@media (prefers-reduced-motion: reduce) {
+  .radio-finish * { transition-duration: 0.01s !important; }
+}

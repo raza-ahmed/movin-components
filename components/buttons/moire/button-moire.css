@@ -1,0 +1,44 @@
+.btn-moire {
+  --x: 30%;
+  --y: 50%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 220px;
+  height: 64px;
+  padding: 0;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
+  border-radius: 16px;
+  background: light-dark(#fbfcfd, #121417);
+  color: light-dark(#373a40, #f1f2f3);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  overflow: hidden;
+}
+.btn-moire:focus-visible { outline: 2px solid light-dark(#42454c, #e5e6e9); outline-offset: 3px; }
+/* Two identical ring gratings; where their centres differ, the overlap beats into fringes. */
+.btn-moire::before, .btn-moire::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.btn-moire::before {
+  background: repeating-radial-gradient(circle at 50% 50%, light-dark(#5f626a, #a7abb2) 0 1px, transparent 1px 6px);
+  opacity: 0.55;
+}
+.btn-moire::after {
+  background: repeating-radial-gradient(circle at var(--x) var(--y), light-dark(#5f626a, #a7abb2) 0 1px, transparent 1px 6px);
+  opacity: 0.55;
+}
+.btn-moire__label {
+  position: relative;
+  z-index: 1;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: light-dark(#fbfcfd, #121417);
+  box-shadow: 0 0 0 1px light-dark(#dbdde1, #2e3035);
+}

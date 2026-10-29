@@ -1,0 +1,93 @@
+"use client";
+
+import * as React from "react";
+import { useId, useRef, useState } from 'react';
+
+const TABS = [
+  { label: 'Live', body: 'Four streams on air, one of them from your team.' },
+  { label: 'Upcoming', body: 'The design review starts at 3 pm.' },
+  { label: 'Replays', body: 'Last week’s talks, ready to watch.' },
+];
+
+const css = `
+  .tabs-torch { width: 260px; }
+  .tabs-torch__list { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); padding: 4px; overflow: hidden; border-radius: 12px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#ebedf0, #232529); }
+  .tabs-torch__list::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(70px circle at var(--tabs-torch-x, 50%) 50%, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 16%, transparent), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .tabs-torch__list:hover::before { opacity: 1; }
+  .tabs-torch__line { position: absolute; left: 4px; bottom: 4px; width: calc((100% - 8px) / 3); height: 2px; transform: translateX(calc(var(--tabs-torch-i) * 100%)); transition: transform 0.4s cubic-bezier(0.3, 1.3, 0.5, 1); }
+  .tabs-torch__line::after { content: ''; position: absolute; left: 22%; right: 22%; top: 0; bottom: 0; border-radius: 1px; background: light-dark(#373a40, #f1f2f3); box-shadow: 0 0 10px light-dark(#373a40, #f1f2f3); }
+  .tabs-torch__tab { position: relative; padding: 9px 0 11px; border: 0; border-radius: 8px; background: none; color: light-dark(#5f626a, #a7abb2); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; transition: color 0.2s; }
+  .tabs-torch__tab:hover { color: light-dark(#42454c, #e5e6e9); }
+  .tabs-torch__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+  .tabs-torch__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: -2px; }
+  .tabs-torch__panel { padding: 14px 4px 0; min-height: calc(3.1em + 14px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }
+  @media (prefers-reduced-motion: reduce) {
+    .tabs-torch__line { transition: none; }
+  }
+`;
+
+export function TorchTabs() {
+  const id = useId();
+  const [sel, setSel] = useState(0);
+  const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    const n = TABS.length;
+    const next = { ArrowRight: (sel + 1) % n, ArrowLeft: (sel + n - 1) % n, Home: 0, End: n - 1 }[e.key];
+    if (next === undefined) return;
+    e.preventDefault();
+    setSel(next);
+    tabs.current[next]?.focus();
+  };
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="tabs-torch" style={{ '--tabs-torch-i': sel } as React.CSSProperties}>
+        <div
+          className="tabs-torch__list"
+          role="tablist"
+          aria-label="Streams"
+          onKeyDown={onKeyDown}
+          onPointerMove={(e) => {
+            const r = e.currentTarget.getBoundingClientRect();
+            e.currentTarget.style.setProperty('--tabs-torch-x', `${Math.round(e.clientX - r.left)}px`);
+          }}
+        >
+          {TABS.map((t, i) => (
+            <button
+              key={t.label}
+              ref={(el) => {
+                tabs.current[i] = el;
+              }}
+              className="tabs-torch__tab"
+              type="button"
+              role="tab"
+              id={`${id}-tab-${i}`}
+              aria-selected={sel === i}
+              aria-controls={`${id}-panel-${i}`}
+              tabIndex={sel === i ? 0 : -1}
+              onClick={() => setSel(i)}
+            >
+              {t.label}
+            </button>
+          ))}
+          <span className="tabs-torch__line" aria-hidden="true" />
+        </div>
+        {TABS.map((t, i) => (
+          <div key={t.label} className="tabs-torch__panel" role="tabpanel" id={`${id}-panel-${i}`} aria-labelledby={`${id}-tab-${i}`} hidden={sel !== i}>
+            {t.body}
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}

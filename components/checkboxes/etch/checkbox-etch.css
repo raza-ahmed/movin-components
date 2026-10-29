@@ -1,0 +1,53 @@
+@keyframes cb-etch-x { 0% { transform: rotate(0deg); } 32% { transform: rotate(120deg); } 100% { transform: rotate(360deg); } }
+@keyframes cb-etch-y { 0% { transform: rotate(0deg); } 32% { transform: rotate(120deg); } 100% { transform: rotate(-160deg); } }
+@keyframes cb-etch-shake {
+  0%, 100% { transform: none; }
+  12% { transform: translate(-3px, 1px) rotate(-6deg); }
+  26% { transform: translate(3px, -1px) rotate(5deg); }
+  40% { transform: translate(-3px, 0) rotate(-5deg); }
+  54% { transform: translate(2px, 1px) rotate(4deg); }
+  70% { transform: translate(-1px, 0) rotate(-2deg); }
+}
+.cb-etch { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+.cb-etch__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.cb-etch__toy {
+  position: relative;
+  width: 44px;
+  height: 36px;
+  border-radius: 7px;
+  background: linear-gradient(light-dark(#6d7179, #7d8087), light-dark(#cbced3, #393c41));
+  box-shadow: inset 0 0 0 1px light-dark(#5f626a, #a7abb2);
+}
+.cb-etch__input:focus-visible + .cb-etch__toy { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+.cb-etch__screen { position: absolute; left: 5px; top: 4px; width: 34px; height: 22px; border-radius: 3px; background: light-dark(#ebedf0, #232529); box-shadow: inset 0 1px 3px light-dark(#fbfcfd, #121417); }
+.cb-etch__screen svg { position: absolute; inset: 0; width: 34px; height: 22px; }
+.cb-etch__screen path {
+  fill: none;
+  stroke: light-dark(#50535b, #c6c8cd);
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  transition: opacity 0.45s ease 0.05s, stroke-dashoffset 0s linear 0.6s;
+}
+.cb-etch__knob {
+  position: absolute;
+  bottom: 1px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: light-dark(#42454c, #e5e6e9);
+  box-shadow: inset 0 -1px 0 light-dark(#5f626a, #a7abb2);
+}
+.cb-etch__knob::after { content: ''; position: absolute; left: 3.25px; top: 0.5px; width: 1.5px; height: 3px; border-radius: 1px; background: light-dark(#cbced3, #393c41); }
+.cb-etch__knob--x { left: 2px; }
+.cb-etch__knob--y { right: 2px; }
+.cb-etch__input:checked + .cb-etch__toy .cb-etch__screen path { stroke-dashoffset: 0; opacity: 1; transition: stroke-dashoffset 0.8s linear, opacity 0s; }
+.cb-etch[data-armed] .cb-etch__input:checked + .cb-etch__toy .cb-etch__knob--x { animation: cb-etch-x 0.8s linear; }
+.cb-etch[data-armed] .cb-etch__input:checked + .cb-etch__toy .cb-etch__knob--y { animation: cb-etch-y 0.8s linear; }
+.cb-etch[data-armed] .cb-etch__input:not(:checked) + .cb-etch__toy { animation: cb-etch-shake 0.55s ease-in-out; }
+@media (prefers-reduced-motion: reduce) {
+  .cb-etch__toy, .cb-etch__toy * { animation: none !important; transition-duration: 0.01s !important; transition-delay: 0s !important; }
+}

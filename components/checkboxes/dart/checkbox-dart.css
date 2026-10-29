@@ -1,0 +1,58 @@
+@keyframes cb-dart-throw {
+  0% { opacity: 0; transform: translate(46px, -18px) rotate(-26deg); animation-timing-function: cubic-bezier(0.4, 0, 1, 1); }
+  10% { opacity: 1; }
+  36% { transform: translate(0, 0) rotate(-14deg); animation-timing-function: ease-out; }
+  48% { transform: rotate(-6deg); }
+  60% { transform: rotate(-19deg); }
+  72% { transform: rotate(-11deg); }
+  84% { transform: rotate(-16deg); }
+  100% { opacity: 1; transform: rotate(-14deg); }
+}
+@keyframes cb-dart-jolt { 0%, 34% { transform: none; } 40% { transform: translateX(-1.5px); } 52%, 100% { transform: none; } }
+@keyframes cb-dart-hit { 0%, 34% { opacity: 0; transform: scale(0.4); } 38% { opacity: 0.8; } 70%, 100% { opacity: 0; transform: scale(2.2); } }
+.cb-dart { position: relative; display: inline-flex; align-items: center; gap: 10px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+.cb-dart__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.cb-dart__lane { position: relative; width: 58px; height: 36px; }
+.cb-dart__board {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle, light-dark(#50535b, #c6c8cd) 0 2.5px, light-dark(#dbdde1, #2e3035) 2.5px 5.5px, light-dark(#ebedf0, #232529) 5.5px 8.5px, light-dark(#dbdde1, #2e3035) 8.5px 11.5px, light-dark(#ebedf0, #232529) 11.5px 14.5px, light-dark(#cbced3, #393c41) 14.5px);
+}
+.cb-dart__input:focus-visible + .cb-dart__lane .cb-dart__board { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+.cb-dart__hit {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1.5px light-dark(#373a40, #f1f2f3);
+  opacity: 0;
+}
+.cb-dart__dart {
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  width: 34px;
+  height: 12px;
+  overflow: visible;
+  transform-origin: 0 50%;
+  opacity: 0;
+  transform: translate(40px, -10px) rotate(-22deg);
+  transition: transform 0.3s ease-in, opacity 0.2s ease 0.1s;
+}
+.cb-dart__tip { fill: light-dark(#373a40, #f1f2f3); }
+.cb-dart__barrel { fill: light-dark(#5f626a, #a7abb2); }
+.cb-dart__shaft { fill: light-dark(#50535b, #c6c8cd); }
+.cb-dart__flight { fill: light-dark(#6d7179, #7d8087); }
+.cb-dart__input:checked + .cb-dart__lane .cb-dart__dart { opacity: 1; transform: rotate(-14deg); transition: none; }
+.cb-dart[data-armed] .cb-dart__input:checked + .cb-dart__lane .cb-dart__dart { animation: cb-dart-throw 0.6s; }
+.cb-dart[data-armed] .cb-dart__input:checked + .cb-dart__lane .cb-dart__board { animation: cb-dart-jolt 0.6s ease-out; }
+.cb-dart[data-armed] .cb-dart__input:checked + .cb-dart__lane .cb-dart__hit { animation: cb-dart-hit 0.6s ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  .cb-dart__lane * { animation: none !important; transition-duration: 0.01s !important; transition-delay: 0s !important; }
+}

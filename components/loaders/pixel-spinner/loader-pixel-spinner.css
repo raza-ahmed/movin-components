@@ -1,0 +1,11 @@
+.loader-pixel-spinner {
+  display: grid;
+  grid-template-columns: repeat(11, 7px);
+  grid-auto-rows: 7px;
+  gap: 1px;
+}
+.loader-pixel-spinner__px { background: transparent; }
+.loader-pixel-spinner__px[data-ring] { background: light-dark(#ebedf0, #232529); }
+.loader-pixel-spinner__px[data-lit='3'] { background: light-dark(#373a40, #f1f2f3); }
+.loader-pixel-spinner__px[data-lit='2'] { background: light-dark(#50535b, #c6c8cd); }
+.loader-pixel-spinner__px[data-lit='1'] { background: light-dark(#6d7179, #7d8087); }

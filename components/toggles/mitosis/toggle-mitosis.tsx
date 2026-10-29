@@ -1,0 +1,57 @@
+"use client";
+
+const css = `
+  .toggle-mitosis { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .toggle-mitosis__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .toggle-mitosis__track {
+    position: relative;
+    width: 76px;
+    height: 32px;
+    border-radius: 999px;
+    background: light-dark(#ebedf0, #232529);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  }
+  .toggle-mitosis__input:focus-visible + .toggle-mitosis__track { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+  .toggle-mitosis__defs { position: absolute; width: 0; height: 0; }
+  /* Blur then threshold the alpha: overlapping blobs fuse, separating ones neck and snap. */
+  .toggle-mitosis__goo { position: absolute; inset: 0; filter: url(#toggle-mitosis-goo); }
+  .toggle-mitosis__cell { position: absolute; top: 5px; width: 22px; height: 22px; border-radius: 50%; background: light-dark(#50535b, #c6c8cd); transition: transform 0.45s cubic-bezier(0.5, 0, 0.3, 1), background-color 0.3s; }
+  .toggle-mitosis__cell--a { left: 5px; transition-delay: 0.3s; }
+  .toggle-mitosis__cell--b { right: 5px; transform: scale(0); transition-delay: 0s; }
+  .toggle-mitosis__cell--c { left: 9px; top: 9px; width: 14px; height: 14px; transition: transform 0.6s cubic-bezier(0.6, 0, 0.4, 1) 0.05s, background-color 0.3s; }
+  .toggle-mitosis__input:checked + .toggle-mitosis__track .toggle-mitosis__cell { background: light-dark(#373a40, #f1f2f3); }
+  .toggle-mitosis__input:checked + .toggle-mitosis__track .toggle-mitosis__cell--a { transform: scale(0); transition-delay: 0.15s; }
+  .toggle-mitosis__input:checked + .toggle-mitosis__track .toggle-mitosis__cell--b { transform: scale(1); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s, background-color 0.3s; }
+  .toggle-mitosis__input:checked + .toggle-mitosis__track .toggle-mitosis__cell--c { transform: translateX(44px); }
+  .toggle-mitosis__input:checked + .toggle-mitosis__track .toggle-mitosis__cell--c, .toggle-mitosis__cell--c { transition-duration: 0.75s; }
+  @media (prefers-reduced-motion: reduce) {
+    .toggle-mitosis__cell { transition-duration: 0.01s !important; transition-delay: 0s !important; }
+  }
+`;
+
+export function MitosisToggle() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="toggle-mitosis">
+        <input className="toggle-mitosis__input" type="checkbox" role="switch" />
+        <span className="toggle-mitosis__track" aria-hidden="true">
+          <svg className="toggle-mitosis__defs">
+            <filter id="toggle-mitosis-goo" x="-20%" y="-50%" width="140%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+              <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" />
+            </filter>
+          </svg>
+          <span className="toggle-mitosis__goo">
+            <span className="toggle-mitosis__cell toggle-mitosis__cell--a" />
+            <span className="toggle-mitosis__cell toggle-mitosis__cell--c" />
+            <span className="toggle-mitosis__cell toggle-mitosis__cell--b" />
+          </span>
+        </span>
+        Merge
+      </label>
+    </>
+  );
+}

@@ -1,0 +1,72 @@
+"use client";
+
+import * as React from "react";
+const css = `
+  @keyframes loader-vortex-fall {
+    0% { transform: rotate(var(--a)) translateX(50px) scale(1); opacity: 0; }
+    15% { opacity: 1; }
+    100% { transform: rotate(calc(var(--a) + 600deg)) translateX(0) scale(0.2); opacity: 0.2; }
+  }
+  @keyframes loader-vortex-core {
+    0%, 100% { transform: scale(0.85); opacity: 0.7; }
+    50% { transform: scale(1.15); opacity: 1; }
+  }
+  .loader-vortex { position: relative; width: 108px; height: 108px; }
+  .loader-vortex__p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    margin: -2px;
+    border-radius: 50%;
+    background: light-dark(#373a40, #f1f2f3);
+    opacity: 0;
+    /* ease-in: slow at the rim, whipping round faster as it falls in. */
+    animation: loader-vortex-fall 1.8s cubic-bezier(0.55, 0, 0.8, 0.5) var(--d) infinite;
+  }
+  .loader-vortex__core {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    margin: -6px;
+    border-radius: 50%;
+    background: light-dark(#fbfcfd, #121417);
+    box-shadow: 0 0 0 1.5px light-dark(#42454c, #e5e6e9), 0 0 14px 4px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 35%, transparent);
+    animation: loader-vortex-core 1.8s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .loader-vortex__p { animation-duration: 6s; }
+    .loader-vortex__core { animation: none; }
+  }
+`;
+
+const COUNT = 24;
+
+export function VortexLoader() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="loader-vortex" role="status" aria-label="Loading">
+        {Array.from({ length: COUNT }, (_, i) => (
+          <span
+            key={i}
+            className="loader-vortex__p"
+            aria-hidden="true"
+            style={
+              {
+                '--a': `${((i * 137.5) % 360).toFixed(1)}deg`,
+                '--d': `${(-(i / COUNT) * 1.8).toFixed(3)}s`,
+              } as React.CSSProperties
+            }
+          />
+        ))}
+        <span className="loader-vortex__core" aria-hidden="true" />
+      </div>
+    </>
+  );
+}

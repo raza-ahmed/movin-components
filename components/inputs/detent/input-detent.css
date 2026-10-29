@@ -1,0 +1,33 @@
+@keyframes field-detent-click { from { transform: scale(2.4); opacity: 0.9; } to { transform: scale(1); opacity: 0; } }
+@keyframes field-detent-name { from { opacity: 0; transform: translateY(6px); } }
+.field-detent { user-select: none; -webkit-user-select: none; width: 240px; }
+.field-detent__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+.field-detent__label { color: light-dark(#50535b, #c6c8cd); font-size: 12px; }
+.field-detent__name { color: light-dark(#373a40, #f1f2f3); font-size: 14px; font-weight: 600; animation: field-detent-name 0.25s cubic-bezier(0.2, 0.8, 0.3, 1); }
+.field-detent__rail { position: relative; height: 24px; margin: 0 10px; cursor: pointer; touch-action: none; }
+.field-detent__rail:focus-visible { outline: none; }
+.field-detent__rail:focus-visible .field-detent__thumb { box-shadow: 0 0 0 3px light-dark(#f3f4f7, #1a1c1f), 0 0 0 5px light-dark(#5f626a, #a7abb2); }
+.field-detent__line { position: absolute; left: 0; right: 0; top: 10px; height: 4px; border-radius: 2px; background: light-dark(#ebedf0, #232529); }
+.field-detent__fill { position: absolute; left: 0; top: 10px; height: 4px; border-radius: 2px; background: light-dark(#50535b, #c6c8cd); }
+.field-detent__stop { position: absolute; top: 8px; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: light-dark(#dbdde1, #2e3035); transition: background-color 0.2s; }
+.field-detent__stop[data-on] { background: light-dark(#50535b, #c6c8cd); }
+.field-detent__ring { position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid light-dark(#373a40, #f1f2f3); opacity: 0; animation: field-detent-click 0.4s ease-out; }
+.field-detent__thumb {
+  position: absolute;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  border-radius: 50%;
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 0 0 3px light-dark(#f3f4f7, #1a1c1f), 0 2px 6px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
+}
+.field-detent__thumb, .field-detent__fill { transition: left 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.field-detent__rail[data-drag] .field-detent__thumb, .field-detent__rail[data-drag] .field-detent__fill { transition: none; }
+.field-detent__ticks { display: flex; justify-content: space-between; margin: 8px 2px 0; }
+.field-detent__ticks span { width: 20px; color: light-dark(#5f626a, #a7abb2); font-size: 11px; text-align: center; transition: color 0.2s; }
+.field-detent__ticks span[data-on] { color: light-dark(#373a40, #f1f2f3); font-weight: 600; }
+@media (prefers-reduced-motion: reduce) {
+  .field-detent__thumb, .field-detent__fill { transition-duration: 0.01s; }
+  .field-detent__ring, .field-detent__name { animation: none; }
+}

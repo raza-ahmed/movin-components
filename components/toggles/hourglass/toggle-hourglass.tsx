@@ -1,0 +1,73 @@
+"use client";
+
+import { useState } from 'react';
+
+const css = `
+  @keyframes toggle-hourglass-stream-a { 0%, 22% { opacity: 0; } 26%, 94% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes toggle-hourglass-stream-b { 0%, 22% { opacity: 0; } 26%, 94% { opacity: 1; } 100% { opacity: 0; } }
+  .toggle-hourglass { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .toggle-hourglass__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .toggle-hourglass__track { position: relative; width: 34px; height: 52px; margin: 0 8px; border-radius: 6px; }
+  .toggle-hourglass__input:focus-visible + .toggle-hourglass__track { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+  .toggle-hourglass__frame { position: absolute; inset: 0; transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1); }
+  .toggle-hourglass__cap { position: absolute; left: 0; right: 0; height: 4px; border-radius: 2px; background: light-dark(#6d7179, #7d8087); }
+  .toggle-hourglass__cap--top { top: 0; }
+  .toggle-hourglass__cap--bottom { bottom: 0; }
+  .toggle-hourglass__glass {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+    clip-path: polygon(0 0, 100% 0, 58% 50%, 100% 100%, 0 100%, 42% 50%);
+    background: light-dark(#ebedf0, #232529);
+  }
+  .toggle-hourglass__sand { position: absolute; left: 0; right: 0; height: 50%; background: light-dark(#50535b, #c6c8cd); transition: transform 2.4s linear 0.6s; }
+  /* Chamber A is the lower one at rest, B the upper. Each drains toward the neck and fills from its far end. */
+  .toggle-hourglass__sand--a { bottom: 0; transform-origin: 50% 100%; transform: scaleY(1); }
+  .toggle-hourglass__sand--b { top: 0; transform-origin: 50% 100%; transform: scaleY(0); }
+  .toggle-hourglass__stream {
+    position: absolute;
+    left: 50%;
+    top: 26px;
+    width: 1.5px;
+    height: 20px;
+    margin-left: -0.75px;
+    background: light-dark(#50535b, #c6c8cd);
+    opacity: 0;
+  }
+  .toggle-hourglass__input:checked + .toggle-hourglass__track .toggle-hourglass__frame { transform: rotate(180deg); }
+  .toggle-hourglass__input:checked + .toggle-hourglass__track .toggle-hourglass__sand--a { transform-origin: 50% 0; transform: scaleY(0); }
+  .toggle-hourglass__input:checked + .toggle-hourglass__track .toggle-hourglass__sand--b { transform-origin: 50% 0; transform: scaleY(1); }
+  .toggle-hourglass[data-armed] .toggle-hourglass__input:checked + .toggle-hourglass__track .toggle-hourglass__stream { animation: toggle-hourglass-stream-a 3s linear; }
+  .toggle-hourglass[data-armed] .toggle-hourglass__input:not(:checked) + .toggle-hourglass__track .toggle-hourglass__stream { animation: toggle-hourglass-stream-b 3s linear; }
+  @media (prefers-reduced-motion: reduce) {
+    .toggle-hourglass__track * { transition-duration: 0.01s !important; transition-delay: 0s !important; animation: none !important; }
+  }
+`;
+
+export function HourglassToggle() {
+  const [armed, setArmed] = useState(false);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="toggle-hourglass" data-armed={armed || undefined}>
+        <input className="toggle-hourglass__input" type="checkbox" role="switch" onChange={() => setArmed(true)} />
+        <span className="toggle-hourglass__track" aria-hidden="true">
+          <span className="toggle-hourglass__stream" />
+          <span className="toggle-hourglass__frame">
+            <span className="toggle-hourglass__glass">
+              <span className="toggle-hourglass__sand toggle-hourglass__sand--a" />
+              <span className="toggle-hourglass__sand toggle-hourglass__sand--b" />
+            </span>
+            <span className="toggle-hourglass__cap toggle-hourglass__cap--top" />
+            <span className="toggle-hourglass__cap toggle-hourglass__cap--bottom" />
+          </span>
+        </span>
+        Focus timer
+      </label>
+    </>
+  );
+}

@@ -1,0 +1,38 @@
+.field-drum { user-select: none; -webkit-user-select: none; width: 230px; }
+.field-drum__label { display: block; margin-bottom: 8px; color: light-dark(#50535b, #c6c8cd); font-size: 12px; }
+.field-drum__body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  height: 132px;
+  padding: 0 10px;
+  border-radius: 14px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  overflow: hidden;
+}
+/* The lens: the selected row reads through a raised band. */
+.field-drum__lens { position: absolute; left: 8px; right: 8px; top: 50%; height: 30px; margin-top: -15px; border-radius: 8px; background: light-dark(#ebedf0, #232529); }
+.field-drum__fade { position: absolute; inset: 0; background: linear-gradient(light-dark(#f3f4f7, #1a1c1f), transparent 32%, transparent 68%, light-dark(#f3f4f7, #1a1c1f)); pointer-events: none; }
+.field-drum__wheel { position: relative; width: 56px; height: 100%; perspective: 420px; cursor: ns-resize; touch-action: none; outline: none; }
+.field-drum__wheel:focus-visible::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 30px; margin-top: -15px; border-radius: 8px; box-shadow: inset 0 0 0 2px light-dark(#5f626a, #a7abb2); }
+.field-drum__wheel--ampm { width: 44px; }
+.field-drum__cyl { position: absolute; left: 0; right: 0; top: 50%; height: 0; transform-style: preserve-3d; }
+.field-drum__cyl[data-snap] { transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.3, 1); }
+.field-drum__item {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -15px;
+  height: 30px;
+  color: light-dark(#373a40, #f1f2f3);
+  font-family: inherit; font-size: 19px; font-weight: 600; line-height: 30px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  backface-visibility: hidden;
+}
+.field-drum__colon { position: relative; align-self: center; color: light-dark(#50535b, #c6c8cd); font-family: inherit; font-size: 19px; font-weight: 600; }
+@media (prefers-reduced-motion: reduce) {
+  .field-drum__cyl[data-snap] { transition: none; }
+}

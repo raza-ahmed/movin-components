@@ -1,0 +1,21 @@
+@keyframes cb-wick-flicker { 0%, 100% { transform: scale(1, 1) rotate(-2deg); } 25% { transform: scale(0.94, 1.06) rotate(2deg); } 50% { transform: scale(1.04, 0.95) rotate(-1deg); } 75% { transform: scale(0.97, 1.03) rotate(1.5deg); } }
+@keyframes cb-wick-catch { 0% { transform: scale(0.1, 0.2); opacity: 0; } 50% { transform: scale(0.7, 1.25); opacity: 1; } 100% { transform: none; opacity: 1; } }
+@keyframes cb-wick-smoke { 0% { stroke-dashoffset: 1; opacity: 0.9; } 100% { stroke-dashoffset: 0; opacity: 0; transform: translateY(-8px); } }
+.cb-wick { position: relative; display: inline-flex; align-items: center; gap: 14px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+.cb-wick__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.cb-wick__box { position: relative; width: 30px; height: 52px; }
+.cb-wick__input:focus-visible + .cb-wick__box { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 4px; border-radius: 6px; }
+.cb-wick__candle { position: absolute; left: 6px; right: 6px; bottom: 0; height: 26px; border-radius: 3px 3px 4px 4px; background: linear-gradient(90deg, light-dark(#cbced3, #393c41), light-dark(#6d7179, #7d8087) 40%, light-dark(#dbdde1, #2e3035)); box-shadow: 0 6px 10px -6px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.6)); }
+.cb-wick__candle::before { content: ''; position: absolute; left: 50%; top: -5px; width: 1.6px; height: 6px; margin-left: -0.8px; border-radius: 1px; background: light-dark(#50535b, #c6c8cd); }
+.cb-wick__glow { position: absolute; left: 50%; top: 2px; width: 40px; height: 40px; margin-left: -20px; border-radius: 50%; background: radial-gradient(circle, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 26%, transparent), transparent 65%); opacity: 0; transition: opacity 0.5s; }
+.cb-wick__flame { position: absolute; left: 50%; top: 9px; width: 9px; height: 14px; margin-left: -4.5px; transform-origin: 50% 100%; opacity: 0; transform: scale(0.1, 0.2); transition: opacity 0.25s, transform 0.3s; }
+.cb-wick__flame span { position: absolute; inset: 0; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(ellipse at 50% 72%, light-dark(#fbfcfd, #121417) 0 22%, light-dark(#373a40, #f1f2f3) 48%, light-dark(#50535b, #c6c8cd)); animation: cb-wick-flicker 0.9s ease-in-out infinite; }
+.cb-wick__smoke { position: absolute; left: 7px; top: -6px; width: 16px; height: 26px; overflow: visible; }
+.cb-wick__smoke path { fill: none; stroke: light-dark(#6d7179, #7d8087); stroke-width: 1.2; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; }
+.cb-wick__input:checked + .cb-wick__box .cb-wick__flame { opacity: 1; transform: none; }
+.cb-wick__input:checked + .cb-wick__box .cb-wick__glow { opacity: 1; }
+.cb-wick[data-armed] .cb-wick__input:checked + .cb-wick__box .cb-wick__flame { animation: cb-wick-catch 0.5s cubic-bezier(0.3, 1.2, 0.5, 1) both; }
+.cb-wick[data-armed] .cb-wick__input:not(:checked) + .cb-wick__box .cb-wick__smoke path { animation: cb-wick-smoke 1.3s ease-out 0.1s; }
+@media (prefers-reduced-motion: reduce) {
+  .cb-wick * { animation: none !important; transition-duration: 0.01s !important; }
+}

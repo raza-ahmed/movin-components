@@ -1,0 +1,98 @@
+"use client";
+
+const css = `
+  @keyframes loader-metronome-swing {
+    from { transform: rotate(-28deg); }
+    to { transform: rotate(28deg); }
+  }
+  @keyframes loader-metronome-tick {
+    0%, 8% { opacity: 1; transform: scale(1.4); }
+    30%, 100% { opacity: 0.15; transform: scale(1); }
+  }
+  .loader-metronome { position: relative; width: 84px; height: 104px; }
+  .loader-metronome__body {
+    position: absolute;
+    inset: 10px 10px 0;
+    clip-path: polygon(34% 0, 66% 0, 100% 100%, 0 100%);
+    background: linear-gradient(light-dark(#ebedf0, #232529), light-dark(#f3f4f7, #1a1c1f));
+  }
+  .loader-metronome__scale {
+    position: absolute;
+    left: 50%;
+    top: 22px;
+    width: 2px;
+    height: 56px;
+    margin-left: -1px;
+    background: repeating-linear-gradient(light-dark(#cbced3, #393c41) 0 1px, transparent 1px 6px);
+  }
+  .loader-metronome__arm {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    width: 2px;
+    height: 84px;
+    margin-left: -1px;
+    border-radius: 2px;
+    background: light-dark(#42454c, #e5e6e9);
+    transform-origin: 50% 100%;
+    animation: loader-metronome-swing 0.6s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+  }
+  .loader-metronome__weight {
+    position: absolute;
+    left: 50%;
+    top: 22px;
+    width: 12px;
+    height: 9px;
+    margin-left: -6px;
+    border-radius: 2px;
+    background: light-dark(#373a40, #f1f2f3);
+  }
+  .loader-metronome__pivot {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+    border-radius: 50%;
+    background: light-dark(#5f626a, #a7abb2);
+  }
+  .loader-metronome__tick {
+    position: absolute;
+    top: 4px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: light-dark(#373a40, #f1f2f3);
+    box-shadow: 0 0 8px light-dark(#373a40, #f1f2f3);
+    opacity: 0.15;
+    /* One flash per full swing, half a beat apart: left on the way out, right on the way back. */
+    animation: loader-metronome-tick 1.2s linear infinite;
+  }
+  .loader-metronome__tick--l { left: 0; animation-delay: 0s; }
+  .loader-metronome__tick--r { right: 0; animation-delay: 0.6s; }
+  @media (prefers-reduced-motion: reduce) {
+    .loader-metronome__arm { animation-duration: 2s; }
+    .loader-metronome__tick { animation: none; }
+  }
+`;
+
+export function MetronomeLoader() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="loader-metronome" role="status" aria-label="Loading">
+        <span className="loader-metronome__body" aria-hidden="true" />
+        <span className="loader-metronome__scale" aria-hidden="true" />
+        <span className="loader-metronome__tick loader-metronome__tick--l" aria-hidden="true" />
+        <span className="loader-metronome__tick loader-metronome__tick--r" aria-hidden="true" />
+        <span className="loader-metronome__arm" aria-hidden="true">
+          <span className="loader-metronome__weight" />
+        </span>
+        <span className="loader-metronome__pivot" aria-hidden="true" />
+      </div>
+    </>
+  );
+}

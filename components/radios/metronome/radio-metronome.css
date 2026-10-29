@@ -1,0 +1,76 @@
+@keyframes radio-metronome-swing { from { transform: rotate(-26deg); } to { transform: rotate(26deg); } }
+@keyframes radio-metronome-beat { 0% { opacity: 1; box-shadow: 0 0 8px light-dark(#373a40, #f1f2f3); } 40%, 100% { opacity: 0.25; box-shadow: none; } }
+.radio-metronome { --radio-metronome-t: 1s; --radio-metronome-w: 8px; --radio-metronome-k: 0; display: flex; align-items: center; gap: 18px; }
+.radio-metronome:has(.radio-metronome__input[value='andante']:checked) { --radio-metronome-t: 0.625s; --radio-metronome-w: 22px; --radio-metronome-k: 1; }
+.radio-metronome:has(.radio-metronome__input[value='presto']:checked) { --radio-metronome-t: 0.357s; --radio-metronome-w: 38px; --radio-metronome-k: 2; }
+.radio-metronome__body { position: relative; width: 64px; height: 90px; }
+.radio-metronome__case {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(32% 0, 68% 0, 100% 100%, 0 100%);
+  background: linear-gradient(light-dark(#cbced3, #393c41), light-dark(#dbdde1, #2e3035));
+}
+.radio-metronome__face {
+  position: absolute;
+  left: 22px;
+  top: 12px;
+  width: 20px;
+  height: 62px;
+  background: repeating-linear-gradient(transparent 0 7px, light-dark(#6d7179, #7d8087) 7px 8px), light-dark(#ebedf0, #232529);
+  clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+}
+.radio-metronome__arm {
+  position: absolute;
+  left: 31px;
+  bottom: 12px;
+  width: 2px;
+  height: 70px;
+  border-radius: 1px;
+  background: light-dark(#42454c, #e5e6e9);
+  transform-origin: 50% 100%;
+  animation: radio-metronome-swing var(--radio-metronome-t) ease-in-out infinite alternate;
+}
+.radio-metronome__weight {
+  position: absolute;
+  left: -5px;
+  top: var(--radio-metronome-w);
+  width: 12px;
+  height: 9px;
+  background: light-dark(#50535b, #c6c8cd);
+  clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+  transition: top 0.4s cubic-bezier(0.3, 1.3, 0.5, 1);
+}
+.radio-metronome__beat {
+  position: absolute;
+  left: 29px;
+  top: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: light-dark(#373a40, #f1f2f3);
+  animation: radio-metronome-beat var(--radio-metronome-t) ease-out infinite;
+}
+.radio-metronome__side { display: grid; gap: 10px; }
+.radio-metronome__bpm { height: 22px; overflow: hidden; }
+.radio-metronome__bpm-strip { display: grid; transform: translateY(calc(var(--radio-metronome-k) * -22px)); transition: transform 0.35s cubic-bezier(0.3, 1.3, 0.5, 1); }
+.radio-metronome__bpm-strip span { height: 22px; color: light-dark(#373a40, #f1f2f3); font-size: 18px; font-weight: 600; line-height: 22px; font-variant-numeric: tabular-nums; }
+.radio-metronome__bpm-strip small { color: light-dark(#5f626a, #a7abb2); font-size: 10px; font-weight: 400; }
+.radio-metronome__opts { display: grid; gap: 2px; }
+.radio-metronome__opt {
+  position: relative;
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: light-dark(#5f626a, #a7abb2);
+  font-size: 12px;
+  font-weight: 600;
+  font-style: italic;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+}
+.radio-metronome__opt:hover { color: light-dark(#42454c, #e5e6e9); }
+.radio-metronome__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.radio-metronome__opt:has(.radio-metronome__input:focus-visible) { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 1px; }
+.radio-metronome__opt:has(.radio-metronome__input:checked) { background: light-dark(#ebedf0, #232529); color: light-dark(#373a40, #f1f2f3); }
+@media (prefers-reduced-motion: reduce) {
+  .radio-metronome * { animation: none !important; transition-duration: 0.01s !important; }
+}

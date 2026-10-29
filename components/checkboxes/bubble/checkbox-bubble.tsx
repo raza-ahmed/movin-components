@@ -1,0 +1,62 @@
+"use client";
+
+import * as React from "react";
+import { useState } from 'react';
+
+const BURST = [0, 60, 120, 180, 240, 300];
+
+const css = `
+  @keyframes cb-bubble-pop { 0% { transform: scale(1); } 30% { transform: scale(1.18, 0.82); } 55% { transform: scale(0.7, 0.62); } 100% { transform: scale(0.86, 0.5); } }
+  @keyframes cb-bubble-puff { 0% { transform: scale(0.86, 0.5); } 60% { transform: scale(1.08); } 100% { transform: scale(1); } }
+  @keyframes cb-bubble-burst { from { transform: rotate(var(--a)) translateY(-10px) scaleY(0.4); opacity: 1; } to { transform: rotate(var(--a)) translateY(-22px) scaleY(1); opacity: 0; } }
+  .cb-bubble { position: relative; display: inline-flex; align-items: center; gap: 14px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .cb-bubble__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .cb-bubble__sheet {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: radial-gradient(circle at 20% 20%, color-mix(in oklab, light-dark(#cbced3, #393c41) 50%, transparent) 0 5px, transparent 5.5px) 0 0 / 20px 20px, light-dark(#f3f4f7, #1a1c1f);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  }
+  .cb-bubble__input:focus-visible + .cb-bubble__sheet { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+  .cb-bubble__dome {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 80%, transparent) 0 2.5px, transparent 3.5px), radial-gradient(circle at 50% 60%, light-dark(#cbced3, #393c41), light-dark(#ebedf0, #232529));
+    box-shadow: inset 0 0 0 1.5px light-dark(#5f626a, #a7abb2), 0 3px 6px -2px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
+  }
+  .cb-bubble__line { position: absolute; left: 50%; top: 50%; width: 2px; height: 6px; margin: -3px -1px; border-radius: 1px; background: light-dark(#42454c, #e5e6e9); opacity: 0; }
+  /* Popped: squashed flat and creased. */
+  .cb-bubble__input:checked + .cb-bubble__sheet .cb-bubble__dome { transform: scale(0.86, 0.5); background: radial-gradient(circle, light-dark(#dbdde1, #2e3035), light-dark(#ebedf0, #232529)); box-shadow: inset 0 0 0 1.5px light-dark(#6d7179, #7d8087); }
+  .cb-bubble[data-armed] .cb-bubble__input:checked + .cb-bubble__sheet .cb-bubble__dome { animation: cb-bubble-pop 0.3s cubic-bezier(0.3, 0, 0.5, 1); }
+  .cb-bubble[data-armed] .cb-bubble__input:checked + .cb-bubble__sheet .cb-bubble__line { animation: cb-bubble-burst 0.4s ease-out 0.08s; }
+  .cb-bubble[data-armed] .cb-bubble__input:not(:checked) + .cb-bubble__sheet .cb-bubble__dome { animation: cb-bubble-puff 0.45s cubic-bezier(0.3, 1.5, 0.5, 1); }
+  @media (prefers-reduced-motion: reduce) {
+    .cb-bubble * { animation: none !important; }
+  }
+`;
+
+export function BubbleCheckbox() {
+  const [armed, setArmed] = useState(false);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="cb-bubble" data-armed={armed || undefined}>
+        <input className="cb-bubble__input" type="checkbox" onChange={() => setArmed(true)} />
+        <span className="cb-bubble__sheet" aria-hidden="true">
+          <span className="cb-bubble__dome" />
+          {BURST.map((a) => (
+            <span key={a} className="cb-bubble__line" style={{ '--a': `${a}deg` } as React.CSSProperties} />
+          ))}
+        </span>
+        Pop it
+      </label>
+    </>
+  );
+}

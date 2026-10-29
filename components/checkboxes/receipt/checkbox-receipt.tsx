@@ -1,0 +1,75 @@
+"use client";
+
+const css = `
+  .cb-receipt { position: relative; display: inline-flex; align-items: flex-start; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .cb-receipt__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .cb-receipt__printer { position: relative; width: 36px; height: 52px; }
+  .cb-receipt__input:focus-visible + .cb-receipt__printer .cb-receipt__head { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+  .cb-receipt__head {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 10px;
+    border-radius: 4px;
+    background: linear-gradient(light-dark(#6d7179, #7d8087), light-dark(#cbced3, #393c41));
+    box-shadow: inset 0 0 0 1px light-dark(#5f626a, #a7abb2);
+    z-index: 1;
+  }
+  .cb-receipt__head::after { content: ''; position: absolute; left: 4px; right: 4px; bottom: 2px; height: 2px; border-radius: 1px; background: light-dark(#fbfcfd, #121417); }
+  .cb-receipt__led { position: absolute; right: 5px; top: 2.5px; width: 3px; height: 3px; border-radius: 50%; background: light-dark(#dbdde1, #2e3035); transition: background-color 0.2s, box-shadow 0.2s; }
+  /* The paper hangs from the slot and is clipped there, so it prints out downward. */
+  .cb-receipt__feed { position: absolute; left: 5px; top: 8px; width: 26px; height: 44px; overflow: hidden; }
+  .cb-receipt__paper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 40px;
+    padding: 5px 4px 0;
+    background: light-dark(#42454c, #e5e6e9);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3px), 87.5% 100%, 75% calc(100% - 3px), 62.5% 100%, 50% calc(100% - 3px), 37.5% 100%, 25% calc(100% - 3px), 12.5% 100%, 0 calc(100% - 3px));
+    transform: translateY(-100%);
+    transition: transform 0.3s cubic-bezier(0.5, 0, 0.75, 0);
+  }
+  .cb-receipt__line { display: block; height: 2px; margin-bottom: 3px; border-radius: 1px; background: light-dark(#6d7179, #7d8087); }
+  .cb-receipt__rule { display: block; height: 0; margin: 4px 0 3px; border-top: 1px dashed light-dark(#6d7179, #7d8087); }
+  .cb-receipt__paper svg { display: block; width: 12px; height: 9px; margin: 0 auto; }
+  .cb-receipt__paper path { fill: none; stroke: light-dark(#f3f4f7, #1a1c1f); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .cb-receipt__input:checked + .cb-receipt__printer .cb-receipt__paper { transform: none; transition: transform 0.8s steps(8, end); }
+  .cb-receipt__input:checked + .cb-receipt__printer .cb-receipt__led { background: light-dark(#373a40, #f1f2f3); box-shadow: 0 0 4px light-dark(#373a40, #f1f2f3); }
+  .cb-receipt__label { padding-top: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    .cb-receipt__printer * { transition-duration: 0.01s !important; }
+  }
+`;
+
+export function ReceiptCheckbox() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="cb-receipt">
+        <input className="cb-receipt__input" type="checkbox" />
+        <span className="cb-receipt__printer" aria-hidden="true">
+          <span className="cb-receipt__feed">
+            <span className="cb-receipt__paper">
+              <span className="cb-receipt__line" />
+              <span className="cb-receipt__line" style={{ width: '70%' }} />
+              <span className="cb-receipt__line" style={{ width: '85%' }} />
+              <span className="cb-receipt__rule" />
+              <svg viewBox="0 0 12 9">
+                <path d="M1.5 4.5L4.5 7.5L10.5 1.5" />
+              </svg>
+            </span>
+          </span>
+          <span className="cb-receipt__head">
+            <span className="cb-receipt__led" />
+          </span>
+        </span>
+        <span className="cb-receipt__label">Paid in full</span>
+      </label>
+    </>
+  );
+}

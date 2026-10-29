@@ -1,0 +1,17 @@
+<div class="slider-goo" style="--slider-goo-v:0.5">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="slider-goo-def" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"></feGaussianBlur>
+      <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9" result="goo"></feColorMatrix>
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+    </filter>
+  </svg>
+  <span class="slider-goo__rail" aria-hidden="true"></span>
+  <span class="slider-goo__liquid" style="filter:url(#slider-goo-def)" aria-hidden="true">
+    <span class="slider-goo__fill"></span>
+    <span class="slider-goo__drop"></span>
+    <span class="slider-goo__thumb"></span>
+  </span>
+  <span class="slider-goo__shine" aria-hidden="true"></span>
+  <input class="slider-goo__input" type="range" min="0" max="100" aria-label="Volume" value="50"/>
+</div>

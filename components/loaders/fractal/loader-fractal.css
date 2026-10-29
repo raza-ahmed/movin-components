@@ -1,0 +1,15 @@
+@keyframes loader-fractal-cell {
+  0% { opacity: 0.12; }
+  10% { opacity: 1; }
+  45% { opacity: 1; }
+  65%, 100% { opacity: 0.12; }
+}
+.loader-fractal { display: block; width: 96px; height: 84px; }
+.loader-fractal__cell {
+  fill: light-dark(#373a40, #f1f2f3);
+  opacity: 0.12;
+  animation: loader-fractal-cell 2.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader-fractal__cell { animation: none; opacity: 0.7; }
+}

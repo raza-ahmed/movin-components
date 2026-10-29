@@ -1,0 +1,38 @@
+@keyframes cb-toaster-pop { 0% { transform: translateY(14px); } 50% { transform: translateY(-9px); } 72% { transform: translateY(-3px); } 86% { transform: translateY(-12px); } 100% { transform: translateY(-4px); } }
+@keyframes cb-toaster-sink { from { transform: translateY(-4px); } to { transform: translateY(14px); } }
+.cb-toaster { position: relative; display: inline-flex; align-items: center; gap: 14px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+.cb-toaster__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.cb-toaster__body { position: relative; width: 52px; height: 46px; }
+.cb-toaster__input:focus-visible + .cb-toaster__body { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 4px; border-radius: 8px; }
+.cb-toaster__toast {
+  position: absolute;
+  left: 12px;
+  top: 4px;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px 8px 3px 3px;
+  background: light-dark(#6d7179, #7d8087);
+  box-shadow: inset 0 0 0 2.5px light-dark(#cbced3, #393c41);
+  transform: translateY(14px);
+  transition: background-color 0.4s;
+}
+.cb-toaster__case {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30px;
+  border-radius: 12px 12px 6px 6px;
+  background: linear-gradient(light-dark(#cbced3, #393c41), light-dark(#dbdde1, #2e3035));
+  box-shadow: inset 0 1px 0 light-dark(#6d7179, #7d8087), 0 8px 14px -8px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.6));
+}
+.cb-toaster__case::before { content: ''; position: absolute; left: 11px; right: 11px; top: 3px; height: 3px; border-radius: 2px; background: light-dark(#f3f4f7, #1a1c1f); }
+.cb-toaster__lever { position: absolute; right: -4px; top: 34px; width: 6px; height: 4px; border-radius: 2px; background: light-dark(#50535b, #c6c8cd); transition: transform 0.3s; }
+.cb-toaster__dial { position: absolute; left: 9px; bottom: 8px; width: 7px; height: 7px; border-radius: 50%; background: light-dark(#5f626a, #a7abb2); }
+.cb-toaster__input:checked + .cb-toaster__body .cb-toaster__toast { transform: translateY(-4px); background: light-dark(#50535b, #c6c8cd); }
+.cb-toaster__input:checked + .cb-toaster__body .cb-toaster__lever { transform: translateY(-12px); }
+.cb-toaster[data-armed] .cb-toaster__input:checked + .cb-toaster__body .cb-toaster__toast { animation: cb-toaster-pop 0.55s cubic-bezier(0.3, 0, 0.4, 1); }
+.cb-toaster[data-armed] .cb-toaster__input:not(:checked) + .cb-toaster__body .cb-toaster__toast { animation: cb-toaster-sink 0.3s ease-in; }
+@media (prefers-reduced-motion: reduce) {
+  .cb-toaster * { animation: none !important; transition: none !important; }
+}

@@ -1,0 +1,33 @@
+@keyframes field-signature-ok { from { opacity: 0; transform: translateY(4px); } }
+.field-signature { width: 256px; }
+.field-signature__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.field-signature__label { color: light-dark(#50535b, #c6c8cd); font-size: 12px; }
+.field-signature__clear { padding: 3px 8px; border: 0; border-radius: 6px; background: light-dark(#ebedf0, #232529); color: light-dark(#42454c, #e5e6e9); font-family: inherit; font-size: 11px; font-weight: 600; cursor: pointer; }
+.field-signature__clear:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; }
+.field-signature__pad { position: relative; height: 100px; border-radius: 10px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); touch-action: none; cursor: crosshair; }
+.field-signature__pad canvas { position: absolute; inset: 0; width: 256px; height: 100px; }
+.field-signature__line { position: absolute; left: 30px; right: 16px; bottom: 26px; border-top: 1px solid light-dark(#cbced3, #393c41); }
+.field-signature__x { position: absolute; left: 14px; bottom: 26px; color: light-dark(#6d7179, #7d8087); font-family: inherit; font-size: 13px; font-weight: 600; }
+.field-signature__typed { position: absolute; left: 34px; right: 16px; bottom: 28px; overflow: hidden; color: light-dark(#373a40, #f1f2f3); font: italic 30px/1 Georgia, 'Times New Roman', serif; white-space: nowrap; pointer-events: none; }
+.field-signature__foot { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.field-signature__alt {
+  flex: 1;
+  min-width: 0;
+  height: 30px;
+  padding: 0 10px;
+  border: 0;
+  outline: 0;
+  border-radius: 7px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  color: light-dark(#373a40, #f1f2f3);
+  font-family: inherit; font-size: 12px;
+}
+.field-signature__alt:focus { box-shadow: inset 0 0 0 1px light-dark(#5f626a, #a7abb2); }
+.field-signature__alt::placeholder { color: light-dark(#5f626a, #a7abb2); }
+.field-signature__ok { display: flex; align-items: center; gap: 4px; color: light-dark(#42454c, #e5e6e9); font-size: 11px; white-space: nowrap; animation: field-signature-ok 0.3s ease-out; }
+.field-signature__ok svg { width: 13px; height: 13px; }
+.field-signature__probe { position: absolute; width: 0; height: 0; overflow: hidden; color: light-dark(#373a40, #f1f2f3); }
+@media (prefers-reduced-motion: reduce) {
+  .field-signature__ok { animation: none; }
+}

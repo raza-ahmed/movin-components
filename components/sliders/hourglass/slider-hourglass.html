@@ -1,0 +1,26 @@
+<div class="slider-hourglass">
+  <span class="slider-hourglass__body">
+    <svg viewBox="0 0 100 132" aria-hidden="true">
+      <defs>
+        <clipPath id="slider-hourglass-def">
+          <path d="M12 8H88C88 42 56 50 52 66C56 82 88 90 88 124H12C12 90 44 82 48 66C44 50 12 42 12 8Z"></path>
+        </clipPath>
+      </defs>
+      <rect class="slider-hourglass__post" x="8" y="6" width="4" height="120" rx="2"></rect>
+      <rect class="slider-hourglass__post" x="88" y="6" width="4" height="120" rx="2"></rect>
+      <g clip-path="url(#slider-hourglass-def)">
+        <rect class="slider-hourglass__sand" x="0" y="44.0" width="100" height="22.0"></rect>
+        <path class="slider-hourglass__sand" d="M10 125Q50 73.6 90 125Z"></path>
+        <line class="slider-hourglass__stream" x1="50" y1="64" x2="50" y2="126"></line>
+      </g>
+      <path class="slider-hourglass__glass" d="M12 8H88C88 42 56 50 52 66C56 82 88 90 88 124H12C12 90 44 82 48 66C44 50 12 42 12 8Z"></path>
+      <rect class="slider-hourglass__cap" x="2" y="0" width="96" height="8" rx="3"></rect>
+      <rect class="slider-hourglass__cap" x="2" y="124" width="96" height="8" rx="3"></rect>
+    </svg>
+    <input class="slider-hourglass__input" type="range" min="0" max="60" aria-label="Timer" aria-valuetext="25 minutes" value="25"/>
+  </span>
+  <span class="slider-hourglass__read" aria-hidden="true">
+    <span class="slider-hourglass__min">25</span>
+    <span class="slider-hourglass__unit">MINUTES</span>
+  </span>
+</div>

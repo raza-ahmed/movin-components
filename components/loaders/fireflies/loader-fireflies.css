@@ -1,0 +1,25 @@
+@keyframes loader-fireflies-drift {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(var(--dx), calc(var(--dy) * 0.4)); }
+  50% { transform: translate(calc(var(--dx) * 0.4), var(--dy)); }
+  75% { transform: translate(calc(var(--dx) * -0.5), calc(var(--dy) * 0.6)); }
+}
+@keyframes loader-fireflies-blink { 0%, 55%, 100% { opacity: 0.15; transform: scale(0.6); } 70% { opacity: 1; transform: scale(1); } }
+.loader-fireflies { position: relative; width: 144px; height: 84px; }
+.loader-fireflies__fly { position: absolute; width: 0; height: 0; animation: loader-fireflies-drift var(--dur) ease-in-out infinite var(--d); }
+.loader-fireflies__fly::after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 0 8px 3px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 45%, transparent), 0 0 18px 6px color-mix(in oklab, light-dark(#42454c, #e5e6e9) 18%, transparent);
+  animation: loader-fireflies-blink var(--blink) ease-in-out infinite var(--d);
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader-fireflies__fly, .loader-fireflies__fly::after { animation-duration: 0s; animation-iteration-count: 1; }
+  .loader-fireflies__fly::after { opacity: 0.7; }
+}

@@ -1,0 +1,79 @@
+"use client";
+
+import { useId } from 'react';
+
+const OPTIONS = [{"value": "24", "label": "24 mm"}, {"value": "50", "label": "50 mm"}, {"value": "85", "label": "85 mm"}];
+const SUBJECTS = [{ x: 34, y: 18 }, { x: 70, y: 34 }, { x: 100, y: 12 }, { x: 128, y: 30 }, { x: 166, y: 16 }, { x: 100, y: 46 }];
+
+const css = `
+  .radio-focal { --i: 1; display: grid; justify-items: center; gap: 12px; width: 260px; }
+  .radio-focal:has(.radio-focal__opt:nth-child(1) input:checked) { --i: 0; }
+  .radio-focal:has(.radio-focal__opt:nth-child(2) input:checked) { --i: 1; }
+  .radio-focal:has(.radio-focal__opt:nth-child(3) input:checked) { --i: 2; }
+  .radio-focal__plan { position: relative; width: 200px; height: 112px; }
+  .radio-focal__cone {
+    position: absolute;
+    inset: 0 0 12px;
+    background: linear-gradient(color-mix(in oklab, light-dark(#373a40, #f1f2f3) 16%, transparent), color-mix(in oklab, light-dark(#373a40, #f1f2f3) 4%, transparent));
+    clip-path: polygon(50% 100%, calc(50% - var(--s)) 0, calc(50% + var(--s)) 0);
+    transition: clip-path 0.6s cubic-bezier(0.3, 1.2, 0.5, 1);
+  }
+  .radio-focal__edge { position: absolute; left: 50%; bottom: 12px; width: 1px; height: 104px; background: linear-gradient(transparent, light-dark(#5f626a, #a7abb2)); transform-origin: 50% 100%; transition: transform 0.6s cubic-bezier(0.3, 1.2, 0.5, 1); }
+  .radio-focal__edge--l { transform: rotate(calc(var(--a) * -0.5deg)); }
+  .radio-focal__edge--r { transform: rotate(calc(var(--a) * 0.5deg)); }
+  .radio-focal__subject { position: absolute; width: 8px; height: 8px; margin: -4px; border-radius: 50%; background: light-dark(#6d7179, #7d8087); }
+  .radio-focal__cam { position: absolute; left: 50%; bottom: 0; width: 22px; height: 14px; margin-left: -11px; border-radius: 3px; background: light-dark(#42454c, #e5e6e9); }
+  .radio-focal__cam::before { content: ''; position: absolute; left: 6px; top: -5px; width: 10px; height: 6px; border-radius: 2px 2px 0 0; background: light-dark(#50535b, #c6c8cd); }
+  .radio-focal:has(.radio-focal__opt:nth-child(1) input:checked) { --a: 84; --s: 92px; }
+  .radio-focal:has(.radio-focal__opt:nth-child(2) input:checked) { --a: 46; --s: 40px; }
+  .radio-focal:has(.radio-focal__opt:nth-child(3) input:checked) { --a: 28; --s: 23px; }
+  .radio-focal__read { display: grid; color: light-dark(#50535b, #c6c8cd); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .radio-focal__read > * { grid-area: 1 / 1; text-align: center; opacity: 0; transform: translateY(4px); transition: opacity 0.25s, transform 0.3s; }
+  .radio-focal:has(.radio-focal__opt:nth-child(1) input:checked) .radio-focal__read > :nth-child(1) { opacity: 1; transform: none; }
+  .radio-focal:has(.radio-focal__opt:nth-child(2) input:checked) .radio-focal__read > :nth-child(2) { opacity: 1; transform: none; }
+  .radio-focal:has(.radio-focal__opt:nth-child(3) input:checked) .radio-focal__read > :nth-child(3) { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .radio-focal__cone, .radio-focal__edge { transition: none; }
+  }
+  .radio-focal__opts { display: flex; gap: 3px; padding: 4px; border-radius: 12px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+  .radio-focal__opt { position: relative; flex: 1; padding: 7px 10px; border-radius: 8px; color: light-dark(#5f626a, #a7abb2); font-size: 12.5px; font-weight: 500; text-align: center; white-space: nowrap; cursor: pointer; transition: background-color 0.25s, color 0.25s; }
+  .radio-focal__opt:hover { color: light-dark(#42454c, #e5e6e9); }
+  .radio-focal__opt:has(input:checked) { background: light-dark(#373a40, #f1f2f3); color: light-dark(#fbfcfd, #121417); }
+  .radio-focal__opt:has(input:focus-visible) { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+  .radio-focal__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+`;
+
+export function FocalRadio() {
+  const name = useId();
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="radio-focal">
+        <div className="radio-focal__plan" aria-hidden="true">
+          <span className="radio-focal__cone" />
+          <span className="radio-focal__edge radio-focal__edge--l" />
+          <span className="radio-focal__edge radio-focal__edge--r" />
+          {SUBJECTS.map((s) => (
+            <span key={`${s.x}-${s.y}`} className="radio-focal__subject" style={{ left: s.x, top: s.y }} />
+          ))}
+          <span className="radio-focal__cam" />
+        </div>
+        <span className="radio-focal__read" aria-hidden="true">
+          <span>84° field of view</span>
+          <span>46° field of view</span>
+          <span>28° field of view</span>
+        </span>
+        <div className="radio-focal__opts" role="radiogroup" aria-label="Lens">
+          {OPTIONS.map((o, i) => (
+            <label key={o.value} className="radio-focal__opt">
+              <input className="radio-focal__input" type="radio" name={name} value={o.value} defaultChecked={i === 1} />
+              {o.label}
+            </label>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}

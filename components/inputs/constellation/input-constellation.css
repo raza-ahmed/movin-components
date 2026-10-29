@@ -1,0 +1,35 @@
+@keyframes field-constellation-star { from { transform: scale(0); opacity: 0; } 60% { transform: scale(1.8); opacity: 1; } }
+@keyframes field-constellation-twinkle { 50% { opacity: 0.55; } }
+@keyframes field-constellation-line { to { stroke-dashoffset: 0; } }
+.field-constellation { width: 256px; }
+.field-constellation__sky {
+  position: relative;
+  height: 112px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  background: radial-gradient(ellipse at 50% 120%, light-dark(#ebedf0, #232529), light-dark(#fbfcfd, #121417) 70%);
+  box-shadow: inset 0 0 0 1px light-dark(#ebedf0, #232529);
+  overflow: hidden;
+}
+.field-constellation__sky svg { position: absolute; inset: 0; width: 256px; height: 112px; }
+.field-constellation__line { fill: none; stroke: light-dark(#5f626a, #a7abb2); stroke-width: 0.8; stroke-dasharray: 1; stroke-dashoffset: 1; animation: field-constellation-line 0.5s ease-out 0.1s forwards; }
+.field-constellation__star { fill: light-dark(#373a40, #f1f2f3); transform-box: fill-box; transform-origin: center; animation: field-constellation-star 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both, field-constellation-twinkle 2.6s ease-in-out 0.5s infinite; }
+.field-constellation__fig { transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.3, 1); }
+.field-constellation__dust { fill: light-dark(#cbced3, #393c41); }
+.field-constellation__name { position: absolute; left: 10px; bottom: 7px; color: light-dark(#5f626a, #a7abb2); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+.field-constellation__label { display: block; margin-bottom: 6px; color: light-dark(#50535b, #c6c8cd); font-size: 12px; }
+.field-constellation__input {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border: 0;
+  outline: 0;
+  border-radius: 9px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  color: light-dark(#373a40, #f1f2f3);
+  font-family: inherit; font-size: 14px;
+  transition: box-shadow 0.2s;
+}
+.field-constellation__input:focus { box-shadow: inset 0 0 0 1px light-dark(#5f626a, #a7abb2); }
+@media (prefers-reduced-motion: reduce) { .field-constellation__line, .field-constellation__star { animation: none; stroke-dashoffset: 0; } }

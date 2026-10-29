@@ -1,0 +1,100 @@
+"use client";
+
+import { useId } from 'react';
+
+const css = `
+  @keyframes radio-tide-swell { to { transform: translateX(-40px); } }
+  @keyframes radio-tide-bob { 0%, 100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(2px) rotate(6deg); } }
+  .radio-tide { --radio-tide-y: 70px; display: grid; justify-items: center; gap: 12px; }
+  .radio-tide:has(.radio-tide__input[value='mid']:checked) { --radio-tide-y: 48px; }
+  .radio-tide:has(.radio-tide__input[value='high']:checked) { --radio-tide-y: 24px; }
+  .radio-tide__scene {
+    position: relative;
+    width: 210px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: linear-gradient(light-dark(#f3f4f7, #1a1c1f), light-dark(#ebedf0, #232529));
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  }
+  .radio-tide__pier { position: absolute; left: 30px; top: 6px; bottom: 0; width: 10px; background: linear-gradient(90deg, light-dark(#cbced3, #393c41), light-dark(#dbdde1, #2e3035)); }
+  .radio-tide__deck { position: absolute; left: 0; top: 6px; width: 54px; height: 5px; background: light-dark(#6d7179, #7d8087); }
+  .radio-tide__mark { position: absolute; left: 44px; width: 18px; height: 1px; background: light-dark(#6d7179, #7d8087); }
+  .radio-tide__mark span { position: absolute; left: 22px; top: -5px; color: light-dark(#5f626a, #a7abb2); font-size: 8px; font-weight: 600; letter-spacing: 0.08em; }
+  .radio-tide__sea {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 110px;
+    transform: translateY(var(--radio-tide-y));
+    transition: transform 1.4s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+  .radio-tide__water { position: absolute; left: 0; right: 0; top: 4px; bottom: 0; background: linear-gradient(color-mix(in oklab, light-dark(#6d7179, #7d8087) 75%, transparent), color-mix(in oklab, light-dark(#dbdde1, #2e3035) 85%, transparent)); }
+  .radio-tide__wave { position: absolute; left: 0; top: 0; width: 260px; height: 8px; animation: radio-tide-swell 2.6s linear infinite; }
+  .radio-tide__wave path { fill: color-mix(in oklab, light-dark(#6d7179, #7d8087) 75%, transparent); stroke: light-dark(#50535b, #c6c8cd); stroke-width: 1.2; }
+  .radio-tide__buoy { position: absolute; left: 140px; top: -10px; width: 12px; height: 16px; animation: radio-tide-bob 2.2s ease-in-out infinite; }
+  .radio-tide__buoy::before { content: ''; position: absolute; left: 0; bottom: 0; width: 12px; height: 9px; border-radius: 6px 6px 3px 3px; background: linear-gradient(light-dark(#373a40, #f1f2f3) 50%, light-dark(#5f626a, #a7abb2) 50%); }
+  .radio-tide__buoy::after { content: ''; position: absolute; left: 5px; top: 0; width: 2px; height: 8px; background: light-dark(#50535b, #c6c8cd); }
+  .radio-tide__opts { display: flex; gap: 4px; padding: 4px; border-radius: 10px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+  .radio-tide__opt {
+    position: relative;
+    padding: 5px 12px;
+    border-radius: 7px;
+    color: light-dark(#5f626a, #a7abb2);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+  }
+  .radio-tide__opt:hover { color: light-dark(#42454c, #e5e6e9); }
+  .radio-tide__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .radio-tide__opt:has(.radio-tide__input:focus-visible) { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; }
+  .radio-tide__opt:has(.radio-tide__input:checked) { background: light-dark(#42454c, #e5e6e9); color: light-dark(#fbfcfd, #121417); }
+  @media (prefers-reduced-motion: reduce) {
+    .radio-tide * { animation: none !important; transition-duration: 0.01s !important; }
+  }
+`;
+
+const LEVELS = [
+  { value: 'low', label: 'Low', y: 74 },
+  { value: 'mid', label: 'Mid', y: 52 },
+  { value: 'high', label: 'High', y: 28 },
+];
+
+export function TideRadio() {
+  const name = useId();
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="radio-tide">
+        <span className="radio-tide__scene" aria-hidden="true">
+          <span className="radio-tide__pier" />
+          <span className="radio-tide__deck" />
+          {LEVELS.map((l) => (
+            <span key={l.value} className="radio-tide__mark" style={{ top: l.y }}>
+              <span>{l.label.toUpperCase()}</span>
+            </span>
+          ))}
+          <span className="radio-tide__sea">
+            <span className="radio-tide__water" />
+            <svg className="radio-tide__wave" viewBox="0 0 260 8" preserveAspectRatio="none">
+              <path d="M0 4Q10 0 20 4T40 4T60 4T80 4T100 4T120 4T140 4T160 4T180 4T200 4T220 4T240 4T260 4V8H0Z" />
+            </svg>
+            <span className="radio-tide__buoy" />
+          </span>
+        </span>
+        <div className="radio-tide__opts" role="radiogroup" aria-label="Tide">
+          {LEVELS.map((l, i) => (
+            <label key={l.value} className="radio-tide__opt">
+              <input className="radio-tide__input" type="radio" name={name} value={l.value} defaultChecked={i === 0} />
+              {l.label}
+            </label>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}

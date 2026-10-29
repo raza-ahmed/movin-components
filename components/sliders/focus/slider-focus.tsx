@@ -1,0 +1,71 @@
+"use client";
+
+import * as React from "react";
+import { useState } from 'react';
+
+const css = `
+  @keyframes slider-focus-lock { 0% { transform: scale(1); } 40% { transform: scale(0.94); } 100% { transform: scale(1); } }
+  .slider-focus { display: grid; gap: 12px; width: 220px; }
+  .slider-focus__frame { position: relative; height: 110px; overflow: hidden; border-radius: 10px; background: light-dark(#ebedf0, #232529); }
+  .slider-focus__scene { display: block; width: 100%; height: 100%; filter: blur(calc((1 - var(--slider-focus-v)) * 7px)); transform: scale(1.06); transition: filter 0.15s; }
+  .slider-focus__far { fill: light-dark(#dbdde1, #2e3035); }
+  .slider-focus__mid { fill: light-dark(#cbced3, #393c41); }
+  .slider-focus__subject { fill: light-dark(#42454c, #e5e6e9); }
+  .slider-focus__detail { fill: light-dark(#dbdde1, #2e3035); }
+  .slider-focus__box { position: absolute; left: 50%; top: 50%; width: calc(56px + (1 - var(--slider-focus-v)) * 40px); height: calc(48px + (1 - var(--slider-focus-v)) * 30px); transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s; }
+  .slider-focus[data-locked] .slider-focus__box { animation: slider-focus-lock 0.35s ease-out; }
+  .slider-focus__corner { position: absolute; width: 10px; height: 10px; border: 0 solid color-mix(in oklab, light-dark(#373a40, #f1f2f3) calc(40% + var(--slider-focus-v) * 60%), transparent); }
+  .slider-focus__corner:nth-child(1) { left: 0; top: 0; border-width: 2px 0 0 2px; }
+  .slider-focus__corner:nth-child(2) { right: 0; top: 0; border-width: 2px 2px 0 0; }
+  .slider-focus__corner:nth-child(3) { left: 0; bottom: 0; border-width: 0 0 2px 2px; }
+  .slider-focus__corner:nth-child(4) { right: 0; bottom: 0; border-width: 0 2px 2px 0; }
+  .slider-focus__af { position: absolute; left: 8px; top: 6px; display: flex; align-items: center; gap: 4px; color: light-dark(#50535b, #c6c8cd); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; }
+  .slider-focus__af::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: light-dark(#cbced3, #393c41); transition: background-color 0.2s, box-shadow 0.2s; }
+  .slider-focus[data-locked] .slider-focus__af { color: light-dark(#373a40, #f1f2f3); }
+  .slider-focus[data-locked] .slider-focus__af::before { background: light-dark(#373a40, #f1f2f3); box-shadow: 0 0 6px light-dark(#373a40, #f1f2f3); }
+  .slider-focus__track { position: relative; height: 24px; }
+  .slider-focus__rail { position: absolute; left: 0; right: 0; top: 8px; height: 8px; border-radius: 4px; background: repeating-linear-gradient(90deg, light-dark(#dbdde1, #2e3035) 0 2px, transparent 2px 5px); }
+  .slider-focus__thumb { position: absolute; top: 2px; left: calc(var(--slider-focus-v) * (100% - 14px)); width: 14px; height: 20px; border-radius: 4px; background: light-dark(#373a40, #f1f2f3); box-shadow: 0 2px 6px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)); }
+  .slider-focus:has(.slider-focus__input:focus-visible) .slider-focus__thumb { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+  .slider-focus__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+  .slider-focus__input::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 20px; }
+  .slider-focus__input::-moz-range-thumb { width: 14px; height: 20px; border: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    .slider-focus * { transition-duration: 0.01s !important; animation: none !important; }
+  }
+`;
+
+export function FocusSlider() {
+  const [v, setV] = useState(40);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="slider-focus" data-locked={v >= 96 ? '' : undefined} style={{ '--slider-focus-v': v / 100 } as React.CSSProperties}>
+        <div className="slider-focus__frame" aria-hidden="true">
+          <svg className="slider-focus__scene" viewBox="0 0 220 110" preserveAspectRatio="xMidYMid slice">
+            <path className="slider-focus__far" d="M0 70L50 40L90 60L140 30L220 64V110H0Z" />
+            <path className="slider-focus__mid" d="M0 88C60 76 140 80 220 86V110H0Z" />
+            <circle className="slider-focus__subject" cx="110" cy="58" r="18" />
+            <circle className="slider-focus__detail" cx="104" cy="54" r="3" />
+            <circle className="slider-focus__detail" cx="117" cy="54" r="3" />
+            <path className="slider-focus__detail" d="M102 64q8 7 16 0" />
+          </svg>
+          <span className="slider-focus__box">
+            <span className="slider-focus__corner" />
+            <span className="slider-focus__corner" />
+            <span className="slider-focus__corner" />
+            <span className="slider-focus__corner" />
+          </span>
+          <span className="slider-focus__af">AF</span>
+        </div>
+        <div className="slider-focus__track">
+          <span className="slider-focus__rail" />
+          <span className="slider-focus__thumb" />
+          <input className="slider-focus__input" type="range" min={0} max={100} value={v} onChange={(e) => setV(+e.target.value)} aria-label="Focus" />
+        </div>
+      </div>
+    </>
+  );
+}

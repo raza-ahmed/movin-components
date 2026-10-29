@@ -1,0 +1,98 @@
+"use client";
+
+import * as React from "react";
+import { useId, useRef, useState } from 'react';
+
+const TABS = [
+  { label: 'Draw', body: 'Pencil, pen and marker. Hold Shift for straight lines.' },
+  { label: 'Shape', body: 'Rectangles, circles and arrows that snap to the grid.' },
+  { label: 'Text', body: 'Click anywhere to type. Double-click to edit.' },
+];
+
+const css = `
+  .tabs-keys { width: 250px; }
+  .tabs-keys__list { display: flex; justify-content: center; gap: 10px; padding-bottom: 6px; }
+  .tabs-keys__tab {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 66px;
+    height: 50px;
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(light-dark(#dbdde1, #2e3035), light-dark(#ebedf0, #232529));
+    box-shadow: inset 0 1px 0 light-dark(#cbced3, #393c41), 0 5px 0 light-dark(#f3f4f7, #1a1c1f), 0 6px 0 light-dark(#fbfcfd, #121417), 0 10px 12px -4px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
+    color: light-dark(#50535b, #c6c8cd);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, color 0.2s;
+  }
+  .tabs-keys__tab:hover { color: light-dark(#373a40, #f1f2f3); }
+  .tabs-keys__tab:active, .tabs-keys__tab[aria-selected='true'] { transform: translateY(4px); box-shadow: inset 0 1px 0 light-dark(#cbced3, #393c41), 0 1px 0 light-dark(#f3f4f7, #1a1c1f), 0 2px 0 light-dark(#fbfcfd, #121417), 0 3px 6px -2px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5)); }
+  .tabs-keys__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+  .tabs-keys__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+  .tabs-keys__num { position: absolute; left: 7px; top: 5px; color: light-dark(#6d7179, #7d8087); font-size: 9px; font-weight: 600; }
+  .tabs-keys__led { position: absolute; right: 7px; top: 7px; width: 5px; height: 5px; border-radius: 50%; background: light-dark(#f3f4f7, #1a1c1f); transition: background-color 0.2s, box-shadow 0.2s; }
+  .tabs-keys__tab[aria-selected='true'] .tabs-keys__led { background: light-dark(#373a40, #f1f2f3); box-shadow: 0 0 6px light-dark(#373a40, #f1f2f3); }
+  .tabs-keys__panel { padding: 16px 4px 0; min-height: calc(3.1em + 16px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; text-align: center; }
+  @media (prefers-reduced-motion: reduce) {
+    .tabs-keys__tab { transition: none; }
+  }
+`;
+
+export function KeysTabs() {
+  const id = useId();
+  const [sel, setSel] = useState(0);
+  const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    const n = TABS.length;
+    // The number keys pick a tab too, like a toolbar shortcut.
+    const digit = /^[1-9]$/.test(e.key) && +e.key <= n ? +e.key - 1 : undefined;
+    const next = digit ?? { ArrowRight: (sel + 1) % n, ArrowLeft: (sel + n - 1) % n, Home: 0, End: n - 1 }[e.key];
+    if (next === undefined) return;
+    e.preventDefault();
+    setSel(next);
+    tabs.current[next]?.focus();
+  };
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="tabs-keys">
+        <div className="tabs-keys__list" role="tablist" aria-label="Tools" onKeyDown={onKeyDown}>
+          {TABS.map((t, i) => (
+            <button
+              key={t.label}
+              ref={(el) => {
+                tabs.current[i] = el;
+              }}
+              className="tabs-keys__tab"
+              type="button"
+              role="tab"
+              id={`${id}-tab-${i}`}
+              aria-selected={sel === i}
+              aria-controls={`${id}-panel-${i}`}
+              aria-keyshortcuts={String(i + 1)}
+              tabIndex={sel === i ? 0 : -1}
+              onClick={() => setSel(i)}
+            >
+              <span className="tabs-keys__num" aria-hidden="true">
+                {i + 1}
+              </span>
+              <span className="tabs-keys__led" aria-hidden="true" />
+              {t.label}
+            </button>
+          ))}
+        </div>
+        {TABS.map((t, i) => (
+          <div key={t.label} className="tabs-keys__panel" role="tabpanel" id={`${id}-panel-${i}`} aria-labelledby={`${id}-tab-${i}`} hidden={sel !== i}>
+            {t.body}
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}

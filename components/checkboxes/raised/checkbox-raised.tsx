@@ -16,7 +16,7 @@ export function RaisedCheckbox() {
             : 'light-dark(#fbfcfd, #121417)',
           border: on ? 'none' : '2px solid light-dark(rgba(55,58,64,0.18), rgba(241,242,243,0.18))',
           boxShadow: on
-            ? '0 -1px 0 1px light-dark(rgba(95,98,106,0.5), rgba(167,171,178,0.5)), 0 0 0 3px light-dark(rgba(109,113,121,0.3), rgba(125,128,135,0.3)), 0 8px 20px light-dark(rgba(219,221,225,0.65), rgba(46,48,53,0.65)), 0 3px 6px light-dark(rgba(0, 0, 0, 0.12), rgba(0,0,0,0.4)), inset 0 1px 3px light-dark(rgba(55,58,64,0.35), rgba(241,242,243,0.35)), inset 0 -2px 4px light-dark(rgba(0, 0, 0, 0.11), rgba(0,0,0,0.35))'
+            ? '0 -1px 0 1px light-dark(rgba(95,98,106,0.5), rgba(167,171,178,0.5)), 0 0 0 3px light-dark(rgba(109,113,121,0.3), rgba(125,128,135,0.3)), 0 8px 20px light-dark(rgba(0, 0, 0, 0.12), rgba(46,48,53,0.65)), 0 3px 6px light-dark(rgba(0, 0, 0, 0.12), rgba(0,0,0,0.4)), inset 0 1px 3px light-dark(rgba(55,58,64,0.35), rgba(241,242,243,0.35)), inset 0 -2px 4px light-dark(rgba(0, 0, 0, 0.11), rgba(0,0,0,0.35))'
             : 'inset 0 2px 4px light-dark(rgba(0, 0, 0, 0.15), rgba(0,0,0,0.5))',
           transform: on ? 'scale(1) translateY(-1px)' : 'scale(1) translateY(0px)',
           transition: on

@@ -1,0 +1,23 @@
+@keyframes tabs-squiggle-wave-a { 0% { opacity: 1; transform: scaleY(0.1); } 30% { transform: scaleY(1); } 70% { transform: scaleY(0.7); } 100% { opacity: 1; transform: scaleY(0.1); } }
+@keyframes tabs-squiggle-wave-b { 0% { opacity: 1; transform: scaleY(0.1); } 30% { transform: scaleY(1); } 70% { transform: scaleY(0.7); } 100% { opacity: 1; transform: scaleY(0.1); } }
+@keyframes tabs-squiggle-rest-a { 0%, 100% { opacity: 0; } }
+@keyframes tabs-squiggle-rest-b { 0%, 100% { opacity: 0; } }
+.tabs-squiggle { width: 260px; }
+.tabs-squiggle__list { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); padding-bottom: 10px; }
+.tabs-squiggle__tab { padding: 10px 0 6px; border: 0; border-radius: 6px; background: none; color: light-dark(#5f626a, #a7abb2); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: color 0.2s; }
+.tabs-squiggle__tab:hover { color: light-dark(#42454c, #e5e6e9); }
+.tabs-squiggle__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+.tabs-squiggle__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: -2px; }
+.tabs-squiggle__line { position: absolute; bottom: 0; left: calc(var(--tabs-squiggle-i) / 3 * 100% + 16px); width: calc(100% / 3 - 32px); height: 10px; transition: left 0.5s cubic-bezier(0.45, 0, 0.2, 1); }
+.tabs-squiggle__line::before { content: ''; position: absolute; left: 0; right: 0; top: 4px; height: 2.5px; border-radius: 2px; background: light-dark(#373a40, #f1f2f3); }
+.tabs-squiggle__line svg { display: block; width: 100%; height: 100%; overflow: visible; opacity: 0; }
+.tabs-squiggle[data-flip='a'] .tabs-squiggle__line::before { animation: tabs-squiggle-rest-a 0.7s; }
+.tabs-squiggle[data-flip='b'] .tabs-squiggle__line::before { animation: tabs-squiggle-rest-b 0.7s; }
+.tabs-squiggle[data-flip='a'] .tabs-squiggle__line svg { animation: tabs-squiggle-wave-a 0.7s ease-in-out; }
+.tabs-squiggle[data-flip='b'] .tabs-squiggle__line svg { animation: tabs-squiggle-wave-b 0.7s ease-in-out; }
+.tabs-squiggle__line path { fill: none; stroke: light-dark(#373a40, #f1f2f3); stroke-width: 2.5; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.tabs-squiggle__panel { padding: 12px 4px 0; min-height: calc(3.1em + 14px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-squiggle__line { transition: none; }
+  .tabs-squiggle__line svg, .tabs-squiggle__line::before { animation: none !important; }
+}

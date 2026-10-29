@@ -1,0 +1,112 @@
+"use client";
+
+import * as React from "react";
+const css = `
+  @keyframes card-id-badge-scan {
+    0% { transform: translateY(0); opacity: 1; }
+    80% { transform: translateY(150px); opacity: 1; }
+    100% { transform: translateY(150px); opacity: 0; }
+  }
+  .card-id-badge {
+    position: relative;
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 12px;
+    width: 240px;
+    padding: 14px;
+    border-radius: 16px;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .card-id-badge:focus-visible { outline: 2px solid light-dark(#42454c, #e5e6e9); outline-offset: 3px; }
+  .card-id-badge__photo {
+    position: relative;
+    height: 78px;
+    border-radius: 10px;
+    background: light-dark(#ebedf0, #232529);
+    overflow: hidden;
+  }
+  /* A head-and-shoulders silhouette. */
+  .card-id-badge__photo::before { content: ''; position: absolute; left: 50%; top: 16px; width: 26px; height: 26px; margin-left: -13px; border-radius: 50%; background: light-dark(#6d7179, #7d8087); }
+  .card-id-badge__photo::after { content: ''; position: absolute; left: 50%; bottom: -14px; width: 50px; height: 40px; margin-left: -25px; border-radius: 50%; background: light-dark(#6d7179, #7d8087); }
+  .card-id-badge__name { color: light-dark(#373a40, #f1f2f3); font-size: 13px; font-weight: 600; }
+  .card-id-badge__role { color: light-dark(#5f626a, #a7abb2); font-size: 11px; margin-bottom: 6px; }
+  .card-id-badge__field { display: flex; justify-content: space-between; align-items: center; height: 17px; color: light-dark(#5f626a, #a7abb2); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .card-id-badge__field b { color: light-dark(#42454c, #e5e6e9); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 500; letter-spacing: 0; }
+  .card-id-badge__check { width: 12px; height: 12px; margin-left: 6px; color: light-dark(#373a40, #f1f2f3); opacity: 0; transform: scale(0.4); transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.34, 1.6, 0.64, 1); }
+  .card-id-badge__scan {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 2px;
+    background: light-dark(#373a40, #f1f2f3);
+    box-shadow: 0 0 10px 3px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 45%, transparent);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .card-id-badge__stamp {
+    position: absolute;
+    left: 10px;
+    top: 58px;
+    padding: 2px 6px;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    border: 1.5px solid light-dark(#373a40, #f1f2f3);
+    border-radius: 4px;
+    color: light-dark(#373a40, #f1f2f3);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    opacity: 0;
+    transform: rotate(-14deg) scale(1.8);
+    transition: opacity 0.2s ease, transform 0.35s cubic-bezier(0.34, 1.6, 0.64, 1);
+  }
+  .card-id-badge:hover .card-id-badge__scan, .card-id-badge:focus-visible .card-id-badge__scan { animation: card-id-badge-scan 1.1s cubic-bezier(0.45, 0, 0.55, 1) forwards; }
+  /* Each field ticks as the scan line passes its row. */
+  .card-id-badge:hover .card-id-badge__check, .card-id-badge:focus-visible .card-id-badge__check { opacity: 1; transform: none; transition-delay: var(--t); }
+  .card-id-badge:hover .card-id-badge__stamp, .card-id-badge:focus-visible .card-id-badge__stamp { opacity: 1; transform: rotate(-14deg); transition-delay: 1.05s; }
+  @media (prefers-reduced-motion: reduce) {
+    .card-id-badge:hover .card-id-badge__scan { animation: none; }
+    .card-id-badge__check, .card-id-badge__stamp { transition-duration: 0.01s; }
+  }
+`;
+
+const FIELDS = [
+  { k: 'ID', v: 'MV-0418', t: '0.55s' },
+  { k: 'Dept', v: 'Design', t: '0.68s' },
+  { k: 'Level', v: 'L4', t: '0.81s' },
+];
+
+export function IdBadgeCard() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="card-id-badge" tabIndex={0} role="group" aria-label="Access badge: Sam Okafor, Design, level 4">
+        <span className="card-id-badge__photo" aria-hidden="true" />
+        <div>
+          <div className="card-id-badge__name">Sam Okafor</div>
+          <div className="card-id-badge__role">Product designer</div>
+          {FIELDS.map((f) => (
+            <div key={f.k} className="card-id-badge__field">
+              {f.k}
+              <span style={{ display: 'flex', alignItems: 'center' }}>
+                <b>{f.v}</b>
+                <svg className="card-id-badge__check" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ '--t': f.t } as React.CSSProperties}>
+                  <path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+            </div>
+          ))}
+        </div>
+        <span className="card-id-badge__scan" aria-hidden="true" />
+        <span className="card-id-badge__stamp" aria-hidden="true">
+          CLEARED
+        </span>
+      </div>
+    </>
+  );
+}

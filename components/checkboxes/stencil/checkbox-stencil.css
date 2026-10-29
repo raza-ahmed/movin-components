@@ -1,0 +1,50 @@
+@keyframes cb-stencil-plate {
+  0% { opacity: 0; transform: translateY(-16px) rotate(-6deg); }
+  18% { opacity: 1; transform: none; }
+  64% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: translate(12px, -18px) rotate(14deg); }
+}
+@keyframes cb-stencil-mist {
+  0%, 22% { opacity: 0; transform: scale(0.4); }
+  35% { opacity: 0.55; }
+  62% { opacity: 0; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(1.5); }
+}
+@keyframes cb-stencil-paint { 0%, 30% { opacity: 0; } 55%, 100% { opacity: 1; } }
+.cb-stencil { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+.cb-stencil__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.cb-stencil__box {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: inset 0 0 0 1.5px light-dark(#cbced3, #393c41);
+}
+.cb-stencil__input:focus-visible + .cb-stencil__box { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+.cb-stencil__box svg { position: absolute; overflow: visible; }
+.cb-stencil__paint { inset: 0; width: 28px; height: 28px; opacity: 0; transition: opacity 0.25s ease; }
+.cb-stencil__input:checked + .cb-stencil__box .cb-stencil__paint { opacity: 1; transition: none; }
+.cb-stencil__spray { fill: light-dark(#373a40, #f1f2f3); opacity: 0.22; filter: blur(1.4px); }
+.cb-stencil__fill { fill: light-dark(#373a40, #f1f2f3); }
+.cb-stencil__speck { fill: light-dark(#373a40, #f1f2f3); opacity: 0.5; }
+.cb-stencil__plate { left: -3px; top: -3px; width: 34px; height: 34px; opacity: 0; pointer-events: none; z-index: 1; }
+.cb-stencil__plate path { fill: light-dark(#6d7179, #7d8087); }
+.cb-stencil__plate circle { fill: light-dark(#dbdde1, #2e3035); }
+.cb-stencil__mist {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 70%, transparent), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+.cb-stencil[data-armed] .cb-stencil__input:checked + .cb-stencil__box .cb-stencil__plate { animation: cb-stencil-plate 0.95s ease-in-out; }
+.cb-stencil[data-armed] .cb-stencil__input:checked + .cb-stencil__box .cb-stencil__paint { animation: cb-stencil-paint 0.95s linear; }
+.cb-stencil[data-armed] .cb-stencil__input:checked + .cb-stencil__box .cb-stencil__mist { animation: cb-stencil-mist 0.95s ease-out var(--d); }
+@media (prefers-reduced-motion: reduce) {
+  .cb-stencil__box * { animation: none !important; transition-duration: 0.01s !important; }
+}

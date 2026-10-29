@@ -1,0 +1,87 @@
+"use client";
+
+const CLOUDS = [
+  { top: 22, w: 46, d: 0 },
+  { top: 48, w: 34, d: -3 },
+  { top: 66, w: 56, d: -6.5 },
+];
+
+const css = `
+  @keyframes card-window-seat-drift { from { transform: translateX(80px); } to { transform: translateX(-90px); } }
+  .card-window-seat {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 260px;
+    padding: 14px;
+    border-radius: 18px;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035), 0 12px 24px -14px light-dark(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.7));
+    outline: none;
+  }
+  .card-window-seat:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+  /* The cabin window: a rounded frame with the sky behind and a shade that slides up. */
+  .card-window-seat__frame {
+    position: relative;
+    flex: none;
+    width: 78px;
+    height: 104px;
+    padding: 7px;
+    border-radius: 40px;
+    background: light-dark(#dbdde1, #2e3035);
+    box-shadow: inset 0 2px 4px light-dark(rgba(0, 0, 0, 0.11), rgba(0, 0, 0, 0.35)), 0 0 0 1px light-dark(#cbced3, #393c41);
+  }
+  .card-window-seat__pane { position: relative; height: 100%; border-radius: 34px; overflow: hidden; background: linear-gradient(light-dark(#6d7179, #7d8087), light-dark(#50535b, #c6c8cd)); }
+  .card-window-seat__cloud { position: absolute; left: 0; height: 12px; border-radius: 8px; background: light-dark(#373a40, #f1f2f3); opacity: 0.85; animation: card-window-seat-drift 9s linear infinite; }
+  .card-window-seat__cloud::before { content: ''; position: absolute; left: 25%; bottom: 5px; width: 50%; height: 12px; border-radius: 50%; background: inherit; }
+  .card-window-seat__wing { position: absolute; right: -6px; bottom: 10px; width: 64px; height: 30px; background: light-dark(#ebedf0, #232529); clip-path: polygon(0 100%, 100% 30%, 100% 50%, 18% 100%); }
+  .card-window-seat__shade {
+    position: absolute;
+    inset: 0;
+    border-radius: 34px;
+    background: linear-gradient(light-dark(#ebedf0, #232529), light-dark(#dbdde1, #2e3035));
+    box-shadow: inset 0 -2px 0 light-dark(#6d7179, #7d8087);
+    transition: transform 0.7s cubic-bezier(0.5, 0, 0.2, 1);
+  }
+  .card-window-seat__shade::after { content: ''; position: absolute; left: 50%; bottom: 6px; width: 16px; height: 3px; margin-left: -8px; border-radius: 2px; background: light-dark(#6d7179, #7d8087); }
+  .card-window-seat:is(:hover, :focus-visible) .card-window-seat__shade { transform: translateY(-84%); }
+  .card-window-seat__info { display: grid; gap: 2px; min-width: 0; color: light-dark(#5f626a, #a7abb2); font-size: 11.5px; }
+  .card-window-seat__route { color: light-dark(#373a40, #f1f2f3); font-size: 19px; font-weight: 600; letter-spacing: 0.02em; }
+  .card-window-seat__route span { color: light-dark(#5f626a, #a7abb2); font-weight: 400; }
+  .card-window-seat__seat { margin-top: 8px; display: inline-flex; gap: 6px; align-items: baseline; color: light-dark(#50535b, #c6c8cd); }
+  .card-window-seat__seat b { color: light-dark(#373a40, #f1f2f3); font-size: 15px; font-weight: 600; }
+  @media (prefers-reduced-motion: reduce) {
+    .card-window-seat__cloud { animation: none; transform: translateX(10px); }
+    .card-window-seat__shade { transition-duration: 0.01s; }
+  }
+`;
+
+export function WindowSeatCard() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="card-window-seat" tabIndex={0} role="group" aria-label="Flight San Francisco to Tokyo Haneda, seat 32A by the window, 11 hours 5 minutes">
+        <div className="card-window-seat__frame" aria-hidden="true">
+          <div className="card-window-seat__pane">
+            {CLOUDS.map((c, i) => (
+              <span key={i} className="card-window-seat__cloud" style={{ top: c.top, width: c.w, animationDelay: `${c.d}s` }} />
+            ))}
+            <span className="card-window-seat__wing" />
+            <span className="card-window-seat__shade" />
+          </div>
+        </div>
+        <div className="card-window-seat__info" aria-hidden="true">
+          <span className="card-window-seat__route">
+            SFO <span>→</span> HND
+          </span>
+          <span>Departs 11:40 · 11 h 05</span>
+          <span className="card-window-seat__seat">
+            Seat <b>32A</b> Window
+          </span>
+        </div>
+      </div>
+    </>
+  );
+}

@@ -1,0 +1,32 @@
+@keyframes loader-flask-level {
+  0% { transform: translateY(58px); }
+  45%, 60% { transform: translateY(8px); }
+  100% { transform: translateY(58px); }
+}
+@keyframes loader-flask-wave { to { transform: translateX(-40px); } }
+@keyframes loader-flask-bubble {
+  0% { transform: translateY(0) scale(0.6); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-34px) scale(1); opacity: 0; }
+}
+.loader-flask { display: block; width: 80px; height: 100px; overflow: visible; }
+.loader-flask__glass { fill: none; stroke: light-dark(#50535b, #c6c8cd); stroke-width: 1.6; stroke-linejoin: round; }
+.loader-flask__rim { stroke: light-dark(#50535b, #c6c8cd); stroke-width: 1.6; stroke-linecap: round; }
+.loader-flask__level { animation: loader-flask-level 4s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+.loader-flask__wave { animation: loader-flask-wave 1.2s linear infinite; }
+.loader-flask__wave--back { animation-duration: 1.9s; animation-direction: reverse; }
+.loader-flask__liquid { fill: color-mix(in oklab, light-dark(#373a40, #f1f2f3) 75%, transparent); }
+.loader-flask__liquid--back { fill: color-mix(in oklab, light-dark(#373a40, #f1f2f3) 30%, transparent); }
+.loader-flask__bubble {
+  fill: none;
+  stroke: light-dark(#fbfcfd, #121417);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: loader-flask-bubble 1.6s ease-in var(--d) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader-flask__level { animation: none; transform: translateY(30px); }
+  .loader-flask__wave, .loader-flask__bubble { animation: none; }
+}

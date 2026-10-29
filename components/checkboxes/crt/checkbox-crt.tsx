@@ -1,0 +1,92 @@
+"use client";
+
+import { useState } from 'react';
+
+const css = `
+  @keyframes cb-crt-on {
+    0% { opacity: 1; transform: scale(0, 0.03); }
+    30% { transform: scale(1, 0.03); }
+    60% { transform: scale(1, 1.08); }
+    100% { opacity: 1; transform: scale(1, 1); }
+  }
+  @keyframes cb-crt-off {
+    0% { opacity: 1; transform: scale(1, 1); }
+    40% { transform: scale(1, 0.03); }
+    75% { opacity: 1; transform: scale(0.08, 0.03); }
+    100% { opacity: 0; transform: scale(0, 0); }
+  }
+  @keyframes cb-crt-dot { 0%, 70% { opacity: 0; } 78% { opacity: 1; } 100% { opacity: 0; } }
+  .cb-crt { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .cb-crt__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .cb-crt__set { position: relative; width: 38px; height: 38px; }
+  .cb-crt__bezel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 38px;
+    height: 32px;
+    border-radius: 7px;
+    background: linear-gradient(light-dark(#cbced3, #393c41), light-dark(#dbdde1, #2e3035));
+    box-shadow: inset 0 0 0 1px light-dark(#6d7179, #7d8087);
+  }
+  .cb-crt__input:focus-visible + .cb-crt__set .cb-crt__bezel { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+  .cb-crt__foot { position: absolute; left: 12px; bottom: 0; width: 14px; height: 6px; border-radius: 0 0 3px 3px; background: light-dark(#dbdde1, #2e3035); }
+  .cb-crt__screen {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 30px;
+    height: 24px;
+    overflow: hidden;
+    border-radius: 6px / 8px;
+    background: light-dark(#fbfcfd, #121417);
+    box-shadow: inset 0 0 6px light-dark(#fbfcfd, #121417);
+    transition: background-color 0.3s;
+  }
+  .cb-crt__img { position: absolute; inset: 0; opacity: 0; transform: scale(0, 0); }
+  .cb-crt__img::before { content: ''; position: absolute; inset: 0; background: radial-gradient(color-mix(in oklab, light-dark(#373a40, #f1f2f3) 14%, transparent), transparent 75%); }
+  .cb-crt__img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(transparent 0 1px, color-mix(in oklab, light-dark(#fbfcfd, #121417) 55%, transparent) 1px 2px);
+  }
+  .cb-crt__img svg { position: absolute; inset: 0; width: 30px; height: 24px; }
+  .cb-crt__img path { fill: none; stroke: light-dark(#373a40, #f1f2f3); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 2px light-dark(#42454c, #e5e6e9)); }
+  .cb-crt__dot { position: absolute; left: 13px; top: 10px; width: 4px; height: 4px; border-radius: 50%; background: light-dark(#373a40, #f1f2f3); box-shadow: 0 0 4px light-dark(#373a40, #f1f2f3); opacity: 0; }
+  .cb-crt__input:checked + .cb-crt__set .cb-crt__img { opacity: 1; transform: none; }
+  .cb-crt[data-armed] .cb-crt__input:checked + .cb-crt__set .cb-crt__img { animation: cb-crt-on 0.42s cubic-bezier(0.3, 0, 0.3, 1); }
+  .cb-crt[data-armed] .cb-crt__input:not(:checked) + .cb-crt__set .cb-crt__img { animation: cb-crt-off 0.4s ease-in; }
+  .cb-crt[data-armed] .cb-crt__input:not(:checked) + .cb-crt__set .cb-crt__dot { animation: cb-crt-dot 0.9s ease-out; }
+  @media (prefers-reduced-motion: reduce) {
+    .cb-crt__set * { animation: none !important; }
+  }
+`;
+
+export function CrtCheckbox() {
+  const [armed, setArmed] = useState(false);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="cb-crt" data-armed={armed || undefined}>
+        <input className="cb-crt__input" type="checkbox" onChange={() => setArmed(true)} />
+        <span className="cb-crt__set" aria-hidden="true">
+          <span className="cb-crt__foot" />
+          <span className="cb-crt__bezel">
+            <span className="cb-crt__screen">
+              <span className="cb-crt__img">
+                <svg viewBox="0 0 30 24">
+                  <path d="M9 12.5L13 16.5L21.5 7.5" />
+                </svg>
+              </span>
+              <span className="cb-crt__dot" />
+            </span>
+          </span>
+        </span>
+        Screen on
+      </label>
+    </>
+  );
+}

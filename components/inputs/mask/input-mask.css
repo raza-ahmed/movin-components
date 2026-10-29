@@ -1,0 +1,22 @@
+@keyframes field-mask-drop { from { opacity: 0; transform: translateY(-9px); } 60% { opacity: 1; transform: translateY(1px); } }
+@keyframes field-mask-draw { to { stroke-dashoffset: 0; } }
+.field-mask { width: 250px; }
+.field-mask__label { display: block; margin-bottom: 6px; color: light-dark(#50535b, #c6c8cd); font-size: 12px; }
+.field-mask__box {
+  position: relative;
+  height: 44px;
+  border-radius: 10px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  transition: box-shadow 0.2s;
+}
+.field-mask__box:focus-within { box-shadow: inset 0 0 0 1px light-dark(#5f626a, #a7abb2); }
+.field-mask__input, .field-mask__mirror { padding: 0 14px; font: 500 16px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 1px; }
+.field-mask__input { position: relative; z-index: 1; width: 100%; height: 100%; border: 0; outline: 0; background: none; color: transparent; caret-color: light-dark(#373a40, #f1f2f3); }
+.field-mask__mirror { position: absolute; inset: 0; display: flex; align-items: center; white-space: pre; pointer-events: none; }
+.field-mask__slot { display: inline-block; color: light-dark(#cbced3, #393c41); }
+.field-mask__fill { display: inline-block; color: light-dark(#373a40, #f1f2f3); }
+.field-mask__fill[data-digit] { animation: field-mask-drop 0.28s cubic-bezier(0.2, 0.8, 0.3, 1); }
+.field-mask__ok { position: absolute; right: 12px; top: 13px; width: 18px; height: 18px; color: light-dark(#373a40, #f1f2f3); }
+.field-mask__ok path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: field-mask-draw 0.35s ease-out forwards; }
+@media (prefers-reduced-motion: reduce) { .field-mask__fill[data-digit], .field-mask__ok path { animation: none; stroke-dashoffset: 0; } }

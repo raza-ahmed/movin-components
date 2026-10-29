@@ -1,0 +1,97 @@
+"use client";
+
+const TODO = [
+  { t: 'Call the printer', done: true },
+  { t: 'Proof the menu', done: true },
+  { t: 'Book the photos', done: false },
+];
+const RINGS = Array.from({ length: 9 }, (_, i) => i);
+
+const css = `
+  .card-notebook { position: relative; width: 170px; height: 196px; perspective: 800px; outline: none; }
+  .card-notebook:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 4px; border-radius: 10px; }
+  .card-notebook__page {
+    position: absolute;
+    inset: 14px 0 0;
+    padding: 18px 14px 10px;
+    border-radius: 4px 4px 10px 10px;
+    background: repeating-linear-gradient(light-dark(#fbfcfd, #121417) 0 21px, light-dark(#ebedf0, #232529) 21px 22px);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035), 0 14px 26px -14px light-dark(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.7));
+  }
+  .card-notebook__page h4 { margin: 0 0 5px; color: light-dark(#373a40, #f1f2f3); font-size: 12px; font-weight: 600; line-height: 17px; }
+  .card-notebook__page ul { margin: 0; padding: 0; list-style: none; }
+  .card-notebook__page li { display: flex; align-items: center; gap: 7px; height: 22px; color: light-dark(#42454c, #e5e6e9); font-size: 11.5px; }
+  .card-notebook__page li[data-done] { color: light-dark(#5f626a, #a7abb2); text-decoration: line-through; }
+  .card-notebook__page li span { flex: none; width: 10px; height: 10px; border-radius: 3px; box-shadow: inset 0 0 0 1.2px light-dark(#6d7179, #7d8087); }
+  .card-notebook__page li[data-done] span { background: light-dark(#5f626a, #a7abb2); box-shadow: none; }
+  /* The cover is hinged at the spiral and flips up and over the top. */
+  .card-notebook__cover {
+    position: absolute;
+    inset: 14px 0 0;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+    transition: transform 0.75s cubic-bezier(0.35, 1, 0.4, 1) 0.12s;
+  }
+  .card-notebook__front, .card-notebook__back { position: absolute; inset: 0; border-radius: 4px 4px 10px 10px; backface-visibility: hidden; }
+  .card-notebook__front {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    background: light-dark(#dbdde1, #2e3035);
+    box-shadow: inset 0 0 0 1px light-dark(#cbced3, #393c41), 0 14px 26px -14px light-dark(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.7));
+    color: light-dark(#373a40, #f1f2f3);
+  }
+  .card-notebook__front b { font-size: 16px; font-weight: 600; }
+  .card-notebook__front small { color: light-dark(#50535b, #c6c8cd); font-size: 11px; }
+  .card-notebook__back { transform: rotateX(180deg); background: light-dark(#ebedf0, #232529); box-shadow: inset 0 0 0 1px light-dark(#cbced3, #393c41); }
+  .card-notebook__band { position: absolute; top: 14px; bottom: 0; right: 22px; width: 7px; background: light-dark(#6d7179, #7d8087); box-shadow: inset 1px 0 0 light-dark(#5f626a, #a7abb2); transition: transform 0.4s cubic-bezier(0.5, 0, 0.7, 0.4), opacity 0.3s; }
+  .card-notebook__rings { position: absolute; top: 4px; left: 16px; right: 16px; display: flex; justify-content: space-between; }
+  .card-notebook__rings span { width: 7px; height: 18px; border-radius: 4px; border: 1.5px solid light-dark(#5f626a, #a7abb2); background: light-dark(#fbfcfd, #121417); }
+  .card-notebook:is(:hover, :focus-visible) .card-notebook__band { transform: translateX(40px); opacity: 0; }
+  .card-notebook:is(:hover, :focus-visible) .card-notebook__cover { transform: rotateX(118deg); }
+  @media (prefers-reduced-motion: reduce) {
+    .card-notebook__cover, .card-notebook__band { transition-duration: 0.01s; transition-delay: 0s; }
+  }
+`;
+
+export function NotebookCard() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div
+        className="card-notebook"
+        tabIndex={0}
+        role="group"
+        aria-label={`Launch week notebook: ${TODO.map((t) => `${t.t}${t.done ? ', done' : ''}`).join('; ')}`}
+      >
+        <div className="card-notebook__page" aria-hidden="true">
+          <h4>Launch week</h4>
+          <ul>
+            {TODO.map((t) => (
+              <li key={t.t} data-done={t.done || undefined}>
+                <span />
+                {t.t}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="card-notebook__cover" aria-hidden="true">
+          <div className="card-notebook__front">
+            <b>Launch week</b>
+            <small>Field notes · No. 7</small>
+          </div>
+          <div className="card-notebook__back" />
+        </div>
+        <span className="card-notebook__band" aria-hidden="true" />
+        <span className="card-notebook__rings" aria-hidden="true">
+          {RINGS.map((k) => (
+            <span key={k} />
+          ))}
+        </span>
+      </div>
+    </>
+  );
+}

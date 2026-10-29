@@ -1,0 +1,20 @@
+.slider-speedo { position: relative; width: 210px; height: 170px; }
+.slider-speedo svg { display: block; width: 210px; height: 170px; }
+.slider-speedo__face { fill: light-dark(#f3f4f7, #1a1c1f); stroke: light-dark(#dbdde1, #2e3035); stroke-width: 1; }
+.slider-speedo__groove { fill: none; stroke: light-dark(#ebedf0, #232529); stroke-width: 6; stroke-linecap: round; }
+.slider-speedo__arc { fill: none; stroke: light-dark(#50535b, #c6c8cd); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 100 200; transition: stroke-dashoffset 0.6s cubic-bezier(0.3, 1.4, 0.5, 1); }
+.slider-speedo__tick { stroke: light-dark(#6d7179, #7d8087); stroke-width: 1.5; }
+.slider-speedo__tick--major { stroke: light-dark(#42454c, #e5e6e9); stroke-width: 2; }
+.slider-speedo__num { fill: light-dark(#5f626a, #a7abb2); font-size: 10px; font-family: system-ui, sans-serif; text-anchor: middle; }
+.slider-speedo__needle { transform-origin: 100px 100px; transform: rotate(calc(-120deg + var(--slider-speedo-v) * 240deg)); transition: transform 0.6s cubic-bezier(0.3, 1.6, 0.5, 1); }
+.slider-speedo__needle path { fill: light-dark(#373a40, #f1f2f3); }
+.slider-speedo__hub { fill: light-dark(#42454c, #e5e6e9); stroke: light-dark(#dbdde1, #2e3035); stroke-width: 3; }
+.slider-speedo__speed { fill: light-dark(#373a40, #f1f2f3); font-size: 22px; font-weight: 600; font-family: system-ui, sans-serif; text-anchor: middle; font-variant-numeric: tabular-nums; }
+.slider-speedo__unit { fill: light-dark(#5f626a, #a7abb2); font-size: 9px; font-family: system-ui, sans-serif; text-anchor: middle; letter-spacing: 0.08em; }
+.slider-speedo:has(.slider-speedo__input:focus-visible) .slider-speedo__face { stroke: light-dark(#50535b, #c6c8cd); stroke-width: 2; }
+.slider-speedo__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; -webkit-appearance: none; appearance: none; background: none; }
+.slider-speedo__input::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 170px; }
+.slider-speedo__input::-moz-range-thumb { width: 20px; height: 170px; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .slider-speedo__needle, .slider-speedo__arc { transition: none; }
+}

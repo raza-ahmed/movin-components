@@ -1,0 +1,118 @@
+"use client";
+
+import { useId } from 'react';
+
+const css = `
+  .radio-gear { --radio-gear-g: 0; display: flex; align-items: center; gap: 16px; }
+  .radio-gear:has(.radio-gear__input[value='r']:checked) { --radio-gear-g: 1; }
+  .radio-gear:has(.radio-gear__input[value='n']:checked) { --radio-gear-g: 2; }
+  .radio-gear:has(.radio-gear__input[value='d']:checked) { --radio-gear-g: 3; }
+  .radio-gear__display {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: light-dark(#fbfcfd, #121417);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  }
+  .radio-gear__strip {
+    display: grid;
+    transform: translateY(calc(var(--radio-gear-g) * -40px));
+    transition: transform 0.35s cubic-bezier(0.3, 1.3, 0.5, 1);
+  }
+  .radio-gear__strip span {
+    display: grid;
+    place-items: center;
+    height: 40px;
+    color: light-dark(#373a40, #f1f2f3);
+    font-size: 22px;
+    font-weight: 600;
+    text-shadow: 0 0 8px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 50%, transparent);
+  }
+  .radio-gear__gate { position: relative; width: 70px; height: 112px; }
+  .radio-gear__slot {
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    width: 14px;
+    height: 100px;
+    border-radius: 7px;
+    background: light-dark(#fbfcfd, #121417);
+    box-shadow: inset 0 1px 3px light-dark(#fbfcfd, #121417), 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  }
+  .radio-gear__knob {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 38% 32%, light-dark(#42454c, #e5e6e9), light-dark(#6d7179, #7d8087) 60%, light-dark(#dbdde1, #2e3035));
+    box-shadow: 0 3px 6px color-mix(in oklab, light-dark(#fbfcfd, #121417) 60%, transparent);
+    transform: translateY(calc(var(--radio-gear-g) * 28px));
+    transition: transform 0.45s cubic-bezier(0.3, 1.45, 0.5, 1);
+  }
+  .radio-gear__letters { position: absolute; left: 38px; top: 0; display: grid; }
+  .radio-gear__letter {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    margin-top: 3px;
+    margin-bottom: -3px;
+    border-radius: 6px;
+    color: light-dark(#5f626a, #a7abb2);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .radio-gear__letter:hover { color: light-dark(#42454c, #e5e6e9); }
+  .radio-gear__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .radio-gear__letter:has(.radio-gear__input:focus-visible) { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: -2px; }
+  .radio-gear__letter:has(.radio-gear__input:checked) { color: light-dark(#373a40, #f1f2f3); }
+  @media (prefers-reduced-motion: reduce) {
+    .radio-gear * { transition-duration: 0.01s !important; }
+  }
+`;
+
+const GEARS = [
+  { value: 'p', label: 'P', name: 'Park' },
+  { value: 'r', label: 'R', name: 'Reverse' },
+  { value: 'n', label: 'N', name: 'Neutral' },
+  { value: 'd', label: 'D', name: 'Drive' },
+];
+
+export function GearRadio() {
+  const name = useId();
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="radio-gear">
+        <span className="radio-gear__display" aria-hidden="true">
+          <span className="radio-gear__strip">
+            {GEARS.map((g) => (
+              <span key={g.value}>{g.label}</span>
+            ))}
+          </span>
+        </span>
+        <div className="radio-gear__gate">
+          <span className="radio-gear__slot" aria-hidden="true" />
+          <span className="radio-gear__knob" aria-hidden="true" />
+          <div className="radio-gear__letters" role="radiogroup" aria-label="Gear">
+            {GEARS.map((g, i) => (
+              <label key={g.value} className="radio-gear__letter">
+                <input className="radio-gear__input" type="radio" name={name} value={g.value} aria-label={g.name} defaultChecked={i === 0} />
+                <span aria-hidden="true">{g.label}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}

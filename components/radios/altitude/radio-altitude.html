@@ -1,0 +1,24 @@
+<div class="radio-altitude">
+  <span class="radio-altitude__map" aria-hidden="true">
+    <svg viewBox="0 0 200 100">
+      <path class="radio-altitude__range" d="M0 100L36 58L62 76L150 30L200 70V100Z"></path>
+      <path class="radio-altitude__peak" d="M4 100L120 8L196 100Z"></path>
+      <path class="radio-altitude__snow" d="M106 19L120 8L134 19L127 17L120 22L113 17Z"></path>
+      <path class="radio-altitude__trail" d="M20 92L60 80L44 66L86 54L70 40L104 28L120 12"></path>
+      <path class="radio-altitude__walked" pathLength="1" d="M20 92L60 80L44 66L86 54L70 40L104 28L120 12"></path>
+    </svg>
+    <span class="radio-altitude__climber"></span>
+    <span class="radio-altitude__readout">
+      <span class="radio-altitude__strip">
+        <span>1,200 m</span>
+        <span>4,100 m</span>
+        <span>5,364 m</span>
+      </span>
+    </span>
+  </span>
+  <div class="radio-altitude__opts" role="radiogroup" aria-label="Waypoint">
+    <label class="radio-altitude__opt"><input class="radio-altitude__input" type="radio" name="radio-altitude" checked="" value="base"/>Base</label>
+    <label class="radio-altitude__opt"><input class="radio-altitude__input" type="radio" name="radio-altitude" value="camp"/>Camp</label>
+    <label class="radio-altitude__opt"><input class="radio-altitude__input" type="radio" name="radio-altitude" value="summit"/>Summit</label>
+  </div>
+</div>

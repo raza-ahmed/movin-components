@@ -1,0 +1,13 @@
+<button type="button" class="btn-brushstroke">
+  <svg class="btn-brushstroke__ink" viewBox="0 0 200 54" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <filter id="btn-brushstroke-def" x="-5%" y="-20%" width="110%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9 0.08" numOctaves="2" seed="4" result="n"></feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="5"></feDisplacementMap>
+      </filter>
+    </defs>
+    <path d="M4 27C20 8 62 6 106 9S178 6 196 15C201 21 199 34 192 41C152 51 98 46 56 48S12 50 4 40C0 36 0 31 4 27Z" filter="url(#btn-brushstroke-def)"></path>
+  </svg>
+  <span class="btn-brushstroke__rule" aria-hidden="true"></span>
+  <span class="btn-brushstroke__label">Read the story<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+</button>

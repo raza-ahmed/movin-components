@@ -1,0 +1,14 @@
+.loader-line-clear {
+  display: grid;
+  grid-template-columns: repeat(6, 10px);
+  grid-auto-rows: 10px;
+  gap: 2px;
+  padding: 5px;
+  border-radius: 6px;
+  background: light-dark(#fbfcfd, #121417);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+}
+.loader-line-clear__cell { border-radius: 2px; background: light-dark(#f3f4f7, #1a1c1f); }
+.loader-line-clear__cell[data-s='set'] { background: light-dark(#5f626a, #a7abb2); }
+.loader-line-clear__cell[data-s='live'] { background: light-dark(#373a40, #f1f2f3); }
+.loader-line-clear__cell[data-s='flash'] { background: light-dark(#373a40, #f1f2f3); box-shadow: 0 0 8px light-dark(#373a40, #f1f2f3); }

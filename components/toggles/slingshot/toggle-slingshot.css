@@ -1,0 +1,29 @@
+.toggle-slingshot { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+.toggle-slingshot__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.toggle-slingshot__track {
+  position: relative;
+  width: 88px;
+  height: 34px;
+  border-radius: 999px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  touch-action: none;
+  transition: background-color 0.3s;
+}
+.toggle-slingshot__input:focus-visible + .toggle-slingshot__track { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+.toggle-slingshot__input:checked + .toggle-slingshot__track { background: light-dark(#dbdde1, #2e3035); }
+.toggle-slingshot__band { position: absolute; inset: 0; width: 88px; height: 34px; overflow: visible; }
+.toggle-slingshot__band path { fill: none; stroke: light-dark(#5f626a, #a7abb2); stroke-linecap: round; stroke-linejoin: round; }
+.toggle-slingshot__post { fill: light-dark(#6d7179, #7d8087); }
+.toggle-slingshot__thumb {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, light-dark(#373a40, #f1f2f3), light-dark(#5f626a, #a7abb2) 80%);
+  box-shadow: 0 2px 6px -2px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.6));
+  cursor: grab;
+}
+.toggle-slingshot__thumb:active { cursor: grabbing; }

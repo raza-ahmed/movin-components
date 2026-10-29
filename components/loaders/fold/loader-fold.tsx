@@ -1,0 +1,85 @@
+"use client";
+
+const css = `
+  /* Fold 1 (0–22%): the bottom half folds up. Fold 2 (22–44%): the right half folds over.
+     Hold, then the same in reverse. */
+  @keyframes loader-fold-up {
+    0%, 4% { transform: rotateX(0deg); }
+    22%, 74% { transform: rotateX(178deg); }
+    92%, 100% { transform: rotateX(0deg); }
+  }
+  @keyframes loader-fold-over {
+    0%, 26% { transform: rotateY(0deg); }
+    44%, 56% { transform: rotateY(-178deg); }
+    74%, 100% { transform: rotateY(0deg); }
+  }
+  @keyframes loader-fold-shade {
+    0%, 4% { filter: brightness(1); }
+    13% { filter: brightness(0.55); }
+    22%, 74% { filter: brightness(0.8); }
+    83% { filter: brightness(0.55); }
+    92%, 100% { filter: brightness(1); }
+  }
+  .loader-fold { width: 72px; height: 72px; perspective: 260px; }
+  .loader-fold__paper { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transform: rotateX(18deg) rotateZ(-8deg); }
+  .loader-fold__q {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background: light-dark(#50535b, #c6c8cd);
+    box-shadow: inset 0 0 0 1px light-dark(#373a40, #f1f2f3), 0 0 0 0.5px light-dark(#6d7179, #7d8087);
+    backface-visibility: visible;
+  }
+  .loader-fold__q--tl { left: 0; top: 0; background: light-dark(#42454c, #e5e6e9); }
+  .loader-fold__right {
+    position: absolute;
+    left: 36px;
+    top: 0;
+    width: 36px;
+    height: 72px;
+    transform-style: preserve-3d;
+    transform-origin: 0 50%;
+    animation: loader-fold-over 3.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+  .loader-fold__right .loader-fold__q--tr { left: 0; top: 0; }
+  .loader-fold__flap {
+    position: absolute;
+    top: 36px;
+    width: 36px;
+    height: 36px;
+    transform-style: preserve-3d;
+    transform-origin: 50% 0;
+    animation: loader-fold-up 3.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+  .loader-fold__flap .loader-fold__q { left: 0; top: 0; animation: loader-fold-shade 3.4s linear infinite; background: light-dark(#5f626a, #a7abb2); }
+  .loader-fold__flap--bl { left: 0; }
+  .loader-fold__right .loader-fold__flap { left: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    .loader-fold__right, .loader-fold__flap, .loader-fold__flap .loader-fold__q { animation-duration: 10s; }
+  }
+`;
+
+export function FoldLoader() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="loader-fold" role="status" aria-label="Loading">
+        <div className="loader-fold__paper" aria-hidden="true">
+          <span className="loader-fold__q loader-fold__q--tl" />
+          <span className="loader-fold__flap loader-fold__flap--bl">
+            <span className="loader-fold__q" />
+          </span>
+          {/* The right half carries its own bottom flap, so fold 1 happens on both halves together. */}
+          <span className="loader-fold__right">
+            <span className="loader-fold__q loader-fold__q--tr" />
+            <span className="loader-fold__flap">
+              <span className="loader-fold__q" />
+            </span>
+          </span>
+        </div>
+      </div>
+    </>
+  );
+}

@@ -1,0 +1,90 @@
+"use client";
+
+import { useId } from 'react';
+
+const OPTIONS = [{"value": "1:1", "label": "1:1"}, {"value": "4:5", "label": "4:5"}, {"value": "16:9", "label": "16:9"}];
+
+const css = `
+  .radio-crop { --i: 0; display: grid; justify-items: center; gap: 12px; width: 260px; }
+  .radio-crop:has(.radio-crop__opt:nth-child(1) input:checked) { --i: 0; }
+  .radio-crop:has(.radio-crop__opt:nth-child(2) input:checked) { --i: 1; }
+  .radio-crop:has(.radio-crop__opt:nth-child(3) input:checked) { --i: 2; }
+  .radio-crop__photo { position: relative; width: 200px; height: 116px; overflow: hidden; border-radius: 6px; background: linear-gradient(light-dark(#cbced3, #393c41), light-dark(#ebedf0, #232529) 70%); }
+  .radio-crop__photo svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .radio-crop__far { fill: light-dark(#dbdde1, #2e3035); }
+  .radio-crop__near { fill: light-dark(#f3f4f7, #1a1c1f); }
+  .radio-crop__sun { fill: light-dark(#42454c, #e5e6e9); }
+  /* The crop: everything outside it dimmed by one huge shadow; thirds and corner handles inside. */
+  .radio-crop__frame {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: var(--w);
+    height: var(--h);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 1.5px light-dark(#373a40, #f1f2f3), 0 0 0 400px light-dark(rgba(0, 0, 0, 0.17), rgba(0, 0, 0, 0.55));
+    background: linear-gradient(90deg, transparent calc(33.3% - 0.5px), color-mix(in oklab, light-dark(#373a40, #f1f2f3) 45%, transparent) calc(33.3% - 0.5px) calc(33.3% + 0.5px), transparent calc(33.3% + 0.5px) calc(66.6% - 0.5px), color-mix(in oklab, light-dark(#373a40, #f1f2f3) 45%, transparent) calc(66.6% - 0.5px) calc(66.6% + 0.5px), transparent calc(66.6% + 0.5px)), linear-gradient(transparent calc(33.3% - 0.5px), color-mix(in oklab, light-dark(#373a40, #f1f2f3) 45%, transparent) calc(33.3% - 0.5px) calc(33.3% + 0.5px), transparent calc(33.3% + 0.5px) calc(66.6% - 0.5px), color-mix(in oklab, light-dark(#373a40, #f1f2f3) 45%, transparent) calc(66.6% - 0.5px) calc(66.6% + 0.5px), transparent calc(66.6% + 0.5px));
+    transition: width 0.5s cubic-bezier(0.3, 1.25, 0.5, 1), height 0.5s cubic-bezier(0.3, 1.25, 0.5, 1);
+  }
+  .radio-crop__corner { position: absolute; width: 10px; height: 10px; border: 0 solid light-dark(#373a40, #f1f2f3); }
+  .radio-crop__corner:nth-child(1) { left: -3px; top: -3px; border-width: 3px 0 0 3px; }
+  .radio-crop__corner:nth-child(2) { right: -3px; top: -3px; border-width: 3px 3px 0 0; }
+  .radio-crop__corner:nth-child(3) { left: -3px; bottom: -3px; border-width: 0 0 3px 3px; }
+  .radio-crop__corner:nth-child(4) { right: -3px; bottom: -3px; border-width: 0 3px 3px 0; }
+  .radio-crop:has(.radio-crop__opt:nth-child(1) input:checked) { --w: 112px; --h: 112px; }
+  .radio-crop:has(.radio-crop__opt:nth-child(2) input:checked) { --w: 90px; --h: 112px; }
+  .radio-crop:has(.radio-crop__opt:nth-child(3) input:checked) { --w: 196px; --h: 110px; }
+  .radio-crop__read { display: grid; color: light-dark(#50535b, #c6c8cd); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .radio-crop__read > * { grid-area: 1 / 1; text-align: center; opacity: 0; transform: translateY(4px); transition: opacity 0.25s, transform 0.3s; }
+  .radio-crop:has(.radio-crop__opt:nth-child(1) input:checked) .radio-crop__read > :nth-child(1) { opacity: 1; transform: none; }
+  .radio-crop:has(.radio-crop__opt:nth-child(2) input:checked) .radio-crop__read > :nth-child(2) { opacity: 1; transform: none; }
+  .radio-crop:has(.radio-crop__opt:nth-child(3) input:checked) .radio-crop__read > :nth-child(3) { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .radio-crop__frame { transition: none; }
+  }
+  .radio-crop__opts { display: flex; gap: 3px; padding: 4px; border-radius: 12px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+  .radio-crop__opt { position: relative; flex: 1; padding: 7px 10px; border-radius: 8px; color: light-dark(#5f626a, #a7abb2); font-size: 12.5px; font-weight: 500; text-align: center; white-space: nowrap; cursor: pointer; transition: background-color 0.25s, color 0.25s; }
+  .radio-crop__opt:hover { color: light-dark(#42454c, #e5e6e9); }
+  .radio-crop__opt:has(input:checked) { background: light-dark(#373a40, #f1f2f3); color: light-dark(#fbfcfd, #121417); }
+  .radio-crop__opt:has(input:focus-visible) { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+  .radio-crop__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+`;
+
+export function CropRadio() {
+  const name = useId();
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="radio-crop">
+        <div className="radio-crop__photo" aria-hidden="true">
+          <svg viewBox="0 0 200 116" preserveAspectRatio="none">
+            <circle className="radio-crop__sun" cx="132" cy="40" r="11" />
+            <path className="radio-crop__far" d="M0 76L34 52L62 66L104 40L150 64L178 52L200 60V116H0Z" />
+            <path className="radio-crop__near" d="M0 96C40 84 90 88 130 94S180 88 200 90V116H0Z" />
+          </svg>
+          <span className="radio-crop__frame">
+            <span className="radio-crop__corner" />
+            <span className="radio-crop__corner" />
+            <span className="radio-crop__corner" />
+            <span className="radio-crop__corner" />
+          </span>
+        </div>
+        <span className="radio-crop__read" aria-hidden="true">
+          <span>1080 × 1080 px</span>
+          <span>1080 × 1350 px</span>
+          <span>1920 × 1080 px</span>
+        </span>
+        <div className="radio-crop__opts" role="radiogroup" aria-label="Aspect ratio">
+          {OPTIONS.map((o, i) => (
+            <label key={o.value} className="radio-crop__opt">
+              <input className="radio-crop__input" type="radio" name={name} value={o.value} defaultChecked={i === 0} />
+              {o.label}
+            </label>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}

@@ -1,0 +1,33 @@
+.card-route {
+  position: relative;
+  width: 240px;
+  height: 176px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: light-dark(#fbfcfd, #121417);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+}
+.card-route__map { position: absolute; inset: 0; width: 100%; height: 100%; }
+.card-route__block { fill: light-dark(#f3f4f7, #1a1c1f); }
+.card-route__park { fill: color-mix(in oklab, light-dark(#373a40, #f1f2f3) 6%, light-dark(#f3f4f7, #1a1c1f)); }
+.card-route__path-bg { fill: none; stroke: light-dark(#dbdde1, #2e3035); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.card-route__path { fill: none; stroke: light-dark(#373a40, #f1f2f3); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; }
+.card-route__pin { fill: light-dark(#fbfcfd, #121417); stroke: light-dark(#373a40, #f1f2f3); stroke-width: 2.5; }
+.card-route__car { fill: light-dark(#373a40, #f1f2f3); filter: drop-shadow(0 0 4px light-dark(#373a40, #f1f2f3)); }
+.card-route__panel {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: color-mix(in oklab, light-dark(#f3f4f7, #1a1c1f) 88%, transparent);
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+}
+.card-route__panel b { display: block; color: light-dark(#373a40, #f1f2f3); font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.card-route__panel span { color: light-dark(#5f626a, #a7abb2); font-size: 10px; }
+.card-route__go { padding: 4px 10px; border-radius: 999px; background: light-dark(#373a40, #f1f2f3); color: light-dark(#fbfcfd, #121417); font-size: 10px; font-weight: 600; }

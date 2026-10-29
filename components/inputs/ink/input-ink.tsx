@@ -1,0 +1,88 @@
+"use client";
+
+import { useRef, useState } from 'react';
+
+const css = `
+  @keyframes field-ink-in { from { opacity: 0; filter: blur(4px); transform: scale(1.3); } 60% { opacity: 1; filter: blur(0.6px); } }
+  @keyframes field-ink-blot { from { opacity: 0.55; transform: scale(0.3); } to { opacity: 0; transform: scale(1.9); } }
+  .field-ink { width: 250px; }
+  .field-ink__label { display: block; margin-bottom: 6px; color: light-dark(#50535b, #c6c8cd); font-size: 12px; }
+  .field-ink__card {
+    position: relative;
+    height: 56px;
+    border-radius: 6px;
+    background:
+      linear-gradient(transparent 39px, light-dark(#dbdde1, #2e3035) 39px 40px, transparent 40px),
+      light-dark(#f3f4f7, #1a1c1f);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+    transition: box-shadow 0.2s;
+  }
+  .field-ink__card:focus-within { box-shadow: inset 0 0 0 1px light-dark(#5f626a, #a7abb2); }
+  .field-ink__input, .field-ink__mirror { padding: 0 14px; font: italic 19px Georgia, 'Times New Roman', serif; font-kerning: none; letter-spacing: 0.2px; }
+  .field-ink__input { position: relative; z-index: 1; width: 100%; height: 100%; padding-top: 6px; border: 0; outline: 0; background: none; color: transparent; caret-color: light-dark(#42454c, #e5e6e9); }
+  .field-ink__input::placeholder { color: light-dark(#5f626a, #a7abb2); }
+  .field-ink__mirror { position: absolute; inset: 0; display: flex; align-items: center; padding-top: 6px; overflow: hidden; color: light-dark(#373a40, #f1f2f3); white-space: pre; pointer-events: none; }
+  .field-ink__ch { position: relative; display: inline-block; animation: field-ink-in 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) both; }
+  /* Each letter bleeds a little blot into the paper as it lands. */
+  .field-ink__ch::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border-radius: 50%;
+    background: radial-gradient(circle, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 40%, transparent), transparent 70%);
+    opacity: 0;
+    animation: field-ink-blot 0.9s ease-out;
+  }
+  @media (prefers-reduced-motion: reduce) { .field-ink__ch, .field-ink__ch::before { animation: none; } }
+`;
+
+export function InkInput() {
+  const [value, setValue] = useState('For everyone who');
+  const ids = useRef<number[]>([...'For everyone who'].map((_, i) => -1 - i));
+  const seq = useRef(0);
+
+  const change = (next: string) => {
+    let p = 0;
+    while (p < value.length && p < next.length && value[p] === next[p]) p++;
+    let s = 0;
+    while (s < value.length - p && s < next.length - p && value[value.length - 1 - s] === next[next.length - 1 - s]) s++;
+    // New letters get new keys (so they ink in); untouched ones keep theirs.
+    ids.current = [...ids.current.slice(0, p), ...Array.from({ length: next.length - p - s }, () => seq.current++), ...ids.current.slice(ids.current.length - s)];
+    setValue(next);
+  };
+
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="field-ink">
+        <label className="field-ink__label" htmlFor="field-ink-input">
+          Dedication
+        </label>
+        <div className="field-ink__card">
+          <span className="field-ink__mirror" aria-hidden="true">
+            {[...value].map((c, i) => (
+              <span key={ids.current[i]} className="field-ink__ch">
+                {c}
+              </span>
+            ))}
+          </span>
+          <input
+            id="field-ink-input"
+            className="field-ink__input"
+            value={value}
+            maxLength={24}
+            placeholder="Write a dedication"
+            autoComplete="off"
+            onChange={(e) => change(e.target.value)}
+          />
+        </div>
+      </div>
+    </>
+  );
+}

@@ -1,0 +1,48 @@
+"use client";
+
+const css = `
+  /* Two halves and a disc turning about the vertical axis: the disc's edge is the terminator.
+     Dark face first (crescent to quarter), lit face next (gibbous to full); the halves swap
+     sides at full, while the disc hides them, so the moon wanes the right way round. */
+  @keyframes loader-lunar-turn { to { transform: rotateY(360deg); } }
+  @keyframes loader-lunar-right { 0%, 49.9% { background: light-dark(#373a40, #f1f2f3); } 50%, 100% { background: light-dark(#ebedf0, #232529); } }
+  @keyframes loader-lunar-left { 0%, 49.9% { background: light-dark(#ebedf0, #232529); } 50%, 100% { background: light-dark(#373a40, #f1f2f3); } }
+  .loader-lunar { position: relative; width: 72px; height: 72px; }
+  .loader-lunar::before { content: ''; position: absolute; inset: -14px; border-radius: 50%; background: radial-gradient(circle, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 14%, transparent) 40%, transparent 70%); }
+  .loader-lunar__moon { position: absolute; inset: 0; border-radius: 50%; overflow: hidden; box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+  .loader-lunar__half { position: absolute; top: 0; bottom: 0; width: 50%; }
+  .loader-lunar__half--l { left: 0; animation: loader-lunar-left 6s steps(1) infinite; }
+  .loader-lunar__half--r { right: 0; animation: loader-lunar-right 6s steps(1) infinite; }
+  .loader-lunar__disc { position: absolute; inset: 0; transform-style: preserve-3d; animation: loader-lunar-turn 6s linear infinite; }
+  .loader-lunar__face { position: absolute; inset: 0; border-radius: 50%; backface-visibility: hidden; background: light-dark(#ebedf0, #232529); }
+  .loader-lunar__face--lit { transform: rotateY(180deg); background: light-dark(#373a40, #f1f2f3); }
+  /* Craters, faint on both sides so the surface reads through the phases. */
+  .loader-lunar__craters { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 34% 30%, color-mix(in oklab, light-dark(#6d7179, #7d8087) 35%, transparent) 0 6px, transparent 6.5px), radial-gradient(circle at 62% 58%, color-mix(in oklab, light-dark(#6d7179, #7d8087) 30%, transparent) 0 9px, transparent 9.5px), radial-gradient(circle at 40% 72%, color-mix(in oklab, light-dark(#6d7179, #7d8087) 30%, transparent) 0 4px, transparent 4.5px); pointer-events: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .loader-lunar__half, .loader-lunar__disc { animation: none; }
+    .loader-lunar__disc { transform: rotateY(60deg); }
+    .loader-lunar__half--r { background: light-dark(#373a40, #f1f2f3); }
+    .loader-lunar__half--l { background: light-dark(#ebedf0, #232529); }
+  }
+`;
+
+export function LunarLoader() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="loader-lunar" role="status" aria-label="Loading">
+        <div className="loader-lunar__moon" aria-hidden="true">
+          <span className="loader-lunar__half loader-lunar__half--l" />
+          <span className="loader-lunar__half loader-lunar__half--r" />
+          <span className="loader-lunar__disc">
+            <span className="loader-lunar__face" />
+            <span className="loader-lunar__face loader-lunar__face--lit" />
+          </span>
+          <span className="loader-lunar__craters" />
+        </div>
+      </div>
+    </>
+  );
+}

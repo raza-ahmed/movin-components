@@ -1,0 +1,99 @@
+"use client";
+
+const css = `
+  @keyframes card-planet-bands { to { background-position: 160px 0; } }
+  @keyframes card-planet-moon {
+    0% { transform: translateX(-74px) scale(0.85); z-index: 0; }
+    49.9% { z-index: 0; }
+    50% { transform: translateX(74px) scale(0.85); z-index: 2; }
+    75% { transform: translateX(0) translateY(8px) scale(1.15); z-index: 2; }
+    100% { transform: translateX(-74px) scale(0.85); z-index: 2; }
+  }
+  .card-planet {
+    position: relative;
+    width: 220px;
+    height: 190px;
+    border-radius: 18px;
+    background: radial-gradient(ellipse at 50% 40%, light-dark(#f3f4f7, #1a1c1f), light-dark(#fbfcfd, #121417) 80%);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+    overflow: hidden;
+  }
+  .card-planet__sky {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(1px 1px at 12% 20%, light-dark(#50535b, #c6c8cd), transparent),
+      radial-gradient(1px 1px at 85% 14%, light-dark(#5f626a, #a7abb2), transparent),
+      radial-gradient(1px 1px at 70% 60%, light-dark(#5f626a, #a7abb2), transparent),
+      radial-gradient(1.5px 1.5px at 22% 70%, light-dark(#50535b, #c6c8cd), transparent),
+      radial-gradient(1px 1px at 92% 78%, light-dark(#6d7179, #7d8087), transparent);
+  }
+  .card-planet__orbit { position: absolute; left: 50%; top: 74px; width: 0; height: 0; }
+  .card-planet__globe {
+    position: absolute;
+    z-index: 1;
+    left: -46px;
+    top: -46px;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* Bands slide sideways under a fixed sphere shading: the planet turns. */
+    background:
+      repeating-linear-gradient(176deg, transparent 0 9px, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 14%, transparent) 9px 14px, transparent 14px 22px, color-mix(in oklab, light-dark(#fbfcfd, #121417) 30%, transparent) 22px 26px)
+      0 0 / 160px 100%,
+      linear-gradient(light-dark(#5f626a, #a7abb2), light-dark(#cbced3, #393c41));
+    animation: card-planet-bands 7s linear infinite;
+    box-shadow: 0 0 30px 2px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 14%, transparent);
+  }
+  .card-planet__globe::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 32% 30%, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 35%, transparent), transparent 45%);
+    box-shadow: inset -18px -14px 24px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.6));
+  }
+  .card-planet__moon {
+    position: absolute;
+    left: -9px;
+    top: -9px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, light-dark(#42454c, #e5e6e9), light-dark(#6d7179, #7d8087));
+    box-shadow: inset -3px -3px 5px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
+    animation: card-planet-moon 6s linear infinite;
+  }
+  .card-planet__info { position: absolute; left: 14px; right: 14px; bottom: 12px; display: flex; justify-content: space-between; align-items: end; }
+  .card-planet__info b { display: block; color: light-dark(#373a40, #f1f2f3); font-size: 13px; font-weight: 600; }
+  .card-planet__info span { color: light-dark(#5f626a, #a7abb2); font-size: 11px; }
+  .card-planet__tag { padding: 3px 8px; border-radius: 999px; background: light-dark(#ebedf0, #232529); color: light-dark(#42454c, #e5e6e9); font-size: 10px; }
+  @media (prefers-reduced-motion: reduce) {
+    .card-planet__globe, .card-planet__moon { animation: none; }
+  }
+`;
+
+export function PlanetCard() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="card-planet" role="group" aria-label="Kepler-186f, 582 light years">
+        <span className="card-planet__sky" aria-hidden="true" />
+        <div className="card-planet__orbit" aria-hidden="true">
+          <span className="card-planet__globe" />
+          <span className="card-planet__moon" />
+        </div>
+        <div className="card-planet__info">
+          <div>
+            <b>Kepler-186f</b>
+            <span>582 light years</span>
+          </div>
+          <span className="card-planet__tag">Habitable</span>
+        </div>
+      </div>
+    </>
+  );
+}

@@ -1,0 +1,19 @@
+@keyframes tabs-blinds-open-a { from { transform: scaleY(1); } to { transform: scaleY(0); } }
+@keyframes tabs-blinds-open-b { from { transform: scaleY(1); } to { transform: scaleY(0); } }
+.tabs-blinds { width: 250px; }
+.tabs-blinds__list { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 10px; border-bottom: 1px solid light-dark(#ebedf0, #232529); }
+.tabs-blinds__tab { padding: 8px 0 10px; border: 0; border-radius: 6px; background: none; box-shadow: inset 0 -2px 0 transparent; color: light-dark(#5f626a, #a7abb2); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; transition: color 0.2s, box-shadow 0.25s; }
+.tabs-blinds__tab:hover { color: light-dark(#42454c, #e5e6e9); }
+.tabs-blinds__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); box-shadow: inset 0 -2px 0 light-dark(#373a40, #f1f2f3); }
+.tabs-blinds__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: -2px; }
+.tabs-blinds__frame { position: relative; height: 112px; overflow: hidden; border-radius: 12px; }
+.tabs-blinds__panel { height: 100%; }
+.tabs-blinds__art { display: block; height: 100%; background: var(--tabs-blinds-art); }
+.tabs-blinds__caption { position: absolute; left: 10px; bottom: 8px; padding: 2px 7px; border-radius: 5px; background: color-mix(in oklab, light-dark(#fbfcfd, #121417) 65%, transparent); color: light-dark(#373a40, #f1f2f3); font-size: 11px; }
+.tabs-blinds__slats { position: absolute; inset: 0; display: grid; grid-template-rows: repeat(6, 1fr); pointer-events: none; }
+.tabs-blinds__slat { background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 -1px 0 light-dark(#dbdde1, #2e3035); transform: scaleY(0); transform-origin: 50% 0; }
+.tabs-blinds[data-flip='a'] .tabs-blinds__slat { animation: tabs-blinds-open-a 0.32s cubic-bezier(0.5, 0, 0.3, 1) backwards; animation-delay: calc(var(--k) * 45ms); }
+.tabs-blinds[data-flip='b'] .tabs-blinds__slat { animation: tabs-blinds-open-b 0.32s cubic-bezier(0.5, 0, 0.3, 1) backwards; animation-delay: calc(var(--k) * 45ms); }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-blinds__slat { animation: none !important; }
+}

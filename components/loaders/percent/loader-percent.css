@@ -1,0 +1,31 @@
+.loader-percent { position: relative; display: grid; place-items: center; width: 96px; height: 96px; }
+.loader-percent__ring { position: absolute; inset: 0; transform: rotate(-90deg); }
+.loader-percent__track { fill: none; stroke: light-dark(#ebedf0, #232529); stroke-width: 4; }
+.loader-percent__bar {
+  fill: none;
+  stroke: light-dark(#373a40, #f1f2f3);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+}
+.loader-percent__value {
+  position: relative;
+  color: light-dark(#373a40, #f1f2f3);
+  font-size: 20px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+.loader-percent__value small { font-size: 11px; color: light-dark(#5f626a, #a7abb2); margin-left: 1px; }
+.loader-percent__done {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: light-dark(#373a40, #f1f2f3);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  transition: stroke-dashoffset 0.35s ease, opacity 0.2s ease;
+}

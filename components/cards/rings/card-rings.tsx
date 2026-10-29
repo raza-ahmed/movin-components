@@ -1,0 +1,94 @@
+"use client";
+
+import * as React from "react";
+import { useState } from 'react';
+
+const RINGS = [
+  { label: 'Move', value: 486, goal: 600, unit: 'kcal', r: 46 },
+  { label: 'Exercise', value: 32, goal: 30, unit: 'min', r: 35 },
+  { label: 'Stand', value: 9, goal: 12, unit: 'hr', r: 24 },
+];
+const SHADES = ['light-dark(#373a40, #f1f2f3)', 'light-dark(#50535b, #c6c8cd)', 'light-dark(#6d7179, #7d8087)'];
+
+const css = `
+  /* Each ring sweeps up from empty to its share of the goal, a beat after the one outside it. */
+  @keyframes card-rings-a { from { stroke-dashoffset: 1; } }
+  @keyframes card-rings-b { from { stroke-dashoffset: 1; } }
+  .card-rings {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 256px;
+    padding: 16px;
+    border-radius: 18px;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035), 0 12px 24px -14px light-dark(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.7));
+    outline: none;
+  }
+  .card-rings:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+  .card-rings svg { flex: none; width: 108px; height: 108px; transform: rotate(-90deg); overflow: visible; }
+  .card-rings__track { fill: none; stroke: light-dark(#ebedf0, #232529); stroke-width: 9; }
+  .card-rings__fill { fill: none; stroke: var(--c); stroke-width: 9; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: calc(1 - var(--p)); }
+  .card-rings[data-flip='a'] .card-rings__fill { animation: card-rings-a 1.1s cubic-bezier(0.4, 0, 0.2, 1) calc(var(--k) * 0.18s) both; }
+  .card-rings[data-flip='b'] .card-rings__fill { animation: card-rings-b 1.1s cubic-bezier(0.4, 0, 0.2, 1) calc(var(--k) * 0.18s) both; }
+  .card-rings__list { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+  .card-rings__list li { display: grid; grid-template-columns: 8px auto; column-gap: 8px; align-items: center; }
+  .card-rings__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+  .card-rings__name { color: light-dark(#5f626a, #a7abb2); font-size: 11px; }
+  .card-rings__val { grid-column: 2; color: light-dark(#373a40, #f1f2f3); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .card-rings__val small { color: light-dark(#5f626a, #a7abb2); font-size: 11px; font-weight: 400; }
+  @media (prefers-reduced-motion: reduce) {
+    .card-rings__fill { animation: none !important; }
+  }
+`;
+
+export function RingsCard() {
+  const [flip, setFlip] = useState(0);
+  const replay = () => setFlip((f) => f + 1);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div
+        className="card-rings"
+        data-flip={flip ? (flip % 2 ? 'a' : 'b') : undefined}
+        tabIndex={0}
+        role="group"
+        aria-label={`Today: ${RINGS.map((r) => `${r.label} ${r.value} of ${r.goal} ${r.unit}`).join(', ')}`}
+        onPointerEnter={replay}
+        onFocus={replay}
+      >
+        <svg viewBox="0 0 108 108" aria-hidden="true">
+          {RINGS.map((r, k) => (
+            <g key={r.label}>
+              <circle className="card-rings__track" cx="54" cy="54" r={r.r} />
+              <circle
+                className="card-rings__fill"
+                cx="54"
+                cy="54"
+                r={r.r}
+                pathLength={1}
+                style={{ '--c': SHADES[k], '--p': Math.min(1, r.value / r.goal), '--k': k } as React.CSSProperties}
+              />
+            </g>
+          ))}
+        </svg>
+        <ul className="card-rings__list" aria-hidden="true">
+          {RINGS.map((r, k) => (
+            <li key={r.label} style={{ '--c': SHADES[k] } as React.CSSProperties}>
+              <span className="card-rings__dot" />
+              <span className="card-rings__name">{r.label}</span>
+              <span className="card-rings__val">
+                {r.value}
+                <small>
+                  /{r.goal} {r.unit}
+                </small>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+}

@@ -1,0 +1,75 @@
+@keyframes btn-horizon-grid-run { to { background-position: 0 32px, 0 0; } }
+.btn-horizon-grid {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 220px;
+  height: 72px;
+  padding: 0;
+  border: 1px solid light-dark(#cbced3, #393c41);
+  border-radius: 14px;
+  background: linear-gradient(light-dark(#fbfcfd, #121417) 0 52%, light-dark(#f3f4f7, #1a1c1f));
+  color: light-dark(#373a40, #f1f2f3);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  perspective: 140px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-horizon-grid:hover, .btn-horizon-grid:focus-visible {
+  border-color: light-dark(#50535b, #c6c8cd);
+  box-shadow: 0 0 28px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 16%, transparent);
+}
+.btn-horizon-grid:focus-visible { outline: 2px solid light-dark(#42454c, #e5e6e9); outline-offset: 3px; }
+/* A slatted sun sitting on the horizon. */
+.btn-horizon-grid__sun {
+  position: absolute;
+  left: 78%;
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  margin: -36px 0 0 -23px;
+  border-radius: 50%;
+  background: linear-gradient(light-dark(#373a40, #f1f2f3), light-dark(#5f626a, #a7abb2));
+  mask-image:
+    linear-gradient(#000 0 50%, transparent 50%),
+    repeating-linear-gradient(#000 0 5px, transparent 5px 8px);
+  mask-composite: add;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+}
+.btn-horizon-grid__floor {
+  position: absolute;
+  left: -60%;
+  right: -60%;
+  top: 50%;
+  height: 160px;
+  transform-origin: top;
+  transform: rotateX(72deg);
+  background:
+    linear-gradient(light-dark(#6d7179, #7d8087) 1px, transparent 1px) 0 0 / 100% 32px,
+    linear-gradient(90deg, light-dark(#6d7179, #7d8087) 1px, transparent 1px) 0 0 / 24px 100%;
+  mask-image: linear-gradient(transparent, #000 30%);
+  animation: btn-horizon-grid-run 1.6s linear infinite;
+}
+.btn-horizon-grid__horizon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: light-dark(#50535b, #c6c8cd);
+  box-shadow: 0 0 10px 1px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 40%, transparent);
+}
+.btn-horizon-grid__label {
+  position: relative;
+  margin-top: -24px;
+  margin-right: 34px;
+  text-shadow: 0 0 10px light-dark(#fbfcfd, #121417), 0 0 3px light-dark(#fbfcfd, #121417);
+}
+.btn-horizon-grid:hover .btn-horizon-grid__sun { opacity: 0.85; }
+@media (prefers-reduced-motion: reduce) { .btn-horizon-grid__floor { animation: none; } }

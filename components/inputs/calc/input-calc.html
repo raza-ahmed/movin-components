@@ -1,0 +1,28 @@
+<div class="field-calc">
+  <div class="field-calc__top">
+    <label class="field-calc__label" for="field-calc-input">Budget</label>
+    <button type="button" class="field-calc__info" aria-label="Type a sum; Enter uses the total" data-tip="Type a sum; Enter uses the total">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M12 11v5M12 7.5v.01"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="field-calc__box">
+    <span class="field-calc__cur" aria-hidden="true">$</span>
+    <input id="field-calc-input" class="field-calc__input" inputMode="decimal" autoComplete="off" spellCheck="false" aria-describedby="field-calc-out" value="1200 + 40.5"/>
+    <span id="field-calc-out" class="field-calc__result" aria-live="polite">
+      <span class="field-calc__eq">=</span>
+      <span style="animation-delay:0ms">1</span>
+      <span style="animation-delay:18ms">,</span>
+      <span style="animation-delay:36ms">2</span>
+      <span style="animation-delay:54ms">4</span>
+      <span style="animation-delay:72ms">0</span>
+      <span style="animation-delay:90ms">.</span>
+      <span style="animation-delay:108ms">5</span>
+    </span>
+  </div>
+  <div class="field-calc__foot">
+    <span></span>
+  </div>
+</div>

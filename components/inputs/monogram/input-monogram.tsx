@@ -1,0 +1,71 @@
+"use client";
+
+import { useId, useState } from 'react';
+
+const css = `
+  @keyframes field-monogram-in { from { transform: translateY(8px) scale(0.7); opacity: 0; filter: blur(3px); } to { transform: none; opacity: 1; filter: none; } }
+  .field-monogram { display: grid; justify-items: center; gap: 14px; width: 250px; }
+  .field-monogram__crest { position: relative; display: grid; place-items: center; width: 92px; height: 92px; border-radius: 50%; box-shadow: inset 0 0 0 1px light-dark(#6d7179, #7d8087), inset 0 0 0 5px light-dark(#fbfcfd, #121417), inset 0 0 0 6px light-dark(#cbced3, #393c41); }
+  .field-monogram__crest::before { content: ''; position: absolute; inset: 14px; border-radius: 50%; border: 1px dashed color-mix(in oklab, light-dark(#6d7179, #7d8087) 60%, transparent); }
+  .field-monogram__pair { position: relative; width: 60px; height: 60px; font-family: Georgia, 'Times New Roman', serif; }
+  /* The two initials overlap on a diagonal, the second one set lighter so they interlock. */
+  .field-monogram__a, .field-monogram__b { position: absolute; line-height: 1; animation: field-monogram-in 0.5s cubic-bezier(0.3, 1.3, 0.5, 1) both; }
+  .field-monogram__a { left: 4px; top: 2px; color: light-dark(#373a40, #f1f2f3); font-size: 44px; }
+  .field-monogram__b { right: 2px; bottom: 0; color: light-dark(#50535b, #c6c8cd); font-size: 38px; font-style: italic; animation-delay: 0.08s; }
+  .field-monogram__empty { color: light-dark(#6d7179, #7d8087); font-family: Georgia, 'Times New Roman', serif; font-size: 13px; font-style: italic; }
+  .field-monogram__field { width: 100%; }
+  .field-monogram__label { display: block; margin-bottom: 6px; color: light-dark(#50535b, #c6c8cd); font-size: 12px; text-align: center; }
+  .field-monogram__input { width: 100%; height: 40px; padding: 0 12px; border: 0; border-radius: 10px; outline: 0; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); color: light-dark(#373a40, #f1f2f3); font: inherit; font-size: 15px; text-align: center; transition: box-shadow 0.2s; }
+  .field-monogram__input:focus { box-shadow: inset 0 0 0 1px light-dark(#5f626a, #a7abb2), 0 0 0 3px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 10%, transparent); }
+  .field-monogram__input::placeholder { color: light-dark(#6d7179, #7d8087); }
+  @media (prefers-reduced-motion: reduce) {
+    .field-monogram__a, .field-monogram__b { animation: none; }
+  }
+`;
+
+export function MonogramInput() {
+  const id = useId();
+  const [name, setName] = useState('');
+  const words = name.trim().split(/\s+/).filter((w) => /\p{L}/u.test(w));
+  const first = words[0]?.match(/\p{L}/u)?.[0]?.toUpperCase() ?? '';
+  const last = words.length > 1 ? (words[words.length - 1]!.match(/\p{L}/u)?.[0]?.toUpperCase() ?? '') : '';
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="field-monogram">
+        <span className="field-monogram__crest" aria-hidden="true">
+          {first ? (
+            <span className="field-monogram__pair">
+              <span key={`a${first}`} className="field-monogram__a">
+                {first}
+              </span>
+              {last && (
+                <span key={`b${last}`} className="field-monogram__b">
+                  {last}
+                </span>
+              )}
+            </span>
+          ) : (
+            <span className="field-monogram__empty">initials</span>
+          )}
+        </span>
+        <div className="field-monogram__field">
+          <label className="field-monogram__label" htmlFor={id}>
+            Name for the engraving
+          </label>
+          <input
+            id={id}
+            className="field-monogram__input"
+            value={name}
+            maxLength={40}
+            autoComplete="name"
+            placeholder="First and last name"
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+      </div>
+    </>
+  );
+}

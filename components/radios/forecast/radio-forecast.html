@@ -1,0 +1,38 @@
+<div class="radio-forecast">
+  <span class="radio-forecast__scene" aria-hidden="true">
+    <span class="radio-forecast__icon">
+      <span class="radio-forecast__sun">
+        <span class="radio-forecast__rays">
+          <span class="radio-forecast__ray" style="transform:rotate(0deg)"></span>
+          <span class="radio-forecast__ray" style="transform:rotate(45deg)"></span>
+          <span class="radio-forecast__ray" style="transform:rotate(90deg)"></span>
+          <span class="radio-forecast__ray" style="transform:rotate(135deg)"></span>
+          <span class="radio-forecast__ray" style="transform:rotate(180deg)"></span>
+          <span class="radio-forecast__ray" style="transform:rotate(225deg)"></span>
+          <span class="radio-forecast__ray" style="transform:rotate(270deg)"></span>
+          <span class="radio-forecast__ray" style="transform:rotate(315deg)"></span>
+        </span>
+        <span class="radio-forecast__disc"></span>
+      </span>
+      <svg class="radio-forecast__cloud" viewBox="0 0 52 34">
+        <path d="M14 32A10 10 0 0 1 13 12A13 13 0 0 1 38 10A11 11 0 0 1 40 32Z"></path>
+      </svg>
+      <span class="radio-forecast__drop" style="left:28px;--d:0s"></span>
+      <span class="radio-forecast__drop" style="left:38px;--d:0.35s"></span>
+      <span class="radio-forecast__drop" style="left:48px;--d:0.15s"></span>
+      <span class="radio-forecast__drop" style="left:58px;--d:0.5s"></span>
+    </span>
+    <span class="radio-forecast__temp">
+      <span class="radio-forecast__strip">
+        <span>24°</span>
+        <span>17°</span>
+        <span>11°</span>
+      </span>
+    </span>
+  </span>
+  <div class="radio-forecast__opts" role="radiogroup" aria-label="Forecast">
+    <label class="radio-forecast__opt"><input class="radio-forecast__input" type="radio" name="radio-forecast" checked="" value="sunny"/>Sunny</label>
+    <label class="radio-forecast__opt"><input class="radio-forecast__input" type="radio" name="radio-forecast" value="cloudy"/>Cloudy</label>
+    <label class="radio-forecast__opt"><input class="radio-forecast__input" type="radio" name="radio-forecast" value="rain"/>Rain</label>
+  </div>
+</div>

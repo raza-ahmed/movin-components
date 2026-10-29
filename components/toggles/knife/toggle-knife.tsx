@@ -1,0 +1,115 @@
+"use client";
+
+import { useState } from 'react';
+
+const css = `
+  @keyframes toggle-knife-close {
+    0% { transform: rotate(-50deg); animation-timing-function: cubic-bezier(0.6, 0, 1, 0.7); }
+    60% { transform: rotate(1deg); animation-timing-function: ease-out; }
+    75% { transform: rotate(-5deg); animation-timing-function: ease-in; }
+    88% { transform: rotate(0.5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  @keyframes toggle-knife-open { 0% { transform: rotate(0deg); } 100% { transform: rotate(-50deg); } }
+  @keyframes toggle-knife-spark {
+    0% { opacity: 0; transform: scale(0.3) rotate(0deg); }
+    15% { opacity: 1; transform: scale(1.1) rotate(10deg); }
+    100% { opacity: 0; transform: scale(1.6) rotate(25deg); }
+  }
+  .toggle-knife { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .toggle-knife__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .toggle-knife__track { position: relative; width: 86px; height: 56px; border-radius: 6px; }
+  .toggle-knife__input:focus-visible + .toggle-knife__track { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+  .toggle-knife__plate {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 4px;
+    height: 12px;
+    border-radius: 4px;
+    background: light-dark(#ebedf0, #232529);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  }
+  .toggle-knife__lamp { position: absolute; left: 30px; top: 4px; width: 22px; height: 4px; border-radius: 2px; background: light-dark(#dbdde1, #2e3035); transition: background-color 0.2s, box-shadow 0.2s; }
+  .toggle-knife__hinge { position: absolute; left: 6px; bottom: 12px; width: 12px; height: 12px; border-radius: 50%; background: light-dark(#6d7179, #7d8087); box-shadow: inset 0 0 0 3px light-dark(#cbced3, #393c41); z-index: 2; }
+  .toggle-knife__clip {
+    position: absolute;
+    left: 64px;
+    bottom: 14px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid light-dark(#6d7179, #7d8087);
+    border-top: 0;
+    border-radius: 0 0 3px 3px;
+  }
+  .toggle-knife__blade {
+    position: absolute;
+    left: 12px;
+    bottom: 16px;
+    width: 64px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(light-dark(#42454c, #e5e6e9), light-dark(#5f626a, #a7abb2));
+    transform-origin: 0 50%;
+    transform: rotate(-50deg);
+    z-index: 1;
+  }
+  .toggle-knife__grip {
+    position: absolute;
+    right: -4px;
+    top: -6px;
+    width: 7px;
+    height: 16px;
+    border-radius: 3px;
+    background: light-dark(#6d7179, #7d8087);
+    box-shadow: inset 0 0 0 1px light-dark(#5f626a, #a7abb2);
+  }
+  .toggle-knife__spark {
+    position: absolute;
+    left: 57px;
+    bottom: 6px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, light-dark(#373a40, #f1f2f3) 0 2px, transparent 3px),
+      repeating-conic-gradient(light-dark(#373a40, #f1f2f3) 0 5deg, transparent 5deg 40deg);
+    mask-image: radial-gradient(circle, #000 30%, transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .toggle-knife__input:checked + .toggle-knife__track .toggle-knife__blade { transform: rotate(0deg); }
+  .toggle-knife__input:checked + .toggle-knife__track .toggle-knife__lamp { background: light-dark(#373a40, #f1f2f3); box-shadow: 0 0 6px light-dark(#50535b, #c6c8cd); transition-delay: 0.3s; }
+  .toggle-knife[data-armed] .toggle-knife__input:checked + .toggle-knife__track .toggle-knife__blade { animation: toggle-knife-close 0.55s; }
+  .toggle-knife[data-armed] .toggle-knife__input:not(:checked) + .toggle-knife__track .toggle-knife__blade { animation: toggle-knife-open 0.4s cubic-bezier(0.2, 0.8, 0.3, 1); }
+  .toggle-knife[data-armed] .toggle-knife__input:checked + .toggle-knife__track .toggle-knife__spark { animation: toggle-knife-spark 0.4s ease-out 0.32s; }
+  @media (prefers-reduced-motion: reduce) {
+    .toggle-knife__track * { animation: none !important; transition-delay: 0s !important; }
+  }
+`;
+
+export function KnifeToggle() {
+  const [armed, setArmed] = useState(false);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="toggle-knife" data-armed={armed || undefined}>
+        <input className="toggle-knife__input" type="checkbox" role="switch" onChange={() => setArmed(true)} />
+        <span className="toggle-knife__track" aria-hidden="true">
+          <span className="toggle-knife__plate">
+            <span className="toggle-knife__lamp" />
+          </span>
+          <span className="toggle-knife__clip" />
+          <span className="toggle-knife__blade">
+            <span className="toggle-knife__grip" />
+          </span>
+          <span className="toggle-knife__hinge" />
+          <span className="toggle-knife__spark" />
+        </span>
+        Main power
+      </label>
+    </>
+  );
+}

@@ -1,0 +1,86 @@
+"use client";
+
+const css = `
+  @keyframes toggle-fuse-life { 0% { opacity: 1; } 92% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes toggle-fuse-crackle { to { transform: rotate(45deg) scale(1.25); } }
+  .toggle-fuse { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .toggle-fuse__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .toggle-fuse__track { position: relative; width: 88px; height: 34px; border-radius: 8px; }
+  .toggle-fuse__input:focus-visible + .toggle-fuse__track { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+  .toggle-fuse__cord { position: absolute; inset: 0; width: 88px; height: 34px; }
+  .toggle-fuse__cord path { fill: none; stroke-linecap: round; }
+  .toggle-fuse__rope { stroke: light-dark(#5f626a, #a7abb2); stroke-width: 2.4; stroke-dasharray: 2.5 1.5; }
+  /* Ash follows the spark along the same path. */
+  .toggle-fuse__ash { stroke: light-dark(#ebedf0, #232529); stroke-width: 3.2; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 0.35s ease; }
+  .toggle-fuse__spark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    offset-path: path('M6 22 C 18 8, 30 30, 44 18 S 62 10, 68 17');
+    offset-distance: 0%;
+    offset-rotate: 0deg;
+    opacity: 0;
+    transition: offset-distance 0s 0.35s;
+  }
+  .toggle-fuse__spark i {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, light-dark(#373a40, #f1f2f3) 0 1.5px, transparent 2.5px),
+      repeating-conic-gradient(light-dark(#373a40, #f1f2f3) 0 6deg, transparent 6deg 45deg);
+    mask-image: radial-gradient(circle, #000 35%, transparent 70%);
+    animation: toggle-fuse-crackle 0.08s linear infinite alternate;
+  }
+  .toggle-fuse__bulb {
+    position: absolute;
+    right: 4px;
+    top: 9px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: light-dark(#ebedf0, #232529);
+    box-shadow: inset 0 0 0 1.5px light-dark(#6d7179, #7d8087);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  .toggle-fuse__input:checked + .toggle-fuse__track .toggle-fuse__ash { stroke-dashoffset: 0; transition: stroke-dashoffset 1s linear; }
+  .toggle-fuse__input:checked + .toggle-fuse__track .toggle-fuse__spark { offset-distance: 100%; transition: offset-distance 1s linear; animation: toggle-fuse-life 1.05s forwards; }
+  .toggle-fuse__input:checked + .toggle-fuse__track .toggle-fuse__bulb {
+    background: light-dark(#373a40, #f1f2f3);
+    box-shadow: 0 0 12px 3px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 50%, transparent);
+    transform: scale(1.1);
+    transition: background-color 0.2s 1s, box-shadow 0.3s 1s, transform 0.4s cubic-bezier(0.34, 1.8, 0.64, 1) 1s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .toggle-fuse__track *, .toggle-fuse__cord * { transition-duration: 0.01s !important; transition-delay: 0s !important; animation: none !important; }
+  }
+`;
+
+const PATH = 'M6 22 C 18 8, 30 30, 44 18 S 62 10, 68 17';
+
+export function FuseToggle() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="toggle-fuse">
+        <input className="toggle-fuse__input" type="checkbox" role="switch" />
+        <span className="toggle-fuse__track" aria-hidden="true">
+          <svg className="toggle-fuse__cord" viewBox="0 0 88 34">
+            <path className="toggle-fuse__rope" d={PATH} />
+            <path className="toggle-fuse__ash" d={PATH} pathLength={1} />
+          </svg>
+          <span className="toggle-fuse__bulb" />
+          <span className="toggle-fuse__spark">
+            <i />
+          </span>
+        </span>
+        Ignite
+      </label>
+    </>
+  );
+}

@@ -1,0 +1,43 @@
+.btn-waveform {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 220px;
+  height: 56px;
+  padding: 0;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
+  border-radius: 999px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  color: light-dark(#373a40, #f1f2f3);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+.btn-waveform:hover { border-color: light-dark(#6d7179, #7d8087); }
+.btn-waveform:focus-visible { outline: 2px solid light-dark(#42454c, #e5e6e9); outline-offset: 3px; }
+.btn-waveform__bars {
+  position: absolute;
+  inset: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn-waveform__bar {
+  width: 3px;
+  height: 40px;
+  border-radius: 3px;
+  background: light-dark(#cbced3, #393c41);
+  transform: scaleY(0.15);
+  will-change: transform;
+}
+.btn-waveform__label {
+  position: relative;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: color-mix(in oklab, light-dark(#f3f4f7, #1a1c1f) 82%, transparent);
+  backdrop-filter: blur(2px);
+}

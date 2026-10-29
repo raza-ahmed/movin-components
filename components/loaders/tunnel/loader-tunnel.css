@@ -1,0 +1,35 @@
+@keyframes loader-tunnel-rush {
+  0% { transform: scale(0.04) rotate(0deg); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: scale(1.5) rotate(90deg); opacity: 0; }
+}
+.loader-tunnel {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: radial-gradient(circle, light-dark(#fbfcfd, #121417) 0 20%, light-dark(#f3f4f7, #1a1c1f));
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+}
+.loader-tunnel__frame {
+  position: absolute;
+  inset: 10px;
+  border: 1.5px solid light-dark(#42454c, #e5e6e9);
+  border-radius: 14px;
+  opacity: 0;
+  /* ease-in: frames creep out of the distance and rush past at the end, as perspective does. */
+  animation: loader-tunnel-rush 2.4s cubic-bezier(0.7, 0, 0.9, 0.6) var(--d) infinite;
+}
+.loader-tunnel__light {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin: -3px;
+  border-radius: 50%;
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 0 12px 4px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 45%, transparent);
+}
+@media (prefers-reduced-motion: reduce) { .loader-tunnel__frame { animation-duration: 9s; } }

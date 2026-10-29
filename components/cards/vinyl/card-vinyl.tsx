@@ -1,0 +1,114 @@
+"use client";
+
+import { useRef } from 'react';
+
+const css = `
+  @keyframes card-vinyl-spin { to { transform: rotate(360deg); } }
+  .card-vinyl {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    cursor: pointer;
+  }
+  .card-vinyl:focus-visible { outline: none; }
+  .card-vinyl__record {
+    position: absolute;
+    left: 14px;
+    top: 9px;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, light-dark(#50535b, #c6c8cd) 0 7%, light-dark(#ebedf0, #232529) 7.5% 24%, transparent 24.5%),
+      repeating-radial-gradient(circle, light-dark(#fbfcfd, #121417) 0 1.5px, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 6%, light-dark(#fbfcfd, #121417)) 1.5px 3px);
+    box-shadow: 0 6px 16px -6px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.6));
+    transition: transform 0.7s cubic-bezier(0.34, 1.2, 0.64, 1);
+  }
+  /* A sheen that stays put while the record turns under it. */
+  .card-vinyl__record::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 30deg, transparent 0 10%, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 14%, transparent) 15%, transparent 22% 60%, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 10%, transparent) 65%, transparent 72%);
+  }
+  .card-vinyl__grooves { position: absolute; inset: 0; border-radius: 50%; animation: card-vinyl-spin 1.8s linear infinite; animation-play-state: paused; }
+  .card-vinyl__grooves::before { content: ''; position: absolute; left: 50%; top: 18%; width: 2px; height: 10%; background: light-dark(#6d7179, #7d8087); }
+  .card-vinyl__sleeve {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    display: grid;
+    align-content: end;
+    width: 146px;
+    height: 146px;
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, light-dark(#cbced3, #393c41), light-dark(#ebedf0, #232529) 60%, light-dark(#f3f4f7, #1a1c1f));
+    box-shadow: inset 0 0 0 1px light-dark(#cbced3, #393c41), 0 10px 22px -10px light-dark(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.7));
+  }
+  .card-vinyl__sleeve b { color: light-dark(#373a40, #f1f2f3); font-size: 14px; font-weight: 600; line-height: 1.1; }
+  .card-vinyl__sleeve span { color: light-dark(#50535b, #c6c8cd); font-size: 11px; }
+  .card-vinyl__sleeve::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid color-mix(in oklab, light-dark(#373a40, #f1f2f3) 50%, transparent);
+  }
+  .card-vinyl__arm {
+    position: absolute;
+    z-index: 2;
+    right: 4px;
+    top: 4px;
+    width: 8px;
+    height: 96px;
+    transform-origin: 4px 4px;
+    transform: rotate(4deg);
+    transition: transform 0.6s cubic-bezier(0.34, 1.3, 0.64, 1) 0.35s;
+  }
+  .card-vinyl__arm::before { content: ''; position: absolute; left: 0; top: 0; width: 8px; height: 8px; border-radius: 50%; background: light-dark(#5f626a, #a7abb2); }
+  .card-vinyl__arm::after { content: ''; position: absolute; left: 3px; top: 6px; width: 2px; height: 86px; border-radius: 1px; background: light-dark(#50535b, #c6c8cd); box-shadow: -2px 86px 0 2px light-dark(#42454c, #e5e6e9); }
+  .card-vinyl:hover .card-vinyl__record, .card-vinyl:focus-visible .card-vinyl__record { transform: translateX(86px); }
+  .card-vinyl:hover .card-vinyl__arm, .card-vinyl:focus-visible .card-vinyl__arm { transform: rotate(30deg); }
+  @media (prefers-reduced-motion: reduce) {
+    .card-vinyl__record, .card-vinyl__arm { transition-duration: 0.01s; }
+    .card-vinyl__grooves { animation: none; }
+  }
+`;
+
+export function VinylCard() {
+  const grooves = useRef<HTMLSpanElement>(null);
+  // Spin only while it is out of the sleeve.
+  const play = (on: boolean) => grooves.current?.style.setProperty('animation-play-state', on ? 'running' : 'paused');
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div
+        className="card-vinyl"
+        tabIndex={0}
+        role="group"
+        aria-label="Low Light by Neon Coast"
+        onPointerEnter={() => play(true)}
+        onPointerLeave={() => play(false)}
+        onFocus={() => play(true)}
+        onBlur={() => play(false)}
+      >
+        <div className="card-vinyl__record" aria-hidden="true">
+          <span ref={grooves} className="card-vinyl__grooves" />
+        </div>
+        <div className="card-vinyl__sleeve">
+          <b>Low Light</b>
+          <span>Neon Coast · LP</span>
+        </div>
+        <span className="card-vinyl__arm" aria-hidden="true" />
+      </div>
+    </>
+  );
+}

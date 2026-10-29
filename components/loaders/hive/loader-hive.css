@@ -1,0 +1,26 @@
+@keyframes loader-hive-cell {
+  0%, 100% { background: light-dark(#ebedf0, #232529); transform: scale(0.9); }
+  12% { background: light-dark(#373a40, #f1f2f3); transform: scale(1); }
+  40% { background: light-dark(#cbced3, #393c41); transform: scale(0.92); }
+}
+@keyframes loader-hive-core {
+  0%, 100% { background: light-dark(#6d7179, #7d8087); transform: scale(0.82); }
+  50% { background: light-dark(#42454c, #e5e6e9); transform: scale(0.95); }
+}
+.loader-hive { position: relative; width: 104px; height: 100px; }
+.loader-hive__cell {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 34px;
+  margin: -17px 0 0 -15px;
+  /* Pointy-top hexagon. */
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: light-dark(#ebedf0, #232529);
+  animation: loader-hive-cell 2.1s ease-out var(--d) infinite;
+}
+.loader-hive__cell--core { animation: loader-hive-core 1.05s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .loader-hive__cell { animation: none; transform: scale(0.9); }
+}

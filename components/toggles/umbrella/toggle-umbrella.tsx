@@ -1,0 +1,53 @@
+"use client";
+
+import * as React from "react";
+const DROPS = [{ x: 8, d: 0 }, { x: 22, d: -0.4 }, { x: 36, d: -0.15 }, { x: 50, d: -0.6 }, { x: 62, d: -0.3 }];
+
+const css = `
+  .toggle-umbrella { position: relative; display: inline-flex; align-items: center; gap: 14px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .toggle-umbrella__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .toggle-umbrella__scene { position: relative; flex: none; }
+  .toggle-umbrella__input:focus-visible + .toggle-umbrella__scene { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 4px; border-radius: 8px; }
+  @keyframes toggle-umbrella-rain { from { transform: translateY(-14px); opacity: 0; } 20% { opacity: 0.8; } to { transform: translateY(var(--to)); opacity: 0; } }
+  .toggle-umbrella__scene { width: 70px; height: 62px; }
+  .toggle-umbrella__drop { position: absolute; top: 0; width: 1.5px; height: 8px; border-radius: 1px; background: light-dark(#5f626a, #a7abb2); --to: 58px; animation: toggle-umbrella-rain 0.8s linear infinite var(--d); }
+  /* Open, the drops stop at the canopy instead of falling through. */
+  .toggle-umbrella__input:checked + .toggle-umbrella__scene .toggle-umbrella__drop { --to: 8px; }
+  .toggle-umbrella__canopy { position: absolute; left: 5px; top: 14px; width: 60px; height: 26px; overflow: visible; transform-origin: 30px 2px; transform: scale(0.16, 1.15); transition: transform 0.55s cubic-bezier(0.3, 1.5, 0.5, 1); }
+  .toggle-umbrella__canopy path { fill: light-dark(#50535b, #c6c8cd); }
+  .toggle-umbrella__canopy .toggle-umbrella__rib { fill: none; stroke: light-dark(#6d7179, #7d8087); stroke-width: 1; }
+  .toggle-umbrella__input:checked + .toggle-umbrella__scene .toggle-umbrella__canopy { transform: none; }
+  .toggle-umbrella__shaft { position: absolute; left: 34px; top: 10px; width: 2px; height: 42px; background: light-dark(#42454c, #e5e6e9); }
+  .toggle-umbrella__handle { position: absolute; left: 34px; top: 46px; width: 10px; height: 10px; border: 2px solid light-dark(#42454c, #e5e6e9); border-top: 0; border-radius: 0 0 6px 6px; }
+  .toggle-umbrella__tip { position: absolute; left: 33px; top: 7px; width: 4px; height: 5px; border-radius: 2px; background: light-dark(#42454c, #e5e6e9); }
+  @media (prefers-reduced-motion: reduce) {
+    .toggle-umbrella__drop { animation: none; opacity: 0; }
+    .toggle-umbrella__canopy { transition: none; }
+  }
+`;
+
+export function UmbrellaToggle() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="toggle-umbrella">
+        <input className="toggle-umbrella__input" type="checkbox" role="switch" />
+        <span className="toggle-umbrella__scene" aria-hidden="true">
+          {DROPS.map((d) => (
+            <span key={d.x} className="toggle-umbrella__drop" style={{ left: d.x, '--d': `${d.d}s` } as React.CSSProperties} />
+          ))}
+          <span className="toggle-umbrella__tip" />
+          <span className="toggle-umbrella__shaft" />
+          <span className="toggle-umbrella__handle" />
+          <svg className="toggle-umbrella__canopy" viewBox="0 0 60 26">
+            <path d="M0 24C2 10 15 2 30 2S58 10 60 24C56 21 50 21 45 24C40 21 35 21 30 24C25 21 20 21 15 24C10 21 4 21 0 24Z" />
+            <path className="toggle-umbrella__rib" d="M30 2L15 24M30 2L45 24M30 2V24" />
+          </svg>
+        </span>
+        Rain cover
+      </label>
+    </>
+  );
+}

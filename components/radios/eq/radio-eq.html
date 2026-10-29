@@ -1,0 +1,24 @@
+<div class="radio-eq">
+  <div class="radio-eq__graph" aria-hidden="true">
+    <svg viewBox="0 0 220 80">
+      <line class="radio-eq__grid" x1="0" y1="0" x2="0" y2="80"></line>
+      <line class="radio-eq__grid" x1="55" y1="0" x2="55" y2="80"></line>
+      <line class="radio-eq__grid" x1="110" y1="0" x2="110" y2="80"></line>
+      <line class="radio-eq__grid" x1="165" y1="0" x2="165" y2="80"></line>
+      <line class="radio-eq__grid" x1="220" y1="0" x2="220" y2="80"></line>
+      <line class="radio-eq__mid" x1="0" y1="40" x2="220" y2="40"></line>
+      <path class="radio-eq__area" d="M0 40C40 40 70 40 110 40S180 40 220 40L220 80L0 80Z"></path>
+      <path class="radio-eq__line" d="M0 40C40 40 70 40 110 40S180 40 220 40"></path>
+    </svg>
+    <div class="radio-eq__axis">
+      <span>60 Hz</span>
+      <span>1 kHz</span>
+      <span>10 kHz</span>
+    </div>
+  </div>
+  <div class="radio-eq__opts" role="radiogroup" aria-label="Sound">
+    <label class="radio-eq__opt"><input class="radio-eq__input" type="radio" name="radio-eq" value="warm"/>Warm</label>
+    <label class="radio-eq__opt"><input class="radio-eq__input" type="radio" name="radio-eq" checked="" value="flat"/>Flat</label>
+    <label class="radio-eq__opt"><input class="radio-eq__input" type="radio" name="radio-eq" value="bright"/>Bright</label>
+  </div>
+</div>

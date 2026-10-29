@@ -1,0 +1,21 @@
+@keyframes loader-ripple-field-wave {
+  0%, 100% { transform: scale(0.35); opacity: 0.25; }
+  18% { transform: scale(1.15); opacity: 1; }
+  40% { transform: scale(0.35); opacity: 0.25; }
+}
+.loader-ripple-field {
+  display: grid;
+  grid-template-columns: repeat(9, 10px);
+  grid-auto-rows: 10px;
+  gap: 2px;
+}
+.loader-ripple-field__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: light-dark(#373a40, #f1f2f3);
+  animation: loader-ripple-field-wave 2s cubic-bezier(0.45, 0, 0.55, 1) var(--d) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader-ripple-field__dot { animation: none; transform: scale(0.5); opacity: 0.5; }
+}

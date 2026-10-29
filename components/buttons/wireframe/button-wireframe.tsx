@@ -1,0 +1,89 @@
+"use client";
+
+const css = `
+  .btn-wireframe {
+    --w: 170px;
+    --h: 50px;
+    --d: 26px;
+    position: relative;
+    width: var(--w);
+    height: var(--h);
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: inherit;
+    cursor: pointer;
+    perspective: 600px;
+  }
+  .btn-wireframe:focus-visible { outline: 2px solid light-dark(#42454c, #e5e6e9); outline-offset: 14px; border-radius: 8px; }
+  .btn-wireframe__box {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transform: rotateX(-24deg) rotateY(32deg);
+    transition: transform 0.8s cubic-bezier(0.34, 1.3, 0.64, 1);
+  }
+  .btn-wireframe__face {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    border: 1px solid light-dark(#5f626a, #a7abb2);
+    background: transparent;
+    color: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    backface-visibility: visible;
+    transition: background-color 0.35s ease var(--t, 0s), border-color 0.35s ease var(--t, 0s), color 0.35s ease var(--t, 0s);
+  }
+  .btn-wireframe__face--front, .btn-wireframe__face--back { width: var(--w); height: var(--h); }
+  .btn-wireframe__face--left, .btn-wireframe__face--right { width: var(--d); height: var(--h); left: calc((var(--w) - var(--d)) / 2); }
+  .btn-wireframe__face--top, .btn-wireframe__face--bottom { width: var(--w); height: var(--d); top: calc((var(--h) - var(--d)) / 2); }
+  .btn-wireframe__face--front { transform: translateZ(calc(var(--d) / 2)); color: light-dark(#50535b, #c6c8cd); --t: 0.3s; }
+  .btn-wireframe__face--back { transform: rotateY(180deg) translateZ(calc(var(--d) / 2)); border-style: dashed; --t: 0s; }
+  .btn-wireframe__face--right { transform: rotateY(90deg) translateZ(calc(var(--w) / 2)); --t: 0.1s; }
+  .btn-wireframe__face--left { transform: rotateY(-90deg) translateZ(calc(var(--w) / 2)); border-style: dashed; --t: 0.05s; }
+  .btn-wireframe__face--top { transform: rotateX(90deg) translateZ(calc(var(--h) / 2)); --t: 0.15s; }
+  .btn-wireframe__face--bottom { transform: rotateX(-90deg) translateZ(calc(var(--h) / 2)); border-style: dashed; --t: 0.2s; }
+  /* Materialise: the slab squares up to the viewer and its faces fill in one after another. */
+  .btn-wireframe:hover .btn-wireframe__box,
+  .btn-wireframe:focus-visible .btn-wireframe__box { transform: rotateX(-8deg) rotateY(0deg); }
+  .btn-wireframe:hover .btn-wireframe__face,
+  .btn-wireframe:focus-visible .btn-wireframe__face { border-color: light-dark(#cbced3, #393c41); border-style: solid; }
+  .btn-wireframe:hover .btn-wireframe__face--front,
+  .btn-wireframe:focus-visible .btn-wireframe__face--front { background: light-dark(#ebedf0, #232529); color: light-dark(#373a40, #f1f2f3); border-color: light-dark(#6d7179, #7d8087); }
+  .btn-wireframe:hover .btn-wireframe__face--top,
+  .btn-wireframe:focus-visible .btn-wireframe__face--top { background: light-dark(#dbdde1, #2e3035); }
+  .btn-wireframe:hover .btn-wireframe__face--bottom,
+  .btn-wireframe:focus-visible .btn-wireframe__face--bottom { background: light-dark(#fbfcfd, #121417); }
+  .btn-wireframe:hover .btn-wireframe__face--left,
+  .btn-wireframe:hover .btn-wireframe__face--right,
+  .btn-wireframe:focus-visible .btn-wireframe__face--left,
+  .btn-wireframe:focus-visible .btn-wireframe__face--right { background: light-dark(#f3f4f7, #1a1c1f); }
+  .btn-wireframe:hover .btn-wireframe__face--back,
+  .btn-wireframe:focus-visible .btn-wireframe__face--back { background: light-dark(#f3f4f7, #1a1c1f); }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-wireframe__box { transition: none; }
+  }
+`;
+
+export function WireframeButton() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <button type="button" className="btn-wireframe" aria-label="Render">
+        <span className="btn-wireframe__box" aria-hidden="true">
+          <span className="btn-wireframe__face btn-wireframe__face--back" />
+          <span className="btn-wireframe__face btn-wireframe__face--left" />
+          <span className="btn-wireframe__face btn-wireframe__face--right" />
+          <span className="btn-wireframe__face btn-wireframe__face--top" />
+          <span className="btn-wireframe__face btn-wireframe__face--bottom" />
+          <span className="btn-wireframe__face btn-wireframe__face--front">Render</span>
+        </span>
+      </button>
+    </>
+  );
+}

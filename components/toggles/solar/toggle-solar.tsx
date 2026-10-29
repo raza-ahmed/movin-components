@@ -1,0 +1,88 @@
+"use client";
+
+import * as React from "react";
+const css = `
+  @keyframes toggle-solar-shine { to { background-position: -40px 0, 0 0; } }
+  .toggle-solar { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .toggle-solar__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .toggle-solar__track { position: relative; width: 94px; height: 32px; border-radius: 6px; perspective: 160px; }
+  .toggle-solar__input:focus-visible + .toggle-solar__track { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+  .toggle-solar__strut { position: absolute; left: 2px; right: 2px; top: 15px; height: 2px; background: light-dark(#dbdde1, #2e3035); transform: scaleX(0.12); transition: transform 0.3s ease 0.35s; }
+  .toggle-solar__body {
+    position: absolute;
+    left: 40px;
+    top: 4px;
+    width: 14px;
+    height: 24px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, light-dark(#6d7179, #7d8087), light-dark(#50535b, #c6c8cd) 50%, light-dark(#6d7179, #7d8087));
+    z-index: 1;
+  }
+  .toggle-solar__body::before { content: ''; position: absolute; left: 6px; top: -4px; width: 2px; height: 4px; background: light-dark(#6d7179, #7d8087); }
+  .toggle-solar__light { position: absolute; left: 4px; bottom: 4px; width: 6px; height: 3px; border-radius: 1px; background: light-dark(#dbdde1, #2e3035); transition: background-color 0.2s; }
+  .toggle-solar__panel {
+    position: absolute;
+    top: 6px;
+    width: 12px;
+    height: 20px;
+    border-radius: 1px;
+    background:
+      linear-gradient(100deg, transparent 30%, color-mix(in oklab, light-dark(#373a40, #f1f2f3) 35%, transparent) 45%, transparent 60%) 40px 0 / 40px 100% no-repeat,
+      linear-gradient(light-dark(#ebedf0, #232529) 1px, transparent 1px) 0 0 / 100% 5px,
+      light-dark(#cbced3, #393c41);
+    box-shadow: inset 0 0 0 1px light-dark(#6d7179, #7d8087);
+    transform: rotateY(var(--fold));
+    opacity: 0;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) calc((2 - var(--i)) * 0.08s), opacity 0.1s linear calc(0.25s + (2 - var(--i)) * 0.08s);
+  }
+  .toggle-solar__panel--l { transform-origin: 100% 50%; --fold: -92deg; }
+  .toggle-solar__panel--r { transform-origin: 0 50%; --fold: 92deg; }
+  .toggle-solar__input:checked + .toggle-solar__track .toggle-solar__panel {
+    transform: rotateY(0deg);
+    opacity: 1;
+    transition-delay: calc(var(--i) * 0.12s);
+    animation: toggle-solar-shine 1.8s ease-in-out calc(0.5s + var(--i) * 0.1s) infinite;
+  }
+  .toggle-solar__input:checked + .toggle-solar__track .toggle-solar__strut { transform: none; transition-delay: 0s; }
+  .toggle-solar__input:checked + .toggle-solar__track .toggle-solar__light { background: light-dark(#373a40, #f1f2f3); transition-delay: 0.5s; }
+  @media (prefers-reduced-motion: reduce) {
+    .toggle-solar__track * { transition-duration: 0.01s !important; transition-delay: 0s !important; animation: none !important; }
+  }
+`;
+
+// Three panels a side, each hinged toward the body so they swing out in sequence.
+const PANELS = [
+  { side: 'r', left: 55, i: 0 },
+  { side: 'r', left: 68, i: 1 },
+  { side: 'r', left: 81, i: 2 },
+  { side: 'l', left: 27, i: 0 },
+  { side: 'l', left: 14, i: 1 },
+  { side: 'l', left: 1, i: 2 },
+];
+
+export function SolarToggle() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="toggle-solar">
+        <input className="toggle-solar__input" type="checkbox" role="switch" />
+        <span className="toggle-solar__track" aria-hidden="true">
+          <span className="toggle-solar__strut" />
+          {PANELS.map((p) => (
+            <span
+              key={`${p.side}${p.i}`}
+              className={`toggle-solar__panel toggle-solar__panel--${p.side}`}
+              style={{ left: p.left, '--i': p.i } as React.CSSProperties}
+            />
+          ))}
+          <span className="toggle-solar__body">
+            <span className="toggle-solar__light" />
+          </span>
+        </span>
+        Solar charging
+      </label>
+    </>
+  );
+}

@@ -1,0 +1,17 @@
+.loader-plasma-globe { display: block; width: 108px; height: 120px; overflow: visible; }
+.loader-plasma-globe__glass {
+  fill: color-mix(in oklab, light-dark(#373a40, #f1f2f3) 4%, transparent);
+  stroke: light-dark(#6d7179, #7d8087);
+  stroke-width: 1;
+}
+.loader-plasma-globe__shine { fill: none; stroke: color-mix(in oklab, light-dark(#373a40, #f1f2f3) 35%, transparent); stroke-width: 1.5; stroke-linecap: round; }
+.loader-plasma-globe__base { fill: light-dark(#ebedf0, #232529); stroke: light-dark(#cbced3, #393c41); stroke-width: 1; }
+.loader-plasma-globe__bolt {
+  fill: none;
+  stroke: light-dark(#373a40, #f1f2f3);
+  stroke-width: 1;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 2px light-dark(#373a40, #f1f2f3)) drop-shadow(0 0 5px light-dark(#50535b, #c6c8cd));
+}
+.loader-plasma-globe__core { fill: light-dark(#373a40, #f1f2f3); filter: drop-shadow(0 0 6px light-dark(#373a40, #f1f2f3)); }
+.loader-plasma-globe__strike { fill: light-dark(#373a40, #f1f2f3); }

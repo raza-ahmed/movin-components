@@ -1,0 +1,27 @@
+@keyframes loader-terrain-rise {
+  0%, 100% { transform: translateZ(0); background: light-dark(#6d7179, #7d8087); }
+  50% { transform: translateZ(14px); background: light-dark(#373a40, #f1f2f3); }
+}
+.loader-terrain {
+  display: grid;
+  place-items: center;
+  width: 140px;
+  height: 100px;
+  perspective: 320px;
+}
+.loader-terrain__plane {
+  display: grid;
+  grid-template-columns: repeat(10, 4px);
+  grid-auto-rows: 4px;
+  gap: 7px;
+  transform-style: preserve-3d;
+  transform: rotateX(62deg) rotateZ(-35deg);
+}
+.loader-terrain__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: light-dark(#6d7179, #7d8087);
+  animation: loader-terrain-rise 2.4s cubic-bezier(0.45, 0, 0.55, 1) var(--d) infinite;
+}
+@media (prefers-reduced-motion: reduce) { .loader-terrain__dot { animation: none; } }

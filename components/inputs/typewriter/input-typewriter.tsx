@@ -1,0 +1,96 @@
+"use client";
+
+import * as React from "react";
+import { useState } from 'react';
+
+const css = `
+  @keyframes field-typewriter-strike {
+    from { transform: translateY(-8px) rotate(var(--r)); opacity: 0.2; }
+    55% { transform: translateY(1px) rotate(var(--r)); opacity: 1; }
+    to { transform: translateY(0) rotate(var(--r)); opacity: var(--ink); }
+  }
+  @keyframes field-typewriter-guide { 40% { transform: translateY(3px); } }
+  @keyframes field-typewriter-ding { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-14px); } }
+  .field-typewriter { width: 250px; }
+  .field-typewriter__label { display: block; margin-bottom: 6px; color: light-dark(#50535b, #c6c8cd); font-size: 12px; }
+  .field-typewriter__paper {
+    position: relative;
+    height: 74px;
+    border-radius: 6px;
+    background:
+      linear-gradient(transparent 46px, light-dark(#dbdde1, #2e3035) 46px 47px, transparent 47px),
+      light-dark(#f3f4f7, #1a1c1f);
+    box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+    overflow: hidden;
+  }
+  .field-typewriter__paper:focus-within { box-shadow: inset 0 0 0 1px light-dark(#5f626a, #a7abb2); }
+  /* The real field sits on top, invisible, so typing, paste and screen readers work as normal. */
+  .field-typewriter__input { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; border: 0; outline: 0; padding: 0; background: none; color: transparent; caret-color: transparent; font-size: 16px; cursor: text; }
+  /* The carriage: the line slides left so the type always lands at the strike point. */
+  .field-typewriter__line {
+    position: absolute;
+    left: 125px;
+    top: 24px;
+    display: flex;
+    color: light-dark(#373a40, #f1f2f3);
+    font: 600 17px/22px ui-monospace, SFMono-Regular, Menlo, monospace;
+    white-space: pre;
+    transition: transform 0.08s steps(2);
+  }
+  .field-typewriter__ch { display: inline-block; width: 1ch; opacity: var(--ink); animation: field-typewriter-strike 0.16s ease-out both; }
+  .field-typewriter__guide { position: absolute; left: 124px; top: 12px; width: 0; height: 0; border: 5px solid transparent; border-top-color: light-dark(#6d7179, #7d8087); margin-left: -4px; }
+  .field-typewriter__guide[data-hit] { animation: field-typewriter-guide 0.12s ease-out; }
+  .field-typewriter__ding { position: absolute; right: 10px; top: 6px; color: light-dark(#50535b, #c6c8cd); font-family: inherit; font-style: italic; font-size: 11px; font-weight: 600; animation: field-typewriter-ding 0.8s ease-out forwards; }
+  .field-typewriter__count { display: block; margin-top: 6px; color: light-dark(#5f626a, #a7abb2); font-size: 11px; text-align: right; font-variant-numeric: tabular-nums; }
+  @media (prefers-reduced-motion: reduce) {
+    .field-typewriter__ch, .field-typewriter__guide[data-hit] { animation: none; }
+    .field-typewriter__line { transition: none; }
+  }
+`;
+
+// Each strike lands with its own slight tilt and ink density, like real type.
+const tilt = (i: number) => (Math.sin(i * 12.9898) * 43758.5453) % 1;
+
+export function TypewriterInput() {
+  const [value, setValue] = useState('Dear diary,');
+  const n = value.length;
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="field-typewriter">
+        <label className="field-typewriter__label" htmlFor="field-typewriter-input">
+          Note
+        </label>
+        <div className="field-typewriter__paper">
+          <input
+            id="field-typewriter-input"
+            className="field-typewriter__input"
+            value={value}
+            maxLength={120}
+            autoComplete="off"
+            spellCheck={false}
+            onChange={(e) => setValue(e.target.value)}
+            // The carriage only ever types at the end, so keep the caret there.
+            onSelect={(e) => e.currentTarget.setSelectionRange(e.currentTarget.value.length, e.currentTarget.value.length)}
+          />
+          <span key={n} className="field-typewriter__guide" data-hit={n > 0 || undefined} aria-hidden="true" />
+          <span className="field-typewriter__line" style={{ transform: `translateX(${-n}ch)` }} aria-hidden="true">
+            {[...value].map((c, i) => (
+              <span key={i} className="field-typewriter__ch" style={{ '--r': `${(tilt(i) * 3).toFixed(1)}deg`, '--ink': (0.78 + Math.abs(tilt(i + 7)) * 0.22).toFixed(2) } as React.CSSProperties}>
+                {c}
+              </span>
+            ))}
+          </span>
+          {n > 0 && n % 20 === 0 && (
+            <span key={`ding${n}`} className="field-typewriter__ding" aria-hidden="true">
+              ding
+            </span>
+          )}
+        </div>
+        <span className="field-typewriter__count">{n} / 120</span>
+      </div>
+    </>
+  );
+}

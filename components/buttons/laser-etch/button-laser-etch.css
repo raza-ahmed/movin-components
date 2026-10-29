@@ -1,0 +1,81 @@
+@property --btn-laser-etch-p { syntax: '<percentage>'; inherits: true; initial-value: 0%; }
+/* The beam switches off once the pass is done. */
+@keyframes btn-laser-etch-beam {
+  0%, 92% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes btn-laser-etch-spark {
+  from { transform: translate(0, 0) scale(1); opacity: 1; }
+  to { transform: translate(var(--sx), var(--sy)) scale(0.3); opacity: 0; }
+}
+.btn-laser-etch {
+  --btn-laser-etch-p: 0%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 200px;
+  height: 60px;
+  padding: 0;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
+  border-radius: 10px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  font-family: inherit;
+  cursor: pointer;
+  transition: --btn-laser-etch-p 0.35s cubic-bezier(0.4, 0, 1, 1), border-color 0.3s ease;
+}
+.btn-laser-etch:hover, .btn-laser-etch:focus-visible {
+  --btn-laser-etch-p: 100%;
+  border-color: light-dark(#6d7179, #7d8087);
+  transition: --btn-laser-etch-p 1.1s linear, border-color 0.3s ease;
+}
+.btn-laser-etch:focus-visible { outline: 2px solid light-dark(#42454c, #e5e6e9); outline-offset: 3px; }
+/* Both copies span the whole button, so the etch and the beam share one coordinate. */
+.btn-laser-etch__text {
+  grid-area: 1 / 1;
+  justify-self: stretch;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.btn-laser-etch__text--outline {
+  color: transparent;
+  -webkit-text-stroke: 1px light-dark(#6d7179, #7d8087);
+}
+.btn-laser-etch__text--etched {
+  color: light-dark(#373a40, #f1f2f3);
+  clip-path: inset(0 calc(100% - var(--btn-laser-etch-p)) 0 0);
+  text-shadow: 0 0 8px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 40%, transparent);
+}
+.btn-laser-etch__beam {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: var(--btn-laser-etch-p);
+  width: 2px;
+  margin-left: -1px;
+  border-radius: 2px;
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 0 8px 1px light-dark(#373a40, #f1f2f3), 0 0 18px 4px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 35%, transparent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.btn-laser-etch:hover .btn-laser-etch__beam,
+.btn-laser-etch:focus-visible .btn-laser-etch__beam { animation: btn-laser-etch-beam 1.2s linear forwards; }
+.btn-laser-etch__spark {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: light-dark(#373a40, #f1f2f3);
+  opacity: 0;
+}
+.btn-laser-etch:hover .btn-laser-etch__spark,
+.btn-laser-etch:focus-visible .btn-laser-etch__spark { animation: btn-laser-etch-spark 0.45s ease-out var(--d) infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .btn-laser-etch, .btn-laser-etch:hover { transition: none; }
+  .btn-laser-etch__beam, .btn-laser-etch__spark { display: none; }
+}

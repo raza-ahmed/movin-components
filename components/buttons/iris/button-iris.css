@@ -1,0 +1,35 @@
+.btn-iris {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 128px;
+  height: 128px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: light-dark(#fbfcfd, #121417);
+  color: light-dark(#373a40, #f1f2f3);
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px light-dark(#cbced3, #393c41), 0 0 0 6px light-dark(#f3f4f7, #1a1c1f), 0 0 0 7px light-dark(#dbdde1, #2e3035);
+}
+.btn-iris:focus-visible { outline: 2px solid light-dark(#42454c, #e5e6e9); outline-offset: 10px; }
+.btn-iris__inside {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 50%, transparent);
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-iris:hover .btn-iris__inside,
+.btn-iris:focus-visible .btn-iris__inside { opacity: 1; transform: none; transition-delay: 0.1s; }
+.btn-iris svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.btn-iris__blade { stroke: light-dark(#fbfcfd, #121417); stroke-width: 1; stroke-linejoin: round; }
+.btn-iris__blade:nth-child(odd) { fill: light-dark(#ebedf0, #232529); }
+.btn-iris__blade:nth-child(even) { fill: light-dark(#dbdde1, #2e3035); }

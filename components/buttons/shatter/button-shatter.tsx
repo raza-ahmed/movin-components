@@ -28,7 +28,7 @@ const css = `
     height: 56px;
     border-radius: 12px;
     background: linear-gradient(180deg, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd));
-    box-shadow: inset 0 -2px 0 light-dark(rgba(251, 252, 253, 0.14), rgba(18, 20, 23, 0.14));
+    box-shadow: inset 0 -2px 0 light-dark(rgba(0, 0, 0, 0.1), rgba(18, 20, 23, 0.14));
     color: light-dark(#fbfcfd, #121417);
     font-size: 15px;
     font-weight: 600;

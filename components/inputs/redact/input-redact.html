@@ -1,0 +1,18 @@
+<div class="field-redact">
+  <div class="field-redact__head">
+    <div class="field-redact__top">
+      <label class="field-redact__label" for="field-redact-area">Notes</label>
+      <button type="button" class="field-redact__info" aria-label="Hides phone numbers and emails" data-tip="Hides phone numbers and emails">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 11v5M12 7.5v.01"></path>
+        </svg>
+      </button>
+    </div>
+    <button type="button" class="field-redact__toggle" aria-pressed="false">Reveal</button>
+  </div>
+  <div class="field-redact__box">
+    <textarea id="field-redact-area" class="field-redact__area" spellCheck="false">Call me on 415 555 0199 or write to sam@studio.io before Friday.</textarea>
+    <div class="field-redact__mirror" aria-hidden="true"><span>Call me on </span><span class="field-redact__bar">415 555 0199</span><span> or write to </span><span class="field-redact__bar">sam@studio.io</span><span> before Friday.</span></div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+@keyframes btn-tesla-flash {
+  from { box-shadow: 0 0 0 0 color-mix(in oklab, light-dark(#373a40, #f1f2f3) 70%, transparent), 0 0 40px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 50%, transparent); background-color: light-dark(#dbdde1, #2e3035); }
+  to { box-shadow: 0 0 0 14px transparent, 0 0 0 transparent; background-color: light-dark(#f3f4f7, #1a1c1f); }
+}
+.btn-tesla { position: relative; width: 260px; height: 120px; }
+.btn-tesla__arcs { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
+.btn-tesla__arc {
+  fill: none;
+  stroke: light-dark(#373a40, #f1f2f3);
+  stroke-width: 1.6;
+  stroke-linejoin: bevel;
+  filter: drop-shadow(0 0 3px light-dark(#373a40, #f1f2f3)) drop-shadow(0 0 8px light-dark(#50535b, #c6c8cd));
+}
+.btn-tesla__arc--faint { stroke-width: 0.8; opacity: 0.55; }
+.btn-tesla__node {
+  fill: light-dark(#ebedf0, #232529);
+  stroke: light-dark(#5f626a, #a7abb2);
+  stroke-width: 1.5;
+}
+.btn-tesla__node[data-live] { fill: light-dark(#373a40, #f1f2f3); filter: drop-shadow(0 0 6px light-dark(#373a40, #f1f2f3)); }
+.btn-tesla__btn {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  width: 160px;
+  height: 46px;
+  border: 1px solid light-dark(#cbced3, #393c41);
+  border-radius: 10px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  color: light-dark(#373a40, #f1f2f3);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+.btn-tesla__btn:focus-visible { outline: 2px solid light-dark(#42454c, #e5e6e9); outline-offset: 3px; }
+.btn-tesla__btn[data-flash] { animation: btn-tesla-flash 0.45s ease-out; }

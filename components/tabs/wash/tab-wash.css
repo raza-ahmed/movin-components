@@ -1,0 +1,20 @@
+@keyframes tabs-wash-bloom-a { 0% { transform: scale(0.3, 0.5); opacity: 0; } 60% { opacity: 1; } 100% { transform: none; opacity: 1; } }
+@keyframes tabs-wash-bloom-b { 0% { transform: scale(0.3, 0.5); opacity: 0; } 60% { opacity: 1; } 100% { transform: none; opacity: 1; } }
+.tabs-wash { display: grid; gap: 14px; width: 234px; }
+.tabs-wash__list { position: relative; display: flex; }
+.tabs-wash__tab { position: relative; padding: 0; border: 0; background: none; font: inherit; cursor: pointer; }
+.tabs-wash__tab:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; border-radius: 8px; }
+.tabs-wash__tab { position: relative; z-index: 1; width: 78px; height: 44px; color: light-dark(#5f626a, #a7abb2); font-size: 14px; font-weight: 500; transition: color 0.3s; }
+.tabs-wash__tab[aria-selected='true'] { color: light-dark(#fbfcfd, #121417); }
+/* The wash: a soft blot whose edge is roughened by noise, so it reads as paint soaked into paper. */
+.tabs-wash__wash { position: absolute; top: 2px; left: calc(var(--i) * 78px + 2px); width: 74px; height: 40px; pointer-events: none; transition: left 0.5s cubic-bezier(0.5, 0, 0.3, 1); }
+.tabs-wash__wash svg { width: 100%; height: 100%; overflow: visible; }
+.tabs-wash__wash ellipse { fill: light-dark(#42454c, #e5e6e9); }
+.tabs-wash__wash .tabs-wash__edge { fill: none; stroke: light-dark(#373a40, #f1f2f3); stroke-width: 2; opacity: 0.6; }
+.tabs-wash[data-flip='a'] .tabs-wash__wash svg { animation: tabs-wash-bloom-a 0.7s cubic-bezier(0.2, 0.8, 0.3, 1); }
+.tabs-wash[data-flip='b'] .tabs-wash__wash svg { animation: tabs-wash-bloom-b 0.7s cubic-bezier(0.2, 0.8, 0.3, 1); }
+.tabs-wash__panel { color: light-dark(#50535b, #c6c8cd); font-size: 13px; text-align: center; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-wash__wash { transition: none; }
+  .tabs-wash__wash svg { animation: none !important; }
+}

@@ -1,0 +1,28 @@
+.btn-constellation {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 230px;
+  height: 64px;
+  padding: 0;
+  border: 1px solid light-dark(#dbdde1, #2e3035);
+  border-radius: 14px;
+  background: light-dark(#fbfcfd, #121417);
+  color: light-dark(#373a40, #f1f2f3);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+.btn-constellation:hover { border-color: light-dark(#6d7179, #7d8087); }
+.btn-constellation:focus-visible { outline: 2px solid light-dark(#42454c, #e5e6e9); outline-offset: 3px; }
+.btn-constellation canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.btn-constellation__label {
+  position: relative;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: color-mix(in oklab, light-dark(#fbfcfd, #121417) 75%, transparent);
+}

@@ -1,0 +1,51 @@
+"use client";
+
+const css = `
+  .cb-bow { position: relative; display: inline-flex; align-items: center; gap: 14px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .cb-bow__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .cb-bow__box { position: relative; width: 30px; height: 30px; border-radius: 6px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1.5px light-dark(#cbced3, #393c41); transition: background-color 0.3s; }
+  .cb-bow__input:focus-visible + .cb-bow__box { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+  .cb-bow__box svg { position: absolute; left: -9px; top: -13px; width: 48px; height: 50px; overflow: visible; }
+  .cb-bow__band { stroke: light-dark(#42454c, #e5e6e9); stroke-width: 4; transform-box: fill-box; transition: transform 0.25s ease-out; }
+  .cb-bow__band--v { transform-origin: 50% 0; transform: scaleY(0); }
+  .cb-bow__band--h { transform-origin: 0 50%; transform: scaleX(0); }
+  .cb-bow__loop { fill: none; stroke: light-dark(#373a40, #f1f2f3); stroke-width: 2.6; stroke-linejoin: round; transform-origin: 24px 15px; transform: scale(0); transition: transform 0.3s; }
+  .cb-bow__tail { fill: none; stroke: light-dark(#42454c, #e5e6e9); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; transition: stroke-dashoffset 0.2s, opacity 0s 0.2s; }
+  .cb-bow__knot { fill: light-dark(#373a40, #f1f2f3); transform-origin: 24px 15px; transform: scale(0); transition: transform 0.2s; }
+  /* Tie it in order: the bands wrap, the knot cinches, the loops spring out, the tails fall. */
+  .cb-bow__input:checked + .cb-bow__box { background: light-dark(#dbdde1, #2e3035); }
+  .cb-bow__input:checked + .cb-bow__box .cb-bow__band--v { transform: none; transition-delay: 0s; }
+  .cb-bow__input:checked + .cb-bow__box .cb-bow__band--h { transform: none; transition-delay: 0.12s; }
+  .cb-bow__input:checked + .cb-bow__box .cb-bow__knot { transform: none; transition: transform 0.2s 0.28s; }
+  .cb-bow__input:checked + .cb-bow__box .cb-bow__loop { transform: none; transition: transform 0.45s cubic-bezier(0.3, 1.8, 0.5, 1) 0.36s; }
+  .cb-bow__input:checked + .cb-bow__box .cb-bow__loop + .cb-bow__loop { transition-delay: 0.42s; }
+  .cb-bow__input:checked + .cb-bow__box .cb-bow__tail { stroke-dashoffset: 0; opacity: 1; transition: stroke-dashoffset 0.3s ease-out 0.55s, opacity 0s 0.55s; }
+  @media (prefers-reduced-motion: reduce) {
+    .cb-bow * { transition-duration: 0.01s !important; transition-delay: 0s !important; }
+  }
+`;
+
+export function BowCheckbox() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="cb-bow">
+        <input className="cb-bow__input" type="checkbox" />
+        <span className="cb-bow__box" aria-hidden="true">
+          <svg viewBox="0 0 48 50">
+            <line className="cb-bow__band cb-bow__band--v" x1="24" y1="13" x2="24" y2="43" />
+            <line className="cb-bow__band cb-bow__band--h" x1="9" y1="28" x2="39" y2="28" />
+            <path className="cb-bow__tail" d="M23 16C21 20 19 22 16 25" pathLength={1} />
+            <path className="cb-bow__tail" d="M25 16C27 20 29 22 32 25" pathLength={1} />
+            <path className="cb-bow__loop" d="M23 15C17 8 9 6 10 12C11 18 18 17 23 15Z" />
+            <path className="cb-bow__loop" d="M25 15C31 8 39 6 38 12C37 18 30 17 25 15Z" />
+            <circle className="cb-bow__knot" cx="24" cy="15" r="2.8" />
+          </svg>
+        </span>
+        Gift wrap
+      </label>
+    </>
+  );
+}

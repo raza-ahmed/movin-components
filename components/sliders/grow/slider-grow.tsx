@@ -1,0 +1,90 @@
+"use client";
+
+import * as React from "react";
+import { useState } from 'react';
+
+const css = `
+  .slider-grow { display: grid; justify-items: center; gap: 12px; width: 220px; }
+  .slider-grow__pot { position: relative; width: 120px; height: 150px; }
+  .slider-grow__soil { position: absolute; left: 34px; bottom: 0; width: 52px; height: 34px; background: light-dark(#cbced3, #393c41); clip-path: polygon(0 0, 100% 0, 86% 100%, 14% 100%); }
+  .slider-grow__rim { position: absolute; left: 30px; bottom: 30px; width: 60px; height: 8px; border-radius: 2px; background: light-dark(#6d7179, #7d8087); }
+  .slider-grow__stem { position: absolute; left: 59px; bottom: 38px; width: 3px; height: calc(var(--slider-grow-v) * 96px); border-radius: 2px; background: light-dark(#50535b, #c6c8cd); transition: height 0.5s cubic-bezier(0.3, 1.2, 0.5, 1); }
+  .slider-grow__leaf {
+    --on: clamp(0, calc((var(--slider-grow-v) * 96 - var(--h)) / 10), 1);
+    position: absolute;
+    bottom: calc(38px + var(--h) * 1px);
+    width: 18px;
+    height: 9px;
+    border-radius: 0 100% 0 100%;
+    background: light-dark(#50535b, #c6c8cd);
+    transform-origin: 0 100%;
+    transform: rotate(var(--r)) scale(var(--on));
+    transition: transform 0.45s cubic-bezier(0.3, 1.8, 0.5, 1);
+  }
+  .slider-grow__leaf--l { left: 60px; border-radius: 100% 0 100% 0; transform-origin: 100% 100%; margin-left: -18px; }
+  .slider-grow__leaf--r { left: 61px; }
+  .slider-grow__flower {
+    --on: clamp(0, calc((var(--slider-grow-v) - 0.82) * 6), 1);
+    position: absolute;
+    left: 60.5px;
+    bottom: calc(38px + var(--slider-grow-v) * 96px);
+    width: 0;
+    height: 0;
+    opacity: clamp(0, calc(var(--slider-grow-v) * 10 - 6), 1);
+    transition: bottom 0.5s cubic-bezier(0.3, 1.2, 0.5, 1), opacity 0.2s;
+  }
+  .slider-grow__petal { position: absolute; left: -5px; top: -14px; width: 10px; height: 14px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: light-dark(#373a40, #f1f2f3); transform-origin: 50% 100%; transform: rotate(var(--a)) scale(calc(0.3 + var(--on) * 0.7)) translateY(calc(var(--on) * -2px)); transition: transform 0.5s cubic-bezier(0.3, 1.8, 0.5, 1); }
+  .slider-grow__heart { position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: light-dark(#6d7179, #7d8087); }
+  .slider-grow__track { position: relative; width: 100%; height: 24px; }
+  .slider-grow__rail { position: absolute; left: 0; right: 0; top: 10px; height: 4px; border-radius: 2px; background: light-dark(#ebedf0, #232529); }
+  .slider-grow__fill { position: absolute; left: 0; top: 10px; height: 4px; border-radius: 2px; width: calc(9px + var(--slider-grow-v) * (100% - 18px)); background: light-dark(#50535b, #c6c8cd); }
+  .slider-grow__thumb { position: absolute; top: 3px; left: calc(var(--slider-grow-v) * (100% - 18px)); width: 18px; height: 18px; border-radius: 50% 50% 50% 0; background: light-dark(#373a40, #f1f2f3); box-shadow: 0 2px 6px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4)); transform: rotate(-45deg); }
+  .slider-grow:has(.slider-grow__input:focus-visible) .slider-grow__thumb { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+  .slider-grow__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+  .slider-grow__input::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; }
+  .slider-grow__input::-moz-range-thumb { width: 18px; height: 18px; border: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    .slider-grow * { transition-duration: 0.01s !important; }
+  }
+`;
+
+const LEAVES = [
+  { h: 14, side: 'r', r: -20 },
+  { h: 30, side: 'l', r: 20 },
+  { h: 48, side: 'r', r: -30 },
+  { h: 64, side: 'l', r: 30 },
+];
+const PETALS = [0, 72, 144, 216, 288];
+
+export function GrowSlider() {
+  const [v, setV] = useState(60);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="slider-grow" style={{ '--slider-grow-v': v / 100 } as React.CSSProperties}>
+        <span className="slider-grow__pot" aria-hidden="true">
+          <span className="slider-grow__stem" />
+          {LEAVES.map((l) => (
+            <span key={l.h} className={`slider-grow__leaf slider-grow__leaf--${l.side}`} style={{ '--h': l.h, '--r': `${l.r}deg` } as React.CSSProperties} />
+          ))}
+          <span className="slider-grow__flower">
+            {PETALS.map((a) => (
+              <span key={a} className="slider-grow__petal" style={{ '--a': `${a}deg` } as React.CSSProperties} />
+            ))}
+            <span className="slider-grow__heart" />
+          </span>
+          <span className="slider-grow__rim" />
+          <span className="slider-grow__soil" />
+        </span>
+        <div className="slider-grow__track">
+          <span className="slider-grow__rail" />
+          <span className="slider-grow__fill" />
+          <span className="slider-grow__thumb" />
+          <input className="slider-grow__input" type="range" min={0} max={100} value={v} onChange={(e) => setV(+e.target.value)} aria-label="Water" />
+        </div>
+      </div>
+    </>
+  );
+}

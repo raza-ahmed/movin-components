@@ -1,0 +1,40 @@
+.btn-plasma {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 200px;
+  height: 58px;
+  padding: 0;
+  border: 1px solid light-dark(#cbced3, #393c41);
+  border-radius: 999px;
+  background: light-dark(#fbfcfd, #121417);
+  color: light-dark(#373a40, #f1f2f3);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.btn-plasma:focus-visible { outline: 2px solid light-dark(#42454c, #e5e6e9); outline-offset: 3px; }
+.btn-plasma__energy {
+  position: absolute;
+  inset: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  color: light-dark(#373a40, #f1f2f3);
+  opacity: 0.32;
+  transition: opacity 0.5s ease;
+}
+.btn-plasma__label {
+  position: relative;
+  text-shadow: 0 0 6px light-dark(#fbfcfd, #121417), 0 0 14px light-dark(#fbfcfd, #121417);
+}
+.btn-plasma:hover, .btn-plasma:focus-visible {
+  border-color: light-dark(#50535b, #c6c8cd);
+  box-shadow: 0 0 28px color-mix(in oklab, light-dark(#373a40, #f1f2f3) 26%, transparent);
+}
+.btn-plasma:hover .btn-plasma__energy,
+.btn-plasma:focus-visible .btn-plasma__energy { opacity: 0.95; }

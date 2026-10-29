@@ -1,0 +1,42 @@
+"use client";
+
+const css = `
+  .toggle-flag { position: relative; display: inline-flex; align-items: center; gap: 14px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .toggle-flag__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .toggle-flag__scene { position: relative; flex: none; }
+  .toggle-flag__input:focus-visible + .toggle-flag__scene { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 4px; border-radius: 8px; }
+  @keyframes toggle-flag-wave { 0%, 100% { transform: skewY(0deg) scaleX(1); } 50% { transform: skewY(-6deg) scaleX(0.94); } }
+  .toggle-flag__scene { width: 46px; height: 60px; }
+  .toggle-flag__pole { position: absolute; left: 8px; top: 2px; bottom: 0; width: 2.5px; border-radius: 2px; background: light-dark(#5f626a, #a7abb2); }
+  .toggle-flag__pole::before { content: ''; position: absolute; left: -2.5px; top: -3px; width: 7px; height: 7px; border-radius: 50%; background: light-dark(#50535b, #c6c8cd); }
+  .toggle-flag__base { position: absolute; left: 2px; bottom: 0; width: 15px; height: 4px; border-radius: 2px; background: light-dark(#6d7179, #7d8087); }
+  /* Off, the flag hangs low and limp; on, it runs up the pole and waves. */
+  .toggle-flag__flag { position: absolute; left: 10px; top: 4px; width: 30px; height: 20px; transform: translateY(32px); transition: transform 0.6s cubic-bezier(0.4, 0, 0.3, 1.2); }
+  .toggle-flag__cloth { width: 100%; height: 100%; background: light-dark(#6d7179, #7d8087); clip-path: polygon(0 0, 100% 0, 78% 50%, 100% 100%, 0 100%); transform-origin: 0 50%; transform: scaleX(0.7) skewY(18deg); transition: transform 0.5s, background-color 0.4s; }
+  .toggle-flag__input:checked + .toggle-flag__scene .toggle-flag__flag { transform: none; }
+  .toggle-flag__input:checked + .toggle-flag__scene .toggle-flag__cloth { background: light-dark(#373a40, #f1f2f3); transform: none; animation: toggle-flag-wave 1.4s ease-in-out infinite 0.6s; }
+  @media (prefers-reduced-motion: reduce) {
+    .toggle-flag * { transition: none !important; animation: none !important; }
+  }
+`;
+
+export function FlagToggle() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="toggle-flag">
+        <input className="toggle-flag__input" type="checkbox" role="switch" />
+        <span className="toggle-flag__scene" aria-hidden="true">
+          <span className="toggle-flag__pole" />
+          <span className="toggle-flag__base" />
+          <span className="toggle-flag__flag">
+            <span className="toggle-flag__cloth" style={{ display: 'block' }} />
+          </span>
+        </span>
+        Flag for review
+      </label>
+    </>
+  );
+}

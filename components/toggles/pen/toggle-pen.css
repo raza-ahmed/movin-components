@@ -1,0 +1,18 @@
+.toggle-pen { position: relative; display: inline-flex; align-items: center; gap: 14px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+.toggle-pen__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.toggle-pen__scene { position: relative; flex: none; }
+.toggle-pen__input:focus-visible + .toggle-pen__scene { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 4px; border-radius: 8px; }
+.toggle-pen__scene { width: 96px; height: 40px; }
+.toggle-pen__body { position: absolute; left: 14px; top: 15px; width: 52px; height: 11px; border-radius: 3px 6px 6px 3px; background: linear-gradient(light-dark(#5f626a, #a7abb2), light-dark(#cbced3, #393c41)); }
+.toggle-pen__nib { position: absolute; left: 2px; top: 16px; width: 14px; height: 9px; background: light-dark(#42454c, #e5e6e9); clip-path: polygon(0 50%, 100% 0, 100% 100%); }
+.toggle-pen__nib::after { content: ''; position: absolute; left: 4px; top: 4px; width: 9px; height: 1px; background: light-dark(#dbdde1, #2e3035); }
+/* The cap slides off the nib end and parks behind the barrel. */
+.toggle-pen__cap { position: absolute; left: 0; top: 13px; width: 30px; height: 15px; border-radius: 7px 4px 4px 7px; background: linear-gradient(light-dark(#42454c, #e5e6e9), light-dark(#5f626a, #a7abb2)); box-shadow: 0 2px 4px light-dark(rgba(0, 0, 0, 0.11), rgba(0, 0, 0, 0.35)); transition: transform 0.5s cubic-bezier(0.5, 0, 0.3, 1.3); }
+.toggle-pen__cap::after { content: ''; position: absolute; left: 6px; top: -3px; width: 18px; height: 3px; border-radius: 2px; background: light-dark(#50535b, #c6c8cd); }
+.toggle-pen__ink { position: absolute; left: -2px; top: 26px; width: 42px; height: 14px; overflow: visible; }
+.toggle-pen__ink path { fill: none; stroke: light-dark(#373a40, #f1f2f3); stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; transition: stroke-dashoffset 0.2s, opacity 0s 0.2s; }
+.toggle-pen__input:checked + .toggle-pen__scene .toggle-pen__cap { transform: translateX(60px); }
+.toggle-pen__input:checked + .toggle-pen__scene .toggle-pen__ink path { stroke-dashoffset: 0; opacity: 1; transition: stroke-dashoffset 0.6s ease-out 0.35s, opacity 0s 0.35s; }
+@media (prefers-reduced-motion: reduce) {
+  .toggle-pen * { transition: none !important; }
+}

@@ -1,0 +1,76 @@
+"use client";
+
+import * as React from "react";
+import { useState } from 'react';
+
+const css = `
+  @keyframes cb-blocks-fall {
+    0% { transform: translateY(-34px); animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.5); }
+    70% { transform: translateY(0); }
+    84% { transform: translateY(0.6px) scale(1.18, 0.78); }
+    100% { transform: none; }
+  }
+  @keyframes cb-blocks-clear {
+    0% { transform: none; background: light-dark(#42454c, #e5e6e9); }
+    25% { transform: none; background: light-dark(#373a40, #f1f2f3); box-shadow: 0 0 6px light-dark(#373a40, #f1f2f3); }
+    45% { transform: scale(1.2); opacity: 1; }
+    100% { transform: translateY(26px) scale(0.6); opacity: 0; }
+  }
+  .cb-blocks { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .cb-blocks__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .cb-blocks__box {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: light-dark(#f3f4f7, #1a1c1f);
+    box-shadow: inset 0 0 0 1.5px light-dark(#cbced3, #393c41);
+  }
+  .cb-blocks__input:focus-visible + .cb-blocks__box { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+  .cb-blocks__cell {
+    position: absolute;
+    width: 3.2px;
+    height: 3.2px;
+    border-radius: 0.6px;
+    background: light-dark(#42454c, #e5e6e9);
+    box-shadow: inset -0.6px -0.6px 0 light-dark(#5f626a, #a7abb2);
+    transform: translateY(-34px);
+  }
+  .cb-blocks__input:checked + .cb-blocks__box .cb-blocks__cell { transform: none; }
+  .cb-blocks[data-armed] .cb-blocks__input:checked + .cb-blocks__box .cb-blocks__cell { animation: cb-blocks-fall 0.36s var(--d) backwards; }
+  .cb-blocks[data-armed] .cb-blocks__input:not(:checked) + .cb-blocks__box .cb-blocks__cell { animation: cb-blocks-clear 0.45s ease-in calc(0.37s - var(--d)) backwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .cb-blocks__cell { animation: none !important; }
+  }
+`;
+
+// A two-block-thick tick as pixel art. Each row lands after the one below it, so it stacks up.
+const SPRITE = ['......#', '.....##', '#...##.', '##.##..', '.###...', '..#....'];
+const CELLS = SPRITE.flatMap((row, y) =>
+  [...row].flatMap((c, x) => (c === '#' ? [{ x, y, d: Number(((5 - y) * 0.06 + x * 0.012).toFixed(3)) }] : [])),
+);
+
+export function BlocksCheckbox() {
+  const [armed, setArmed] = useState(false);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="cb-blocks" data-armed={armed || undefined}>
+        <input className="cb-blocks__input" type="checkbox" onChange={() => setArmed(true)} />
+        <span className="cb-blocks__box" aria-hidden="true">
+          {CELLS.map((c) => (
+            <span
+              key={`${c.x}-${c.y}`}
+              className="cb-blocks__cell"
+              style={{ left: 3.4 + c.x * 3.4, top: 4.8 + c.y * 3.4, '--d': `${c.d}s` } as React.CSSProperties}
+            />
+          ))}
+        </span>
+        Level complete
+      </label>
+    </>
+  );
+}

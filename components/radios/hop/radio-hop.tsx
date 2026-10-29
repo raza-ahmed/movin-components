@@ -1,0 +1,102 @@
+"use client";
+
+import * as React from "react";
+import { useId, useRef, useState } from 'react';
+
+const css = `
+  @keyframes radio-hop-a {
+    0% { transform: translateY(0) scale(1.25, 0.75); animation-timing-function: ease-out; }
+    12% { transform: translateY(-4px) scale(0.9, 1.1); animation-timing-function: cubic-bezier(0.2, 0.6, 0.4, 1); }
+    50% { transform: translateY(-26px) scale(1); animation-timing-function: cubic-bezier(0.6, 0, 0.8, 0.4); }
+    100% { transform: translateY(0) scale(1.25, 0.75); }
+  }
+  @keyframes radio-hop-b {
+    0% { transform: translateY(0) scale(1.25, 0.75); animation-timing-function: ease-out; }
+    12% { transform: translateY(-4px) scale(0.9, 1.1); animation-timing-function: cubic-bezier(0.2, 0.6, 0.4, 1); }
+    50% { transform: translateY(-26px) scale(1); animation-timing-function: cubic-bezier(0.6, 0, 0.8, 0.4); }
+    100% { transform: translateY(0) scale(1.25, 0.75); }
+  }
+  .radio-hop { --radio-hop-n: 1; display: grid; width: 200px; }
+  .radio-hop__lane { position: relative; height: 40px; }
+  .radio-hop__x {
+    position: absolute;
+    left: 15px;
+    bottom: 0;
+    transform: translateX(calc(var(--radio-hop-k) * 52px));
+    /* One hop per tile crossed, at a steady pace. */
+    transition: transform calc(var(--radio-hop-n) * 0.3s) linear;
+  }
+  .radio-hop__ball {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, light-dark(#373a40, #f1f2f3), light-dark(#50535b, #c6c8cd) 50%, light-dark(#6d7179, #7d8087));
+    transform-origin: 50% 100%;
+  }
+  .radio-hop[data-flip='a'] .radio-hop__ball { animation: radio-hop-a 0.3s var(--radio-hop-n); }
+  .radio-hop[data-flip='b'] .radio-hop__ball { animation: radio-hop-b 0.3s var(--radio-hop-n); }
+  .radio-hop__tiles { display: grid; grid-template-columns: repeat(4, 44px); gap: 8px; }
+  .radio-hop__tile {
+    position: relative;
+    display: grid;
+    place-items: center;
+    height: 40px;
+    border-radius: 6px;
+    background: light-dark(#ebedf0, #232529);
+    box-shadow: inset 0 0 0 1px light-dark(#cbced3, #393c41);
+    color: light-dark(#5f626a, #a7abb2);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  }
+  .radio-hop__tile:hover { color: light-dark(#42454c, #e5e6e9); }
+  .radio-hop__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .radio-hop__tile:has(.radio-hop__input:focus-visible) { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; }
+  .radio-hop__tile:has(.radio-hop__input:checked) { color: light-dark(#373a40, #f1f2f3); background: light-dark(#dbdde1, #2e3035); box-shadow: inset 0 0 0 1.5px light-dark(#50535b, #c6c8cd); }
+  @media (prefers-reduced-motion: reduce) {
+    .radio-hop * { animation: none !important; transition-duration: 0.01s !important; }
+  }
+`;
+
+const SIZES = ['S', 'M', 'L', 'XL'];
+const START = 1;
+
+export function HopRadio() {
+  const name = useId();
+  const [hop, setHop] = useState({ k: START, n: 1, flip: 0 });
+  const last = useRef(START);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div
+        className="radio-hop"
+        style={{ '--radio-hop-k': hop.k, '--radio-hop-n': hop.n } as React.CSSProperties}
+        data-flip={hop.flip ? (hop.flip % 2 ? 'a' : 'b') : undefined}
+        onChange={(e) => {
+          const k = SIZES.indexOf((e.target as HTMLInputElement).value);
+          const n = Math.max(1, Math.abs(k - last.current));
+          last.current = k;
+          setHop((h) => ({ k, n, flip: h.flip + 1 }));
+        }}
+      >
+        <span className="radio-hop__lane" aria-hidden="true">
+          <span className="radio-hop__x">
+            <span className="radio-hop__ball" />
+          </span>
+        </span>
+        <div className="radio-hop__tiles" role="radiogroup" aria-label="Size">
+          {SIZES.map((s, i) => (
+            <label key={s} className="radio-hop__tile">
+              <input className="radio-hop__input" type="radio" name={name} value={s} defaultChecked={i === START} />
+              {s}
+            </label>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}

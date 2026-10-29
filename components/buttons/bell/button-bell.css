@@ -1,0 +1,41 @@
+/* The bell swings and settles; the clapper follows a beat behind, so it reads as weight. */
+@keyframes btn-bell-swing { 0% { transform: rotate(0); } 15% { transform: rotate(18deg); } 32% { transform: rotate(-14deg); } 48% { transform: rotate(9deg); } 64% { transform: rotate(-5deg); } 80% { transform: rotate(2deg); } 100% { transform: rotate(0); } }
+@keyframes btn-bell-clapper { 0% { transform: translateX(0); } 20% { transform: translateX(-2.6px); } 38% { transform: translateX(2.4px); } 54% { transform: translateX(-1.6px); } 70% { transform: translateX(1px); } 100% { transform: translateX(0); } }
+@keyframes btn-bell-ring { from { transform: scale(0.6); opacity: 0.8; } to { transform: scale(1.7); opacity: 0; } }
+.btn-bell {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 20px 0 16px;
+  border: none;
+  border-radius: 999px;
+  background: light-dark(#ebedf0, #232529);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035), 0 8px 20px -12px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.6));
+  color: light-dark(#373a40, #f1f2f3);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btn-bell:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+.btn-bell[aria-pressed='true'] { background: light-dark(#373a40, #f1f2f3); color: light-dark(#fbfcfd, #121417); }
+.btn-bell__icon { position: relative; width: 22px; height: 22px; }
+.btn-bell__icon svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.btn-bell__body { transform-origin: 12px 3px; }
+.btn-bell__clapper { transform-origin: 12px 3px; }
+.btn-bell[aria-pressed='true'] .btn-bell__body { animation: btn-bell-swing 1s ease-out; }
+.btn-bell[aria-pressed='true'] .btn-bell__clapper { animation: btn-bell-clapper 1s ease-out 0.06s; }
+.btn-bell__ring { position: absolute; inset: -4px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0; }
+.btn-bell[aria-pressed='true'] .btn-bell__ring { animation: btn-bell-ring 0.8s ease-out 0.12s; }
+.btn-bell[aria-pressed='true'] .btn-bell__ring + .btn-bell__ring { animation-delay: 0.42s; }
+.btn-bell__text { display: grid; }
+.btn-bell__text > span { grid-area: 1 / 1; transition: opacity 0.25s, transform 0.35s cubic-bezier(0.3, 1.3, 0.5, 1); }
+.btn-bell__on { opacity: 0; transform: translateY(8px); }
+.btn-bell[aria-pressed='true'] .btn-bell__off { opacity: 0; transform: translateY(-8px); }
+.btn-bell[aria-pressed='true'] .btn-bell__on { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .btn-bell * { animation: none !important; }
+}

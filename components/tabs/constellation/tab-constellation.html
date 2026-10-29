@@ -1,0 +1,39 @@
+<div class="tabs-constellation">
+  <div class="tabs-constellation__list" role="tablist" aria-label="Constellations">
+    <button class="tabs-constellation__tab" type="button" role="tab" id="tabs-constellation-tab-0" aria-selected="true" aria-controls="tabs-constellation-panel-0" tabindex="0">Orion</button>
+    <button class="tabs-constellation__tab" type="button" role="tab" id="tabs-constellation-tab-1" aria-selected="false" aria-controls="tabs-constellation-panel-1" tabindex="-1">Lyra</button>
+    <button class="tabs-constellation__tab" type="button" role="tab" id="tabs-constellation-tab-2" aria-selected="false" aria-controls="tabs-constellation-panel-2" tabindex="-1">Cassiopeia</button>
+  </div>
+  <div class="tabs-constellation__sky" aria-hidden="true">
+    <svg viewBox="0 0 220 104">
+      <circle class="tabs-constellation__dust" cx="14" cy="80" r="1"></circle>
+      <circle class="tabs-constellation__dust" cx="40" cy="12" r="1"></circle>
+      <circle class="tabs-constellation__dust" cx="84" cy="30" r="1"></circle>
+      <circle class="tabs-constellation__dust" cx="140" cy="8" r="1"></circle>
+      <circle class="tabs-constellation__dust" cx="182" cy="58" r="1"></circle>
+      <circle class="tabs-constellation__dust" cx="206" cy="94" r="1"></circle>
+      <circle class="tabs-constellation__dust" cx="70" cy="98" r="1"></circle>
+      <circle class="tabs-constellation__dust" cx="190" cy="14" r="1"></circle>
+      <circle class="tabs-constellation__dust" cx="24" cy="58" r="1"></circle>
+      <circle class="tabs-constellation__dust" cx="128" cy="70" r="1"></circle>
+      <g>
+        <path class="tabs-constellation__line" pathLength="100" d="M62 16L152 22"></path>
+        <path class="tabs-constellation__line" pathLength="100" d="M62 16L96 54"></path>
+        <path class="tabs-constellation__line" pathLength="100" d="M152 22L124 48"></path>
+        <path class="tabs-constellation__line" pathLength="100" d="M96 54L110 51"></path>
+        <path class="tabs-constellation__line" pathLength="100" d="M110 51L124 48"></path>
+        <path class="tabs-constellation__line" pathLength="100" d="M124 48L158 90"></path>
+        <path class="tabs-constellation__line" pathLength="100" d="M96 54L158 90"></path>
+      </g>
+    </svg>
+    <span class="tabs-constellation__star" style="--x:62px;--y:16px;animation-delay:0s"></span>
+    <span class="tabs-constellation__star" style="--x:152px;--y:22px;animation-delay:-0.4s"></span>
+    <span class="tabs-constellation__star" style="--x:96px;--y:54px;animation-delay:-0.8s"></span>
+    <span class="tabs-constellation__star" style="--x:110px;--y:51px;animation-delay:-1.2000000000000002s"></span>
+    <span class="tabs-constellation__star" style="--x:124px;--y:48px;animation-delay:-1.6s"></span>
+    <span class="tabs-constellation__star" style="--x:158px;--y:90px;animation-delay:-2s"></span>
+  </div>
+  <div class="tabs-constellation__panel" role="tabpanel" id="tabs-constellation-panel-0" aria-labelledby="tabs-constellation-tab-0">The hunter, with three stars in a row for his belt.</div>
+  <div class="tabs-constellation__panel" role="tabpanel" id="tabs-constellation-panel-1" aria-labelledby="tabs-constellation-tab-1" hidden="">A small lyre hanging from Vega, one of the brightest stars.</div>
+  <div class="tabs-constellation__panel" role="tabpanel" id="tabs-constellation-panel-2" aria-labelledby="tabs-constellation-tab-2" hidden="">A queen on her throne, drawn as a crooked W.</div>
+</div>

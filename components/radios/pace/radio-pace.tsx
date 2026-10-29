@@ -1,0 +1,79 @@
+"use client";
+
+import * as React from "react";
+import { useId } from 'react';
+
+const OPTIONS = [{"value": "walk", "label": "Walk"}, {"value": "jog", "label": "Jog"}, {"value": "run", "label": "Run"}];
+const STEPS = [0, 1, 2, 3, 4, 5, 6];
+
+const css = `
+  .radio-pace { --i: 0; display: grid; justify-items: center; gap: 12px; width: 260px; }
+  .radio-pace:has(.radio-pace__opt:nth-child(1) input:checked) { --i: 0; }
+  .radio-pace:has(.radio-pace__opt:nth-child(2) input:checked) { --i: 1; }
+  .radio-pace:has(.radio-pace__opt:nth-child(3) input:checked) { --i: 2; }
+  @keyframes radio-pace-step { 0% { opacity: 0; transform: var(--t) scale(0.8); } 8% { opacity: 1; transform: var(--t); } 55% { opacity: 0.35; } 100% { opacity: 0; transform: var(--t); } }
+  .radio-pace__trail { position: relative; width: 220px; height: 64px; }
+  .radio-pace__print {
+    --t: translate(calc(var(--k) * var(--gap)), calc(var(--side) * 9px)) rotate(90deg);
+    position: absolute;
+    left: 12px;
+    top: 26px;
+    width: 9px;
+    height: 13px;
+    border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+    background: light-dark(#42454c, #e5e6e9);
+    opacity: 0;
+    transform: var(--t);
+    transition: transform 0.4s;
+    animation: radio-pace-step var(--dur) linear infinite calc(var(--k) * var(--dur) / 7);
+  }
+  .radio-pace__print::after { content: ''; position: absolute; left: 1.5px; top: 14px; width: 6px; height: 6px; border-radius: 50%; background: inherit; }
+  .radio-pace:has(.radio-pace__opt:nth-child(1) input:checked) { --gap: 24px; --dur: 2.6s; }
+  .radio-pace:has(.radio-pace__opt:nth-child(2) input:checked) { --gap: 29px; --dur: 1.7s; }
+  .radio-pace:has(.radio-pace__opt:nth-child(3) input:checked) { --gap: 34px; --dur: 1.05s; }
+  .radio-pace__read { display: grid; color: light-dark(#50535b, #c6c8cd); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .radio-pace__read > * { grid-area: 1 / 1; text-align: center; opacity: 0; transform: translateY(4px); transition: opacity 0.25s, transform 0.3s; }
+  .radio-pace:has(.radio-pace__opt:nth-child(1) input:checked) .radio-pace__read > :nth-child(1) { opacity: 1; transform: none; }
+  .radio-pace:has(.radio-pace__opt:nth-child(2) input:checked) .radio-pace__read > :nth-child(2) { opacity: 1; transform: none; }
+  .radio-pace:has(.radio-pace__opt:nth-child(3) input:checked) .radio-pace__read > :nth-child(3) { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .radio-pace__print { animation: none; opacity: 0.7; }
+  }
+  .radio-pace__opts { display: flex; gap: 3px; padding: 4px; border-radius: 12px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+  .radio-pace__opt { position: relative; flex: 1; padding: 7px 10px; border-radius: 8px; color: light-dark(#5f626a, #a7abb2); font-size: 12.5px; font-weight: 500; text-align: center; white-space: nowrap; cursor: pointer; transition: background-color 0.25s, color 0.25s; }
+  .radio-pace__opt:hover { color: light-dark(#42454c, #e5e6e9); }
+  .radio-pace__opt:has(input:checked) { background: light-dark(#373a40, #f1f2f3); color: light-dark(#fbfcfd, #121417); }
+  .radio-pace__opt:has(input:focus-visible) { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+  .radio-pace__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+`;
+
+export function PaceRadio() {
+  const name = useId();
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="radio-pace">
+        <div className="radio-pace__trail" aria-hidden="true">
+          {STEPS.map((k) => (
+            <span key={k} className="radio-pace__print" style={{ '--k': k, '--side': k % 2 ? 1 : -1 } as React.CSSProperties} />
+          ))}
+        </div>
+        <span className="radio-pace__read" aria-hidden="true">
+          <span>Walk, about 5 km/h</span>
+          <span>Jog, about 9 km/h</span>
+          <span>Run, about 14 km/h</span>
+        </span>
+        <div className="radio-pace__opts" role="radiogroup" aria-label="Pace">
+          {OPTIONS.map((o, i) => (
+            <label key={o.value} className="radio-pace__opt">
+              <input className="radio-pace__input" type="radio" name={name} value={o.value} defaultChecked={i === 0} />
+              {o.label}
+            </label>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}

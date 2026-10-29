@@ -1,0 +1,76 @@
+"use client";
+
+import * as React from "react";
+const css = `
+  .toggle-prism { position: relative; display: inline-flex; align-items: center; gap: 12px; color: light-dark(#42454c, #e5e6e9); font-size: 14px; cursor: pointer; user-select: none; }
+  .toggle-prism__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+  .toggle-prism__track { position: relative; width: 96px; height: 40px; border-radius: 8px; }
+  .toggle-prism__input:focus-visible + .toggle-prism__track { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+  .toggle-prism__in {
+    position: absolute;
+    left: 0;
+    top: 21px;
+    width: 38px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, light-dark(#50535b, #c6c8cd));
+    opacity: 0.5;
+    transform: rotate(-8deg);
+    transform-origin: 100% 50%;
+    transition: opacity 0.3s;
+  }
+  .toggle-prism__glass { position: absolute; left: 32px; top: 4px; width: 30px; height: 30px; overflow: visible; }
+  .toggle-prism__glass path { fill: color-mix(in oklab, light-dark(#373a40, #f1f2f3) 6%, transparent); stroke: light-dark(#5f626a, #a7abb2); stroke-width: 1.5; stroke-linejoin: round; transition: fill 0.3s, stroke 0.3s; }
+  .toggle-prism__ray {
+    position: absolute;
+    left: 54px;
+    top: 21px;
+    width: 42px;
+    height: 2px;
+    border-radius: 1px;
+    background: linear-gradient(90deg, var(--c), transparent);
+    transform-origin: 0 50%;
+    transform: rotate(var(--a)) scaleX(0);
+    transition: transform 0.2s ease-in calc((4 - var(--i)) * 0.03s);
+  }
+  .toggle-prism__input:checked + .toggle-prism__track .toggle-prism__in { opacity: 1; }
+  .toggle-prism__input:checked + .toggle-prism__track .toggle-prism__glass path { fill: color-mix(in oklab, light-dark(#373a40, #f1f2f3) 16%, transparent); stroke: light-dark(#373a40, #f1f2f3); }
+  /* White light in, a fan of graded tones out: the monochrome spectrum. */
+  .toggle-prism__input:checked + .toggle-prism__track .toggle-prism__ray {
+    transform: rotate(var(--a)) scaleX(1);
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.3, 1) calc(0.15s + var(--i) * 0.06s);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .toggle-prism__track * { transition-duration: 0.01s !important; transition-delay: 0s !important; }
+  }
+`;
+
+const RAYS = [
+  { a: -18, c: 'light-dark(#373a40, #f1f2f3)' },
+  { a: -9, c: 'light-dark(#42454c, #e5e6e9)' },
+  { a: 0, c: 'light-dark(#50535b, #c6c8cd)' },
+  { a: 9, c: 'light-dark(#5f626a, #a7abb2)' },
+  { a: 18, c: 'light-dark(#6d7179, #7d8087)' },
+];
+
+export function PrismToggle() {
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <label className="toggle-prism">
+        <input className="toggle-prism__input" type="checkbox" role="switch" />
+        <span className="toggle-prism__track" aria-hidden="true">
+          <span className="toggle-prism__in" />
+          {RAYS.map((r, i) => (
+            <span key={i} className="toggle-prism__ray" style={{ '--a': `${r.a}deg`, '--c': r.c, '--i': i } as React.CSSProperties} />
+          ))}
+          <svg className="toggle-prism__glass" viewBox="0 0 30 30">
+            <path d="M15 2 L28 27 H2 Z" />
+          </svg>
+        </span>
+        Spectrum
+      </label>
+    </>
+  );
+}
