@@ -1,0 +1,20 @@
+<div class="slider-wedge">
+  <svg class="slider-wedge__svg" aria-hidden="true">
+    <defs>
+      <clipPath id="slider-wedge-clip">
+        <rect x="-4" y="-20" width="151.36" height="90"></rect>
+      </clipPath>
+      <linearGradient id="slider-wedge-fill" gradientUnits="userSpaceOnUse" x1="2" x2="147.36" y1="0" y2="0">
+        <stop offset="0" style="stop-color:light-dark(#6d7179, #7d8087)"></stop>
+        <stop offset="1" style="stop-color:light-dark(#373a40, #f1f2f3)"></stop>
+      </linearGradient>
+    </defs>
+    <g class="slider-wedge__ramp">
+      <polygon class="slider-wedge__track" points="2,46 2,43 238,20 238,46"></polygon>
+      <polygon class="slider-wedge__fill" points="2,46 2,43 238,20 238,46" clip-path="url(#slider-wedge-clip)" fill="url(#slider-wedge-fill)" stroke="url(#slider-wedge-fill)"></polygon>
+      <rect class="slider-wedge__bar" x="145.36" y="21.834" width="4" height="28.166" rx="2"></rect>
+      <rect class="slider-wedge__ring" x="141.36" y="17.834" width="12" height="36.166" rx="6"></rect>
+    </g>
+  </svg>
+  <input class="slider-wedge__input" type="range" min="0" max="100" aria-label="Volume" value="62"/>
+</div>

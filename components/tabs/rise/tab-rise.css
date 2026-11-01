@@ -1,0 +1,25 @@
+.tabs-rise { width: 260px; }
+.tabs-rise__list { position: relative; display: flex; justify-content: space-between; padding: 0 6px 12px; }
+.tabs-rise__tab { padding: 6px 4px; border: 0; border-radius: 4px; background: none; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; }
+.tabs-rise__tab:focus-visible { outline: 1px solid light-dark(#5f626a, #a7abb2); outline-offset: 4px; }
+/* Each letter is a column of three: muted, lit, muted. The window shows one row at a time. */
+.tabs-rise__word { display: flex; height: 1.4em; line-height: 1.4em; overflow: hidden; }
+.tabs-rise__ch {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(calc(var(--tabs-rise-row) * -1.4em));
+  transition: transform 0.6s cubic-bezier(0.7, 0, 0.2, 1) calc(var(--tabs-rise-n) * 28ms);
+}
+.tabs-rise__ch > span:nth-child(odd) { color: light-dark(#5f626a, #a7abb2); }
+.tabs-rise__ch > span:nth-child(2) { color: light-dark(#373a40, #f1f2f3); }
+.tabs-rise__tab:hover .tabs-rise__ch > span:nth-child(odd) { color: light-dark(#42454c, #e5e6e9); }
+.tabs-rise__tab[data-row='0'] .tabs-rise__ch { --tabs-rise-row: 0; }
+.tabs-rise__tab[data-row='1'] .tabs-rise__ch { --tabs-rise-row: 1; }
+.tabs-rise__tab[data-row='2'] .tabs-rise__ch { --tabs-rise-row: 2; }
+/* Back to the first row without being seen: the lowest row and the first are the same muted letter. */
+.tabs-rise__tab[data-row='0'][data-reset] .tabs-rise__ch { transition: none; }
+.tabs-rise__rule { position: absolute; bottom: 0; height: 1px; background: light-dark(#373a40, #f1f2f3); transition: left 0.6s cubic-bezier(0.7, 0, 0.2, 1), width 0.6s cubic-bezier(0.7, 0, 0.2, 1); }
+.tabs-rise__panel { padding: 16px 10px 0; min-height: calc(3.1em + 16px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-rise__ch, .tabs-rise__rule { transition: none; }
+}

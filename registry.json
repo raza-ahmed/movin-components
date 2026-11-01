@@ -7897,6 +7897,231 @@
       ]
     },
     {
+      "name": "slider-comb",
+      "type": "registry:component",
+      "title": "Comb slider",
+      "description": "A slider made of fine ticks that rise around the thumb like a magnified dock, lean the way you drag, harder the faster you go, and stand back up when you stop.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/comb/slider-comb.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-drain",
+      "type": "registry:component",
+      "title": "Drain slider",
+      "description": "A segmented health bar: take some away and the lost chunk flashes and drains after a beat; add some and a ghost shows the new level while the bar fills up to it.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/drain/slider-drain.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-gap",
+      "type": "registry:component",
+      "title": "Gap slider",
+      "description": "A thick-track slider split by a slim handle with a gap either side of it: the handle thins as you press, the value rises above it in a pill, and a stop dot marks the end.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/gap/slider-gap.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-glass",
+      "type": "registry:component",
+      "title": "Glass slider",
+      "description": "A volume slider whose solid thumb turns into a glass lens while you hold it, magnifying the track underneath, then turns solid again when you let go.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/glass/slider-glass.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-glide",
+      "type": "registry:component",
+      "title": "Glide slider",
+      "description": "A slider with momentum: flick the thumb and it keeps gliding, slowing with friction, and bounces off the ends with a squash.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/glide/slider-glide.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-halftone",
+      "type": "registry:component",
+      "title": "Halftone slider",
+      "description": "An ink coverage slider printed in halftone: dots far behind the thumb swell and fuse into solid ink, thinning to fine points at its edge, with faint dots ahead.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/halftone/slider-halftone.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-invert",
+      "type": "registry:component",
+      "title": "Invert slider",
+      "description": "A wide volume bar with its label inside: the fill sweeps under the words and inverts them where it covers them, and the speaker icon gains and loses waves as you go.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/invert/slider-invert.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-lift",
+      "type": "registry:component",
+      "title": "Lift slider",
+      "description": "An opacity slider whose thumb you pick up: it lifts off the track over a softening shadow and swings as you drag, then drops back with a squash and a ripple.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/lift/slider-lift.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-louvre",
+      "type": "registry:component",
+      "title": "Louvre slider",
+      "description": "A light slider made of slats that turn face-on as the thumb passes over them and edge-on as it leaves, so every drag sends a wave along the row.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/louvre/slider-louvre.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-merge",
+      "type": "registry:component",
+      "title": "Merge slider",
+      "description": "A price range with two thumbs, each with its value above it; bring them close and the two labels slide together and merge into one range label.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/merge/slider-merge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-pleat",
+      "type": "registry:component",
+      "title": "Pleat slider",
+      "description": "A slider whose ribbon folds like an accordion: the part ahead of the thumb is pleated and packs tighter as you push, then pulls flat again as you drag back.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/pleat/slider-pleat.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-pluck",
+      "type": "registry:component",
+      "title": "Pluck slider",
+      "description": "A tension slider drawn as a taut string with a bead for a thumb: press and the string bends under the bead, pull up or down to bend it further, and let go to make it twang.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/pluck/slider-pluck.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-rubber",
+      "type": "registry:component",
+      "title": "Rubber slider",
+      "description": "A tall brightness capsule: drag past either end and it stretches after your finger, then springs back into shape when you let go, while the sun inside grows its rays.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/rubber/slider-rubber.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-squiggle",
+      "type": "registry:component",
+      "title": "Squiggle slider",
+      "description": "A playback scrubber whose played part is a travelling wave. Hold it and the wave settles flat so you can aim; let go and it ripples back, with the elapsed and total time below.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/squiggle/slider-squiggle.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-wedge",
+      "type": "registry:component",
+      "title": "Wedge slider",
+      "description": "A volume slider shaped as a ramp: the track widens from a hairline to a full wedge, the fill brightens towards the thumb, and the whole ramp swells while you hold it.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/wedge/slider-wedge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "slider-balance",
       "type": "registry:component",
       "title": "Balance slider",
@@ -8567,6 +8792,231 @@
       "files": [
         {
           "path": "components/sliders/zipper/slider-zipper.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-caret",
+      "type": "registry:component",
+      "title": "Caret tab set",
+      "description": "Product tabs over a card whose pointer slides along its top edge to sit under the active tab, while the new text slides in from the side you moved towards.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/caret/tab-caret.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-contents",
+      "type": "registry:component",
+      "title": "Contents tab set",
+      "description": "Vertical tabs set like a contents page: italic numerals, and a leader line that draws out to the chosen chapter as its page fades in.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/contents/tab-contents.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-expand",
+      "type": "registry:component",
+      "title": "Expand tab set",
+      "description": "Icon tabs where the active one opens out to show its label inside a pill, while the others close back down to their icons.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/expand/tab-expand.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-goo",
+      "type": "registry:component",
+      "title": "Goo tab set",
+      "description": "A segmented control whose pill is liquid: it pours from tab to tab, stretching a thinning bridge behind it before it pulls back into one drop.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/goo/tab-goo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-inchworm",
+      "type": "registry:component",
+      "title": "Inchworm tab set",
+      "description": "Dashboard tabs with an underline that moves like an inchworm: its leading edge reaches the new tab first and the tail draws up behind it.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/inchworm/tab-inchworm.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-notch",
+      "type": "registry:component",
+      "title": "Notch tab set",
+      "description": "A bottom bar with a notch cut under the active icon, which rises into a floating circle above the bar; pick another and the notch flows along to it.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/notch/tab-notch.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-puck",
+      "type": "registry:component",
+      "title": "Puck tab set",
+      "description": "A segmented control with a raised puck sitting in a recessed groove: it leans into the slide like something with weight and settles flat when it stops.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/puck/tab-puck.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-reorder",
+      "type": "registry:component",
+      "title": "Reorder tab set",
+      "description": "Tabs you can drag into a new order, the others shuffling out of the way; Alt with the arrow keys moves them from the keyboard, and the new position is announced.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/reorder/tab-reorder.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-rise",
+      "type": "registry:component",
+      "title": "Rise tab set",
+      "description": "Uppercase tabs whose letters roll up one by one into the lit word, and keep rolling upward out of the word you left rather than back down, with a hairline rule sliding under the active tab.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/rise/tab-rise.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-scroller",
+      "type": "registry:component",
+      "title": "Scroller tab set",
+      "description": "More category tabs than fit: the row scrolls with faded edges and arrow buttons, and the one you pick glides to the middle under a sliding pill.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/scroller/tab-scroller.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-stencil",
+      "type": "registry:component",
+      "title": "Stencil tab set",
+      "description": "A segmented control whose pill inverts the labels exactly where it covers them, so letters split in two as it slides between tabs.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/stencil/tab-stencil.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-string",
+      "type": "registry:component",
+      "title": "String tab set",
+      "description": "Section tabs over a taut string with a bead weighing it down at the active tab: the bead slides over and the string twangs when it lands.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/string/tab-string.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-swipe",
+      "type": "registry:component",
+      "title": "Swipe tab set",
+      "description": "Feed tabs over swipeable panels: drag the panels sideways and the underline tracks your finger between the tabs, snapping to the nearest when you let go.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/swipe/tab-swipe.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-tumble",
+      "type": "registry:component",
+      "title": "Tumble tab set",
+      "description": "Forecast tabs whose pill turns over end on end like a domino, hinged on the edge it is heading for, once for every tab it crosses.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/tumble/tab-tumble.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-wheel",
+      "type": "registry:component",
+      "title": "Wheel tab set",
+      "description": "Days of the week on a turning wheel: pick one and the wheel rolls it to the front while the rest turn away into depth.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/wheel/tab-wheel.tsx",
           "type": "registry:component"
         }
       ]

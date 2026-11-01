@@ -1,0 +1,42 @@
+.tabs-puck { width: 260px; }
+.tabs-puck__list {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 44px;
+  padding: 4px;
+  border-radius: 14px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow:
+    inset 0 2px 4px light-dark(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.45)),
+    inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.3)),
+    0 1px 0 color-mix(in oklab, light-dark(#373a40, #f1f2f3) 6%, transparent);
+}
+.tabs-puck__slot {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: calc(var(--tabs-puck-i) * (100% - 8px) / 3 + 4px);
+  width: calc((100% - 8px) / 3);
+  transition: left 0.5s cubic-bezier(0.3, 1.3, 0.5, 1);
+}
+/* Raised: a lit top edge and two layers of shadow, so it reads as sitting proud of the groove. */
+.tabs-puck__puck {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: light-dark(#fbfcfd, #2e3035);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, light-dark(#fbfcfd, #f1f2f3) 22%, transparent),
+    0 1px 2px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.5)),
+    0 4px 10px light-dark(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.35));
+  transform-origin: 50% 100%;
+}
+.tabs-puck__tab { position: relative; border: 0; border-radius: 10px; background: none; color: light-dark(#5f626a, #a7abb2); font: inherit; font-size: 13px; font-weight: 500; cursor: pointer; transition: color 0.25s; }
+.tabs-puck__tab:hover { color: light-dark(#42454c, #e5e6e9); }
+.tabs-puck__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+.tabs-puck__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: -2px; }
+.tabs-puck__panel { padding: 14px 6px 0; min-height: calc(3.1em + 14px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-puck__slot { transition: none; }
+}

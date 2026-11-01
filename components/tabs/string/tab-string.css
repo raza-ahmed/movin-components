@@ -1,0 +1,11 @@
+.tabs-string { width: 260px; }
+.tabs-string__list { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); }
+.tabs-string__tab { padding: 10px 0 8px; border: 0; border-radius: 6px; background: none; color: light-dark(#5f626a, #a7abb2); font: inherit; font-size: 13px; font-weight: 500; cursor: pointer; transition: color 0.2s; }
+.tabs-string__tab:hover { color: light-dark(#42454c, #e5e6e9); }
+.tabs-string__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+.tabs-string__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: -2px; }
+.tabs-string__svg { display: block; width: 260px; height: 22px; overflow: visible; }
+.tabs-string__line { fill: none; stroke: light-dark(#cbced3, #393c41); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.tabs-string__peg { fill: light-dark(#6d7179, #7d8087); }
+.tabs-string__bead { fill: light-dark(#373a40, #f1f2f3); filter: drop-shadow(0 1px 2px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.5))); }
+.tabs-string__panel { padding: 8px 4px 0; min-height: calc(3.1em + 8px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }

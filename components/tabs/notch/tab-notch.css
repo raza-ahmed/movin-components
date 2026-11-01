@@ -1,0 +1,30 @@
+.tabs-notch { width: 260px; }
+.tabs-notch__panel { min-height: calc(3.1em + 8px); padding: 0 6px 8px; color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; text-align: center; }
+.tabs-notch__bar { position: relative; height: 56px; margin-top: 18px; }
+.tabs-notch__svg { position: absolute; inset: 0; width: 260px; height: 56px; overflow: visible; }
+.tabs-notch__shape { fill: light-dark(#fbfcfd, #232529); filter: drop-shadow(0 4px 12px light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35))); }
+.tabs-notch__orb {
+  position: absolute;
+  top: -17px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: light-dark(#373a40, #f1f2f3);
+  color: light-dark(#fbfcfd, #121417);
+  box-shadow: 0 4px 10px light-dark(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.45));
+}
+.tabs-notch__orb svg { position: absolute; left: 10px; top: 10px; opacity: 0; transform: scale(0.5); transition: opacity 0.2s, transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1); }
+.tabs-notch__orb svg.tabs-notch__icon--on { opacity: 1; transform: none; transition-delay: 0.12s; }
+.tabs-notch__list { position: absolute; inset: 0 24px; display: grid; grid-template-columns: repeat(4, 1fr); }
+.tabs-notch__tab { position: relative; border: 0; border-radius: 12px; background: none; color: light-dark(#5f626a, #a7abb2); font: inherit; cursor: pointer; transition: color 0.2s; }
+.tabs-notch__tab:hover { color: light-dark(#42454c, #e5e6e9); }
+.tabs-notch__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: -4px; }
+.tabs-notch__icon { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.tabs-notch__tab .tabs-notch__icon { position: absolute; left: 50%; top: 18px; margin-left: -10px; transition: opacity 0.2s, transform 0.3s cubic-bezier(0.3, 1.5, 0.5, 1); }
+.tabs-notch__tab[aria-selected='true'] .tabs-notch__icon { opacity: 0; transform: translateY(-10px) scale(0.6); }
+.tabs-notch__name { position: absolute; left: 0; right: 0; bottom: 7px; font-size: 12px; font-weight: 600; color: light-dark(#373a40, #f1f2f3); opacity: 0; transform: translateY(4px); transition: opacity 0.2s, transform 0.3s; }
+.tabs-notch__tab[aria-selected='true'] .tabs-notch__name { opacity: 1; transform: none; transition-delay: 0.15s; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-notch__orb svg, .tabs-notch__tab .tabs-notch__icon, .tabs-notch__name { transition: none !important; }
+}

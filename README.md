@@ -1,8 +1,8 @@
 # movin.design components
 
-693 animated UI components: buttons, cards, checkboxes, inputs, loaders, radio buttons, sliders, tabs and toggles. Every one comes in two formats:
+723 animated UI components: buttons, cards, checkboxes, inputs, loaders, radio buttons, sliders, tabs and toggles. Every one comes in two formats:
 
-- **React + Tailwind** (TypeScript), installable with the shadcn CLI. 686 have no dependencies; 7 use Framer Motion.
+- **React + Tailwind** (TypeScript), installable with the shadcn CLI. 716 have no dependencies; 7 use Framer Motion.
 - **Plain HTML + CSS** (plus a small script where needed), with no framework and no dependencies, for Vue, Svelte, Angular, Webflow or a plain page.
 
 Live previews, code and an LLM prompt for each: https://movin.design/components/
@@ -579,10 +579,25 @@ Each component folder holds `<name>.html`, `<name>.css` and, when it needs one, 
 | [Typewriter radio button](components/radios/typewriter/) | `radio-typewriter` | None | [Preview](https://movin.design/components/radios/typewriter/) |
 | [XP Bar radio button](components/radios/xp-bar/) | `radio-xp-bar` | None | [Preview](https://movin.design/components/radios/xp-bar/) |
 
-### Sliders (45)
+### Sliders (60)
 
 | Component | Install name | Dependencies | Live |
 | --- | --- | --- | --- |
+| [Comb slider](components/sliders/comb/) | `slider-comb` | None | [Preview](https://movin.design/components/sliders/comb/) |
+| [Drain slider](components/sliders/drain/) | `slider-drain` | None | [Preview](https://movin.design/components/sliders/drain/) |
+| [Gap slider](components/sliders/gap/) | `slider-gap` | None | [Preview](https://movin.design/components/sliders/gap/) |
+| [Glass slider](components/sliders/glass/) | `slider-glass` | None | [Preview](https://movin.design/components/sliders/glass/) |
+| [Glide slider](components/sliders/glide/) | `slider-glide` | None | [Preview](https://movin.design/components/sliders/glide/) |
+| [Halftone slider](components/sliders/halftone/) | `slider-halftone` | None | [Preview](https://movin.design/components/sliders/halftone/) |
+| [Invert slider](components/sliders/invert/) | `slider-invert` | None | [Preview](https://movin.design/components/sliders/invert/) |
+| [Lift slider](components/sliders/lift/) | `slider-lift` | None | [Preview](https://movin.design/components/sliders/lift/) |
+| [Louvre slider](components/sliders/louvre/) | `slider-louvre` | None | [Preview](https://movin.design/components/sliders/louvre/) |
+| [Merge slider](components/sliders/merge/) | `slider-merge` | None | [Preview](https://movin.design/components/sliders/merge/) |
+| [Pleat slider](components/sliders/pleat/) | `slider-pleat` | None | [Preview](https://movin.design/components/sliders/pleat/) |
+| [Pluck slider](components/sliders/pluck/) | `slider-pluck` | None | [Preview](https://movin.design/components/sliders/pluck/) |
+| [Rubber slider](components/sliders/rubber/) | `slider-rubber` | None | [Preview](https://movin.design/components/sliders/rubber/) |
+| [Squiggle slider](components/sliders/squiggle/) | `slider-squiggle` | None | [Preview](https://movin.design/components/sliders/squiggle/) |
+| [Wedge slider](components/sliders/wedge/) | `slider-wedge` | None | [Preview](https://movin.design/components/sliders/wedge/) |
 | [Balance slider](components/sliders/balance/) | `slider-balance` | None | [Preview](https://movin.design/components/sliders/balance/) |
 | [Bass slider](components/sliders/bass/) | `slider-bass` | None | [Preview](https://movin.design/components/sliders/bass/) |
 | [Bow slider](components/sliders/bow/) | `slider-bow` | None | [Preview](https://movin.design/components/sliders/bow/) |
@@ -629,10 +644,25 @@ Each component folder holds `<name>.html`, `<name>.css` and, when it needs one, 
 | [Windsock slider](components/sliders/windsock/) | `slider-windsock` | None | [Preview](https://movin.design/components/sliders/windsock/) |
 | [Zipper slider](components/sliders/zipper/) | `slider-zipper` | None | [Preview](https://movin.design/components/sliders/zipper/) |
 
-### Tabs (45)
+### Tabs (60)
 
 | Component | Install name | Dependencies | Live |
 | --- | --- | --- | --- |
+| [Caret tab set](components/tabs/caret/) | `tab-caret` | None | [Preview](https://movin.design/components/tabs/caret/) |
+| [Contents tab set](components/tabs/contents/) | `tab-contents` | None | [Preview](https://movin.design/components/tabs/contents/) |
+| [Expand tab set](components/tabs/expand/) | `tab-expand` | None | [Preview](https://movin.design/components/tabs/expand/) |
+| [Goo tab set](components/tabs/goo/) | `tab-goo` | None | [Preview](https://movin.design/components/tabs/goo/) |
+| [Inchworm tab set](components/tabs/inchworm/) | `tab-inchworm` | None | [Preview](https://movin.design/components/tabs/inchworm/) |
+| [Notch tab set](components/tabs/notch/) | `tab-notch` | None | [Preview](https://movin.design/components/tabs/notch/) |
+| [Puck tab set](components/tabs/puck/) | `tab-puck` | None | [Preview](https://movin.design/components/tabs/puck/) |
+| [Reorder tab set](components/tabs/reorder/) | `tab-reorder` | None | [Preview](https://movin.design/components/tabs/reorder/) |
+| [Rise tab set](components/tabs/rise/) | `tab-rise` | None | [Preview](https://movin.design/components/tabs/rise/) |
+| [Scroller tab set](components/tabs/scroller/) | `tab-scroller` | None | [Preview](https://movin.design/components/tabs/scroller/) |
+| [Stencil tab set](components/tabs/stencil/) | `tab-stencil` | None | [Preview](https://movin.design/components/tabs/stencil/) |
+| [String tab set](components/tabs/string/) | `tab-string` | None | [Preview](https://movin.design/components/tabs/string/) |
+| [Swipe tab set](components/tabs/swipe/) | `tab-swipe` | None | [Preview](https://movin.design/components/tabs/swipe/) |
+| [Tumble tab set](components/tabs/tumble/) | `tab-tumble` | None | [Preview](https://movin.design/components/tabs/tumble/) |
+| [Wheel tab set](components/tabs/wheel/) | `tab-wheel` | None | [Preview](https://movin.design/components/tabs/wheel/) |
 | [Binder tab set](components/tabs/binder/) | `tab-binder` | None | [Preview](https://movin.design/components/tabs/binder/) |
 | [Blinds tab set](components/tabs/blinds/) | `tab-blinds` | None | [Preview](https://movin.design/components/tabs/blinds/) |
 | [Brackets tab set](components/tabs/brackets/) | `tab-brackets` | None | [Preview](https://movin.design/components/tabs/brackets/) |

@@ -1,0 +1,21 @@
+.slider-glide { position: relative; width: 240px; height: 64px; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.slider-glide--held { cursor: grabbing; }
+.slider-glide__rail { position: absolute; left: 0; right: 0; top: 34px; height: 4px; border-radius: 2px; background: light-dark(#ebedf0, #232529); }
+.slider-glide__fill { position: absolute; left: 0; top: 34px; height: 4px; border-radius: 2px; width: var(--slider-glide-x); background: light-dark(#50535b, #c6c8cd); }
+.slider-glide__ticks { position: absolute; left: 12px; right: 12px; top: 46px; height: 8px; display: flex; justify-content: space-between; }
+.slider-glide__ticks i { width: 1px; height: 5px; background: light-dark(#cbced3, #393c41); }
+.slider-glide__ticks i:nth-child(5n + 1) { height: 8px; }
+.slider-glide__thumb {
+  position: absolute;
+  top: 24px;
+  left: calc(var(--slider-glide-x) - 12px);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 2px 6px light-dark(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.5));
+}
+.slider-glide:has(.slider-glide__input:focus-visible) .slider-glide__thumb { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+.slider-glide__value { position: absolute; top: 0; left: var(--slider-glide-x); transform: translateX(-50%); font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums; color: light-dark(#42454c, #e5e6e9); }
+/* Keyboard and screen readers drive the native input; the pointer drives the physics. */
+.slider-glide__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; pointer-events: none; }

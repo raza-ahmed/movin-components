@@ -1,0 +1,111 @@
+"use client";
+
+import * as React from "react";
+import { useEffect, useRef, useState } from 'react';
+
+const W = 240;
+const SLATS = 14;
+const SLAT = 13;
+const STEP = (W - SLAT) / (SLATS - 1);
+
+const css = `
+  .slider-louvre { position: relative; width: ${W}px; }
+  .slider-louvre__head { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+  .slider-louvre__head b { font-weight: 500; font-variant-numeric: tabular-nums; color: light-dark(#42454c, #e5e6e9); }
+  .slider-louvre__slats { position: relative; height: 38px; }
+  .slider-louvre__slat {
+    position: absolute;
+    top: 0;
+    width: ${SLAT}px;
+    height: 38px;
+    border-radius: 3px;
+    background-color: color-mix(in oklab, light-dark(#cbced3, #393c41) calc(var(--slider-louvre-f) * 100%), light-dark(#42454c, #e5e6e9));
+    transform: perspective(160px) rotateY(calc(var(--slider-louvre-f) * 80deg));
+    transition: transform 0.5s cubic-bezier(0.3, 1.45, 0.5, 1), background-color 0.35s ease-out;
+    transition-delay: var(--slider-louvre-d);
+  }
+  .slider-louvre__rail { position: relative; height: 2px; margin-top: 14px; border-radius: 1px; background: light-dark(#ebedf0, #232529); }
+  .slider-louvre__fill { position: absolute; left: 0; top: 0; height: 2px; border-radius: 1px; width: var(--slider-louvre-t); background: light-dark(#50535b, #c6c8cd); }
+  .slider-louvre__dot {
+    position: absolute;
+    top: -4px;
+    left: calc(var(--slider-louvre-t) - 5px);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: light-dark(#373a40, #f1f2f3);
+    box-shadow: 0 1px 3px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s cubic-bezier(0.3, 1.6, 0.5, 1);
+  }
+  .slider-louvre:has(.slider-louvre__input:active) .slider-louvre__dot { transform: scale(1.3); }
+  .slider-louvre:has(.slider-louvre__input:focus-visible) .slider-louvre__dot { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+  .slider-louvre__input { position: absolute; left: 0; right: 0; top: 24px; width: 100%; height: 66px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+  .slider-louvre__input::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 66px; }
+  .slider-louvre__input::-moz-range-thumb { width: 12px; height: 66px; border: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    .slider-louvre__slat, .slider-louvre__dot { transition: none; }
+  }
+`;
+
+const smooth = (x: number) => {
+  const c = Math.min(1, Math.max(0, x));
+  return c * c * (3 - 2 * c);
+};
+
+export function LouvreSlider() {
+  const [v, setV] = useState(45);
+  const t = 6 + (v / 100) * (W - 12);
+  // Slats between the old and new position turn in order, so a click far along still reads as a sweep.
+  const prev = useRef(t);
+  useEffect(() => {
+    prev.current = t;
+  }, [t]);
+  const span = Math.abs(t - prev.current);
+  const sweep = Math.min(span * 1.6, 320);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="slider-louvre" style={{ '--slider-louvre-t': `${t}px` } as React.CSSProperties}>
+        <div className="slider-louvre__head" aria-hidden="true">
+          <span>Light</span>
+          <b>{v}%</b>
+        </div>
+        <div className="slider-louvre__slats" aria-hidden="true">
+          {Array.from({ length: SLATS }, (_, i) => {
+            const x = SLAT / 2 + i * STEP;
+            const crossed = span > 0 && (x - prev.current) * (x - t) <= 0;
+            return (
+              <span
+                key={i}
+                className="slider-louvre__slat"
+                style={
+                  {
+                    left: x - SLAT / 2,
+                    '--slider-louvre-f': smooth((x - t + 16) / 32).toFixed(3),
+                    '--slider-louvre-d': `${crossed ? Math.round((Math.abs(x - prev.current) / span) * sweep) : 0}ms`,
+                  } as React.CSSProperties
+                }
+              />
+            );
+          })}
+        </div>
+        <div className="slider-louvre__rail" aria-hidden="true">
+          <span className="slider-louvre__fill" />
+          <span className="slider-louvre__dot" />
+        </div>
+        <input
+          className="slider-louvre__input"
+          type="range"
+          min={0}
+          max={100}
+          value={v}
+          onChange={(e) => setV(+e.target.value)}
+          aria-label="Light"
+          aria-valuetext={`${v}%`}
+        />
+      </div>
+    </>
+  );
+}

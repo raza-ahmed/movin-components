@@ -1,0 +1,44 @@
+.tabs-scroller { position: relative; width: 260px; }
+.tabs-scroller__scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--tabs-scroller-l), #000 calc(100% - var(--tabs-scroller-r)), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 var(--tabs-scroller-l), #000 calc(100% - var(--tabs-scroller-r)), transparent);
+}
+.tabs-scroller__scroll::-webkit-scrollbar { display: none; }
+.tabs-scroller__list { position: relative; isolation: isolate; display: flex; gap: 4px; width: max-content; padding: 2px; }
+.tabs-scroller__pill {
+  position: absolute;
+  top: 2px;
+  height: 32px;
+  border-radius: 999px;
+  background: light-dark(#373a40, #f1f2f3);
+  transition: left 0.45s cubic-bezier(0.3, 1.25, 0.5, 1), width 0.45s cubic-bezier(0.3, 1.25, 0.5, 1);
+}
+.tabs-scroller__tab { position: relative; height: 32px; padding: 0 14px; border: 0; border-radius: 999px; background: none; color: light-dark(#50535b, #c6c8cd); font: inherit; font-size: 13px; font-weight: 500; white-space: nowrap; cursor: pointer; transition: color 0.25s; }
+/* Each chip's outline sits beneath the pill (z-index -1 in the list's stacking context), so the pill slides over them cleanly. */
+.tabs-scroller__tab::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; box-shadow: inset 0 0 0 1px light-dark(#ebedf0, #232529); }
+.tabs-scroller__tab:hover { color: light-dark(#373a40, #f1f2f3); }
+.tabs-scroller__tab[aria-selected='true'] { color: light-dark(#fbfcfd, #121417); transition-delay: 0.15s; }
+.tabs-scroller__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 1px; }
+.tabs-scroller__arrow {
+  position: absolute;
+  top: 3px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background: light-dark(#ebedf0, #232529);
+  color: light-dark(#42454c, #e5e6e9);
+  box-shadow: 0 2px 8px light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.tabs-scroller__arrow[data-hidden] { opacity: 0; transform: scale(0.7); pointer-events: none; }
+.tabs-scroller__arrow svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tabs-scroller__panel { padding: 14px 4px 0; min-height: calc(3.1em + 14px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-scroller__pill { transition: none; }
+}

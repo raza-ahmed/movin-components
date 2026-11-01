@@ -1,0 +1,39 @@
+.slider-drain { position: relative; width: 240px; }
+.slider-drain__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-drain__head b { font-weight: 500; font-variant-numeric: tabular-nums; color: light-dark(#42454c, #e5e6e9); }
+.slider-drain__bar {
+  position: relative;
+  height: 12px;
+  border-radius: 3px;
+  -webkit-mask-image: repeating-linear-gradient(90deg, #000 0 22.2px, transparent 22.2px 24.2px);
+  mask-image: repeating-linear-gradient(90deg, #000 0 22.2px, transparent 22.2px 24.2px);
+}
+.slider-drain__track, .slider-drain__ghost, .slider-drain__main, .slider-drain__flash { position: absolute; top: 0; bottom: 0; left: 0; }
+.slider-drain__track { right: 0; background: light-dark(#ebedf0, #232529); }
+.slider-drain__ghost { background: light-dark(#6d7179, #7d8087); }
+.slider-drain__main { background: light-dark(#373a40, #f1f2f3); }
+.slider-drain__flash { background: light-dark(#373a40, #f1f2f3); animation: slider-drain-flash 0.45s ease-out forwards; }
+@keyframes slider-drain-flash {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+.slider-drain__handle {
+  position: absolute;
+  bottom: -6px;
+  left: calc(var(--slider-drain-v) * 1% - 2px);
+  width: 4px;
+  height: 24px;
+  border-radius: 2px;
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 0 0 2px light-dark(#fbfcfd, #121417);
+  transition: transform 0.3s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.slider-drain:has(.slider-drain__input:active) .slider-drain__handle { transform: scaleY(1.2); }
+.slider-drain:has(.slider-drain__input:focus-visible) .slider-drain__handle { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+.slider-drain__input { position: absolute; left: 0; bottom: -12px; width: 100%; height: 36px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-drain__input::-webkit-slider-thumb { -webkit-appearance: none; width: 2px; height: 36px; }
+.slider-drain__input::-moz-range-thumb { width: 2px; height: 36px; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .slider-drain__ghost, .slider-drain__main, .slider-drain__handle { transition: none !important; }
+  .slider-drain__flash { display: none; }
+}

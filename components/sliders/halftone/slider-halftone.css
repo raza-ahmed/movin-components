@@ -1,0 +1,20 @@
+.slider-halftone { position: relative; width: 240px; height: 58px; }
+.slider-halftone__svg { display: block; width: 240px; height: 58px; overflow: visible; }
+.slider-halftone__ink { fill: light-dark(#42454c, #e5e6e9); }
+.slider-halftone__paper { fill: light-dark(#cbced3, #393c41); }
+.slider-halftone__thumb {
+  fill: light-dark(#373a40, #f1f2f3);
+  filter: drop-shadow(0 2px 4px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.55)));
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.slider-halftone:has(.slider-halftone__input:active) .slider-halftone__thumb { transform: scale(1.25, 1.06); }
+.slider-halftone__ring { fill: none; stroke: transparent; stroke-width: 2; }
+.slider-halftone:has(.slider-halftone__input:focus-visible) .slider-halftone__ring { stroke: light-dark(#50535b, #c6c8cd); }
+.slider-halftone__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-halftone__input::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 58px; }
+.slider-halftone__input::-moz-range-thumb { width: 12px; height: 58px; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .slider-halftone__thumb { transition: none; }
+}

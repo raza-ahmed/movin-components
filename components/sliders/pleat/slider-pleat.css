@@ -1,0 +1,19 @@
+.slider-pleat { position: relative; width: 240px; height: 56px; }
+.slider-pleat__svg { display: block; width: 240px; height: 56px; overflow: visible; }
+.slider-pleat__flat { fill: light-dark(#42454c, #e5e6e9); }
+.slider-pleat__tab {
+  fill: light-dark(#373a40, #f1f2f3);
+  filter: drop-shadow(0 2px 3px light-dark(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.5)));
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.slider-pleat:has(.slider-pleat__input:active) .slider-pleat__tab { transform: scale(1.12, 1.08); }
+.slider-pleat__ring { fill: none; stroke: transparent; stroke-width: 2; }
+.slider-pleat:has(.slider-pleat__input:focus-visible) .slider-pleat__ring { stroke: light-dark(#50535b, #c6c8cd); }
+.slider-pleat__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-pleat__input::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 56px; }
+.slider-pleat__input::-moz-range-thumb { width: 16px; height: 56px; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .slider-pleat__tab { transition: none; }
+}

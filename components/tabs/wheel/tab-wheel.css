@@ -1,0 +1,38 @@
+.tabs-wheel { width: 260px; }
+.tabs-wheel__list { position: relative; height: 44px; perspective: 520px; overflow: hidden; }
+.tabs-wheel__drum {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 0;
+  height: 44px;
+  transform-style: preserve-3d;
+  transform: translateZ(-170px) rotateY(calc(var(--tabs-wheel-i) * -25deg));
+  transition: transform 0.65s cubic-bezier(0.3, 1.25, 0.5, 1);
+}
+.tabs-wheel__tab {
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 60px;
+  height: 36px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: light-dark(#50535b, #c6c8cd);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transition: color 0.3s, opacity 0.4s;
+}
+.tabs-wheel__tab:hover { color: light-dark(#373a40, #f1f2f3); }
+.tabs-wheel__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+.tabs-wheel__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: -2px; }
+/* The front of the wheel is marked by a fixed dot; the days turn past it. */
+.tabs-wheel__mark { display: block; width: 4px; height: 4px; margin: 2px auto 0; border-radius: 50%; background: light-dark(#373a40, #f1f2f3); }
+.tabs-wheel__panel { padding: 12px 6px 0; min-height: calc(3.1em + 12px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; text-align: center; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-wheel__drum { transition: none; }
+}

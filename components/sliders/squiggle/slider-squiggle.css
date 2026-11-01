@@ -1,0 +1,23 @@
+.slider-squiggle { position: relative; width: 240px; }
+.slider-squiggle__svg { display: block; width: 240px; height: 44px; overflow: visible; }
+.slider-squiggle__wave { fill: none; stroke: light-dark(#42454c, #e5e6e9); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.slider-squiggle__rest { stroke: light-dark(#dbdde1, #2e3035); stroke-width: 4; stroke-linecap: round; }
+.slider-squiggle__handle {
+  position: absolute;
+  top: 8px;
+  left: calc(var(--slider-squiggle-x) * 1px - 3px);
+  width: 6px;
+  height: 28px;
+  border-radius: 3px;
+  background: light-dark(#373a40, #f1f2f3);
+  transition: transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.slider-squiggle:has(.slider-squiggle__input:active) .slider-squiggle__handle { transform: scaleY(1.28); }
+.slider-squiggle:has(.slider-squiggle__input:focus-visible) .slider-squiggle__handle { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+.slider-squiggle__times { display: flex; justify-content: space-between; margin-top: 2px; font-size: 12px; font-variant-numeric: tabular-nums; color: light-dark(#5f626a, #a7abb2); }
+.slider-squiggle__input { position: absolute; left: 0; top: 0; width: 100%; height: 44px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-squiggle__input::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 44px; }
+.slider-squiggle__input::-moz-range-thumb { width: 16px; height: 44px; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .slider-squiggle__handle { transition: none; }
+}

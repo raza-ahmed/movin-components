@@ -1,0 +1,21 @@
+<div class="tabs-goo" style="--tabs-goo-i:0">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="tabs-goo-filter" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"></feGaussianBlur>
+      <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8"></feColorMatrix>
+    </filter>
+  </svg>
+  <div class="tabs-goo__list" role="tablist" aria-label="Visits">
+    <span class="tabs-goo__liquid" style="filter:url(#tabs-goo-filter)" aria-hidden="true">
+      <span class="tabs-goo__blob"></span>
+      <span class="tabs-goo__blob"></span>
+      <span class="tabs-goo__blob"></span>
+    </span>
+    <button class="tabs-goo__tab" type="button" role="tab" id="tabs-goo-tab-0" aria-selected="true" aria-controls="tabs-goo-panel-0" tabindex="0">Daily</button>
+    <button class="tabs-goo__tab" type="button" role="tab" id="tabs-goo-tab-1" aria-selected="false" aria-controls="tabs-goo-panel-1" tabindex="-1">Weekly</button>
+    <button class="tabs-goo__tab" type="button" role="tab" id="tabs-goo-tab-2" aria-selected="false" aria-controls="tabs-goo-panel-2" tabindex="-1">Monthly</button>
+  </div>
+  <div class="tabs-goo__panel" role="tabpanel" id="tabs-goo-panel-0" aria-labelledby="tabs-goo-tab-0">4,210 visits today, 8% more than the same day last week.</div>
+  <div class="tabs-goo__panel" role="tabpanel" id="tabs-goo-panel-1" aria-labelledby="tabs-goo-tab-1" hidden="">27,940 visits this week, with Tuesday the busiest day.</div>
+  <div class="tabs-goo__panel" role="tabpanel" id="tabs-goo-panel-2" aria-labelledby="tabs-goo-tab-2" hidden="">112,300 visits in October, a new record for the site.</div>
+</div>
