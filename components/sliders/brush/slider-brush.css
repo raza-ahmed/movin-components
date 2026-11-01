@@ -1,0 +1,17 @@
+.slider-brush { position: relative; width: 240px; height: 62px; }
+.slider-brush__svg { display: block; width: 240px; height: 48px; overflow: visible; }
+.slider-brush__guide { stroke: light-dark(#dbdde1, #2e3035); stroke-width: 1.5; stroke-dasharray: 1 5; stroke-linecap: round; }
+.slider-brush__paint { fill: light-dark(#42454c, #e5e6e9); }
+.slider-brush__fade { stop-color: light-dark(#42454c, #e5e6e9); }
+.slider-brush__wet { fill: light-dark(#373a40, #f1f2f3); opacity: 0.45; transition: opacity 0.2s; }
+.slider-brush:has(.slider-brush__input:active) .slider-brush__wet { opacity: 0.8; }
+.slider-brush__ring { fill: none; stroke: transparent; stroke-width: 2; }
+.slider-brush:has(.slider-brush__input:focus-visible) .slider-brush__ring { stroke: light-dark(#50535b, #c6c8cd); }
+.slider-brush__value { position: absolute; left: 0; right: 0; top: 46px; display: flex; justify-content: space-between; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-brush__value b { color: light-dark(#373a40, #f1f2f3); font-weight: 500; font-variant-numeric: tabular-nums; }
+.slider-brush__input { position: absolute; left: 0; top: 0; width: 100%; height: 48px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-brush__input::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 48px; }
+.slider-brush__input::-moz-range-thumb { width: 16px; height: 48px; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .slider-brush__wet { transition: none; }
+}

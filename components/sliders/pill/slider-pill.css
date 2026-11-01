@@ -1,0 +1,45 @@
+.slider-pill { position: relative; width: 240px; height: 48px; }
+.slider-pill__body {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 102px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 22px;
+  background: light-dark(#ebedf0, #232529);
+  color: light-dark(#373a40, #f1f2f3);
+  transform: translateX(-50%);
+  transition: width 0.38s cubic-bezier(0.3, 1.25, 0.5, 1);
+}
+.slider-pill--open .slider-pill__body { width: 240px; }
+.slider-pill__icon { flex: none; width: 20px; height: 20px; }
+.slider-pill__track { position: relative; flex: 1; min-width: 0; height: 4px; border-radius: 2px; background: light-dark(#cbced3, #393c41); opacity: 0; transition: opacity 0.15s; }
+.slider-pill--open .slider-pill__track { opacity: 1; transition-delay: 0.08s; }
+.slider-pill__fill { position: absolute; left: 0; top: 0; height: 100%; border-radius: inherit; background: light-dark(#373a40, #f1f2f3); }
+.slider-pill__thumb {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border-radius: 50%;
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 1px 4px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.5));
+  transform: scale(0);
+  transition: transform 0.25s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.slider-pill--open .slider-pill__thumb { transform: scale(1); transition-delay: 0.1s; }
+.slider-pill__value { flex: none; width: 34px; text-align: right; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.slider-pill:has(.slider-pill__input:focus-visible) .slider-pill__body { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+.slider-pill__input { position: absolute; left: 36px; top: 2px; width: 154px; height: 44px; margin: 0; opacity: 0; cursor: pointer; pointer-events: none; -webkit-appearance: none; appearance: none; background: none; }
+.slider-pill--open .slider-pill__input { pointer-events: auto; }
+.slider-pill__input::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 44px; }
+.slider-pill__input::-moz-range-thumb { width: 16px; height: 44px; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .slider-pill__body, .slider-pill__thumb { transition: none; }
+}

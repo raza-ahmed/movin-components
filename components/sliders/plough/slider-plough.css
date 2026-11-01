@@ -1,0 +1,16 @@
+.slider-plough { position: relative; width: 240px; height: 76px; }
+.slider-plough__svg { position: absolute; left: 0; top: 0; width: 240px; height: 56px; overflow: visible; }
+.slider-plough__sand { fill: light-dark(#cbced3, #393c41); }
+.slider-plough__grit { fill: light-dark(#6d7179, #7d8087); }
+.slider-plough__floor { fill: light-dark(#50535b, #c6c8cd); }
+.slider-plough__grain { fill: light-dark(#6d7179, #7d8087); }
+.slider-plough__blade { fill: light-dark(#373a40, #f1f2f3); }
+.slider-plough__handle { stroke: light-dark(#50535b, #c6c8cd); stroke-width: 2.5; stroke-linecap: round; }
+.slider-plough__grip { fill: light-dark(#50535b, #c6c8cd); }
+.slider-plough__ring { fill: none; stroke: transparent; stroke-width: 2; }
+.slider-plough:has(.slider-plough__input:focus-visible) .slider-plough__ring { stroke: light-dark(#50535b, #c6c8cd); }
+.slider-plough__value { position: absolute; left: 0; right: 0; top: 58px; display: flex; justify-content: space-between; margin: 0; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-plough__value b { color: light-dark(#373a40, #f1f2f3); font-weight: 500; font-variant-numeric: tabular-nums; }
+.slider-plough__input { position: absolute; left: 0; top: 0; width: 100%; height: 56px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-plough__input::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 56px; }
+.slider-plough__input::-moz-range-thumb { width: 20px; height: 56px; border: 0; }

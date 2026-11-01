@@ -1,0 +1,19 @@
+.card-scrub { box-sizing: border-box; width: 240px; padding: 14px; border-radius: 16px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+.card-scrub__thumb { position: relative; width: 212px; height: 112px; border-radius: 10px; overflow: hidden; cursor: ew-resize; touch-action: pan-y; }
+.card-scrub__thumb:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+.card-scrub__thumb svg { display: block; width: 100%; height: 100%; }
+.card-scrub__sky { fill: light-dark(#ebedf0, #232529); }
+.card-scrub__far { fill: light-dark(#dbdde1, #2e3035); }
+.card-scrub__near { fill: light-dark(#cbced3, #393c41); }
+.card-scrub__plane { fill: light-dark(#373a40, #f1f2f3); }
+.card-scrub__trail { fill: none; stroke: light-dark(#5f626a, #a7abb2); stroke-width: 1.2; stroke-dasharray: 2 3; }
+.card-scrub__bar { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--card-scrub-shadow); opacity: 0; transition: opacity 0.2s; }
+.card-scrub { --card-scrub-shadow: light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.4)); }
+.card-scrub__bar span { display: block; height: 100%; background: light-dark(#373a40, #f1f2f3); }
+.card-scrub__chip { position: absolute; right: 6px; bottom: 8px; padding: 1px 6px; border-radius: 4px; background: light-dark(#fbfcfd, #121417); color: light-dark(#373a40, #f1f2f3); font-size: 10px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.card-scrub--live .card-scrub__bar { opacity: 1; }
+.card-scrub__title { margin: 10px 0 2px; font-size: 13px; font-weight: 600; color: light-dark(#373a40, #f1f2f3); }
+.card-scrub__meta { margin: 0; font-size: 11px; color: light-dark(#5f626a, #a7abb2); }
+@media (prefers-reduced-motion: reduce) {
+  .card-scrub__bar { transition: none; }
+}

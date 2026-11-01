@@ -1,0 +1,32 @@
+.tabs-swash { width: 270px; }
+.tabs-swash__list { display: flex; justify-content: center; gap: 28px; }
+.tabs-swash__tab {
+  position: relative;
+  border: 0;
+  padding: 4px 2px 14px;
+  background: none;
+  font-family: ui-serif, Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: light-dark(#5f626a, #a7abb2);
+  cursor: pointer;
+  transition: color 0.35s;
+}
+.tabs-swash__tab:hover, .tabs-swash__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+.tabs-swash__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; border-radius: 4px; }
+.tabs-swash__ink { position: absolute; left: -2px; top: calc(100% - 17px); width: calc(100% + 12px); height: 18px; overflow: visible; pointer-events: none; }
+.tabs-swash__ink path {
+  fill: none;
+  stroke: light-dark(#42454c, #e5e6e9);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  /* Leaving, it rewinds back into the start of the stroke. */
+  transition: stroke-dashoffset 0.45s cubic-bezier(0.5, 0, 0.75, 0);
+}
+.tabs-swash__tab[aria-selected='true'] .tabs-swash__ink path { stroke-dashoffset: 0; transition: stroke-dashoffset 0.8s 0.15s cubic-bezier(0.35, 0, 0.25, 1); }
+.tabs-swash__panel { padding: 12px 4px 0; min-height: calc(3.1em + 12px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; text-align: center; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-swash__ink path, .tabs-swash__tab[aria-selected='true'] .tabs-swash__ink path { transition: none; }
+}

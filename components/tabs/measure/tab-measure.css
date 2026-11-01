@@ -1,0 +1,12 @@
+.tabs-measure { width: 270px; }
+.tabs-measure__list { position: relative; display: flex; justify-content: center; gap: 4px; padding-bottom: 36px; }
+.tabs-measure__tab { border: 0; padding: 8px 12px; border-radius: 8px; background: none; font: inherit; font-size: 13px; font-weight: 500; color: light-dark(#5f626a, #a7abb2); cursor: pointer; transition: color 0.3s, background-color 0.3s; }
+.tabs-measure__tab:hover { color: light-dark(#373a40, #f1f2f3); }
+.tabs-measure__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#ebedf0, #232529); }
+.tabs-measure__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; }
+.tabs-measure__dim { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; visibility: hidden; }
+.tabs-measure__ext { stroke: light-dark(#6d7179, #7d8087); stroke-width: 1; stroke-dasharray: 2 2; }
+.tabs-measure__line { stroke: light-dark(#373a40, #f1f2f3); stroke-width: 1; }
+.tabs-measure__tag { fill: light-dark(#373a40, #f1f2f3); }
+.tabs-measure__num { fill: light-dark(#fbfcfd, #121417); font-size: 10px; font-weight: 600; font-variant-numeric: tabular-nums; text-anchor: middle; }
+.tabs-measure__panel { padding: 6px 4px 0; min-height: calc(3.1em + 6px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; text-align: center; }

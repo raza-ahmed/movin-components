@@ -1,0 +1,21 @@
+.slider-clamp { position: relative; width: 240px; height: 92px; border-radius: 6px; touch-action: none; }
+.slider-clamp:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 4px; }
+.slider-clamp__svg { position: absolute; left: 0; top: 0; width: 240px; height: 66px; overflow: visible; }
+.slider-clamp__jaw { fill: light-dark(#50535b, #c6c8cd); }
+.slider-clamp__rod { stroke: light-dark(#dbdde1, #2e3035); stroke-width: 4; stroke-linecap: round; }
+.slider-clamp__thread { stroke: light-dark(#6d7179, #7d8087); stroke-width: 4; stroke-dasharray: 1.2 2.4; }
+.slider-clamp__word {
+  position: absolute;
+  left: 50%;
+  top: 17px;
+  height: 22px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  color: light-dark(#373a40, #f1f2f3);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.slider-clamp__grip { position: absolute; top: 0; width: 30px; height: 66px; cursor: ew-resize; }
+.slider-clamp__value { position: absolute; left: 0; right: 0; top: 70px; display: flex; justify-content: space-between; margin: 0; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-clamp__value b { color: light-dark(#373a40, #f1f2f3); font-weight: 500; font-variant-numeric: tabular-nums; }

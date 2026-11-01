@@ -1,0 +1,23 @@
+.slider-hop { position: relative; width: 240px; height: 86px; }
+.slider-hop__svg { position: absolute; left: 0; top: 0; width: 240px; height: 64px; overflow: visible; }
+.slider-hop__line { stroke: light-dark(#ebedf0, #232529); stroke-width: 2; stroke-linecap: round; }
+.slider-hop__dot { fill: light-dark(#dbdde1, #2e3035); transition: fill 0.2s; }
+.slider-hop__dot--on { fill: light-dark(#50535b, #c6c8cd); }
+.slider-hop__trace { fill: none; stroke: light-dark(#5f626a, #a7abb2); stroke-width: 1.5; stroke-linecap: round; stroke-dasharray: 0.5 4; animation: slider-hop-fade 0.9s ease-out forwards; }
+@keyframes slider-hop-fade { from { opacity: 0.8; } to { opacity: 0; } }
+.slider-hop__thumb { position: absolute; left: 0; top: 0; width: 16px; height: 16px; }
+.slider-hop__body { display: block; width: 100%; height: 100%; border-radius: 50%; background: light-dark(#373a40, #f1f2f3); transform-origin: 50% 100%; box-shadow: 0 2px 5px light-dark(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.5)); }
+.slider-hop__body--land { animation: slider-hop-land 0.32s cubic-bezier(0.3, 1.4, 0.5, 1); }
+@keyframes slider-hop-land {
+  0% { transform: scale(1.3, 0.65); }
+  100% { transform: none; }
+}
+.slider-hop:has(.slider-hop__input:focus-visible) .slider-hop__body { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+.slider-hop__value { position: absolute; left: 0; right: 0; top: 68px; display: flex; justify-content: space-between; margin: 0; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-hop__value b { color: light-dark(#373a40, #f1f2f3); font-weight: 500; font-variant-numeric: tabular-nums; }
+.slider-hop__input { position: absolute; left: 0; top: 30px; width: 100%; height: 44px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-hop__input::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 44px; }
+.slider-hop__input::-moz-range-thumb { width: 16px; height: 44px; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .slider-hop__body--land { animation: none; }
+}

@@ -1,0 +1,13 @@
+.tabs-shutter { width: 260px; }
+.tabs-shutter__list { display: flex; justify-content: center; gap: 14px; }
+.tabs-shutter__tab { position: relative; width: 44px; height: 44px; border: 0; padding: 0; border-radius: 50%; background: none; cursor: pointer; }
+.tabs-shutter__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 3px; }
+.tabs-shutter__svg { display: block; overflow: visible; }
+.tabs-shutter__rim { fill: none; stroke: light-dark(#dbdde1, #2e3035); stroke-width: 1.5; }
+.tabs-shutter__blades { fill: light-dark(#373a40, #f1f2f3); fill-rule: evenodd; }
+.tabs-shutter__seams { fill: none; stroke: light-dark(#5f626a, #a7abb2); stroke-width: 0.8; }
+.tabs-shutter__icon { fill: none; stroke: light-dark(#50535b, #c6c8cd); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.2s; }
+.tabs-shutter__tab:hover .tabs-shutter__icon { stroke: light-dark(#373a40, #f1f2f3); }
+.tabs-shutter__tab--closed .tabs-shutter__icon, .tabs-shutter__tab--closed:hover .tabs-shutter__icon { stroke: light-dark(#fbfcfd, #121417); }
+.tabs-shutter__name { margin-top: 10px; text-align: center; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: light-dark(#373a40, #f1f2f3); }
+.tabs-shutter__panel { padding: 6px 4px 0; min-height: calc(3.1em + 6px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; text-align: center; }

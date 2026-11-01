@@ -1,0 +1,8 @@
+.tabs-ticks { width: 264px; }
+.tabs-ticks__list { display: grid; grid-template-columns: repeat(4, 1fr); }
+.tabs-ticks__tab { border: 0; padding: 6px 0 8px; background: none; font: inherit; font-size: 13px; font-weight: 500; color: light-dark(#5f626a, #a7abb2); cursor: pointer; transition: color 0.3s; }
+.tabs-ticks__tab:hover, .tabs-ticks__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+.tabs-ticks__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: -2px; border-radius: 6px; }
+.tabs-ticks__comb { display: flex; justify-content: space-between; align-items: flex-end; height: 14px; padding: 0 1px; }
+.tabs-ticks__tick { width: 1px; height: 4px; border-radius: 0.5px; background: light-dark(#dbdde1, #2e3035); }
+.tabs-ticks__panel { padding: 14px 0 0; min-height: calc(3.1em + 14px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }

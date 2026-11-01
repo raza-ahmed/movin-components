@@ -1,0 +1,47 @@
+.slider-thumbwheel { position: relative; width: 240px; height: 84px; touch-action: none; cursor: ew-resize; outline: none; user-select: none; -webkit-user-select: none; }
+.slider-thumbwheel__head { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-thumbwheel__value { color: light-dark(#373a40, #f1f2f3); font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.slider-thumbwheel__slot {
+  position: absolute;
+  left: 0;
+  top: 26px;
+  width: 240px;
+  height: 36px;
+  border-radius: 10px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: inset 0 1px 3px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.5)), inset 0 0 0 1px light-dark(#ebedf0, #232529);
+}
+.slider-thumbwheel__wheel {
+  position: absolute;
+  left: 8px;
+  top: 5px;
+  width: 224px;
+  height: 26px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: light-dark(#ebedf0, #232529);
+  /* The cylinder darkens as it turns away at both ends. */
+  box-shadow: inset 34px 0 18px -14px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.55)), inset -34px 0 18px -14px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.55));
+}
+.slider-thumbwheel__wheel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 15%, light-dark(color-mix(in oklab, light-dark(#fbfcfd, #121417) 55%, transparent), color-mix(in oklab, light-dark(#373a40, #f1f2f3) 9%, transparent)) 35%, transparent 60%);
+  pointer-events: none;
+}
+.slider-thumbwheel__svg { display: block; }
+.slider-thumbwheel__notch { position: absolute; left: 116px; top: 22px; border: 4px solid transparent; border-top-color: light-dark(#373a40, #f1f2f3); border-bottom-width: 0; }
+.slider-thumbwheel:focus-visible .slider-thumbwheel__slot { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+.slider-thumbwheel__range { position: absolute; left: 8px; top: 74px; width: 224px; height: 1px; background: light-dark(#dbdde1, #2e3035); }
+.slider-thumbwheel__zero { position: absolute; left: 50%; top: -2px; width: 1px; height: 5px; background: light-dark(#6d7179, #7d8087); }
+.slider-thumbwheel__at {
+  position: absolute;
+  top: -2px;
+  left: var(--slider-thumbwheel-at);
+  width: 5px;
+  height: 5px;
+  margin-left: -2.5px;
+  border-radius: 50%;
+  background: light-dark(#373a40, #f1f2f3);
+}

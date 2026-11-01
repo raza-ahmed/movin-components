@@ -1,0 +1,41 @@
+.slider-shuttle { position: relative; width: 240px; height: 84px; touch-action: none; cursor: grab; outline: none; user-select: none; -webkit-user-select: none; }
+.slider-shuttle--held { cursor: grabbing; }
+.slider-shuttle__head { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-shuttle__value { color: light-dark(#373a40, #f1f2f3); font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.slider-shuttle__groove {
+  position: absolute;
+  left: 0;
+  top: 26px;
+  width: 240px;
+  height: 34px;
+  border-radius: 17px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: inset 0 1px 3px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.5)), inset 0 0 0 1px light-dark(#ebedf0, #232529);
+}
+.slider-shuttle__centre { position: absolute; left: 119.5px; top: 4px; width: 1px; height: 26px; background: light-dark(#dbdde1, #2e3035); }
+.slider-shuttle__chev { position: absolute; top: 11px; width: 8px; height: 12px; color: light-dark(#dbdde1, #2e3035); transition: color 0.12s; }
+.slider-shuttle__chev--lit { color: light-dark(#50535b, #c6c8cd); }
+.slider-shuttle__handle {
+  position: absolute;
+  left: 98px;
+  top: 4px;
+  width: 44px;
+  height: 26px;
+  border-radius: 13px;
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 1px 2px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), 0 4px 10px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.4));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  /* Let go and it springs back past centre and settles. */
+  transition: transform 0.55s cubic-bezier(0.3, 1.7, 0.45, 1);
+}
+.slider-shuttle--held .slider-shuttle__handle { transition: none; }
+.slider-shuttle__grip { width: 1.5px; height: 10px; border-radius: 1px; background: light-dark(#6d7179, #7d8087); }
+.slider-shuttle:focus-visible .slider-shuttle__handle { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+.slider-shuttle__range { position: absolute; left: 0; top: 74px; width: 240px; height: 1px; background: light-dark(#dbdde1, #2e3035); }
+.slider-shuttle__played { position: absolute; left: 0; top: 0; height: 1px; width: var(--slider-shuttle-at); background: light-dark(#50535b, #c6c8cd); }
+@media (prefers-reduced-motion: reduce) {
+  .slider-shuttle__handle { transition: transform 0.15s ease-out; }
+}

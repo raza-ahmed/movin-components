@@ -1,0 +1,13 @@
+.slider-pinion { position: relative; width: 240px; height: 72px; }
+.slider-pinion__svg { position: absolute; left: 0; top: 0; width: 240px; height: 50px; overflow: visible; }
+.slider-pinion__rack--done { fill: light-dark(#50535b, #c6c8cd); }
+.slider-pinion__rack--left { fill: light-dark(#cbced3, #393c41); }
+.slider-pinion__gear { fill: light-dark(#373a40, #f1f2f3); }
+.slider-pinion__hole { fill: light-dark(#fbfcfd, #121417); }
+.slider-pinion__ring { fill: none; stroke: transparent; stroke-width: 2; }
+.slider-pinion:has(.slider-pinion__input:focus-visible) .slider-pinion__ring { stroke: light-dark(#50535b, #c6c8cd); }
+.slider-pinion__value { position: absolute; left: 0; right: 0; top: 54px; display: flex; justify-content: space-between; margin: 0; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-pinion__value b { color: light-dark(#373a40, #f1f2f3); font-weight: 500; font-variant-numeric: tabular-nums; }
+.slider-pinion__input { position: absolute; left: 2px; top: 0; width: 236px; height: 50px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-pinion__input::-webkit-slider-thumb { -webkit-appearance: none; width: 28px; height: 50px; }
+.slider-pinion__input::-moz-range-thumb { width: 28px; height: 50px; border: 0; }

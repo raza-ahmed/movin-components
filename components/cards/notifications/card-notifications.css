@@ -1,0 +1,34 @@
+.card-notifications { box-sizing: border-box; width: 240px; padding: 12px; border-radius: 16px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+.card-notifications__head { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+.card-notifications__head b { margin-right: auto; font-size: 12px; font-weight: 600; color: light-dark(#373a40, #f1f2f3); }
+.card-notifications__btn { height: 22px; padding: 0 8px; border: 0; border-radius: 999px; background: light-dark(#ebedf0, #232529); color: light-dark(#42454c, #e5e6e9); font: inherit; font-size: 10.5px; font-weight: 600; cursor: pointer; }
+.card-notifications__btn:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+.card-notifications__stack { position: relative; transition: height 0.45s cubic-bezier(0.3, 1.2, 0.5, 1); }
+.card-notifications__list { margin: 0; padding: 0; list-style: none; }
+.card-notifications__item {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 10px;
+  border-radius: 12px;
+  background: light-dark(#ebedf0, #232529);
+  box-shadow: 0 4px 10px -4px light-dark(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.6));
+  transition: transform 0.45s cubic-bezier(0.3, 1.25, 0.5, 1), opacity 0.3s;
+}
+.card-notifications__icon { flex: none; width: 26px; height: 26px; border-radius: 8px; background: light-dark(#cbced3, #393c41); }
+.card-notifications__item:nth-child(1) .card-notifications__icon { background: light-dark(#50535b, #c6c8cd); }
+.card-notifications__item:nth-child(2) .card-notifications__icon { background: light-dark(#6d7179, #7d8087); }
+.card-notifications__body { min-width: 0; font-size: 11px; }
+.card-notifications__app { display: flex; gap: 6px; color: light-dark(#5f626a, #a7abb2); }
+.card-notifications__text { margin: 1px 0 0; overflow: hidden; color: light-dark(#373a40, #f1f2f3); white-space: nowrap; text-overflow: ellipsis; }
+.card-notifications__empty { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; font-size: 11px; color: light-dark(#5f626a, #a7abb2); opacity: 0; transition: opacity 0.3s 0.3s; }
+.card-notifications--clear .card-notifications__empty { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .card-notifications__stack, .card-notifications__item { transition: opacity 0.2s; }
+}

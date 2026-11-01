@@ -1,0 +1,8 @@
+.tabs-flock { width: 270px; }
+.tabs-flock__list { position: relative; display: flex; gap: 22px; padding-bottom: 12px; }
+.tabs-flock__tab { border: 0; padding: 6px 0; background: none; font: inherit; font-size: 13px; font-weight: 500; color: light-dark(#5f626a, #a7abb2); cursor: pointer; transition: color 0.3s; }
+.tabs-flock__tab:hover, .tabs-flock__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+.tabs-flock__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; border-radius: 4px; }
+/* Hidden until placed: their positions come from the laid-out labels. */
+.tabs-flock__dot { position: absolute; left: -1.5px; bottom: 4px; width: 3px; height: 3px; border-radius: 50%; background: light-dark(#373a40, #f1f2f3); visibility: hidden; }
+.tabs-flock__panel { padding: 12px 0 0; min-height: calc(3.1em + 12px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }

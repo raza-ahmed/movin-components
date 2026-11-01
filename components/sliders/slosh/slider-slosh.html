@@ -1,0 +1,22 @@
+<div class="slider-slosh">
+  <svg class="slider-slosh__svg" aria-hidden="true">
+    <defs>
+      <clipPath id="slider-slosh-clip">
+        <rect x="4" y="18" width="232" height="22" rx="11"></rect>
+      </clipPath>
+    </defs>
+    <rect class="slider-slosh__tube" x="3.25" y="17.25" width="233.5" height="23.5" rx="11.75"></rect>
+    <g clip-path="url(#slider-slosh-clip)">
+      <path class="slider-slosh__liquid" d="M 0 18 L 137.28 18 Q 140.28 29 137.28 40 L 0 40 Z"></path>
+      <line class="slider-slosh__shine" x1="12" y1="22" x2="132.28" y2="22"></line>
+    </g>
+    <polygon class="slider-slosh__mark" points="132.28,8 142.28,8 137.28,14"></polygon>
+    <polygon class="slider-slosh__mark" points="132.28,50 142.28,50 137.28,44"></polygon>
+    <rect class="slider-slosh__ring" x="127.28" y="4" width="20" height="50" rx="7"></rect>
+  </svg>
+  <p class="slider-slosh__value" aria-hidden="true">
+    <span>Fill</span>
+    <b>58%</b>
+  </p>
+  <input class="slider-slosh__input" type="range" min="0" max="100" aria-label="Fill" aria-valuetext="58%" value="58"/>
+</div>

@@ -1,0 +1,41 @@
+.card-expand {
+  position: relative;
+  width: 240px;
+  height: 76px;
+  border-radius: 16px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+  overflow: hidden;
+  transition: height 0.45s cubic-bezier(0.3, 1.2, 0.5, 1);
+}
+.card-expand--open { height: 210px; }
+.card-expand__toggle { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; padding: 0; border: 0; border-radius: inherit; background: none; cursor: pointer; }
+.card-expand__toggle:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: -2px; }
+.card-expand__art {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: left 0.45s cubic-bezier(0.3, 1.2, 0.5, 1), top 0.45s cubic-bezier(0.3, 1.2, 0.5, 1), width 0.45s cubic-bezier(0.3, 1.2, 0.5, 1), height 0.45s cubic-bezier(0.3, 1.2, 0.5, 1), border-radius 0.45s cubic-bezier(0.3, 1.2, 0.5, 1);
+}
+.card-expand--open .card-expand__art { left: 0; top: 0; width: 240px; height: 96px; border-radius: 0; }
+.card-expand__art svg { display: block; width: 100%; height: 100%; }
+.card-expand__sky { fill: light-dark(#ebedf0, #232529); }
+.card-expand__sun { fill: light-dark(#50535b, #c6c8cd); }
+.card-expand__far { fill: light-dark(#cbced3, #393c41); }
+.card-expand__near { fill: light-dark(#6d7179, #7d8087); }
+.card-expand__title, .card-expand__meta { position: absolute; margin: 0; white-space: nowrap; transition: left 0.45s cubic-bezier(0.3, 1.2, 0.5, 1), top 0.45s cubic-bezier(0.3, 1.2, 0.5, 1); }
+.card-expand__title { left: 78px; top: 18px; font-size: 13px; font-weight: 600; color: light-dark(#373a40, #f1f2f3); }
+.card-expand__meta { left: 78px; top: 40px; font-size: 11px; color: light-dark(#5f626a, #a7abb2); }
+.card-expand--open .card-expand__title { left: 14px; top: 108px; }
+.card-expand--open .card-expand__meta { left: 14px; top: 128px; }
+.card-expand__chev { position: absolute; right: 14px; top: 30px; width: 16px; height: 16px; color: light-dark(#5f626a, #a7abb2); transition: transform 0.35s cubic-bezier(0.3, 1.2, 0.5, 1), opacity 0.2s; }
+.card-expand--open .card-expand__chev { transform: rotate(180deg); opacity: 0; }
+.card-expand__body { position: absolute; left: 14px; right: 14px; top: 152px; margin: 0; font-size: 11.5px; line-height: 1.45; color: light-dark(#50535b, #c6c8cd); opacity: 0; transform: translateY(8px); transition: opacity 0.15s, transform 0.3s; }
+.card-expand--open .card-expand__body { opacity: 1; transform: none; transition: opacity 0.3s 0.2s, transform 0.4s cubic-bezier(0.3, 1.2, 0.5, 1) 0.2s; }
+@media (prefers-reduced-motion: reduce) {
+  .card-expand, .card-expand *, .card-expand--open .card-expand__body { transition: none !important; }
+}

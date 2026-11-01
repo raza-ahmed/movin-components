@@ -1,0 +1,60 @@
+"use client";
+
+import { useId, useState } from 'react';
+
+const FAQ = [
+  { q: 'Can I cancel anytime?', a: 'Yes. Your plan runs to the end of the period you paid for, then stops.' },
+  { q: 'Do you offer refunds?', a: 'Within 14 days of a charge, with no questions asked.' },
+  { q: 'Is there a team plan?', a: 'Teams of three or more get shared libraries and one invoice.' },
+];
+
+const css = `
+  .card-accordion { box-sizing: border-box; width: 240px; padding: 6px 14px; border-radius: 16px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+  .card-accordion__item + .card-accordion__item { border-top: 1px solid light-dark(#ebedf0, #232529); }
+  .card-accordion__q { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; height: 40px; padding: 0; border: 0; background: none; color: light-dark(#373a40, #f1f2f3); font: inherit; font-size: 12px; font-weight: 600; text-align: left; cursor: pointer; }
+  .card-accordion__q:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; border-radius: 4px; }
+  .card-accordion__icon { position: relative; flex: none; width: 12px; height: 12px; }
+  .card-accordion__icon::before, .card-accordion__icon::after { content: ''; position: absolute; left: 0; top: 5px; width: 12px; height: 2px; border-radius: 1px; background: light-dark(#50535b, #c6c8cd); transition: transform 0.35s cubic-bezier(0.3, 1.4, 0.5, 1); }
+  /* The vertical bar turns flat: plus becomes minus. */
+  .card-accordion__icon::after { transform: rotate(90deg); }
+  .card-accordion__q[aria-expanded='true'] .card-accordion__icon::after { transform: rotate(0deg); }
+  .card-accordion__q[aria-expanded='true'] .card-accordion__icon::before { transform: rotate(180deg); }
+  /* The answer opens to its natural height by animating its grid track from 0fr to 1fr. */
+  .card-accordion__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+  .card-accordion__panel--open { grid-template-rows: 1fr; }
+  .card-accordion__panel > div { min-height: 0; overflow: hidden; }
+  .card-accordion__a { margin: 0; padding: 0 0 12px; font-size: 11.5px; line-height: 1.45; color: light-dark(#50535b, #c6c8cd); opacity: 0; transform: translateY(-4px); transition: opacity 0.2s, transform 0.3s; }
+  .card-accordion__panel--open .card-accordion__a { opacity: 1; transform: none; transition-delay: 0.1s; }
+  @media (prefers-reduced-motion: reduce) {
+    .card-accordion__panel, .card-accordion__a, .card-accordion__icon::before, .card-accordion__icon::after { transition: none; }
+  }
+`;
+
+export function AccordionCard() {
+  const [open, setOpen] = useState<number | null>(0);
+  const id = useId();
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <article className="card-accordion">
+        {FAQ.map((f, i) => (
+          <div key={f.q} className="card-accordion__item">
+            <button type="button" id={`${id}q${i}`} className="card-accordion__q" aria-expanded={open === i} aria-controls={`${id}a${i}`} onClick={() => setOpen((o) => (o === i ? null : i))}>
+              {f.q}
+              <span className="card-accordion__icon" aria-hidden="true" />
+            </button>
+            <div id={`${id}a${i}`} className={`card-accordion__panel${open === i ? ' card-accordion__panel--open' : ''}`} role="region" aria-labelledby={`${id}q${i}`}>
+              <div>
+                <p className="card-accordion__a" aria-hidden={open !== i}>
+                  {f.a}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </article>
+    </>
+  );
+}

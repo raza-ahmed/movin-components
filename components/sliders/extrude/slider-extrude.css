@@ -1,0 +1,14 @@
+.slider-extrude { position: relative; width: 240px; height: 82px; }
+.slider-extrude__svg { position: absolute; left: 0; top: 0; width: 240px; height: 58px; overflow: visible; }
+.slider-extrude__slab-top { fill: light-dark(#ebedf0, #232529); }
+.slider-extrude__slab-front { fill: light-dark(#dbdde1, #2e3035); }
+.slider-extrude__top { fill: light-dark(#373a40, #f1f2f3); }
+.slider-extrude__front { fill: light-dark(#50535b, #c6c8cd); }
+.slider-extrude__end { fill: light-dark(#6d7179, #7d8087); }
+.slider-extrude__ring { fill: none; stroke: transparent; stroke-width: 2; stroke-linejoin: round; }
+.slider-extrude:has(.slider-extrude__input:focus-visible) .slider-extrude__ring { stroke: light-dark(#50535b, #c6c8cd); }
+.slider-extrude__value { position: absolute; left: 0; right: 0; top: 62px; display: flex; justify-content: space-between; margin: 0; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-extrude__value b { color: light-dark(#373a40, #f1f2f3); font-weight: 500; font-variant-numeric: tabular-nums; }
+.slider-extrude__input { position: absolute; left: 6px; top: 0; width: 225px; height: 58px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-extrude__input::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 58px; }
+.slider-extrude__input::-moz-range-thumb { width: 12px; height: 58px; border: 0; }

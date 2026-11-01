@@ -1,0 +1,18 @@
+.slider-peel { position: relative; width: 240px; height: 62px; }
+.slider-peel__svg { display: block; width: 240px; height: 44px; overflow: visible; }
+.slider-peel__track { fill: light-dark(#f3f4f7, #1a1c1f); stroke: light-dark(#ebedf0, #232529); stroke-width: 1; }
+.slider-peel__tape { fill: color-mix(in oklab, light-dark(#5f626a, #a7abb2) 55%, transparent); }
+.slider-peel__crepe { stroke: light-dark(#50535b, #c6c8cd); stroke-width: 0.5; }
+/* Folded back, the sticky side faces up: lighter, smoother, and lifted off the tape on a shadow. */
+/* Lighter than the laid tape in both themes: the sticky side catches the light. */
+.slider-peel__flap { fill: light-dark(light-dark(#cbced3, #393c41), color-mix(in oklab, light-dark(#50535b, #c6c8cd) 70%, light-dark(#6d7179, #7d8087))); }
+.slider-peel__fold { stop-color: light-dark(#373a40, #f1f2f3); }
+.slider-peel__shade { stop-color: light-dark(#cbced3, #393c41); }
+.slider-peel__crease { stroke: light-dark(#373a40, #f1f2f3); stroke-width: 1; opacity: 0.7; }
+.slider-peel__ring { fill: none; stroke: transparent; stroke-width: 2; }
+.slider-peel:has(.slider-peel__input:focus-visible) .slider-peel__ring { stroke: light-dark(#50535b, #c6c8cd); }
+.slider-peel__value { position: absolute; left: 0; right: 0; top: 44px; display: flex; justify-content: space-between; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-peel__value b { color: light-dark(#373a40, #f1f2f3); font-weight: 500; font-variant-numeric: tabular-nums; }
+.slider-peel__input { position: absolute; left: 0; top: 0; width: 100%; height: 44px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-peel__input::-webkit-slider-thumb { -webkit-appearance: none; width: 28px; height: 44px; }
+.slider-peel__input::-moz-range-thumb { width: 28px; height: 44px; border: 0; }

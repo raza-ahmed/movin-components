@@ -1,0 +1,27 @@
+<article class="card-upload">
+  <label class="card-upload__zone" for="card-upload-file">
+    <svg class="card-upload__edge" aria-hidden="true">
+      <rect x="0.75" y="0.75" width="210.5" height="72.5" rx="11"></rect>
+    </svg>
+    <span>
+      <svg class="card-upload__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 16V4M7 9l5-5 5 5M5 20h14"></path>
+      </svg>
+      Drop a file or
+      <u>browse</u>
+    </span>
+    <input id="card-upload-file" class="card-upload__input" type="file"/>
+  </label>
+  <ul class="card-upload__rows" aria-live="polite">
+    <li class="card-upload__row">
+      <span class="card-upload__doc" aria-hidden="true"></span>
+      <span class="card-upload__name">brief.pdf</span>
+      <svg class="card-upload__tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Uploaded">
+        <path d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"></path>
+      </svg>
+      <span class="card-upload__bar" aria-hidden="true">
+        <span style="width:100%"></span>
+      </span>
+    </li>
+  </ul>
+</article>

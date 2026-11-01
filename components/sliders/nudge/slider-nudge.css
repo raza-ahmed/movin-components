@@ -1,0 +1,31 @@
+.slider-nudge { position: relative; width: 240px; height: 64px; }
+.slider-nudge__end, .slider-nudge__pill { position: absolute; top: 4px; height: 22px; font-size: 12px; line-height: 22px; }
+.slider-nudge__end {
+  width: 30px;
+  color: light-dark(#5f626a, #a7abb2);
+  transition: transform 0.35s cubic-bezier(0.3, 1.7, 0.5, 1), opacity 0.2s;
+}
+.slider-nudge__end--min { left: 0; text-align: left; transform-origin: 0 100%; }
+.slider-nudge__end--max { right: 0; text-align: right; transform-origin: 100% 100%; }
+.slider-nudge__pill {
+  width: 46px;
+  margin-left: -23px;
+  border-radius: 11px;
+  background: light-dark(#373a40, #f1f2f3);
+  color: light-dark(#fbfcfd, #121417);
+  font-weight: 600;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.slider-nudge__pill::after { content: ''; position: absolute; left: 50%; bottom: -4px; margin-left: -4px; border: 4px solid transparent; border-bottom: 0; border-top-color: light-dark(#373a40, #f1f2f3); }
+.slider-nudge__rail, .slider-nudge__fill { position: absolute; left: 0; top: 42px; height: 4px; border-radius: 2px; }
+.slider-nudge__rail { width: 240px; background: light-dark(#ebedf0, #232529); }
+.slider-nudge__fill { background: light-dark(#50535b, #c6c8cd); }
+.slider-nudge__thumb { position: absolute; top: 35px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; background: light-dark(#373a40, #f1f2f3); box-shadow: 0 2px 5px light-dark(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.5)); }
+.slider-nudge:has(.slider-nudge__input:focus-visible) .slider-nudge__thumb { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+.slider-nudge__input { position: absolute; left: 0; top: 26px; width: 100%; height: 36px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-nudge__input::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 36px; }
+.slider-nudge__input::-moz-range-thumb { width: 18px; height: 36px; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .slider-nudge__end { transition: opacity 0.2s; }
+}

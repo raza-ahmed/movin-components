@@ -1,0 +1,36 @@
+.slider-abacus { position: relative; width: 240px; height: 60px; }
+.slider-abacus__rod { position: absolute; left: -6px; right: -6px; top: 17.25px; height: 1.5px; background: light-dark(#cbced3, #393c41); }
+.slider-abacus__post { position: absolute; top: 0px; width: 4px; height: 36px; border-radius: 2px; background: light-dark(#cbced3, #393c41); }
+.slider-abacus__bead {
+  position: absolute;
+  left: 1px;
+  top: 4px;
+  width: 18px;
+  height: 28px;
+  /* Ends in a small rebound, the knock of one bead against the next. */
+  transition: transform 0.42s linear(0, 0.34 18%, 0.78 40%, 1 60%, 0.975 72%, 1 86%, 1);
+}
+.slider-abacus__bead svg { display: block; overflow: visible; }
+.slider-abacus__body { fill: light-dark(#dbdde1, #2e3035); stroke: light-dark(#cbced3, #393c41); stroke-width: 1; transition: fill 0.3s, stroke 0.3s; }
+.slider-abacus__bead--on .slider-abacus__body { fill: light-dark(#42454c, #e5e6e9); stroke: light-dark(#42454c, #e5e6e9); }
+.slider-abacus__shine { fill: light-dark(#fbfcfd, #a7abb2); opacity: 0.5; }
+.slider-abacus__grip {
+  position: absolute;
+  top: 9px;
+  left: calc(var(--slider-abacus-v) * 20px + 18.5px);
+  width: 3px;
+  height: 18px;
+  border-radius: 2px;
+  background: light-dark(#6d7179, #7d8087);
+  transition: left 0.42s cubic-bezier(0.25, 1, 0.35, 1), background-color 0.2s;
+}
+.slider-abacus:has(.slider-abacus__input:active) .slider-abacus__grip { background: light-dark(#373a40, #f1f2f3); }
+.slider-abacus:has(.slider-abacus__input:focus-visible) .slider-abacus__grip { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 4px; }
+.slider-abacus__count { position: absolute; left: 0; right: 0; top: 42px; display: flex; justify-content: space-between; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-abacus__count b { color: light-dark(#373a40, #f1f2f3); font-weight: 500; font-variant-numeric: tabular-nums; }
+.slider-abacus__input { position: absolute; left: 0; top: 0; width: 100%; height: 36px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-abacus__input::-webkit-slider-thumb { -webkit-appearance: none; width: 40px; height: 36px; }
+.slider-abacus__input::-moz-range-thumb { width: 40px; height: 36px; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .slider-abacus__bead, .slider-abacus__grip { transition: none; }
+}

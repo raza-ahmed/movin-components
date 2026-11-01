@@ -1,0 +1,25 @@
+.tabs-kern { width: 280px; }
+.tabs-kern__list { display: flex; justify-content: center; gap: 22px; }
+.tabs-kern__tab { border: 0; padding: 8px 0; background: none; font: inherit; font-size: 11px; font-weight: 600; text-transform: uppercase; color: light-dark(#5f626a, #a7abb2); cursor: pointer; transition: color 0.4s; }
+.tabs-kern__tab:hover { color: light-dark(#42454c, #e5e6e9); }
+.tabs-kern__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+.tabs-kern__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; border-radius: 4px; }
+/* Letter spacing also follows the last letter, so a negative margin takes that trailing space back. */
+.tabs-kern__word { position: relative; display: inline-block; letter-spacing: 0.06em; margin-right: -0.06em; transition: letter-spacing 0.55s cubic-bezier(0.3, 1, 0.35, 1), margin-right 0.55s cubic-bezier(0.3, 1, 0.35, 1); }
+.tabs-kern__word::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0.06em;
+  bottom: -5px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.55s cubic-bezier(0.3, 1, 0.35, 1), right 0.55s cubic-bezier(0.3, 1, 0.35, 1);
+}
+.tabs-kern__tab[aria-selected='true'] .tabs-kern__word { letter-spacing: 0.42em; margin-right: -0.42em; }
+.tabs-kern__tab[aria-selected='true'] .tabs-kern__word::after { right: 0.42em; transform: scaleX(1); }
+.tabs-kern__panel { padding: 16px 8px 0; min-height: calc(3.1em + 16px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; text-align: center; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-kern__word, .tabs-kern__word::after { transition: none; }
+}

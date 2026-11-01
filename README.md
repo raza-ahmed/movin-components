@@ -1,8 +1,8 @@
 # movin.design components
 
-723 animated UI components: buttons, cards, checkboxes, inputs, loaders, radio buttons, sliders, tabs and toggles. Every one comes in two formats:
+810 animated UI components: buttons, cards, checkboxes, inputs, loaders, radio buttons, sliders, tabs and toggles. Every one comes in two formats:
 
-- **React + Tailwind** (TypeScript), installable with the shadcn CLI. 716 have no dependencies; 7 use Framer Motion.
+- **React + Tailwind** (TypeScript), installable with the shadcn CLI. 803 have no dependencies; 7 use Framer Motion.
 - **Plain HTML + CSS** (plus a small script where needed), with no framework and no dependencies, for Vue, Svelte, Angular, Webflow or a plain page.
 
 Live previews, code and an LLM prompt for each: https://movin.design/components/
@@ -24,10 +24,12 @@ Each component folder holds `<name>.html`, `<name>.css` and, when it needs one, 
 
 ## Components
 
-### Buttons (98)
+### Buttons (100)
 
 | Component | Install name | Dependencies | Live |
 | --- | --- | --- | --- |
+| [Receipt button](components/buttons/receipt/) | `button-receipt` | None | [Preview](https://movin.design/components/buttons/receipt/) |
+| [Stitch button](components/buttons/stitch/) | `button-stitch` | None | [Preview](https://movin.design/components/buttons/stitch/) |
 | [Bell button](components/buttons/bell/) | `button-bell` | None | [Preview](https://movin.design/components/buttons/bell/) |
 | [Breathe button](components/buttons/breathe/) | `button-breathe` | None | [Preview](https://movin.design/components/buttons/breathe/) |
 | [Brushstroke button](components/buttons/brushstroke/) | `button-brushstroke` | None | [Preview](https://movin.design/components/buttons/brushstroke/) |
@@ -127,10 +129,40 @@ Each component folder holds `<name>.html`, `<name>.css` and, when it needs one, 
 | [Wipe Swap button](components/buttons/wipe-swap/) | `button-wipe-swap` | None | [Preview](https://movin.design/components/buttons/wipe-swap/) |
 | [XP Gain button](components/buttons/xp-gain/) | `button-xp-gain` | None | [Preview](https://movin.design/components/buttons/xp-gain/) |
 
-### Cards (70)
+### Cards (100)
 
 | Component | Install name | Dependencies | Live |
 | --- | --- | --- | --- |
+| [Accordion card](components/cards/accordion/) | `card-accordion` | None | [Preview](https://movin.design/components/cards/accordion/) |
+| [Actions card](components/cards/actions/) | `card-actions` | None | [Preview](https://movin.design/components/cards/actions/) |
+| [Carousel card](components/cards/carousel/) | `card-carousel` | None | [Preview](https://movin.design/components/cards/carousel/) |
+| [Cart card](components/cards/cart/) | `card-cart` | None | [Preview](https://movin.design/components/cards/cart/) |
+| [Checklist card](components/cards/checklist/) | `card-checklist` | None | [Preview](https://movin.design/components/cards/checklist/) |
+| [Clock card](components/cards/clock/) | `card-clock` | None | [Preview](https://movin.design/components/cards/clock/) |
+| [Diff card](components/cards/diff/) | `card-diff` | None | [Preview](https://movin.design/components/cards/diff/) |
+| [Expand card](components/cards/expand/) | `card-expand` | None | [Preview](https://movin.design/components/cards/expand/) |
+| [Follow card](components/cards/follow/) | `card-follow` | None | [Preview](https://movin.design/components/cards/follow/) |
+| [Gift card](components/cards/gift/) | `card-gift` | None | [Preview](https://movin.design/components/cards/gift/) |
+| [Header card](components/cards/header/) | `card-header` | None | [Preview](https://movin.design/components/cards/header/) |
+| [Highlight card](components/cards/highlight/) | `card-highlight` | None | [Preview](https://movin.design/components/cards/highlight/) |
+| [Kanban card](components/cards/kanban/) | `card-kanban` | None | [Preview](https://movin.design/components/cards/kanban/) |
+| [Like card](components/cards/like/) | `card-like` | None | [Preview](https://movin.design/components/cards/like/) |
+| [Note card](components/cards/note/) | `card-note` | None | [Preview](https://movin.design/components/cards/note/) |
+| [Notifications card](components/cards/notifications/) | `card-notifications` | None | [Preview](https://movin.design/components/cards/notifications/) |
+| [Onboarding card](components/cards/onboarding/) | `card-onboarding` | None | [Preview](https://movin.design/components/cards/onboarding/) |
+| [Peek card](components/cards/peek/) | `card-peek` | None | [Preview](https://movin.design/components/cards/peek/) |
+| [Poll card](components/cards/poll/) | `card-poll` | None | [Preview](https://movin.design/components/cards/poll/) |
+| [Pricing card](components/cards/pricing/) | `card-pricing` | None | [Preview](https://movin.design/components/cards/pricing/) |
+| [Refresh card](components/cards/refresh/) | `card-refresh` | None | [Preview](https://movin.design/components/cards/refresh/) |
+| [Scrub card](components/cards/scrub/) | `card-scrub` | None | [Preview](https://movin.design/components/cards/scrub/) |
+| [Servings card](components/cards/servings/) | `card-servings` | None | [Preview](https://movin.design/components/cards/servings/) |
+| [Spoiler card](components/cards/spoiler/) | `card-spoiler` | None | [Preview](https://movin.design/components/cards/spoiler/) |
+| [Storage card](components/cards/storage/) | `card-storage` | None | [Preview](https://movin.design/components/cards/storage/) |
+| [Streak card](components/cards/streak/) | `card-streak` | None | [Preview](https://movin.design/components/cards/streak/) |
+| [Team card](components/cards/team/) | `card-team` | None | [Preview](https://movin.design/components/cards/team/) |
+| [Tracking card](components/cards/tracking/) | `card-tracking` | None | [Preview](https://movin.design/components/cards/tracking/) |
+| [Upload card](components/cards/upload/) | `card-upload` | None | [Preview](https://movin.design/components/cards/upload/) |
+| [Wi-Fi card](components/cards/wifi/) | `card-wifi` | None | [Preview](https://movin.design/components/cards/wifi/) |
 | [Almanac card](components/cards/almanac/) | `card-almanac` | None | [Preview](https://movin.design/components/cards/almanac/) |
 | [Autograph card](components/cards/autograph/) | `card-autograph` | None | [Preview](https://movin.design/components/cards/autograph/) |
 | [Book card](components/cards/book/) | `card-book` | None | [Preview](https://movin.design/components/cards/book/) |
@@ -579,25 +611,65 @@ Each component folder holds `<name>.html`, `<name>.css` and, when it needs one, 
 | [Typewriter radio button](components/radios/typewriter/) | `radio-typewriter` | None | [Preview](https://movin.design/components/radios/typewriter/) |
 | [XP Bar radio button](components/radios/xp-bar/) | `radio-xp-bar` | None | [Preview](https://movin.design/components/radios/xp-bar/) |
 
-### Sliders (60)
+### Sliders (100)
 
 | Component | Install name | Dependencies | Live |
 | --- | --- | --- | --- |
+| [Abacus slider](components/sliders/abacus/) | `slider-abacus` | None | [Preview](https://movin.design/components/sliders/abacus/) |
+| [ASCII slider](components/sliders/ascii/) | `slider-ascii` | None | [Preview](https://movin.design/components/sliders/ascii/) |
+| [Band slider](components/sliders/band/) | `slider-band` | None | [Preview](https://movin.design/components/sliders/band/) |
+| [Brush slider](components/sliders/brush/) | `slider-brush` | None | [Preview](https://movin.design/components/sliders/brush/) |
+| [Cast slider](components/sliders/cast/) | `slider-cast` | None | [Preview](https://movin.design/components/sliders/cast/) |
+| [Clamp slider](components/sliders/clamp/) | `slider-clamp` | None | [Preview](https://movin.design/components/sliders/clamp/) |
 | [Comb slider](components/sliders/comb/) | `slider-comb` | None | [Preview](https://movin.design/components/sliders/comb/) |
+| [Delta slider](components/sliders/delta/) | `slider-delta` | None | [Preview](https://movin.design/components/sliders/delta/) |
+| [Depth slider](components/sliders/depth/) | `slider-depth` | None | [Preview](https://movin.design/components/sliders/depth/) |
+| [Domino slider](components/sliders/domino/) | `slider-domino` | None | [Preview](https://movin.design/components/sliders/domino/) |
 | [Drain slider](components/sliders/drain/) | `slider-drain` | None | [Preview](https://movin.design/components/sliders/drain/) |
+| [Extrude slider](components/sliders/extrude/) | `slider-extrude` | None | [Preview](https://movin.design/components/sliders/extrude/) |
+| [Figure slider](components/sliders/figure/) | `slider-figure` | None | [Preview](https://movin.design/components/sliders/figure/) |
+| [Foam slider](components/sliders/foam/) | `slider-foam` | None | [Preview](https://movin.design/components/sliders/foam/) |
+| [Foil slider](components/sliders/foil/) | `slider-foil` | None | [Preview](https://movin.design/components/sliders/foil/) |
+| [Fuse slider](components/sliders/fuse/) | `slider-fuse` | None | [Preview](https://movin.design/components/sliders/fuse/) |
 | [Gap slider](components/sliders/gap/) | `slider-gap` | None | [Preview](https://movin.design/components/sliders/gap/) |
 | [Glass slider](components/sliders/glass/) | `slider-glass` | None | [Preview](https://movin.design/components/sliders/glass/) |
 | [Glide slider](components/sliders/glide/) | `slider-glide` | None | [Preview](https://movin.design/components/sliders/glide/) |
 | [Halftone slider](components/sliders/halftone/) | `slider-halftone` | None | [Preview](https://movin.design/components/sliders/halftone/) |
+| [Histogram slider](components/sliders/histogram/) | `slider-histogram` | None | [Preview](https://movin.design/components/sliders/histogram/) |
+| [Hop slider](components/sliders/hop/) | `slider-hop` | None | [Preview](https://movin.design/components/sliders/hop/) |
 | [Invert slider](components/sliders/invert/) | `slider-invert` | None | [Preview](https://movin.design/components/sliders/invert/) |
+| [Keys slider](components/sliders/keys/) | `slider-keys` | None | [Preview](https://movin.design/components/sliders/keys/) |
 | [Lift slider](components/sliders/lift/) | `slider-lift` | None | [Preview](https://movin.design/components/sliders/lift/) |
 | [Louvre slider](components/sliders/louvre/) | `slider-louvre` | None | [Preview](https://movin.design/components/sliders/louvre/) |
+| [Magnet slider](components/sliders/magnet/) | `slider-magnet` | None | [Preview](https://movin.design/components/sliders/magnet/) |
 | [Merge slider](components/sliders/merge/) | `slider-merge` | None | [Preview](https://movin.design/components/sliders/merge/) |
+| [Needles slider](components/sliders/needles/) | `slider-needles` | None | [Preview](https://movin.design/components/sliders/needles/) |
+| [Nib slider](components/sliders/nib/) | `slider-nib` | None | [Preview](https://movin.design/components/sliders/nib/) |
+| [Nudge slider](components/sliders/nudge/) | `slider-nudge` | None | [Preview](https://movin.design/components/sliders/nudge/) |
+| [Peel slider](components/sliders/peel/) | `slider-peel` | None | [Preview](https://movin.design/components/sliders/peel/) |
+| [Pill slider](components/sliders/pill/) | `slider-pill` | None | [Preview](https://movin.design/components/sliders/pill/) |
+| [Pinion slider](components/sliders/pinion/) | `slider-pinion` | None | [Preview](https://movin.design/components/sliders/pinion/) |
 | [Pleat slider](components/sliders/pleat/) | `slider-pleat` | None | [Preview](https://movin.design/components/sliders/pleat/) |
+| [Plough slider](components/sliders/plough/) | `slider-plough` | None | [Preview](https://movin.design/components/sliders/plough/) |
 | [Pluck slider](components/sliders/pluck/) | `slider-pluck` | None | [Preview](https://movin.design/components/sliders/pluck/) |
+| [Push slider](components/sliders/push/) | `slider-push` | None | [Preview](https://movin.design/components/sliders/push/) |
+| [Ratchet slider](components/sliders/ratchet/) | `slider-ratchet` | None | [Preview](https://movin.design/components/sliders/ratchet/) |
 | [Rubber slider](components/sliders/rubber/) | `slider-rubber` | None | [Preview](https://movin.design/components/sliders/rubber/) |
+| [Shuttle slider](components/sliders/shuttle/) | `slider-shuttle` | None | [Preview](https://movin.design/components/sliders/shuttle/) |
+| [Slosh slider](components/sliders/slosh/) | `slider-slosh` | None | [Preview](https://movin.design/components/sliders/slosh/) |
+| [Spool slider](components/sliders/spool/) | `slider-spool` | None | [Preview](https://movin.design/components/sliders/spool/) |
 | [Squiggle slider](components/sliders/squiggle/) | `slider-squiggle` | None | [Preview](https://movin.design/components/sliders/squiggle/) |
+| [Strand slider](components/sliders/strand/) | `slider-strand` | None | [Preview](https://movin.design/components/sliders/strand/) |
+| [Strata slider](components/sliders/strata/) | `slider-strata` | None | [Preview](https://movin.design/components/sliders/strata/) |
+| [Strobe slider](components/sliders/strobe/) | `slider-strobe` | None | [Preview](https://movin.design/components/sliders/strobe/) |
+| [Tally slider](components/sliders/tally/) | `slider-tally` | None | [Preview](https://movin.design/components/sliders/tally/) |
+| [Tempo slider](components/sliders/tempo/) | `slider-tempo` | None | [Preview](https://movin.design/components/sliders/tempo/) |
+| [Thumbwheel slider](components/sliders/thumbwheel/) | `slider-thumbwheel` | None | [Preview](https://movin.design/components/sliders/thumbwheel/) |
+| [Twist slider](components/sliders/twist/) | `slider-twist` | None | [Preview](https://movin.design/components/sliders/twist/) |
+| [Vernier slider](components/sliders/vernier/) | `slider-vernier` | None | [Preview](https://movin.design/components/sliders/vernier/) |
+| [Vial slider](components/sliders/vial/) | `slider-vial` | None | [Preview](https://movin.design/components/sliders/vial/) |
 | [Wedge slider](components/sliders/wedge/) | `slider-wedge` | None | [Preview](https://movin.design/components/sliders/wedge/) |
+| [Zero slider](components/sliders/zero/) | `slider-zero` | None | [Preview](https://movin.design/components/sliders/zero/) |
 | [Balance slider](components/sliders/balance/) | `slider-balance` | None | [Preview](https://movin.design/components/sliders/balance/) |
 | [Bass slider](components/sliders/bass/) | `slider-bass` | None | [Preview](https://movin.design/components/sliders/bass/) |
 | [Bow slider](components/sliders/bow/) | `slider-bow` | None | [Preview](https://movin.design/components/sliders/bow/) |
@@ -644,24 +716,39 @@ Each component folder holds `<name>.html`, `<name>.css` and, when it needs one, 
 | [Windsock slider](components/sliders/windsock/) | `slider-windsock` | None | [Preview](https://movin.design/components/sliders/windsock/) |
 | [Zipper slider](components/sliders/zipper/) | `slider-zipper` | None | [Preview](https://movin.design/components/sliders/zipper/) |
 
-### Tabs (60)
+### Tabs (75)
 
 | Component | Install name | Dependencies | Live |
 | --- | --- | --- | --- |
 | [Caret tab set](components/tabs/caret/) | `tab-caret` | None | [Preview](https://movin.design/components/tabs/caret/) |
+| [Carry tab set](components/tabs/carry/) | `tab-carry` | None | [Preview](https://movin.design/components/tabs/carry/) |
 | [Contents tab set](components/tabs/contents/) | `tab-contents` | None | [Preview](https://movin.design/components/tabs/contents/) |
 | [Expand tab set](components/tabs/expand/) | `tab-expand` | None | [Preview](https://movin.design/components/tabs/expand/) |
+| [Flock tab set](components/tabs/flock/) | `tab-flock` | None | [Preview](https://movin.design/components/tabs/flock/) |
 | [Goo tab set](components/tabs/goo/) | `tab-goo` | None | [Preview](https://movin.design/components/tabs/goo/) |
+| [Hang tab set](components/tabs/hang/) | `tab-hang` | None | [Preview](https://movin.design/components/tabs/hang/) |
 | [Inchworm tab set](components/tabs/inchworm/) | `tab-inchworm` | None | [Preview](https://movin.design/components/tabs/inchworm/) |
+| [Kern tab set](components/tabs/kern/) | `tab-kern` | None | [Preview](https://movin.design/components/tabs/kern/) |
+| [Marquee tab set](components/tabs/marquee/) | `tab-marquee` | None | [Preview](https://movin.design/components/tabs/marquee/) |
+| [Measure tab set](components/tabs/measure/) | `tab-measure` | None | [Preview](https://movin.design/components/tabs/measure/) |
 | [Notch tab set](components/tabs/notch/) | `tab-notch` | None | [Preview](https://movin.design/components/tabs/notch/) |
+| [Orbit tab set](components/tabs/orbit/) | `tab-orbit` | None | [Preview](https://movin.design/components/tabs/orbit/) |
+| [Popup tab set](components/tabs/popup/) | `tab-popup` | None | [Preview](https://movin.design/components/tabs/popup/) |
 | [Puck tab set](components/tabs/puck/) | `tab-puck` | None | [Preview](https://movin.design/components/tabs/puck/) |
 | [Reorder tab set](components/tabs/reorder/) | `tab-reorder` | None | [Preview](https://movin.design/components/tabs/reorder/) |
+| [Ripple tab set](components/tabs/ripple/) | `tab-ripple` | None | [Preview](https://movin.design/components/tabs/ripple/) |
 | [Rise tab set](components/tabs/rise/) | `tab-rise` | None | [Preview](https://movin.design/components/tabs/rise/) |
 | [Scroller tab set](components/tabs/scroller/) | `tab-scroller` | None | [Preview](https://movin.design/components/tabs/scroller/) |
+| [Shutter tab set](components/tabs/shutter/) | `tab-shutter` | None | [Preview](https://movin.design/components/tabs/shutter/) |
+| [Split tab set](components/tabs/split/) | `tab-split` | None | [Preview](https://movin.design/components/tabs/split/) |
 | [Stencil tab set](components/tabs/stencil/) | `tab-stencil` | None | [Preview](https://movin.design/components/tabs/stencil/) |
 | [String tab set](components/tabs/string/) | `tab-string` | None | [Preview](https://movin.design/components/tabs/string/) |
+| [Swash tab set](components/tabs/swash/) | `tab-swash` | None | [Preview](https://movin.design/components/tabs/swash/) |
 | [Swipe tab set](components/tabs/swipe/) | `tab-swipe` | None | [Preview](https://movin.design/components/tabs/swipe/) |
+| [Ticks tab set](components/tabs/ticks/) | `tab-ticks` | None | [Preview](https://movin.design/components/tabs/ticks/) |
+| [Tilt tab set](components/tabs/tilt/) | `tab-tilt` | None | [Preview](https://movin.design/components/tabs/tilt/) |
 | [Tumble tab set](components/tabs/tumble/) | `tab-tumble` | None | [Preview](https://movin.design/components/tabs/tumble/) |
+| [Tuner tab set](components/tabs/tuner/) | `tab-tuner` | None | [Preview](https://movin.design/components/tabs/tuner/) |
 | [Wheel tab set](components/tabs/wheel/) | `tab-wheel` | None | [Preview](https://movin.design/components/tabs/wheel/) |
 | [Binder tab set](components/tabs/binder/) | `tab-binder` | None | [Preview](https://movin.design/components/tabs/binder/) |
 | [Blinds tab set](components/tabs/blinds/) | `tab-blinds` | None | [Preview](https://movin.design/components/tabs/blinds/) |

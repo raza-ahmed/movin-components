@@ -1,0 +1,11 @@
+.slider-ascii { position: relative; width: 22ch; font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: light-dark(#6d7179, #7d8087); }
+.slider-ascii__top { display: flex; justify-content: space-between; margin: 0 0 4px; font-size: 12px; letter-spacing: 0.08em; }
+.slider-ascii__top b { color: light-dark(#373a40, #f1f2f3); font-weight: 500; white-space: pre; }
+.slider-ascii__bar { position: relative; margin: 0; white-space: pre; color: light-dark(#cbced3, #393c41); border-radius: 2px; }
+.slider-ascii__edge { color: light-dark(#5f626a, #a7abb2); }
+.slider-ascii__on { color: light-dark(#373a40, #f1f2f3); }
+.slider-ascii__tip { color: light-dark(#373a40, #f1f2f3); font-weight: 700; }
+.slider-ascii:has(.slider-ascii__input:focus-visible) .slider-ascii__bar { outline: 1px dashed light-dark(#5f626a, #a7abb2); outline-offset: 4px; }
+.slider-ascii__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-ascii__input::-webkit-slider-thumb { -webkit-appearance: none; width: 1ch; height: 21px; }
+.slider-ascii__input::-moz-range-thumb { width: 1ch; height: 21px; border: 0; }

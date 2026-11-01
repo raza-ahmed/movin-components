@@ -1,0 +1,22 @@
+<div class="slider-plough">
+  <svg class="slider-plough__svg" aria-hidden="true">
+    <defs>
+      <pattern id="slider-plough-sand" patternUnits="userSpaceOnUse" width="5" height="4">
+        <rect class="slider-plough__sand" width="5" height="4"></rect>
+        <circle class="slider-plough__grit" cx="1" cy="1" r="0.6"></circle>
+        <circle class="slider-plough__grit" cx="3.5" cy="3" r="0.5"></circle>
+      </pattern>
+    </defs>
+    <rect class="slider-plough__floor" x="2" y="45" width="109.2" height="6" rx="2"></rect>
+    <path class="slider-plough__bed" d="M 113.2 40 L 113.20 40.00 L 113.95 40.00 L 114.70 40.00 L 115.45 40.00 L 116.20 40.00 L 116.95 40.00 L 117.70 40.00 L 118.45 40.00 L 119.20 40.00 L 238 40 L 238 51 L 113.2 51 Z" fill="url(#slider-plough-sand)"></path>
+    <line class="slider-plough__handle" x1="111.2" y1="22" x2="98.2" y2="7"></line>
+    <circle class="slider-plough__grip" cx="98.2" cy="7" r="3"></circle>
+    <rect class="slider-plough__blade" x="109.2" y="20" width="4" height="25" rx="1.5"></rect>
+    <rect class="slider-plough__ring" x="93.2" y="0" width="26" height="49" rx="6"></rect>
+  </svg>
+  <p class="slider-plough__value" aria-hidden="true">
+    <span>Cleared</span>
+    <b>46%</b>
+  </p>
+  <input class="slider-plough__input" type="range" min="0" max="100" aria-label="Cleared" aria-valuetext="46%" value="46"/>
+</div>

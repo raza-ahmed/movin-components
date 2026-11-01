@@ -4,6 +4,36 @@
   "homepage": "https://movin.design",
   "items": [
     {
+      "name": "button-receipt",
+      "type": "registry:component",
+      "title": "Receipt button",
+      "description": "A pay button with a printer slot along its bottom edge: click it and a receipt prints out under it a line at a time, it reads Paid, then the receipt tears off and falls away.",
+      "categories": [
+        "buttons"
+      ],
+      "files": [
+        {
+          "path": "components/buttons/receipt/button-receipt.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "button-stitch",
+      "type": "registry:component",
+      "title": "Stitch button",
+      "description": "Hover and a needle sews a running stitch round the button border, the stitches appearing behind it through pre-punched holes; leave and the stitches unpick in reverse.",
+      "categories": [
+        "buttons"
+      ],
+      "files": [
+        {
+          "path": "components/buttons/stitch/button-stitch.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "button-bell",
       "type": "registry:component",
       "title": "Bell button",
@@ -1475,6 +1505,456 @@
       "files": [
         {
           "path": "components/buttons/xp-gain/button-xp-gain.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-accordion",
+      "type": "registry:component",
+      "title": "Accordion card",
+      "description": "An FAQ card: open a question and its answer slides open to its natural height as the plus turns into a minus, closing the one that was open.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/accordion/card-accordion.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-actions",
+      "type": "registry:component",
+      "title": "Actions card",
+      "description": "An inbox row you swipe: drag it left and Archive and Delete slide out from under it with some resistance, or right to Flag; let go past halfway and it stays open.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/actions/card-actions.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-carousel",
+      "type": "registry:component",
+      "title": "Carousel card",
+      "description": "A card with a swipeable gallery that snaps to each slide; the dots below stretch and shrink with the scroll position itself, so they move mid-swipe rather than only when a slide lands.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/carousel/card-carousel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-cart",
+      "type": "registry:component",
+      "title": "Cart card",
+      "description": "A product card: add it to the cart and a copy of the product flies in an arc into the cart icon, which bumps as its badge pops up with the new count.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/cart/card-cart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-checklist",
+      "type": "registry:component",
+      "title": "Checklist card",
+      "description": "A to-do card: ticking an item draws its check and strikes its text, the progress ring steps round, and finishing the list pops in a new heading.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/checklist/card-checklist.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-clock",
+      "type": "registry:component",
+      "title": "Clock card",
+      "description": "A world clock: pick a city and the hands swing round to its local time with a little overshoot, while the seconds hand keeps ticking.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/clock/card-clock.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-diff",
+      "type": "registry:component",
+      "title": "Diff card",
+      "description": "A code card with Before and After: removed lines get struck through and fold away, added lines open up in their place, and the gutter marks each change with + or −.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/diff/card-diff.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-expand",
+      "type": "registry:component",
+      "title": "Expand card",
+      "description": "A compact article row that opens into a full card: the thumbnail grows into a banner, the title and meta slide down beneath it and the summary fades in; close it and it all folds back.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/expand/card-expand.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-follow",
+      "type": "registry:component",
+      "title": "Follow card",
+      "description": "A profile card whose Follow button turns into Following with a drawn tick, while the follower count rolls up by one and a ring draws itself round the avatar.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/follow/card-follow.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-gift",
+      "type": "registry:component",
+      "title": "Gift card",
+      "description": "A gift card in a box: click and the bow unties, the lid lifts off and tips away, then the card with its code rises out of the box with a little overshoot.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/gift/card-gift.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-header",
+      "type": "registry:component",
+      "title": "Header card",
+      "description": "A profile card that scrolls inside itself: as you scroll the posts, the cover shrinks into a slim header and the avatar travels up into it, shrinking, while the name fades in beside it.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/header/card-header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-highlight",
+      "type": "registry:component",
+      "title": "Highlight card",
+      "description": "A testimonial whose key phrases get a marker swept behind them, one after the other and across line breaks, when the card comes into view; hover it to sweep again.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/highlight/card-highlight.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-kanban",
+      "type": "registry:component",
+      "title": "Kanban card",
+      "description": "A two-column board: drag a task across and it lifts and tilts as you carry it, a dashed gap opens where it will land, and it settles into the other column as the rest glide over.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/kanban/card-kanban.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-like",
+      "type": "registry:component",
+      "title": "Like card",
+      "description": "A photo card you like by double-clicking the picture: a big heart pops over it and floats away, the small heart below fills with a burst of sparks, and the count rolls up.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/like/card-like.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-note",
+      "type": "registry:component",
+      "title": "Note card",
+      "description": "A sticky note pinned to the card: sweep the pointer past it and its bottom edge lifts in the draft, harder the faster you move, then flutters back down on a loose spring.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/note/card-note.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-notifications",
+      "type": "registry:component",
+      "title": "Notifications card",
+      "description": "Three notifications stacked into one: open the stack and they spring apart into a list, a beat apart; clear them and they slide away one after another before the empty state fades in.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/notifications/card-notifications.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-onboarding",
+      "type": "registry:component",
+      "title": "Onboarding card",
+      "description": "A three-step intro card: Next slides the new step in from the right and Back from the left, while the progress pill stretches across to the new dot and pulls its tail after it.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/onboarding/card-onboarding.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-peek",
+      "type": "registry:component",
+      "title": "Peek card",
+      "description": "Press and hold a file tile to peek at it: a ring fills round the tile while you hold, the rest of the card blurs, and a larger preview grows out of the tile until you let go.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/peek/card-peek.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-poll",
+      "type": "registry:component",
+      "title": "Poll card",
+      "description": "A poll card: vote and the options turn into result bars that grow to their share one after another while the percentages count up, with your choice ticked.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/poll/card-poll.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-pricing",
+      "type": "registry:component",
+      "title": "Pricing card",
+      "description": "A plan card with a Monthly and Yearly switch: the knob slides across, the price digits roll to the new amount a beat apart, the billing note changes and a Save badge drops in for yearly.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/pricing/card-pricing.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-refresh",
+      "type": "registry:component",
+      "title": "Refresh card",
+      "description": "A feed you pull down to refresh: the list stretches with growing resistance, the arrow turns over as you near the release point, and letting go spins a loader and slides a new item in.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/refresh/card-refresh.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-scrub",
+      "type": "registry:component",
+      "title": "Scrub card",
+      "description": "A video card you preview by moving across the thumbnail: the pointer position picks the frame of a paper plane's flight, a bar under it tracks the position and a chip shows the time.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/scrub/card-scrub.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-servings",
+      "type": "registry:component",
+      "title": "Servings card",
+      "description": "A recipe card: change the servings and every quantity rescales, the old figure rolling out as the new one rolls in, one ingredient after another.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/servings/card-servings.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-spoiler",
+      "type": "registry:component",
+      "title": "Spoiler card",
+      "description": "A message with a hidden spoiler: the hidden words shimmer under drifting, twinkling specks, and a click scatters the specks outward from where you clicked as the words fade in.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/spoiler/card-spoiler.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-storage",
+      "type": "registry:component",
+      "title": "Storage card",
+      "description": "A disk usage card with a stacked bar of categories: point at a segment or its legend row and that segment swells while the rest dim, and the reading switches to its size.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/storage/card-storage.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-streak",
+      "type": "registry:component",
+      "title": "Streak card",
+      "description": "A weekly habit card: check in today and its circle fills from the centre, a tick draws, the streak count rolls up by one and the flame flares.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/streak/card-streak.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-team",
+      "type": "registry:component",
+      "title": "Team card",
+      "description": "A team card with overlapping avatars: hover the group and they spread apart one after another, the +3 chip folds away into the rest of the team, and pointing at a face names it.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/team/card-team.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-tracking",
+      "type": "registry:component",
+      "title": "Tracking card",
+      "description": "A parcel tracking card: on load the route line fills down the timeline to the current step one segment at a time, each dot filling as the line reaches it, and the latest step pulses.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/tracking/card-tracking.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-upload",
+      "type": "registry:component",
+      "title": "Upload card",
+      "description": "A drop zone card: its dashed border marches while you hover or drag a file over it, and a dropped or chosen file gets a row that fills with progress, then ticks.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/upload/card-upload.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card-wifi",
+      "type": "registry:component",
+      "title": "Wi-Fi card",
+      "description": "A network picker: choose a network and its signal arcs pulse while it connects, then it ticks and moves to the top of the list as the others shift down.",
+      "categories": [
+        "cards"
+      ],
+      "files": [
+        {
+          "path": "components/cards/wifi/card-wifi.tsx",
           "type": "registry:component"
         }
       ]
@@ -7897,6 +8377,96 @@
       ]
     },
     {
+      "name": "slider-abacus",
+      "type": "registry:component",
+      "title": "Abacus slider",
+      "description": "A counter of ten beads on a rod: drag the gap and the beads slide across one after another, knocking to a stop against the row with a small rebound.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/abacus/slider-abacus.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-ascii",
+      "type": "registry:component",
+      "title": "ASCII slider",
+      "description": "A volume slider drawn entirely in monospace characters, [=====> ] style: the bar redraws one character at a time and the head spins while you drag.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/ascii/slider-ascii.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-band",
+      "type": "registry:component",
+      "title": "Band slider",
+      "description": "A time range whose fill is a rubber band looped round two pegs: it thins as you pull the pegs apart and thickens as they close, buzzes as you drag and twangs when you let go.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/band/slider-band.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-brush",
+      "type": "registry:component",
+      "title": "Brush slider",
+      "description": "A flow slider whose fill is a single brush stroke: it lands at half pressure, runs solid at the start and dry and streaky by the end, with a wet edge at the thumb.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/brush/slider-brush.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-cast",
+      "type": "registry:component",
+      "title": "Cast slider",
+      "description": "A light slider whose thumb is a small lamp: the scale ticks stand up from the track and each throws a shadow away from it, long far off and short close by, swinging round as the lamp passes.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/cast/slider-cast.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-clamp",
+      "type": "registry:component",
+      "title": "Clamp slider",
+      "description": "An inset slider drawn as a vice: drag either jaw and both close in from the ends together, and once they reach the word between them they squeeze it narrower.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/clamp/slider-clamp.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "slider-comb",
       "type": "registry:component",
       "title": "Comb slider",
@@ -7912,6 +8482,51 @@
       ]
     },
     {
+      "name": "slider-delta",
+      "type": "registry:component",
+      "title": "Delta slider",
+      "description": "Grab the thumb and a ghost stays at the value you started from, with a bracket and a signed change between them; let go and the ghost slides over and joins the thumb.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/delta/slider-delta.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-depth",
+      "type": "registry:component",
+      "title": "Depth slider",
+      "description": "The numbers along the scale are sharp near the thumb and fall out of focus further away, and the plane of focus trails the thumb and hunts past it a little, like a lens racking focus.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/depth/slider-depth.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-domino",
+      "type": "registry:component",
+      "title": "Domino slider",
+      "description": "A count slider whose track is a row of dominoes: drag forward and they topple one into the next to make the fill, drag back and they stand up again.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/domino/slider-domino.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "slider-drain",
       "type": "registry:component",
       "title": "Drain slider",
@@ -7922,6 +8537,81 @@
       "files": [
         {
           "path": "components/sliders/drain/slider-drain.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-extrude",
+      "type": "registry:component",
+      "title": "Extrude slider",
+      "description": "A storage bar seen from a little above: the filled part rises out of the track as a solid block with shaded faces, and grows taller while you hold it.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/extrude/slider-extrude.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-figure",
+      "type": "registry:component",
+      "title": "Figure slider",
+      "description": "A slider whose number is the thumb: the figure rides a hairline that parts around it and leans into the drag like italic type, then rights itself with a small swing when you let go.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/figure/slider-figure.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-foam",
+      "type": "registry:component",
+      "title": "Foam slider",
+      "description": "The track is a slab of memory foam: the thumb presses a dent into it, deeper while you hold it, and where the thumb has just been the dent fills back in slowly.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/foam/slider-foam.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-foil",
+      "type": "registry:component",
+      "title": "Foil slider",
+      "description": "A brightness slider in brushed metal with a polished bead for a thumb: the sheen slides back across the metal as you drag, like foil tilting under a light, and the bead's highlight shifts with it.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/foil/slider-foil.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-fuse",
+      "type": "registry:component",
+      "title": "Fuse slider",
+      "description": "A delay slider drawn as a burning fuse: the cord still to burn is the fill, ash lies ahead of the thumb, and the spark at the thumb fizzes and spits more embers the faster you drag.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/fuse/slider-fuse.tsx",
           "type": "registry:component"
         }
       ]
@@ -7987,6 +8677,36 @@
       ]
     },
     {
+      "name": "slider-histogram",
+      "type": "registry:component",
+      "title": "Histogram slider",
+      "description": "A price range drawn over its own histogram: bars inside the two handles rise to full ink, bars outside sink and fade, and the count of results updates as you drag.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/histogram/slider-histogram.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-hop",
+      "type": "registry:component",
+      "title": "Hop slider",
+      "description": "A ten-step slider whose thumb hops from step to step in little arcs, squashing as it lands, with a dotted trace of each jump fading behind it.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/hop/slider-hop.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "slider-invert",
       "type": "registry:component",
       "title": "Invert slider",
@@ -7997,6 +8717,21 @@
       "files": [
         {
           "path": "components/sliders/invert/slider-invert.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-keys",
+      "type": "registry:component",
+      "title": "Keys slider",
+      "description": "A note picker drawn as a two-octave keyboard: the key under the thumb goes down and darkens, its neighbours dip a little, and the note name rides above.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/keys/slider-keys.tsx",
           "type": "registry:component"
         }
       ]
@@ -8032,6 +8767,21 @@
       ]
     },
     {
+      "name": "slider-magnet",
+      "type": "registry:component",
+      "title": "Magnet slider",
+      "description": "A recommended value marked on the track pulls the thumb in when you drag close, with the pin leaning towards it and a pulse when it catches; drag on past to break free.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/magnet/slider-magnet.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "slider-merge",
       "type": "registry:component",
       "title": "Merge slider",
@@ -8042,6 +8792,96 @@
       "files": [
         {
           "path": "components/sliders/merge/slider-merge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-needles",
+      "type": "registry:component",
+      "title": "Needles slider",
+      "description": "A row of compass needles above the track all swing to point at the thumb; the ones it has passed are inked, the ones ahead stay faint, and they wobble a little as they settle.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/needles/slider-needles.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-nib",
+      "type": "registry:component",
+      "title": "Nib slider",
+      "description": "The thumb is a pen nib and the fill is the line it draws: drag slowly for a heavy stroke and quickly for a hairline, so the fill keeps a record of how you moved.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/nib/slider-nib.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-nudge",
+      "type": "registry:component",
+      "title": "Nudge slider",
+      "description": "The value label rides above the thumb and shoves the Off and Max labels out of the way as it comes near: they get knocked down, out and tipped over, so the three never overlap.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/nudge/slider-nudge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-peel",
+      "type": "registry:component",
+      "title": "Peel slider",
+      "description": "A coverage slider whose fill is a strip of masking tape with its end folded back: drag back to peel it up, with the flap lifting higher the faster you pull, and forward to press it down.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/peel/slider-peel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-pill",
+      "type": "registry:component",
+      "title": "Pill slider",
+      "description": "At rest it is a small chip with a speaker icon and the value; hover, focus or tap it and it unfolds into a full volume slider, then folds back once you are done.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/pill/slider-pill.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-pinion",
+      "type": "registry:component",
+      "title": "Pinion slider",
+      "description": "A rack and pinion: the track is a toothed rack and the thumb a gear that turns as it rolls along, its teeth meshing with the rack, the travelled length inked.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/pinion/slider-pinion.tsx",
           "type": "registry:component"
         }
       ]
@@ -8062,6 +8902,21 @@
       ]
     },
     {
+      "name": "slider-plough",
+      "type": "registry:component",
+      "title": "Plough slider",
+      "description": "The thumb is a blade pushing sand: behind it the floor is scraped clean as the fill, and pushing forward builds a heap against the blade, bigger the faster you push, that slumps flat when you stop.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/plough/slider-plough.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "slider-pluck",
       "type": "registry:component",
       "title": "Pluck slider",
@@ -8072,6 +8927,36 @@
       "files": [
         {
           "path": "components/sliders/pluck/slider-pluck.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-push",
+      "type": "registry:component",
+      "title": "Push slider",
+      "description": "Three dividers on one track that cannot pass each other: drag one into the next and it shoves it along, so the four segments always add up to the whole.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/push/slider-push.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-ratchet",
+      "type": "registry:component",
+      "title": "Ratchet slider",
+      "description": "The thumb carries a pawl that rides over teeth cut in the track: it lifts up each ramp, drops off the edge into the next tooth and lands with a small click.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/ratchet/slider-ratchet.tsx",
           "type": "registry:component"
         }
       ]
@@ -8092,6 +8977,51 @@
       ]
     },
     {
+      "name": "slider-shuttle",
+      "type": "registry:component",
+      "title": "Shuttle slider",
+      "description": "A spring-loaded shuttle from an edit suite: push the handle either way and the time runs faster the further you push it, with chevrons lighting up; let go and it springs back to centre.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/shuttle/slider-shuttle.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-slosh",
+      "type": "registry:component",
+      "title": "Slosh slider",
+      "description": "The fill is liquid in a sealed glass tube: drag and its face leans back against the motion, then sloshes forward past upright when you stop and settles level.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/slosh/slider-slosh.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-spool",
+      "type": "registry:component",
+      "title": "Spool slider",
+      "description": "A length slider whose thumb is a spool of thread: it rolls along the track laying its thread down as the fill, shrinking as it runs out and filling out again as it winds back.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/spool/slider-spool.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "slider-squiggle",
       "type": "registry:component",
       "title": "Squiggle slider",
@@ -8107,6 +9037,141 @@
       ]
     },
     {
+      "name": "slider-strand",
+      "type": "registry:component",
+      "title": "Strand slider",
+      "description": "A slider made of five strands drawn through a ring: behind the ring they lie bound together as the fill, and ahead they fan out loose, rippling away from the ring as you drag.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/strand/slider-strand.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-strata",
+      "type": "registry:component",
+      "title": "Strata slider",
+      "description": "A slider whose fill is three layers of paper: the top one follows the thumb and the ones underneath trail on softer springs, so a drag fans their edges out and they settle back into a stack.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/strata/slider-strata.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-strobe",
+      "type": "registry:component",
+      "title": "Strobe slider",
+      "description": "A slider whose thumb leaves fading afterimages as it moves, like a strobe photograph: spread far apart on a fast drag and bunched up on a slow one.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/strobe/slider-strobe.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-tally",
+      "type": "registry:component",
+      "title": "Tally slider",
+      "description": "A streak counter drawn as tally marks: each mark draws itself in with a pen stroke, every fifth strikes through the four before it, and going back rubs them out from the end.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/tally/slider-tally.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-tempo",
+      "type": "registry:component",
+      "title": "Tempo slider",
+      "description": "A tempo slider whose thumb keeps time at the tempo you set: every beat it kicks and sends a ring and a pulse running both ways down the track, with every fourth beat accented.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/tempo/slider-tempo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-thumbwheel",
+      "type": "registry:component",
+      "title": "Thumbwheel slider",
+      "description": "An exposure control set as a knurled roller in a slot: drag across it and the ridges roll past with real curvature, clicking into each third of a stop, with a fine line below showing where you are in the range.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/thumbwheel/slider-thumbwheel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-twist",
+      "type": "registry:component",
+      "title": "Twist slider",
+      "description": "A slider whose track is a ribbon with a half twist at the thumb: ink on one face, paper on the other. Drag fast and the twist stretches out behind you, then tightens as you stop.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/twist/slider-twist.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-vernier",
+      "type": "registry:component",
+      "title": "Vernier slider",
+      "description": "A scrubber with fine control: drag down away from the track and the thumb slows to half, quarter, then fine speed, while the scale above zooms in around it and names the speed.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/vernier/slider-vernier.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-vial",
+      "type": "registry:component",
+      "title": "Vial slider",
+      "description": "A stereo balance control shaped like a spirit level: the thumb is the air bubble, which stretches as it moves, wobbles as it stops and settles between the two centre marks.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/vial/slider-vial.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "slider-wedge",
       "type": "registry:component",
       "title": "Wedge slider",
@@ -8117,6 +9182,21 @@
       "files": [
         {
           "path": "components/sliders/wedge/slider-wedge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider-zero",
+      "type": "registry:component",
+      "title": "Zero slider",
+      "description": "A bipolar exposure slider: the fill grows from the centre in either direction, the thumb sticks at zero for a moment as a drag crosses it, and the sign flips over.",
+      "categories": [
+        "sliders"
+      ],
+      "files": [
+        {
+          "path": "components/sliders/zero/slider-zero.tsx",
           "type": "registry:component"
         }
       ]
@@ -8812,6 +9892,21 @@
       ]
     },
     {
+      "name": "tab-carry",
+      "type": "registry:component",
+      "title": "Carry tab set",
+      "description": "Product tabs whose label flies down and grows into the panel heading when picked, while the old heading shrinks back up into its own tab.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/carry/tab-carry.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "tab-contents",
       "type": "registry:component",
       "title": "Contents tab set",
@@ -8842,6 +9937,21 @@
       ]
     },
     {
+      "name": "tab-flock",
+      "type": "registry:component",
+      "title": "Flock tab set",
+      "description": "Sales tabs with a dotted underline that flies to the new tab like a flock of birds: each dot takes its own arc, a beat after the last, and they line up again on landing.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/flock/tab-flock.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "tab-goo",
       "type": "registry:component",
       "title": "Goo tab set",
@@ -8852,6 +9962,21 @@
       "files": [
         {
           "path": "components/tabs/goo/tab-goo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-hang",
+      "type": "registry:component",
+      "title": "Hang tab set",
+      "description": "Venue tabs with the panel hung from the active tab on two cords: pick another and the hook slides over, setting the panel swinging before it settles.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/hang/tab-hang.tsx",
           "type": "registry:component"
         }
       ]
@@ -8872,6 +9997,51 @@
       ]
     },
     {
+      "name": "tab-kern",
+      "type": "registry:component",
+      "title": "Kern tab set",
+      "description": "Collection tabs in small caps whose active label opens its letter spacing; the row reflows around it, so every other label slides aside to make room.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/kern/tab-kern.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-marquee",
+      "type": "registry:component",
+      "title": "Marquee tab set",
+      "description": "Showtime tabs with the active one framed in chasing marquee bulbs; pick another and the frame of lights travels across to it.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/marquee/tab-marquee.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-measure",
+      "type": "registry:component",
+      "title": "Measure tab set",
+      "description": "Inspector tabs with a designer's dimension line spanning the active tab and its width in pixels; it stretches across to the new tab while the number counts through every width on the way.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/measure/tab-measure.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "tab-notch",
       "type": "registry:component",
       "title": "Notch tab set",
@@ -8882,6 +10052,36 @@
       "files": [
         {
           "path": "components/tabs/notch/tab-notch.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-orbit",
+      "type": "registry:component",
+      "title": "Orbit tab set",
+      "description": "Planet tabs with a small moon orbiting the active label, passing behind it and in front of it on a tilted ellipse; pick another and it swings across into orbit around the new one.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/orbit/tab-orbit.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-popup",
+      "type": "registry:component",
+      "title": "Popup tab set",
+      "description": "Chapter tabs that lie flat on the page like a closed pop-up book: the active label stands up on its hinge with a little spring, and the one you left folds back down.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/popup/tab-popup.tsx",
           "type": "registry:component"
         }
       ]
@@ -8917,6 +10117,21 @@
       ]
     },
     {
+      "name": "tab-ripple",
+      "type": "registry:component",
+      "title": "Ripple tab set",
+      "description": "Library tabs where picking one sends a ripple through the letters of every label, starting from where you clicked and fading as it travels.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/ripple/tab-ripple.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "tab-rise",
       "type": "registry:component",
       "title": "Rise tab set",
@@ -8942,6 +10157,36 @@
       "files": [
         {
           "path": "components/tabs/scroller/tab-scroller.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-shutter",
+      "type": "registry:component",
+      "title": "Shutter tab set",
+      "description": "Camera mode tabs as icon buttons: the active one fills as six iris blades close over it, and they open again on the tab you left.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/shutter/tab-shutter.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-split",
+      "type": "registry:component",
+      "title": "Split tab set",
+      "description": "A segmented control that is one continuous bar until you pick: the active tab parts from it, with gaps opening either side and its corners rounding off into a pill of its own.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/split/tab-split.tsx",
           "type": "registry:component"
         }
       ]
@@ -8977,6 +10222,21 @@
       ]
     },
     {
+      "name": "tab-swash",
+      "type": "registry:component",
+      "title": "Swash tab set",
+      "description": "Restaurant tabs in italic serif: a calligraphic swash writes itself under the chosen word, ending in a small loop and a flick, while the old one unwrites.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/swash/tab-swash.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "tab-swipe",
       "type": "registry:component",
       "title": "Swipe tab set",
@@ -8992,6 +10252,36 @@
       ]
     },
     {
+      "name": "tab-ticks",
+      "type": "registry:component",
+      "title": "Ticks tab set",
+      "description": "Mail tabs over a row of fine ticks: the ticks under the active tab stand tall and bright, and switching sends that crest travelling across to the new one.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/ticks/tab-ticks.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-tilt",
+      "type": "registry:component",
+      "title": "Tilt tab set",
+      "description": "Appearance tabs on a beam balanced over a pivot: pick a tab and the beam tips towards it, so the ball rolls down to it, and the beam levels out as the ball arrives.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/tilt/tab-tilt.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "tab-tumble",
       "type": "registry:component",
       "title": "Tumble tab set",
@@ -9002,6 +10292,21 @@
       "files": [
         {
           "path": "components/tabs/tumble/tab-tumble.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-tuner",
+      "type": "registry:component",
+      "title": "Tuner tab set",
+      "description": "Radio station tabs on a tuning dial: the needle sweeps across the frequency scale to the one you pick, and the panel tunes in from static as it arrives.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/tuner/tab-tuner.tsx",
           "type": "registry:component"
         }
       ]

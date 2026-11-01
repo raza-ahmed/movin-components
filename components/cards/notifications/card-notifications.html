@@ -1,0 +1,42 @@
+<article class="card-notifications">
+  <div class="card-notifications__head">
+    <b>Notifications</b>
+    <button type="button" class="card-notifications__btn" aria-expanded="false">Show all</button>
+    <button type="button" class="card-notifications__btn">Clear</button>
+  </div>
+  <div class="card-notifications__stack" style="height:70px">
+    <ul class="card-notifications__list">
+      <li class="card-notifications__item" style="transform:translateY(0px) scale(1);opacity:1;transition-delay:80ms;z-index:3" aria-hidden="false">
+        <span class="card-notifications__icon" aria-hidden="true"></span>
+        <div class="card-notifications__body">
+          <span class="card-notifications__app">
+            Calendar
+            <span>now</span>
+          </span>
+          <p class="card-notifications__text">Standup moved to 10:30</p>
+        </div>
+      </li>
+      <li class="card-notifications__item" style="transform:translateY(9px) scale(0.94);opacity:0.7;transition-delay:40ms;z-index:2" aria-hidden="true">
+        <span class="card-notifications__icon" aria-hidden="true"></span>
+        <div class="card-notifications__body">
+          <span class="card-notifications__app">
+            Messages
+            <span>2m</span>
+          </span>
+          <p class="card-notifications__text">Ana: the prints are in</p>
+        </div>
+      </li>
+      <li class="card-notifications__item" style="transform:translateY(18px) scale(0.88);opacity:0.4;transition-delay:0ms;z-index:1" aria-hidden="true">
+        <span class="card-notifications__icon" aria-hidden="true"></span>
+        <div class="card-notifications__body">
+          <span class="card-notifications__app">
+            Deploys
+            <span>5m</span>
+          </span>
+          <p class="card-notifications__text">Production is live in 41s</p>
+        </div>
+      </li>
+    </ul>
+    <p class="card-notifications__empty" aria-live="polite"></p>
+  </div>
+</article>

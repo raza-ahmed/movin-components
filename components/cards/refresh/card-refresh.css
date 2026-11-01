@@ -1,0 +1,21 @@
+.card-refresh { box-sizing: border-box; width: 240px; padding: 12px; border-radius: 16px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+.card-refresh__head { display: flex; align-items: center; justify-content: space-between; margin: 0 2px 8px; font-size: 13px; font-weight: 600; color: light-dark(#373a40, #f1f2f3); }
+.card-refresh__btn { display: grid; place-items: center; width: 26px; height: 26px; padding: 0; border: 0; border-radius: 50%; background: light-dark(#ebedf0, #232529); color: light-dark(#42454c, #e5e6e9); cursor: pointer; }
+.card-refresh__btn:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+.card-refresh__btn svg { width: 13px; height: 13px; }
+.card-refresh__view { position: relative; height: 146px; border-radius: 10px; overflow: hidden; touch-action: none; cursor: grab; user-select: none; -webkit-user-select: none; }
+.card-refresh__pull { position: absolute; left: 0; right: 0; top: 0; display: flex; align-items: center; justify-content: center; gap: 6px; height: 50px; font-size: 10.5px; color: light-dark(#5f626a, #a7abb2); }
+.card-refresh__arrow { width: 14px; height: 14px; color: light-dark(#42454c, #e5e6e9); }
+.card-refresh__ring { width: 14px; height: 14px; box-sizing: border-box; border: 2px solid light-dark(#dbdde1, #2e3035); border-top-color: light-dark(#373a40, #f1f2f3); border-radius: 50%; animation: card-refresh-spin 0.7s linear infinite; }
+@keyframes card-refresh-spin { to { transform: rotate(360deg); } }
+.card-refresh__list { position: relative; margin: 0; padding: 0; list-style: none; background: light-dark(#f3f4f7, #1a1c1f); }
+.card-refresh__list--settle { transition: transform 0.45s cubic-bezier(0.3, 1.3, 0.5, 1); }
+.card-refresh__item { display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 4px; border-bottom: 1px solid light-dark(#ebedf0, #232529); font-size: 11.5px; color: light-dark(#42454c, #e5e6e9); overflow: hidden; }
+.card-refresh__item::before { content: ''; flex: none; width: 8px; height: 8px; border-radius: 50%; background: light-dark(#cbced3, #393c41); }
+.card-refresh__item--new { animation: card-refresh-in 0.45s cubic-bezier(0.3, 1.2, 0.5, 1); }
+.card-refresh__item--new::before { background: light-dark(#373a40, #f1f2f3); }
+@keyframes card-refresh-in { from { height: 0; opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .card-refresh__list--settle { transition: none; }
+  .card-refresh__item--new { animation: none; }
+}

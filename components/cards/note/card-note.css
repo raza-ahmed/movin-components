@@ -1,0 +1,21 @@
+.card-note {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 240px;
+  height: 200px;
+  border-radius: 16px;
+  background: light-dark(#f3f4f7, #1a1c1f);
+  box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035);
+}
+.card-note__paper { position: relative; width: 150px; height: 132px; transform: rotate(-2.5deg); }
+.card-note__shadow { position: absolute; left: 8px; right: 8px; bottom: -4px; height: 20px; border-radius: 50%; background: var(--card-note-shadow); filter: blur(6px); }
+.card-note { --card-note-shadow: light-dark(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.55)); }
+/* The same note twice: the top part stays pinned, the bottom part hinges up on a horizontal fold. */
+.card-note__half { position: absolute; inset: 0; padding: 16px 14px; box-sizing: border-box; background: light-dark(#dbdde1, #2e3035); color: light-dark(#373a40, #f1f2f3); }
+.card-note__half--top { clip-path: inset(0 0 45% 0); }
+.card-note__half--bottom { clip-path: inset(55% 0 0 0); transform-origin: 50% 55%; }
+.card-note__shade { position: absolute; inset: 0; background: var(--card-note-shadow); clip-path: inset(55% 0 0 0); pointer-events: none; }
+.card-note__pin { position: absolute; left: 50%; top: -5px; z-index: 2; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: light-dark(#50535b, #c6c8cd); box-shadow: 0 2px 3px var(--card-note-shadow); }
+.card-note__title { margin: 0 0 6px; font-size: 13px; font-weight: 700; }
+.card-note__line { margin: 0; font-size: 11.5px; line-height: 1.55; color: light-dark(#42454c, #e5e6e9); }

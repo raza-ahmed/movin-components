@@ -1,0 +1,19 @@
+.slider-ratchet { position: relative; width: 240px; height: 80px; }
+.slider-ratchet__svg { position: absolute; left: 0; top: 0; width: 240px; height: 56px; overflow: visible; }
+.slider-ratchet__teeth--done { fill: light-dark(#50535b, #c6c8cd); }
+.slider-ratchet__teeth--left { fill: light-dark(#dbdde1, #2e3035); }
+.slider-ratchet__block { fill: light-dark(#373a40, #f1f2f3); }
+.slider-ratchet__pawl { stroke: light-dark(#373a40, #f1f2f3); stroke-width: 2.6; stroke-linecap: round; }
+.slider-ratchet__pin { fill: light-dark(#fbfcfd, #121417); }
+.slider-ratchet__click { stroke: light-dark(#373a40, #f1f2f3); stroke-width: 1.5; stroke-linecap: round; animation: slider-ratchet-click 0.3s ease-out forwards; }
+@keyframes slider-ratchet-click {
+  from { opacity: 0.9; transform: scale(0.6); }
+  to { opacity: 0; transform: scale(1.4); }
+}
+.slider-ratchet__ring { fill: none; stroke: transparent; stroke-width: 2; }
+.slider-ratchet:has(.slider-ratchet__input:focus-visible) .slider-ratchet__ring { stroke: light-dark(#50535b, #c6c8cd); }
+.slider-ratchet__value { position: absolute; left: 0; right: 0; top: 62px; display: flex; justify-content: space-between; margin: 0; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-ratchet__value b { color: light-dark(#373a40, #f1f2f3); font-weight: 500; font-variant-numeric: tabular-nums; }
+.slider-ratchet__input { position: absolute; left: 3.5px; top: 0; width: 236px; height: 56px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-ratchet__input::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 56px; }
+.slider-ratchet__input::-moz-range-thumb { width: 20px; height: 56px; border: 0; }

@@ -1,0 +1,79 @@
+"use client";
+
+import { useState } from 'react';
+
+const css = `
+  .card-gift { position: relative; box-sizing: border-box; width: 240px; height: 210px; padding: 14px 16px; border-radius: 16px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+  .card-gift__title { margin: 0; font-size: 13px; font-weight: 600; color: light-dark(#373a40, #f1f2f3); }
+  .card-gift__sub { margin: 2px 0 0; font-size: 11px; color: light-dark(#5f626a, #a7abb2); }
+  .card-gift__open { position: absolute; left: 50%; bottom: 16px; width: 124px; height: 128px; margin-left: -62px; padding: 0; border: 0; background: none; cursor: pointer; }
+  .card-gift__open:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 4px; border-radius: 8px; }
+  .card-gift__open:disabled { cursor: default; }
+  .card-gift__part { position: absolute; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s; }
+  .card-gift__back { left: 12px; bottom: 0; width: 100px; height: 66px; border-radius: 4px; background: light-dark(#cbced3, #393c41); }
+  /* The gift card waits inside the box and rises out once the lid is off. */
+  .card-gift__voucher {
+    left: 20px;
+    bottom: 10px;
+    box-sizing: border-box;
+    width: 84px;
+    height: 54px;
+    padding: 7px 8px;
+    border-radius: 6px;
+    background: light-dark(#373a40, #f1f2f3);
+    color: light-dark(#fbfcfd, #121417);
+    text-align: left;
+    transition: transform 0.6s cubic-bezier(0.3, 1.4, 0.5, 1) 0.55s;
+  }
+  .card-gift__voucher b { display: block; font-size: 15px; }
+  .card-gift__voucher code { font: 600 9px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.04em; }
+  .card-gift__front { left: 12px; bottom: 0; width: 100px; height: 50px; border-radius: 0 0 4px 4px; background: light-dark(#6d7179, #7d8087); }
+  .card-gift__ribbon { left: 56px; bottom: 0; width: 12px; height: 50px; background: light-dark(#42454c, #e5e6e9); }
+  .card-gift__lid { left: 6px; bottom: 50px; width: 112px; height: 22px; border-radius: 3px; background: light-dark(#5f626a, #a7abb2); transform-origin: 0 100%; transition-delay: 0.3s; }
+  .card-gift__lid::after { content: ''; position: absolute; left: 50px; width: 12px; height: 100%; background: light-dark(#42454c, #e5e6e9); }
+  .card-gift__loop { bottom: 70px; width: 22px; height: 14px; box-sizing: border-box; border: 4px solid light-dark(#42454c, #e5e6e9); border-radius: 50%; }
+  .card-gift__loop--l { left: 40px; transform: rotate(-24deg); transform-origin: 100% 100%; }
+  .card-gift__loop--r { left: 62px; transform: rotate(24deg); transform-origin: 0 100%; }
+  .card-gift--open .card-gift__loop--l { transform: translate(-16px, 30px) rotate(-120deg); opacity: 0; }
+  .card-gift--open .card-gift__loop--r { transform: translate(16px, 30px) rotate(120deg); opacity: 0; }
+  .card-gift--open .card-gift__lid { transform: translate(-46px, -26px) rotate(-28deg); opacity: 0; transition-duration: 0.6s; }
+  .card-gift--open .card-gift__voucher { transform: translateY(-74px) rotate(-3deg); }
+  .card-gift__again { position: absolute; right: 14px; top: 14px; height: 22px; padding: 0 8px; border: 0; border-radius: 999px; background: light-dark(#ebedf0, #232529); color: light-dark(#42454c, #e5e6e9); font: inherit; font-size: 10.5px; font-weight: 600; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .card-gift--open .card-gift__again { opacity: 1; pointer-events: auto; transition-delay: 1s; }
+  .card-gift__again:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    .card-gift__part, .card-gift__voucher, .card-gift__again { transition: opacity 0.2s; transition-delay: 0s; }
+  }
+`;
+
+export function GiftCard() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <article className={`card-gift${open ? ' card-gift--open' : ''}`}>
+        <p className="card-gift__title">A gift from Ana</p>
+        <p className="card-gift__sub" aria-live="polite">
+          {open ? 'Code MOVE-7Q2X, worth $25' : 'Tap the box to open it'}
+        </p>
+        <button type="button" className="card-gift__open" onClick={() => setOpen(true)} disabled={open} aria-label={open ? 'Gift opened' : 'Open the gift'}>
+          <span className="card-gift__part card-gift__back" />
+          <span className="card-gift__part card-gift__voucher" aria-hidden="true">
+            <b>$25</b>
+            <code>MOVE-7Q2X</code>
+          </span>
+          <span className="card-gift__part card-gift__front" />
+          <span className="card-gift__part card-gift__ribbon" />
+          <span className="card-gift__part card-gift__lid" />
+          <span className="card-gift__part card-gift__loop card-gift__loop--l" />
+          <span className="card-gift__part card-gift__loop card-gift__loop--r" />
+        </button>
+        <button type="button" className="card-gift__again" tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>
+          Wrap again
+        </button>
+      </article>
+    </>
+  );
+}

@@ -1,0 +1,24 @@
+.tabs-split { width: 264px; }
+.tabs-split__list { display: grid; grid-template-columns: repeat(4, 1fr); height: 38px; }
+.tabs-split__tab { position: relative; border: 0; padding: 0; background: none; font: inherit; font-size: 13px; font-weight: 500; color: light-dark(#50535b, #c6c8cd); cursor: pointer; outline: none; transition: color 0.3s; }
+.tabs-split__tab:hover { color: light-dark(#373a40, #f1f2f3); }
+.tabs-split__seg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: light-dark(#ebedf0, #232529);
+  transition: left 0.45s cubic-bezier(0.3, 1.25, 0.5, 1), right 0.45s cubic-bezier(0.3, 1.25, 0.5, 1), top 0.45s cubic-bezier(0.3, 1.25, 0.5, 1), bottom 0.45s cubic-bezier(0.3, 1.25, 0.5, 1), border-radius 0.45s cubic-bezier(0.3, 1.25, 0.5, 1), background-color 0.3s, box-shadow 0.3s;
+}
+.tabs-split__tab[aria-selected='true'] { color: light-dark(#fbfcfd, #121417); }
+.tabs-split__tab[aria-selected='true'] .tabs-split__seg {
+  top: -2px;
+  bottom: -2px;
+  background: light-dark(#373a40, #f1f2f3);
+  box-shadow: 0 2px 6px light-dark(rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.45));
+}
+.tabs-split__tab:focus-visible .tabs-split__seg { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; }
+.tabs-split__label { position: relative; }
+.tabs-split__panel { padding: 16px 4px 0; min-height: calc(3.1em + 16px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-split__seg { transition: background-color 0.2s; }
+}

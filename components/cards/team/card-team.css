@@ -1,0 +1,30 @@
+.card-team { box-sizing: border-box; width: 240px; padding: 14px; border-radius: 16px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+.card-team__title { margin: 0; font-size: 13px; font-weight: 600; color: light-dark(#373a40, #f1f2f3); }
+.card-team__sub { margin: 2px 0 14px; font-size: 11px; color: light-dark(#5f626a, #a7abb2); }
+.card-team__group { position: relative; display: block; width: 100%; height: 30px; padding: 0; border: 0; background: none; cursor: pointer; }
+.card-team__group:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 4px; border-radius: 15px; }
+.card-team__face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border: 2px solid light-dark(#f3f4f7, #1a1c1f);
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+  transition: transform 0.45s cubic-bezier(0.3, 1.4, 0.5, 1), opacity 0.25s;
+}
+.card-team__face:nth-child(4n + 1) { background: light-dark(#50535b, #c6c8cd); color: light-dark(#fbfcfd, #121417); }
+.card-team__face:nth-child(4n + 2) { background: light-dark(#cbced3, #393c41); color: light-dark(#373a40, #f1f2f3); }
+.card-team__face:nth-child(4n + 3) { background: light-dark(#5f626a, #a7abb2); color: light-dark(#fbfcfd, #121417); }
+.card-team__face:nth-child(4n + 4) { background: light-dark(#dbdde1, #2e3035); color: light-dark(#373a40, #f1f2f3); }
+.card-team__more { background: light-dark(#ebedf0, #232529) !important; color: light-dark(#42454c, #e5e6e9) !important; }
+.card-team__face--hot { z-index: 2; }
+.card-team__caption { height: 16px; margin: 10px 0 0; font-size: 11.5px; color: light-dark(#50535b, #c6c8cd); }
+@media (prefers-reduced-motion: reduce) {
+  .card-team__face { transition: opacity 0.2s; }
+}

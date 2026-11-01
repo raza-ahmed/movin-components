@@ -1,0 +1,28 @@
+<div class="slider-fuse">
+  <svg class="slider-fuse__svg" aria-hidden="true">
+    <defs>
+      <pattern id="slider-fuse-cord" patternUnits="userSpaceOnUse" width="4" height="6" patternTransform="skewX(-38)">
+        <rect class="slider-fuse__cord" width="4" height="6"></rect>
+        <line class="slider-fuse__twist" x1="0.6" y1="0" x2="0.6" y2="6"></line>
+      </pattern>
+      <linearGradient id="slider-fuse-ash" gradientUnits="userSpaceOnUse" x1="151.92" x2="177.92" y1="0" y2="0">
+        <stop class="slider-fuse__hot" offset="0"></stop>
+        <stop class="slider-fuse__cold" offset="1"></stop>
+      </linearGradient>
+      <radialGradient id="slider-fuse-halo">
+        <stop class="slider-fuse__halo" offset="0" stop-opacity="0.55"></stop>
+        <stop class="slider-fuse__halo" offset="1" stop-opacity="0"></stop>
+      </radialGradient>
+    </defs>
+    <line class="slider-fuse__ash" x1="151.92" y1="22" x2="237" y2="22" stroke="url(#slider-fuse-ash)"></line>
+    <rect class="slider-fuse__rope" x="3" y="19" width="148.92" height="6" rx="3" fill="url(#slider-fuse-cord)"></rect>
+    <circle class="slider-fuse__glow" cx="151.92" cy="22" r="11" fill="url(#slider-fuse-halo)"></circle>
+    <circle class="slider-fuse__core" cx="151.92" cy="22" r="2.8"></circle>
+    <circle class="slider-fuse__ring" cx="151.92" cy="22" r="9"></circle>
+  </svg>
+  <p class="slider-fuse__value" aria-hidden="true">
+    <span>Delay</span>
+    <b>6.4 s</b>
+  </p>
+  <input class="slider-fuse__input" type="range" min="0" max="100" aria-label="Delay" aria-valuetext="6.4 seconds" value="64"/>
+</div>

@@ -1,0 +1,23 @@
+.slider-domino { position: relative; width: 240px; height: 76px; }
+.slider-domino__svg { position: absolute; left: 0; top: 0; width: 240px; height: 54px; overflow: visible; }
+.slider-domino__tile {
+  fill: light-dark(#cbced3, #393c41);
+  transform-box: fill-box;
+  transform-origin: 100% 100%;
+  transition: transform 0.3s cubic-bezier(0.55, 0, 0.9, 0.55), fill 0.3s;
+}
+.slider-domino__tile--down { fill: light-dark(#42454c, #e5e6e9); }
+.slider-domino__floor { stroke: light-dark(#ebedf0, #232529); stroke-width: 1.5; }
+.slider-domino__rail { stroke: light-dark(#ebedf0, #232529); stroke-width: 3; stroke-linecap: round; }
+.slider-domino__fill { stroke: light-dark(#50535b, #c6c8cd); stroke-width: 3; stroke-linecap: round; }
+.slider-domino__thumb { fill: light-dark(#373a40, #f1f2f3); }
+.slider-domino__ring { fill: none; stroke: transparent; stroke-width: 2; }
+.slider-domino:has(.slider-domino__input:focus-visible) .slider-domino__ring { stroke: light-dark(#50535b, #c6c8cd); }
+.slider-domino__value { position: absolute; left: 0; right: 0; top: 58px; display: flex; justify-content: space-between; margin: 0; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-domino__value b { color: light-dark(#373a40, #f1f2f3); font-weight: 500; font-variant-numeric: tabular-nums; }
+.slider-domino__input { position: absolute; left: 0; top: 0; width: 100%; height: 54px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-domino__input::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 54px; }
+.slider-domino__input::-moz-range-thumb { width: 14px; height: 54px; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .slider-domino__tile { transition: none; }
+}

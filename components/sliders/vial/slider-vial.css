@@ -1,0 +1,17 @@
+.slider-vial { position: relative; width: 240px; height: 58px; }
+.slider-vial__svg { display: block; width: 240px; height: 32px; overflow: visible; }
+.slider-vial__tube { stroke: light-dark(#cbced3, #393c41); stroke-width: 1; }
+.slider-vial__top { stop-color: light-dark(#ebedf0, #232529); }
+.slider-vial__bottom { stop-color: light-dark(#dbdde1, #2e3035); }
+.slider-vial__glint { stroke: light-dark(#fbfcfd, #7d8087); stroke-width: 1.5; stroke-linecap: round; opacity: 0.5; }
+.slider-vial__mark { stroke: light-dark(#5f626a, #a7abb2); stroke-width: 1; }
+.slider-vial__tick { stroke: light-dark(#cbced3, #393c41); stroke-width: 1; }
+.slider-vial__bubble { fill: light-dark(light-dark(#fbfcfd, #121417), color-mix(in oklab, light-dark(#5f626a, #a7abb2) 55%, light-dark(#dbdde1, #2e3035))); stroke: light-dark(#5f626a, #a7abb2); stroke-width: 0.8; }
+.slider-vial__shine { fill: light-dark(#fbfcfd, #c6c8cd); opacity: 0.75; }
+.slider-vial__ring { fill: none; stroke: transparent; stroke-width: 2; }
+.slider-vial:has(.slider-vial__input:focus-visible) .slider-vial__ring { stroke: light-dark(#50535b, #c6c8cd); }
+.slider-vial__scale { position: absolute; top: 40px; left: 0; right: 0; display: flex; justify-content: space-between; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-vial__value { color: light-dark(#373a40, #f1f2f3); font-weight: 500; font-variant-numeric: tabular-nums; }
+.slider-vial__input { position: absolute; left: 0; top: 0; width: 100%; height: 32px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-vial__input::-webkit-slider-thumb { -webkit-appearance: none; width: 42px; height: 32px; }
+.slider-vial__input::-moz-range-thumb { width: 42px; height: 32px; border: 0; }

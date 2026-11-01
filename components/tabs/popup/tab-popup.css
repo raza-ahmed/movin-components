@@ -1,0 +1,26 @@
+.tabs-popup { width: 270px; }
+.tabs-popup__list { position: relative; display: flex; justify-content: center; gap: 26px; padding-top: 10px; perspective: 260px; }
+/* The page the labels lie on and stand up from. */
+.tabs-popup__list::after { content: ''; position: absolute; left: 4px; right: 4px; bottom: 0; height: 1px; background: light-dark(#dbdde1, #2e3035); }
+.tabs-popup__tab {
+  position: relative;
+  border: 0;
+  padding: 4px 2px;
+  background: none;
+  font: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: light-dark(#5f626a, #a7abb2);
+  cursor: pointer;
+  transform-origin: 50% 100%;
+  transform: rotateX(56deg);
+  transition: transform 0.6s cubic-bezier(0.3, 1.45, 0.45, 1), color 0.35s;
+}
+.tabs-popup__tab:hover { color: light-dark(#50535b, #c6c8cd); }
+.tabs-popup__tab[aria-selected='true'] { transform: none; color: light-dark(#373a40, #f1f2f3); filter: drop-shadow(0 5px 3px light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.5))); }
+.tabs-popup__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; border-radius: 4px; }
+.tabs-popup__panel { padding: 14px 4px 0; min-height: calc(3.1em + 14px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; text-align: center; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-popup__tab { transition: color 0.2s; }
+}

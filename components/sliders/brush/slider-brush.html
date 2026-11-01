@@ -1,0 +1,31 @@
+<div class="slider-brush">
+  <svg class="slider-brush__svg" aria-hidden="true">
+    <defs>
+      <filter id="slider-brush-dry" x="-5%" y="-60%" width="110%" height="220%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.006 0.55" numOctaves="2" seed="8" result="n"></feTurbulence>
+        <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  4.2 0 0 0 -1.55" result="m"></feColorMatrix>
+        <feComposite in="SourceGraphic" in2="m" operator="in" result="p"></feComposite>
+        <feDisplacementMap in="p" in2="n" scale="3.5" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+      </filter>
+      <filter id="slider-brush-edge" x="-5%" y="-60%" width="110%" height="220%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05 0.3" numOctaves="2" seed="3" result="n"></feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="2.5" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+      </filter>
+      <linearGradient id="slider-brush-load" gradientUnits="userSpaceOnUse" x1="0" x2="148.96" y1="0" y2="0">
+        <stop class="slider-brush__fade" offset="0" stop-opacity="1"></stop>
+        <stop class="slider-brush__fade" offset="0.45" stop-opacity="0.95"></stop>
+        <stop class="slider-brush__fade" offset="1" stop-opacity="0"></stop>
+      </linearGradient>
+    </defs>
+    <line class="slider-brush__guide" x1="164.323" x2="239" y1="24" y2="24"></line>
+    <path d="M5.0,18.52L9.0,17.92L13.0,17.31L17.0,16.70L21.0,16.10L25.0,15.51L29.0,14.94L33.0,14.90L37.0,15.03L41.0,15.17L45.0,15.31L49.0,15.43L53.0,15.52L57.0,15.58L61.0,15.60L65.0,15.57L69.0,15.49L73.0,15.36L77.0,15.18L81.0,14.96L85.0,14.72L89.0,14.45L93.0,14.17L97.0,13.90L101.0,13.64L105.0,13.42L109.0,13.24L113.0,13.12L117.0,13.05L121.0,13.04L125.0,13.10L129.0,13.21L133.0,13.37L137.0,13.57L141.0,13.80L145.0,14.05L148.96,14.16A9.363 9.363 0 0 1 148.96,32.89L145.0,32.78L141.0,32.83L137.0,32.90L133.0,32.97L129.0,33.05L125.0,33.11L121.0,33.16L117.0,33.19L113.0,33.20L109.0,33.19L105.0,33.17L101.0,33.14L97.0,33.10L93.0,33.07L89.0,33.05L85.0,33.06L81.0,33.08L77.0,33.14L73.0,33.23L69.0,33.36L65.0,33.51L61.0,33.69L57.0,33.88L53.0,34.09L49.0,34.28L45.0,34.47L41.0,34.63L37.0,34.75L33.0,34.82L29.0,34.67L25.0,33.97L21.0,33.20L17.0,32.39L13.0,31.55L9.0,30.69L5.0,29.82L5,29.82A5.65 5.65 0 0 1 5,18.52Z" fill="url(#slider-brush-load)" filter="url(#slider-brush-edge)"></path>
+    <path class="slider-brush__paint" d="M5.0,18.52L9.0,17.92L13.0,17.31L17.0,16.70L21.0,16.10L25.0,15.51L29.0,14.94L33.0,14.90L37.0,15.03L41.0,15.17L45.0,15.31L49.0,15.43L53.0,15.52L57.0,15.58L61.0,15.60L65.0,15.57L69.0,15.49L73.0,15.36L77.0,15.18L81.0,14.96L85.0,14.72L89.0,14.45L93.0,14.17L97.0,13.90L101.0,13.64L105.0,13.42L109.0,13.24L113.0,13.12L117.0,13.05L121.0,13.04L125.0,13.10L129.0,13.21L133.0,13.37L137.0,13.57L141.0,13.80L145.0,14.05L148.96,14.16A9.363 9.363 0 0 1 148.96,32.89L145.0,32.78L141.0,32.83L137.0,32.90L133.0,32.97L129.0,33.05L125.0,33.11L121.0,33.16L117.0,33.19L113.0,33.20L109.0,33.19L105.0,33.17L101.0,33.14L97.0,33.10L93.0,33.07L89.0,33.05L85.0,33.06L81.0,33.08L77.0,33.14L73.0,33.23L69.0,33.36L65.0,33.51L61.0,33.69L57.0,33.88L53.0,34.09L49.0,34.28L45.0,34.47L41.0,34.63L37.0,34.75L33.0,34.82L29.0,34.67L25.0,33.97L21.0,33.20L17.0,32.39L13.0,31.55L9.0,30.69L5.0,29.82L5,29.82A5.65 5.65 0 0 1 5,18.52Z" filter="url(#slider-brush-dry)"></path>
+    <ellipse class="slider-brush__wet" cx="151.301" cy="23.527" rx="2.6" ry="7.491"></ellipse>
+    <rect class="slider-brush__ring" x="142.96" y="9" width="23.363" height="30" rx="10"></rect>
+  </svg>
+  <p class="slider-brush__value" aria-hidden="true">
+    <span>Flow</span>
+    <b>64%</b>
+  </p>
+  <input class="slider-brush__input" type="range" min="0" max="100" aria-label="Flow" aria-valuetext="64%" value="64"/>
+</div>

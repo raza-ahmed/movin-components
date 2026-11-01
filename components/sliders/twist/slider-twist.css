@@ -1,0 +1,20 @@
+.slider-twist { position: relative; width: 240px; height: 56px; }
+.slider-twist__svg { display: block; width: 240px; height: 56px; overflow: visible; }
+.slider-twist__ink { fill: light-dark(#42454c, #e5e6e9); }
+.slider-twist__paper { fill: light-dark(#dbdde1, #2e3035); }
+.slider-twist__collar {
+  fill: light-dark(#373a40, #f1f2f3);
+  filter: drop-shadow(0 1px 2px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)));
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.slider-twist:has(.slider-twist__input:active) .slider-twist__collar { transform: scale(1.15, 1.1); }
+.slider-twist__ring { fill: none; stroke: transparent; stroke-width: 2; }
+.slider-twist:has(.slider-twist__input:focus-visible) .slider-twist__ring { stroke: light-dark(#50535b, #c6c8cd); }
+.slider-twist__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-twist__input::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 56px; }
+.slider-twist__input::-moz-range-thumb { width: 16px; height: 56px; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .slider-twist__collar { transition: none; }
+}

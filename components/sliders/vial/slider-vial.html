@@ -1,0 +1,27 @@
+<div class="slider-vial">
+  <svg class="slider-vial__svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="slider-vial-liquid" x1="0" y1="0" x2="0" y2="1">
+        <stop class="slider-vial__top" offset="0"></stop>
+        <stop class="slider-vial__bottom" offset="1"></stop>
+      </linearGradient>
+    </defs>
+    <rect class="slider-vial__tube" x="0.5" y="4" width="239" height="24" rx="12" fill="url(#slider-vial-liquid)"></rect>
+    <line class="slider-vial__tick" x1="21" x2="21" y1="12" y2="20"></line>
+    <line class="slider-vial__tick" x1="70.5" x2="70.5" y1="12" y2="20"></line>
+    <line class="slider-vial__tick" x1="169.5" x2="169.5" y1="12" y2="20"></line>
+    <line class="slider-vial__tick" x1="219" x2="219" y1="12" y2="20"></line>
+    <ellipse class="slider-vial__bubble" cx="84.36" cy="16" rx="17" ry="8.5"></ellipse>
+    <ellipse class="slider-vial__shine" cx="82.32" cy="11.75" rx="9.35" ry="1.4"></ellipse>
+    <line class="slider-vial__mark" x1="100" x2="100" y1="4" y2="28"></line>
+    <line class="slider-vial__mark" x1="140" x2="140" y1="4" y2="28"></line>
+    <line class="slider-vial__glint" x1="14" x2="226" y1="8" y2="8"></line>
+    <rect class="slider-vial__ring" x="62.36" y="1" width="44" height="30" rx="15"></rect>
+  </svg>
+  <div class="slider-vial__scale" aria-hidden="true">
+    <span>L</span>
+    <span class="slider-vial__value">L 18</span>
+    <span>R</span>
+  </div>
+  <input class="slider-vial__input" type="range" min="-50" max="50" aria-label="Balance" aria-valuetext="18 left" value="-18"/>
+</div>

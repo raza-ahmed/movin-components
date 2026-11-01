@@ -1,0 +1,32 @@
+.card-wifi { box-sizing: border-box; width: 240px; padding: 12px; border-radius: 16px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+.card-wifi__head { display: flex; align-items: center; justify-content: space-between; margin: 0 4px 8px; font-size: 13px; font-weight: 600; color: light-dark(#373a40, #f1f2f3); }
+.card-wifi__head span { font-size: 11px; font-weight: 500; color: light-dark(#5f626a, #a7abb2); }
+.card-wifi__list { position: relative; height: 152px; margin: 0; padding: 0; list-style: none; }
+.card-wifi__item { position: absolute; left: 0; right: 0; top: 0; transition: transform 0.5s cubic-bezier(0.3, 1.25, 0.5, 1); }
+.card-wifi__row { display: flex; align-items: center; gap: 10px; box-sizing: border-box; width: 100%; height: 34px; padding: 0 8px; border: 0; border-radius: 9px; background: none; color: light-dark(#42454c, #e5e6e9); font: inherit; font-size: 12px; text-align: left; cursor: pointer; transition: background-color 0.2s; }
+.card-wifi__row:hover { background: light-dark(#ebedf0, #232529); }
+.card-wifi__row:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: -1px; }
+.card-wifi__item--on .card-wifi__row { background: light-dark(#ebedf0, #232529); color: light-dark(#373a40, #f1f2f3); font-weight: 600; cursor: default; }
+.card-wifi__signal { flex: none; width: 18px; height: 14px; }
+.card-wifi__arc { fill: none; stroke: light-dark(#cbced3, #393c41); stroke-width: 2; stroke-linecap: round; }
+.card-wifi__arc--lit { stroke: light-dark(#373a40, #f1f2f3); }
+.card-wifi__dot { fill: light-dark(#373a40, #f1f2f3); }
+/* While it connects the arcs light in a wave from the dot outwards. */
+.card-wifi__item--busy .card-wifi__arc { stroke: light-dark(#373a40, #f1f2f3); animation: card-wifi-wave 0.9s ease-in-out infinite; }
+.card-wifi__item--busy .card-wifi__arc:nth-of-type(2) { animation-delay: 0.15s; }
+.card-wifi__item--busy .card-wifi__arc:nth-of-type(3) { animation-delay: 0.3s; }
+@keyframes card-wifi-wave {
+  0%, 100% { opacity: 0.2; }
+  40% { opacity: 1; }
+}
+.card-wifi__status { margin-left: auto; font-size: 10.5px; font-weight: 500; color: light-dark(#5f626a, #a7abb2); }
+.card-wifi__status svg { display: block; width: 14px; height: 14px; color: light-dark(#373a40, #f1f2f3); }
+.card-wifi__lock { width: 11px; height: 11px; color: light-dark(#6d7179, #7d8087); }
+.card-wifi__tick path { stroke-dasharray: 1; animation: card-wifi-tick 0.35s ease-out backwards; }
+@keyframes card-wifi-tick {
+  from { stroke-dashoffset: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-wifi__item { transition: none; }
+  .card-wifi__item--busy .card-wifi__arc, .card-wifi__tick path { animation: none; }
+}

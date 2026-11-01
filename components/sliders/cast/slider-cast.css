@@ -1,0 +1,16 @@
+.slider-cast { position: relative; width: 240px; height: 76px; --slider-cast-shadow: light-dark(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)); }
+.slider-cast__svg { position: absolute; left: 0; top: 0; width: 240px; height: 56px; overflow: visible; }
+.slider-cast__ground { fill: light-dark(#ebedf0, #232529); }
+.slider-cast__lit { fill: light-dark(#cbced3, #393c41); }
+.slider-cast__shadow { stroke: var(--slider-cast-shadow); stroke-width: 2.4; stroke-linecap: round; }
+.slider-cast__tick { stroke: light-dark(#50535b, #c6c8cd); stroke-width: 1.6; stroke-linecap: round; }
+.slider-cast__post { stroke: light-dark(#5f626a, #a7abb2); stroke-width: 2; stroke-linecap: round; }
+.slider-cast__bulb { fill: light-dark(#373a40, #f1f2f3); }
+.slider-cast__glow { stop-color: light-dark(#373a40, #f1f2f3); }
+.slider-cast__ring { fill: none; stroke: transparent; stroke-width: 2; }
+.slider-cast:has(.slider-cast__input:focus-visible) .slider-cast__ring { stroke: light-dark(#50535b, #c6c8cd); }
+.slider-cast__value { position: absolute; left: 0; right: 0; top: 58px; display: flex; justify-content: space-between; margin: 0; font-size: 12px; color: light-dark(#5f626a, #a7abb2); }
+.slider-cast__value b { color: light-dark(#373a40, #f1f2f3); font-weight: 500; font-variant-numeric: tabular-nums; }
+.slider-cast__input { position: absolute; left: 0; top: 0; width: 100%; height: 56px; margin: 0; opacity: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: none; }
+.slider-cast__input::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 56px; }
+.slider-cast__input::-moz-range-thumb { width: 16px; height: 56px; border: 0; }

@@ -1,0 +1,21 @@
+.card-clock { box-sizing: border-box; width: 240px; padding: 14px; border-radius: 16px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+.card-clock__top { display: flex; align-items: center; gap: 14px; }
+.card-clock__face { flex: none; width: 112px; height: 112px; }
+.card-clock__dial { fill: light-dark(#ebedf0, #232529); }
+.card-clock__tick { stroke: light-dark(#6d7179, #7d8087); stroke-width: 1.5; stroke-linecap: round; }
+.card-clock__tick--hour { stroke: light-dark(#50535b, #c6c8cd); stroke-width: 2.5; }
+.card-clock__hand { stroke-linecap: round; transform-box: view-box; transform-origin: 56px 56px; }
+.card-clock__hand--h { stroke: light-dark(#373a40, #f1f2f3); stroke-width: 4; transition: transform 0.9s cubic-bezier(0.3, 1.35, 0.5, 1); }
+.card-clock__hand--m { stroke: light-dark(#373a40, #f1f2f3); stroke-width: 2.5; transition: transform 0.9s cubic-bezier(0.3, 1.35, 0.5, 1) 0.05s; }
+.card-clock__hand--s { stroke: light-dark(#5f626a, #a7abb2); stroke-width: 1.2; transition: transform 0.25s cubic-bezier(0.3, 2, 0.5, 1); }
+.card-clock__pin { fill: light-dark(#373a40, #f1f2f3); }
+.card-clock__cities { display: grid; gap: 4px; flex: 1; }
+.card-clock__city { height: 28px; padding: 0 10px; border: 0; border-radius: 8px; background: none; color: light-dark(#5f626a, #a7abb2); font: inherit; font-size: 12px; text-align: left; cursor: pointer; transition: background-color 0.2s, color 0.2s; }
+.card-clock__city[aria-pressed='true'] { background: light-dark(#ebedf0, #232529); color: light-dark(#373a40, #f1f2f3); font-weight: 600; }
+.card-clock__city:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 1px; }
+.card-clock__read { display: flex; align-items: baseline; gap: 8px; margin: 10px 0 0; }
+.card-clock__read b { font-size: 22px; font-weight: 700; color: light-dark(#373a40, #f1f2f3); font-variant-numeric: tabular-nums; }
+.card-clock__read span { font-size: 11px; color: light-dark(#5f626a, #a7abb2); }
+@media (prefers-reduced-motion: reduce) {
+  .card-clock__hand--h, .card-clock__hand--m, .card-clock__hand--s { transition: none; }
+}
