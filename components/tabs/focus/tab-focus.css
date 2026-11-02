@@ -1,0 +1,9 @@
+.tabs-focus { width: 240px; }
+.tabs-focus__list { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); }
+.tabs-focus__tab { border: 0; padding: 6px 0 10px; background: none; font: inherit; font-size: 12.5px; font-weight: 600; color: light-dark(#50535b, #c6c8cd); cursor: pointer; }
+.tabs-focus__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+.tabs-focus__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: -2px; border-radius: 6px; }
+.tabs-focus__label { display: inline-block; }
+/* A focus mark rides with the plane of focus, like the point a lens is set to. */
+.tabs-focus__mark { position: absolute; left: 0; bottom: 2px; width: 18px; height: 6px; margin-left: -9px; border: 1.5px solid light-dark(#373a40, #f1f2f3); border-top: 0; border-radius: 0 0 3px 3px; }
+.tabs-focus__panel { padding: 10px 0 0; min-height: calc(3.1em + 10px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }

@@ -1,0 +1,9 @@
+.tabs-lasso { position: relative; width: 240px; }
+.tabs-lasso__list { display: grid; grid-template-columns: repeat(3, 1fr); height: 44px; }
+.tabs-lasso__tab { border: 0; padding: 0; background: none; font: inherit; font-size: 13px; font-weight: 500; color: light-dark(#5f626a, #a7abb2); cursor: pointer; transition: color 0.3s; }
+.tabs-lasso__tab:hover, .tabs-lasso__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+.tabs-lasso__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: -4px; border-radius: 8px; }
+.tabs-lasso__rope { position: absolute; left: 0; top: 0; width: 240px; height: 44px; overflow: visible; pointer-events: none; }
+.tabs-lasso__rope path, .tabs-lasso__rope ellipse { fill: none; stroke: light-dark(#50535b, #c6c8cd); stroke-width: 2; stroke-linecap: round; }
+.tabs-lasso__knot { fill: light-dark(#50535b, #c6c8cd); }
+.tabs-lasso__panel { padding: 10px 0 0; min-height: calc(3.1em + 10px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }

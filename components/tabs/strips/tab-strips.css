@@ -1,0 +1,46 @@
+.tabs-strips { position: relative; width: 240px; height: 150px; }
+.tabs-strips__tab {
+  position: absolute;
+  top: 0;
+  height: 150px;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: light-dark(#ebedf0, #232529);
+  font: inherit;
+  cursor: pointer;
+  transition: left 0.55s cubic-bezier(0.3, 1.1, 0.4, 1), width 0.55s cubic-bezier(0.3, 1.1, 0.4, 1);
+}
+.tabs-strips__tab:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+/* The scene is drawn at the open size and centred, so a closed strip shows a slice of its middle. */
+.tabs-strips__scene { position: absolute; left: 50%; top: 0; width: 138px; height: 150px; margin-left: -69px; }
+.tabs-strips__tab::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, color-mix(in srgb, light-dark(#fbfcfd, #121417) 90%, transparent), color-mix(in srgb, light-dark(#fbfcfd, #121417) 72%, transparent) 45%, transparent 78%); }
+.tabs-strips__sky { fill: light-dark(#ebedf0, #232529); }
+.tabs-strips__a { fill: light-dark(#cbced3, #393c41); }
+.tabs-strips__b { fill: light-dark(#6d7179, #7d8087); }
+.tabs-strips__c { fill: light-dark(#50535b, #c6c8cd); }
+/* Closed, the label stands on end up the strip; open, it lies flat along the bottom. */
+.tabs-strips__label {
+  position: absolute;
+  left: 9px;
+  bottom: 10px;
+  z-index: 1;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  color: light-dark(#373a40, #f1f2f3);
+  white-space: nowrap;
+  transform-origin: 0 100%;
+  transform: translate(14px, 0) rotate(-90deg);
+  transition: transform 0.5s cubic-bezier(0.3, 1.2, 0.5, 1);
+}
+.tabs-strips__tab[aria-selected='true'] .tabs-strips__label { transform: none; font-size: 14px; }
+.tabs-strips__panel { position: absolute; bottom: 32px; z-index: 1; width: 120px; margin: 0; font-size: 11.5px; line-height: 1.45; color: light-dark(#373a40, #f1f2f3); pointer-events: none; animation: tabs-strips-in 0.4s ease-out 0.3s backwards; }
+@keyframes tabs-strips-in {
+  from { opacity: 0; transform: translateY(6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tabs-strips__tab, .tabs-strips__label { transition: none; }
+  .tabs-strips__panel { animation: none; }
+}

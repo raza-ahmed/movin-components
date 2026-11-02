@@ -1,0 +1,18 @@
+.tabs-chalk { width: 240px; }
+.tabs-chalk__board { position: relative; padding: 12px 0 6px; border-radius: 12px; background: radial-gradient(ellipse at 30% 20%, light-dark(#dbdde1, #2e3035), light-dark(#ebedf0, #232529) 70%); }
+.tabs-chalk__list { display: grid; grid-template-columns: repeat(3, 1fr); }
+.tabs-chalk__tab { display: grid; justify-items: center; gap: 2px; padding: 0; border: 0; background: none; font: 15px 'Chalkboard SE', 'Bradley Hand', 'Segoe Print', 'Comic Sans MS', cursive; color: light-dark(#50535b, #c6c8cd); cursor: pointer; transition: color 0.3s; }
+.tabs-chalk__tab:hover, .tabs-chalk__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+.tabs-chalk__tab:focus-visible { outline: 2px dashed light-dark(#50535b, #c6c8cd); outline-offset: 2px; border-radius: 6px; }
+.tabs-chalk__mark { width: 64px; height: 10px; overflow: visible; }
+.tabs-chalk__mark path { fill: none; stroke: light-dark(#373a40, #f1f2f3); stroke-width: 2.6; stroke-linecap: round; }
+/* The chalk line draws in once the eraser is clear; leaving, it is rubbed out to a smudge. */
+.tabs-chalk__ink { stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; transition: opacity 0.35s 0.12s, stroke-dashoffset 0s 0.6s; }
+.tabs-chalk__tab[aria-selected='true'] .tabs-chalk__ink { stroke-dashoffset: 0; opacity: 0.92; transition: stroke-dashoffset 0.45s ease-out 0.38s, opacity 0s 0.38s; }
+.tabs-chalk__smudge { opacity: 0; filter: blur(1.4px); stroke-width: 6 !important; transition: opacity 0.4s 0.15s; }
+.tabs-chalk__tab--used:not([aria-selected='true']) .tabs-chalk__smudge { opacity: 0.13; }
+.tabs-chalk__eraser { position: absolute; left: 0; top: 0; width: 26px; height: 12px; border-radius: 3px; background: linear-gradient(light-dark(#6d7179, #7d8087) 0 45%, light-dark(#50535b, #c6c8cd) 45%); opacity: 0; pointer-events: none; }
+.tabs-chalk__panel { padding: 12px 0 0; min-height: calc(3.1em + 12px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }
+@media (prefers-reduced-motion: reduce) {
+  .tabs-chalk__ink, .tabs-chalk__tab[aria-selected='true'] .tabs-chalk__ink, .tabs-chalk__smudge { transition: none; }
+}

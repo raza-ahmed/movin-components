@@ -12,6 +12,7 @@
 .tabs-scroll__rod::before { left: -4px; }
 .tabs-scroll__rod::after { right: -4px; }
 .tabs-scroll__panel { display: grid; justify-items: center; gap: 6px; height: 96px; padding: 14px 16px; background: linear-gradient(90deg, light-dark(#ebedf0, #232529), light-dark(#f3f4f7, #1a1c1f) 15%, light-dark(#f3f4f7, #1a1c1f) 85%, light-dark(#ebedf0, #232529)); color: light-dark(#50535b, #c6c8cd); font-family: Georgia, 'Times New Roman', serif; font-size: 12.5px; font-style: italic; line-height: 1.45; text-align: center; }
+.tabs-scroll__panel[hidden] { display: none; }
 .tabs-scroll__panel b { color: light-dark(#373a40, #f1f2f3); font-size: 15px; font-style: normal; font-weight: 400; letter-spacing: 0.04em; }
 .tabs-scroll__roll { position: absolute; left: -8px; right: -8px; bottom: -5px; height: 10px; border-radius: 5px; background: linear-gradient(light-dark(#5f626a, #a7abb2), light-dark(#cbced3, #393c41)); box-shadow: 0 3px 6px -2px light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5)); }
 .tabs-scroll[data-armed] .tabs-scroll__panel { animation: tabs-scroll-unroll 0.7s cubic-bezier(0.4, 0, 0.3, 1) both; }

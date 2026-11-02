@@ -1,0 +1,54 @@
+.radio-ringer { display: grid; justify-items: center; gap: 14px; width: 260px; }
+.radio-ringer__view { display: block; width: 200px; height: 112px; overflow: visible; }
+.radio-ringer__case { fill: light-dark(#dbdde1, #2e3035); }
+.radio-ringer__screen { fill: light-dark(#f3f4f7, #1a1c1f); transition: fill 0.4s; }
+.radio-ringer__bell { fill: light-dark(#42454c, #e5e6e9); transform-box: view-box; transform-origin: 100px 40px; transition: fill 0.4s; }
+.radio-ringer__slash { fill: none; stroke: light-dark(#42454c, #e5e6e9); stroke-width: 2.6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 0.3s; }
+.radio-ringer__lines path, .radio-ringer__waves path { fill: none; stroke: light-dark(#50535b, #c6c8cd); stroke-width: 2; stroke-linecap: round; }
+.radio-ringer__phone { transform-box: view-box; transform-origin: 100px 56px; }
+.radio-ringer__lines, .radio-ringer__waves path { opacity: 0; }
+.radio-ringer__waves path { transform-box: view-box; transform-origin: 100px 50px; }
+/* Silent: a slash draws across the bell and the screen dims. */
+.radio-ringer:has(.radio-ringer__opt:nth-child(1) input:checked) .radio-ringer__slash { stroke-dashoffset: 0; transition-duration: 0.45s; }
+.radio-ringer:has(.radio-ringer__opt:nth-child(1) input:checked) .radio-ringer__bell { fill: light-dark(#6d7179, #7d8087); }
+.radio-ringer:has(.radio-ringer__opt:nth-child(1) input:checked) .radio-ringer__screen { fill: light-dark(#fbfcfd, #121417); }
+/* Vibrate: the phone shudders in short bursts with motion lines either side. */
+.radio-ringer:has(.radio-ringer__opt:nth-child(2) input:checked) .radio-ringer__phone { animation: radio-ringer-buzz 1.6s infinite; }
+.radio-ringer:has(.radio-ringer__opt:nth-child(2) input:checked) .radio-ringer__lines { animation: radio-ringer-lines 1.6s infinite; }
+@keyframes radio-ringer-buzz {
+  3%, 9%, 15%, 21% { transform: translateX(-2px) rotate(-2deg); }
+  6%, 12%, 18%, 24% { transform: translateX(2px) rotate(2deg); }
+  27%, 100% { transform: none; }
+}
+@keyframes radio-ringer-lines {
+  2%, 24% { opacity: 1; }
+  30%, 100% { opacity: 0; }
+}
+/* Ring: the bell swings and sound waves roll out from the phone. */
+.radio-ringer:has(.radio-ringer__opt:nth-child(3) input:checked) .radio-ringer__bell { animation: radio-ringer-swing 1.2s ease-in-out infinite; }
+@keyframes radio-ringer-swing {
+  10% { transform: rotate(16deg); }
+  20% { transform: rotate(-14deg); }
+  30% { transform: rotate(10deg); }
+  40% { transform: rotate(-6deg); }
+  50%, 100% { transform: none; }
+}
+.radio-ringer:has(.radio-ringer__opt:nth-child(3) input:checked) .radio-ringer__waves path { animation: radio-ringer-wave 1.2s ease-out infinite; }
+.radio-ringer:has(.radio-ringer__opt:nth-child(3) input:checked) .radio-ringer__waves path:nth-child(even) { animation-delay: 0.3s; }
+@keyframes radio-ringer-wave {
+  from { opacity: 0.9; transform: scale(0.8); }
+  to { opacity: 0; transform: scale(1.25); }
+}
+.radio-ringer__read { display: grid; color: light-dark(#50535b, #c6c8cd); font-size: 12px; }
+.radio-ringer__read > * { grid-area: 1 / 1; text-align: center; opacity: 0; transform: translateY(4px); transition: opacity 0.25s, transform 0.3s; }
+.radio-ringer:has(.radio-ringer__opt:nth-child(1) input:checked) .radio-ringer__read > :nth-child(1), .radio-ringer:has(.radio-ringer__opt:nth-child(2) input:checked) .radio-ringer__read > :nth-child(2), .radio-ringer:has(.radio-ringer__opt:nth-child(3) input:checked) .radio-ringer__read > :nth-child(3) { opacity: 1; transform: none; }
+.radio-ringer__opts { display: flex; gap: 3px; padding: 4px; border-radius: 12px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+.radio-ringer__opt { position: relative; flex: 1; padding: 7px 12px; border-radius: 8px; color: light-dark(#5f626a, #a7abb2); font-size: 12.5px; font-weight: 500; text-align: center; white-space: nowrap; cursor: pointer; transition: background-color 0.25s, color 0.25s; }
+.radio-ringer__opt:hover { color: light-dark(#42454c, #e5e6e9); }
+.radio-ringer__opt:has(input:checked) { background: light-dark(#373a40, #f1f2f3); color: light-dark(#fbfcfd, #121417); }
+.radio-ringer__opt:has(input:focus-visible) { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+.radio-ringer__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) {
+  .radio-ringer * { animation: none !important; transition: none !important; }
+  .radio-ringer:has(.radio-ringer__opt:nth-child(2) input:checked) .radio-ringer__lines, .radio-ringer:has(.radio-ringer__opt:nth-child(3) input:checked) .radio-ringer__waves path { opacity: 1; }
+}

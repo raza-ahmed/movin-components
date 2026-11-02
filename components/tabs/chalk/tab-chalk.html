@@ -1,0 +1,37 @@
+<div class="tabs-chalk">
+  <div class="tabs-chalk__board">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <filter id="tabs-chalk-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"></feTurbulence>
+        <feDisplacementMap in="SourceGraphic" scale="2.6"></feDisplacementMap>
+      </filter>
+    </svg>
+    <div class="tabs-chalk__list" role="tablist" aria-label="Lessons">
+      <button class="tabs-chalk__tab tabs-chalk__tab--used" type="button" role="tab" id="tabs-chalk-tab-0" aria-selected="true" aria-controls="tabs-chalk-panel-0" tabindex="0">
+        Maths
+        <svg class="tabs-chalk__mark" viewBox="0 0 64 10" style="filter:url(#tabs-chalk-filter)" aria-hidden="true">
+          <path class="tabs-chalk__smudge" d="M3 6Q14 3 26 5.5T50 5T61 4"></path>
+          <path class="tabs-chalk__ink" d="M3 6Q14 3 26 5.5T50 5T61 4" pathLength="1"></path>
+        </svg>
+      </button>
+      <button class="tabs-chalk__tab" type="button" role="tab" id="tabs-chalk-tab-1" aria-selected="false" aria-controls="tabs-chalk-panel-1" tabindex="-1">
+        Science
+        <svg class="tabs-chalk__mark" viewBox="0 0 64 10" style="filter:url(#tabs-chalk-filter)" aria-hidden="true">
+          <path class="tabs-chalk__smudge" d="M3 6Q14 3 26 5.5T50 5T61 4"></path>
+          <path class="tabs-chalk__ink" d="M3 6Q14 3 26 5.5T50 5T61 4" pathLength="1"></path>
+        </svg>
+      </button>
+      <button class="tabs-chalk__tab" type="button" role="tab" id="tabs-chalk-tab-2" aria-selected="false" aria-controls="tabs-chalk-panel-2" tabindex="-1">
+        History
+        <svg class="tabs-chalk__mark" viewBox="0 0 64 10" style="filter:url(#tabs-chalk-filter)" aria-hidden="true">
+          <path class="tabs-chalk__smudge" d="M3 6Q14 3 26 5.5T50 5T61 4"></path>
+          <path class="tabs-chalk__ink" d="M3 6Q14 3 26 5.5T50 5T61 4" pathLength="1"></path>
+        </svg>
+      </button>
+    </div>
+    <span class="tabs-chalk__eraser" aria-hidden="true"></span>
+  </div>
+  <div class="tabs-chalk__panel" role="tabpanel" id="tabs-chalk-panel-0" aria-labelledby="tabs-chalk-tab-0">Fractions today: halves, quarters and why a third is awkward.</div>
+  <div class="tabs-chalk__panel" role="tabpanel" id="tabs-chalk-panel-1" aria-labelledby="tabs-chalk-tab-1" hidden="">Why ice floats, with a jug of water and a lot of patience.</div>
+  <div class="tabs-chalk__panel" role="tabpanel" id="tabs-chalk-panel-2" aria-labelledby="tabs-chalk-tab-2" hidden="">The canal age, and the people who dug them by hand.</div>
+</div>

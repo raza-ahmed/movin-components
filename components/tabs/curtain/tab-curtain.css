@@ -10,6 +10,7 @@
 .tabs-curtain__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: 2px; }
 .tabs-curtain__stage { position: relative; display: grid; height: 124px; overflow: hidden; border-radius: 10px; background: radial-gradient(ellipse at 50% 0%, light-dark(#dbdde1, #2e3035), light-dark(#f3f4f7, #1a1c1f) 70%); box-shadow: inset 0 -18px 0 light-dark(#ebedf0, #232529); }
 .tabs-curtain__panel { grid-area: 1 / 1; display: grid; align-content: center; justify-items: center; padding: 0 44px 10px; text-align: center; }
+.tabs-curtain__panel[hidden] { display: none; }
 .tabs-curtain__panel[data-prev] { animation: tabs-curtain-hide 1s forwards; }
 .tabs-curtain[data-armed] .tabs-curtain__panel[data-on] { animation: tabs-curtain-show 1s; }
 .tabs-curtain__title { display: block; margin-bottom: 4px; color: light-dark(#373a40, #f1f2f3); font-family: Georgia, 'Times New Roman', serif; font-size: 17px; }

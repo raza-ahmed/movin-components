@@ -1,0 +1,8 @@
+.tabs-part { width: 240px; }
+.tabs-part__list { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); padding: 4px 0; border-radius: 12px; background: light-dark(#ebedf0, #232529); }
+.tabs-part__pill { position: absolute; top: 4px; left: -22px; width: 44px; height: 28px; border-radius: 9px; background: light-dark(#373a40, #f1f2f3); }
+.tabs-part__tab { position: relative; height: 28px; padding: 0; border: 0; background: none; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; }
+.tabs-part__tab:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: -2px; border-radius: 9px; }
+.tabs-part__label { display: inline-block; color: light-dark(#5f626a, #a7abb2); }
+.tabs-part__tab[aria-selected='true'] .tabs-part__label { color: light-dark(#fbfcfd, #121417); }
+.tabs-part__panel { padding: 12px 2px 0; min-height: calc(3.1em + 12px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }

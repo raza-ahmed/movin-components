@@ -1,0 +1,70 @@
+"use client";
+
+import { useId, useState } from 'react';
+
+const OPTIONS = [
+  { value: 'solid', label: 'Solid', code: 'none' },
+  { value: 'dashed', label: 'Dashed', code: '14 9' },
+  { value: 'dotted', label: 'Dotted', code: '0 9' },
+];
+const at = (n: number) => `.radio-stroke:has(.radio-stroke__opt:nth-child(${n}) input:checked)`;
+
+const css = `
+  .radio-stroke { display: grid; justify-items: center; gap: 14px; width: 260px; }
+  .radio-stroke__stage { display: block; width: 220px; height: 70px; overflow: visible; }
+  /* Every style is a two-value dash pattern, so the browser can tween between them: a 0 gap is solid,
+     a near-0 dash with round caps is a row of dots. */
+  .radio-stroke__line { fill: none; stroke: light-dark(#373a40, #f1f2f3); stroke-width: 4.5; stroke-linecap: round; stroke-dasharray: 14 0; transition: stroke-dasharray 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+  ${at(2)} .radio-stroke__line { stroke-dasharray: 14 9; }
+  ${at(3)} .radio-stroke__line { stroke-dasharray: 0.01 9; }
+  /* After a change the pattern runs along the line once, so you see it move into place. */
+  .radio-stroke[data-flip='a'] .radio-stroke__line { animation: radio-stroke-march-a 0.7s cubic-bezier(0.3, 0, 0.2, 1); }
+  .radio-stroke[data-flip='b'] .radio-stroke__line { animation: radio-stroke-march-b 0.7s cubic-bezier(0.3, 0, 0.2, 1); }
+  @keyframes radio-stroke-march-a { from { stroke-dashoffset: 46; } }
+  @keyframes radio-stroke-march-b { from { stroke-dashoffset: 46; } }
+  .radio-stroke__code { display: grid; font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; color: light-dark(#50535b, #c6c8cd); }
+  .radio-stroke__code > * { grid-area: 1 / 1; text-align: center; opacity: 0; transform: translateY(4px); transition: opacity 0.25s, transform 0.3s; }
+  .radio-stroke__code b { font-weight: 600; color: light-dark(#373a40, #f1f2f3); }
+  ${at(1)} .radio-stroke__code > :nth-child(1), ${at(2)} .radio-stroke__code > :nth-child(2), ${at(3)} .radio-stroke__code > :nth-child(3) { opacity: 1; transform: none; }
+  .radio-stroke__opts { display: flex; gap: 3px; padding: 4px; border-radius: 12px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+  .radio-stroke__opt { position: relative; flex: 1; padding: 7px 12px; border-radius: 8px; color: light-dark(#5f626a, #a7abb2); font-size: 12.5px; font-weight: 500; text-align: center; white-space: nowrap; cursor: pointer; transition: background-color 0.25s, color 0.25s; }
+  .radio-stroke__opt:hover { color: light-dark(#42454c, #e5e6e9); }
+  .radio-stroke__opt:has(input:checked) { background: light-dark(#373a40, #f1f2f3); color: light-dark(#fbfcfd, #121417); }
+  .radio-stroke__opt:has(input:focus-visible) { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+  .radio-stroke__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .radio-stroke * { animation: none !important; transition: none !important; }
+  }
+`;
+
+export function StrokeRadio() {
+  const name = useId();
+  const [flip, setFlip] = useState(0);
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="radio-stroke" data-flip={flip ? (flip % 2 ? 'a' : 'b') : undefined}>
+        <svg className="radio-stroke__stage" viewBox="0 0 220 70" aria-hidden="true">
+          <path className="radio-stroke__line" d="M12 35C42 8 74 8 110 35S178 62 208 35" />
+        </svg>
+        <span className="radio-stroke__code" aria-hidden="true">
+          {OPTIONS.map((o) => (
+            <span key={o.value}>
+              stroke-dasharray: <b>{o.code}</b>
+            </span>
+          ))}
+        </span>
+        <div className="radio-stroke__opts" role="radiogroup" aria-label="Line style" onChange={() => setFlip((f) => f + 1)}>
+          {OPTIONS.map((o, i) => (
+            <label key={o.value} className="radio-stroke__opt">
+              <input className="radio-stroke__input" type="radio" name={name} value={o.value} defaultChecked={i === 1} />
+              {o.label}
+            </label>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}

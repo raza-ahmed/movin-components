@@ -1,0 +1,26 @@
+.tabs-tiles { position: relative; width: 240px; height: 160px; }
+.tabs-tiles__tile {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: light-dark(#ebedf0, #232529);
+  color: light-dark(#50535b, #c6c8cd);
+  font: inherit;
+  cursor: pointer;
+  transition: left 0.5s cubic-bezier(0.3, 1.15, 0.4, 1), top 0.5s cubic-bezier(0.3, 1.15, 0.4, 1), width 0.5s cubic-bezier(0.3, 1.15, 0.4, 1), height 0.5s cubic-bezier(0.3, 1.15, 0.4, 1), background-color 0.3s, color 0.3s;
+}
+.tabs-tiles__tile[aria-selected='true'] { z-index: 1; background: light-dark(#dbdde1, #2e3035); color: light-dark(#373a40, #f1f2f3); }
+.tabs-tiles__tile:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+.tabs-tiles__icon { position: absolute; left: calc(50% - 9px); top: 8px; width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: left 0.5s cubic-bezier(0.3, 1.15, 0.4, 1), top 0.5s cubic-bezier(0.3, 1.15, 0.4, 1), width 0.5s cubic-bezier(0.3, 1.15, 0.4, 1), height 0.5s cubic-bezier(0.3, 1.15, 0.4, 1); }
+.tabs-tiles__tile[aria-selected='true'] .tabs-tiles__icon { left: calc(100% - 42px); top: 14px; width: 28px; height: 28px; }
+.tabs-tiles__label { position: absolute; left: 50%; top: 29px; font-size: 10.5px; font-weight: 600; white-space: nowrap; transform: translateX(-50%); transition: left 0.5s cubic-bezier(0.3, 1.15, 0.4, 1), top 0.5s cubic-bezier(0.3, 1.15, 0.4, 1), transform 0.5s cubic-bezier(0.3, 1.15, 0.4, 1), font-size 0.5s cubic-bezier(0.3, 1.15, 0.4, 1); }
+.tabs-tiles__tile[aria-selected='true'] .tabs-tiles__label { left: 14px; top: 14px; font-size: 16px; transform: none; }
+.tabs-tiles__panel { position: absolute; left: 14px; right: 14px; top: 46px; z-index: 2; margin: 0; font-size: 12px; line-height: 1.5; color: light-dark(#42454c, #e5e6e9); pointer-events: none; animation: tabs-tiles-in 0.35s ease-out 0.35s backwards; }
+@keyframes tabs-tiles-in {
+  from { opacity: 0; transform: translateY(5px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tabs-tiles__tile, .tabs-tiles__icon, .tabs-tiles__label { transition: none; }
+  .tabs-tiles__panel { animation: none; }
+}

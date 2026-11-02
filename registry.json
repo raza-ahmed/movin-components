@@ -6973,6 +6973,111 @@
       ]
     },
     {
+      "name": "radio-egg",
+      "type": "registry:component",
+      "title": "Egg radio button",
+      "description": "A boiled egg picker: soft swells a glossy yolk that runs over the white, jammy sets it round the edge, hard shrinks it pale and crumbly.",
+      "categories": [
+        "radios"
+      ],
+      "files": [
+        {
+          "path": "components/radios/egg/radio-egg.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "radio-elevation",
+      "type": "registry:component",
+      "title": "Elevation radio button",
+      "description": "An elevation picker: the card lifts on a spring while its shadow drops further, spreads and softens, from flat on the page to floating.",
+      "categories": [
+        "radios"
+      ],
+      "files": [
+        {
+          "path": "components/radios/elevation/radio-elevation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "radio-firmness",
+      "type": "registry:component",
+      "title": "Firmness radio button",
+      "description": "A mattress firmness picker: each pick drops a ball onto the bed, which sinks deep and settles slowly on soft, and barely gives and bounces on firm.",
+      "categories": [
+        "radios"
+      ],
+      "files": [
+        {
+          "path": "components/radios/firmness/radio-firmness.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "radio-fps",
+      "type": "registry:component",
+      "title": "FPS radio button",
+      "description": "A frame rate picker: a bouncing ball is only drawn on frame boundaries, with its last few frames left faintly behind, so 12, 24 and 60 fps look steppy, filmic or fluid.",
+      "categories": [
+        "radios"
+      ],
+      "files": [
+        {
+          "path": "components/radios/fps/radio-fps.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "radio-ringer",
+      "type": "registry:component",
+      "title": "Ringer radio button",
+      "description": "A ringer mode picker: silent draws a slash across the bell, vibrate shudders the phone in short bursts, ring swings the bell with sound waves rolling out.",
+      "categories": [
+        "radios"
+      ],
+      "files": [
+        {
+          "path": "components/radios/ringer/radio-ringer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "radio-stroke",
+      "type": "registry:component",
+      "title": "Stroke radio button",
+      "description": "A line style picker: solid, dashed and dotted are one dash pattern the browser tweens between, and the pattern runs along the line once as it changes.",
+      "categories": [
+        "radios"
+      ],
+      "files": [
+        {
+          "path": "components/radios/stroke/radio-stroke.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "radio-tap",
+      "type": "registry:component",
+      "title": "Tap radio button",
+      "description": "A water flow picker: the handle turns further each step, from a drop that swells, falls and rings the water, to a thin running thread, to a full stream with splashes.",
+      "categories": [
+        "radios"
+      ],
+      "files": [
+        {
+          "path": "components/radios/tap/radio-tap.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "radio-capture",
       "type": "registry:component",
       "title": "Capture radio button",
@@ -9872,6 +9977,381 @@
       "files": [
         {
           "path": "components/sliders/zipper/slider-zipper.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-arc",
+      "type": "registry:component",
+      "title": "Arc tab set",
+      "description": "Power sources as tabs: an electric arc jumps from the old source to the new one, crackling and flickering for a moment before the new node lights.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/arc/tab-arc.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-blocks",
+      "type": "registry:component",
+      "title": "Blocks tab set",
+      "description": "Game world tabs with an underline built of blocks: new blocks fall in and stack, bottom row first, while the old ones crumble and drop away.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/blocks/tab-blocks.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-cassette",
+      "type": "registry:component",
+      "title": "Cassette tab set",
+      "description": "Tracks on a tape: pick one and the reels wind fast forward or back to it, the near-empty reel spinning hardest, the tape packs trading size and the counter running.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/cassette/tab-cassette.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-chalk",
+      "type": "registry:component",
+      "title": "Chalk tab set",
+      "description": "Lessons on a chalkboard: an eraser rubs out the old underline, leaving a faint smudge, and a fresh chalk line scratches in under the new lesson.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/chalk/tab-chalk.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-claw",
+      "type": "registry:component",
+      "title": "Claw tab set",
+      "description": "Arcade tabs in a claw machine: the claw lowers the tab it holds back into its slot, rides the gantry to the one you pick, swinging on its cable, then grips it and lifts it out.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/claw/tab-claw.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-crt",
+      "type": "registry:component",
+      "title": "CRT tab set",
+      "description": "Channels on an old television: the picture squeezes to a bright line and a dot, swaps, then springs back open on the new channel.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/crt/tab-crt.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-doors",
+      "type": "registry:component",
+      "title": "Doors tab set",
+      "description": "Rooms behind doors: the chosen door swings open on its hinge to show the lit room, a beat after the one you left starts to close.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/doors/tab-doors.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-drop",
+      "type": "registry:component",
+      "title": "Drop tab set",
+      "description": "Range tabs over a stats panel: the old panel falls out of the bottom tipping over, and the new one drops in from above and bounces to rest.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/drop/tab-drop.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-film",
+      "type": "registry:component",
+      "title": "Film tab set",
+      "description": "Acts on a strip of film: the strip advances through the gate in steps, a jump and a hold per frame, with the shutter blinking over each pull.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/film/tab-film.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-fit",
+      "type": "registry:component",
+      "title": "Fit tab set",
+      "description": "Settings tabs whose box eases to the height of each panel, the old content blurring out as the new rows fade in one after another.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/fit/tab-fit.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-focus",
+      "type": "registry:component",
+      "title": "Focus tab set",
+      "description": "Topic tabs with depth of field: labels soften with distance from the chosen one, and switching racks focus across the row; pointing at a tab racks to it for a look.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/focus/tab-focus.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-fog",
+      "type": "registry:component",
+      "title": "Fog tab set",
+      "description": "Views through misted window panes: the chosen pane is wiped clear in the direction you moved, and the one you left slowly mists back over.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/fog/tab-fog.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-icons",
+      "type": "registry:component",
+      "title": "Icons tab set",
+      "description": "A bottom bar whose icons act out their meaning when picked: the door opens with a puff from the chimney, the glass scans, the bell rings and the head nods.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/icons/tab-icons.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-lasso",
+      "type": "registry:component",
+      "title": "Lasso tab set",
+      "description": "Meal tabs caught with a rope: the loop loosens, flies over spinning, drops wide round the new label and cinches tight, the rope trailing off to a hand.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/lasso/tab-lasso.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-neon",
+      "type": "registry:component",
+      "title": "Neon tab set",
+      "description": "Neon signs as tabs: the chosen sign stutters on a few times before it holds, the old one fades off, and a letter of the lit sign buzzes now and then.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/neon/tab-neon.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-overview",
+      "type": "registry:component",
+      "title": "Overview tab set",
+      "description": "Library tabs where switching zooms out to show every panel side by side, slides along to the new one and zooms back in on it.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/overview/tab-overview.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-parallax",
+      "type": "registry:component",
+      "title": "Parallax tab set",
+      "description": "Walk tabs over a landscape in layers: switching slides the far hills a little, the near ground a lot and the place name furthest, so the scene has depth.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/parallax/tab-parallax.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-part",
+      "type": "registry:component",
+      "title": "Part tab set",
+      "description": "A segmented range picker whose labels step up out of the way as the pill slides beneath them, more the faster it goes, then settle back.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/part/tab-part.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-patch",
+      "type": "registry:component",
+      "title": "Patch tab set",
+      "description": "Phone lines on a switchboard: the plug lifts out, arcs to the new jack and pushes in, and the cord swings after it on real rope physics until it hangs still.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/patch/tab-patch.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-pin",
+      "type": "registry:component",
+      "title": "Pin tab set",
+      "description": "Notes on a corkboard: the pin pulls out of one note, arcs over growing as it lifts, pushes into the next and that note swings straight while the old one tilts.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/pin/tab-pin.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-preview",
+      "type": "registry:component",
+      "title": "Preview tab set",
+      "description": "Site tabs with a hover card that sketches each page: the card glides and resizes from tab to tab instead of reappearing, then fades when you leave.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/preview/tab-preview.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-strips",
+      "type": "registry:component",
+      "title": "Strips tab set",
+      "description": "Places as tall strips side by side: the chosen strip widens to show its scene and words, its label lying down, while the rest narrow with their labels standing on end.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/strips/tab-strips.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-tape",
+      "type": "registry:component",
+      "title": "Tape tab set",
+      "description": "Collection tags held by washi tape: the tape peels off the old tag from one end and a fresh strip unrolls and presses down onto the new one.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/tape/tab-tape.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-tiles",
+      "type": "registry:component",
+      "title": "Tiles tab set",
+      "description": "App tiles: the chosen tile grows into the big slot with its icon and words, while the one it replaces shrinks down into the row of small tiles.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/tiles/tab-tiles.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-zip",
+      "type": "registry:component",
+      "title": "Zip tab set",
+      "description": "Checkout tabs on a zip: the slider rides to the chosen tab, meshing the teeth behind it and parting them ahead, its pull swinging from the speed.",
+      "categories": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "components/tabs/zip/tab-zip.tsx",
           "type": "registry:component"
         }
       ]

@@ -1,0 +1,29 @@
+<div class="tabs-arc">
+  <div class="tabs-arc__top">
+    <div class="tabs-arc__list" role="tablist" aria-label="Power">
+      <button class="tabs-arc__tab" type="button" role="tab" id="tabs-arc-tab-0" aria-selected="true" aria-controls="tabs-arc-panel-0" tabindex="0">
+        <span class="tabs-arc__node" aria-hidden="true"></span>
+        Grid
+      </button>
+      <button class="tabs-arc__tab" type="button" role="tab" id="tabs-arc-tab-1" aria-selected="false" aria-controls="tabs-arc-panel-1" tabindex="-1">
+        <span class="tabs-arc__node" aria-hidden="true"></span>
+        Solar
+      </button>
+      <button class="tabs-arc__tab" type="button" role="tab" id="tabs-arc-tab-2" aria-selected="false" aria-controls="tabs-arc-panel-2" tabindex="-1">
+        <span class="tabs-arc__node" aria-hidden="true"></span>
+        Wind
+      </button>
+      <button class="tabs-arc__tab" type="button" role="tab" id="tabs-arc-tab-3" aria-selected="false" aria-controls="tabs-arc-panel-3" tabindex="-1">
+        <span class="tabs-arc__node" aria-hidden="true"></span>
+        Hydro
+      </button>
+    </div>
+    <svg class="tabs-arc__bolt" aria-hidden="true">
+      <path></path>
+    </svg>
+  </div>
+  <div class="tabs-arc__panel" role="tabpanel" id="tabs-arc-panel-0" aria-labelledby="tabs-arc-tab-0">Drawing 1.2 kW from the grid, on the off-peak rate until seven.</div>
+  <div class="tabs-arc__panel" role="tabpanel" id="tabs-arc-panel-1" aria-labelledby="tabs-arc-tab-1" hidden="">Panels making 3.4 kW. The battery is full by eleven on days like this.</div>
+  <div class="tabs-arc__panel" role="tabpanel" id="tabs-arc-panel-2" aria-labelledby="tabs-arc-tab-2" hidden="">The turbine is idling: the wind dropped below 3 m/s at noon.</div>
+  <div class="tabs-arc__panel" role="tabpanel" id="tabs-arc-panel-3" aria-labelledby="tabs-arc-tab-3" hidden="">The stream wheel runs day and night, a steady 0.6 kW.</div>
+</div>

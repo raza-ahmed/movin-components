@@ -1,8 +1,8 @@
 # movin.design components
 
-810 animated UI components: buttons, cards, checkboxes, inputs, loaders, radio buttons, sliders, tabs and toggles. Every one comes in two formats:
+842 animated UI components: buttons, cards, checkboxes, inputs, loaders, radio buttons, sliders, tabs and toggles. Every one comes in two formats:
 
-- **React + Tailwind** (TypeScript), installable with the shadcn CLI. 803 have no dependencies; 7 use Framer Motion.
+- **React + Tailwind** (TypeScript), installable with the shadcn CLI. 835 have no dependencies; 7 use Framer Motion.
 - **Plain HTML + CSS** (plus a small script where needed), with no framework and no dependencies, for Vue, Svelte, Angular, Webflow or a plain page.
 
 Live previews, code and an LLM prompt for each: https://movin.design/components/
@@ -513,10 +513,17 @@ Each component folder holds `<name>.html`, `<name>.css` and, when it needs one, 
 | [Text Shimmer loader](components/loaders/text-shimmer/) | `loader-text-shimmer` | None | [Preview](https://movin.design/components/loaders/text-shimmer/) |
 | [Wave Bars loader](components/loaders/wave-bars/) | `loader-wave-bars` | None | [Preview](https://movin.design/components/loaders/wave-bars/) |
 
-### Radio buttons (93)
+### Radio buttons (100)
 
 | Component | Install name | Dependencies | Live |
 | --- | --- | --- | --- |
+| [Egg radio button](components/radios/egg/) | `radio-egg` | None | [Preview](https://movin.design/components/radios/egg/) |
+| [Elevation radio button](components/radios/elevation/) | `radio-elevation` | None | [Preview](https://movin.design/components/radios/elevation/) |
+| [Firmness radio button](components/radios/firmness/) | `radio-firmness` | None | [Preview](https://movin.design/components/radios/firmness/) |
+| [FPS radio button](components/radios/fps/) | `radio-fps` | None | [Preview](https://movin.design/components/radios/fps/) |
+| [Ringer radio button](components/radios/ringer/) | `radio-ringer` | None | [Preview](https://movin.design/components/radios/ringer/) |
+| [Stroke radio button](components/radios/stroke/) | `radio-stroke` | None | [Preview](https://movin.design/components/radios/stroke/) |
+| [Tap radio button](components/radios/tap/) | `radio-tap` | None | [Preview](https://movin.design/components/radios/tap/) |
 | [Capture radio button](components/radios/capture/) | `radio-capture` | None | [Preview](https://movin.design/components/radios/capture/) |
 | [Crop radio button](components/radios/crop/) | `radio-crop` | None | [Preview](https://movin.design/components/radios/crop/) |
 | [EQ radio button](components/radios/eq/) | `radio-eq` | None | [Preview](https://movin.design/components/radios/eq/) |
@@ -716,10 +723,35 @@ Each component folder holds `<name>.html`, `<name>.css` and, when it needs one, 
 | [Windsock slider](components/sliders/windsock/) | `slider-windsock` | None | [Preview](https://movin.design/components/sliders/windsock/) |
 | [Zipper slider](components/sliders/zipper/) | `slider-zipper` | None | [Preview](https://movin.design/components/sliders/zipper/) |
 
-### Tabs (75)
+### Tabs (100)
 
 | Component | Install name | Dependencies | Live |
 | --- | --- | --- | --- |
+| [Arc tab set](components/tabs/arc/) | `tab-arc` | None | [Preview](https://movin.design/components/tabs/arc/) |
+| [Blocks tab set](components/tabs/blocks/) | `tab-blocks` | None | [Preview](https://movin.design/components/tabs/blocks/) |
+| [Cassette tab set](components/tabs/cassette/) | `tab-cassette` | None | [Preview](https://movin.design/components/tabs/cassette/) |
+| [Chalk tab set](components/tabs/chalk/) | `tab-chalk` | None | [Preview](https://movin.design/components/tabs/chalk/) |
+| [Claw tab set](components/tabs/claw/) | `tab-claw` | None | [Preview](https://movin.design/components/tabs/claw/) |
+| [CRT tab set](components/tabs/crt/) | `tab-crt` | None | [Preview](https://movin.design/components/tabs/crt/) |
+| [Doors tab set](components/tabs/doors/) | `tab-doors` | None | [Preview](https://movin.design/components/tabs/doors/) |
+| [Drop tab set](components/tabs/drop/) | `tab-drop` | None | [Preview](https://movin.design/components/tabs/drop/) |
+| [Film tab set](components/tabs/film/) | `tab-film` | None | [Preview](https://movin.design/components/tabs/film/) |
+| [Fit tab set](components/tabs/fit/) | `tab-fit` | None | [Preview](https://movin.design/components/tabs/fit/) |
+| [Focus tab set](components/tabs/focus/) | `tab-focus` | None | [Preview](https://movin.design/components/tabs/focus/) |
+| [Fog tab set](components/tabs/fog/) | `tab-fog` | None | [Preview](https://movin.design/components/tabs/fog/) |
+| [Icons tab set](components/tabs/icons/) | `tab-icons` | None | [Preview](https://movin.design/components/tabs/icons/) |
+| [Lasso tab set](components/tabs/lasso/) | `tab-lasso` | None | [Preview](https://movin.design/components/tabs/lasso/) |
+| [Neon tab set](components/tabs/neon/) | `tab-neon` | None | [Preview](https://movin.design/components/tabs/neon/) |
+| [Overview tab set](components/tabs/overview/) | `tab-overview` | None | [Preview](https://movin.design/components/tabs/overview/) |
+| [Parallax tab set](components/tabs/parallax/) | `tab-parallax` | None | [Preview](https://movin.design/components/tabs/parallax/) |
+| [Part tab set](components/tabs/part/) | `tab-part` | None | [Preview](https://movin.design/components/tabs/part/) |
+| [Patch tab set](components/tabs/patch/) | `tab-patch` | None | [Preview](https://movin.design/components/tabs/patch/) |
+| [Pin tab set](components/tabs/pin/) | `tab-pin` | None | [Preview](https://movin.design/components/tabs/pin/) |
+| [Preview tab set](components/tabs/preview/) | `tab-preview` | None | [Preview](https://movin.design/components/tabs/preview/) |
+| [Strips tab set](components/tabs/strips/) | `tab-strips` | None | [Preview](https://movin.design/components/tabs/strips/) |
+| [Tape tab set](components/tabs/tape/) | `tab-tape` | None | [Preview](https://movin.design/components/tabs/tape/) |
+| [Tiles tab set](components/tabs/tiles/) | `tab-tiles` | None | [Preview](https://movin.design/components/tabs/tiles/) |
+| [Zip tab set](components/tabs/zip/) | `tab-zip` | None | [Preview](https://movin.design/components/tabs/zip/) |
 | [Caret tab set](components/tabs/caret/) | `tab-caret` | None | [Preview](https://movin.design/components/tabs/caret/) |
 | [Carry tab set](components/tabs/carry/) | `tab-carry` | None | [Preview](https://movin.design/components/tabs/carry/) |
 | [Contents tab set](components/tabs/contents/) | `tab-contents` | None | [Preview](https://movin.design/components/tabs/contents/) |

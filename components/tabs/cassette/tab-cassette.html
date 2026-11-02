@@ -1,0 +1,48 @@
+<div class="tabs-cassette">
+  <svg class="tabs-cassette__deck" viewBox="0 0 220 120" aria-hidden="true">
+    <defs>
+      <clipPath id="tabs-cassette-clip">
+        <rect x="48" y="52" width="124" height="40" rx="6"></rect>
+      </clipPath>
+    </defs>
+    <rect class="tabs-cassette__body" x="4" y="4" width="212" height="112" rx="8"></rect>
+    <rect class="tabs-cassette__label" x="16" y="12" width="188" height="32" rx="3"></rect>
+    <text class="tabs-cassette__side" x="24" y="24">SIDE A</text>
+    <text class="tabs-cassette__title" x="24" y="37">Intro</text>
+    <rect class="tabs-cassette__window" x="48" y="52" width="124" height="40" rx="6"></rect>
+    <path class="tabs-cassette__tape" d="M78 101.24L36 106H184L142 83.76"></path>
+    <g>
+      <circle class="tabs-cassette__pack" cx="78" cy="72" r="29.24" clip-path="url(#tabs-cassette-clip)"></circle>
+      <circle class="tabs-cassette__hub" cx="78" cy="72" r="9"></circle>
+      <g transform="rotate(0 78 72)">
+        <line class="tabs-cassette__spoke" x1="78" y1="72" x2="78" y2="66" transform="rotate(0 78 72)"></line>
+        <line class="tabs-cassette__spoke" x1="78" y1="72" x2="78" y2="66" transform="rotate(120 78 72)"></line>
+        <line class="tabs-cassette__spoke" x1="78" y1="72" x2="78" y2="66" transform="rotate(240 78 72)"></line>
+      </g>
+    </g>
+    <g>
+      <circle class="tabs-cassette__pack" cx="142" cy="72" r="11.76" clip-path="url(#tabs-cassette-clip)"></circle>
+      <circle class="tabs-cassette__hub" cx="142" cy="72" r="9"></circle>
+      <g transform="rotate(0 142 72)">
+        <line class="tabs-cassette__spoke" x1="142" y1="72" x2="142" y2="66" transform="rotate(0 142 72)"></line>
+        <line class="tabs-cassette__spoke" x1="142" y1="72" x2="142" y2="66" transform="rotate(120 142 72)"></line>
+        <line class="tabs-cassette__spoke" x1="142" y1="72" x2="142" y2="66" transform="rotate(240 142 72)"></line>
+      </g>
+    </g>
+    <path class="tabs-cassette__foot" d="M44 116L54 104H166L176 116Z"></path>
+  </svg>
+  <p class="tabs-cassette__read" aria-hidden="true">
+    <b>Playing</b>
+    <span>024</span>
+  </p>
+  <div class="tabs-cassette__list" role="tablist" aria-label="Side A">
+    <button class="tabs-cassette__tab" type="button" role="tab" id="tabs-cassette-tab-0" aria-selected="true" aria-controls="tabs-cassette-panel-0" tabindex="0">Intro</button>
+    <button class="tabs-cassette__tab" type="button" role="tab" id="tabs-cassette-tab-1" aria-selected="false" aria-controls="tabs-cassette-panel-1" tabindex="-1">Tides</button>
+    <button class="tabs-cassette__tab" type="button" role="tab" id="tabs-cassette-tab-2" aria-selected="false" aria-controls="tabs-cassette-panel-2" tabindex="-1">Night</button>
+    <button class="tabs-cassette__tab" type="button" role="tab" id="tabs-cassette-tab-3" aria-selected="false" aria-controls="tabs-cassette-panel-3" tabindex="-1">Outro</button>
+  </div>
+  <div class="tabs-cassette__panel" role="tabpanel" id="tabs-cassette-panel-0" aria-labelledby="tabs-cassette-tab-0">Tape hiss, a count-in and the first chord. Forty seconds long.</div>
+  <div class="tabs-cassette__panel" role="tabpanel" id="tabs-cassette-panel-1" aria-labelledby="tabs-cassette-tab-1" hidden="">The single. Slow drums under a guitar that never quite resolves.</div>
+  <div class="tabs-cassette__panel" role="tabpanel" id="tabs-cassette-panel-2" aria-labelledby="tabs-cassette-tab-2" hidden="">Recorded live in one take, with the rain on the studio roof.</div>
+  <div class="tabs-cassette__panel" role="tabpanel" id="tabs-cassette-panel-3" aria-labelledby="tabs-cassette-tab-3" hidden="">The intro played backwards, fading into the run-out.</div>
+</div>

@@ -1,0 +1,29 @@
+.radio-egg { display: grid; justify-items: center; gap: 14px; width: 260px; }
+.radio-egg__plate svg { display: block; width: 200px; height: 112px; overflow: visible; }
+.radio-egg__dish { fill: light-dark(#ebedf0, #232529); }
+.radio-egg__white { fill: light-dark(#42454c, #e5e6e9); }
+.radio-egg__yolk, .radio-egg__core, .radio-egg__gloss { transform-box: fill-box; transform-origin: center; transition: transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 1), fill 0.5s, opacity 0.4s; }
+.radio-egg__yolk { fill: light-dark(#6d7179, #7d8087); stroke: light-dark(#cbced3, #393c41); stroke-width: 0; stroke-dasharray: 2 2.5; }
+.radio-egg__core { fill: light-dark(#6d7179, #7d8087); opacity: 0; }
+.radio-egg__gloss { fill: light-dark(#50535b, #c6c8cd); opacity: 0.8; }
+.radio-egg__drip { fill: light-dark(#6d7179, #7d8087); transform-box: fill-box; transform-origin: 50% 0; transform: scaleY(0); transition: transform 0.25s; }
+/* Soft: a big glossy yolk that runs. Jammy: set round the edge, soft in the middle. Hard: smaller, pale and crumbly. */
+.radio-egg:has(.radio-egg__opt:nth-child(1) input:checked) .radio-egg__yolk { transform: scale(1.12); }
+.radio-egg:has(.radio-egg__opt:nth-child(1) input:checked) .radio-egg__drip { transform: none; transition: transform 1.1s cubic-bezier(0.4, 0, 0.5, 1) 0.25s; }
+.radio-egg:has(.radio-egg__opt:nth-child(2) input:checked) .radio-egg__yolk { fill: light-dark(#5f626a, #a7abb2); }
+.radio-egg:has(.radio-egg__opt:nth-child(2) input:checked) .radio-egg__core { opacity: 1; transform: scale(0.62); }
+.radio-egg:has(.radio-egg__opt:nth-child(2) input:checked) .radio-egg__gloss { opacity: 0.35; transform: scale(0.6); }
+.radio-egg:has(.radio-egg__opt:nth-child(3) input:checked) .radio-egg__yolk { fill: light-dark(#50535b, #c6c8cd); stroke-width: 2; transform: scale(0.86); }
+.radio-egg:has(.radio-egg__opt:nth-child(3) input:checked) .radio-egg__gloss { opacity: 0; transform: scale(0.3); }
+.radio-egg__read { display: grid; color: light-dark(#50535b, #c6c8cd); font-size: 12px; }
+.radio-egg__read > * { grid-area: 1 / 1; text-align: center; opacity: 0; transform: translateY(4px); transition: opacity 0.25s, transform 0.3s; }
+.radio-egg:has(.radio-egg__opt:nth-child(1) input:checked) .radio-egg__read > :nth-child(1), .radio-egg:has(.radio-egg__opt:nth-child(2) input:checked) .radio-egg__read > :nth-child(2), .radio-egg:has(.radio-egg__opt:nth-child(3) input:checked) .radio-egg__read > :nth-child(3) { opacity: 1; transform: none; }
+.radio-egg__opts { display: flex; gap: 3px; padding: 4px; border-radius: 12px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+.radio-egg__opt { position: relative; flex: 1; padding: 7px 12px; border-radius: 8px; color: light-dark(#5f626a, #a7abb2); font-size: 12.5px; font-weight: 500; text-align: center; white-space: nowrap; cursor: pointer; transition: background-color 0.25s, color 0.25s; }
+.radio-egg__opt:hover { color: light-dark(#42454c, #e5e6e9); }
+.radio-egg__opt:has(input:checked) { background: light-dark(#373a40, #f1f2f3); color: light-dark(#fbfcfd, #121417); }
+.radio-egg__opt:has(input:focus-visible) { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+.radio-egg__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) {
+  .radio-egg * { transition: none !important; }
+}

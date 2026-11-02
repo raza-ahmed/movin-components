@@ -1,0 +1,13 @@
+.tabs-patch { width: 240px; }
+.tabs-patch__board { position: relative; height: 132px; border-radius: 12px; background: light-dark(#ebedf0, #232529); }
+.tabs-patch__wire { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.tabs-patch__cord { fill: none; stroke: light-dark(#50535b, #c6c8cd); stroke-width: 2.5; stroke-linecap: round; }
+.tabs-patch__plug { stroke: light-dark(#373a40, #f1f2f3); stroke-width: 6; stroke-linecap: round; }
+.tabs-patch__socket { fill: light-dark(#cbced3, #393c41); }
+.tabs-patch__list { display: grid; grid-template-columns: repeat(4, 1fr); padding-top: 8px; }
+.tabs-patch__tab { display: grid; justify-items: center; gap: 5px; padding: 0; border: 0; background: none; font: inherit; font-size: 11.5px; line-height: 15px; font-weight: 500; color: light-dark(#5f626a, #a7abb2); cursor: pointer; transition: color 0.25s; }
+.tabs-patch__tab:hover, .tabs-patch__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+.tabs-patch__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: -2px; border-radius: 6px; }
+.tabs-patch__jack { width: 16px; height: 16px; box-sizing: border-box; border: 3px solid light-dark(#6d7179, #7d8087); border-radius: 50%; background: light-dark(#fbfcfd, #121417); }
+.tabs-patch__tab[aria-selected='true'] .tabs-patch__jack { border-color: light-dark(#42454c, #e5e6e9); }
+.tabs-patch__panel { padding: 12px 0 0; min-height: calc(3.1em + 12px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }

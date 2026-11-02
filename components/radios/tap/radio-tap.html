@@ -1,0 +1,46 @@
+<div class="radio-tap">
+  <svg class="radio-tap__sink" viewBox="0 0 200 124" aria-hidden="true">
+    <rect class="radio-tap__wall" x="8" y="10" width="14" height="30" rx="3"></rect>
+    <ellipse class="radio-tap__basin" cx="99" cy="112" rx="64" ry="7"></ellipse>
+    <g class="radio-tap__flow radio-tap__flow--drip">
+      <path class="radio-tap__drop radio-tap__water" d="M99 42C102.5 47 104 50 104 52.5A5 5 0 0 1 94 52.5C94 50 95.5 47 99 42Z"></path>
+      <ellipse class="radio-tap__ring" cx="99" cy="111" rx="14" ry="2.5"></ellipse>
+    </g>
+    <g class="radio-tap__flow radio-tap__flow--trickle">
+      <path class="radio-tap__stream radio-tap__water" d="M99 42C100 62 98 84 99 109" stroke-width="2.2" stroke-dasharray="12 6"></path>
+      <ellipse class="radio-tap__ring" cx="99" cy="111" rx="16" ry="3"></ellipse>
+    </g>
+    <g class="radio-tap__flow radio-tap__flow--full">
+      <path class="radio-tap__water" d="M94 42H104C105 64 106 88 107 109H91C92 88 93 64 94 42Z"></path>
+      <path class="radio-tap__stream radio-tap__shine" d="M97 46C97.5 66 97 88 96.5 106" stroke-width="1.5" stroke-dasharray="9 9"></path>
+      <circle class="radio-tap__splash" cx="99" cy="108" r="2"></circle>
+      <circle class="radio-tap__splash" cx="99" cy="108" r="1.6"></circle>
+      <circle class="radio-tap__splash" cx="99" cy="108" r="1.8"></circle>
+      <circle class="radio-tap__splash" cx="99" cy="108" r="1.4"></circle>
+      <ellipse class="radio-tap__ring" cx="99" cy="111" rx="22" ry="4"></ellipse>
+      <ellipse class="radio-tap__ring" cx="99" cy="111" rx="22" ry="4"></ellipse>
+    </g>
+    <path class="radio-tap__metal" d="M22 17H92Q104 17 104 29V42H94V31Q94 28 91 28H22Z"></path>
+    <rect class="radio-tap__metal" x="54" y="9" width="4" height="9"></rect>
+    <rect class="radio-tap__metal radio-tap__lever" x="40" y="5" width="32" height="5" rx="2.5"></rect>
+  </svg>
+  <span class="radio-tap__read" aria-hidden="true">
+    <span>A drop every second or so</span>
+    <span>A thin, steady thread</span>
+    <span>Wide open, with splashes</span>
+  </span>
+  <div class="radio-tap__opts" role="radiogroup" aria-label="Water flow">
+    <label class="radio-tap__opt">
+      <input class="radio-tap__input" type="radio" name="radio-tap" checked="" value="drip"/>
+      Drip
+    </label>
+    <label class="radio-tap__opt">
+      <input class="radio-tap__input" type="radio" name="radio-tap" value="trickle"/>
+      Trickle
+    </label>
+    <label class="radio-tap__opt">
+      <input class="radio-tap__input" type="radio" name="radio-tap" value="full"/>
+      Full
+    </label>
+  </div>
+</div>

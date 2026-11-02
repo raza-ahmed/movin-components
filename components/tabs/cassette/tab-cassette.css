@@ -1,0 +1,19 @@
+.tabs-cassette { width: 240px; }
+.tabs-cassette__deck { display: block; width: 220px; height: 120px; margin: 0 auto; }
+.tabs-cassette__body { fill: light-dark(#dbdde1, #2e3035); }
+.tabs-cassette__label { fill: light-dark(#42454c, #e5e6e9); }
+.tabs-cassette__title { fill: light-dark(#f3f4f7, #1a1c1f); font-size: 11px; font-weight: 700; }
+.tabs-cassette__side { fill: light-dark(#cbced3, #393c41); font-size: 8px; font-weight: 700; letter-spacing: 0.08em; }
+.tabs-cassette__window { fill: light-dark(#fbfcfd, #121417); }
+.tabs-cassette__pack { fill: light-dark(#cbced3, #393c41); }
+.tabs-cassette__hub { fill: light-dark(#42454c, #e5e6e9); }
+.tabs-cassette__spoke { stroke: light-dark(#dbdde1, #2e3035); stroke-width: 2.5; stroke-linecap: round; }
+.tabs-cassette__tape { fill: none; stroke: light-dark(#6d7179, #7d8087); stroke-width: 1.5; }
+.tabs-cassette__foot { fill: light-dark(#cbced3, #393c41); }
+.tabs-cassette__read { display: flex; justify-content: space-between; margin: 6px 10px 8px; font-size: 11px; color: light-dark(#5f626a, #a7abb2); font-variant-numeric: tabular-nums; }
+.tabs-cassette__read b { color: light-dark(#373a40, #f1f2f3); font-weight: 600; }
+.tabs-cassette__list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.tabs-cassette__tab { height: 28px; border: 0; border-radius: 7px; background: light-dark(#ebedf0, #232529); color: light-dark(#50535b, #c6c8cd); font: inherit; font-size: 12px; font-weight: 500; cursor: pointer; transition: background-color 0.2s, color 0.2s; }
+.tabs-cassette__tab[aria-selected='true'] { background: light-dark(#373a40, #f1f2f3); color: light-dark(#fbfcfd, #121417); }
+.tabs-cassette__tab:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+.tabs-cassette__panel { padding: 10px 2px 0; min-height: calc(3.1em + 10px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }

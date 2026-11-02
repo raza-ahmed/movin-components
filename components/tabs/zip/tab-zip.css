@@ -1,0 +1,12 @@
+.tabs-zip { width: 240px; }
+.tabs-zip__list { display: grid; grid-template-columns: repeat(3, 1fr); }
+.tabs-zip__tab { border: 0; padding: 6px 0 8px; background: none; font: inherit; font-size: 13px; font-weight: 500; color: light-dark(#5f626a, #a7abb2); cursor: pointer; transition: color 0.3s; }
+.tabs-zip__tab:hover, .tabs-zip__tab[aria-selected='true'] { color: light-dark(#373a40, #f1f2f3); }
+.tabs-zip__tab:focus-visible { outline: 2px solid light-dark(#5f626a, #a7abb2); outline-offset: -2px; border-radius: 6px; }
+.tabs-zip__track { display: block; width: 240px; height: 28px; overflow: visible; }
+.tabs-zip__tape { fill: light-dark(#ebedf0, #232529); }
+.tabs-zip__tooth { fill: light-dark(#cbced3, #393c41); }
+.tabs-zip__tooth--shut { fill: light-dark(#50535b, #c6c8cd); }
+.tabs-zip__slider { fill: light-dark(#373a40, #f1f2f3); }
+.tabs-zip__pull { fill: light-dark(#42454c, #e5e6e9); }
+.tabs-zip__panel { padding: 6px 0 0; min-height: calc(3.1em + 6px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }

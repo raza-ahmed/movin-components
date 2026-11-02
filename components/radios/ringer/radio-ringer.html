@@ -1,0 +1,41 @@
+<div class="radio-ringer">
+  <svg class="radio-ringer__view" viewBox="0 0 200 112" aria-hidden="true">
+    <g class="radio-ringer__waves">
+      <path d="M62 40Q54 56 62 72"></path>
+      <path d="M52 32Q40 56 52 80"></path>
+      <path d="M138 40Q146 56 138 72"></path>
+      <path d="M148 32Q160 56 148 80"></path>
+    </g>
+    <g class="radio-ringer__lines">
+      <path d="M64 46V66"></path>
+      <path d="M58 50V62"></path>
+      <path d="M136 46V66"></path>
+      <path d="M142 50V62"></path>
+    </g>
+    <g class="radio-ringer__phone">
+      <rect class="radio-ringer__case" x="74" y="8" width="52" height="96" rx="10"></rect>
+      <rect class="radio-ringer__screen" x="78" y="14" width="44" height="82" rx="6"></rect>
+      <path class="radio-ringer__bell" d="M100 40C94 40 91 45 91 50V57L88 61H112L109 57V50C109 45 106 40 100 40ZM97 63A3 3 0 0 0 103 63Z"></path>
+      <path class="radio-ringer__slash" d="M89 39L111 66" pathLength="1"></path>
+    </g>
+  </svg>
+  <span class="radio-ringer__read" aria-hidden="true">
+    <span>No sound, no buzz</span>
+    <span>Buzzes in short bursts</span>
+    <span>Rings out loud</span>
+  </span>
+  <div class="radio-ringer__opts" role="radiogroup" aria-label="Ringer">
+    <label class="radio-ringer__opt">
+      <input class="radio-ringer__input" type="radio" name="radio-ringer" value="silent"/>
+      Silent
+    </label>
+    <label class="radio-ringer__opt">
+      <input class="radio-ringer__input" type="radio" name="radio-ringer" value="vibrate"/>
+      Vibrate
+    </label>
+    <label class="radio-ringer__opt">
+      <input class="radio-ringer__input" type="radio" name="radio-ringer" checked="" value="ring"/>
+      Ring
+    </label>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.radio-fps { display: grid; justify-items: center; gap: 14px; width: 260px; }
+.radio-fps__stage { display: block; width: 220px; height: 92px; border-radius: 12px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+.radio-fps__ground { stroke: light-dark(#dbdde1, #2e3035); stroke-width: 1.5; }
+.radio-fps__ball { fill: light-dark(#373a40, #f1f2f3); }
+.radio-fps__ghost { fill: light-dark(#5f626a, #a7abb2); }
+.radio-fps__dot { fill: light-dark(#6d7179, #7d8087); }
+.radio-fps__read { color: light-dark(#50535b, #c6c8cd); font-size: 12px; text-align: center; }
+.radio-fps__opts { display: flex; gap: 3px; padding: 4px; border-radius: 12px; background: light-dark(#f3f4f7, #1a1c1f); box-shadow: inset 0 0 0 1px light-dark(#dbdde1, #2e3035); }
+.radio-fps__opt { position: relative; flex: 1; padding: 7px 12px; border-radius: 8px; color: light-dark(#5f626a, #a7abb2); font-size: 12.5px; font-weight: 500; text-align: center; white-space: nowrap; cursor: pointer; transition: background-color 0.25s, color 0.25s; }
+.radio-fps__opt:hover { color: light-dark(#42454c, #e5e6e9); }
+.radio-fps__opt:has(input:checked) { background: light-dark(#373a40, #f1f2f3); color: light-dark(#fbfcfd, #121417); }
+.radio-fps__opt:has(input:focus-visible) { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 2px; }
+.radio-fps__input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }

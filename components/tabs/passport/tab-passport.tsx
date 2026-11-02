@@ -32,6 +32,7 @@ const css = `
   .tabs-passport[data-flip='b'] .tabs-passport__page { animation: tabs-passport-jolt 0.25s ease-out 0.2s; }
   .tabs-passport__head { display: flex; justify-content: space-between; color: light-dark(#6d7179, #7d8087); font-size: 9px; font-weight: 600; letter-spacing: 0.18em; }
   .tabs-passport__panel { position: absolute; inset: 0; display: grid; place-items: center; padding-top: 8px; }
+  .tabs-passport__panel[hidden] { display: none; }
   .tabs-passport__stamp {
     display: grid;
     justify-items: center;

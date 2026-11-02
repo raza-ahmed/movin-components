@@ -1,0 +1,107 @@
+"use client";
+
+import * as React from "react";
+import { useId, useRef, useState } from 'react';
+
+const SIGNS = [
+  { label: 'Diner', body: 'Open all night. Pie of the day is cherry.' },
+  { label: 'Motel', body: 'Vacancies on the ground floor, pool round the back.' },
+  { label: 'Arcade', body: 'Forty cabinets, two pinball tables, tokens at the door.' },
+];
+
+const css = `
+  .tabs-neon { width: 240px; }
+  .tabs-neon__list { display: flex; justify-content: space-between; gap: 8px; }
+  .tabs-neon__tab {
+    flex: 1;
+    height: 38px;
+    padding: 0;
+    border: 1.5px solid light-dark(#dbdde1, #2e3035);
+    border-radius: 10px;
+    background: none;
+    color: light-dark(#5f626a, #a7abb2);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.7s, border-color 0.7s, text-shadow 0.7s, box-shadow 0.7s;
+  }
+  .tabs-neon__tab:focus-visible { outline: 2px solid light-dark(#50535b, #c6c8cd); outline-offset: 3px; }
+  /* Lit: the tube glows. Switching on, it stutters a few times before it holds; switched off, it fades. */
+  .tabs-neon__tab[aria-selected='true'] {
+    color: light-dark(#373a40, #f1f2f3);
+    border-color: light-dark(#42454c, #e5e6e9);
+    text-shadow: 0 0 3px light-dark(#373a40, #f1f2f3), 0 0 12px light-dark(#50535b, #c6c8cd);
+    box-shadow: 0 0 8px light-dark(#5f626a, #a7abb2), inset 0 0 8px light-dark(#cbced3, #393c41);
+    transition: none;
+    animation: tabs-neon-on 0.9s linear;
+  }
+  @keyframes tabs-neon-on {
+    0%, 9%, 16%, 25%, 32%, 40% { color: light-dark(#5f626a, #a7abb2); border-color: light-dark(#dbdde1, #2e3035); text-shadow: none; box-shadow: none; }
+    10%, 15%, 26%, 31% { color: light-dark(#373a40, #f1f2f3); border-color: light-dark(#42454c, #e5e6e9); text-shadow: 0 0 3px light-dark(#373a40, #f1f2f3), 0 0 12px light-dark(#50535b, #c6c8cd); box-shadow: 0 0 8px light-dark(#5f626a, #a7abb2), inset 0 0 8px light-dark(#cbced3, #393c41); }
+  }
+  /* Once lit, one letter buzzes now and then. */
+  .tabs-neon__tab[aria-selected='true'] .tabs-neon__buzz { animation: tabs-neon-buzz 5s steps(1) 2s infinite; }
+  @keyframes tabs-neon-buzz {
+    92% { opacity: 0.35; }
+    93% { opacity: 1; }
+    95% { opacity: 0.5; }
+    96% { opacity: 1; }
+  }
+  .tabs-neon__panel { padding: 14px 2px 0; min-height: calc(3.1em + 14px); color: light-dark(#50535b, #c6c8cd); font-size: 13px; line-height: 1.55; }
+  @media (prefers-reduced-motion: reduce) {
+    .tabs-neon__tab, .tabs-neon__tab[aria-selected='true'], .tabs-neon__tab[aria-selected='true'] .tabs-neon__buzz { animation: none; transition: none; }
+  }
+`;
+
+export function NeonTabs() {
+  const id = useId();
+  const [sel, setSel] = useState(0);
+  const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const n = SIGNS.length;
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    const next = { ArrowRight: (sel + 1) % n, ArrowLeft: (sel + n - 1) % n, Home: 0, End: n - 1 }[e.key];
+    if (next === undefined) return;
+    e.preventDefault();
+    setSel(next);
+    tabs.current[next]?.focus();
+  };
+  return (
+    <>
+      <style>
+        {css}
+      </style>
+      <div className="tabs-neon">
+        <div className="tabs-neon__list" role="tablist" aria-label="Signs" onKeyDown={onKeyDown}>
+          {SIGNS.map((s, i) => (
+            <button
+              key={s.label}
+              ref={(el) => {
+                tabs.current[i] = el;
+              }}
+              className="tabs-neon__tab"
+              type="button"
+              role="tab"
+              id={`${id}-tab-${i}`}
+              aria-selected={sel === i}
+              aria-controls={`${id}-panel-${i}`}
+              tabIndex={sel === i ? 0 : -1}
+              onClick={() => setSel(i)}
+            >
+              {s.label.slice(0, 2)}
+              <span className="tabs-neon__buzz">{s.label[2]}</span>
+              {s.label.slice(3)}
+            </button>
+          ))}
+        </div>
+        {SIGNS.map((s, i) => (
+          <div key={s.label} className="tabs-neon__panel" role="tabpanel" id={`${id}-panel-${i}`} aria-labelledby={`${id}-tab-${i}`} hidden={sel !== i}>
+            {s.body}
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}

@@ -34,6 +34,7 @@
 .tabs-jukebox__code { padding: 1px 4px; border-radius: 3px; background: light-dark(#dbdde1, #2e3035); color: light-dark(#373a40, #f1f2f3); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9.5px; }
 .tabs-jukebox__tab[aria-selected='true'] .tabs-jukebox__code { background: light-dark(#373a40, #f1f2f3); color: light-dark(#fbfcfd, #121417); }
 .tabs-jukebox__panel { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; }
+.tabs-jukebox__panel[hidden] { display: none; }
 .tabs-jukebox__eq { display: flex; align-items: flex-end; gap: 2px; height: 16px; }
 .tabs-jukebox__eq span { width: 3px; height: 100%; border-radius: 1px; background: light-dark(#50535b, #c6c8cd); transform-origin: 50% 100%; animation: tabs-jukebox-eq 0.4s ease-in-out infinite alternate; }
 .tabs-jukebox__song { color: light-dark(#373a40, #f1f2f3); font-size: 13px; font-weight: 600; }
